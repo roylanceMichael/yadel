@@ -19,13 +19,13 @@ abstract class WorkerBase: UntypedActor() {
     protected var foundManagerAddress:String? = null
 
     override fun preStart() {
-        this.log.info("handling prestart on base")
+        this.log.info("handling preStart on base")
         super.preStart()
         this.cluster.subscribe(this.self, ClusterEvent.MemberUp::class.java)
     }
 
     override fun postStop() {
-        this.log.info("handling poststop on base")
+        this.log.info("handling postStop on base")
         super.postStop()
         this.cluster.unsubscribe(this.self)
     }
@@ -36,7 +36,7 @@ abstract class WorkerBase: UntypedActor() {
             this.log.info("received message ${messageString.substring(100)}")
         }
         else {
-            this.log.info("received message $p0")
+            this.log.info("received message $messageString")
         }
 
         if (p0 is ClusterEvent.CurrentClusterState) {

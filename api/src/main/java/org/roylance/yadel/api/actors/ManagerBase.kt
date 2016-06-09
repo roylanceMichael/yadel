@@ -50,7 +50,6 @@ open class ManagerBase :UntypedActor() {
             this.log.info("received message: $messageString")
         }
 
-
         if (p0 is YadelModels.WorkerToManagerMessage) {
             if (YadelModels.WorkerToManagerMessageType.REGISTRATION.equals(p0.type)) {
                 this.log.info("handling registration")
@@ -130,7 +129,7 @@ open class ManagerBase :UntypedActor() {
                         .setType(YadelModels.ManagerToWorkerMessageType.START_WORKING)
                         .build()
 
-                this.log.info("telling ${foundWorker.actorRef.path().address().toString()} to process ${workMessage.toString()}")
+                this.log.info("telling ${foundWorker.actorRef.path().address().toString()} to process ${message.name}")
                 foundWorker.actorRef.tell(workMessage, this.self)
             }
         }
