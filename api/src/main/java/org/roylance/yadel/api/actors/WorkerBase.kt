@@ -9,7 +9,7 @@ import akka.cluster.MemberStatus
 import akka.event.Logging
 import org.roylance.yadel.api.enums.CommonTokens
 import org.roylance.yadel.api.models.YadelModels
-import java.net.InetAddress
+import org.roylance.yadel.api.utilities.ActorIpUtilities
 import java.nio.file.Paths
 
 abstract class WorkerBase: UntypedActor() {
@@ -31,14 +31,7 @@ abstract class WorkerBase: UntypedActor() {
     }
 
     override fun onReceive(p0: Any?) {
-        val messageString = p0?.toString()
-        if (messageString != null && messageString.length > 100) {
-            this.log.info("received message ${messageString.substring(100)}")
-        }
-        else {
-            this.log.info("received message $messageString")
-        }
-
+        this.log.info("received message")
         if (p0 is ClusterEvent.CurrentClusterState) {
             this.log.info("handling current cluster state")
             this.handleCurrentClusterState(p0)
@@ -57,7 +50,7 @@ abstract class WorkerBase: UntypedActor() {
                 val bashCommand = "/bin/bash"
                 val runFile = Paths.get(currentDir, "run.sh").toString()
 
-                val ip = InetAddress.getLocalHost().hostAddress
+                val ip = ActorIpUtilities.getCurrentIp()
                 this.log.info("spawning another with $bashCommand $runFile $ip ${CommonTokens.Zero} ${p0.spawnMessage.seedHost1} ${p0.spawnMessage.seedPort1} ${p0.spawnMessage.seedHost2} ${p0.spawnMessage.seedPort2}")
                 val pb = ProcessBuilder().command(
                         bashCommand,
@@ -77,14 +70,14 @@ abstract class WorkerBase: UntypedActor() {
     }
 
     protected fun finishWorking(message: YadelModels.WorkerToManagerMessage.Builder) {
-        this.getFrontendActorSelection()?.tell(message.setType(YadelModels.WorkerToManagerMessageType.NOW_IDLE).build(), this.self)
+        this.getManagerSelection()?.tell(message.setType(YadelModels.WorkerToManagerMessageType.NOW_IDLE).build(), this.self)
     }
 
     protected fun startWorking(message: YadelModels.WorkerToManagerMessage.Builder) {
-        this.getFrontendActorSelection()?.tell(message.setType(YadelModels.WorkerToManagerMessageType.NOW_WORKING).build(), this.self)
+        this.getManagerSelection()?.tell(message.setType(YadelModels.WorkerToManagerMessageType.NOW_WORKING).build(), this.self)
     }
 
-    protected fun getFrontendActorSelection():ActorSelection? {
+    protected fun getManagerSelection():ActorSelection? {
         if (this.foundManagerAddress == null) {
             return null
         }
@@ -107,7 +100,7 @@ abstract class WorkerBase: UntypedActor() {
     private fun register(member: Member) {
         if (member.hasRole(YadelModels.ActorRole.MANAGER.name)) {
             this.foundManagerAddress = member.address().toString()
-            this.getFrontendActorSelection()
+            this.getManagerSelection()
                     ?.tell(
                             YadelModels.WorkerToManagerMessage.newBuilder().setType(YadelModels.WorkerToManagerMessageType.REGISTRATION).build(),
                             this.self)

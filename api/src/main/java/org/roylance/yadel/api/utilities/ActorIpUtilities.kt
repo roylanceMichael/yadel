@@ -1,6 +1,7 @@
 package org.roylance.yadel.api.utilities
 
 import akka.actor.ActorRef
+import java.net.InetAddress
 
 object ActorIpUtilities {
     const private val ForwardSlash = "/"
@@ -17,5 +18,9 @@ object ActorIpUtilities {
             return null
         }
         return actorAddress.substring(start, end)
+    }
+
+    fun getCurrentIp():String {
+        return InetAddress.getLocalHost().hostAddress
     }
 }

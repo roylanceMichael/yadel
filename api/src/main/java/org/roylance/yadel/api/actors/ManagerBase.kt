@@ -42,14 +42,7 @@ open class ManagerBase :UntypedActor() {
     }
 
     override fun onReceive(p0: Any?) {
-        val messageString = p0?.toString()
-        if (messageString != null && messageString.length > 100) {
-            this.log.info("received message: ${messageString.substring(100)}")
-        }
-        else {
-            this.log.info("received message: $messageString")
-        }
-
+        this.log.info("received message")
         if (p0 is YadelModels.WorkerToManagerMessage) {
             if (YadelModels.WorkerToManagerMessageType.REGISTRATION.equals(p0.type)) {
                 this.log.info("handling registration")
@@ -62,6 +55,18 @@ open class ManagerBase :UntypedActor() {
             else if (YadelModels.WorkerToManagerMessageType.NOW_IDLE.equals(p0.type)) {
                 this.log.info("handling idle")
                 this.handleWorkerMessage(p0, YadelModels.WorkerState.IDLE)
+
+                this.lockObject.lock()
+                try {
+                    if (this.messagesInQueue.size > 0) {
+                        val firstMessage = this.messagesInQueue.first()
+                        this.messagesInQueue.remove(firstMessage)
+                        this.tellWorkerToDoNewWork(firstMessage)
+                    }
+                }
+                finally {
+                    this.lockObject.unlock()
+                }
             }
         }
         else if (p0 is YadelModels.ServiceToManagerMessage) {
@@ -111,7 +116,6 @@ open class ManagerBase :UntypedActor() {
             val openWorkers = this.workers.values.filter { it.configuration.state.equals(YadelModels.WorkerState.IDLE) }
 
             if (!openWorkers.any()) {
-                this.log.info("did not find any open workers")
                 this.messagesInQueue.add(message)
             }
             else {
