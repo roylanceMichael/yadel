@@ -9,9 +9,7 @@ import akka.cluster.MemberStatus
 import akka.event.Logging
 import org.roylance.yadel.api.enums.CommonTokens
 import org.roylance.yadel.api.models.YadelModels
-import java.io.File
 import java.net.InetAddress
-import java.nio.file.Path
 import java.nio.file.Paths
 
 abstract class WorkerBase: UntypedActor() {
@@ -33,7 +31,14 @@ abstract class WorkerBase: UntypedActor() {
     }
 
     override fun onReceive(p0: Any?) {
-        this.log.info("received message $p0")
+        val messageString = p0?.toString()
+        if (messageString != null && messageString.length > 100) {
+            this.log.info("received message ${messageString.substring(100)}")
+        }
+        else {
+            this.log.info("received message $p0")
+        }
+
         if (p0 is ClusterEvent.CurrentClusterState) {
             this.log.info("handling current cluster state")
             this.handleCurrentClusterState(p0)

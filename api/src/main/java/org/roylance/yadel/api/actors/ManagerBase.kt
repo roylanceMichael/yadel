@@ -42,7 +42,15 @@ open class ManagerBase :UntypedActor() {
     }
 
     override fun onReceive(p0: Any?) {
-        this.log.info("received message: $p0")
+        val messageString = p0?.toString()
+        if (messageString != null && messageString.length > 100) {
+            this.log.info("received message: ${messageString.substring(100)}")
+        }
+        else {
+            this.log.info("received message: $messageString")
+        }
+
+
         if (p0 is YadelModels.WorkerToManagerMessage) {
             if (YadelModels.WorkerToManagerMessageType.REGISTRATION.equals(p0.type)) {
                 this.log.info("handling registration")
