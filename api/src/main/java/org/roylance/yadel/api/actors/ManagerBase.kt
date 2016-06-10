@@ -37,12 +37,14 @@ open class ManagerBase :UntypedActor() {
                 this.tellWorkerToDoNewWork(it)
             }
             this.log.info("done running queue checking on managerbase, have ${messagesInQueue.size} waiting still...")
+            this.workers.values.forEach {
+                this.log.info("${it.actorRef.path().toString()}: ${it.configuration.state.name}")
+            }
         }
         this.context.system().scheduler().schedule(OneMinute, OneMinute, runnable,this.context.system().dispatcher())
     }
 
     override fun onReceive(p0: Any?) {
-        this.log.info("received message")
         if (p0 is YadelModels.WorkerToManagerMessage) {
             if (YadelModels.WorkerToManagerMessageType.REGISTRATION.equals(p0.type)) {
                 this.log.info("handling registration")
@@ -75,12 +77,10 @@ open class ManagerBase :UntypedActor() {
                 this.reportWorkerStatus()
             }
             else if (YadelModels.ServiceToManagerType.DO_NEW_WORK.equals(p0.type)) {
-                this.log.info("telling worker to do work")
                 this.tellWorkerToDoNewWork(p0)
             }
             else if (YadelModels.ServiceToManagerType.SPAWN_NEW_WORKER.equals(p0.type)) {
                 this.log.info("spawning a new worker")
-
                 // todo: better logic around where to spawn the new worker
                 if (this.workers.any()) {
                     val firstWorker = this.workers.values.first()
