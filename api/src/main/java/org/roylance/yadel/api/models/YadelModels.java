@@ -121,6 +121,10 @@ public final class YadelModels {
      * <code>REDUCE_WORKER_COUNT = 3;</code>
      */
     REDUCE_WORKER_COUNT(3, 3),
+    /**
+     * <code>GET_IDLE_WORKERS_WORKING = 4;</code>
+     */
+    GET_IDLE_WORKERS_WORKING(4, 4),
     UNRECOGNIZED(-1, -1),
     ;
 
@@ -140,6 +144,10 @@ public final class YadelModels {
      * <code>REDUCE_WORKER_COUNT = 3;</code>
      */
     public static final int REDUCE_WORKER_COUNT_VALUE = 3;
+    /**
+     * <code>GET_IDLE_WORKERS_WORKING = 4;</code>
+     */
+    public static final int GET_IDLE_WORKERS_WORKING_VALUE = 4;
 
 
     public final int getNumber() {
@@ -156,6 +164,7 @@ public final class YadelModels {
         case 1: return DO_NEW_WORK;
         case 2: return SPAWN_NEW_WORKER;
         case 3: return REDUCE_WORKER_COUNT;
+        case 4: return GET_IDLE_WORKERS_WORKING;
         default: return null;
       }
     }
@@ -7320,16 +7329,17 @@ public final class YadelModels {
       " \001(\t\022\014\n\004host\030\002 \001(\t\022\014\n\004port\030\003 \001(\t\022\021\n\tseed" +
       "Host1\030\004 \001(\t\022\021\n\tseedPort1\030\005 \001(\t\022\021\n\tseedHo" +
       "st2\030\006 \001(\t\022\021\n\tseedPort2\030\007 \001(\t*$\n\013WorkerSt" +
-      "ate\022\013\n\007WORKING\020\000\022\010\n\004IDLE\020\001*p\n\024ServiceToM" +
-      "anagerType\022\030\n\024REPORT_WORKER_STATUS\020\000\022\017\n\013" +
-      "DO_NEW_WORK\020\001\022\024\n\020SPAWN_NEW_WORKER\020\002\022\027\n\023R" +
-      "EDUCE_WORKER_COUNT\020\003*i\n\032ManagerToWorkerM" +
-      "essageType\022\021\n\rSTART_WORKING\020\000\022\021\n\rKILL_YO" +
-      "URSELF\020\001\022%\n!SPAWN_NEW_WORKER_AT_YOUR_LOC",
-      "ATION\020\002*M\n\032WorkerToManagerMessageType\022\020\n" +
-      "\014REGISTRATION\020\000\022\017\n\013NOW_WORKING\020\001\022\014\n\010NOW_" +
-      "IDLE\020\002*$\n\tActorRole\022\013\n\007MANAGER\020\000\022\n\n\006WORK" +
-      "ER\020\001b\006proto3"
+      "ate\022\013\n\007WORKING\020\000\022\010\n\004IDLE\020\001*\216\001\n\024ServiceTo" +
+      "ManagerType\022\030\n\024REPORT_WORKER_STATUS\020\000\022\017\n" +
+      "\013DO_NEW_WORK\020\001\022\024\n\020SPAWN_NEW_WORKER\020\002\022\027\n\023" +
+      "REDUCE_WORKER_COUNT\020\003\022\034\n\030GET_IDLE_WORKER" +
+      "S_WORKING\020\004*i\n\032ManagerToWorkerMessageTyp" +
+      "e\022\021\n\rSTART_WORKING\020\000\022\021\n\rKILL_YOURSELF\020\001\022",
+      "%\n!SPAWN_NEW_WORKER_AT_YOUR_LOCATION\020\002*M" +
+      "\n\032WorkerToManagerMessageType\022\020\n\014REGISTRA" +
+      "TION\020\000\022\017\n\013NOW_WORKING\020\001\022\014\n\010NOW_IDLE\020\002*$\n" +
+      "\tActorRole\022\013\n\007MANAGER\020\000\022\n\n\006WORKER\020\001b\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

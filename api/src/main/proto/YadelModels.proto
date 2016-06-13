@@ -61,6 +61,7 @@ enum ServiceToManagerType {
     DO_NEW_WORK = 1;
     SPAWN_NEW_WORKER = 2;
     REDUCE_WORKER_COUNT = 3;
+    GET_IDLE_WORKERS_WORKING = 4;
 }
 
 enum ManagerToWorkerMessageType {

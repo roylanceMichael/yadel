@@ -1,5 +1,5 @@
 group 'org.roylance'
-version '0.21-SNAPSHOT'
+version '0.24-SNAPSHOT'
 
 buildscript {
     repositories {

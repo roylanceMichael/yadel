@@ -9,11 +9,8 @@ import org.roylance.yadel.api.models.YadelModels
 import scala.concurrent.duration.Duration
 import java.util.*
 import java.util.concurrent.TimeUnit
-import java.util.concurrent.locks.ReentrantLock
 
 open class ManagerBase :UntypedActor() {
-    protected val lockObject  = ReentrantLock()
-
     protected val workers = HashMap<String, ConfigurationActorRef>()
     protected val messagesInQueue = ArrayList<YadelModels.ServiceToManagerMessage>()
 
@@ -21,25 +18,11 @@ open class ManagerBase :UntypedActor() {
 
     override fun preStart() {
         val runnable = Runnable {
-            this.log.info("running queue checking on managerbase")
-            this.lockObject.lock()
-            val tempList = ArrayList<YadelModels.ServiceToManagerMessage>()
-            try {
-                this.messagesInQueue.forEach { tempList.add(it) }
-                // clear it out
-                this.messagesInQueue.clear()
-            }
-            finally {
-                this.lockObject.unlock()
-            }
-            // try to send to workers again
-            tempList.forEach {
-                this.tellWorkerToDoNewWork(it)
-            }
-            this.log.info("done running queue checking on managerbase, have ${messagesInQueue.size} waiting still...")
+            this.log.info("Have ${messagesInQueue.size} waiting with ${this.workers.size} workers:")
             this.workers.values.forEach {
                 this.log.info("${it.actorRef.path().toString()}: ${it.configuration.state.name}")
             }
+            this.self.tell(YadelModels.ServiceToManagerMessage.newBuilder().setType(YadelModels.ServiceToManagerType.GET_IDLE_WORKERS_WORKING).build(), this.self)
         }
         this.context.system().scheduler().schedule(OneMinute, OneMinute, runnable,this.context.system().dispatcher())
     }
@@ -55,19 +38,11 @@ open class ManagerBase :UntypedActor() {
                 this.handleWorkerMessage(p0, YadelModels.WorkerState.WORKING)
             }
             else if (YadelModels.WorkerToManagerMessageType.NOW_IDLE.equals(p0.type)) {
-                this.log.info("handling idle")
                 this.handleWorkerMessage(p0, YadelModels.WorkerState.IDLE)
-
-                this.lockObject.lock()
-                try {
-                    if (this.messagesInQueue.size > 0) {
-                        val firstMessage = this.messagesInQueue.first()
-                        this.messagesInQueue.remove(firstMessage)
-                        this.tellWorkerToDoNewWork(firstMessage)
-                    }
-                }
-                finally {
-                    this.lockObject.unlock()
+                if (this.messagesInQueue.size > 0) {
+                    val firstMessage = this.messagesInQueue.first()
+                    this.messagesInQueue.remove(firstMessage)
+                    this.tellWorkerToDoNewWork(firstMessage)
                 }
             }
         }
@@ -103,6 +78,19 @@ open class ManagerBase :UntypedActor() {
                     firstWorker.actorRef.tell(message, this.sender)
                 }
             }
+            else if (YadelModels.ServiceToManagerType.GET_IDLE_WORKERS_WORKING.equals(p0.type)) {
+                this.log.info("getting any idles workers to working")
+                val idleCount = this.workers.values.count { YadelModels.WorkerState.IDLE.equals(it.configuration.state) }
+                if (idleCount > 0 && this.messagesInQueue.size > 0) {
+                    var sentMessages = 0
+                    while(sentMessages < Math.min(idleCount, this.messagesInQueue.size)) {
+                        val firstMessage = this.messagesInQueue.first()
+                        this.messagesInQueue.remove(firstMessage)
+                        this.tellWorkerToDoNewWork(firstMessage)
+                        sentMessages++
+                    }
+                }
+            }
         }
         else if (p0 is Terminated) {
             this.log.info("handling termination")
@@ -111,101 +99,71 @@ open class ManagerBase :UntypedActor() {
     }
 
     protected fun tellWorkerToDoNewWork(message:YadelModels.ServiceToManagerMessage) {
-        this.lockObject.lock()
-        try {
-            val openWorkers = this.workers.values.filter { it.configuration.state.equals(YadelModels.WorkerState.IDLE) }
+        val openWorkers = this.workers.values.filter { it.configuration.state.equals(YadelModels.WorkerState.IDLE) }
 
-            if (!openWorkers.any()) {
-                this.messagesInQueue.add(message)
-            }
-            else {
-                val foundWorker = openWorkers.first()
-                val workerKey = this.getActorRefKey(foundWorker.actorRef)
-                val foundTuple = this.workers[workerKey]
-                val newBuilder = foundTuple!!.configuration.toBuilder()
-                newBuilder.state = YadelModels.WorkerState.WORKING
-                this.workers[workerKey] = ConfigurationActorRef(foundWorker.actorRef, newBuilder.build())
-
-                val workMessage = YadelModels.ManagerToWorkerMessage
-                        .newBuilder()
-                        .setName(message.name)
-                        .addAllContext(message.contextList)
-                        .setType(YadelModels.ManagerToWorkerMessageType.START_WORKING)
-                        .build()
-
-                this.log.info("telling ${foundWorker.actorRef.path().address().toString()} to process ${message.name}")
-                foundWorker.actorRef.tell(workMessage, this.self)
-            }
+        if (!openWorkers.any()) {
+            this.messagesInQueue.add(message)
         }
-        finally {
-            this.lockObject.unlock()
+        else {
+            val foundWorker = openWorkers.first()
+            val workerKey = this.getActorRefKey(foundWorker.actorRef)
+            val foundTuple = this.workers[workerKey]
+            val newBuilder = foundTuple!!.configuration.toBuilder()
+            newBuilder.state = YadelModels.WorkerState.WORKING
+            this.workers[workerKey] = ConfigurationActorRef(foundWorker.actorRef, newBuilder.build())
+
+            val workMessage = YadelModels.ManagerToWorkerMessage
+                    .newBuilder()
+                    .setName(message.name)
+                    .addAllContext(message.contextList)
+                    .setType(YadelModels.ManagerToWorkerMessageType.START_WORKING)
+                    .build()
+
+            this.log.info("telling ${foundWorker.actorRef.path().address().toString()} to process ${message.name}")
+            foundWorker.actorRef.tell(workMessage, this.self)
         }
     }
 
     private fun reportWorkerStatus() {
-        this.lockObject.lock()
-        try {
-            val reportModel = YadelModels.WorkerStatusReport.newBuilder()
+        val reportModel = YadelModels.WorkerStatusReport.newBuilder()
 
-            this.workers.forEach { s, configurationActorRef ->
-                val configuration = configurationActorRef.configuration
-                reportModel.addWorkerConfigurations(configuration)
-            }
-            val managerToServiceModel = YadelModels.ManagerToServiceMessage.newBuilder().setReport(reportModel).build()
-            this.sender.tell(managerToServiceModel, this.self)
+        this.workers.forEach { s, configurationActorRef ->
+            val configuration = configurationActorRef.configuration
+            reportModel.addWorkerConfigurations(configuration)
         }
-        finally {
-            this.lockObject.unlock()
-        }
+        val managerToServiceModel = YadelModels.ManagerToServiceMessage.newBuilder().setReport(reportModel).build()
+        this.sender.tell(managerToServiceModel, this.self)
     }
 
     private fun handleWorkerMessage(message:YadelModels.WorkerToManagerMessage, newState:YadelModels.WorkerState) {
-        this.lockObject.lock()
-        try {
-            val workerKey = this.getActorRefKey(this.sender)
-            if (this.workers.containsKey(workerKey)) {
-                val foundTuple = this.workers[workerKey]
-                val newBuilder = foundTuple!!.configuration.toBuilder()
-                newBuilder.state = newState
-                newBuilder.lastWorkerToManagerMessage = message
-                this.workers[workerKey] = ConfigurationActorRef(this.sender, newBuilder.build())
-            }
-        }
-        finally {
-            this.lockObject.unlock()
+        val workerKey = this.getActorRefKey(this.sender)
+        if (this.workers.containsKey(workerKey)) {
+            val foundTuple = this.workers[workerKey]
+            val newBuilder = foundTuple!!.configuration.toBuilder()
+            newBuilder.state = newState
+            newBuilder.lastWorkerToManagerMessage = message
+            this.workers[workerKey] = ConfigurationActorRef(this.sender, newBuilder.build())
         }
     }
 
     private fun handleRegistration() {
-        this.lockObject.lock()
-        try {
-            this.context.watch(this.sender)
-            val key = this.getActorRefKey(this.sender)
+        this.context.watch(this.sender)
+        val key = this.getActorRefKey(this.sender)
 
-            val newConfiguration = YadelModels.WorkerConfiguration.newBuilder()
-                    .setHost(this.sender.path().address().host().get())
-                    .setPort(this.sender.path().address().port().get().toString())
-                    .setIp(key)
-                    .setInitializedTime(Date().time)
-                    .setState(YadelModels.WorkerState.IDLE)
-            val tuple = ConfigurationActorRef(this.sender, newConfiguration.build())
-            this.workers.put(key, tuple)
-        }
-        finally {
-            this.lockObject.unlock()
-        }
+        val newConfiguration = YadelModels.WorkerConfiguration.newBuilder()
+                .setHost(this.sender.path().address().host().get())
+                .setPort(this.sender.path().address().port().get().toString())
+                .setIp(key)
+                .setInitializedTime(Date().time)
+                .setState(YadelModels.WorkerState.IDLE)
+        val tuple = ConfigurationActorRef(this.sender, newConfiguration.build())
+        this.workers.put(key, tuple)
     }
 
     private fun handleTermination(terminated: Terminated) {
-        this.lockObject.lock()
-        try {
-            val key = this.getActorRefKey(terminated.actor)
-            if (this.workers.containsKey(key)) {
-                this.workers.remove(key)
-            }
-        }
-        finally {
-            this.lockObject.unlock()
+        val key = this.getActorRefKey(terminated.actor)
+        if (this.workers.containsKey(key)) {
+            this.workers.remove(key)
         }
     }
 
