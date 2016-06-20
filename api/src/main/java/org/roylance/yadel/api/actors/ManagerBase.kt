@@ -79,7 +79,7 @@ open class ManagerBase :UntypedActor() {
                 }
             }
             else if (YadelModels.ServiceToManagerType.GET_IDLE_WORKERS_WORKING.equals(p0.type)) {
-                this.log.info("getting any idles workers to working")
+                this.log.info("telling idle workers to work...")
                 val idleCount = this.workers.values.count { YadelModels.WorkerState.IDLE.equals(it.configuration.state) }
                 if (idleCount > 0 && this.messagesInQueue.size > 0) {
                     var sentMessages = 0
