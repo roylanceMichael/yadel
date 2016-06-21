@@ -3,52 +3,12 @@ package org.roylance.yadel.api.models;
 
 import "google/protobuf/any.proto";
 
-message WorkerStatusReport {
-    repeated WorkerConfiguration worker_configurations = 1;
-}
-
 message WorkerConfiguration {
     string ip = 1;
     string port = 2;
     string host = 3;
     uint64 initialized_time = 4;
     WorkerState state = 5;
-    ManagerToWorkerMessage last_manager_to_worker_message = 6;
-    WorkerToManagerMessage last_worker_to_manager_message = 7;
-}
-
-message ServiceToManagerMessage {
-    ServiceToManagerType type = 1;
-    string name = 2;
-    repeated google.protobuf.Any context = 3;
-    SpawnMessage spawn_message = 4;
-}
-
-message ManagerToServiceMessage {
-    WorkerStatusReport report = 1;
-}
-
-message ManagerToWorkerMessage {
-    ManagerToWorkerMessageType type = 1;
-    string name = 2;
-    repeated google.protobuf.Any context = 3;
-    SpawnMessage spawn_message = 4;
-}
-
-message WorkerToManagerMessage {
-    WorkerToManagerMessageType type = 1;
-    string name = 2;
-    repeated google.protobuf.Any context = 3;
-}
-
-message SpawnMessage {
-    string bash_command = 1;
-    string host = 2;
-    string port = 3;
-    string seedHost1 = 4;
-    string seedPort1 = 5;
-    string seedHost2 = 6;
-    string seedPort2 = 7;
 }
 
 enum WorkerState {
@@ -56,27 +16,67 @@ enum WorkerState {
     IDLE = 1;
 }
 
-enum ServiceToManagerType {
-    REPORT_WORKER_STATUS = 0;
-    DO_NEW_WORK = 1;
-    SPAWN_NEW_WORKER = 2;
-    REDUCE_WORKER_COUNT = 3;
-    GET_IDLE_WORKERS_WORKING = 4;
-}
-
-enum ManagerToWorkerMessageType {
-    START_WORKING = 0;
-    KILL_YOURSELF = 1;
-    SPAWN_NEW_WORKER_AT_YOUR_LOCATION = 2;
-}
-
 enum WorkerToManagerMessageType {
     REGISTRATION = 0;
-    NOW_WORKING = 1;
-    NOW_IDLE = 2;
+}
+
+enum ManagerToManagerMessageType {
+    ENSURE_WORKERS_WORKING = 0;
 }
 
 enum ActorRole {
     MANAGER = 0;
     WORKER = 1;
+}
+
+message DagDefinition {
+    string id = 1;
+    string display = 2;
+    map<string, TaskDefinition> flattened_tasks = 3;
+}
+
+message TaskDefinition {
+    string id = 1;
+    string display = 2;
+    map<string, TaskDefinition> dependencies = 3;
+    DagDefinition dag_definition = 4;
+    repeated string logs = 5;
+}
+
+message Dag {
+    DagDefinition dag_definition = 1;
+    int64 execution_date = 2;
+    int64 start_date = 3;
+    int64 end_date = 4;
+    int64 duration = 5;
+    map<string, Task> uncompleted_tasks = 6;
+    map<string, Task> processing_tasks = 7;
+    map<string, CompleteTask> errored_tasks = 8;
+    map<string, CompleteTask> completed_tasks = 9;
+}
+
+message Task {
+    TaskDefinition task_definition = 1;
+    int64 execution_date = 2;
+    int64 start_date = 3;
+    int64 end_date = 4;
+    int64 duration = 5;
+    google.protobuf.Any first_context = 6;
+    google.protobuf.Any second_context = 7;
+    google.protobuf.Any third_context = 8;
+}
+
+message AddTaskToDag {
+    TaskDefinition parent_task = 1;
+    TaskDefinition new_task = 2;
+    google.protobuf.Any first_context = 3;
+    google.protobuf.Any second_context = 4;
+    google.protobuf.Any third_context = 5;
+}
+
+message CompleteTask {
+    TaskDefinition task_definition = 1;
+    WorkerConfiguration worker_configuration = 2;
+    repeated string logs = 3;
+    bool is_error = 4;
 }

@@ -12,8 +12,7 @@ import scala.Tuple2
 class WorkerBuilder<T:WorkerBase>(
         private val hostName:String,
         private val port:String,
-        private val workerClass:Class<T>
-):IBuilder<Tuple2<ActorSystem, ActorRef>> {
+        private val workerClass:Class<T>):IBuilder<Tuple2<ActorSystem, ActorRef>> {
 
     override fun build(): Tuple2<ActorSystem, ActorRef> {
         val config = ConfigFactory.parseString(String.format(CommonTokens.TcpPortConifguration, port))

@@ -7,28 +7,38 @@ class SampleWorker:WorkerBase() {
     override fun onReceive(p0: Any?) {
         this.log.info("received message... child")
         super.onReceive(p0)
-        if(p0 is YadelModels.ManagerToWorkerMessage) {
-            if (p0.type.equals(YadelModels.ManagerToWorkerMessageType.START_WORKING)) {
-                this.log.info("received message to start working!")
-                val responseMessage = YadelModels.WorkerToManagerMessage.newBuilder()
-                responseMessage.name = p0.name
-                this.log.info("telling manager that we're working!")
-                this.startWorking(responseMessage)
 
-                val workspace = StringBuilder()
-                var i = 0;
-                while (i < 50) {
-                    System.out.println("working on $i!")
-                    workspace.appendln(i)
-                    Thread.sleep(500)
-                    i++
-                }
+        if (p0 is YadelModels.Task) {
+            val completeTask = this.handleMessage(p0.taskDefinition.id)
+            completeTask.taskDefinition = p0.taskDefinition
+            this.completeTask(completeTask.build())
+        }
+    }
 
-                val newContext = responseMessage.addContextBuilder()
-                newContext.value = YadelModels.WorkerToManagerMessage.newBuilder().setName("yoyoyo").build().toByteString()
-                this.log.info("telling manager that we're done working!")
-                this.finishWorking(responseMessage)
+    private fun handleMessage(id:String):YadelModels.CompleteTask.Builder {
+        val returnCompleteTask = YadelModels.CompleteTask.newBuilder()
+        val splitItem = id.split(" to ")
+        if (splitItem.size == 2) {
+            val countingMessage = "counting... $id"
+            this.log.info(countingMessage)
+            returnCompleteTask.addLogs(countingMessage)
+
+            var startNumber = splitItem[0].toInt()
+            val endNumber = splitItem[1].toInt()
+
+            while (startNumber < endNumber) {
+                val logMessage = "$startNumber"
+                returnCompleteTask.addLogs(logMessage)
+                this.log.info(logMessage)
+                startNumber++
+                Thread.sleep(500)
             }
         }
+        else {
+            returnCompleteTask.isError = true
+            returnCompleteTask.addLogs("improper key: $id")
+        }
+
+        return returnCompleteTask
     }
 }
