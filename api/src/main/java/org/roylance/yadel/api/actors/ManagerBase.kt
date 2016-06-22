@@ -24,24 +24,9 @@ open class ManagerBase :UntypedActor() {
                 val availableTaskIds = getAllAvailableTaskIds(it)
                 this.log.info("${it.dagDefinition.display} (${it.dagDefinition.id})")
                 this.log.info("${it.mutableUncompletedTasks.size} uncompleted tasks")
-//                it.mutableUncompletedTasks.forEach { uncompletedTask ->
-//                    this.log.info("${uncompletedTask.key}")
-//                    this.log.info("dependencies: ${uncompletedTask.value.taskDefinition.dependencies.size} - ${uncompletedTask.value.taskDefinition.dependencies.values.map { it.id }.joinToString()}")
-//                }
                 this.log.info("${it.mutableProcessingTasks.size} processing tasks")
-//                it.mutableProcessingTasks.forEach { processingTask ->
-//                    this.log.info("${processingTask.key}")
-//                    this.log.info("dependencies: ${processingTask.value.taskDefinition.dependencies.size} - ${processingTask.value.taskDefinition.dependencies.values.map { it.id }.joinToString()}")
-//                }
                 this.log.info("${it.mutableErroredTasks.size} error tasks")
-//                it.mutableErroredTasks.forEach { errorTask ->
-//                    this.log.info("${errorTask.key}")
-//                    this.log.info("dependencies: ${errorTask.value.taskDefinition.dependencies.size} - ${errorTask.value.taskDefinition.dependencies.values.map { it.id }.joinToString()}")
-//                }
                 this.log.info("${it.mutableCompletedTasks.size} completed tasks")
-//                it.mutableCompletedTasks.forEach { completedTask ->
-//                    this.log.info("${completedTask.key}")
-//                }
 
                 this.log.info("${availableTaskIds.size} task(s) can be executed right now with ${this.workers.values.count { it.configuration.state.equals(YadelModels.WorkerState.IDLE) }} idle worker(s)")
             }
@@ -60,22 +45,22 @@ open class ManagerBase :UntypedActor() {
             this.activeDags[p0.dagDefinition.id] = p0.toBuilder()
 
         }
-        else if (p0 is YadelModels.AddTaskToDag && this.activeDags.containsKey(p0.parentTask.dagDefinition.id)) {
-            val foundDag = this.activeDags[p0.parentTask.dagDefinition.id]!!
+        else if (p0 is YadelModels.AddTaskToDag &&
+                p0.hasNewTask() &&
+                p0.newTask.hasDagDefinition() &&
+                this.activeDags.containsKey(p0.newTask.dagDefinition.id)) {
+            val foundDag = this.activeDags[p0.newTask.dagDefinition.id]!!
+            foundDag.dagDefinitionBuilder.mutableFlattenedTasks[p0.newTask.id] = p0.newTask
 
-            if (foundDag.dagDefinitionBuilder.mutableFlattenedTasks.containsKey(p0.parentTask.id)) {
-                val parentTask = foundDag.dagDefinitionBuilder.mutableFlattenedTasks[p0.parentTask.id]!!
-                parentTask.dependencies[p0.newTask.id] = p0.newTask
-                foundDag.dagDefinitionBuilder.mutableFlattenedTasks[p0.newTask.id] = p0.newTask
+            val newTask = YadelModels.Task.newBuilder()
+                    .setFirstContext(p0.firstContext)
+                    .setSecondContext(p0.secondContext)
+                    .setThirdContext(p0.thirdContext)
+                    .setTaskDefinition(p0.newTask)
+                    .setStartDate(Date().time)
+                    .setExecutionDate(Date().time)
 
-                val newTask = YadelModels.Task.newBuilder()
-                        .setFirstContext(p0.firstContext)
-                        .setSecondContext(p0.secondContext)
-                        .setThirdContext(p0.thirdContext)
-                        .build()
-
-                foundDag.mutableUncompletedTasks[newTask.taskDefinition.id] = newTask
-            }
+            foundDag.mutableUncompletedTasks[p0.newTask.id] = newTask.build()
         }
         else if (p0 is YadelModels.CompleteTask) {
             this.updateSenderStatus(YadelModels.WorkerState.IDLE)

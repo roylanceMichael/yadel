@@ -2,16 +2,37 @@ package org.roylance.yadel.sample
 
 import org.roylance.yadel.api.actors.WorkerBase
 import org.roylance.yadel.api.models.YadelModels
+import java.util.*
 
 class SampleWorker:WorkerBase() {
+    private val random = Random()
+
     override fun onReceive(p0: Any?) {
-        this.log.info("received message... child")
         super.onReceive(p0)
 
         if (p0 is YadelModels.Task) {
             val completeTask = this.handleMessage(p0.taskDefinition.id)
             completeTask.taskDefinition = p0.taskDefinition
             this.completeTask(completeTask.build())
+
+            if (random.nextBoolean()) {
+                val randomInt = this.random.nextInt()
+                val idAndDisplay = "$randomInt to ${randomInt + 100}"
+                val newTask = YadelModels.TaskDefinition.newBuilder()
+                        .setId(idAndDisplay)
+                        .setDisplay(idAndDisplay)
+                        .setDagDefinition(p0.taskDefinition.dagDefinition)
+
+                newTask.mutableDependencies[p0.taskDefinition.id] = p0.taskDefinition
+
+                val addTask = YadelModels.AddTaskToDag
+                        .newBuilder()
+                        .setParentTask(p0.taskDefinition)
+                        .setNewTask(newTask)
+
+                this.getManagerSelection()?.tell(addTask.build(), this.self)
+                this.log.info("${addTask.toString()}")
+            }
         }
     }
 
