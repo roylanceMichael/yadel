@@ -9,7 +9,7 @@ declare var angular: any;
 const localUrlService = new LocalUrlService();
 const mainControllerName = "mainController";
 
-var app = angular.module('jsapp', [
+const app = angular.module('jsapp', [
     "ngRoute"
 ]);
 
