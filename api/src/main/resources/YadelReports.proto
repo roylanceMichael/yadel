@@ -1,0 +1,39 @@
+syntax = "proto3";
+package org.roylance.yadel.api.models;
+
+enum UIRequests {
+    REPORT_DAGS = 0;
+}
+
+message UIDagReport {
+    repeated UIDag dags = 1;
+}
+
+message UIDag {
+    string id = 1;
+    string display = 2;
+    map<string, UINode> nodes = 3;
+    repeated UIEdge edges = 4;
+    bool is_completed = 5;
+    bool is_processing = 6;
+    bool is_error = 7;
+    repeated string logs = 8;
+}
+
+message UIEdge {
+    string node_id_1 = 1;
+    string node_id_2 = 2;
+}
+
+message UINode {
+    string id = 1;
+    string display = 2;
+    int64 execution_date = 4;
+    int64 start_date = 5;
+    int64 end_date = 6;
+    int64 duration = 7;
+    bool is_completed = 8;
+    bool is_processing = 9;
+    bool is_error = 10;
+    repeated string logs = 11;
+}

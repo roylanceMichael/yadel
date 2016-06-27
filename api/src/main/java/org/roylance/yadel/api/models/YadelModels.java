@@ -16,12 +16,12 @@ public final class YadelModels {
     /**
      * <code>WORKING = 0;</code>
      */
-    WORKING(0, 0),
+    WORKING(0),
     /**
      * <code>IDLE = 1;</code>
      */
-    IDLE(1, 1),
-    UNRECOGNIZED(-1, -1),
+    IDLE(1),
+    UNRECOGNIZED(-1),
     ;
 
     /**
@@ -35,14 +35,22 @@ public final class YadelModels {
 
 
     public final int getNumber() {
-      if (index == -1) {
+      if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
     }
 
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
     public static WorkerState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static WorkerState forNumber(int value) {
       switch (value) {
         case 0: return WORKING;
         case 1: return IDLE;
@@ -58,13 +66,13 @@ public final class YadelModels {
         WorkerState> internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<WorkerState>() {
             public WorkerState findValueByNumber(int number) {
-              return WorkerState.valueOf(number);
+              return WorkerState.forNumber(number);
             }
           };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
-      return getDescriptor().getValues().get(index);
+      return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
@@ -89,11 +97,9 @@ public final class YadelModels {
       return VALUES[desc.getIndex()];
     }
 
-    private final int index;
     private final int value;
 
-    private WorkerState(int index, int value) {
-      this.index = index;
+    private WorkerState(int value) {
       this.value = value;
     }
 
@@ -108,8 +114,8 @@ public final class YadelModels {
     /**
      * <code>REGISTRATION = 0;</code>
      */
-    REGISTRATION(0, 0),
-    UNRECOGNIZED(-1, -1),
+    REGISTRATION(0),
+    UNRECOGNIZED(-1),
     ;
 
     /**
@@ -119,14 +125,22 @@ public final class YadelModels {
 
 
     public final int getNumber() {
-      if (index == -1) {
+      if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
     }
 
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
     public static WorkerToManagerMessageType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static WorkerToManagerMessageType forNumber(int value) {
       switch (value) {
         case 0: return REGISTRATION;
         default: return null;
@@ -141,13 +155,13 @@ public final class YadelModels {
         WorkerToManagerMessageType> internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<WorkerToManagerMessageType>() {
             public WorkerToManagerMessageType findValueByNumber(int number) {
-              return WorkerToManagerMessageType.valueOf(number);
+              return WorkerToManagerMessageType.forNumber(number);
             }
           };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
-      return getDescriptor().getValues().get(index);
+      return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
@@ -172,11 +186,9 @@ public final class YadelModels {
       return VALUES[desc.getIndex()];
     }
 
-    private final int index;
     private final int value;
 
-    private WorkerToManagerMessageType(int index, int value) {
-      this.index = index;
+    private WorkerToManagerMessageType(int value) {
       this.value = value;
     }
 
@@ -191,8 +203,8 @@ public final class YadelModels {
     /**
      * <code>ENSURE_WORKERS_WORKING = 0;</code>
      */
-    ENSURE_WORKERS_WORKING(0, 0),
-    UNRECOGNIZED(-1, -1),
+    ENSURE_WORKERS_WORKING(0),
+    UNRECOGNIZED(-1),
     ;
 
     /**
@@ -202,14 +214,22 @@ public final class YadelModels {
 
 
     public final int getNumber() {
-      if (index == -1) {
+      if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
     }
 
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
     public static ManagerToManagerMessageType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ManagerToManagerMessageType forNumber(int value) {
       switch (value) {
         case 0: return ENSURE_WORKERS_WORKING;
         default: return null;
@@ -224,13 +244,13 @@ public final class YadelModels {
         ManagerToManagerMessageType> internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<ManagerToManagerMessageType>() {
             public ManagerToManagerMessageType findValueByNumber(int number) {
-              return ManagerToManagerMessageType.valueOf(number);
+              return ManagerToManagerMessageType.forNumber(number);
             }
           };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
-      return getDescriptor().getValues().get(index);
+      return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
@@ -255,11 +275,9 @@ public final class YadelModels {
       return VALUES[desc.getIndex()];
     }
 
-    private final int index;
     private final int value;
 
-    private ManagerToManagerMessageType(int index, int value) {
-      this.index = index;
+    private ManagerToManagerMessageType(int value) {
       this.value = value;
     }
 
@@ -274,12 +292,12 @@ public final class YadelModels {
     /**
      * <code>MANAGER = 0;</code>
      */
-    MANAGER(0, 0),
+    MANAGER(0),
     /**
      * <code>WORKER = 1;</code>
      */
-    WORKER(1, 1),
-    UNRECOGNIZED(-1, -1),
+    WORKER(1),
+    UNRECOGNIZED(-1),
     ;
 
     /**
@@ -293,14 +311,22 @@ public final class YadelModels {
 
 
     public final int getNumber() {
-      if (index == -1) {
+      if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
     }
 
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
     public static ActorRole valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ActorRole forNumber(int value) {
       switch (value) {
         case 0: return MANAGER;
         case 1: return WORKER;
@@ -316,13 +342,13 @@ public final class YadelModels {
         ActorRole> internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<ActorRole>() {
             public ActorRole findValueByNumber(int number) {
-              return ActorRole.valueOf(number);
+              return ActorRole.forNumber(number);
             }
           };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
-      return getDescriptor().getValues().get(index);
+      return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
@@ -347,11 +373,9 @@ public final class YadelModels {
       return VALUES[desc.getIndex()];
     }
 
-    private final int index;
     private final int value;
 
-    private ActorRole(int index, int value) {
-      this.index = index;
+    private ActorRole(int value) {
       this.value = value;
     }
 
@@ -432,7 +456,8 @@ public final class YadelModels {
     }
     private WorkerConfiguration(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
       try {
@@ -481,11 +506,10 @@ public final class YadelModels {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
       } finally {
         makeExtensionsImmutable();
       }
@@ -625,7 +649,7 @@ public final class YadelModels {
      * <code>optional .org.roylance.yadel.api.models.WorkerState state = 5;</code>
      */
     public org.roylance.yadel.api.models.YadelModels.WorkerState getState() {
-      org.roylance.yadel.api.models.YadelModels.WorkerState result = org.roylance.yadel.api.models.YadelModels.WorkerState.valueOf(state_);
+      org.roylance.yadel.api.models.YadelModels.WorkerState result = org.roylance.yadel.api.models.YadelModels.WorkerState.forNumber(state_);
       return result == null ? org.roylance.yadel.api.models.YadelModels.WorkerState.UNRECOGNIZED : result;
     }
 
@@ -708,34 +732,40 @@ public final class YadelModels {
     }
     public static org.roylance.yadel.api.models.YadelModels.WorkerConfiguration parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.WorkerConfiguration parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.WorkerConfiguration parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.WorkerConfiguration parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.WorkerConfiguration parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.WorkerConfiguration parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     public Builder newBuilderForType() { return newBuilder(); }
@@ -878,7 +908,7 @@ public final class YadelModels {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (org.roylance.yadel.api.models.YadelModels.WorkerConfiguration) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -1139,7 +1169,7 @@ public final class YadelModels {
        * <code>optional .org.roylance.yadel.api.models.WorkerState state = 5;</code>
        */
       public org.roylance.yadel.api.models.YadelModels.WorkerState getState() {
-        org.roylance.yadel.api.models.YadelModels.WorkerState result = org.roylance.yadel.api.models.YadelModels.WorkerState.valueOf(state_);
+        org.roylance.yadel.api.models.YadelModels.WorkerState result = org.roylance.yadel.api.models.YadelModels.WorkerState.forNumber(state_);
         return result == null ? org.roylance.yadel.api.models.YadelModels.WorkerState.UNRECOGNIZED : result;
       }
       /**
@@ -1193,16 +1223,7 @@ public final class YadelModels {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
           return new WorkerConfiguration(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
       }
     };
 
@@ -1274,7 +1295,8 @@ public final class YadelModels {
     }
     private DagDefinition(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
       try {
@@ -1318,11 +1340,10 @@ public final class YadelModels {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
       } finally {
         makeExtensionsImmutable();
       }
@@ -1438,7 +1459,7 @@ public final class YadelModels {
       if (flattenedTasks_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             FlattenedTasksDefaultEntryHolder.defaultEntry);
-     }
+      }
       return flattenedTasks_;
     }
     /**
@@ -1527,34 +1548,40 @@ public final class YadelModels {
     }
     public static org.roylance.yadel.api.models.YadelModels.DagDefinition parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.DagDefinition parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.DagDefinition parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.DagDefinition parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.DagDefinition parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.DagDefinition parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     public Builder newBuilderForType() { return newBuilder(); }
@@ -1708,7 +1735,7 @@ public final class YadelModels {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (org.roylance.yadel.api.models.YadelModels.DagDefinition) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -1863,7 +1890,7 @@ public final class YadelModels {
         if (flattenedTasks_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               FlattenedTasksDefaultEntryHolder.defaultEntry);
-       }
+        }
         return flattenedTasks_;
       }
       private com.google.protobuf.MapField<java.lang.String, org.roylance.yadel.api.models.YadelModels.TaskDefinition>
@@ -1929,16 +1956,7 @@ public final class YadelModels {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
           return new DagDefinition(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
       }
     };
 
@@ -2043,7 +2061,8 @@ public final class YadelModels {
     }
     private TaskDefinition(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
       try {
@@ -2109,11 +2128,10 @@ public final class YadelModels {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           logs_ = logs_.getUnmodifiableView();
@@ -2232,7 +2250,7 @@ public final class YadelModels {
       if (dependencies_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             DependenciesDefaultEntryHolder.defaultEntry);
-     }
+      }
       return dependencies_;
     }
     /**
@@ -2389,34 +2407,40 @@ public final class YadelModels {
     }
     public static org.roylance.yadel.api.models.YadelModels.TaskDefinition parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.TaskDefinition parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.TaskDefinition parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.TaskDefinition parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.TaskDefinition parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.TaskDefinition parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     public Builder newBuilderForType() { return newBuilder(); }
@@ -2601,7 +2625,7 @@ public final class YadelModels {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (org.roylance.yadel.api.models.YadelModels.TaskDefinition) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -2756,7 +2780,7 @@ public final class YadelModels {
         if (dependencies_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               DependenciesDefaultEntryHolder.defaultEntry);
-       }
+        }
         return dependencies_;
       }
       private com.google.protobuf.MapField<java.lang.String, org.roylance.yadel.api.models.YadelModels.TaskDefinition>
@@ -3033,16 +3057,7 @@ public final class YadelModels {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
           return new TaskDefinition(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
       }
     };
 
@@ -3147,7 +3162,8 @@ public final class YadelModels {
     }
     private Dag(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
       try {
@@ -3248,11 +3264,10 @@ public final class YadelModels {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
       } finally {
         makeExtensionsImmutable();
       }
@@ -3363,7 +3378,7 @@ public final class YadelModels {
       if (uncompletedTasks_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             UncompletedTasksDefaultEntryHolder.defaultEntry);
-     }
+      }
       return uncompletedTasks_;
     }
     /**
@@ -3393,7 +3408,7 @@ public final class YadelModels {
       if (processingTasks_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ProcessingTasksDefaultEntryHolder.defaultEntry);
-     }
+      }
       return processingTasks_;
     }
     /**
@@ -3423,7 +3438,7 @@ public final class YadelModels {
       if (erroredTasks_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ErroredTasksDefaultEntryHolder.defaultEntry);
-     }
+      }
       return erroredTasks_;
     }
     /**
@@ -3453,7 +3468,7 @@ public final class YadelModels {
       if (completedTasks_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             CompletedTasksDefaultEntryHolder.defaultEntry);
-     }
+      }
       return completedTasks_;
     }
     /**
@@ -3622,34 +3637,40 @@ public final class YadelModels {
     }
     public static org.roylance.yadel.api.models.YadelModels.Dag parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.Dag parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.Dag parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.Dag parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.Dag parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.Dag parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     public Builder newBuilderForType() { return newBuilder(); }
@@ -3854,7 +3875,7 @@ public final class YadelModels {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (org.roylance.yadel.api.models.YadelModels.Dag) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -4092,7 +4113,7 @@ public final class YadelModels {
         if (uncompletedTasks_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               UncompletedTasksDefaultEntryHolder.defaultEntry);
-       }
+        }
         return uncompletedTasks_;
       }
       private com.google.protobuf.MapField<java.lang.String, org.roylance.yadel.api.models.YadelModels.Task>
@@ -4136,7 +4157,7 @@ public final class YadelModels {
         if (processingTasks_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ProcessingTasksDefaultEntryHolder.defaultEntry);
-       }
+        }
         return processingTasks_;
       }
       private com.google.protobuf.MapField<java.lang.String, org.roylance.yadel.api.models.YadelModels.Task>
@@ -4180,7 +4201,7 @@ public final class YadelModels {
         if (erroredTasks_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ErroredTasksDefaultEntryHolder.defaultEntry);
-       }
+        }
         return erroredTasks_;
       }
       private com.google.protobuf.MapField<java.lang.String, org.roylance.yadel.api.models.YadelModels.CompleteTask>
@@ -4224,7 +4245,7 @@ public final class YadelModels {
         if (completedTasks_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               CompletedTasksDefaultEntryHolder.defaultEntry);
-       }
+        }
         return completedTasks_;
       }
       private com.google.protobuf.MapField<java.lang.String, org.roylance.yadel.api.models.YadelModels.CompleteTask>
@@ -4290,16 +4311,7 @@ public final class YadelModels {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
           return new Dag(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
       }
     };
 
@@ -4419,7 +4431,8 @@ public final class YadelModels {
     }
     private Task(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
       try {
@@ -4511,11 +4524,10 @@ public final class YadelModels {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
       } finally {
         makeExtensionsImmutable();
       }
@@ -4755,34 +4767,40 @@ public final class YadelModels {
     }
     public static org.roylance.yadel.api.models.YadelModels.Task parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.Task parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.Task parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.Task parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.Task parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.Task parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     public Builder newBuilderForType() { return newBuilder(); }
@@ -4972,7 +4990,7 @@ public final class YadelModels {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (org.roylance.yadel.api.models.YadelModels.Task) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -5582,16 +5600,7 @@ public final class YadelModels {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
           return new Task(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
       }
     };
 
@@ -5700,7 +5709,8 @@ public final class YadelModels {
     }
     private AddTaskToDag(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
       try {
@@ -5785,11 +5795,10 @@ public final class YadelModels {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
       } finally {
         makeExtensionsImmutable();
       }
@@ -5993,34 +6002,40 @@ public final class YadelModels {
     }
     public static org.roylance.yadel.api.models.YadelModels.AddTaskToDag parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.AddTaskToDag parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.AddTaskToDag parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.AddTaskToDag parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.AddTaskToDag parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.AddTaskToDag parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     public Builder newBuilderForType() { return newBuilder(); }
@@ -6200,7 +6215,7 @@ public final class YadelModels {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (org.roylance.yadel.api.models.YadelModels.AddTaskToDag) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -6823,16 +6838,7 @@ public final class YadelModels {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
           return new AddTaskToDag(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
       }
     };
 
@@ -6928,7 +6934,8 @@ public final class YadelModels {
     }
     private CompleteTask(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
       try {
@@ -6988,11 +6995,10 @@ public final class YadelModels {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           logs_ = logs_.getUnmodifiableView();
@@ -7172,34 +7178,40 @@ public final class YadelModels {
     }
     public static org.roylance.yadel.api.models.YadelModels.CompleteTask parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.CompleteTask parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.CompleteTask parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.CompleteTask parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.api.models.YadelModels.CompleteTask parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.api.models.YadelModels.CompleteTask parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     public Builder newBuilderForType() { return newBuilder(); }
@@ -7363,7 +7375,7 @@ public final class YadelModels {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (org.roylance.yadel.api.models.YadelModels.CompleteTask) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -7756,16 +7768,7 @@ public final class YadelModels {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
           return new CompleteTask(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
       }
     };
 
@@ -7784,69 +7787,69 @@ public final class YadelModels {
 
   }
 
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_WorkerConfiguration_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_WorkerConfiguration_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_DagDefinition_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_DagDefinition_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_DagDefinition_FlattenedTasksEntry_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_DagDefinition_FlattenedTasksEntry_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_TaskDefinition_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_TaskDefinition_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_TaskDefinition_DependenciesEntry_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_TaskDefinition_DependenciesEntry_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_Dag_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_Dag_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_Dag_UncompletedTasksEntry_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_Dag_UncompletedTasksEntry_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_Dag_ProcessingTasksEntry_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_Dag_ProcessingTasksEntry_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_Dag_ErroredTasksEntry_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_Dag_ErroredTasksEntry_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_Dag_CompletedTasksEntry_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_Dag_CompletedTasksEntry_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_Task_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_Task_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_AddTaskToDag_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_AddTaskToDag_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_CompleteTask_descriptor;
-  private static
+  private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_CompleteTask_fieldAccessorTable;
 
@@ -7854,7 +7857,7 @@ public final class YadelModels {
       getDescriptor() {
     return descriptor;
   }
-  private static com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {

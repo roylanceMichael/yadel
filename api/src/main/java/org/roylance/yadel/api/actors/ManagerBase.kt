@@ -9,6 +9,8 @@ import org.roylance.yadel.api.models.YadelModels
 import scala.concurrent.duration.Duration
 import java.util.*
 import java.util.concurrent.TimeUnit
+import org.apache.commons.codec.binary.Base64
+import org.roylance.yadel.api.models.YadelReports
 
 open class ManagerBase :UntypedActor() {
     protected val workers = HashMap<String, ConfigurationActorRef>()
@@ -86,6 +88,43 @@ open class ManagerBase :UntypedActor() {
         else if (p0 is Terminated) {
             this.log.info("handling termination")
             this.handleTermination(p0)
+        }
+        else if (p0 is YadelReports.UIRequests) {
+            if (YadelReports.UIRequests.REPORT_DAGS.equals(p0)) {
+                val dagReport = YadelReports.UIDagReport.newBuilder()
+
+                this.activeDags.values.forEach { dag ->
+                    val newDag = YadelReports.UIDag.newBuilder()
+                                .setId(dag.dagDefinition.id)
+                                .setDisplay(dag.dagDefinition.display)
+                                .setIsCompleted(dag.uncompletedTasks.size == 0)
+
+                    dag.dagDefinition
+                            .flattenedTasks
+                            .values
+                            .forEach { task ->
+                                val newNode = YadelReports.UINode.newBuilder()
+                                        .setId(task.id)
+                                        .setDisplay(task.display)
+                                        .setIsCompleted(dag.completedTasks.containsKey(task.id))
+
+                                newDag.mutableNodes[newNode.id] = newNode.build()
+                                task.dependencies.keys.forEach { dependency ->
+                                    val newEdge = YadelReports.UIEdge.newBuilder()
+                                        .setNodeId1(task.id)
+                                        .setNodeId2(dependency)
+
+                                    newDag.addEdges(newEdge)
+                                }
+                            }
+
+                    dagReport.addDags(newDag.build())
+                }
+
+                // respond with message, but encode in base 64
+                val returnString = Base64.encodeBase64String(dagReport.build().toByteArray())
+                this.sender.tell(returnString, this.self)
+            }
         }
 
         this.tellWorkersToDoNewDagWork()

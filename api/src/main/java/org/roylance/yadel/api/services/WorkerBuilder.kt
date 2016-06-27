@@ -25,6 +25,7 @@ class WorkerBuilder<T:WorkerBase>(
                 system,
                 system.actorOf(Props.create(this.workerClass), YadelModels.ActorRole.WORKER.name))
 
+
         return returnTuple
     }
 }
