@@ -3,6 +3,12 @@ package org.roylance.yadel.api.models;
 
 enum UIRequests {
     REPORT_DAGS = 0;
+    DELETE_DAG = 1;
+}
+
+message UIRequest {
+    UIRequests request_type = 1;
+    string dag_id = 2;
 }
 
 message UIDagReport {

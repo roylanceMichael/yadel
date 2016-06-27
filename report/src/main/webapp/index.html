@@ -2,33 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Another Sample</title>
+    <title>Yadel Sample</title>
     <meta name="viewport" content="width=device-width" />
-    <script src="js/long.js"></script>
-    <script src="js/bytebuffer.js"></script>
-    <script src="js/protobuf.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script src="js/d3.js"></script>
-    <script src="js/dagre-d3.js"></script>
-    <script src="js/app.js"></script>
-    <style>
-        text {
-            font-weight: 300;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serf;
-            font-size: 14px;
-        }
-        .node rect {
-            stroke: #999;
-            fill: #fff;
-            stroke-width: 1.5px;
-        }
-        .edgePath path {
-            stroke: #333;
-            stroke-width: 1.5px;
-        }
-    </style>
+    <link rel="stylesheet" href="dist/all.css">
 </head>
-<body ng-app="jsapp" ng-controller="mainController">
-    <svg id="svg-canvas" width=1200 height=1200></svg>
+<body ng-app="jsapp">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand">Yadel Sample</span>
+            </div>
+        </div>
+    </nav>
+
+    <div ng-view style="padding-bottom: 100px; padding-top: 50px;"></div>
+
+    <script src="dist/vendor.min.js"></script>
+    <script src="dist/all.min.js"></script>
 </body>
 </html>

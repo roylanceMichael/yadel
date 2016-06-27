@@ -1,24 +1,16 @@
 package launch;
 
-import akka.actor.ActorRef;
-import akka.actor.ActorSystem;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
-import org.roylance.SampleManager;
-import org.roylance.yadel.api.enums.CommonTokens;
-import org.roylance.yadel.api.services.ManagerBuilder;
-import scala.Tuple2;
 
 import java.io.File;
-import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-
-        String webappDirLocation = "src/main/webapp/";
+        final String webappDirLocation = "src/main/webapp/";
         final Tomcat tomcat = new Tomcat();
 
         //The port that we should run on can be set into an environment variable

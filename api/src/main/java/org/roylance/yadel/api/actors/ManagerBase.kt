@@ -6,11 +6,10 @@ import akka.actor.UntypedActor
 import akka.event.Logging
 import org.roylance.yadel.api.models.ConfigurationActorRef
 import org.roylance.yadel.api.models.YadelModels
+import org.roylance.yadel.api.models.YadelReports
 import scala.concurrent.duration.Duration
 import java.util.*
 import java.util.concurrent.TimeUnit
-import org.apache.commons.codec.binary.Base64
-import org.roylance.yadel.api.models.YadelReports
 
 open class ManagerBase :UntypedActor() {
     protected val workers = HashMap<String, ConfigurationActorRef>()
@@ -42,10 +41,10 @@ open class ManagerBase :UntypedActor() {
 
     override fun onReceive(p0: Any?) {
         // is this a dag from someone?
-        if (p0 is YadelModels.Dag && !this.activeDags.containsKey(p0.dagDefinition.id)) {
+        if (p0 is YadelModels.Dag &&
+                !this.activeDags.containsKey(p0.dagDefinition.id)) {
             // are we processing this dag already?
             this.activeDags[p0.dagDefinition.id] = p0.toBuilder()
-
         }
         else if (p0 is YadelModels.AddTaskToDag &&
                 p0.hasNewTask() &&
@@ -89,41 +88,19 @@ open class ManagerBase :UntypedActor() {
             this.log.info("handling termination")
             this.handleTermination(p0)
         }
+        else if (p0 is YadelReports.UIRequest) {
+            if (p0.requestType.equals(YadelReports.UIRequests.REPORT_DAGS)) {
+                this.handleReport()
+            }
+            if (p0.requestType.equals(YadelReports.UIRequests.DELETE_DAG)) {
+                if (this.activeDags.containsKey(p0.dagId)) {
+                    this.activeDags.remove(p0.dagId)
+                }
+            }
+        }
         else if (p0 is YadelReports.UIRequests) {
             if (YadelReports.UIRequests.REPORT_DAGS.equals(p0)) {
-                val dagReport = YadelReports.UIDagReport.newBuilder()
-
-                this.activeDags.values.forEach { dag ->
-                    val newDag = YadelReports.UIDag.newBuilder()
-                                .setId(dag.dagDefinition.id)
-                                .setDisplay(dag.dagDefinition.display)
-                                .setIsCompleted(dag.uncompletedTasks.size == 0)
-
-                    dag.dagDefinition
-                            .flattenedTasks
-                            .values
-                            .forEach { task ->
-                                val newNode = YadelReports.UINode.newBuilder()
-                                        .setId(task.id)
-                                        .setDisplay(task.display)
-                                        .setIsCompleted(dag.completedTasks.containsKey(task.id))
-
-                                newDag.mutableNodes[newNode.id] = newNode.build()
-                                task.dependencies.keys.forEach { dependency ->
-                                    val newEdge = YadelReports.UIEdge.newBuilder()
-                                        .setNodeId1(task.id)
-                                        .setNodeId2(dependency)
-
-                                    newDag.addEdges(newEdge)
-                                }
-                            }
-
-                    dagReport.addDags(newDag.build())
-                }
-
-                // respond with message, but encode in base 64
-                val returnString = Base64.encodeBase64String(dagReport.build().toByteArray())
-                this.sender.tell(returnString, this.self)
+                this.handleReport()
             }
         }
 
@@ -153,6 +130,45 @@ open class ManagerBase :UntypedActor() {
                 }
             }
         }
+    }
+
+    private fun handleReport() {
+        val dagReport = YadelReports.UIDagReport.newBuilder()
+
+        this.activeDags.values.forEach { dag ->
+            val newDag = YadelReports.UIDag.newBuilder()
+                    .setId(dag.dagDefinition.id)
+                    .setDisplay(dag.dagDefinition.display)
+                    .setIsProcessing(dag.processingTasks.size > 0)
+                    .setIsError(dag.erroredTasks.size > 0)
+                    .setIsCompleted(dag.uncompletedTasks.size == 0)
+
+            dag.dagDefinition
+                    .flattenedTasks
+                    .values
+                    .forEach { task ->
+                        val newNode = YadelReports.UINode.newBuilder()
+                                .setId(task.id)
+                                .setDisplay(task.display)
+                                .setIsError(dag.erroredTasks.containsKey(task.id))
+                                .setIsProcessing(dag.processingTasks.containsKey(task.id))
+                                .setIsCompleted(dag.completedTasks.containsKey(task.id))
+
+                        newDag.mutableNodes[newNode.id] = newNode.build()
+                        task.dependencies.keys.forEach { dependency ->
+                            val newEdge = YadelReports.UIEdge.newBuilder()
+                                    .setNodeId1(task.id)
+                                    .setNodeId2(dependency)
+
+                            newDag.addEdges(newEdge)
+                        }
+                    }
+
+            dagReport.addDags(newDag.build())
+        }
+
+        // respond with message, but encode in base 64
+        this.sender.tell(dagReport.build(), this.self)
     }
 
     private fun getAllAvailableTaskIds(foundActiveDag:YadelModels.Dag.Builder):List<String> {

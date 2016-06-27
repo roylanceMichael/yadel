@@ -6,7 +6,7 @@ group 'org.roylance'
 version '0.1-SNAPSHOT'
 
 buildscript {
-    ext.CliServerUrl = "127.0.0.1"
+    ext.CliServerUrl = "192.168.12.120"
     ext.wgetUrl = "http://someurl/some.tar"
     ext.kotlinVersion = "1.0.2"
 
@@ -36,7 +36,7 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
-    compile 'org.roylance:yadel.api:0.43-SNAPSHOT'
+    compile 'org.roylance:yadel.api:0.45-SNAPSHOT'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
