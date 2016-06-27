@@ -32,7 +32,10 @@ public class ReportController {
     @Path("/delete/{id}")
     public void delete(@Suspended final AsyncResponse asyncResponse, @PathParam("id") final String id) {
         new Thread(() -> {
-            final YadelReports.UIRequest request = YadelReports.UIRequest.newBuilder().setDagId(id).build();
+            System.out.println(id);
+            final YadelReports.UIRequest request = YadelReports.UIRequest.newBuilder()
+                    .setRequestType(YadelReports.UIRequests.DELETE_DAG)
+                    .setDagId(id).build();
 
             final Future<Object> future = Patterns.ask(
                     ActorSingleton.getManager(),
@@ -42,6 +45,8 @@ public class ReportController {
             future.onComplete(new OnComplete<Object>() {
                 @Override
                 public void onComplete(Throwable failure, Object success) throws Throwable {
+                    System.out.println(failure);
+                    System.out.println(success);
                     asyncResponse.resume("complete");
                 }
             }, ActorSingleton.getActorSystem().dispatcher());

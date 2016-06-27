@@ -1,6 +1,6 @@
-import {UIDagReport} from "../models/all";
+import {UIDag} from "../models/all";
 export interface IDagService {
-    buildTreeVisualization(dagReport:UIDagReport, svgId:string);
+    buildTreeVisualization(dag:UIDag);
 }
 
 export interface IHttpExecuteService {
