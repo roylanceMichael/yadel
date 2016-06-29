@@ -134,6 +134,17 @@ open class ManagerBase :UntypedActor() {
 
     private fun handleReport() {
         val dagReport = YadelReports.UIDagReport.newBuilder()
+        this.workers.values.forEach {
+            val workerConfiguration = YadelReports.UIWorkerConfiguration
+                    .newBuilder()
+                    .setHost(it.configuration.host)
+                    .setInitializedTime(it.configuration.initializedTime)
+                    .setIp(it.configuration.ip)
+                    .setPort(it.configuration.port)
+                    .setState(if (YadelModels.WorkerState.WORKING.equals(it.configuration.state)) YadelReports.UIWorkerState.CURRENTLY_WORKING else YadelReports.UIWorkerState.CURRENTLY_IDLE)
+
+            dagReport.addWorkers(workerConfiguration)
+        }
 
         this.activeDags.values.forEach { dag ->
             val newDag = YadelReports.UIDag.newBuilder()
@@ -142,6 +153,10 @@ open class ManagerBase :UntypedActor() {
                     .setIsProcessing(dag.processingTasks.size > 0)
                     .setIsError(dag.erroredTasks.size > 0)
                     .setIsCompleted(dag.uncompletedTasks.size == 0)
+                    .setNumberCompleted(dag.completedTasks.size)
+                    .setNumberErrored(dag.erroredTasks.size)
+                    .setNumberProcessing(dag.processingTasks.size)
+                    .setNumberUnprocessed(dag.uncompletedTasks.size)
 
             dag.dagDefinition
                     .flattenedTasks

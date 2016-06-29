@@ -13,5 +13,5 @@ export SeedCluster2="akka.ssl.tcp://YadelCluster@$nodeHost2:$nodePort2"
 export AkkaHost=$host
 export PORT=8080
 
-export JAVA_OPTS="-Dakka.cluster.seed-nodes.0=$SeedCluster1 -Dakka.cluster.seed-nodes.1=$SeedCluster2"
+export JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Dakka.cluster.seed-nodes.0=$SeedCluster1 -Dakka.cluster.seed-nodes.1=$SeedCluster2"
 sh target/bin/webapp

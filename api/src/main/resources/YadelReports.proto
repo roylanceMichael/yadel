@@ -12,7 +12,8 @@ message UIRequest {
 }
 
 message UIDagReport {
-    repeated UIDag dags = 1;
+    repeated UIWorkerConfiguration workers = 1;
+    repeated UIDag dags = 2;
 }
 
 message UIDag {
@@ -24,6 +25,10 @@ message UIDag {
     bool is_processing = 6;
     bool is_error = 7;
     repeated string logs = 8;
+    int32 number_completed = 9;
+    int32 number_processing = 10;
+    int32 number_errored = 11;
+    int32 number_unprocessed = 12;
 }
 
 message UIEdge {
@@ -42,4 +47,17 @@ message UINode {
     bool is_processing = 9;
     bool is_error = 10;
     repeated string logs = 11;
+}
+
+message UIWorkerConfiguration {
+    string ip = 1;
+    string port = 2;
+    string host = 3;
+    uint64 initialized_time = 4;
+    UIWorkerState state = 5;
+}
+
+enum UIWorkerState {
+    CURRENTLY_WORKING = 0;
+    CURRENTLY_IDLE = 1;
 }
