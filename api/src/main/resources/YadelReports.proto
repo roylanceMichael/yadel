@@ -19,7 +19,7 @@ message UIDagReport {
 message UIDag {
     string id = 1;
     string display = 2;
-    map<string, UINode> nodes = 3;
+    repeated UINode nodes = 3;
     repeated UIEdge edges = 4;
     bool is_completed = 5;
     bool is_processing = 6;

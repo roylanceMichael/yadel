@@ -69,3 +69,5 @@ report/src/main/javascript/node_modules
 report/src/main/javascript/**/*.js
 report/src/main/javascript/**/*.js.map
 report/target
+
+js/node_modules

@@ -169,7 +169,7 @@ open class ManagerBase :UntypedActor() {
                                 .setIsProcessing(dag.processingTasks.containsKey(task.id))
                                 .setIsCompleted(dag.completedTasks.containsKey(task.id))
 
-                        newDag.mutableNodes[newNode.id] = newNode.build()
+                        newDag.addNodes(newNode)
                         task.dependencies.keys.forEach { dependency ->
                             val newEdge = YadelReports.UIEdge.newBuilder()
                                     .setNodeId1(task.id)

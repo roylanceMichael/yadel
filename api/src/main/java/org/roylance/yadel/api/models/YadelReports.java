@@ -1793,10 +1793,28 @@ public final class YadelReports {
         getDisplayBytes();
 
     /**
-     * <code>map&lt;string, .org.roylance.yadel.api.models.UINode&gt; nodes = 3;</code>
+     * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
      */
-    java.util.Map<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode>
-    getNodes();
+    java.util.List<org.roylance.yadel.api.models.YadelReports.UINode> 
+        getNodesList();
+    /**
+     * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+     */
+    org.roylance.yadel.api.models.YadelReports.UINode getNodes(int index);
+    /**
+     * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+     */
+    int getNodesCount();
+    /**
+     * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+     */
+    java.util.List<? extends org.roylance.yadel.api.models.YadelReports.UINodeOrBuilder> 
+        getNodesOrBuilderList();
+    /**
+     * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+     */
+    org.roylance.yadel.api.models.YadelReports.UINodeOrBuilder getNodesOrBuilder(
+        int index);
 
     /**
      * <code>repeated .org.roylance.yadel.api.models.UIEdge edges = 4;</code>
@@ -1890,6 +1908,7 @@ public final class YadelReports {
     private UIDag() {
       id_ = "";
       display_ = "";
+      nodes_ = java.util.Collections.emptyList();
       edges_ = java.util.Collections.emptyList();
       isCompleted_ = false;
       isProcessing_ = false;
@@ -1939,14 +1958,10 @@ public final class YadelReports {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                nodes_ = com.google.protobuf.MapField.newMapField(
-                    NodesDefaultEntryHolder.defaultEntry);
+                nodes_ = new java.util.ArrayList<org.roylance.yadel.api.models.YadelReports.UINode>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              com.google.protobuf.MapEntry<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode>
-              nodes = input.readMessage(
-                  NodesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              nodes_.getMutableMap().put(nodes.getKey(), nodes.getValue());
+              nodes_.add(input.readMessage(org.roylance.yadel.api.models.YadelReports.UINode.parser(), extensionRegistry));
               break;
             }
             case 34: {
@@ -2010,6 +2025,9 @@ public final class YadelReports {
             new com.google.protobuf.InvalidProtocolBufferException(
                 e.getMessage()).setUnfinishedMessage(this));
       } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          nodes_ = java.util.Collections.unmodifiableList(nodes_);
+        }
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           edges_ = java.util.Collections.unmodifiableList(edges_);
         }
@@ -2024,17 +2042,6 @@ public final class YadelReports {
       return org.roylance.yadel.api.models.YadelReports.internal_static_org_roylance_yadel_api_models_UIDag_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 3:
-          return internalGetNodes();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.roylance.yadel.api.models.YadelReports.internal_static_org_roylance_yadel_api_models_UIDag_fieldAccessorTable
@@ -2112,33 +2119,38 @@ public final class YadelReports {
     }
 
     public static final int NODES_FIELD_NUMBER = 3;
-    private static final class NodesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode>newDefaultInstance(
-                  org.roylance.yadel.api.models.YadelReports.internal_static_org_roylance_yadel_api_models_UIDag_NodesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  org.roylance.yadel.api.models.YadelReports.UINode.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode> nodes_;
-    private com.google.protobuf.MapField<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode>
-    internalGetNodes() {
-      if (nodes_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            NodesDefaultEntryHolder.defaultEntry);
-     }
+    private java.util.List<org.roylance.yadel.api.models.YadelReports.UINode> nodes_;
+    /**
+     * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+     */
+    public java.util.List<org.roylance.yadel.api.models.YadelReports.UINode> getNodesList() {
       return nodes_;
     }
     /**
-     * <code>map&lt;string, .org.roylance.yadel.api.models.UINode&gt; nodes = 3;</code>
+     * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
      */
-
-    public java.util.Map<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode> getNodes() {
-      return internalGetNodes().getMap();
+    public java.util.List<? extends org.roylance.yadel.api.models.YadelReports.UINodeOrBuilder> 
+        getNodesOrBuilderList() {
+      return nodes_;
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+     */
+    public int getNodesCount() {
+      return nodes_.size();
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+     */
+    public org.roylance.yadel.api.models.YadelReports.UINode getNodes(int index) {
+      return nodes_.get(index);
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+     */
+    public org.roylance.yadel.api.models.YadelReports.UINodeOrBuilder getNodesOrBuilder(
+        int index) {
+      return nodes_.get(index);
     }
 
     public static final int EDGES_FIELD_NUMBER = 4;
@@ -2286,14 +2298,8 @@ public final class YadelReports {
       if (!getDisplayBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, display_);
       }
-      for (java.util.Map.Entry<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode> entry
-           : internalGetNodes().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode>
-        nodes = NodesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        output.writeMessage(3, nodes);
+      for (int i = 0; i < nodes_.size(); i++) {
+        output.writeMessage(3, nodes_.get(i));
       }
       for (int i = 0; i < edges_.size(); i++) {
         output.writeMessage(4, edges_.get(i));
@@ -2335,15 +2341,9 @@ public final class YadelReports {
       if (!getDisplayBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, display_);
       }
-      for (java.util.Map.Entry<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode> entry
-           : internalGetNodes().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode>
-        nodes = NodesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      for (int i = 0; i < nodes_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, nodes);
+          .computeMessageSize(3, nodes_.get(i));
       }
       for (int i = 0; i < edges_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -2473,28 +2473,6 @@ public final class YadelReports {
         return org.roylance.yadel.api.models.YadelReports.internal_static_org_roylance_yadel_api_models_UIDag_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 3:
-            return internalGetNodes();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 3:
-            return internalGetMutableNodes();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return org.roylance.yadel.api.models.YadelReports.internal_static_org_roylance_yadel_api_models_UIDag_fieldAccessorTable
@@ -2514,6 +2492,7 @@ public final class YadelReports {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getNodesFieldBuilder();
           getEdgesFieldBuilder();
         }
       }
@@ -2523,7 +2502,12 @@ public final class YadelReports {
 
         display_ = "";
 
-        internalGetMutableNodes().clear();
+        if (nodesBuilder_ == null) {
+          nodes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          nodesBuilder_.clear();
+        }
         if (edgesBuilder_ == null) {
           edges_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
@@ -2572,8 +2556,15 @@ public final class YadelReports {
         int to_bitField0_ = 0;
         result.id_ = id_;
         result.display_ = display_;
-        result.nodes_ = internalGetNodes();
-        result.nodes_.makeImmutable();
+        if (nodesBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            nodes_ = java.util.Collections.unmodifiableList(nodes_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.nodes_ = nodes_;
+        } else {
+          result.nodes_ = nodesBuilder_.build();
+        }
         if (edgesBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008)) {
             edges_ = java.util.Collections.unmodifiableList(edges_);
@@ -2619,8 +2610,32 @@ public final class YadelReports {
           display_ = other.display_;
           onChanged();
         }
-        internalGetMutableNodes().mergeFrom(
-            other.internalGetNodes());
+        if (nodesBuilder_ == null) {
+          if (!other.nodes_.isEmpty()) {
+            if (nodes_.isEmpty()) {
+              nodes_ = other.nodes_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureNodesIsMutable();
+              nodes_.addAll(other.nodes_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.nodes_.isEmpty()) {
+            if (nodesBuilder_.isEmpty()) {
+              nodesBuilder_.dispose();
+              nodesBuilder_ = null;
+              nodes_ = other.nodes_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              nodesBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getNodesFieldBuilder() : null;
+            } else {
+              nodesBuilder_.addAllMessages(other.nodes_);
+            }
+          }
+        }
         if (edgesBuilder_ == null) {
           if (!other.edges_.isEmpty()) {
             if (edges_.isEmpty()) {
@@ -2843,48 +2858,244 @@ public final class YadelReports {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode> nodes_;
-      private com.google.protobuf.MapField<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode>
-      internalGetNodes() {
-        if (nodes_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              NodesDefaultEntryHolder.defaultEntry);
-       }
-        return nodes_;
+      private java.util.List<org.roylance.yadel.api.models.YadelReports.UINode> nodes_ =
+        java.util.Collections.emptyList();
+      private void ensureNodesIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          nodes_ = new java.util.ArrayList<org.roylance.yadel.api.models.YadelReports.UINode>(nodes_);
+          bitField0_ |= 0x00000004;
+         }
       }
-      private com.google.protobuf.MapField<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode>
-      internalGetMutableNodes() {
-        onChanged();;
-        if (nodes_ == null) {
-          nodes_ = com.google.protobuf.MapField.newMapField(
-              NodesDefaultEntryHolder.defaultEntry);
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.roylance.yadel.api.models.YadelReports.UINode, org.roylance.yadel.api.models.YadelReports.UINode.Builder, org.roylance.yadel.api.models.YadelReports.UINodeOrBuilder> nodesBuilder_;
+
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public java.util.List<org.roylance.yadel.api.models.YadelReports.UINode> getNodesList() {
+        if (nodesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(nodes_);
+        } else {
+          return nodesBuilder_.getMessageList();
         }
-        if (!nodes_.isMutable()) {
-          nodes_ = nodes_.copy();
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public int getNodesCount() {
+        if (nodesBuilder_ == null) {
+          return nodes_.size();
+        } else {
+          return nodesBuilder_.getCount();
         }
-        return nodes_;
       }
       /**
-       * <code>map&lt;string, .org.roylance.yadel.api.models.UINode&gt; nodes = 3;</code>
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
        */
-      public java.util.Map<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode> getNodes() {
-        return internalGetNodes().getMap();
+      public org.roylance.yadel.api.models.YadelReports.UINode getNodes(int index) {
+        if (nodesBuilder_ == null) {
+          return nodes_.get(index);
+        } else {
+          return nodesBuilder_.getMessage(index);
+        }
       }
       /**
-       * <code>map&lt;string, .org.roylance.yadel.api.models.UINode&gt; nodes = 3;</code>
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
        */
-      public java.util.Map<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode>
-      getMutableNodes() {
-        return internalGetMutableNodes().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, .org.roylance.yadel.api.models.UINode&gt; nodes = 3;</code>
-       */
-      public Builder putAllNodes(
-          java.util.Map<java.lang.String, org.roylance.yadel.api.models.YadelReports.UINode> values) {
-        getMutableNodes().putAll(values);
+      public Builder setNodes(
+          int index, org.roylance.yadel.api.models.YadelReports.UINode value) {
+        if (nodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodesIsMutable();
+          nodes_.set(index, value);
+          onChanged();
+        } else {
+          nodesBuilder_.setMessage(index, value);
+        }
         return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public Builder setNodes(
+          int index, org.roylance.yadel.api.models.YadelReports.UINode.Builder builderForValue) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public Builder addNodes(org.roylance.yadel.api.models.YadelReports.UINode value) {
+        if (nodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodesIsMutable();
+          nodes_.add(value);
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public Builder addNodes(
+          int index, org.roylance.yadel.api.models.YadelReports.UINode value) {
+        if (nodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodesIsMutable();
+          nodes_.add(index, value);
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public Builder addNodes(
+          org.roylance.yadel.api.models.YadelReports.UINode.Builder builderForValue) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.add(builderForValue.build());
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public Builder addNodes(
+          int index, org.roylance.yadel.api.models.YadelReports.UINode.Builder builderForValue) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public Builder addAllNodes(
+          java.lang.Iterable<? extends org.roylance.yadel.api.models.YadelReports.UINode> values) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, nodes_);
+          onChanged();
+        } else {
+          nodesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public Builder clearNodes() {
+        if (nodesBuilder_ == null) {
+          nodes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          nodesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public Builder removeNodes(int index) {
+        if (nodesBuilder_ == null) {
+          ensureNodesIsMutable();
+          nodes_.remove(index);
+          onChanged();
+        } else {
+          nodesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public org.roylance.yadel.api.models.YadelReports.UINode.Builder getNodesBuilder(
+          int index) {
+        return getNodesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public org.roylance.yadel.api.models.YadelReports.UINodeOrBuilder getNodesOrBuilder(
+          int index) {
+        if (nodesBuilder_ == null) {
+          return nodes_.get(index);  } else {
+          return nodesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public java.util.List<? extends org.roylance.yadel.api.models.YadelReports.UINodeOrBuilder> 
+           getNodesOrBuilderList() {
+        if (nodesBuilder_ != null) {
+          return nodesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(nodes_);
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public org.roylance.yadel.api.models.YadelReports.UINode.Builder addNodesBuilder() {
+        return getNodesFieldBuilder().addBuilder(
+            org.roylance.yadel.api.models.YadelReports.UINode.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public org.roylance.yadel.api.models.YadelReports.UINode.Builder addNodesBuilder(
+          int index) {
+        return getNodesFieldBuilder().addBuilder(
+            index, org.roylance.yadel.api.models.YadelReports.UINode.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.api.models.UINode nodes = 3;</code>
+       */
+      public java.util.List<org.roylance.yadel.api.models.YadelReports.UINode.Builder> 
+           getNodesBuilderList() {
+        return getNodesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.roylance.yadel.api.models.YadelReports.UINode, org.roylance.yadel.api.models.YadelReports.UINode.Builder, org.roylance.yadel.api.models.YadelReports.UINodeOrBuilder> 
+          getNodesFieldBuilder() {
+        if (nodesBuilder_ == null) {
+          nodesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.roylance.yadel.api.models.YadelReports.UINode, org.roylance.yadel.api.models.YadelReports.UINode.Builder, org.roylance.yadel.api.models.YadelReports.UINodeOrBuilder>(
+                  nodes_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          nodes_ = null;
+        }
+        return nodesBuilder_;
       }
 
       private java.util.List<org.roylance.yadel.api.models.YadelReports.UIEdge> edges_ =
@@ -6104,11 +6315,6 @@ public final class YadelReports {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_UIDag_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_roylance_yadel_api_models_UIDag_NodesEntry_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_org_roylance_yadel_api_models_UIDag_NodesEntry_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_UIEdge_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -6139,30 +6345,28 @@ public final class YadelReports {
       "t\022E\n\007workers\030\001 \003(\01324.org.roylance.yadel." +
       "api.models.UIWorkerConfiguration\0222\n\004dags" +
       "\030\002 \003(\0132$.org.roylance.yadel.api.models.U" +
-      "IDag\"\245\003\n\005UIDag\022\n\n\002id\030\001 \001(\t\022\017\n\007display\030\002 " +
-      "\001(\t\022>\n\005nodes\030\003 \003(\0132/.org.roylance.yadel." +
-      "api.models.UIDag.NodesEntry\0224\n\005edges\030\004 \003",
-      "(\0132%.org.roylance.yadel.api.models.UIEdg" +
-      "e\022\024\n\014is_completed\030\005 \001(\010\022\025\n\ris_processing" +
-      "\030\006 \001(\010\022\020\n\010is_error\030\007 \001(\010\022\014\n\004logs\030\010 \003(\t\022\030" +
-      "\n\020number_completed\030\t \001(\005\022\031\n\021number_proce" +
-      "ssing\030\n \001(\005\022\026\n\016number_errored\030\013 \001(\005\022\032\n\022n" +
-      "umber_unprocessed\030\014 \001(\005\032S\n\nNodesEntry\022\013\n" +
-      "\003key\030\001 \001(\t\0224\n\005value\030\002 \001(\0132%.org.roylance" +
-      ".yadel.api.models.UINode:\0028\001\".\n\006UIEdge\022\021" +
-      "\n\tnode_id_1\030\001 \001(\t\022\021\n\tnode_id_2\030\002 \001(\t\"\302\001\n" +
-      "\006UINode\022\n\n\002id\030\001 \001(\t\022\017\n\007display\030\002 \001(\t\022\026\n\016",
-      "execution_date\030\004 \001(\003\022\022\n\nstart_date\030\005 \001(\003" +
-      "\022\020\n\010end_date\030\006 \001(\003\022\020\n\010duration\030\007 \001(\003\022\024\n\014" +
-      "is_completed\030\010 \001(\010\022\025\n\ris_processing\030\t \001(" +
-      "\010\022\020\n\010is_error\030\n \001(\010\022\014\n\004logs\030\013 \003(\t\"\226\001\n\025UI" +
-      "WorkerConfiguration\022\n\n\002ip\030\001 \001(\t\022\014\n\004port\030" +
-      "\002 \001(\t\022\014\n\004host\030\003 \001(\t\022\030\n\020initialized_time\030" +
-      "\004 \001(\004\022;\n\005state\030\005 \001(\0162,.org.roylance.yade" +
-      "l.api.models.UIWorkerState*-\n\nUIRequests" +
-      "\022\017\n\013REPORT_DAGS\020\000\022\016\n\nDELETE_DAG\020\001*:\n\rUIW" +
-      "orkerState\022\025\n\021CURRENTLY_WORKING\020\000\022\022\n\016CUR",
-      "RENTLY_IDLE\020\001b\006proto3"
+      "IDag\"\306\002\n\005UIDag\022\n\n\002id\030\001 \001(\t\022\017\n\007display\030\002 " +
+      "\001(\t\0224\n\005nodes\030\003 \003(\0132%.org.roylance.yadel." +
+      "api.models.UINode\0224\n\005edges\030\004 \003(\0132%.org.r",
+      "oylance.yadel.api.models.UIEdge\022\024\n\014is_co" +
+      "mpleted\030\005 \001(\010\022\025\n\ris_processing\030\006 \001(\010\022\020\n\010" +
+      "is_error\030\007 \001(\010\022\014\n\004logs\030\010 \003(\t\022\030\n\020number_c" +
+      "ompleted\030\t \001(\005\022\031\n\021number_processing\030\n \001(" +
+      "\005\022\026\n\016number_errored\030\013 \001(\005\022\032\n\022number_unpr" +
+      "ocessed\030\014 \001(\005\".\n\006UIEdge\022\021\n\tnode_id_1\030\001 \001" +
+      "(\t\022\021\n\tnode_id_2\030\002 \001(\t\"\302\001\n\006UINode\022\n\n\002id\030\001" +
+      " \001(\t\022\017\n\007display\030\002 \001(\t\022\026\n\016execution_date\030" +
+      "\004 \001(\003\022\022\n\nstart_date\030\005 \001(\003\022\020\n\010end_date\030\006 " +
+      "\001(\003\022\020\n\010duration\030\007 \001(\003\022\024\n\014is_completed\030\010 ",
+      "\001(\010\022\025\n\ris_processing\030\t \001(\010\022\020\n\010is_error\030\n" +
+      " \001(\010\022\014\n\004logs\030\013 \003(\t\"\226\001\n\025UIWorkerConfigura" +
+      "tion\022\n\n\002ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\t\022\014\n\004host\030\003" +
+      " \001(\t\022\030\n\020initialized_time\030\004 \001(\004\022;\n\005state\030" +
+      "\005 \001(\0162,.org.roylance.yadel.api.models.UI" +
+      "WorkerState*-\n\nUIRequests\022\017\n\013REPORT_DAGS" +
+      "\020\000\022\016\n\nDELETE_DAG\020\001*:\n\rUIWorkerState\022\025\n\021C" +
+      "URRENTLY_WORKING\020\000\022\022\n\016CURRENTLY_IDLE\020\001b\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6194,12 +6398,6 @@ public final class YadelReports {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_roylance_yadel_api_models_UIDag_descriptor,
         new java.lang.String[] { "Id", "Display", "Nodes", "Edges", "IsCompleted", "IsProcessing", "IsError", "Logs", "NumberCompleted", "NumberProcessing", "NumberErrored", "NumberUnprocessed", });
-    internal_static_org_roylance_yadel_api_models_UIDag_NodesEntry_descriptor =
-      internal_static_org_roylance_yadel_api_models_UIDag_descriptor.getNestedTypes().get(0);
-    internal_static_org_roylance_yadel_api_models_UIDag_NodesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_org_roylance_yadel_api_models_UIDag_NodesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_org_roylance_yadel_api_models_UIEdge_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_org_roylance_yadel_api_models_UIEdge_fieldAccessorTable = new
