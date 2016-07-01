@@ -4356,43 +4356,34 @@ public final class YadelModels {
     long getDuration();
 
     /**
-     * <code>optional .google.protobuf.Any first_context = 6;</code>
+     * <code>optional string first_context_base_64 = 6;</code>
      */
-    boolean hasFirstContext();
+    java.lang.String getFirstContextBase64();
     /**
-     * <code>optional .google.protobuf.Any first_context = 6;</code>
+     * <code>optional string first_context_base_64 = 6;</code>
      */
-    com.google.protobuf.Any getFirstContext();
-    /**
-     * <code>optional .google.protobuf.Any first_context = 6;</code>
-     */
-    com.google.protobuf.AnyOrBuilder getFirstContextOrBuilder();
+    com.google.protobuf.ByteString
+        getFirstContextBase64Bytes();
 
     /**
-     * <code>optional .google.protobuf.Any second_context = 7;</code>
+     * <code>optional string second_context_base_64 = 7;</code>
      */
-    boolean hasSecondContext();
+    java.lang.String getSecondContextBase64();
     /**
-     * <code>optional .google.protobuf.Any second_context = 7;</code>
+     * <code>optional string second_context_base_64 = 7;</code>
      */
-    com.google.protobuf.Any getSecondContext();
-    /**
-     * <code>optional .google.protobuf.Any second_context = 7;</code>
-     */
-    com.google.protobuf.AnyOrBuilder getSecondContextOrBuilder();
+    com.google.protobuf.ByteString
+        getSecondContextBase64Bytes();
 
     /**
-     * <code>optional .google.protobuf.Any third_context = 8;</code>
+     * <code>optional string third_context_base_64 = 8;</code>
      */
-    boolean hasThirdContext();
+    java.lang.String getThirdContextBase64();
     /**
-     * <code>optional .google.protobuf.Any third_context = 8;</code>
+     * <code>optional string third_context_base_64 = 8;</code>
      */
-    com.google.protobuf.Any getThirdContext();
-    /**
-     * <code>optional .google.protobuf.Any third_context = 8;</code>
-     */
-    com.google.protobuf.AnyOrBuilder getThirdContextOrBuilder();
+    com.google.protobuf.ByteString
+        getThirdContextBase64Bytes();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.api.models.Task}
@@ -4410,6 +4401,9 @@ public final class YadelModels {
       startDate_ = 0L;
       endDate_ = 0L;
       duration_ = 0L;
+      firstContextBase64_ = "";
+      secondContextBase64_ = "";
+      thirdContextBase64_ = "";
     }
 
     @java.lang.Override
@@ -4470,42 +4464,21 @@ public final class YadelModels {
               break;
             }
             case 50: {
-              com.google.protobuf.Any.Builder subBuilder = null;
-              if (firstContext_ != null) {
-                subBuilder = firstContext_.toBuilder();
-              }
-              firstContext_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(firstContext_);
-                firstContext_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              firstContextBase64_ = s;
               break;
             }
             case 58: {
-              com.google.protobuf.Any.Builder subBuilder = null;
-              if (secondContext_ != null) {
-                subBuilder = secondContext_.toBuilder();
-              }
-              secondContext_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(secondContext_);
-                secondContext_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              secondContextBase64_ = s;
               break;
             }
             case 66: {
-              com.google.protobuf.Any.Builder subBuilder = null;
-              if (thirdContext_ != null) {
-                subBuilder = thirdContext_.toBuilder();
-              }
-              thirdContext_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(thirdContext_);
-                thirdContext_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              thirdContextBase64_ = s;
               break;
             }
           }
@@ -4589,67 +4562,106 @@ public final class YadelModels {
       return duration_;
     }
 
-    public static final int FIRST_CONTEXT_FIELD_NUMBER = 6;
-    private com.google.protobuf.Any firstContext_;
+    public static final int FIRST_CONTEXT_BASE_64_FIELD_NUMBER = 6;
+    private volatile java.lang.Object firstContextBase64_;
     /**
-     * <code>optional .google.protobuf.Any first_context = 6;</code>
+     * <code>optional string first_context_base_64 = 6;</code>
      */
-    public boolean hasFirstContext() {
-      return firstContext_ != null;
+    public java.lang.String getFirstContextBase64() {
+      java.lang.Object ref = firstContextBase64_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        firstContextBase64_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional .google.protobuf.Any first_context = 6;</code>
+     * <code>optional string first_context_base_64 = 6;</code>
      */
-    public com.google.protobuf.Any getFirstContext() {
-      return firstContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : firstContext_;
-    }
-    /**
-     * <code>optional .google.protobuf.Any first_context = 6;</code>
-     */
-    public com.google.protobuf.AnyOrBuilder getFirstContextOrBuilder() {
-      return getFirstContext();
-    }
-
-    public static final int SECOND_CONTEXT_FIELD_NUMBER = 7;
-    private com.google.protobuf.Any secondContext_;
-    /**
-     * <code>optional .google.protobuf.Any second_context = 7;</code>
-     */
-    public boolean hasSecondContext() {
-      return secondContext_ != null;
-    }
-    /**
-     * <code>optional .google.protobuf.Any second_context = 7;</code>
-     */
-    public com.google.protobuf.Any getSecondContext() {
-      return secondContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : secondContext_;
-    }
-    /**
-     * <code>optional .google.protobuf.Any second_context = 7;</code>
-     */
-    public com.google.protobuf.AnyOrBuilder getSecondContextOrBuilder() {
-      return getSecondContext();
+    public com.google.protobuf.ByteString
+        getFirstContextBase64Bytes() {
+      java.lang.Object ref = firstContextBase64_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        firstContextBase64_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int THIRD_CONTEXT_FIELD_NUMBER = 8;
-    private com.google.protobuf.Any thirdContext_;
+    public static final int SECOND_CONTEXT_BASE_64_FIELD_NUMBER = 7;
+    private volatile java.lang.Object secondContextBase64_;
     /**
-     * <code>optional .google.protobuf.Any third_context = 8;</code>
+     * <code>optional string second_context_base_64 = 7;</code>
      */
-    public boolean hasThirdContext() {
-      return thirdContext_ != null;
+    public java.lang.String getSecondContextBase64() {
+      java.lang.Object ref = secondContextBase64_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secondContextBase64_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional .google.protobuf.Any third_context = 8;</code>
+     * <code>optional string second_context_base_64 = 7;</code>
      */
-    public com.google.protobuf.Any getThirdContext() {
-      return thirdContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : thirdContext_;
+    public com.google.protobuf.ByteString
+        getSecondContextBase64Bytes() {
+      java.lang.Object ref = secondContextBase64_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secondContextBase64_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int THIRD_CONTEXT_BASE_64_FIELD_NUMBER = 8;
+    private volatile java.lang.Object thirdContextBase64_;
+    /**
+     * <code>optional string third_context_base_64 = 8;</code>
+     */
+    public java.lang.String getThirdContextBase64() {
+      java.lang.Object ref = thirdContextBase64_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        thirdContextBase64_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional .google.protobuf.Any third_context = 8;</code>
+     * <code>optional string third_context_base_64 = 8;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getThirdContextOrBuilder() {
-      return getThirdContext();
+    public com.google.protobuf.ByteString
+        getThirdContextBase64Bytes() {
+      java.lang.Object ref = thirdContextBase64_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        thirdContextBase64_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4679,14 +4691,14 @@ public final class YadelModels {
       if (duration_ != 0L) {
         output.writeInt64(5, duration_);
       }
-      if (firstContext_ != null) {
-        output.writeMessage(6, getFirstContext());
+      if (!getFirstContextBase64Bytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, firstContextBase64_);
       }
-      if (secondContext_ != null) {
-        output.writeMessage(7, getSecondContext());
+      if (!getSecondContextBase64Bytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, secondContextBase64_);
       }
-      if (thirdContext_ != null) {
-        output.writeMessage(8, getThirdContext());
+      if (!getThirdContextBase64Bytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, thirdContextBase64_);
       }
     }
 
@@ -4715,17 +4727,14 @@ public final class YadelModels {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(5, duration_);
       }
-      if (firstContext_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getFirstContext());
+      if (!getFirstContextBase64Bytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, firstContextBase64_);
       }
-      if (secondContext_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getSecondContext());
+      if (!getSecondContextBase64Bytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, secondContextBase64_);
       }
-      if (thirdContext_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getThirdContext());
+      if (!getThirdContextBase64Bytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, thirdContextBase64_);
       }
       memoizedSize = size;
       return size;
@@ -4852,24 +4861,12 @@ public final class YadelModels {
 
         duration_ = 0L;
 
-        if (firstContextBuilder_ == null) {
-          firstContext_ = null;
-        } else {
-          firstContext_ = null;
-          firstContextBuilder_ = null;
-        }
-        if (secondContextBuilder_ == null) {
-          secondContext_ = null;
-        } else {
-          secondContext_ = null;
-          secondContextBuilder_ = null;
-        }
-        if (thirdContextBuilder_ == null) {
-          thirdContext_ = null;
-        } else {
-          thirdContext_ = null;
-          thirdContextBuilder_ = null;
-        }
+        firstContextBase64_ = "";
+
+        secondContextBase64_ = "";
+
+        thirdContextBase64_ = "";
+
         return this;
       }
 
@@ -4901,21 +4898,9 @@ public final class YadelModels {
         result.startDate_ = startDate_;
         result.endDate_ = endDate_;
         result.duration_ = duration_;
-        if (firstContextBuilder_ == null) {
-          result.firstContext_ = firstContext_;
-        } else {
-          result.firstContext_ = firstContextBuilder_.build();
-        }
-        if (secondContextBuilder_ == null) {
-          result.secondContext_ = secondContext_;
-        } else {
-          result.secondContext_ = secondContextBuilder_.build();
-        }
-        if (thirdContextBuilder_ == null) {
-          result.thirdContext_ = thirdContext_;
-        } else {
-          result.thirdContext_ = thirdContextBuilder_.build();
-        }
+        result.firstContextBase64_ = firstContextBase64_;
+        result.secondContextBase64_ = secondContextBase64_;
+        result.thirdContextBase64_ = thirdContextBase64_;
         onBuilt();
         return result;
       }
@@ -4946,14 +4931,17 @@ public final class YadelModels {
         if (other.getDuration() != 0L) {
           setDuration(other.getDuration());
         }
-        if (other.hasFirstContext()) {
-          mergeFirstContext(other.getFirstContext());
+        if (!other.getFirstContextBase64().isEmpty()) {
+          firstContextBase64_ = other.firstContextBase64_;
+          onChanged();
         }
-        if (other.hasSecondContext()) {
-          mergeSecondContext(other.getSecondContext());
+        if (!other.getSecondContextBase64().isEmpty()) {
+          secondContextBase64_ = other.secondContextBase64_;
+          onChanged();
         }
-        if (other.hasThirdContext()) {
-          mergeThirdContext(other.getThirdContext());
+        if (!other.getThirdContextBase64().isEmpty()) {
+          thirdContextBase64_ = other.thirdContextBase64_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -5202,355 +5190,211 @@ public final class YadelModels {
         return this;
       }
 
-      private com.google.protobuf.Any firstContext_ = null;
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> firstContextBuilder_;
+      private java.lang.Object firstContextBase64_ = "";
       /**
-       * <code>optional .google.protobuf.Any first_context = 6;</code>
+       * <code>optional string first_context_base_64 = 6;</code>
        */
-      public boolean hasFirstContext() {
-        return firstContextBuilder_ != null || firstContext_ != null;
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 6;</code>
-       */
-      public com.google.protobuf.Any getFirstContext() {
-        if (firstContextBuilder_ == null) {
-          return firstContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : firstContext_;
+      public java.lang.String getFirstContextBase64() {
+        java.lang.Object ref = firstContextBase64_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          firstContextBase64_ = s;
+          return s;
         } else {
-          return firstContextBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional .google.protobuf.Any first_context = 6;</code>
+       * <code>optional string first_context_base_64 = 6;</code>
        */
-      public Builder setFirstContext(com.google.protobuf.Any value) {
-        if (firstContextBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          firstContext_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getFirstContextBase64Bytes() {
+        java.lang.Object ref = firstContextBase64_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          firstContextBase64_ = b;
+          return b;
         } else {
-          firstContextBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
-       * <code>optional .google.protobuf.Any first_context = 6;</code>
+       * <code>optional string first_context_base_64 = 6;</code>
        */
-      public Builder setFirstContext(
-          com.google.protobuf.Any.Builder builderForValue) {
-        if (firstContextBuilder_ == null) {
-          firstContext_ = builderForValue.build();
-          onChanged();
-        } else {
-          firstContextBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 6;</code>
-       */
-      public Builder mergeFirstContext(com.google.protobuf.Any value) {
-        if (firstContextBuilder_ == null) {
-          if (firstContext_ != null) {
-            firstContext_ =
-              com.google.protobuf.Any.newBuilder(firstContext_).mergeFrom(value).buildPartial();
-          } else {
-            firstContext_ = value;
-          }
-          onChanged();
-        } else {
-          firstContextBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 6;</code>
-       */
-      public Builder clearFirstContext() {
-        if (firstContextBuilder_ == null) {
-          firstContext_ = null;
-          onChanged();
-        } else {
-          firstContext_ = null;
-          firstContextBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 6;</code>
-       */
-      public com.google.protobuf.Any.Builder getFirstContextBuilder() {
-        
+      public Builder setFirstContextBase64(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        firstContextBase64_ = value;
         onChanged();
-        return getFirstContextFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 6;</code>
-       */
-      public com.google.protobuf.AnyOrBuilder getFirstContextOrBuilder() {
-        if (firstContextBuilder_ != null) {
-          return firstContextBuilder_.getMessageOrBuilder();
-        } else {
-          return firstContext_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : firstContext_;
-        }
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
-          getFirstContextFieldBuilder() {
-        if (firstContextBuilder_ == null) {
-          firstContextBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  getFirstContext(),
-                  getParentForChildren(),
-                  isClean());
-          firstContext_ = null;
-        }
-        return firstContextBuilder_;
-      }
-
-      private com.google.protobuf.Any secondContext_ = null;
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> secondContextBuilder_;
-      /**
-       * <code>optional .google.protobuf.Any second_context = 7;</code>
-       */
-      public boolean hasSecondContext() {
-        return secondContextBuilder_ != null || secondContext_ != null;
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 7;</code>
-       */
-      public com.google.protobuf.Any getSecondContext() {
-        if (secondContextBuilder_ == null) {
-          return secondContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : secondContext_;
-        } else {
-          return secondContextBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 7;</code>
-       */
-      public Builder setSecondContext(com.google.protobuf.Any value) {
-        if (secondContextBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          secondContext_ = value;
-          onChanged();
-        } else {
-          secondContextBuilder_.setMessage(value);
-        }
-
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any second_context = 7;</code>
+       * <code>optional string first_context_base_64 = 6;</code>
        */
-      public Builder setSecondContext(
-          com.google.protobuf.Any.Builder builderForValue) {
-        if (secondContextBuilder_ == null) {
-          secondContext_ = builderForValue.build();
-          onChanged();
-        } else {
-          secondContextBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 7;</code>
-       */
-      public Builder mergeSecondContext(com.google.protobuf.Any value) {
-        if (secondContextBuilder_ == null) {
-          if (secondContext_ != null) {
-            secondContext_ =
-              com.google.protobuf.Any.newBuilder(secondContext_).mergeFrom(value).buildPartial();
-          } else {
-            secondContext_ = value;
-          }
-          onChanged();
-        } else {
-          secondContextBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 7;</code>
-       */
-      public Builder clearSecondContext() {
-        if (secondContextBuilder_ == null) {
-          secondContext_ = null;
-          onChanged();
-        } else {
-          secondContext_ = null;
-          secondContextBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 7;</code>
-       */
-      public com.google.protobuf.Any.Builder getSecondContextBuilder() {
+      public Builder clearFirstContextBase64() {
         
+        firstContextBase64_ = getDefaultInstance().getFirstContextBase64();
         onChanged();
-        return getSecondContextFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 7;</code>
-       */
-      public com.google.protobuf.AnyOrBuilder getSecondContextOrBuilder() {
-        if (secondContextBuilder_ != null) {
-          return secondContextBuilder_.getMessageOrBuilder();
-        } else {
-          return secondContext_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : secondContext_;
-        }
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
-          getSecondContextFieldBuilder() {
-        if (secondContextBuilder_ == null) {
-          secondContextBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  getSecondContext(),
-                  getParentForChildren(),
-                  isClean());
-          secondContext_ = null;
-        }
-        return secondContextBuilder_;
-      }
-
-      private com.google.protobuf.Any thirdContext_ = null;
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> thirdContextBuilder_;
-      /**
-       * <code>optional .google.protobuf.Any third_context = 8;</code>
-       */
-      public boolean hasThirdContext() {
-        return thirdContextBuilder_ != null || thirdContext_ != null;
-      }
-      /**
-       * <code>optional .google.protobuf.Any third_context = 8;</code>
-       */
-      public com.google.protobuf.Any getThirdContext() {
-        if (thirdContextBuilder_ == null) {
-          return thirdContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : thirdContext_;
-        } else {
-          return thirdContextBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .google.protobuf.Any third_context = 8;</code>
-       */
-      public Builder setThirdContext(com.google.protobuf.Any value) {
-        if (thirdContextBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          thirdContext_ = value;
-          onChanged();
-        } else {
-          thirdContextBuilder_.setMessage(value);
-        }
-
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any third_context = 8;</code>
+       * <code>optional string first_context_base_64 = 6;</code>
        */
-      public Builder setThirdContext(
-          com.google.protobuf.Any.Builder builderForValue) {
-        if (thirdContextBuilder_ == null) {
-          thirdContext_ = builderForValue.build();
-          onChanged();
-        } else {
-          thirdContextBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any third_context = 8;</code>
-       */
-      public Builder mergeThirdContext(com.google.protobuf.Any value) {
-        if (thirdContextBuilder_ == null) {
-          if (thirdContext_ != null) {
-            thirdContext_ =
-              com.google.protobuf.Any.newBuilder(thirdContext_).mergeFrom(value).buildPartial();
-          } else {
-            thirdContext_ = value;
-          }
-          onChanged();
-        } else {
-          thirdContextBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any third_context = 8;</code>
-       */
-      public Builder clearThirdContext() {
-        if (thirdContextBuilder_ == null) {
-          thirdContext_ = null;
-          onChanged();
-        } else {
-          thirdContext_ = null;
-          thirdContextBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any third_context = 8;</code>
-       */
-      public com.google.protobuf.Any.Builder getThirdContextBuilder() {
+      public Builder setFirstContextBase64Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         
+        firstContextBase64_ = value;
         onChanged();
-        return getThirdContextFieldBuilder().getBuilder();
+        return this;
       }
+
+      private java.lang.Object secondContextBase64_ = "";
       /**
-       * <code>optional .google.protobuf.Any third_context = 8;</code>
+       * <code>optional string second_context_base_64 = 7;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getThirdContextOrBuilder() {
-        if (thirdContextBuilder_ != null) {
-          return thirdContextBuilder_.getMessageOrBuilder();
+      public java.lang.String getSecondContextBase64() {
+        java.lang.Object ref = secondContextBase64_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secondContextBase64_ = s;
+          return s;
         } else {
-          return thirdContext_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : thirdContext_;
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional .google.protobuf.Any third_context = 8;</code>
+       * <code>optional string second_context_base_64 = 7;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
-          getThirdContextFieldBuilder() {
-        if (thirdContextBuilder_ == null) {
-          thirdContextBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  getThirdContext(),
-                  getParentForChildren(),
-                  isClean());
-          thirdContext_ = null;
+      public com.google.protobuf.ByteString
+          getSecondContextBase64Bytes() {
+        java.lang.Object ref = secondContextBase64_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          secondContextBase64_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-        return thirdContextBuilder_;
+      }
+      /**
+       * <code>optional string second_context_base_64 = 7;</code>
+       */
+      public Builder setSecondContextBase64(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        secondContextBase64_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string second_context_base_64 = 7;</code>
+       */
+      public Builder clearSecondContextBase64() {
+        
+        secondContextBase64_ = getDefaultInstance().getSecondContextBase64();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string second_context_base_64 = 7;</code>
+       */
+      public Builder setSecondContextBase64Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        secondContextBase64_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object thirdContextBase64_ = "";
+      /**
+       * <code>optional string third_context_base_64 = 8;</code>
+       */
+      public java.lang.String getThirdContextBase64() {
+        java.lang.Object ref = thirdContextBase64_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          thirdContextBase64_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string third_context_base_64 = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getThirdContextBase64Bytes() {
+        java.lang.Object ref = thirdContextBase64_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          thirdContextBase64_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string third_context_base_64 = 8;</code>
+       */
+      public Builder setThirdContextBase64(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        thirdContextBase64_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string third_context_base_64 = 8;</code>
+       */
+      public Builder clearThirdContextBase64() {
+        
+        thirdContextBase64_ = getDefaultInstance().getThirdContextBase64();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string third_context_base_64 = 8;</code>
+       */
+      public Builder setThirdContextBase64Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        thirdContextBase64_ = value;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5641,43 +5485,34 @@ public final class YadelModels {
     org.roylance.yadel.api.models.YadelModels.TaskDefinitionOrBuilder getNewTaskOrBuilder();
 
     /**
-     * <code>optional .google.protobuf.Any first_context = 3;</code>
+     * <code>optional string first_context_base_64 = 3;</code>
      */
-    boolean hasFirstContext();
+    java.lang.String getFirstContextBase64();
     /**
-     * <code>optional .google.protobuf.Any first_context = 3;</code>
+     * <code>optional string first_context_base_64 = 3;</code>
      */
-    com.google.protobuf.Any getFirstContext();
-    /**
-     * <code>optional .google.protobuf.Any first_context = 3;</code>
-     */
-    com.google.protobuf.AnyOrBuilder getFirstContextOrBuilder();
+    com.google.protobuf.ByteString
+        getFirstContextBase64Bytes();
 
     /**
-     * <code>optional .google.protobuf.Any second_context = 4;</code>
+     * <code>optional string second_context_base_64 = 4;</code>
      */
-    boolean hasSecondContext();
+    java.lang.String getSecondContextBase64();
     /**
-     * <code>optional .google.protobuf.Any second_context = 4;</code>
+     * <code>optional string second_context_base_64 = 4;</code>
      */
-    com.google.protobuf.Any getSecondContext();
-    /**
-     * <code>optional .google.protobuf.Any second_context = 4;</code>
-     */
-    com.google.protobuf.AnyOrBuilder getSecondContextOrBuilder();
+    com.google.protobuf.ByteString
+        getSecondContextBase64Bytes();
 
     /**
-     * <code>optional .google.protobuf.Any third_context = 5;</code>
+     * <code>optional string third_context_base_64 = 5;</code>
      */
-    boolean hasThirdContext();
+    java.lang.String getThirdContextBase64();
     /**
-     * <code>optional .google.protobuf.Any third_context = 5;</code>
+     * <code>optional string third_context_base_64 = 5;</code>
      */
-    com.google.protobuf.Any getThirdContext();
-    /**
-     * <code>optional .google.protobuf.Any third_context = 5;</code>
-     */
-    com.google.protobuf.AnyOrBuilder getThirdContextOrBuilder();
+    com.google.protobuf.ByteString
+        getThirdContextBase64Bytes();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.api.models.AddTaskToDag}
@@ -5691,6 +5526,9 @@ public final class YadelModels {
       super(builder);
     }
     private AddTaskToDag() {
+      firstContextBase64_ = "";
+      secondContextBase64_ = "";
+      thirdContextBase64_ = "";
     }
 
     @java.lang.Override
@@ -5744,42 +5582,21 @@ public final class YadelModels {
               break;
             }
             case 26: {
-              com.google.protobuf.Any.Builder subBuilder = null;
-              if (firstContext_ != null) {
-                subBuilder = firstContext_.toBuilder();
-              }
-              firstContext_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(firstContext_);
-                firstContext_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              firstContextBase64_ = s;
               break;
             }
             case 34: {
-              com.google.protobuf.Any.Builder subBuilder = null;
-              if (secondContext_ != null) {
-                subBuilder = secondContext_.toBuilder();
-              }
-              secondContext_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(secondContext_);
-                secondContext_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              secondContextBase64_ = s;
               break;
             }
             case 42: {
-              com.google.protobuf.Any.Builder subBuilder = null;
-              if (thirdContext_ != null) {
-                subBuilder = thirdContext_.toBuilder();
-              }
-              thirdContext_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(thirdContext_);
-                thirdContext_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              thirdContextBase64_ = s;
               break;
             }
           }
@@ -5848,67 +5665,106 @@ public final class YadelModels {
       return getNewTask();
     }
 
-    public static final int FIRST_CONTEXT_FIELD_NUMBER = 3;
-    private com.google.protobuf.Any firstContext_;
+    public static final int FIRST_CONTEXT_BASE_64_FIELD_NUMBER = 3;
+    private volatile java.lang.Object firstContextBase64_;
     /**
-     * <code>optional .google.protobuf.Any first_context = 3;</code>
+     * <code>optional string first_context_base_64 = 3;</code>
      */
-    public boolean hasFirstContext() {
-      return firstContext_ != null;
+    public java.lang.String getFirstContextBase64() {
+      java.lang.Object ref = firstContextBase64_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        firstContextBase64_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional .google.protobuf.Any first_context = 3;</code>
+     * <code>optional string first_context_base_64 = 3;</code>
      */
-    public com.google.protobuf.Any getFirstContext() {
-      return firstContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : firstContext_;
-    }
-    /**
-     * <code>optional .google.protobuf.Any first_context = 3;</code>
-     */
-    public com.google.protobuf.AnyOrBuilder getFirstContextOrBuilder() {
-      return getFirstContext();
-    }
-
-    public static final int SECOND_CONTEXT_FIELD_NUMBER = 4;
-    private com.google.protobuf.Any secondContext_;
-    /**
-     * <code>optional .google.protobuf.Any second_context = 4;</code>
-     */
-    public boolean hasSecondContext() {
-      return secondContext_ != null;
-    }
-    /**
-     * <code>optional .google.protobuf.Any second_context = 4;</code>
-     */
-    public com.google.protobuf.Any getSecondContext() {
-      return secondContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : secondContext_;
-    }
-    /**
-     * <code>optional .google.protobuf.Any second_context = 4;</code>
-     */
-    public com.google.protobuf.AnyOrBuilder getSecondContextOrBuilder() {
-      return getSecondContext();
+    public com.google.protobuf.ByteString
+        getFirstContextBase64Bytes() {
+      java.lang.Object ref = firstContextBase64_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        firstContextBase64_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int THIRD_CONTEXT_FIELD_NUMBER = 5;
-    private com.google.protobuf.Any thirdContext_;
+    public static final int SECOND_CONTEXT_BASE_64_FIELD_NUMBER = 4;
+    private volatile java.lang.Object secondContextBase64_;
     /**
-     * <code>optional .google.protobuf.Any third_context = 5;</code>
+     * <code>optional string second_context_base_64 = 4;</code>
      */
-    public boolean hasThirdContext() {
-      return thirdContext_ != null;
+    public java.lang.String getSecondContextBase64() {
+      java.lang.Object ref = secondContextBase64_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secondContextBase64_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional .google.protobuf.Any third_context = 5;</code>
+     * <code>optional string second_context_base_64 = 4;</code>
      */
-    public com.google.protobuf.Any getThirdContext() {
-      return thirdContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : thirdContext_;
+    public com.google.protobuf.ByteString
+        getSecondContextBase64Bytes() {
+      java.lang.Object ref = secondContextBase64_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secondContextBase64_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int THIRD_CONTEXT_BASE_64_FIELD_NUMBER = 5;
+    private volatile java.lang.Object thirdContextBase64_;
+    /**
+     * <code>optional string third_context_base_64 = 5;</code>
+     */
+    public java.lang.String getThirdContextBase64() {
+      java.lang.Object ref = thirdContextBase64_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        thirdContextBase64_ = s;
+        return s;
+      }
     }
     /**
-     * <code>optional .google.protobuf.Any third_context = 5;</code>
+     * <code>optional string third_context_base_64 = 5;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getThirdContextOrBuilder() {
-      return getThirdContext();
+    public com.google.protobuf.ByteString
+        getThirdContextBase64Bytes() {
+      java.lang.Object ref = thirdContextBase64_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        thirdContextBase64_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5929,14 +5785,14 @@ public final class YadelModels {
       if (newTask_ != null) {
         output.writeMessage(2, getNewTask());
       }
-      if (firstContext_ != null) {
-        output.writeMessage(3, getFirstContext());
+      if (!getFirstContextBase64Bytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, firstContextBase64_);
       }
-      if (secondContext_ != null) {
-        output.writeMessage(4, getSecondContext());
+      if (!getSecondContextBase64Bytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, secondContextBase64_);
       }
-      if (thirdContext_ != null) {
-        output.writeMessage(5, getThirdContext());
+      if (!getThirdContextBase64Bytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, thirdContextBase64_);
       }
     }
 
@@ -5953,17 +5809,14 @@ public final class YadelModels {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getNewTask());
       }
-      if (firstContext_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getFirstContext());
+      if (!getFirstContextBase64Bytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, firstContextBase64_);
       }
-      if (secondContext_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getSecondContext());
+      if (!getSecondContextBase64Bytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, secondContextBase64_);
       }
-      if (thirdContext_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getThirdContext());
+      if (!getThirdContextBase64Bytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, thirdContextBase64_);
       }
       memoizedSize = size;
       return size;
@@ -6088,24 +5941,12 @@ public final class YadelModels {
           newTask_ = null;
           newTaskBuilder_ = null;
         }
-        if (firstContextBuilder_ == null) {
-          firstContext_ = null;
-        } else {
-          firstContext_ = null;
-          firstContextBuilder_ = null;
-        }
-        if (secondContextBuilder_ == null) {
-          secondContext_ = null;
-        } else {
-          secondContext_ = null;
-          secondContextBuilder_ = null;
-        }
-        if (thirdContextBuilder_ == null) {
-          thirdContext_ = null;
-        } else {
-          thirdContext_ = null;
-          thirdContextBuilder_ = null;
-        }
+        firstContextBase64_ = "";
+
+        secondContextBase64_ = "";
+
+        thirdContextBase64_ = "";
+
         return this;
       }
 
@@ -6138,21 +5979,9 @@ public final class YadelModels {
         } else {
           result.newTask_ = newTaskBuilder_.build();
         }
-        if (firstContextBuilder_ == null) {
-          result.firstContext_ = firstContext_;
-        } else {
-          result.firstContext_ = firstContextBuilder_.build();
-        }
-        if (secondContextBuilder_ == null) {
-          result.secondContext_ = secondContext_;
-        } else {
-          result.secondContext_ = secondContextBuilder_.build();
-        }
-        if (thirdContextBuilder_ == null) {
-          result.thirdContext_ = thirdContext_;
-        } else {
-          result.thirdContext_ = thirdContextBuilder_.build();
-        }
+        result.firstContextBase64_ = firstContextBase64_;
+        result.secondContextBase64_ = secondContextBase64_;
+        result.thirdContextBase64_ = thirdContextBase64_;
         onBuilt();
         return result;
       }
@@ -6174,14 +6003,17 @@ public final class YadelModels {
         if (other.hasNewTask()) {
           mergeNewTask(other.getNewTask());
         }
-        if (other.hasFirstContext()) {
-          mergeFirstContext(other.getFirstContext());
+        if (!other.getFirstContextBase64().isEmpty()) {
+          firstContextBase64_ = other.firstContextBase64_;
+          onChanged();
         }
-        if (other.hasSecondContext()) {
-          mergeSecondContext(other.getSecondContext());
+        if (!other.getSecondContextBase64().isEmpty()) {
+          secondContextBase64_ = other.secondContextBase64_;
+          onChanged();
         }
-        if (other.hasThirdContext()) {
-          mergeThirdContext(other.getThirdContext());
+        if (!other.getThirdContextBase64().isEmpty()) {
+          thirdContextBase64_ = other.thirdContextBase64_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -6443,355 +6275,211 @@ public final class YadelModels {
         return newTaskBuilder_;
       }
 
-      private com.google.protobuf.Any firstContext_ = null;
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> firstContextBuilder_;
+      private java.lang.Object firstContextBase64_ = "";
       /**
-       * <code>optional .google.protobuf.Any first_context = 3;</code>
+       * <code>optional string first_context_base_64 = 3;</code>
        */
-      public boolean hasFirstContext() {
-        return firstContextBuilder_ != null || firstContext_ != null;
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 3;</code>
-       */
-      public com.google.protobuf.Any getFirstContext() {
-        if (firstContextBuilder_ == null) {
-          return firstContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : firstContext_;
+      public java.lang.String getFirstContextBase64() {
+        java.lang.Object ref = firstContextBase64_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          firstContextBase64_ = s;
+          return s;
         } else {
-          return firstContextBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional .google.protobuf.Any first_context = 3;</code>
+       * <code>optional string first_context_base_64 = 3;</code>
        */
-      public Builder setFirstContext(com.google.protobuf.Any value) {
-        if (firstContextBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          firstContext_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getFirstContextBase64Bytes() {
+        java.lang.Object ref = firstContextBase64_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          firstContextBase64_ = b;
+          return b;
         } else {
-          firstContextBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
-       * <code>optional .google.protobuf.Any first_context = 3;</code>
+       * <code>optional string first_context_base_64 = 3;</code>
        */
-      public Builder setFirstContext(
-          com.google.protobuf.Any.Builder builderForValue) {
-        if (firstContextBuilder_ == null) {
-          firstContext_ = builderForValue.build();
-          onChanged();
-        } else {
-          firstContextBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 3;</code>
-       */
-      public Builder mergeFirstContext(com.google.protobuf.Any value) {
-        if (firstContextBuilder_ == null) {
-          if (firstContext_ != null) {
-            firstContext_ =
-              com.google.protobuf.Any.newBuilder(firstContext_).mergeFrom(value).buildPartial();
-          } else {
-            firstContext_ = value;
-          }
-          onChanged();
-        } else {
-          firstContextBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 3;</code>
-       */
-      public Builder clearFirstContext() {
-        if (firstContextBuilder_ == null) {
-          firstContext_ = null;
-          onChanged();
-        } else {
-          firstContext_ = null;
-          firstContextBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 3;</code>
-       */
-      public com.google.protobuf.Any.Builder getFirstContextBuilder() {
-        
+      public Builder setFirstContextBase64(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        firstContextBase64_ = value;
         onChanged();
-        return getFirstContextFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 3;</code>
-       */
-      public com.google.protobuf.AnyOrBuilder getFirstContextOrBuilder() {
-        if (firstContextBuilder_ != null) {
-          return firstContextBuilder_.getMessageOrBuilder();
-        } else {
-          return firstContext_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : firstContext_;
-        }
-      }
-      /**
-       * <code>optional .google.protobuf.Any first_context = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
-          getFirstContextFieldBuilder() {
-        if (firstContextBuilder_ == null) {
-          firstContextBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  getFirstContext(),
-                  getParentForChildren(),
-                  isClean());
-          firstContext_ = null;
-        }
-        return firstContextBuilder_;
-      }
-
-      private com.google.protobuf.Any secondContext_ = null;
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> secondContextBuilder_;
-      /**
-       * <code>optional .google.protobuf.Any second_context = 4;</code>
-       */
-      public boolean hasSecondContext() {
-        return secondContextBuilder_ != null || secondContext_ != null;
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 4;</code>
-       */
-      public com.google.protobuf.Any getSecondContext() {
-        if (secondContextBuilder_ == null) {
-          return secondContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : secondContext_;
-        } else {
-          return secondContextBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 4;</code>
-       */
-      public Builder setSecondContext(com.google.protobuf.Any value) {
-        if (secondContextBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          secondContext_ = value;
-          onChanged();
-        } else {
-          secondContextBuilder_.setMessage(value);
-        }
-
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any second_context = 4;</code>
+       * <code>optional string first_context_base_64 = 3;</code>
        */
-      public Builder setSecondContext(
-          com.google.protobuf.Any.Builder builderForValue) {
-        if (secondContextBuilder_ == null) {
-          secondContext_ = builderForValue.build();
-          onChanged();
-        } else {
-          secondContextBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 4;</code>
-       */
-      public Builder mergeSecondContext(com.google.protobuf.Any value) {
-        if (secondContextBuilder_ == null) {
-          if (secondContext_ != null) {
-            secondContext_ =
-              com.google.protobuf.Any.newBuilder(secondContext_).mergeFrom(value).buildPartial();
-          } else {
-            secondContext_ = value;
-          }
-          onChanged();
-        } else {
-          secondContextBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 4;</code>
-       */
-      public Builder clearSecondContext() {
-        if (secondContextBuilder_ == null) {
-          secondContext_ = null;
-          onChanged();
-        } else {
-          secondContext_ = null;
-          secondContextBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 4;</code>
-       */
-      public com.google.protobuf.Any.Builder getSecondContextBuilder() {
+      public Builder clearFirstContextBase64() {
         
+        firstContextBase64_ = getDefaultInstance().getFirstContextBase64();
         onChanged();
-        return getSecondContextFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 4;</code>
-       */
-      public com.google.protobuf.AnyOrBuilder getSecondContextOrBuilder() {
-        if (secondContextBuilder_ != null) {
-          return secondContextBuilder_.getMessageOrBuilder();
-        } else {
-          return secondContext_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : secondContext_;
-        }
-      }
-      /**
-       * <code>optional .google.protobuf.Any second_context = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
-          getSecondContextFieldBuilder() {
-        if (secondContextBuilder_ == null) {
-          secondContextBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  getSecondContext(),
-                  getParentForChildren(),
-                  isClean());
-          secondContext_ = null;
-        }
-        return secondContextBuilder_;
-      }
-
-      private com.google.protobuf.Any thirdContext_ = null;
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> thirdContextBuilder_;
-      /**
-       * <code>optional .google.protobuf.Any third_context = 5;</code>
-       */
-      public boolean hasThirdContext() {
-        return thirdContextBuilder_ != null || thirdContext_ != null;
-      }
-      /**
-       * <code>optional .google.protobuf.Any third_context = 5;</code>
-       */
-      public com.google.protobuf.Any getThirdContext() {
-        if (thirdContextBuilder_ == null) {
-          return thirdContext_ == null ? com.google.protobuf.Any.getDefaultInstance() : thirdContext_;
-        } else {
-          return thirdContextBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .google.protobuf.Any third_context = 5;</code>
-       */
-      public Builder setThirdContext(com.google.protobuf.Any value) {
-        if (thirdContextBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          thirdContext_ = value;
-          onChanged();
-        } else {
-          thirdContextBuilder_.setMessage(value);
-        }
-
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any third_context = 5;</code>
+       * <code>optional string first_context_base_64 = 3;</code>
        */
-      public Builder setThirdContext(
-          com.google.protobuf.Any.Builder builderForValue) {
-        if (thirdContextBuilder_ == null) {
-          thirdContext_ = builderForValue.build();
-          onChanged();
-        } else {
-          thirdContextBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any third_context = 5;</code>
-       */
-      public Builder mergeThirdContext(com.google.protobuf.Any value) {
-        if (thirdContextBuilder_ == null) {
-          if (thirdContext_ != null) {
-            thirdContext_ =
-              com.google.protobuf.Any.newBuilder(thirdContext_).mergeFrom(value).buildPartial();
-          } else {
-            thirdContext_ = value;
-          }
-          onChanged();
-        } else {
-          thirdContextBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any third_context = 5;</code>
-       */
-      public Builder clearThirdContext() {
-        if (thirdContextBuilder_ == null) {
-          thirdContext_ = null;
-          onChanged();
-        } else {
-          thirdContext_ = null;
-          thirdContextBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .google.protobuf.Any third_context = 5;</code>
-       */
-      public com.google.protobuf.Any.Builder getThirdContextBuilder() {
+      public Builder setFirstContextBase64Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         
+        firstContextBase64_ = value;
         onChanged();
-        return getThirdContextFieldBuilder().getBuilder();
+        return this;
       }
+
+      private java.lang.Object secondContextBase64_ = "";
       /**
-       * <code>optional .google.protobuf.Any third_context = 5;</code>
+       * <code>optional string second_context_base_64 = 4;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getThirdContextOrBuilder() {
-        if (thirdContextBuilder_ != null) {
-          return thirdContextBuilder_.getMessageOrBuilder();
+      public java.lang.String getSecondContextBase64() {
+        java.lang.Object ref = secondContextBase64_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secondContextBase64_ = s;
+          return s;
         } else {
-          return thirdContext_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : thirdContext_;
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional .google.protobuf.Any third_context = 5;</code>
+       * <code>optional string second_context_base_64 = 4;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
-          getThirdContextFieldBuilder() {
-        if (thirdContextBuilder_ == null) {
-          thirdContextBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  getThirdContext(),
-                  getParentForChildren(),
-                  isClean());
-          thirdContext_ = null;
+      public com.google.protobuf.ByteString
+          getSecondContextBase64Bytes() {
+        java.lang.Object ref = secondContextBase64_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          secondContextBase64_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-        return thirdContextBuilder_;
+      }
+      /**
+       * <code>optional string second_context_base_64 = 4;</code>
+       */
+      public Builder setSecondContextBase64(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        secondContextBase64_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string second_context_base_64 = 4;</code>
+       */
+      public Builder clearSecondContextBase64() {
+        
+        secondContextBase64_ = getDefaultInstance().getSecondContextBase64();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string second_context_base_64 = 4;</code>
+       */
+      public Builder setSecondContextBase64Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        secondContextBase64_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object thirdContextBase64_ = "";
+      /**
+       * <code>optional string third_context_base_64 = 5;</code>
+       */
+      public java.lang.String getThirdContextBase64() {
+        java.lang.Object ref = thirdContextBase64_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          thirdContextBase64_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string third_context_base_64 = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getThirdContextBase64Bytes() {
+        java.lang.Object ref = thirdContextBase64_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          thirdContextBase64_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string third_context_base_64 = 5;</code>
+       */
+      public Builder setThirdContextBase64(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        thirdContextBase64_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string third_context_base_64 = 5;</code>
+       */
+      public Builder clearThirdContextBase64() {
+        
+        thirdContextBase64_ = getDefaultInstance().getThirdContextBase64();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string third_context_base_64 = 5;</code>
+       */
+      public Builder setThirdContextBase64Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        thirdContextBase64_ = value;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7859,71 +7547,68 @@ public final class YadelModels {
   static {
     java.lang.String[] descriptorData = {
       "\n\021YadelModels.proto\022\035org.roylance.yadel." +
-      "api.models\032\031google/protobuf/any.proto\"\222\001" +
-      "\n\023WorkerConfiguration\022\n\n\002ip\030\001 \001(\t\022\014\n\004por" +
-      "t\030\002 \001(\t\022\014\n\004host\030\003 \001(\t\022\030\n\020initialized_tim" +
-      "e\030\004 \001(\004\0229\n\005state\030\005 \001(\0162*.org.roylance.ya" +
-      "del.api.models.WorkerState\"\355\001\n\rDagDefini" +
-      "tion\022\n\n\002id\030\001 \001(\t\022\017\n\007display\030\002 \001(\t\022Y\n\017fla" +
-      "ttened_tasks\030\003 \003(\0132@.org.roylance.yadel." +
-      "api.models.DagDefinition.FlattenedTasksE" +
-      "ntry\032d\n\023FlattenedTasksEntry\022\013\n\003key\030\001 \001(\t",
-      "\022<\n\005value\030\002 \001(\0132-.org.roylance.yadel.api" +
-      ".models.TaskDefinition:\0028\001\"\274\002\n\016TaskDefin" +
-      "ition\022\n\n\002id\030\001 \001(\t\022\017\n\007display\030\002 \001(\t\022U\n\014de" +
-      "pendencies\030\003 \003(\0132?.org.roylance.yadel.ap" +
-      "i.models.TaskDefinition.DependenciesEntr" +
-      "y\022D\n\016dag_definition\030\004 \001(\0132,.org.roylance" +
-      ".yadel.api.models.DagDefinition\022\014\n\004logs\030" +
-      "\005 \003(\t\032b\n\021DependenciesEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "<\n\005value\030\002 \001(\0132-.org.roylance.yadel.api." +
-      "models.TaskDefinition:\0028\001\"\342\006\n\003Dag\022D\n\016dag",
-      "_definition\030\001 \001(\0132,.org.roylance.yadel.a" +
-      "pi.models.DagDefinition\022\026\n\016execution_dat" +
-      "e\030\002 \001(\003\022\022\n\nstart_date\030\003 \001(\003\022\020\n\010end_date\030" +
-      "\004 \001(\003\022\020\n\010duration\030\005 \001(\003\022S\n\021uncompleted_t" +
-      "asks\030\006 \003(\01328.org.roylance.yadel.api.mode" +
-      "ls.Dag.UncompletedTasksEntry\022Q\n\020processi" +
-      "ng_tasks\030\007 \003(\01327.org.roylance.yadel.api." +
-      "models.Dag.ProcessingTasksEntry\022K\n\rerror" +
-      "ed_tasks\030\010 \003(\01324.org.roylance.yadel.api." +
-      "models.Dag.ErroredTasksEntry\022O\n\017complete",
-      "d_tasks\030\t \003(\01326.org.roylance.yadel.api.m" +
-      "odels.Dag.CompletedTasksEntry\032\\\n\025Uncompl" +
-      "etedTasksEntry\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001" +
-      "(\0132#.org.roylance.yadel.api.models.Task:" +
-      "\0028\001\032[\n\024ProcessingTasksEntry\022\013\n\003key\030\001 \001(\t" +
+      "api.models\"\222\001\n\023WorkerConfiguration\022\n\n\002ip" +
+      "\030\001 \001(\t\022\014\n\004port\030\002 \001(\t\022\014\n\004host\030\003 \001(\t\022\030\n\020in" +
+      "itialized_time\030\004 \001(\004\0229\n\005state\030\005 \001(\0162*.or" +
+      "g.roylance.yadel.api.models.WorkerState\"" +
+      "\355\001\n\rDagDefinition\022\n\n\002id\030\001 \001(\t\022\017\n\007display" +
+      "\030\002 \001(\t\022Y\n\017flattened_tasks\030\003 \003(\0132@.org.ro" +
+      "ylance.yadel.api.models.DagDefinition.Fl" +
+      "attenedTasksEntry\032d\n\023FlattenedTasksEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.org.royla",
+      "nce.yadel.api.models.TaskDefinition:\0028\001\"" +
+      "\274\002\n\016TaskDefinition\022\n\n\002id\030\001 \001(\t\022\017\n\007displa" +
+      "y\030\002 \001(\t\022U\n\014dependencies\030\003 \003(\0132?.org.royl" +
+      "ance.yadel.api.models.TaskDefinition.Dep" +
+      "endenciesEntry\022D\n\016dag_definition\030\004 \001(\0132," +
+      ".org.roylance.yadel.api.models.DagDefini" +
+      "tion\022\014\n\004logs\030\005 \003(\t\032b\n\021DependenciesEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.org.roylan" +
+      "ce.yadel.api.models.TaskDefinition:\0028\001\"\342" +
+      "\006\n\003Dag\022D\n\016dag_definition\030\001 \001(\0132,.org.roy",
+      "lance.yadel.api.models.DagDefinition\022\026\n\016" +
+      "execution_date\030\002 \001(\003\022\022\n\nstart_date\030\003 \001(\003" +
+      "\022\020\n\010end_date\030\004 \001(\003\022\020\n\010duration\030\005 \001(\003\022S\n\021" +
+      "uncompleted_tasks\030\006 \003(\01328.org.roylance.y" +
+      "adel.api.models.Dag.UncompletedTasksEntr" +
+      "y\022Q\n\020processing_tasks\030\007 \003(\01327.org.roylan" +
+      "ce.yadel.api.models.Dag.ProcessingTasksE" +
+      "ntry\022K\n\rerrored_tasks\030\010 \003(\01324.org.roylan" +
+      "ce.yadel.api.models.Dag.ErroredTasksEntr" +
+      "y\022O\n\017completed_tasks\030\t \003(\01326.org.roylanc",
+      "e.yadel.api.models.Dag.CompletedTasksEnt" +
+      "ry\032\\\n\025UncompletedTasksEntry\022\013\n\003key\030\001 \001(\t" +
       "\0222\n\005value\030\002 \001(\0132#.org.roylance.yadel.api" +
-      ".models.Task:\0028\001\032`\n\021ErroredTasksEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022:\n\005value\030\002 \001(\0132+.org.roylance" +
-      ".yadel.api.models.CompleteTask:\0028\001\032b\n\023Co" +
-      "mpletedTasksEntry\022\013\n\003key\030\001 \001(\t\022:\n\005value\030",
-      "\002 \001(\0132+.org.roylance.yadel.api.models.Co" +
-      "mpleteTask:\0028\001\"\246\002\n\004Task\022F\n\017task_definiti" +
+      ".models.Task:\0028\001\032[\n\024ProcessingTasksEntry" +
+      "\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001(\0132#.org.royla" +
+      "nce.yadel.api.models.Task:\0028\001\032`\n\021Errored" +
+      "TasksEntry\022\013\n\003key\030\001 \001(\t\022:\n\005value\030\002 \001(\0132+" +
+      ".org.roylance.yadel.api.models.CompleteT" +
+      "ask:\0028\001\032b\n\023CompletedTasksEntry\022\013\n\003key\030\001 " +
+      "\001(\t\022:\n\005value\030\002 \001(\0132+.org.roylance.yadel.",
+      "api.models.CompleteTask:\0028\001\"\374\001\n\004Task\022F\n\017" +
+      "task_definition\030\001 \001(\0132-.org.roylance.yad" +
+      "el.api.models.TaskDefinition\022\026\n\016executio" +
+      "n_date\030\002 \001(\003\022\022\n\nstart_date\030\003 \001(\003\022\020\n\010end_" +
+      "date\030\004 \001(\003\022\020\n\010duration\030\005 \001(\003\022\035\n\025first_co" +
+      "ntext_base_64\030\006 \001(\t\022\036\n\026second_context_ba" +
+      "se_64\030\007 \001(\t\022\035\n\025third_context_base_64\030\010 \001" +
+      "(\t\"\361\001\n\014AddTaskToDag\022B\n\013parent_task\030\001 \001(\013" +
+      "2-.org.roylance.yadel.api.models.TaskDef" +
+      "inition\022?\n\010new_task\030\002 \001(\0132-.org.roylance",
+      ".yadel.api.models.TaskDefinition\022\035\n\025firs" +
+      "t_context_base_64\030\003 \001(\t\022\036\n\026second_contex" +
+      "t_base_64\030\004 \001(\t\022\035\n\025third_context_base_64" +
+      "\030\005 \001(\t\"\310\001\n\014CompleteTask\022F\n\017task_definiti" +
       "on\030\001 \001(\0132-.org.roylance.yadel.api.models" +
-      ".TaskDefinition\022\026\n\016execution_date\030\002 \001(\003\022" +
-      "\022\n\nstart_date\030\003 \001(\003\022\020\n\010end_date\030\004 \001(\003\022\020\n" +
-      "\010duration\030\005 \001(\003\022+\n\rfirst_context\030\006 \001(\0132\024" +
-      ".google.protobuf.Any\022,\n\016second_context\030\007" +
-      " \001(\0132\024.google.protobuf.Any\022+\n\rthird_cont" +
-      "ext\030\010 \001(\0132\024.google.protobuf.Any\"\233\002\n\014AddT" +
-      "askToDag\022B\n\013parent_task\030\001 \001(\0132-.org.royl",
-      "ance.yadel.api.models.TaskDefinition\022?\n\010" +
-      "new_task\030\002 \001(\0132-.org.roylance.yadel.api." +
-      "models.TaskDefinition\022+\n\rfirst_context\030\003" +
-      " \001(\0132\024.google.protobuf.Any\022,\n\016second_con" +
-      "text\030\004 \001(\0132\024.google.protobuf.Any\022+\n\rthir" +
-      "d_context\030\005 \001(\0132\024.google.protobuf.Any\"\310\001" +
-      "\n\014CompleteTask\022F\n\017task_definition\030\001 \001(\0132" +
-      "-.org.roylance.yadel.api.models.TaskDefi" +
-      "nition\022P\n\024worker_configuration\030\002 \001(\01322.o" +
-      "rg.roylance.yadel.api.models.WorkerConfi",
-      "guration\022\014\n\004logs\030\003 \003(\t\022\020\n\010is_error\030\004 \001(\010" +
-      "*$\n\013WorkerState\022\013\n\007WORKING\020\000\022\010\n\004IDLE\020\001*." +
-      "\n\032WorkerToManagerMessageType\022\020\n\014REGISTRA" +
-      "TION\020\000*9\n\033ManagerToManagerMessageType\022\032\n" +
-      "\026ENSURE_WORKERS_WORKING\020\000*$\n\tActorRole\022\013" +
-      "\n\007MANAGER\020\000\022\n\n\006WORKER\020\001b\006proto3"
+      ".TaskDefinition\022P\n\024worker_configuration\030" +
+      "\002 \001(\01322.org.roylance.yadel.api.models.Wo" +
+      "rkerConfiguration\022\014\n\004logs\030\003 \003(\t\022\020\n\010is_er" +
+      "ror\030\004 \001(\010*$\n\013WorkerState\022\013\n\007WORKING\020\000\022\010\n" +
+      "\004IDLE\020\001*.\n\032WorkerToManagerMessageType\022\020\n",
+      "\014REGISTRATION\020\000*9\n\033ManagerToManagerMessa" +
+      "geType\022\032\n\026ENSURE_WORKERS_WORKING\020\000*$\n\tAc" +
+      "torRole\022\013\n\007MANAGER\020\000\022\n\n\006WORKER\020\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7936,7 +7621,6 @@ public final class YadelModels {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
         }, assigner);
     internal_static_org_roylance_yadel_api_models_WorkerConfiguration_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -8003,20 +7687,19 @@ public final class YadelModels {
     internal_static_org_roylance_yadel_api_models_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_roylance_yadel_api_models_Task_descriptor,
-        new java.lang.String[] { "TaskDefinition", "ExecutionDate", "StartDate", "EndDate", "Duration", "FirstContext", "SecondContext", "ThirdContext", });
+        new java.lang.String[] { "TaskDefinition", "ExecutionDate", "StartDate", "EndDate", "Duration", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64", });
     internal_static_org_roylance_yadel_api_models_AddTaskToDag_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_org_roylance_yadel_api_models_AddTaskToDag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_roylance_yadel_api_models_AddTaskToDag_descriptor,
-        new java.lang.String[] { "ParentTask", "NewTask", "FirstContext", "SecondContext", "ThirdContext", });
+        new java.lang.String[] { "ParentTask", "NewTask", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64", });
     internal_static_org_roylance_yadel_api_models_CompleteTask_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_org_roylance_yadel_api_models_CompleteTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_roylance_yadel_api_models_CompleteTask_descriptor,
         new java.lang.String[] { "TaskDefinition", "WorkerConfiguration", "Logs", "IsError", });
-    com.google.protobuf.AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

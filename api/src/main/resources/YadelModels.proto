@@ -1,8 +1,6 @@
 syntax = "proto3";
 package org.roylance.yadel.api.models;
 
-import "google/protobuf/any.proto";
-
 message WorkerConfiguration {
     string ip = 1;
     string port = 2;
@@ -61,17 +59,17 @@ message Task {
     int64 start_date = 3;
     int64 end_date = 4;
     int64 duration = 5;
-    google.protobuf.Any first_context = 6;
-    google.protobuf.Any second_context = 7;
-    google.protobuf.Any third_context = 8;
+    string first_context_base_64 = 6;
+    string second_context_base_64 = 7;
+    string third_context_base_64 = 8;
 }
 
 message AddTaskToDag {
     TaskDefinition parent_task = 1;
     TaskDefinition new_task = 2;
-    google.protobuf.Any first_context = 3;
-    google.protobuf.Any second_context = 4;
-    google.protobuf.Any third_context = 5;
+    string first_context_base_64 = 3;
+    string second_context_base_64 = 4;
+    string third_context_base_64 = 5;
 }
 
 message CompleteTask {

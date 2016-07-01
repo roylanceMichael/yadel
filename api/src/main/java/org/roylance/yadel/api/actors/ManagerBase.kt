@@ -54,9 +54,9 @@ open class ManagerBase :UntypedActor() {
             foundDag.dagDefinitionBuilder.mutableFlattenedTasks[p0.newTask.id] = p0.newTask
 
             val newTask = YadelModels.Task.newBuilder()
-                    .setFirstContext(p0.firstContext)
-                    .setSecondContext(p0.secondContext)
-                    .setThirdContext(p0.thirdContext)
+                    .setFirstContextBase64(p0.firstContextBase64)
+                    .setSecondContextBase64(p0.secondContextBase64)
+                    .setThirdContextBase64(p0.thirdContextBase64)
                     .setTaskDefinition(p0.newTask)
                     .setStartDate(Date().time)
                     .setExecutionDate(Date().time)
