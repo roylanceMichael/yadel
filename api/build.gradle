@@ -1,14 +1,15 @@
 group 'org.roylance'
-version '0.49-SNAPSHOT'
+version '0.50-SNAPSHOT'
 
 buildscript {
+    ext.kotlinVersion = "1.0.3"
     repositories {
         jcenter()
         mavenCentral()
     }
     dependencies {
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 
@@ -57,7 +58,7 @@ artifactory {
 }
 
 dependencies {
-    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
     compile 'com.typesafe.akka:akka-cluster_2.11:2.4.7'
     compile 'com.google.protobuf:protobuf-java:3.0.0-beta-3'

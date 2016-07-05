@@ -15,7 +15,6 @@ open class ManagerBase :UntypedActor() {
     protected val workers = HashMap<String, ConfigurationActorRef>()
     protected val activeDags = HashMap<String, YadelModels.Dag.Builder>()
 
-    // todo: keep completed dags around
     protected val log = Logging.getLogger(this.context().system(), this)
 
     override fun preStart() {
@@ -93,8 +92,13 @@ open class ManagerBase :UntypedActor() {
                 this.handleReport()
             }
             if (p0.requestType.equals(YadelReports.UIRequests.DELETE_DAG)) {
+                this.log.info("attempting to remove ${p0.dagId}")
                 if (this.activeDags.containsKey(p0.dagId)) {
                     this.activeDags.remove(p0.dagId)
+                    this.log.info("removed ${p0.dagId}")
+                }
+                else {
+                    this.log.info("could not find ${p0.dagId} in the dag list. current dags are: ${this.activeDags.keys.map { it }.joinToString()}")
                 }
             }
         }
