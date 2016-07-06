@@ -6,8 +6,7 @@ import java.util.*
 
 class DagBuilder:IBuilder<YadelModels.Dag> {
     override fun build(): YadelModels.Dag {
-        val dagToReturn = YadelModels.Dag.newBuilder()
-        val dagDefinition = YadelModels.DagDefinition
+        val dagDefinition = YadelModels.Dag
                 .newBuilder()
                 .setId(UUID.randomUUID().toString())
                 .setDisplay("amazing dag")
@@ -23,52 +22,46 @@ class DagBuilder:IBuilder<YadelModels.Dag> {
         val ninthTask = buildTaskDefinition(NinthTaskId, dagDefinition)
         val tenthTask = buildTaskDefinition(TenthTaskId, dagDefinition)
 
-        tenthTask.mutableDependencies[NinthTaskId] = seventhTask.build()
-        ninthTask.mutableDependencies[EigthTaskId] = sixthTask.build()
-        eigthTask.mutableDependencies[SeventhTaskId] = fifthTask.build()
-        seventhTask.mutableDependencies[SixthTaskId] = secondTask.build()
-        sixthTask.mutableDependencies[FifthTaskId] = thirdTask.build()
-        fifthTask.mutableDependencies[FourthTaskId] = fourthTask.build()
-        fourthTask.mutableDependencies[ThirdTaskId] = firstTask.build()
-        thirdTask.mutableDependencies[SecondTaskId] = firstTask.build()
-        secondTask.mutableDependencies[FirstTaskId] = firstTask.build()
+        tenthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(ninthTask.id))
+        ninthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(sixthTask.id))
+        eigthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(seventhTask.id))
+        seventhTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(fifthTask.id))
+        sixthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(thirdTask.id))
+        fifthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(fourthTask.id))
+        fourthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(firstTask.id))
+        thirdTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(firstTask.id))
+        secondTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(firstTask.id))
 
-        dagDefinition.mutableFlattenedTasks[FirstTaskId] = firstTask.build()
-        dagDefinition.mutableFlattenedTasks[SecondTaskId] = secondTask.build()
-        dagDefinition.mutableFlattenedTasks[ThirdTaskId] = thirdTask.build()
-        dagDefinition.mutableFlattenedTasks[FourthTaskId] = fourthTask.build()
-        dagDefinition.mutableFlattenedTasks[FifthTaskId] = fifthTask.build()
-        dagDefinition.mutableFlattenedTasks[SixthTaskId] = sixthTask.build()
-        dagDefinition.mutableFlattenedTasks[SeventhTaskId] = seventhTask.build()
-        dagDefinition.mutableFlattenedTasks[EigthTaskId] = eigthTask.build()
-        dagDefinition.mutableFlattenedTasks[NinthTaskId] = ninthTask.build()
-        dagDefinition.mutableFlattenedTasks[TenthTaskId] = tenthTask.build()
+        dagDefinition.addFlattenedTasks(firstTask)
+        dagDefinition.addFlattenedTasks(secondTask)
+        dagDefinition.addFlattenedTasks(thirdTask)
+        dagDefinition.addFlattenedTasks(fourthTask)
+        dagDefinition.addFlattenedTasks(fifthTask)
+        dagDefinition.addFlattenedTasks(sixthTask)
+        dagDefinition.addFlattenedTasks(seventhTask)
+        dagDefinition.addFlattenedTasks(eigthTask)
+        dagDefinition.addFlattenedTasks(ninthTask)
+        dagDefinition.addFlattenedTasks(tenthTask)
 
-        dagToReturn.mutableUncompletedTasks[FirstTaskId] = buildTask(firstTask)
-        dagToReturn.mutableUncompletedTasks[SecondTaskId] = buildTask(secondTask)
-        dagToReturn.mutableUncompletedTasks[ThirdTaskId] = buildTask(thirdTask)
-        dagToReturn.mutableUncompletedTasks[FourthTaskId] = buildTask(fourthTask)
-        dagToReturn.mutableUncompletedTasks[FifthTaskId] = buildTask(fifthTask)
-        dagToReturn.mutableUncompletedTasks[SixthTaskId] = buildTask(sixthTask)
-        dagToReturn.mutableUncompletedTasks[SeventhTaskId] = buildTask(seventhTask)
-        dagToReturn.mutableUncompletedTasks[EigthTaskId] = buildTask(eigthTask)
-        dagToReturn.mutableUncompletedTasks[NinthTaskId] = buildTask(ninthTask)
-        dagToReturn.mutableUncompletedTasks[TenthTaskId] = buildTask(tenthTask)
+        dagDefinition.addUncompletedTasks(firstTask)
+        dagDefinition.addUncompletedTasks(secondTask)
+        dagDefinition.addUncompletedTasks(thirdTask)
+        dagDefinition.addUncompletedTasks(fourthTask)
+        dagDefinition.addUncompletedTasks(fifthTask)
+        dagDefinition.addUncompletedTasks(sixthTask)
+        dagDefinition.addUncompletedTasks(seventhTask)
+        dagDefinition.addUncompletedTasks(eigthTask)
+        dagDefinition.addUncompletedTasks(ninthTask)
+        dagDefinition.addUncompletedTasks(tenthTask)
 
-        dagToReturn.dagDefinition = dagDefinition.build()
-
-        return dagToReturn.build()
+        return dagDefinition.build()
     }
 
-
-    private fun buildTask(taskDefinition: YadelModels.TaskDefinition.Builder):YadelModels.Task {
-        return YadelModels.Task.newBuilder().setTaskDefinition(taskDefinition).build()
-    }
-
-    private fun buildTaskDefinition(id:String, dagDefinition:YadelModels.DagDefinition.Builder):YadelModels.TaskDefinition.Builder {
-        return YadelModels.TaskDefinition.newBuilder()
-                .setDagDefinition(dagDefinition)
-                .setId(id)
+    private fun buildTaskDefinition(id:String,
+                                    dagDefinition:YadelModels.Dag.Builder):YadelModels.Task.Builder {
+        return YadelModels.Task.newBuilder()
+                .setDagId(dagDefinition.id)
+                .setId(UUID.randomUUID().toString())
                 .setDisplay(id)
     }
 

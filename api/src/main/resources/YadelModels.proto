@@ -2,11 +2,12 @@ syntax = "proto3";
 package org.roylance.yadel.api.models;
 
 message WorkerConfiguration {
-    string ip = 1;
-    string port = 2;
-    string host = 3;
-    uint64 initialized_time = 4;
-    WorkerState state = 5;
+    string id = 1;
+    string ip = 2;
+    string port = 3;
+    string host = 4;
+    uint64 initialized_time = 5;
+    WorkerState state = 6;
 }
 
 enum WorkerState {
@@ -27,54 +28,58 @@ enum ActorRole {
     WORKER = 1;
 }
 
-message DagDefinition {
+message Log {
     string id = 1;
-    string display = 2;
-    map<string, TaskDefinition> flattened_tasks = 3;
-}
-
-message TaskDefinition {
-    string id = 1;
-    string display = 2;
-    map<string, TaskDefinition> dependencies = 3;
-    DagDefinition dag_definition = 4;
-    repeated string logs = 5;
+    string message = 2;
 }
 
 message Dag {
-    DagDefinition dag_definition = 1;
-    int64 execution_date = 2;
-    int64 start_date = 3;
-    int64 end_date = 4;
-    int64 duration = 5;
-    map<string, Task> uncompleted_tasks = 6;
-    map<string, Task> processing_tasks = 7;
-    map<string, CompleteTask> errored_tasks = 8;
-    map<string, CompleteTask> completed_tasks = 9;
+    string id = 1;
+    string display = 2;
+    repeated Task flattened_tasks = 3;
+    int64 execution_date = 4;
+    int64 start_date = 5;
+    int64 end_date = 6;
+    int64 duration = 7;
+    repeated Task uncompleted_tasks = 8;
+    repeated Task processing_tasks = 9;
+    repeated Task errored_tasks = 10;
+    repeated Task completed_tasks = 11;
 }
 
 message Task {
-    TaskDefinition task_definition = 1;
-    int64 execution_date = 2;
-    int64 start_date = 3;
-    int64 end_date = 4;
-    int64 duration = 5;
-    string first_context_base_64 = 6;
-    string second_context_base_64 = 7;
-    string third_context_base_64 = 8;
+    string id = 1;
+    string display = 2;
+    repeated TaskDependency dependencies = 3;
+    string dag_id = 4;
+    repeated Log logs = 5;
+    int64 execution_date = 6;
+    int64 start_date = 7;
+    int64 end_date = 8;
+    int64 duration = 9;
+    string first_context_base_64 = 10;
+    string second_context_base_64 = 11;
+    string third_context_base_64 = 12;
+}
+
+message TaskDependency {
+    string id = 1;
+    string parent_task_id = 2;
 }
 
 message AddTaskToDag {
-    TaskDefinition parent_task = 1;
-    TaskDefinition new_task = 2;
-    string first_context_base_64 = 3;
-    string second_context_base_64 = 4;
-    string third_context_base_64 = 5;
+    string id = 1;
+    Task parent_task = 2;
+    Task new_task = 3;
+    string first_context_base_64 = 4;
+    string second_context_base_64 = 5;
+    string third_context_base_64 = 6;
 }
 
 message CompleteTask {
-    TaskDefinition task_definition = 1;
-    WorkerConfiguration worker_configuration = 2;
-    repeated string logs = 3;
-    bool is_error = 4;
+    string id = 1;
+    Task task = 2;
+    WorkerConfiguration worker_configuration = 3;
+    repeated string logs = 4;
+    bool is_error = 5;
 }

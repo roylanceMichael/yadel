@@ -11,23 +11,26 @@ class SampleWorker:WorkerBase() {
         super.onReceive(p0)
 
         if (p0 is YadelModels.Task) {
-            val completeTask = this.handleMessage(p0.taskDefinition.id)
-            completeTask.taskDefinition = p0.taskDefinition
+            val completeTask = this.handleMessage(p0.display)
+            completeTask.task = p0
             this.completeTask(completeTask.build())
 
             if (random.nextBoolean()) {
                 val randomInt = this.random.nextInt()
                 val idAndDisplay = "$randomInt to ${randomInt + 100}"
-                val newTask = YadelModels.TaskDefinition.newBuilder()
-                        .setId(idAndDisplay)
+                val newTask = YadelModels.Task.newBuilder()
+                        .setId(UUID.randomUUID().toString())
                         .setDisplay(idAndDisplay)
-                        .setDagDefinition(p0.taskDefinition.dagDefinition)
+                        .setDagId(p0.dagId)
 
-                newTask.mutableDependencies[p0.taskDefinition.id] = p0.taskDefinition
+                val dependency = YadelModels.TaskDependency.newBuilder()
+                        .setId(UUID.randomUUID().toString())
+                        .setParentTaskId(p0.id)
+                newTask.addDependencies(dependency)
 
                 val addTask = YadelModels.AddTaskToDag
                         .newBuilder()
-                        .setParentTask(p0.taskDefinition)
+                        .setParentTask(p0)
                         .setNewTask(newTask)
 
                 this.getManagerSelection()?.tell(addTask.build(), this.self)
@@ -51,7 +54,7 @@ class SampleWorker:WorkerBase() {
                 val logMessage = "$startNumber"
                 returnCompleteTask.addLogs(logMessage)
                 this.log.info(logMessage)
-                startNumber++
+                startNumber += 20
                 Thread.sleep(500)
             }
         }
