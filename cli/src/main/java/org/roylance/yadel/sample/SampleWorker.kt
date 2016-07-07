@@ -2,10 +2,17 @@ package org.roylance.yadel.sample
 
 import org.roylance.yadel.api.actors.WorkerBase
 import org.roylance.yadel.api.models.YadelModels
+import java.lang.management.ManagementFactory
 import java.util.*
 
 class SampleWorker:WorkerBase() {
     private val random = Random()
+
+    override fun preStart() {
+        super.preStart()
+        Runtime.getRuntime().maxMemory()
+        System.out.println("max memory: ${ManagementFactory.getMemoryMXBean().heapMemoryUsage.max / 1000000} MB")
+    }
 
     override fun onReceive(p0: Any?) {
         super.onReceive(p0)

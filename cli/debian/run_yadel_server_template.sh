@@ -12,4 +12,6 @@ bin/yadel.cli ${host} ${nodePort1} > seedNode1.out 2>&1&
 # seed node 2
 bin/yadel.cli ${host} ${nodePort2} > seedNode2.out 2>&1&
 # manager
+export JAVA_OPTS="${JAVA_OPTS} -Xmx2g -Xms1g"
+echo ${JAVA_OPTS}
 bin/yadel.cli ${host} 2344 > manager.out 2>&1&

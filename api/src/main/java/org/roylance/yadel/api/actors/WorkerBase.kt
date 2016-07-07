@@ -9,6 +9,7 @@ import akka.cluster.MemberStatus
 import akka.event.Logging
 import org.roylance.yadel.api.enums.CommonTokens
 import org.roylance.yadel.api.models.YadelModels
+import java.lang.management.ManagementFactory
 
 abstract class WorkerBase: UntypedActor() {
     protected val cluster = Cluster.get(this.context.system())
@@ -17,7 +18,7 @@ abstract class WorkerBase: UntypedActor() {
     protected var foundManagerAddress:String? = null
 
     override fun preStart() {
-        this.log.info("handling preStart on base")
+        System.out.println("max memory: ${ManagementFactory.getMemoryMXBean().heapMemoryUsage.max / 1000000} MB")
         super.preStart()
         this.cluster.subscribe(this.self, ClusterEvent.MemberUp::class.java)
     }

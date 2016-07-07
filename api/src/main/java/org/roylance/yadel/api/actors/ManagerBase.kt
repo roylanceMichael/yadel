@@ -4,75 +4,43 @@ import akka.actor.ActorRef
 import akka.actor.Terminated
 import akka.actor.UntypedActor
 import akka.event.Logging
-import com.google.protobuf.Message
 import org.roylance.yadel.api.models.ConfigurationActorRef
 import org.roylance.yadel.api.models.YadelModels
 import org.roylance.yadel.api.models.YadelReports
-import org.roylance.yadel.api.utilities.YadelModelsProtoGenerator
-import org.roylance.yaorm.services.jdbc.JDBCGranularDatabaseProtoService
-import org.roylance.yaorm.services.proto.EntityMessageService
-import org.roylance.yaorm.services.proto.EntityProtoService
-import org.roylance.yaorm.services.proto.IMessageStreamer
-import org.roylance.yaorm.services.sqlite.SQLiteConnectionSourceFactory
-import org.roylance.yaorm.services.sqlite.SQLiteGeneratorService
 import scala.concurrent.duration.Duration
+import java.lang.management.ManagementFactory
 import java.util.*
 import java.util.concurrent.TimeUnit
 
 open class ManagerBase :UntypedActor() {
     protected val workers = HashMap<String, ConfigurationActorRef>()
+    protected val activeDags = HashMap<String, YadelModels.Dag.Builder>()
 
     protected val log = Logging.getLogger(this.context().system(), this)
-    protected val entityMessageService:EntityMessageService
-
-    private val sourceConnection:SQLiteConnectionSourceFactory
-
-    init {
-        this.sourceConnection = SQLiteConnectionSourceFactory(DatabaseLocation)
-        val connection = this.sourceConnection.connectionSource
-
-        val granularDatabaseService = JDBCGranularDatabaseProtoService(
-                this.sourceConnection.connectionSource,
-                false)
-        val sqliteGeneratorService = SQLiteGeneratorService()
-        val entityService = EntityProtoService(null, granularDatabaseService, sqliteGeneratorService)
-        this.entityMessageService = EntityMessageService(YadelModelsProtoGenerator(), entityService)
-        this.entityMessageService.createEntireSchema(YadelModels.Dag.getDefaultInstance())
-    }
 
     override fun preStart() {
+        System.out.println("max memory: ${ManagementFactory.getMemoryMXBean().heapMemoryUsage.max / 1000000} MB")
         val runnable = Runnable {
             this.self.tell(YadelModels.ManagerToManagerMessageType.ENSURE_WORKERS_WORKING, this.self)
         }
         this.context.system().scheduler().schedule(OneMinute, OneMinute, runnable,this.context.system().dispatcher())
     }
 
-    override fun postStop() {
-        super.postStop()
-        this.sourceConnection.close()
-    }
-
     override fun onReceive(p0: Any?) {
         // is this a dag from someone?
         if (p0 is YadelModels.Dag) {
-            // save it...
-            this.entityMessageService.merge(p0)
+            this.activeDags[p0.id] = p0.toBuilder()
         }
-        else if (p0 is YadelModels.AddTaskToDag &&
-                p0.hasNewTask()) {
+        else if (p0 is YadelModels.AddTaskToDag && p0.hasNewTask() && this.activeDags.containsKey(p0.newTask.dagId)) {
             this.log.info("looking for ${p0.newTask.dagId}")
-            val foundDag = this.entityMessageService.get(YadelModels.Dag.getDefaultInstance(), p0.newTask.dagId) ?: return
-
-            val newDagBuilder = foundDag.toBuilder().addUncompletedTasks(p0.newTask).addFlattenedTasks(p0.newTask)
-            this.entityMessageService.merge(newDagBuilder.build())
+            val foundDag = this.activeDags[p0.newTask.dagId]!!
+            foundDag.addUncompletedTasks(p0.newTask).addFlattenedTasks(p0.newTask)
             this.log.info("saved task to dag")
         }
-        else if (p0 is YadelModels.CompleteTask) {
+        else if (p0 is YadelModels.CompleteTask && this.activeDags.containsKey(p0.task.dagId)) {
             this.updateSenderStatus(YadelModels.WorkerState.IDLE)
-            val foundDag = this.entityMessageService
-                    .get(YadelModels.Dag.getDefaultInstance(), p0.task.dagId) ?: return
 
-            val foundDagBuilder = foundDag.toBuilder()
+            val foundDagBuilder = this.activeDags[p0.task.dagId]!!
             val existingTask = foundDagBuilder.processingTasksBuilderList.firstOrNull { it.id.equals(p0.task.id) }
             if (existingTask != null) {
                 val indexToRemove = foundDagBuilder.processingTasksBuilderList.indexOf(existingTask)
@@ -88,8 +56,6 @@ open class ManagerBase :UntypedActor() {
             else {
                 foundDagBuilder.addCompletedTasks(p0.task)
             }
-
-            this.entityMessageService.merge(foundDagBuilder.build())
         }
         else if (p0 is YadelModels.WorkerToManagerMessageType &&
                 YadelModels.WorkerToManagerMessageType.REGISTRATION.equals(p0)) {
@@ -104,17 +70,10 @@ open class ManagerBase :UntypedActor() {
             if (p0.requestType.equals(YadelReports.UIRequests.REPORT_DAGS)) {
                 this.handleReport()
             }
-            if (p0.requestType.equals(YadelReports.UIRequests.DELETE_DAG)) {
+            if (p0.requestType.equals(YadelReports.UIRequests.DELETE_DAG) &&
+                this.activeDags.containsKey(p0.dagId)) {
                 this.log.info("attempting to remove ${p0.dagId}")
-
-                val foundDag = this.entityMessageService.get(YadelModels.Dag.getDefaultInstance(), p0.dagId)
-                if (foundDag != null) {
-                    this.entityMessageService.delete(foundDag)
-                    this.log.info("removed ${p0.dagId}")
-                }
-                else {
-                    this.log.info("could not find ${p0.dagId} in the dag list. current dags are...")
-                }
+                this.activeDags.remove(p0.dagId)
             }
         }
         else if (p0 is YadelReports.UIRequests) {
@@ -124,13 +83,10 @@ open class ManagerBase :UntypedActor() {
         }
         else if (p0 is YadelModels.ManagerToManagerMessageType &&
                 YadelModels.ManagerToManagerMessageType.ENSURE_WORKERS_WORKING.equals(p0)) {
-            val dags = this.entityMessageService.getKeys(YadelModels.Dag.getDefaultInstance())
+            this.log.info("Have ${this.activeDags.size} active dags with ${this.workers.size} workers:")
 
-            this.log.info("Have ${dags.size} active dags with ${this.workers.size} workers:")
-
-            dags.forEach {
-                val actualDag = entityMessageService.get(YadelModels.Dag.getDefaultInstance(), it) ?: return@forEach
-                val availableTaskIds = getAllAvailableTaskIds(actualDag.toBuilder())
+            this.activeDags.values.forEach { actualDag ->
+                val availableTaskIds = getAllAvailableTaskIds(actualDag)
                 this.log.info("${actualDag.display} (${actualDag.id})")
                 this.log.info("${actualDag.uncompletedTasksCount} uncompleted tasks")
                 this.log.info("${actualDag.processingTasksCount} processing tasks")
@@ -152,45 +108,29 @@ open class ManagerBase :UntypedActor() {
             return
         }
 
-        val streamer = object: IMessageStreamer {
-            override fun <T : Message> stream(message: T) {
-                val castedMessage = message as YadelModels.Dag
-                val actualDag = entityMessageService.get(castedMessage, castedMessage.id)
+        this.activeDags.values.forEach { foundActiveDag ->
+            val taskIdsToProcess = getAllAvailableTaskIds(foundActiveDag)
 
-                if (actualDag != null) {
-                    val foundActiveDag = actualDag.toBuilder()
-                    var anyChanges = false
-                    val taskIdsToProcess = getAllAvailableTaskIds(foundActiveDag)
+            taskIdsToProcess.forEach { uncompletedTaskId ->
+                val openWorker = getOpenWorker()
+                if (openWorker != null) {
+                    val workerKey = getActorRefKey(openWorker.actorRef)
+                    val foundTuple = workers[workerKey]
+                    val newBuilder = foundTuple!!.configuration.toBuilder()
+                    newBuilder.state = YadelModels.WorkerState.WORKING
+                    workers[workerKey] = ConfigurationActorRef(openWorker.actorRef, newBuilder.build())
 
-                    taskIdsToProcess.forEach { uncompletedTaskId ->
-                        val openWorker = getOpenWorker()
-                        if (openWorker != null) {
-                            val workerKey = getActorRefKey(openWorker.actorRef)
-                            val foundTuple = workers[workerKey]
-                            val newBuilder = foundTuple!!.configuration.toBuilder()
-                            newBuilder.state = YadelModels.WorkerState.WORKING
-                            workers[workerKey] = ConfigurationActorRef(openWorker.actorRef, newBuilder.build())
+                    val task = foundActiveDag.uncompletedTasksBuilderList.first { it.id.equals(uncompletedTaskId) }
+                    val taskIdx = foundActiveDag.uncompletedTasksBuilderList.indexOf(task!!)
+                    foundActiveDag.removeUncompletedTasks(taskIdx)
 
-                            val task = foundActiveDag.uncompletedTasksBuilderList.first { it.id.equals(uncompletedTaskId) }
-                            val taskIdx = foundActiveDag.uncompletedTasksBuilderList.indexOf(task!!)
-                            foundActiveDag.removeUncompletedTasks(taskIdx)
+                    val updatedTask = task.setExecutionDate(Date().time).setStartDate(Date().time)
+                    foundActiveDag.addProcessingTasks(updatedTask.build())
 
-                            val updatedTask = task.setExecutionDate(Date().time).setStartDate(Date().time)
-                            foundActiveDag.addProcessingTasks(updatedTask.build())
-
-                            openWorker.actorRef.tell(task.build(), self)
-                            anyChanges = true
-                        }
-                    }
-
-                    if (anyChanges) {
-                        entityMessageService.merge(foundActiveDag.build())
-                    }
+                    openWorker.actorRef.tell(task.build(), self)
                 }
             }
         }
-
-        this.entityMessageService.getKeysStream(YadelModels.Dag.getDefaultInstance(), streamer)
     }
 
     private fun handleReport() {
@@ -207,47 +147,40 @@ open class ManagerBase :UntypedActor() {
             dagReport.addWorkers(workerConfiguration)
         }
 
-        val streamer = object: IMessageStreamer {
-            override fun <T : Message> stream(message: T) {
-                val castedMessage = message as YadelModels.Dag
-                val dag = entityMessageService.get(castedMessage, castedMessage.id) ?: return
+        this.activeDags.values.forEach { dag ->
+            val newDag = YadelReports.UIDag.newBuilder()
+                    .setId(dag.id)
+                    .setDisplay(dag.display)
+                    .setIsProcessing(dag.processingTasksCount > 0)
+                    .setIsError(dag.erroredTasksCount > 0)
+                    .setIsCompleted(dag.uncompletedTasksCount == 0)
+                    .setNumberCompleted(dag.completedTasksCount)
+                    .setNumberErrored(dag.erroredTasksCount)
+                    .setNumberProcessing(dag.processingTasksCount)
+                    .setNumberUnprocessed(dag.uncompletedTasksCount)
 
-                val newDag = YadelReports.UIDag.newBuilder()
-                        .setId(dag.id)
-                        .setDisplay(dag.display)
-                        .setIsProcessing(dag.processingTasksCount > 0)
-                        .setIsError(dag.erroredTasksCount > 0)
-                        .setIsCompleted(dag.uncompletedTasksCount == 0)
-                        .setNumberCompleted(dag.completedTasksCount)
-                        .setNumberErrored(dag.erroredTasksCount)
-                        .setNumberProcessing(dag.processingTasksCount)
-                        .setNumberUnprocessed(dag.uncompletedTasksCount)
+            dag
+                    .flattenedTasksList
+                    .forEach { task ->
+                        val newNode = YadelReports.UINode.newBuilder()
+                                .setId(task.id)
+                                .setDisplay(task.display)
+                                .setIsError(dag.erroredTasksList.any { it.id.equals(task.id) })
+                                .setIsProcessing(dag.processingTasksList.any { it.id.equals(task.id) })
+                                .setIsCompleted(dag.completedTasksList.any { it.id.equals(task.id) })
 
-                dag
-                        .flattenedTasksList
-                        .forEach { task ->
-                            val newNode = YadelReports.UINode.newBuilder()
-                                    .setId(task.id)
-                                    .setDisplay(task.display)
-                                    .setIsError(dag.erroredTasksList.any { it.id.equals(task.id) })
-                                    .setIsProcessing(dag.processingTasksList.any { it.id.equals(task.id) })
-                                    .setIsCompleted(dag.completedTasksList.any { it.id.equals(task.id) })
+                        newDag.addNodes(newNode)
+                        task.dependenciesList.forEach { dependency ->
+                            val newEdge = YadelReports.UIEdge.newBuilder()
+                                    .setNodeId1(task.id)
+                                    .setNodeId2(dependency.parentTaskId)
 
-                            newDag.addNodes(newNode)
-                            task.dependenciesList.forEach { dependency ->
-                                val newEdge = YadelReports.UIEdge.newBuilder()
-                                        .setNodeId1(task.id)
-                                        .setNodeId2(dependency.parentTaskId)
-
-                                newDag.addEdges(newEdge)
-                            }
+                            newDag.addEdges(newEdge)
                         }
+                    }
 
-                dagReport.addDags(newDag.build())
-            }
+            dagReport.addDags(newDag.build())
         }
-
-        this.entityMessageService.getKeysStream(YadelModels.Dag.getDefaultInstance(), streamer)
 
         // respond with message, but encode in base 64
         this.sender.tell(dagReport.build(), this.self)
