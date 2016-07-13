@@ -21,7 +21,6 @@ public final class YadelModels {
      * <code>IDLE = 1;</code>
      */
     IDLE(1, 1),
-    UNRECOGNIZED(-1, -1),
     ;
 
     /**
@@ -34,13 +33,7 @@ public final class YadelModels {
     public static final int IDLE_VALUE = 1;
 
 
-    public final int getNumber() {
-      if (index == -1) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
+    public final int getNumber() { return value; }
 
     public static WorkerState valueOf(int value) {
       switch (value) {
@@ -54,8 +47,8 @@ public final class YadelModels {
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        WorkerState> internalValueMap =
+    private static com.google.protobuf.Internal.EnumLiteMap<WorkerState>
+        internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<WorkerState>() {
             public WorkerState findValueByNumber(int number) {
               return WorkerState.valueOf(number);
@@ -83,9 +76,6 @@ public final class YadelModels {
         throw new java.lang.IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
       return VALUES[desc.getIndex()];
     }
 
@@ -109,7 +99,6 @@ public final class YadelModels {
      * <code>REGISTRATION = 0;</code>
      */
     REGISTRATION(0, 0),
-    UNRECOGNIZED(-1, -1),
     ;
 
     /**
@@ -118,13 +107,7 @@ public final class YadelModels {
     public static final int REGISTRATION_VALUE = 0;
 
 
-    public final int getNumber() {
-      if (index == -1) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
+    public final int getNumber() { return value; }
 
     public static WorkerToManagerMessageType valueOf(int value) {
       switch (value) {
@@ -137,8 +120,8 @@ public final class YadelModels {
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        WorkerToManagerMessageType> internalValueMap =
+    private static com.google.protobuf.Internal.EnumLiteMap<WorkerToManagerMessageType>
+        internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<WorkerToManagerMessageType>() {
             public WorkerToManagerMessageType findValueByNumber(int number) {
               return WorkerToManagerMessageType.valueOf(number);
@@ -166,9 +149,6 @@ public final class YadelModels {
         throw new java.lang.IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
       return VALUES[desc.getIndex()];
     }
 
@@ -192,7 +172,6 @@ public final class YadelModels {
      * <code>ENSURE_WORKERS_WORKING = 0;</code>
      */
     ENSURE_WORKERS_WORKING(0, 0),
-    UNRECOGNIZED(-1, -1),
     ;
 
     /**
@@ -201,13 +180,7 @@ public final class YadelModels {
     public static final int ENSURE_WORKERS_WORKING_VALUE = 0;
 
 
-    public final int getNumber() {
-      if (index == -1) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
+    public final int getNumber() { return value; }
 
     public static ManagerToManagerMessageType valueOf(int value) {
       switch (value) {
@@ -220,8 +193,8 @@ public final class YadelModels {
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ManagerToManagerMessageType> internalValueMap =
+    private static com.google.protobuf.Internal.EnumLiteMap<ManagerToManagerMessageType>
+        internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<ManagerToManagerMessageType>() {
             public ManagerToManagerMessageType findValueByNumber(int number) {
               return ManagerToManagerMessageType.valueOf(number);
@@ -248,9 +221,6 @@ public final class YadelModels {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
       }
       return VALUES[desc.getIndex()];
     }
@@ -279,7 +249,6 @@ public final class YadelModels {
      * <code>WORKER = 1;</code>
      */
     WORKER(1, 1),
-    UNRECOGNIZED(-1, -1),
     ;
 
     /**
@@ -292,13 +261,7 @@ public final class YadelModels {
     public static final int WORKER_VALUE = 1;
 
 
-    public final int getNumber() {
-      if (index == -1) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
+    public final int getNumber() { return value; }
 
     public static ActorRole valueOf(int value) {
       switch (value) {
@@ -312,8 +275,8 @@ public final class YadelModels {
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ActorRole> internalValueMap =
+    private static com.google.protobuf.Internal.EnumLiteMap<ActorRole>
+        internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<ActorRole>() {
             public ActorRole findValueByNumber(int number) {
               return ActorRole.valueOf(number);
@@ -341,9 +304,6 @@ public final class YadelModels {
         throw new java.lang.IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
       return VALUES[desc.getIndex()];
     }
 
@@ -365,6 +325,10 @@ public final class YadelModels {
     /**
      * <code>optional string id = 1;</code>
      */
+    boolean hasId();
+    /**
+     * <code>optional string id = 1;</code>
+     */
     java.lang.String getId();
     /**
      * <code>optional string id = 1;</code>
@@ -372,6 +336,10 @@ public final class YadelModels {
     com.google.protobuf.ByteString
         getIdBytes();
 
+    /**
+     * <code>optional string ip = 2;</code>
+     */
+    boolean hasIp();
     /**
      * <code>optional string ip = 2;</code>
      */
@@ -385,6 +353,10 @@ public final class YadelModels {
     /**
      * <code>optional string port = 3;</code>
      */
+    boolean hasPort();
+    /**
+     * <code>optional string port = 3;</code>
+     */
     java.lang.String getPort();
     /**
      * <code>optional string port = 3;</code>
@@ -392,6 +364,10 @@ public final class YadelModels {
     com.google.protobuf.ByteString
         getPortBytes();
 
+    /**
+     * <code>optional string host = 4;</code>
+     */
+    boolean hasHost();
     /**
      * <code>optional string host = 4;</code>
      */
@@ -405,12 +381,16 @@ public final class YadelModels {
     /**
      * <code>optional uint64 initialized_time = 5;</code>
      */
+    boolean hasInitializedTime();
+    /**
+     * <code>optional uint64 initialized_time = 5;</code>
+     */
     long getInitializedTime();
 
     /**
      * <code>optional .org.roylance.yadel.api.models.WorkerState state = 6;</code>
      */
-    int getStateValue();
+    boolean hasState();
     /**
      * <code>optional .org.roylance.yadel.api.models.WorkerState state = 6;</code>
      */
@@ -419,33 +399,40 @@ public final class YadelModels {
   /**
    * Protobuf type {@code org.roylance.yadel.api.models.WorkerConfiguration}
    */
-  public  static final class WorkerConfiguration extends
+  public static final class WorkerConfiguration extends
       com.google.protobuf.GeneratedMessage implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.api.models.WorkerConfiguration)
       WorkerConfigurationOrBuilder {
     // Use WorkerConfiguration.newBuilder() to construct.
     private WorkerConfiguration(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private WorkerConfiguration() {
-      id_ = "";
-      ip_ = "";
-      port_ = "";
-      host_ = "";
-      initializedTime_ = 0L;
-      state_ = 0;
+    private WorkerConfiguration(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final WorkerConfiguration defaultInstance;
+    public static WorkerConfiguration getDefaultInstance() {
+      return defaultInstance;
     }
 
+    public WorkerConfiguration getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        getUnknownFields() {
+      return this.unknownFields;
     }
     private WorkerConfiguration(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
-      this();
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -455,55 +442,61 @@ public final class YadelModels {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              id_ = bs;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ip_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              ip_ = bs;
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              port_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              port_ = bs;
               break;
             }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              host_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              host_ = bs;
               break;
             }
             case 40: {
-
+              bitField0_ |= 0x00000010;
               initializedTime_ = input.readUInt64();
               break;
             }
             case 48: {
               int rawValue = input.readEnum();
-
-              state_ = rawValue;
+              org.roylance.yadel.api.models.YadelModels.WorkerState value = org.roylance.yadel.api.models.YadelModels.WorkerState.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(6, rawValue);
+              } else {
+                bitField0_ |= 0x00000020;
+                state_ = value;
+              }
               break;
             }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -519,8 +512,30 @@ public final class YadelModels {
               org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.class, org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.Builder.class);
     }
 
+    public static com.google.protobuf.Parser<WorkerConfiguration> PARSER =
+        new com.google.protobuf.AbstractParser<WorkerConfiguration>() {
+      public WorkerConfiguration parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new WorkerConfiguration(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerConfiguration> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    private java.lang.Object id_;
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
     /**
      * <code>optional string id = 1;</code>
      */
@@ -532,7 +547,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
         return s;
       }
     }
@@ -554,7 +571,13 @@ public final class YadelModels {
     }
 
     public static final int IP_FIELD_NUMBER = 2;
-    private volatile java.lang.Object ip_;
+    private java.lang.Object ip_;
+    /**
+     * <code>optional string ip = 2;</code>
+     */
+    public boolean hasIp() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
     /**
      * <code>optional string ip = 2;</code>
      */
@@ -566,7 +589,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        ip_ = s;
+        if (bs.isValidUtf8()) {
+          ip_ = s;
+        }
         return s;
       }
     }
@@ -588,7 +613,13 @@ public final class YadelModels {
     }
 
     public static final int PORT_FIELD_NUMBER = 3;
-    private volatile java.lang.Object port_;
+    private java.lang.Object port_;
+    /**
+     * <code>optional string port = 3;</code>
+     */
+    public boolean hasPort() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
     /**
      * <code>optional string port = 3;</code>
      */
@@ -600,7 +631,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        port_ = s;
+        if (bs.isValidUtf8()) {
+          port_ = s;
+        }
         return s;
       }
     }
@@ -622,7 +655,13 @@ public final class YadelModels {
     }
 
     public static final int HOST_FIELD_NUMBER = 4;
-    private volatile java.lang.Object host_;
+    private java.lang.Object host_;
+    /**
+     * <code>optional string host = 4;</code>
+     */
+    public boolean hasHost() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
     /**
      * <code>optional string host = 4;</code>
      */
@@ -634,7 +673,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        host_ = s;
+        if (bs.isValidUtf8()) {
+          host_ = s;
+        }
         return s;
       }
     }
@@ -660,26 +701,39 @@ public final class YadelModels {
     /**
      * <code>optional uint64 initialized_time = 5;</code>
      */
+    public boolean hasInitializedTime() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional uint64 initialized_time = 5;</code>
+     */
     public long getInitializedTime() {
       return initializedTime_;
     }
 
     public static final int STATE_FIELD_NUMBER = 6;
-    private int state_;
+    private org.roylance.yadel.api.models.YadelModels.WorkerState state_;
     /**
      * <code>optional .org.roylance.yadel.api.models.WorkerState state = 6;</code>
      */
-    public int getStateValue() {
-      return state_;
+    public boolean hasState() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>optional .org.roylance.yadel.api.models.WorkerState state = 6;</code>
      */
     public org.roylance.yadel.api.models.YadelModels.WorkerState getState() {
-      org.roylance.yadel.api.models.YadelModels.WorkerState result = org.roylance.yadel.api.models.YadelModels.WorkerState.valueOf(state_);
-      return result == null ? org.roylance.yadel.api.models.YadelModels.WorkerState.UNRECOGNIZED : result;
+      return state_;
     }
 
+    private void initFields() {
+      id_ = "";
+      ip_ = "";
+      port_ = "";
+      host_ = "";
+      initializedTime_ = 0L;
+      state_ = org.roylance.yadel.api.models.YadelModels.WorkerState.WORKING;
+    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -692,56 +746,70 @@ public final class YadelModels {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getIdBytes());
       }
-      if (!getIpBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, ip_);
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getIpBytes());
       }
-      if (!getPortBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, port_);
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getPortBytes());
       }
-      if (!getHostBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 4, host_);
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getHostBytes());
       }
-      if (initializedTime_ != 0L) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeUInt64(5, initializedTime_);
       }
-      if (state_ != org.roylance.yadel.api.models.YadelModels.WorkerState.WORKING.getNumber()) {
-        output.writeEnum(6, state_);
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeEnum(6, state_.getNumber());
       }
+      getUnknownFields().writeTo(output);
     }
 
+    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getIdBytes());
       }
-      if (!getIpBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, ip_);
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getIpBytes());
       }
-      if (!getPortBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, port_);
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getPortBytes());
       }
-      if (!getHostBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, host_);
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getHostBytes());
       }
-      if (initializedTime_ != 0L) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(5, initializedTime_);
       }
-      if (state_ != org.roylance.yadel.api.models.YadelModels.WorkerState.WORKING.getNumber()) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, state_);
+          .computeEnumSize(6, state_.getNumber());
       }
-      memoizedSize = size;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static org.roylance.yadel.api.models.YadelModels.WorkerConfiguration parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -795,17 +863,12 @@ public final class YadelModels {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
+    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
     public static Builder newBuilder(org.roylance.yadel.api.models.YadelModels.WorkerConfiguration prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
+    public Builder toBuilder() { return newBuilder(this); }
 
     @java.lang.Override
     protected Builder newBuilderForType(
@@ -846,21 +909,29 @@ public final class YadelModels {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
+      private static Builder create() {
+        return new Builder();
+      }
+
       public Builder clear() {
         super.clear();
         id_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         ip_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         port_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         host_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         initializedTime_ = 0L;
-
-        state_ = 0;
-
+        bitField0_ = (bitField0_ & ~0x00000010);
+        state_ = org.roylance.yadel.api.models.YadelModels.WorkerState.WORKING;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -882,12 +953,33 @@ public final class YadelModels {
 
       public org.roylance.yadel.api.models.YadelModels.WorkerConfiguration buildPartial() {
         org.roylance.yadel.api.models.YadelModels.WorkerConfiguration result = new org.roylance.yadel.api.models.YadelModels.WorkerConfiguration(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
         result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
         result.ip_ = ip_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
         result.port_ = port_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
         result.host_ = host_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
         result.initializedTime_ = initializedTime_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
         result.state_ = state_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -903,29 +995,33 @@ public final class YadelModels {
 
       public Builder mergeFrom(org.roylance.yadel.api.models.YadelModels.WorkerConfiguration other) {
         if (other == org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
+        if (other.hasId()) {
+          bitField0_ |= 0x00000001;
           id_ = other.id_;
           onChanged();
         }
-        if (!other.getIp().isEmpty()) {
+        if (other.hasIp()) {
+          bitField0_ |= 0x00000002;
           ip_ = other.ip_;
           onChanged();
         }
-        if (!other.getPort().isEmpty()) {
+        if (other.hasPort()) {
+          bitField0_ |= 0x00000004;
           port_ = other.port_;
           onChanged();
         }
-        if (!other.getHost().isEmpty()) {
+        if (other.hasHost()) {
+          bitField0_ |= 0x00000008;
           host_ = other.host_;
           onChanged();
         }
-        if (other.getInitializedTime() != 0L) {
+        if (other.hasInitializedTime()) {
           setInitializedTime(other.getInitializedTime());
         }
-        if (other.state_ != 0) {
-          setStateValue(other.getStateValue());
+        if (other.hasState()) {
+          setState(other.getState());
         }
-        onChanged();
+        this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
@@ -950,8 +1046,15 @@ public final class YadelModels {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
+      /**
+       * <code>optional string id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
       /**
        * <code>optional string id = 1;</code>
        */
@@ -961,7 +1064,9 @@ public final class YadelModels {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          id_ = s;
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -991,7 +1096,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -1000,7 +1105,7 @@ public final class YadelModels {
        * <code>optional string id = 1;</code>
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -1013,8 +1118,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -1024,13 +1128,21 @@ public final class YadelModels {
       /**
        * <code>optional string ip = 2;</code>
        */
+      public boolean hasIp() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string ip = 2;</code>
+       */
       public java.lang.String getIp() {
         java.lang.Object ref = ip_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          ip_ = s;
+          if (bs.isValidUtf8()) {
+            ip_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1060,7 +1172,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000002;
         ip_ = value;
         onChanged();
         return this;
@@ -1069,7 +1181,7 @@ public final class YadelModels {
        * <code>optional string ip = 2;</code>
        */
       public Builder clearIp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         ip_ = getDefaultInstance().getIp();
         onChanged();
         return this;
@@ -1082,8 +1194,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000002;
         ip_ = value;
         onChanged();
         return this;
@@ -1093,13 +1204,21 @@ public final class YadelModels {
       /**
        * <code>optional string port = 3;</code>
        */
+      public boolean hasPort() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string port = 3;</code>
+       */
       public java.lang.String getPort() {
         java.lang.Object ref = port_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          port_ = s;
+          if (bs.isValidUtf8()) {
+            port_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1129,7 +1248,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000004;
         port_ = value;
         onChanged();
         return this;
@@ -1138,7 +1257,7 @@ public final class YadelModels {
        * <code>optional string port = 3;</code>
        */
       public Builder clearPort() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         port_ = getDefaultInstance().getPort();
         onChanged();
         return this;
@@ -1151,8 +1270,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000004;
         port_ = value;
         onChanged();
         return this;
@@ -1162,13 +1280,21 @@ public final class YadelModels {
       /**
        * <code>optional string host = 4;</code>
        */
+      public boolean hasHost() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string host = 4;</code>
+       */
       public java.lang.String getHost() {
         java.lang.Object ref = host_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          host_ = s;
+          if (bs.isValidUtf8()) {
+            host_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1198,7 +1324,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000008;
         host_ = value;
         onChanged();
         return this;
@@ -1207,7 +1333,7 @@ public final class YadelModels {
        * <code>optional string host = 4;</code>
        */
       public Builder clearHost() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         host_ = getDefaultInstance().getHost();
         onChanged();
         return this;
@@ -1220,14 +1346,19 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000008;
         host_ = value;
         onChanged();
         return this;
       }
 
       private long initializedTime_ ;
+      /**
+       * <code>optional uint64 initialized_time = 5;</code>
+       */
+      public boolean hasInitializedTime() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
       /**
        * <code>optional uint64 initialized_time = 5;</code>
        */
@@ -1238,7 +1369,7 @@ public final class YadelModels {
        * <code>optional uint64 initialized_time = 5;</code>
        */
       public Builder setInitializedTime(long value) {
-        
+        bitField0_ |= 0x00000010;
         initializedTime_ = value;
         onChanged();
         return this;
@@ -1247,33 +1378,24 @@ public final class YadelModels {
        * <code>optional uint64 initialized_time = 5;</code>
        */
       public Builder clearInitializedTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         initializedTime_ = 0L;
         onChanged();
         return this;
       }
 
-      private int state_ = 0;
+      private org.roylance.yadel.api.models.YadelModels.WorkerState state_ = org.roylance.yadel.api.models.YadelModels.WorkerState.WORKING;
       /**
        * <code>optional .org.roylance.yadel.api.models.WorkerState state = 6;</code>
        */
-      public int getStateValue() {
-        return state_;
-      }
-      /**
-       * <code>optional .org.roylance.yadel.api.models.WorkerState state = 6;</code>
-       */
-      public Builder setStateValue(int value) {
-        state_ = value;
-        onChanged();
-        return this;
+      public boolean hasState() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>optional .org.roylance.yadel.api.models.WorkerState state = 6;</code>
        */
       public org.roylance.yadel.api.models.YadelModels.WorkerState getState() {
-        org.roylance.yadel.api.models.YadelModels.WorkerState result = org.roylance.yadel.api.models.YadelModels.WorkerState.valueOf(state_);
-        return result == null ? org.roylance.yadel.api.models.YadelModels.WorkerState.UNRECOGNIZED : result;
+        return state_;
       }
       /**
        * <code>optional .org.roylance.yadel.api.models.WorkerState state = 6;</code>
@@ -1282,8 +1404,8 @@ public final class YadelModels {
         if (value == null) {
           throw new NullPointerException();
         }
-        
-        state_ = value.getNumber();
+        bitField0_ |= 0x00000020;
+        state_ = value;
         onChanged();
         return this;
       }
@@ -1291,73 +1413,31 @@ public final class YadelModels {
        * <code>optional .org.roylance.yadel.api.models.WorkerState state = 6;</code>
        */
       public Builder clearState() {
-        
-        state_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        state_ = org.roylance.yadel.api.models.YadelModels.WorkerState.WORKING;
         onChanged();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:org.roylance.yadel.api.models.WorkerConfiguration)
     }
 
-    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.WorkerConfiguration)
-    private static final org.roylance.yadel.api.models.YadelModels.WorkerConfiguration DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.roylance.yadel.api.models.YadelModels.WorkerConfiguration();
+      defaultInstance = new WorkerConfiguration(true);
+      defaultInstance.initFields();
     }
 
-    public static org.roylance.yadel.api.models.YadelModels.WorkerConfiguration getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<WorkerConfiguration>
-        PARSER = new com.google.protobuf.AbstractParser<WorkerConfiguration>() {
-      public WorkerConfiguration parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
-          return new WorkerConfiguration(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
-      }
-    };
-
-    public static com.google.protobuf.Parser<WorkerConfiguration> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<WorkerConfiguration> getParserForType() {
-      return PARSER;
-    }
-
-    public org.roylance.yadel.api.models.YadelModels.WorkerConfiguration getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
+    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.WorkerConfiguration)
   }
 
   public interface LogOrBuilder extends
       // @@protoc_insertion_point(interface_extends:org.roylance.yadel.api.models.Log)
       com.google.protobuf.MessageOrBuilder {
 
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    boolean hasId();
     /**
      * <code>optional string id = 1;</code>
      */
@@ -1371,6 +1451,10 @@ public final class YadelModels {
     /**
      * <code>optional string message = 2;</code>
      */
+    boolean hasMessage();
+    /**
+     * <code>optional string message = 2;</code>
+     */
     java.lang.String getMessage();
     /**
      * <code>optional string message = 2;</code>
@@ -1381,29 +1465,40 @@ public final class YadelModels {
   /**
    * Protobuf type {@code org.roylance.yadel.api.models.Log}
    */
-  public  static final class Log extends
+  public static final class Log extends
       com.google.protobuf.GeneratedMessage implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.api.models.Log)
       LogOrBuilder {
     // Use Log.newBuilder() to construct.
     private Log(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Log() {
-      id_ = "";
-      message_ = "";
+    private Log(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Log defaultInstance;
+    public static Log getDefaultInstance() {
+      return defaultInstance;
     }
 
+    public Log getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        getUnknownFields() {
+      return this.unknownFields;
     }
     private Log(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
-      this();
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1413,32 +1508,33 @@ public final class YadelModels {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              id_ = bs;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              message_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              message_ = bs;
               break;
             }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1454,8 +1550,30 @@ public final class YadelModels {
               org.roylance.yadel.api.models.YadelModels.Log.class, org.roylance.yadel.api.models.YadelModels.Log.Builder.class);
     }
 
+    public static com.google.protobuf.Parser<Log> PARSER =
+        new com.google.protobuf.AbstractParser<Log>() {
+      public Log parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Log(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Log> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    private java.lang.Object id_;
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
     /**
      * <code>optional string id = 1;</code>
      */
@@ -1467,7 +1585,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
         return s;
       }
     }
@@ -1489,7 +1609,13 @@ public final class YadelModels {
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object message_;
+    private java.lang.Object message_;
+    /**
+     * <code>optional string message = 2;</code>
+     */
+    public boolean hasMessage() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
     /**
      * <code>optional string message = 2;</code>
      */
@@ -1501,7 +1627,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        message_ = s;
+        if (bs.isValidUtf8()) {
+          message_ = s;
+        }
         return s;
       }
     }
@@ -1522,6 +1650,10 @@ public final class YadelModels {
       }
     }
 
+    private void initFields() {
+      id_ = "";
+      message_ = "";
+    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1534,30 +1666,42 @@ public final class YadelModels {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getIdBytes());
       }
-      if (!getMessageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, message_);
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getMessageBytes());
       }
+      getUnknownFields().writeTo(output);
     }
 
+    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getIdBytes());
       }
-      if (!getMessageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, message_);
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getMessageBytes());
       }
-      memoizedSize = size;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static org.roylance.yadel.api.models.YadelModels.Log parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1611,17 +1755,12 @@ public final class YadelModels {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
+    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
     public static Builder newBuilder(org.roylance.yadel.api.models.YadelModels.Log prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
+    public Builder toBuilder() { return newBuilder(this); }
 
     @java.lang.Override
     protected Builder newBuilderForType(
@@ -1662,13 +1801,21 @@ public final class YadelModels {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
+      private static Builder create() {
+        return new Builder();
+      }
+
       public Builder clear() {
         super.clear();
         id_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         message_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -1690,8 +1837,17 @@ public final class YadelModels {
 
       public org.roylance.yadel.api.models.YadelModels.Log buildPartial() {
         org.roylance.yadel.api.models.YadelModels.Log result = new org.roylance.yadel.api.models.YadelModels.Log(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
         result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
         result.message_ = message_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1707,15 +1863,17 @@ public final class YadelModels {
 
       public Builder mergeFrom(org.roylance.yadel.api.models.YadelModels.Log other) {
         if (other == org.roylance.yadel.api.models.YadelModels.Log.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
+        if (other.hasId()) {
+          bitField0_ |= 0x00000001;
           id_ = other.id_;
           onChanged();
         }
-        if (!other.getMessage().isEmpty()) {
+        if (other.hasMessage()) {
+          bitField0_ |= 0x00000002;
           message_ = other.message_;
           onChanged();
         }
-        onChanged();
+        this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
@@ -1740,8 +1898,15 @@ public final class YadelModels {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
+      /**
+       * <code>optional string id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
       /**
        * <code>optional string id = 1;</code>
        */
@@ -1751,7 +1916,9 @@ public final class YadelModels {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          id_ = s;
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1781,7 +1948,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -1790,7 +1957,7 @@ public final class YadelModels {
        * <code>optional string id = 1;</code>
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -1803,8 +1970,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -1814,13 +1980,21 @@ public final class YadelModels {
       /**
        * <code>optional string message = 2;</code>
        */
+      public boolean hasMessage() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string message = 2;</code>
+       */
       public java.lang.String getMessage() {
         java.lang.Object ref = message_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          message_ = s;
+          if (bs.isValidUtf8()) {
+            message_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1850,7 +2024,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000002;
         message_ = value;
         onChanged();
         return this;
@@ -1859,7 +2033,7 @@ public final class YadelModels {
        * <code>optional string message = 2;</code>
        */
       public Builder clearMessage() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         message_ = getDefaultInstance().getMessage();
         onChanged();
         return this;
@@ -1872,74 +2046,31 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000002;
         message_ = value;
         onChanged();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:org.roylance.yadel.api.models.Log)
     }
 
-    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.Log)
-    private static final org.roylance.yadel.api.models.YadelModels.Log DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.roylance.yadel.api.models.YadelModels.Log();
+      defaultInstance = new Log(true);
+      defaultInstance.initFields();
     }
 
-    public static org.roylance.yadel.api.models.YadelModels.Log getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Log>
-        PARSER = new com.google.protobuf.AbstractParser<Log>() {
-      public Log parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
-          return new Log(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
-      }
-    };
-
-    public static com.google.protobuf.Parser<Log> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Log> getParserForType() {
-      return PARSER;
-    }
-
-    public org.roylance.yadel.api.models.YadelModels.Log getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
+    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.Log)
   }
 
   public interface DagOrBuilder extends
       // @@protoc_insertion_point(interface_extends:org.roylance.yadel.api.models.Dag)
       com.google.protobuf.MessageOrBuilder {
 
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    boolean hasId();
     /**
      * <code>optional string id = 1;</code>
      */
@@ -1950,6 +2081,10 @@ public final class YadelModels {
     com.google.protobuf.ByteString
         getIdBytes();
 
+    /**
+     * <code>optional string display = 2;</code>
+     */
+    boolean hasDisplay();
     /**
      * <code>optional string display = 2;</code>
      */
@@ -1987,8 +2122,16 @@ public final class YadelModels {
     /**
      * <code>optional int64 execution_date = 4;</code>
      */
+    boolean hasExecutionDate();
+    /**
+     * <code>optional int64 execution_date = 4;</code>
+     */
     long getExecutionDate();
 
+    /**
+     * <code>optional int64 start_date = 5;</code>
+     */
+    boolean hasStartDate();
     /**
      * <code>optional int64 start_date = 5;</code>
      */
@@ -1997,8 +2140,16 @@ public final class YadelModels {
     /**
      * <code>optional int64 end_date = 6;</code>
      */
+    boolean hasEndDate();
+    /**
+     * <code>optional int64 end_date = 6;</code>
+     */
     long getEndDate();
 
+    /**
+     * <code>optional int64 duration = 7;</code>
+     */
+    boolean hasDuration();
     /**
      * <code>optional int64 duration = 7;</code>
      */
@@ -2103,38 +2254,40 @@ public final class YadelModels {
   /**
    * Protobuf type {@code org.roylance.yadel.api.models.Dag}
    */
-  public  static final class Dag extends
+  public static final class Dag extends
       com.google.protobuf.GeneratedMessage implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.api.models.Dag)
       DagOrBuilder {
     // Use Dag.newBuilder() to construct.
     private Dag(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Dag() {
-      id_ = "";
-      display_ = "";
-      flattenedTasks_ = java.util.Collections.emptyList();
-      executionDate_ = 0L;
-      startDate_ = 0L;
-      endDate_ = 0L;
-      duration_ = 0L;
-      uncompletedTasks_ = java.util.Collections.emptyList();
-      processingTasks_ = java.util.Collections.emptyList();
-      erroredTasks_ = java.util.Collections.emptyList();
-      completedTasks_ = java.util.Collections.emptyList();
+    private Dag(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Dag defaultInstance;
+    public static Dag getDefaultInstance() {
+      return defaultInstance;
     }
 
+    public Dag getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        getUnknownFields() {
+      return this.unknownFields;
     }
     private Dag(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
-      this();
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2144,21 +2297,22 @@ public final class YadelModels {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              id_ = bs;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              display_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              display_ = bs;
               break;
             }
             case 26: {
@@ -2166,26 +2320,26 @@ public final class YadelModels {
                 flattenedTasks_ = new java.util.ArrayList<org.roylance.yadel.api.models.YadelModels.Task>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              flattenedTasks_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.parser(), extensionRegistry));
+              flattenedTasks_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.PARSER, extensionRegistry));
               break;
             }
             case 32: {
-
+              bitField0_ |= 0x00000004;
               executionDate_ = input.readInt64();
               break;
             }
             case 40: {
-
+              bitField0_ |= 0x00000008;
               startDate_ = input.readInt64();
               break;
             }
             case 48: {
-
+              bitField0_ |= 0x00000010;
               endDate_ = input.readInt64();
               break;
             }
             case 56: {
-
+              bitField0_ |= 0x00000020;
               duration_ = input.readInt64();
               break;
             }
@@ -2194,7 +2348,7 @@ public final class YadelModels {
                 uncompletedTasks_ = new java.util.ArrayList<org.roylance.yadel.api.models.YadelModels.Task>();
                 mutable_bitField0_ |= 0x00000080;
               }
-              uncompletedTasks_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.parser(), extensionRegistry));
+              uncompletedTasks_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.PARSER, extensionRegistry));
               break;
             }
             case 74: {
@@ -2202,7 +2356,7 @@ public final class YadelModels {
                 processingTasks_ = new java.util.ArrayList<org.roylance.yadel.api.models.YadelModels.Task>();
                 mutable_bitField0_ |= 0x00000100;
               }
-              processingTasks_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.parser(), extensionRegistry));
+              processingTasks_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.PARSER, extensionRegistry));
               break;
             }
             case 82: {
@@ -2210,7 +2364,7 @@ public final class YadelModels {
                 erroredTasks_ = new java.util.ArrayList<org.roylance.yadel.api.models.YadelModels.Task>();
                 mutable_bitField0_ |= 0x00000200;
               }
-              erroredTasks_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.parser(), extensionRegistry));
+              erroredTasks_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.PARSER, extensionRegistry));
               break;
             }
             case 90: {
@@ -2218,17 +2372,16 @@ public final class YadelModels {
                 completedTasks_ = new java.util.ArrayList<org.roylance.yadel.api.models.YadelModels.Task>();
                 mutable_bitField0_ |= 0x00000400;
               }
-              completedTasks_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.parser(), extensionRegistry));
+              completedTasks_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.PARSER, extensionRegistry));
               break;
             }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           flattenedTasks_ = java.util.Collections.unmodifiableList(flattenedTasks_);
@@ -2245,6 +2398,7 @@ public final class YadelModels {
         if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
           completedTasks_ = java.util.Collections.unmodifiableList(completedTasks_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2260,9 +2414,30 @@ public final class YadelModels {
               org.roylance.yadel.api.models.YadelModels.Dag.class, org.roylance.yadel.api.models.YadelModels.Dag.Builder.class);
     }
 
+    public static com.google.protobuf.Parser<Dag> PARSER =
+        new com.google.protobuf.AbstractParser<Dag>() {
+      public Dag parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Dag(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Dag> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    private java.lang.Object id_;
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
     /**
      * <code>optional string id = 1;</code>
      */
@@ -2274,7 +2449,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
         return s;
       }
     }
@@ -2296,7 +2473,13 @@ public final class YadelModels {
     }
 
     public static final int DISPLAY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object display_;
+    private java.lang.Object display_;
+    /**
+     * <code>optional string display = 2;</code>
+     */
+    public boolean hasDisplay() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
     /**
      * <code>optional string display = 2;</code>
      */
@@ -2308,7 +2491,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        display_ = s;
+        if (bs.isValidUtf8()) {
+          display_ = s;
+        }
         return s;
       }
     }
@@ -2369,12 +2554,24 @@ public final class YadelModels {
     /**
      * <code>optional int64 execution_date = 4;</code>
      */
+    public boolean hasExecutionDate() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 execution_date = 4;</code>
+     */
     public long getExecutionDate() {
       return executionDate_;
     }
 
     public static final int START_DATE_FIELD_NUMBER = 5;
     private long startDate_;
+    /**
+     * <code>optional int64 start_date = 5;</code>
+     */
+    public boolean hasStartDate() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
     /**
      * <code>optional int64 start_date = 5;</code>
      */
@@ -2387,12 +2584,24 @@ public final class YadelModels {
     /**
      * <code>optional int64 end_date = 6;</code>
      */
+    public boolean hasEndDate() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int64 end_date = 6;</code>
+     */
     public long getEndDate() {
       return endDate_;
     }
 
     public static final int DURATION_FIELD_NUMBER = 7;
     private long duration_;
+    /**
+     * <code>optional int64 duration = 7;</code>
+     */
+    public boolean hasDuration() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
     /**
      * <code>optional int64 duration = 7;</code>
      */
@@ -2540,6 +2749,19 @@ public final class YadelModels {
       return completedTasks_.get(index);
     }
 
+    private void initFields() {
+      id_ = "";
+      display_ = "";
+      flattenedTasks_ = java.util.Collections.emptyList();
+      executionDate_ = 0L;
+      startDate_ = 0L;
+      endDate_ = 0L;
+      duration_ = 0L;
+      uncompletedTasks_ = java.util.Collections.emptyList();
+      processingTasks_ = java.util.Collections.emptyList();
+      erroredTasks_ = java.util.Collections.emptyList();
+      completedTasks_ = java.util.Collections.emptyList();
+    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -2552,25 +2774,26 @@ public final class YadelModels {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getIdBytes());
       }
-      if (!getDisplayBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, display_);
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getDisplayBytes());
       }
       for (int i = 0; i < flattenedTasks_.size(); i++) {
         output.writeMessage(3, flattenedTasks_.get(i));
       }
-      if (executionDate_ != 0L) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt64(4, executionDate_);
       }
-      if (startDate_ != 0L) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeInt64(5, startDate_);
       }
-      if (endDate_ != 0L) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeInt64(6, endDate_);
       }
-      if (duration_ != 0L) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeInt64(7, duration_);
       }
       for (int i = 0; i < uncompletedTasks_.size(); i++) {
@@ -2585,36 +2808,40 @@ public final class YadelModels {
       for (int i = 0; i < completedTasks_.size(); i++) {
         output.writeMessage(11, completedTasks_.get(i));
       }
+      getUnknownFields().writeTo(output);
     }
 
+    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getIdBytes());
       }
-      if (!getDisplayBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, display_);
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getDisplayBytes());
       }
       for (int i = 0; i < flattenedTasks_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, flattenedTasks_.get(i));
       }
-      if (executionDate_ != 0L) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, executionDate_);
       }
-      if (startDate_ != 0L) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(5, startDate_);
       }
-      if (endDate_ != 0L) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, endDate_);
       }
-      if (duration_ != 0L) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, duration_);
       }
@@ -2634,11 +2861,18 @@ public final class YadelModels {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, completedTasks_.get(i));
       }
-      memoizedSize = size;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static org.roylance.yadel.api.models.YadelModels.Dag parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2692,17 +2926,12 @@ public final class YadelModels {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
+    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
     public static Builder newBuilder(org.roylance.yadel.api.models.YadelModels.Dag prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
+    public Builder toBuilder() { return newBuilder(this); }
 
     @java.lang.Override
     protected Builder newBuilderForType(
@@ -2748,12 +2977,16 @@ public final class YadelModels {
           getCompletedTasksFieldBuilder();
         }
       }
+      private static Builder create() {
+        return new Builder();
+      }
+
       public Builder clear() {
         super.clear();
         id_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         display_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (flattenedTasksBuilder_ == null) {
           flattenedTasks_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
@@ -2761,13 +2994,13 @@ public final class YadelModels {
           flattenedTasksBuilder_.clear();
         }
         executionDate_ = 0L;
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         startDate_ = 0L;
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         endDate_ = 0L;
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         duration_ = 0L;
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (uncompletedTasksBuilder_ == null) {
           uncompletedTasks_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000080);
@@ -2795,6 +3028,10 @@ public final class YadelModels {
         return this;
       }
 
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return org.roylance.yadel.api.models.YadelModels.internal_static_org_roylance_yadel_api_models_Dag_descriptor;
@@ -2816,7 +3053,13 @@ public final class YadelModels {
         org.roylance.yadel.api.models.YadelModels.Dag result = new org.roylance.yadel.api.models.YadelModels.Dag(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
         result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
         result.display_ = display_;
         if (flattenedTasksBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004)) {
@@ -2827,9 +3070,21 @@ public final class YadelModels {
         } else {
           result.flattenedTasks_ = flattenedTasksBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000004;
+        }
         result.executionDate_ = executionDate_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000008;
+        }
         result.startDate_ = startDate_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000010;
+        }
         result.endDate_ = endDate_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000020;
+        }
         result.duration_ = duration_;
         if (uncompletedTasksBuilder_ == null) {
           if (((bitField0_ & 0x00000080) == 0x00000080)) {
@@ -2883,11 +3138,13 @@ public final class YadelModels {
 
       public Builder mergeFrom(org.roylance.yadel.api.models.YadelModels.Dag other) {
         if (other == org.roylance.yadel.api.models.YadelModels.Dag.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
+        if (other.hasId()) {
+          bitField0_ |= 0x00000001;
           id_ = other.id_;
           onChanged();
         }
-        if (!other.getDisplay().isEmpty()) {
+        if (other.hasDisplay()) {
+          bitField0_ |= 0x00000002;
           display_ = other.display_;
           onChanged();
         }
@@ -2917,16 +3174,16 @@ public final class YadelModels {
             }
           }
         }
-        if (other.getExecutionDate() != 0L) {
+        if (other.hasExecutionDate()) {
           setExecutionDate(other.getExecutionDate());
         }
-        if (other.getStartDate() != 0L) {
+        if (other.hasStartDate()) {
           setStartDate(other.getStartDate());
         }
-        if (other.getEndDate() != 0L) {
+        if (other.hasEndDate()) {
           setEndDate(other.getEndDate());
         }
-        if (other.getDuration() != 0L) {
+        if (other.hasDuration()) {
           setDuration(other.getDuration());
         }
         if (uncompletedTasksBuilder_ == null) {
@@ -3033,7 +3290,7 @@ public final class YadelModels {
             }
           }
         }
-        onChanged();
+        this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
@@ -3064,13 +3321,21 @@ public final class YadelModels {
       /**
        * <code>optional string id = 1;</code>
        */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string id = 1;</code>
+       */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          id_ = s;
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3100,7 +3365,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -3109,7 +3374,7 @@ public final class YadelModels {
        * <code>optional string id = 1;</code>
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -3122,8 +3387,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -3133,13 +3397,21 @@ public final class YadelModels {
       /**
        * <code>optional string display = 2;</code>
        */
+      public boolean hasDisplay() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string display = 2;</code>
+       */
       public java.lang.String getDisplay() {
         java.lang.Object ref = display_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          display_ = s;
+          if (bs.isValidUtf8()) {
+            display_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3169,7 +3441,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000002;
         display_ = value;
         onChanged();
         return this;
@@ -3178,7 +3450,7 @@ public final class YadelModels {
        * <code>optional string display = 2;</code>
        */
       public Builder clearDisplay() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         display_ = getDefaultInstance().getDisplay();
         onChanged();
         return this;
@@ -3191,8 +3463,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000002;
         display_ = value;
         onChanged();
         return this;
@@ -3442,6 +3713,12 @@ public final class YadelModels {
       /**
        * <code>optional int64 execution_date = 4;</code>
        */
+      public boolean hasExecutionDate() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int64 execution_date = 4;</code>
+       */
       public long getExecutionDate() {
         return executionDate_;
       }
@@ -3449,7 +3726,7 @@ public final class YadelModels {
        * <code>optional int64 execution_date = 4;</code>
        */
       public Builder setExecutionDate(long value) {
-        
+        bitField0_ |= 0x00000008;
         executionDate_ = value;
         onChanged();
         return this;
@@ -3458,13 +3735,19 @@ public final class YadelModels {
        * <code>optional int64 execution_date = 4;</code>
        */
       public Builder clearExecutionDate() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         executionDate_ = 0L;
         onChanged();
         return this;
       }
 
       private long startDate_ ;
+      /**
+       * <code>optional int64 start_date = 5;</code>
+       */
+      public boolean hasStartDate() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
       /**
        * <code>optional int64 start_date = 5;</code>
        */
@@ -3475,7 +3758,7 @@ public final class YadelModels {
        * <code>optional int64 start_date = 5;</code>
        */
       public Builder setStartDate(long value) {
-        
+        bitField0_ |= 0x00000010;
         startDate_ = value;
         onChanged();
         return this;
@@ -3484,13 +3767,19 @@ public final class YadelModels {
        * <code>optional int64 start_date = 5;</code>
        */
       public Builder clearStartDate() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         startDate_ = 0L;
         onChanged();
         return this;
       }
 
       private long endDate_ ;
+      /**
+       * <code>optional int64 end_date = 6;</code>
+       */
+      public boolean hasEndDate() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
       /**
        * <code>optional int64 end_date = 6;</code>
        */
@@ -3501,7 +3790,7 @@ public final class YadelModels {
        * <code>optional int64 end_date = 6;</code>
        */
       public Builder setEndDate(long value) {
-        
+        bitField0_ |= 0x00000020;
         endDate_ = value;
         onChanged();
         return this;
@@ -3510,13 +3799,19 @@ public final class YadelModels {
        * <code>optional int64 end_date = 6;</code>
        */
       public Builder clearEndDate() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         endDate_ = 0L;
         onChanged();
         return this;
       }
 
       private long duration_ ;
+      /**
+       * <code>optional int64 duration = 7;</code>
+       */
+      public boolean hasDuration() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
       /**
        * <code>optional int64 duration = 7;</code>
        */
@@ -3527,7 +3822,7 @@ public final class YadelModels {
        * <code>optional int64 duration = 7;</code>
        */
       public Builder setDuration(long value) {
-        
+        bitField0_ |= 0x00000040;
         duration_ = value;
         onChanged();
         return this;
@@ -3536,7 +3831,7 @@ public final class YadelModels {
        * <code>optional int64 duration = 7;</code>
        */
       public Builder clearDuration() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         duration_ = 0L;
         onChanged();
         return this;
@@ -4501,68 +4796,26 @@ public final class YadelModels {
         }
         return completedTasksBuilder_;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:org.roylance.yadel.api.models.Dag)
     }
 
-    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.Dag)
-    private static final org.roylance.yadel.api.models.YadelModels.Dag DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.roylance.yadel.api.models.YadelModels.Dag();
+      defaultInstance = new Dag(true);
+      defaultInstance.initFields();
     }
 
-    public static org.roylance.yadel.api.models.YadelModels.Dag getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Dag>
-        PARSER = new com.google.protobuf.AbstractParser<Dag>() {
-      public Dag parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
-          return new Dag(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
-      }
-    };
-
-    public static com.google.protobuf.Parser<Dag> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Dag> getParserForType() {
-      return PARSER;
-    }
-
-    public org.roylance.yadel.api.models.YadelModels.Dag getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
+    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.Dag)
   }
 
   public interface TaskOrBuilder extends
       // @@protoc_insertion_point(interface_extends:org.roylance.yadel.api.models.Task)
       com.google.protobuf.MessageOrBuilder {
 
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    boolean hasId();
     /**
      * <code>optional string id = 1;</code>
      */
@@ -4573,6 +4826,10 @@ public final class YadelModels {
     com.google.protobuf.ByteString
         getIdBytes();
 
+    /**
+     * <code>optional string display = 2;</code>
+     */
+    boolean hasDisplay();
     /**
      * <code>optional string display = 2;</code>
      */
@@ -4610,6 +4867,10 @@ public final class YadelModels {
     /**
      * <code>optional string dag_id = 4;</code>
      */
+    boolean hasDagId();
+    /**
+     * <code>optional string dag_id = 4;</code>
+     */
     java.lang.String getDagId();
     /**
      * <code>optional string dag_id = 4;</code>
@@ -4644,8 +4905,16 @@ public final class YadelModels {
     /**
      * <code>optional int64 execution_date = 6;</code>
      */
+    boolean hasExecutionDate();
+    /**
+     * <code>optional int64 execution_date = 6;</code>
+     */
     long getExecutionDate();
 
+    /**
+     * <code>optional int64 start_date = 7;</code>
+     */
+    boolean hasStartDate();
     /**
      * <code>optional int64 start_date = 7;</code>
      */
@@ -4654,13 +4923,25 @@ public final class YadelModels {
     /**
      * <code>optional int64 end_date = 8;</code>
      */
+    boolean hasEndDate();
+    /**
+     * <code>optional int64 end_date = 8;</code>
+     */
     long getEndDate();
 
     /**
      * <code>optional int64 duration = 9;</code>
      */
+    boolean hasDuration();
+    /**
+     * <code>optional int64 duration = 9;</code>
+     */
     long getDuration();
 
+    /**
+     * <code>optional string first_context_base_64 = 10;</code>
+     */
+    boolean hasFirstContextBase64();
     /**
      * <code>optional string first_context_base_64 = 10;</code>
      */
@@ -4674,6 +4955,10 @@ public final class YadelModels {
     /**
      * <code>optional string second_context_base_64 = 11;</code>
      */
+    boolean hasSecondContextBase64();
+    /**
+     * <code>optional string second_context_base_64 = 11;</code>
+     */
     java.lang.String getSecondContextBase64();
     /**
      * <code>optional string second_context_base_64 = 11;</code>
@@ -4681,6 +4966,10 @@ public final class YadelModels {
     com.google.protobuf.ByteString
         getSecondContextBase64Bytes();
 
+    /**
+     * <code>optional string third_context_base_64 = 12;</code>
+     */
+    boolean hasThirdContextBase64();
     /**
      * <code>optional string third_context_base_64 = 12;</code>
      */
@@ -4694,39 +4983,40 @@ public final class YadelModels {
   /**
    * Protobuf type {@code org.roylance.yadel.api.models.Task}
    */
-  public  static final class Task extends
+  public static final class Task extends
       com.google.protobuf.GeneratedMessage implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.api.models.Task)
       TaskOrBuilder {
     // Use Task.newBuilder() to construct.
     private Task(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Task() {
-      id_ = "";
-      display_ = "";
-      dependencies_ = java.util.Collections.emptyList();
-      dagId_ = "";
-      logs_ = java.util.Collections.emptyList();
-      executionDate_ = 0L;
-      startDate_ = 0L;
-      endDate_ = 0L;
-      duration_ = 0L;
-      firstContextBase64_ = "";
-      secondContextBase64_ = "";
-      thirdContextBase64_ = "";
+    private Task(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Task defaultInstance;
+    public static Task getDefaultInstance() {
+      return defaultInstance;
     }
 
+    public Task getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        getUnknownFields() {
+      return this.unknownFields;
     }
     private Task(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
-      this();
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4736,21 +5026,22 @@ public final class YadelModels {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              id_ = bs;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              display_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              display_ = bs;
               break;
             }
             case 26: {
@@ -4758,13 +5049,13 @@ public final class YadelModels {
                 dependencies_ = new java.util.ArrayList<org.roylance.yadel.api.models.YadelModels.TaskDependency>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              dependencies_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.TaskDependency.parser(), extensionRegistry));
+              dependencies_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.TaskDependency.PARSER, extensionRegistry));
               break;
             }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dagId_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              dagId_ = bs;
               break;
             }
             case 42: {
@@ -4772,55 +5063,54 @@ public final class YadelModels {
                 logs_ = new java.util.ArrayList<org.roylance.yadel.api.models.YadelModels.Log>();
                 mutable_bitField0_ |= 0x00000010;
               }
-              logs_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Log.parser(), extensionRegistry));
+              logs_.add(input.readMessage(org.roylance.yadel.api.models.YadelModels.Log.PARSER, extensionRegistry));
               break;
             }
             case 48: {
-
+              bitField0_ |= 0x00000008;
               executionDate_ = input.readInt64();
               break;
             }
             case 56: {
-
+              bitField0_ |= 0x00000010;
               startDate_ = input.readInt64();
               break;
             }
             case 64: {
-
+              bitField0_ |= 0x00000020;
               endDate_ = input.readInt64();
               break;
             }
             case 72: {
-
+              bitField0_ |= 0x00000040;
               duration_ = input.readInt64();
               break;
             }
             case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              firstContextBase64_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000080;
+              firstContextBase64_ = bs;
               break;
             }
             case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              secondContextBase64_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000100;
+              secondContextBase64_ = bs;
               break;
             }
             case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              thirdContextBase64_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000200;
+              thirdContextBase64_ = bs;
               break;
             }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           dependencies_ = java.util.Collections.unmodifiableList(dependencies_);
@@ -4828,6 +5118,7 @@ public final class YadelModels {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           logs_ = java.util.Collections.unmodifiableList(logs_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4843,9 +5134,30 @@ public final class YadelModels {
               org.roylance.yadel.api.models.YadelModels.Task.class, org.roylance.yadel.api.models.YadelModels.Task.Builder.class);
     }
 
+    public static com.google.protobuf.Parser<Task> PARSER =
+        new com.google.protobuf.AbstractParser<Task>() {
+      public Task parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Task(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Task> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    private java.lang.Object id_;
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
     /**
      * <code>optional string id = 1;</code>
      */
@@ -4857,7 +5169,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
         return s;
       }
     }
@@ -4879,7 +5193,13 @@ public final class YadelModels {
     }
 
     public static final int DISPLAY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object display_;
+    private java.lang.Object display_;
+    /**
+     * <code>optional string display = 2;</code>
+     */
+    public boolean hasDisplay() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
     /**
      * <code>optional string display = 2;</code>
      */
@@ -4891,7 +5211,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        display_ = s;
+        if (bs.isValidUtf8()) {
+          display_ = s;
+        }
         return s;
       }
     }
@@ -4948,7 +5270,13 @@ public final class YadelModels {
     }
 
     public static final int DAG_ID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object dagId_;
+    private java.lang.Object dagId_;
+    /**
+     * <code>optional string dag_id = 4;</code>
+     */
+    public boolean hasDagId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
     /**
      * <code>optional string dag_id = 4;</code>
      */
@@ -4960,7 +5288,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        dagId_ = s;
+        if (bs.isValidUtf8()) {
+          dagId_ = s;
+        }
         return s;
       }
     }
@@ -5021,12 +5351,24 @@ public final class YadelModels {
     /**
      * <code>optional int64 execution_date = 6;</code>
      */
+    public boolean hasExecutionDate() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int64 execution_date = 6;</code>
+     */
     public long getExecutionDate() {
       return executionDate_;
     }
 
     public static final int START_DATE_FIELD_NUMBER = 7;
     private long startDate_;
+    /**
+     * <code>optional int64 start_date = 7;</code>
+     */
+    public boolean hasStartDate() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
     /**
      * <code>optional int64 start_date = 7;</code>
      */
@@ -5039,6 +5381,12 @@ public final class YadelModels {
     /**
      * <code>optional int64 end_date = 8;</code>
      */
+    public boolean hasEndDate() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional int64 end_date = 8;</code>
+     */
     public long getEndDate() {
       return endDate_;
     }
@@ -5048,12 +5396,24 @@ public final class YadelModels {
     /**
      * <code>optional int64 duration = 9;</code>
      */
+    public boolean hasDuration() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional int64 duration = 9;</code>
+     */
     public long getDuration() {
       return duration_;
     }
 
     public static final int FIRST_CONTEXT_BASE_64_FIELD_NUMBER = 10;
-    private volatile java.lang.Object firstContextBase64_;
+    private java.lang.Object firstContextBase64_;
+    /**
+     * <code>optional string first_context_base_64 = 10;</code>
+     */
+    public boolean hasFirstContextBase64() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
     /**
      * <code>optional string first_context_base_64 = 10;</code>
      */
@@ -5065,7 +5425,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        firstContextBase64_ = s;
+        if (bs.isValidUtf8()) {
+          firstContextBase64_ = s;
+        }
         return s;
       }
     }
@@ -5087,7 +5449,13 @@ public final class YadelModels {
     }
 
     public static final int SECOND_CONTEXT_BASE_64_FIELD_NUMBER = 11;
-    private volatile java.lang.Object secondContextBase64_;
+    private java.lang.Object secondContextBase64_;
+    /**
+     * <code>optional string second_context_base_64 = 11;</code>
+     */
+    public boolean hasSecondContextBase64() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
     /**
      * <code>optional string second_context_base_64 = 11;</code>
      */
@@ -5099,7 +5467,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        secondContextBase64_ = s;
+        if (bs.isValidUtf8()) {
+          secondContextBase64_ = s;
+        }
         return s;
       }
     }
@@ -5121,7 +5491,13 @@ public final class YadelModels {
     }
 
     public static final int THIRD_CONTEXT_BASE_64_FIELD_NUMBER = 12;
-    private volatile java.lang.Object thirdContextBase64_;
+    private java.lang.Object thirdContextBase64_;
+    /**
+     * <code>optional string third_context_base_64 = 12;</code>
+     */
+    public boolean hasThirdContextBase64() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
     /**
      * <code>optional string third_context_base_64 = 12;</code>
      */
@@ -5133,7 +5509,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        thirdContextBase64_ = s;
+        if (bs.isValidUtf8()) {
+          thirdContextBase64_ = s;
+        }
         return s;
       }
     }
@@ -5154,6 +5532,20 @@ public final class YadelModels {
       }
     }
 
+    private void initFields() {
+      id_ = "";
+      display_ = "";
+      dependencies_ = java.util.Collections.emptyList();
+      dagId_ = "";
+      logs_ = java.util.Collections.emptyList();
+      executionDate_ = 0L;
+      startDate_ = 0L;
+      endDate_ = 0L;
+      duration_ = 0L;
+      firstContextBase64_ = "";
+      secondContextBase64_ = "";
+      thirdContextBase64_ = "";
+    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -5166,96 +5558,112 @@ public final class YadelModels {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getIdBytes());
       }
-      if (!getDisplayBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, display_);
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getDisplayBytes());
       }
       for (int i = 0; i < dependencies_.size(); i++) {
         output.writeMessage(3, dependencies_.get(i));
       }
-      if (!getDagIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 4, dagId_);
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(4, getDagIdBytes());
       }
       for (int i = 0; i < logs_.size(); i++) {
         output.writeMessage(5, logs_.get(i));
       }
-      if (executionDate_ != 0L) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeInt64(6, executionDate_);
       }
-      if (startDate_ != 0L) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeInt64(7, startDate_);
       }
-      if (endDate_ != 0L) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeInt64(8, endDate_);
       }
-      if (duration_ != 0L) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeInt64(9, duration_);
       }
-      if (!getFirstContextBase64Bytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 10, firstContextBase64_);
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeBytes(10, getFirstContextBase64Bytes());
       }
-      if (!getSecondContextBase64Bytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 11, secondContextBase64_);
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeBytes(11, getSecondContextBase64Bytes());
       }
-      if (!getThirdContextBase64Bytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 12, thirdContextBase64_);
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeBytes(12, getThirdContextBase64Bytes());
       }
+      getUnknownFields().writeTo(output);
     }
 
+    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getIdBytes());
       }
-      if (!getDisplayBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, display_);
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getDisplayBytes());
       }
       for (int i = 0; i < dependencies_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, dependencies_.get(i));
       }
-      if (!getDagIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, dagId_);
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getDagIdBytes());
       }
       for (int i = 0; i < logs_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, logs_.get(i));
       }
-      if (executionDate_ != 0L) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, executionDate_);
       }
-      if (startDate_ != 0L) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, startDate_);
       }
-      if (endDate_ != 0L) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, endDate_);
       }
-      if (duration_ != 0L) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, duration_);
       }
-      if (!getFirstContextBase64Bytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(10, firstContextBase64_);
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(10, getFirstContextBase64Bytes());
       }
-      if (!getSecondContextBase64Bytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, secondContextBase64_);
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(11, getSecondContextBase64Bytes());
       }
-      if (!getThirdContextBase64Bytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, thirdContextBase64_);
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(12, getThirdContextBase64Bytes());
       }
-      memoizedSize = size;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static org.roylance.yadel.api.models.YadelModels.Task parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5309,17 +5717,12 @@ public final class YadelModels {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
+    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
     public static Builder newBuilder(org.roylance.yadel.api.models.YadelModels.Task prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
+    public Builder toBuilder() { return newBuilder(this); }
 
     @java.lang.Override
     protected Builder newBuilderForType(
@@ -5362,12 +5765,16 @@ public final class YadelModels {
           getLogsFieldBuilder();
         }
       }
+      private static Builder create() {
+        return new Builder();
+      }
+
       public Builder clear() {
         super.clear();
         id_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         display_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (dependenciesBuilder_ == null) {
           dependencies_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
@@ -5375,7 +5782,7 @@ public final class YadelModels {
           dependenciesBuilder_.clear();
         }
         dagId_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (logsBuilder_ == null) {
           logs_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
@@ -5383,20 +5790,24 @@ public final class YadelModels {
           logsBuilder_.clear();
         }
         executionDate_ = 0L;
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         startDate_ = 0L;
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         endDate_ = 0L;
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         duration_ = 0L;
-
+        bitField0_ = (bitField0_ & ~0x00000100);
         firstContextBase64_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000200);
         secondContextBase64_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000400);
         thirdContextBase64_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -5420,7 +5831,13 @@ public final class YadelModels {
         org.roylance.yadel.api.models.YadelModels.Task result = new org.roylance.yadel.api.models.YadelModels.Task(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
         result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
         result.display_ = display_;
         if (dependenciesBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004)) {
@@ -5430,6 +5847,9 @@ public final class YadelModels {
           result.dependencies_ = dependencies_;
         } else {
           result.dependencies_ = dependenciesBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000004;
         }
         result.dagId_ = dagId_;
         if (logsBuilder_ == null) {
@@ -5441,12 +5861,33 @@ public final class YadelModels {
         } else {
           result.logs_ = logsBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000008;
+        }
         result.executionDate_ = executionDate_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000010;
+        }
         result.startDate_ = startDate_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000020;
+        }
         result.endDate_ = endDate_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000040;
+        }
         result.duration_ = duration_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000080;
+        }
         result.firstContextBase64_ = firstContextBase64_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000100;
+        }
         result.secondContextBase64_ = secondContextBase64_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000200;
+        }
         result.thirdContextBase64_ = thirdContextBase64_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -5464,11 +5905,13 @@ public final class YadelModels {
 
       public Builder mergeFrom(org.roylance.yadel.api.models.YadelModels.Task other) {
         if (other == org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
+        if (other.hasId()) {
+          bitField0_ |= 0x00000001;
           id_ = other.id_;
           onChanged();
         }
-        if (!other.getDisplay().isEmpty()) {
+        if (other.hasDisplay()) {
+          bitField0_ |= 0x00000002;
           display_ = other.display_;
           onChanged();
         }
@@ -5498,7 +5941,8 @@ public final class YadelModels {
             }
           }
         }
-        if (!other.getDagId().isEmpty()) {
+        if (other.hasDagId()) {
+          bitField0_ |= 0x00000008;
           dagId_ = other.dagId_;
           onChanged();
         }
@@ -5528,31 +5972,34 @@ public final class YadelModels {
             }
           }
         }
-        if (other.getExecutionDate() != 0L) {
+        if (other.hasExecutionDate()) {
           setExecutionDate(other.getExecutionDate());
         }
-        if (other.getStartDate() != 0L) {
+        if (other.hasStartDate()) {
           setStartDate(other.getStartDate());
         }
-        if (other.getEndDate() != 0L) {
+        if (other.hasEndDate()) {
           setEndDate(other.getEndDate());
         }
-        if (other.getDuration() != 0L) {
+        if (other.hasDuration()) {
           setDuration(other.getDuration());
         }
-        if (!other.getFirstContextBase64().isEmpty()) {
+        if (other.hasFirstContextBase64()) {
+          bitField0_ |= 0x00000200;
           firstContextBase64_ = other.firstContextBase64_;
           onChanged();
         }
-        if (!other.getSecondContextBase64().isEmpty()) {
+        if (other.hasSecondContextBase64()) {
+          bitField0_ |= 0x00000400;
           secondContextBase64_ = other.secondContextBase64_;
           onChanged();
         }
-        if (!other.getThirdContextBase64().isEmpty()) {
+        if (other.hasThirdContextBase64()) {
+          bitField0_ |= 0x00000800;
           thirdContextBase64_ = other.thirdContextBase64_;
           onChanged();
         }
-        onChanged();
+        this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
@@ -5583,13 +6030,21 @@ public final class YadelModels {
       /**
        * <code>optional string id = 1;</code>
        */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string id = 1;</code>
+       */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          id_ = s;
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5619,7 +6074,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -5628,7 +6083,7 @@ public final class YadelModels {
        * <code>optional string id = 1;</code>
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -5641,8 +6096,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -5652,13 +6106,21 @@ public final class YadelModels {
       /**
        * <code>optional string display = 2;</code>
        */
+      public boolean hasDisplay() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string display = 2;</code>
+       */
       public java.lang.String getDisplay() {
         java.lang.Object ref = display_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          display_ = s;
+          if (bs.isValidUtf8()) {
+            display_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5688,7 +6150,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000002;
         display_ = value;
         onChanged();
         return this;
@@ -5697,7 +6159,7 @@ public final class YadelModels {
        * <code>optional string display = 2;</code>
        */
       public Builder clearDisplay() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         display_ = getDefaultInstance().getDisplay();
         onChanged();
         return this;
@@ -5710,8 +6172,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000002;
         display_ = value;
         onChanged();
         return this;
@@ -5961,13 +6422,21 @@ public final class YadelModels {
       /**
        * <code>optional string dag_id = 4;</code>
        */
+      public boolean hasDagId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string dag_id = 4;</code>
+       */
       public java.lang.String getDagId() {
         java.lang.Object ref = dagId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          dagId_ = s;
+          if (bs.isValidUtf8()) {
+            dagId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5997,7 +6466,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000008;
         dagId_ = value;
         onChanged();
         return this;
@@ -6006,7 +6475,7 @@ public final class YadelModels {
        * <code>optional string dag_id = 4;</code>
        */
       public Builder clearDagId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         dagId_ = getDefaultInstance().getDagId();
         onChanged();
         return this;
@@ -6019,8 +6488,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000008;
         dagId_ = value;
         onChanged();
         return this;
@@ -6270,6 +6738,12 @@ public final class YadelModels {
       /**
        * <code>optional int64 execution_date = 6;</code>
        */
+      public boolean hasExecutionDate() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional int64 execution_date = 6;</code>
+       */
       public long getExecutionDate() {
         return executionDate_;
       }
@@ -6277,7 +6751,7 @@ public final class YadelModels {
        * <code>optional int64 execution_date = 6;</code>
        */
       public Builder setExecutionDate(long value) {
-        
+        bitField0_ |= 0x00000020;
         executionDate_ = value;
         onChanged();
         return this;
@@ -6286,13 +6760,19 @@ public final class YadelModels {
        * <code>optional int64 execution_date = 6;</code>
        */
       public Builder clearExecutionDate() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         executionDate_ = 0L;
         onChanged();
         return this;
       }
 
       private long startDate_ ;
+      /**
+       * <code>optional int64 start_date = 7;</code>
+       */
+      public boolean hasStartDate() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
       /**
        * <code>optional int64 start_date = 7;</code>
        */
@@ -6303,7 +6783,7 @@ public final class YadelModels {
        * <code>optional int64 start_date = 7;</code>
        */
       public Builder setStartDate(long value) {
-        
+        bitField0_ |= 0x00000040;
         startDate_ = value;
         onChanged();
         return this;
@@ -6312,13 +6792,19 @@ public final class YadelModels {
        * <code>optional int64 start_date = 7;</code>
        */
       public Builder clearStartDate() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         startDate_ = 0L;
         onChanged();
         return this;
       }
 
       private long endDate_ ;
+      /**
+       * <code>optional int64 end_date = 8;</code>
+       */
+      public boolean hasEndDate() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
       /**
        * <code>optional int64 end_date = 8;</code>
        */
@@ -6329,7 +6815,7 @@ public final class YadelModels {
        * <code>optional int64 end_date = 8;</code>
        */
       public Builder setEndDate(long value) {
-        
+        bitField0_ |= 0x00000080;
         endDate_ = value;
         onChanged();
         return this;
@@ -6338,13 +6824,19 @@ public final class YadelModels {
        * <code>optional int64 end_date = 8;</code>
        */
       public Builder clearEndDate() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         endDate_ = 0L;
         onChanged();
         return this;
       }
 
       private long duration_ ;
+      /**
+       * <code>optional int64 duration = 9;</code>
+       */
+      public boolean hasDuration() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
       /**
        * <code>optional int64 duration = 9;</code>
        */
@@ -6355,7 +6847,7 @@ public final class YadelModels {
        * <code>optional int64 duration = 9;</code>
        */
       public Builder setDuration(long value) {
-        
+        bitField0_ |= 0x00000100;
         duration_ = value;
         onChanged();
         return this;
@@ -6364,7 +6856,7 @@ public final class YadelModels {
        * <code>optional int64 duration = 9;</code>
        */
       public Builder clearDuration() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         duration_ = 0L;
         onChanged();
         return this;
@@ -6374,13 +6866,21 @@ public final class YadelModels {
       /**
        * <code>optional string first_context_base_64 = 10;</code>
        */
+      public boolean hasFirstContextBase64() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional string first_context_base_64 = 10;</code>
+       */
       public java.lang.String getFirstContextBase64() {
         java.lang.Object ref = firstContextBase64_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          firstContextBase64_ = s;
+          if (bs.isValidUtf8()) {
+            firstContextBase64_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6410,7 +6910,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000200;
         firstContextBase64_ = value;
         onChanged();
         return this;
@@ -6419,7 +6919,7 @@ public final class YadelModels {
        * <code>optional string first_context_base_64 = 10;</code>
        */
       public Builder clearFirstContextBase64() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         firstContextBase64_ = getDefaultInstance().getFirstContextBase64();
         onChanged();
         return this;
@@ -6432,8 +6932,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000200;
         firstContextBase64_ = value;
         onChanged();
         return this;
@@ -6443,13 +6942,21 @@ public final class YadelModels {
       /**
        * <code>optional string second_context_base_64 = 11;</code>
        */
+      public boolean hasSecondContextBase64() {
+        return ((bitField0_ & 0x00000400) == 0x00000400);
+      }
+      /**
+       * <code>optional string second_context_base_64 = 11;</code>
+       */
       public java.lang.String getSecondContextBase64() {
         java.lang.Object ref = secondContextBase64_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          secondContextBase64_ = s;
+          if (bs.isValidUtf8()) {
+            secondContextBase64_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6479,7 +6986,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000400;
         secondContextBase64_ = value;
         onChanged();
         return this;
@@ -6488,7 +6995,7 @@ public final class YadelModels {
        * <code>optional string second_context_base_64 = 11;</code>
        */
       public Builder clearSecondContextBase64() {
-        
+        bitField0_ = (bitField0_ & ~0x00000400);
         secondContextBase64_ = getDefaultInstance().getSecondContextBase64();
         onChanged();
         return this;
@@ -6501,8 +7008,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000400;
         secondContextBase64_ = value;
         onChanged();
         return this;
@@ -6512,13 +7018,21 @@ public final class YadelModels {
       /**
        * <code>optional string third_context_base_64 = 12;</code>
        */
+      public boolean hasThirdContextBase64() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional string third_context_base_64 = 12;</code>
+       */
       public java.lang.String getThirdContextBase64() {
         java.lang.Object ref = thirdContextBase64_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          thirdContextBase64_ = s;
+          if (bs.isValidUtf8()) {
+            thirdContextBase64_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6548,7 +7062,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000800;
         thirdContextBase64_ = value;
         onChanged();
         return this;
@@ -6557,7 +7071,7 @@ public final class YadelModels {
        * <code>optional string third_context_base_64 = 12;</code>
        */
       public Builder clearThirdContextBase64() {
-        
+        bitField0_ = (bitField0_ & ~0x00000800);
         thirdContextBase64_ = getDefaultInstance().getThirdContextBase64();
         onChanged();
         return this;
@@ -6570,74 +7084,31 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000800;
         thirdContextBase64_ = value;
         onChanged();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:org.roylance.yadel.api.models.Task)
     }
 
-    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.Task)
-    private static final org.roylance.yadel.api.models.YadelModels.Task DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.roylance.yadel.api.models.YadelModels.Task();
+      defaultInstance = new Task(true);
+      defaultInstance.initFields();
     }
 
-    public static org.roylance.yadel.api.models.YadelModels.Task getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Task>
-        PARSER = new com.google.protobuf.AbstractParser<Task>() {
-      public Task parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
-          return new Task(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
-      }
-    };
-
-    public static com.google.protobuf.Parser<Task> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Task> getParserForType() {
-      return PARSER;
-    }
-
-    public org.roylance.yadel.api.models.YadelModels.Task getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
+    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.Task)
   }
 
   public interface TaskDependencyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:org.roylance.yadel.api.models.TaskDependency)
       com.google.protobuf.MessageOrBuilder {
 
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    boolean hasId();
     /**
      * <code>optional string id = 1;</code>
      */
@@ -6651,6 +7122,10 @@ public final class YadelModels {
     /**
      * <code>optional string parent_task_id = 2;</code>
      */
+    boolean hasParentTaskId();
+    /**
+     * <code>optional string parent_task_id = 2;</code>
+     */
     java.lang.String getParentTaskId();
     /**
      * <code>optional string parent_task_id = 2;</code>
@@ -6661,29 +7136,40 @@ public final class YadelModels {
   /**
    * Protobuf type {@code org.roylance.yadel.api.models.TaskDependency}
    */
-  public  static final class TaskDependency extends
+  public static final class TaskDependency extends
       com.google.protobuf.GeneratedMessage implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.api.models.TaskDependency)
       TaskDependencyOrBuilder {
     // Use TaskDependency.newBuilder() to construct.
     private TaskDependency(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private TaskDependency() {
-      id_ = "";
-      parentTaskId_ = "";
+    private TaskDependency(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final TaskDependency defaultInstance;
+    public static TaskDependency getDefaultInstance() {
+      return defaultInstance;
     }
 
+    public TaskDependency getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        getUnknownFields() {
+      return this.unknownFields;
     }
     private TaskDependency(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
-      this();
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6693,32 +7179,33 @@ public final class YadelModels {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              id_ = bs;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parentTaskId_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              parentTaskId_ = bs;
               break;
             }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6734,8 +7221,30 @@ public final class YadelModels {
               org.roylance.yadel.api.models.YadelModels.TaskDependency.class, org.roylance.yadel.api.models.YadelModels.TaskDependency.Builder.class);
     }
 
+    public static com.google.protobuf.Parser<TaskDependency> PARSER =
+        new com.google.protobuf.AbstractParser<TaskDependency>() {
+      public TaskDependency parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TaskDependency(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TaskDependency> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    private java.lang.Object id_;
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
     /**
      * <code>optional string id = 1;</code>
      */
@@ -6747,7 +7256,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
         return s;
       }
     }
@@ -6769,7 +7280,13 @@ public final class YadelModels {
     }
 
     public static final int PARENT_TASK_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object parentTaskId_;
+    private java.lang.Object parentTaskId_;
+    /**
+     * <code>optional string parent_task_id = 2;</code>
+     */
+    public boolean hasParentTaskId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
     /**
      * <code>optional string parent_task_id = 2;</code>
      */
@@ -6781,7 +7298,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        parentTaskId_ = s;
+        if (bs.isValidUtf8()) {
+          parentTaskId_ = s;
+        }
         return s;
       }
     }
@@ -6802,6 +7321,10 @@ public final class YadelModels {
       }
     }
 
+    private void initFields() {
+      id_ = "";
+      parentTaskId_ = "";
+    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -6814,30 +7337,42 @@ public final class YadelModels {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getIdBytes());
       }
-      if (!getParentTaskIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, parentTaskId_);
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getParentTaskIdBytes());
       }
+      getUnknownFields().writeTo(output);
     }
 
+    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getIdBytes());
       }
-      if (!getParentTaskIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, parentTaskId_);
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getParentTaskIdBytes());
       }
-      memoizedSize = size;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static org.roylance.yadel.api.models.YadelModels.TaskDependency parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6891,17 +7426,12 @@ public final class YadelModels {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
+    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
     public static Builder newBuilder(org.roylance.yadel.api.models.YadelModels.TaskDependency prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
+    public Builder toBuilder() { return newBuilder(this); }
 
     @java.lang.Override
     protected Builder newBuilderForType(
@@ -6942,13 +7472,21 @@ public final class YadelModels {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
+      private static Builder create() {
+        return new Builder();
+      }
+
       public Builder clear() {
         super.clear();
         id_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         parentTaskId_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -6970,8 +7508,17 @@ public final class YadelModels {
 
       public org.roylance.yadel.api.models.YadelModels.TaskDependency buildPartial() {
         org.roylance.yadel.api.models.YadelModels.TaskDependency result = new org.roylance.yadel.api.models.YadelModels.TaskDependency(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
         result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
         result.parentTaskId_ = parentTaskId_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -6987,15 +7534,17 @@ public final class YadelModels {
 
       public Builder mergeFrom(org.roylance.yadel.api.models.YadelModels.TaskDependency other) {
         if (other == org.roylance.yadel.api.models.YadelModels.TaskDependency.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
+        if (other.hasId()) {
+          bitField0_ |= 0x00000001;
           id_ = other.id_;
           onChanged();
         }
-        if (!other.getParentTaskId().isEmpty()) {
+        if (other.hasParentTaskId()) {
+          bitField0_ |= 0x00000002;
           parentTaskId_ = other.parentTaskId_;
           onChanged();
         }
-        onChanged();
+        this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
@@ -7020,8 +7569,15 @@ public final class YadelModels {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
+      /**
+       * <code>optional string id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
       /**
        * <code>optional string id = 1;</code>
        */
@@ -7031,7 +7587,9 @@ public final class YadelModels {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          id_ = s;
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7061,7 +7619,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -7070,7 +7628,7 @@ public final class YadelModels {
        * <code>optional string id = 1;</code>
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -7083,8 +7641,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -7094,13 +7651,21 @@ public final class YadelModels {
       /**
        * <code>optional string parent_task_id = 2;</code>
        */
+      public boolean hasParentTaskId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string parent_task_id = 2;</code>
+       */
       public java.lang.String getParentTaskId() {
         java.lang.Object ref = parentTaskId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          parentTaskId_ = s;
+          if (bs.isValidUtf8()) {
+            parentTaskId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7130,7 +7695,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000002;
         parentTaskId_ = value;
         onChanged();
         return this;
@@ -7139,7 +7704,7 @@ public final class YadelModels {
        * <code>optional string parent_task_id = 2;</code>
        */
       public Builder clearParentTaskId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         parentTaskId_ = getDefaultInstance().getParentTaskId();
         onChanged();
         return this;
@@ -7152,74 +7717,31 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000002;
         parentTaskId_ = value;
         onChanged();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:org.roylance.yadel.api.models.TaskDependency)
     }
 
-    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.TaskDependency)
-    private static final org.roylance.yadel.api.models.YadelModels.TaskDependency DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.roylance.yadel.api.models.YadelModels.TaskDependency();
+      defaultInstance = new TaskDependency(true);
+      defaultInstance.initFields();
     }
 
-    public static org.roylance.yadel.api.models.YadelModels.TaskDependency getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<TaskDependency>
-        PARSER = new com.google.protobuf.AbstractParser<TaskDependency>() {
-      public TaskDependency parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
-          return new TaskDependency(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
-      }
-    };
-
-    public static com.google.protobuf.Parser<TaskDependency> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TaskDependency> getParserForType() {
-      return PARSER;
-    }
-
-    public org.roylance.yadel.api.models.YadelModels.TaskDependency getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
+    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.TaskDependency)
   }
 
   public interface AddTaskToDagOrBuilder extends
       // @@protoc_insertion_point(interface_extends:org.roylance.yadel.api.models.AddTaskToDag)
       com.google.protobuf.MessageOrBuilder {
 
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    boolean hasId();
     /**
      * <code>optional string id = 1;</code>
      */
@@ -7259,6 +7781,10 @@ public final class YadelModels {
     /**
      * <code>optional string first_context_base_64 = 4;</code>
      */
+    boolean hasFirstContextBase64();
+    /**
+     * <code>optional string first_context_base_64 = 4;</code>
+     */
     java.lang.String getFirstContextBase64();
     /**
      * <code>optional string first_context_base_64 = 4;</code>
@@ -7266,6 +7792,10 @@ public final class YadelModels {
     com.google.protobuf.ByteString
         getFirstContextBase64Bytes();
 
+    /**
+     * <code>optional string second_context_base_64 = 5;</code>
+     */
+    boolean hasSecondContextBase64();
     /**
      * <code>optional string second_context_base_64 = 5;</code>
      */
@@ -7279,6 +7809,10 @@ public final class YadelModels {
     /**
      * <code>optional string third_context_base_64 = 6;</code>
      */
+    boolean hasThirdContextBase64();
+    /**
+     * <code>optional string third_context_base_64 = 6;</code>
+     */
     java.lang.String getThirdContextBase64();
     /**
      * <code>optional string third_context_base_64 = 6;</code>
@@ -7289,31 +7823,40 @@ public final class YadelModels {
   /**
    * Protobuf type {@code org.roylance.yadel.api.models.AddTaskToDag}
    */
-  public  static final class AddTaskToDag extends
+  public static final class AddTaskToDag extends
       com.google.protobuf.GeneratedMessage implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.api.models.AddTaskToDag)
       AddTaskToDagOrBuilder {
     // Use AddTaskToDag.newBuilder() to construct.
     private AddTaskToDag(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private AddTaskToDag() {
-      id_ = "";
-      firstContextBase64_ = "";
-      secondContextBase64_ = "";
-      thirdContextBase64_ = "";
+    private AddTaskToDag(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final AddTaskToDag defaultInstance;
+    public static AddTaskToDag getDefaultInstance() {
+      return defaultInstance;
     }
 
+    public AddTaskToDag getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        getUnknownFields() {
+      return this.unknownFields;
     }
     private AddTaskToDag(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
-      this();
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7323,70 +7866,71 @@ public final class YadelModels {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              id_ = bs;
               break;
             }
             case 18: {
               org.roylance.yadel.api.models.YadelModels.Task.Builder subBuilder = null;
-              if (parentTask_ != null) {
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 subBuilder = parentTask_.toBuilder();
               }
-              parentTask_ = input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.parser(), extensionRegistry);
+              parentTask_ = input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(parentTask_);
                 parentTask_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
             case 26: {
               org.roylance.yadel.api.models.YadelModels.Task.Builder subBuilder = null;
-              if (newTask_ != null) {
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = newTask_.toBuilder();
               }
-              newTask_ = input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.parser(), extensionRegistry);
+              newTask_ = input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(newTask_);
                 newTask_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              firstContextBase64_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              firstContextBase64_ = bs;
               break;
             }
             case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              secondContextBase64_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              secondContextBase64_ = bs;
               break;
             }
             case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              thirdContextBase64_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              thirdContextBase64_ = bs;
               break;
             }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7402,8 +7946,30 @@ public final class YadelModels {
               org.roylance.yadel.api.models.YadelModels.AddTaskToDag.class, org.roylance.yadel.api.models.YadelModels.AddTaskToDag.Builder.class);
     }
 
+    public static com.google.protobuf.Parser<AddTaskToDag> PARSER =
+        new com.google.protobuf.AbstractParser<AddTaskToDag>() {
+      public AddTaskToDag parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AddTaskToDag(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AddTaskToDag> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    private java.lang.Object id_;
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
     /**
      * <code>optional string id = 1;</code>
      */
@@ -7415,7 +7981,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
         return s;
       }
     }
@@ -7442,19 +8010,19 @@ public final class YadelModels {
      * <code>optional .org.roylance.yadel.api.models.Task parent_task = 2;</code>
      */
     public boolean hasParentTask() {
-      return parentTask_ != null;
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional .org.roylance.yadel.api.models.Task parent_task = 2;</code>
      */
     public org.roylance.yadel.api.models.YadelModels.Task getParentTask() {
-      return parentTask_ == null ? org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance() : parentTask_;
+      return parentTask_;
     }
     /**
      * <code>optional .org.roylance.yadel.api.models.Task parent_task = 2;</code>
      */
     public org.roylance.yadel.api.models.YadelModels.TaskOrBuilder getParentTaskOrBuilder() {
-      return getParentTask();
+      return parentTask_;
     }
 
     public static final int NEW_TASK_FIELD_NUMBER = 3;
@@ -7463,23 +8031,29 @@ public final class YadelModels {
      * <code>optional .org.roylance.yadel.api.models.Task new_task = 3;</code>
      */
     public boolean hasNewTask() {
-      return newTask_ != null;
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional .org.roylance.yadel.api.models.Task new_task = 3;</code>
      */
     public org.roylance.yadel.api.models.YadelModels.Task getNewTask() {
-      return newTask_ == null ? org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance() : newTask_;
+      return newTask_;
     }
     /**
      * <code>optional .org.roylance.yadel.api.models.Task new_task = 3;</code>
      */
     public org.roylance.yadel.api.models.YadelModels.TaskOrBuilder getNewTaskOrBuilder() {
-      return getNewTask();
+      return newTask_;
     }
 
     public static final int FIRST_CONTEXT_BASE_64_FIELD_NUMBER = 4;
-    private volatile java.lang.Object firstContextBase64_;
+    private java.lang.Object firstContextBase64_;
+    /**
+     * <code>optional string first_context_base_64 = 4;</code>
+     */
+    public boolean hasFirstContextBase64() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
     /**
      * <code>optional string first_context_base_64 = 4;</code>
      */
@@ -7491,7 +8065,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        firstContextBase64_ = s;
+        if (bs.isValidUtf8()) {
+          firstContextBase64_ = s;
+        }
         return s;
       }
     }
@@ -7513,7 +8089,13 @@ public final class YadelModels {
     }
 
     public static final int SECOND_CONTEXT_BASE_64_FIELD_NUMBER = 5;
-    private volatile java.lang.Object secondContextBase64_;
+    private java.lang.Object secondContextBase64_;
+    /**
+     * <code>optional string second_context_base_64 = 5;</code>
+     */
+    public boolean hasSecondContextBase64() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
     /**
      * <code>optional string second_context_base_64 = 5;</code>
      */
@@ -7525,7 +8107,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        secondContextBase64_ = s;
+        if (bs.isValidUtf8()) {
+          secondContextBase64_ = s;
+        }
         return s;
       }
     }
@@ -7547,7 +8131,13 @@ public final class YadelModels {
     }
 
     public static final int THIRD_CONTEXT_BASE_64_FIELD_NUMBER = 6;
-    private volatile java.lang.Object thirdContextBase64_;
+    private java.lang.Object thirdContextBase64_;
+    /**
+     * <code>optional string third_context_base_64 = 6;</code>
+     */
+    public boolean hasThirdContextBase64() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
     /**
      * <code>optional string third_context_base_64 = 6;</code>
      */
@@ -7559,7 +8149,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        thirdContextBase64_ = s;
+        if (bs.isValidUtf8()) {
+          thirdContextBase64_ = s;
+        }
         return s;
       }
     }
@@ -7580,6 +8172,14 @@ public final class YadelModels {
       }
     }
 
+    private void initFields() {
+      id_ = "";
+      parentTask_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
+      newTask_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
+      firstContextBase64_ = "";
+      secondContextBase64_ = "";
+      thirdContextBase64_ = "";
+    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -7592,56 +8192,70 @@ public final class YadelModels {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getIdBytes());
       }
-      if (parentTask_ != null) {
-        output.writeMessage(2, getParentTask());
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, parentTask_);
       }
-      if (newTask_ != null) {
-        output.writeMessage(3, getNewTask());
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, newTask_);
       }
-      if (!getFirstContextBase64Bytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 4, firstContextBase64_);
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getFirstContextBase64Bytes());
       }
-      if (!getSecondContextBase64Bytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 5, secondContextBase64_);
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getSecondContextBase64Bytes());
       }
-      if (!getThirdContextBase64Bytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 6, thirdContextBase64_);
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getThirdContextBase64Bytes());
       }
+      getUnknownFields().writeTo(output);
     }
 
+    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
-      }
-      if (parentTask_ != null) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getParentTask());
+          .computeBytesSize(1, getIdBytes());
       }
-      if (newTask_ != null) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getNewTask());
+          .computeMessageSize(2, parentTask_);
       }
-      if (!getFirstContextBase64Bytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, firstContextBase64_);
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, newTask_);
       }
-      if (!getSecondContextBase64Bytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, secondContextBase64_);
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getFirstContextBase64Bytes());
       }
-      if (!getThirdContextBase64Bytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, thirdContextBase64_);
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getSecondContextBase64Bytes());
       }
-      memoizedSize = size;
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getThirdContextBase64Bytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static org.roylance.yadel.api.models.YadelModels.AddTaskToDag parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7695,17 +8309,12 @@ public final class YadelModels {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
+    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
     public static Builder newBuilder(org.roylance.yadel.api.models.YadelModels.AddTaskToDag prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
+    public Builder toBuilder() { return newBuilder(this); }
 
     @java.lang.Override
     protected Builder newBuilderForType(
@@ -7744,31 +8353,41 @@ public final class YadelModels {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getParentTaskFieldBuilder();
+          getNewTaskFieldBuilder();
         }
       }
+      private static Builder create() {
+        return new Builder();
+      }
+
       public Builder clear() {
         super.clear();
         id_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (parentTaskBuilder_ == null) {
-          parentTask_ = null;
+          parentTask_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
         } else {
-          parentTask_ = null;
-          parentTaskBuilder_ = null;
+          parentTaskBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (newTaskBuilder_ == null) {
-          newTask_ = null;
+          newTask_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
         } else {
-          newTask_ = null;
-          newTaskBuilder_ = null;
+          newTaskBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         firstContextBase64_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         secondContextBase64_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         thirdContextBase64_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -7790,20 +8409,41 @@ public final class YadelModels {
 
       public org.roylance.yadel.api.models.YadelModels.AddTaskToDag buildPartial() {
         org.roylance.yadel.api.models.YadelModels.AddTaskToDag result = new org.roylance.yadel.api.models.YadelModels.AddTaskToDag(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
         result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
         if (parentTaskBuilder_ == null) {
           result.parentTask_ = parentTask_;
         } else {
           result.parentTask_ = parentTaskBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
         }
         if (newTaskBuilder_ == null) {
           result.newTask_ = newTask_;
         } else {
           result.newTask_ = newTaskBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
         result.firstContextBase64_ = firstContextBase64_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
         result.secondContextBase64_ = secondContextBase64_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
         result.thirdContextBase64_ = thirdContextBase64_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -7819,7 +8459,8 @@ public final class YadelModels {
 
       public Builder mergeFrom(org.roylance.yadel.api.models.YadelModels.AddTaskToDag other) {
         if (other == org.roylance.yadel.api.models.YadelModels.AddTaskToDag.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
+        if (other.hasId()) {
+          bitField0_ |= 0x00000001;
           id_ = other.id_;
           onChanged();
         }
@@ -7829,19 +8470,22 @@ public final class YadelModels {
         if (other.hasNewTask()) {
           mergeNewTask(other.getNewTask());
         }
-        if (!other.getFirstContextBase64().isEmpty()) {
+        if (other.hasFirstContextBase64()) {
+          bitField0_ |= 0x00000008;
           firstContextBase64_ = other.firstContextBase64_;
           onChanged();
         }
-        if (!other.getSecondContextBase64().isEmpty()) {
+        if (other.hasSecondContextBase64()) {
+          bitField0_ |= 0x00000010;
           secondContextBase64_ = other.secondContextBase64_;
           onChanged();
         }
-        if (!other.getThirdContextBase64().isEmpty()) {
+        if (other.hasThirdContextBase64()) {
+          bitField0_ |= 0x00000020;
           thirdContextBase64_ = other.thirdContextBase64_;
           onChanged();
         }
-        onChanged();
+        this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
@@ -7866,8 +8510,15 @@ public final class YadelModels {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
+      /**
+       * <code>optional string id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
       /**
        * <code>optional string id = 1;</code>
        */
@@ -7877,7 +8528,9 @@ public final class YadelModels {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          id_ = s;
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7907,7 +8560,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -7916,7 +8569,7 @@ public final class YadelModels {
        * <code>optional string id = 1;</code>
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -7929,28 +8582,27 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
       }
 
-      private org.roylance.yadel.api.models.YadelModels.Task parentTask_ = null;
+      private org.roylance.yadel.api.models.YadelModels.Task parentTask_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           org.roylance.yadel.api.models.YadelModels.Task, org.roylance.yadel.api.models.YadelModels.Task.Builder, org.roylance.yadel.api.models.YadelModels.TaskOrBuilder> parentTaskBuilder_;
       /**
        * <code>optional .org.roylance.yadel.api.models.Task parent_task = 2;</code>
        */
       public boolean hasParentTask() {
-        return parentTaskBuilder_ != null || parentTask_ != null;
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional .org.roylance.yadel.api.models.Task parent_task = 2;</code>
        */
       public org.roylance.yadel.api.models.YadelModels.Task getParentTask() {
         if (parentTaskBuilder_ == null) {
-          return parentTask_ == null ? org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance() : parentTask_;
+          return parentTask_;
         } else {
           return parentTaskBuilder_.getMessage();
         }
@@ -7968,7 +8620,7 @@ public final class YadelModels {
         } else {
           parentTaskBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -7982,7 +8634,7 @@ public final class YadelModels {
         } else {
           parentTaskBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -7990,7 +8642,8 @@ public final class YadelModels {
        */
       public Builder mergeParentTask(org.roylance.yadel.api.models.YadelModels.Task value) {
         if (parentTaskBuilder_ == null) {
-          if (parentTask_ != null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              parentTask_ != org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance()) {
             parentTask_ =
               org.roylance.yadel.api.models.YadelModels.Task.newBuilder(parentTask_).mergeFrom(value).buildPartial();
           } else {
@@ -8000,7 +8653,7 @@ public final class YadelModels {
         } else {
           parentTaskBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -8008,20 +8661,19 @@ public final class YadelModels {
        */
       public Builder clearParentTask() {
         if (parentTaskBuilder_ == null) {
-          parentTask_ = null;
+          parentTask_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
           onChanged();
         } else {
-          parentTask_ = null;
-          parentTaskBuilder_ = null;
+          parentTaskBuilder_.clear();
         }
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
        * <code>optional .org.roylance.yadel.api.models.Task parent_task = 2;</code>
        */
       public org.roylance.yadel.api.models.YadelModels.Task.Builder getParentTaskBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getParentTaskFieldBuilder().getBuilder();
       }
@@ -8032,8 +8684,7 @@ public final class YadelModels {
         if (parentTaskBuilder_ != null) {
           return parentTaskBuilder_.getMessageOrBuilder();
         } else {
-          return parentTask_ == null ?
-              org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance() : parentTask_;
+          return parentTask_;
         }
       }
       /**
@@ -8053,21 +8704,21 @@ public final class YadelModels {
         return parentTaskBuilder_;
       }
 
-      private org.roylance.yadel.api.models.YadelModels.Task newTask_ = null;
+      private org.roylance.yadel.api.models.YadelModels.Task newTask_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           org.roylance.yadel.api.models.YadelModels.Task, org.roylance.yadel.api.models.YadelModels.Task.Builder, org.roylance.yadel.api.models.YadelModels.TaskOrBuilder> newTaskBuilder_;
       /**
        * <code>optional .org.roylance.yadel.api.models.Task new_task = 3;</code>
        */
       public boolean hasNewTask() {
-        return newTaskBuilder_ != null || newTask_ != null;
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>optional .org.roylance.yadel.api.models.Task new_task = 3;</code>
        */
       public org.roylance.yadel.api.models.YadelModels.Task getNewTask() {
         if (newTaskBuilder_ == null) {
-          return newTask_ == null ? org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance() : newTask_;
+          return newTask_;
         } else {
           return newTaskBuilder_.getMessage();
         }
@@ -8085,7 +8736,7 @@ public final class YadelModels {
         } else {
           newTaskBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -8099,7 +8750,7 @@ public final class YadelModels {
         } else {
           newTaskBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -8107,7 +8758,8 @@ public final class YadelModels {
        */
       public Builder mergeNewTask(org.roylance.yadel.api.models.YadelModels.Task value) {
         if (newTaskBuilder_ == null) {
-          if (newTask_ != null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              newTask_ != org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance()) {
             newTask_ =
               org.roylance.yadel.api.models.YadelModels.Task.newBuilder(newTask_).mergeFrom(value).buildPartial();
           } else {
@@ -8117,7 +8769,7 @@ public final class YadelModels {
         } else {
           newTaskBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -8125,20 +8777,19 @@ public final class YadelModels {
        */
       public Builder clearNewTask() {
         if (newTaskBuilder_ == null) {
-          newTask_ = null;
+          newTask_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
           onChanged();
         } else {
-          newTask_ = null;
-          newTaskBuilder_ = null;
+          newTaskBuilder_.clear();
         }
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
        * <code>optional .org.roylance.yadel.api.models.Task new_task = 3;</code>
        */
       public org.roylance.yadel.api.models.YadelModels.Task.Builder getNewTaskBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getNewTaskFieldBuilder().getBuilder();
       }
@@ -8149,8 +8800,7 @@ public final class YadelModels {
         if (newTaskBuilder_ != null) {
           return newTaskBuilder_.getMessageOrBuilder();
         } else {
-          return newTask_ == null ?
-              org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance() : newTask_;
+          return newTask_;
         }
       }
       /**
@@ -8174,13 +8824,21 @@ public final class YadelModels {
       /**
        * <code>optional string first_context_base_64 = 4;</code>
        */
+      public boolean hasFirstContextBase64() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string first_context_base_64 = 4;</code>
+       */
       public java.lang.String getFirstContextBase64() {
         java.lang.Object ref = firstContextBase64_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          firstContextBase64_ = s;
+          if (bs.isValidUtf8()) {
+            firstContextBase64_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8210,7 +8868,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000008;
         firstContextBase64_ = value;
         onChanged();
         return this;
@@ -8219,7 +8877,7 @@ public final class YadelModels {
        * <code>optional string first_context_base_64 = 4;</code>
        */
       public Builder clearFirstContextBase64() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         firstContextBase64_ = getDefaultInstance().getFirstContextBase64();
         onChanged();
         return this;
@@ -8232,8 +8890,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000008;
         firstContextBase64_ = value;
         onChanged();
         return this;
@@ -8243,13 +8900,21 @@ public final class YadelModels {
       /**
        * <code>optional string second_context_base_64 = 5;</code>
        */
+      public boolean hasSecondContextBase64() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional string second_context_base_64 = 5;</code>
+       */
       public java.lang.String getSecondContextBase64() {
         java.lang.Object ref = secondContextBase64_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          secondContextBase64_ = s;
+          if (bs.isValidUtf8()) {
+            secondContextBase64_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8279,7 +8944,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000010;
         secondContextBase64_ = value;
         onChanged();
         return this;
@@ -8288,7 +8953,7 @@ public final class YadelModels {
        * <code>optional string second_context_base_64 = 5;</code>
        */
       public Builder clearSecondContextBase64() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         secondContextBase64_ = getDefaultInstance().getSecondContextBase64();
         onChanged();
         return this;
@@ -8301,8 +8966,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000010;
         secondContextBase64_ = value;
         onChanged();
         return this;
@@ -8312,13 +8976,21 @@ public final class YadelModels {
       /**
        * <code>optional string third_context_base_64 = 6;</code>
        */
+      public boolean hasThirdContextBase64() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional string third_context_base_64 = 6;</code>
+       */
       public java.lang.String getThirdContextBase64() {
         java.lang.Object ref = thirdContextBase64_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          thirdContextBase64_ = s;
+          if (bs.isValidUtf8()) {
+            thirdContextBase64_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8348,7 +9020,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000020;
         thirdContextBase64_ = value;
         onChanged();
         return this;
@@ -8357,7 +9029,7 @@ public final class YadelModels {
        * <code>optional string third_context_base_64 = 6;</code>
        */
       public Builder clearThirdContextBase64() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         thirdContextBase64_ = getDefaultInstance().getThirdContextBase64();
         onChanged();
         return this;
@@ -8370,74 +9042,31 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000020;
         thirdContextBase64_ = value;
         onChanged();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:org.roylance.yadel.api.models.AddTaskToDag)
     }
 
-    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.AddTaskToDag)
-    private static final org.roylance.yadel.api.models.YadelModels.AddTaskToDag DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.roylance.yadel.api.models.YadelModels.AddTaskToDag();
+      defaultInstance = new AddTaskToDag(true);
+      defaultInstance.initFields();
     }
 
-    public static org.roylance.yadel.api.models.YadelModels.AddTaskToDag getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<AddTaskToDag>
-        PARSER = new com.google.protobuf.AbstractParser<AddTaskToDag>() {
-      public AddTaskToDag parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
-          return new AddTaskToDag(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
-      }
-    };
-
-    public static com.google.protobuf.Parser<AddTaskToDag> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AddTaskToDag> getParserForType() {
-      return PARSER;
-    }
-
-    public org.roylance.yadel.api.models.YadelModels.AddTaskToDag getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
+    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.AddTaskToDag)
   }
 
   public interface CompleteTaskOrBuilder extends
       // @@protoc_insertion_point(interface_extends:org.roylance.yadel.api.models.CompleteTask)
       com.google.protobuf.MessageOrBuilder {
 
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    boolean hasId();
     /**
      * <code>optional string id = 1;</code>
      */
@@ -8496,35 +9125,49 @@ public final class YadelModels {
     /**
      * <code>optional bool is_error = 5;</code>
      */
+    boolean hasIsError();
+    /**
+     * <code>optional bool is_error = 5;</code>
+     */
     boolean getIsError();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.api.models.CompleteTask}
    */
-  public  static final class CompleteTask extends
+  public static final class CompleteTask extends
       com.google.protobuf.GeneratedMessage implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.api.models.CompleteTask)
       CompleteTaskOrBuilder {
     // Use CompleteTask.newBuilder() to construct.
     private CompleteTask(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private CompleteTask() {
-      id_ = "";
-      logs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      isError_ = false;
+    private CompleteTask(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final CompleteTask defaultInstance;
+    public static CompleteTask getDefaultInstance() {
+      return defaultInstance;
     }
 
+    public CompleteTask getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        getUnknownFields() {
+      return this.unknownFields;
     }
     private CompleteTask(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
-      this();
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8534,69 +9177,70 @@ public final class YadelModels {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              id_ = bs;
               break;
             }
             case 18: {
               org.roylance.yadel.api.models.YadelModels.Task.Builder subBuilder = null;
-              if (task_ != null) {
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 subBuilder = task_.toBuilder();
               }
-              task_ = input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.parser(), extensionRegistry);
+              task_ = input.readMessage(org.roylance.yadel.api.models.YadelModels.Task.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(task_);
                 task_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
             case 26: {
               org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.Builder subBuilder = null;
-              if (workerConfiguration_ != null) {
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = workerConfiguration_.toBuilder();
               }
-              workerConfiguration_ = input.readMessage(org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.parser(), extensionRegistry);
+              workerConfiguration_ = input.readMessage(org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(workerConfiguration_);
                 workerConfiguration_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.google.protobuf.ByteString bs = input.readBytes();
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 logs_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000008;
               }
-              logs_.add(s);
+              logs_.add(bs);
               break;
             }
             case 40: {
-
+              bitField0_ |= 0x00000008;
               isError_ = input.readBool();
               break;
             }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw new RuntimeException(e.setUnfinishedMessage(this));
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new RuntimeException(
-            new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this));
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           logs_ = logs_.getUnmodifiableView();
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8612,9 +9256,30 @@ public final class YadelModels {
               org.roylance.yadel.api.models.YadelModels.CompleteTask.class, org.roylance.yadel.api.models.YadelModels.CompleteTask.Builder.class);
     }
 
+    public static com.google.protobuf.Parser<CompleteTask> PARSER =
+        new com.google.protobuf.AbstractParser<CompleteTask>() {
+      public CompleteTask parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CompleteTask(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CompleteTask> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    private java.lang.Object id_;
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
     /**
      * <code>optional string id = 1;</code>
      */
@@ -8626,7 +9291,9 @@ public final class YadelModels {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
         return s;
       }
     }
@@ -8653,19 +9320,19 @@ public final class YadelModels {
      * <code>optional .org.roylance.yadel.api.models.Task task = 2;</code>
      */
     public boolean hasTask() {
-      return task_ != null;
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional .org.roylance.yadel.api.models.Task task = 2;</code>
      */
     public org.roylance.yadel.api.models.YadelModels.Task getTask() {
-      return task_ == null ? org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance() : task_;
+      return task_;
     }
     /**
      * <code>optional .org.roylance.yadel.api.models.Task task = 2;</code>
      */
     public org.roylance.yadel.api.models.YadelModels.TaskOrBuilder getTaskOrBuilder() {
-      return getTask();
+      return task_;
     }
 
     public static final int WORKER_CONFIGURATION_FIELD_NUMBER = 3;
@@ -8674,19 +9341,19 @@ public final class YadelModels {
      * <code>optional .org.roylance.yadel.api.models.WorkerConfiguration worker_configuration = 3;</code>
      */
     public boolean hasWorkerConfiguration() {
-      return workerConfiguration_ != null;
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional .org.roylance.yadel.api.models.WorkerConfiguration worker_configuration = 3;</code>
      */
     public org.roylance.yadel.api.models.YadelModels.WorkerConfiguration getWorkerConfiguration() {
-      return workerConfiguration_ == null ? org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.getDefaultInstance() : workerConfiguration_;
+      return workerConfiguration_;
     }
     /**
      * <code>optional .org.roylance.yadel.api.models.WorkerConfiguration worker_configuration = 3;</code>
      */
     public org.roylance.yadel.api.models.YadelModels.WorkerConfigurationOrBuilder getWorkerConfigurationOrBuilder() {
-      return getWorkerConfiguration();
+      return workerConfiguration_;
     }
 
     public static final int LOGS_FIELD_NUMBER = 4;
@@ -8723,10 +9390,23 @@ public final class YadelModels {
     /**
      * <code>optional bool is_error = 5;</code>
      */
+    public boolean hasIsError() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional bool is_error = 5;</code>
+     */
     public boolean getIsError() {
       return isError_;
     }
 
+    private void initFields() {
+      id_ = "";
+      task_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
+      workerConfiguration_ = org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.getDefaultInstance();
+      logs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      isError_ = false;
+    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -8739,56 +9419,68 @@ public final class YadelModels {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getIdBytes());
       }
-      if (task_ != null) {
-        output.writeMessage(2, getTask());
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, task_);
       }
-      if (workerConfiguration_ != null) {
-        output.writeMessage(3, getWorkerConfiguration());
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, workerConfiguration_);
       }
       for (int i = 0; i < logs_.size(); i++) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 4, logs_.getRaw(i));
+        output.writeBytes(4, logs_.getByteString(i));
       }
-      if (isError_ != false) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBool(5, isError_);
       }
+      getUnknownFields().writeTo(output);
     }
 
+    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
-      }
-      if (task_ != null) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getTask());
+          .computeBytesSize(1, getIdBytes());
       }
-      if (workerConfiguration_ != null) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getWorkerConfiguration());
+          .computeMessageSize(2, task_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, workerConfiguration_);
       }
       {
         int dataSize = 0;
         for (int i = 0; i < logs_.size(); i++) {
-          dataSize += computeStringSizeNoTag(logs_.getRaw(i));
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(logs_.getByteString(i));
         }
         size += dataSize;
         size += 1 * getLogsList().size();
       }
-      if (isError_ != false) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, isError_);
       }
-      memoizedSize = size;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static org.roylance.yadel.api.models.YadelModels.CompleteTask parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8842,17 +9534,12 @@ public final class YadelModels {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
+    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
     public static Builder newBuilder(org.roylance.yadel.api.models.YadelModels.CompleteTask prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
+    public Builder toBuilder() { return newBuilder(this); }
 
     @java.lang.Override
     protected Builder newBuilderForType(
@@ -8891,29 +9578,39 @@ public final class YadelModels {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getTaskFieldBuilder();
+          getWorkerConfigurationFieldBuilder();
         }
       }
+      private static Builder create() {
+        return new Builder();
+      }
+
       public Builder clear() {
         super.clear();
         id_ = "";
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (taskBuilder_ == null) {
-          task_ = null;
+          task_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
         } else {
-          task_ = null;
-          taskBuilder_ = null;
+          taskBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (workerConfigurationBuilder_ == null) {
-          workerConfiguration_ = null;
+          workerConfiguration_ = org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.getDefaultInstance();
         } else {
-          workerConfiguration_ = null;
-          workerConfigurationBuilder_ = null;
+          workerConfigurationBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         logs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
         isError_ = false;
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -8937,11 +9634,20 @@ public final class YadelModels {
         org.roylance.yadel.api.models.YadelModels.CompleteTask result = new org.roylance.yadel.api.models.YadelModels.CompleteTask(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
         result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
         if (taskBuilder_ == null) {
           result.task_ = task_;
         } else {
           result.task_ = taskBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
         }
         if (workerConfigurationBuilder_ == null) {
           result.workerConfiguration_ = workerConfiguration_;
@@ -8953,6 +9659,9 @@ public final class YadelModels {
           bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.logs_ = logs_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000008;
+        }
         result.isError_ = isError_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -8970,7 +9679,8 @@ public final class YadelModels {
 
       public Builder mergeFrom(org.roylance.yadel.api.models.YadelModels.CompleteTask other) {
         if (other == org.roylance.yadel.api.models.YadelModels.CompleteTask.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
+        if (other.hasId()) {
+          bitField0_ |= 0x00000001;
           id_ = other.id_;
           onChanged();
         }
@@ -8990,10 +9700,10 @@ public final class YadelModels {
           }
           onChanged();
         }
-        if (other.getIsError() != false) {
+        if (other.hasIsError()) {
           setIsError(other.getIsError());
         }
-        onChanged();
+        this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
@@ -9024,13 +9734,21 @@ public final class YadelModels {
       /**
        * <code>optional string id = 1;</code>
        */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string id = 1;</code>
+       */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          id_ = s;
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -9060,7 +9778,7 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
@@ -9069,7 +9787,7 @@ public final class YadelModels {
        * <code>optional string id = 1;</code>
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -9082,28 +9800,27 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
+  bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
       }
 
-      private org.roylance.yadel.api.models.YadelModels.Task task_ = null;
+      private org.roylance.yadel.api.models.YadelModels.Task task_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           org.roylance.yadel.api.models.YadelModels.Task, org.roylance.yadel.api.models.YadelModels.Task.Builder, org.roylance.yadel.api.models.YadelModels.TaskOrBuilder> taskBuilder_;
       /**
        * <code>optional .org.roylance.yadel.api.models.Task task = 2;</code>
        */
       public boolean hasTask() {
-        return taskBuilder_ != null || task_ != null;
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional .org.roylance.yadel.api.models.Task task = 2;</code>
        */
       public org.roylance.yadel.api.models.YadelModels.Task getTask() {
         if (taskBuilder_ == null) {
-          return task_ == null ? org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance() : task_;
+          return task_;
         } else {
           return taskBuilder_.getMessage();
         }
@@ -9121,7 +9838,7 @@ public final class YadelModels {
         } else {
           taskBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -9135,7 +9852,7 @@ public final class YadelModels {
         } else {
           taskBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -9143,7 +9860,8 @@ public final class YadelModels {
        */
       public Builder mergeTask(org.roylance.yadel.api.models.YadelModels.Task value) {
         if (taskBuilder_ == null) {
-          if (task_ != null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              task_ != org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance()) {
             task_ =
               org.roylance.yadel.api.models.YadelModels.Task.newBuilder(task_).mergeFrom(value).buildPartial();
           } else {
@@ -9153,7 +9871,7 @@ public final class YadelModels {
         } else {
           taskBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -9161,20 +9879,19 @@ public final class YadelModels {
        */
       public Builder clearTask() {
         if (taskBuilder_ == null) {
-          task_ = null;
+          task_ = org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance();
           onChanged();
         } else {
-          task_ = null;
-          taskBuilder_ = null;
+          taskBuilder_.clear();
         }
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
        * <code>optional .org.roylance.yadel.api.models.Task task = 2;</code>
        */
       public org.roylance.yadel.api.models.YadelModels.Task.Builder getTaskBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getTaskFieldBuilder().getBuilder();
       }
@@ -9185,8 +9902,7 @@ public final class YadelModels {
         if (taskBuilder_ != null) {
           return taskBuilder_.getMessageOrBuilder();
         } else {
-          return task_ == null ?
-              org.roylance.yadel.api.models.YadelModels.Task.getDefaultInstance() : task_;
+          return task_;
         }
       }
       /**
@@ -9206,21 +9922,21 @@ public final class YadelModels {
         return taskBuilder_;
       }
 
-      private org.roylance.yadel.api.models.YadelModels.WorkerConfiguration workerConfiguration_ = null;
+      private org.roylance.yadel.api.models.YadelModels.WorkerConfiguration workerConfiguration_ = org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           org.roylance.yadel.api.models.YadelModels.WorkerConfiguration, org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.Builder, org.roylance.yadel.api.models.YadelModels.WorkerConfigurationOrBuilder> workerConfigurationBuilder_;
       /**
        * <code>optional .org.roylance.yadel.api.models.WorkerConfiguration worker_configuration = 3;</code>
        */
       public boolean hasWorkerConfiguration() {
-        return workerConfigurationBuilder_ != null || workerConfiguration_ != null;
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>optional .org.roylance.yadel.api.models.WorkerConfiguration worker_configuration = 3;</code>
        */
       public org.roylance.yadel.api.models.YadelModels.WorkerConfiguration getWorkerConfiguration() {
         if (workerConfigurationBuilder_ == null) {
-          return workerConfiguration_ == null ? org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.getDefaultInstance() : workerConfiguration_;
+          return workerConfiguration_;
         } else {
           return workerConfigurationBuilder_.getMessage();
         }
@@ -9238,7 +9954,7 @@ public final class YadelModels {
         } else {
           workerConfigurationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -9252,7 +9968,7 @@ public final class YadelModels {
         } else {
           workerConfigurationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -9260,7 +9976,8 @@ public final class YadelModels {
        */
       public Builder mergeWorkerConfiguration(org.roylance.yadel.api.models.YadelModels.WorkerConfiguration value) {
         if (workerConfigurationBuilder_ == null) {
-          if (workerConfiguration_ != null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              workerConfiguration_ != org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.getDefaultInstance()) {
             workerConfiguration_ =
               org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.newBuilder(workerConfiguration_).mergeFrom(value).buildPartial();
           } else {
@@ -9270,7 +9987,7 @@ public final class YadelModels {
         } else {
           workerConfigurationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -9278,20 +9995,19 @@ public final class YadelModels {
        */
       public Builder clearWorkerConfiguration() {
         if (workerConfigurationBuilder_ == null) {
-          workerConfiguration_ = null;
+          workerConfiguration_ = org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.getDefaultInstance();
           onChanged();
         } else {
-          workerConfiguration_ = null;
-          workerConfigurationBuilder_ = null;
+          workerConfigurationBuilder_.clear();
         }
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
        * <code>optional .org.roylance.yadel.api.models.WorkerConfiguration worker_configuration = 3;</code>
        */
       public org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.Builder getWorkerConfigurationBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getWorkerConfigurationFieldBuilder().getBuilder();
       }
@@ -9302,8 +10018,7 @@ public final class YadelModels {
         if (workerConfigurationBuilder_ != null) {
           return workerConfigurationBuilder_.getMessageOrBuilder();
         } else {
-          return workerConfiguration_ == null ?
-              org.roylance.yadel.api.models.YadelModels.WorkerConfiguration.getDefaultInstance() : workerConfiguration_;
+          return workerConfiguration_;
         }
       }
       /**
@@ -9410,14 +10125,19 @@ public final class YadelModels {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        ensureLogsIsMutable();
+  ensureLogsIsMutable();
         logs_.add(value);
         onChanged();
         return this;
       }
 
       private boolean isError_ ;
+      /**
+       * <code>optional bool is_error = 5;</code>
+       */
+      public boolean hasIsError() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
       /**
        * <code>optional bool is_error = 5;</code>
        */
@@ -9428,7 +10148,7 @@ public final class YadelModels {
        * <code>optional bool is_error = 5;</code>
        */
       public Builder setIsError(boolean value) {
-        
+        bitField0_ |= 0x00000010;
         isError_ = value;
         onChanged();
         return this;
@@ -9437,100 +10157,54 @@ public final class YadelModels {
        * <code>optional bool is_error = 5;</code>
        */
       public Builder clearIsError() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isError_ = false;
         onChanged();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:org.roylance.yadel.api.models.CompleteTask)
     }
 
-    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.CompleteTask)
-    private static final org.roylance.yadel.api.models.YadelModels.CompleteTask DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.roylance.yadel.api.models.YadelModels.CompleteTask();
+      defaultInstance = new CompleteTask(true);
+      defaultInstance.initFields();
     }
 
-    public static org.roylance.yadel.api.models.YadelModels.CompleteTask getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CompleteTask>
-        PARSER = new com.google.protobuf.AbstractParser<CompleteTask>() {
-      public CompleteTask parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        try {
-          return new CompleteTask(input, extensionRegistry);
-        } catch (RuntimeException e) {
-          if (e.getCause() instanceof
-              com.google.protobuf.InvalidProtocolBufferException) {
-            throw (com.google.protobuf.InvalidProtocolBufferException)
-                e.getCause();
-          }
-          throw e;
-        }
-      }
-    };
-
-    public static com.google.protobuf.Parser<CompleteTask> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CompleteTask> getParserForType() {
-      return PARSER;
-    }
-
-    public org.roylance.yadel.api.models.YadelModels.CompleteTask getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
+    // @@protoc_insertion_point(class_scope:org.roylance.yadel.api.models.CompleteTask)
   }
 
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_WorkerConfiguration_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_WorkerConfiguration_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_Log_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_Log_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_Dag_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_Dag_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_Task_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_Task_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_TaskDependency_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_TaskDependency_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_AddTaskToDag_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_roylance_yadel_api_models_AddTaskToDag_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_api_models_CompleteTask_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -9586,7 +10260,7 @@ public final class YadelModels {
       "gerMessageType\022\020\n\014REGISTRATION\020\000*9\n\033Mana",
       "gerToManagerMessageType\022\032\n\026ENSURE_WORKER" +
       "S_WORKING\020\000*$\n\tActorRole\022\013\n\007MANAGER\020\000\022\n\n" +
-      "\006WORKER\020\001b\006proto3"
+      "\006WORKER\020\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

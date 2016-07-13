@@ -1,4 +1,4 @@
-syntax = "proto3";
+syntax = "proto2";
 package org.roylance.yadel.api.models;
 
 enum UIRequests {
@@ -7,8 +7,8 @@ enum UIRequests {
 }
 
 message UIRequest {
-    UIRequests request_type = 1;
-    string dag_id = 2;
+    optional UIRequests request_type = 1;
+    optional string dag_id = 2;
 }
 
 message UIDagReport {
@@ -17,44 +17,44 @@ message UIDagReport {
 }
 
 message UIDag {
-    string id = 1;
-    string display = 2;
+    optional string id = 1;
+    optional string display = 2;
     repeated UINode nodes = 3;
     repeated UIEdge edges = 4;
-    bool is_completed = 5;
-    bool is_processing = 6;
-    bool is_error = 7;
+    optional bool is_completed = 5;
+    optional bool is_processing = 6;
+    optional bool is_error = 7;
     repeated string logs = 8;
-    int32 number_completed = 9;
-    int32 number_processing = 10;
-    int32 number_errored = 11;
-    int32 number_unprocessed = 12;
+    optional int32 number_completed = 9;
+    optional int32 number_processing = 10;
+    optional int32 number_errored = 11;
+    optional int32 number_unprocessed = 12;
 }
 
 message UIEdge {
-    string node_id_1 = 1;
-    string node_id_2 = 2;
+    optional string node_id_1 = 1;
+    optional string node_id_2 = 2;
 }
 
 message UINode {
-    string id = 1;
-    string display = 2;
-    int64 execution_date = 4;
-    int64 start_date = 5;
-    int64 end_date = 6;
-    int64 duration = 7;
-    bool is_completed = 8;
-    bool is_processing = 9;
-    bool is_error = 10;
+    optional string id = 1;
+    optional string display = 2;
+    optional int64 execution_date = 4;
+    optional int64 start_date = 5;
+    optional int64 end_date = 6;
+    optional int64 duration = 7;
+    optional bool is_completed = 8;
+    optional bool is_processing = 9;
+    optional bool is_error = 10;
     repeated string logs = 11;
 }
 
 message UIWorkerConfiguration {
-    string ip = 1;
-    string port = 2;
-    string host = 3;
-    uint64 initialized_time = 4;
-    UIWorkerState state = 5;
+    optional string ip = 1;
+    optional string port = 2;
+    optional string host = 3;
+    optional uint64 initialized_time = 4;
+    optional UIWorkerState state = 5;
 }
 
 enum UIWorkerState {

@@ -1,13 +1,13 @@
-syntax = "proto3";
+syntax = "proto2";
 package org.roylance.yadel.api.models;
 
 message WorkerConfiguration {
-    string id = 1;
-    string ip = 2;
-    string port = 3;
-    string host = 4;
-    uint64 initialized_time = 5;
-    WorkerState state = 6;
+    optional string id = 1;
+    optional string ip = 2;
+    optional string port = 3;
+    optional string host = 4;
+    optional uint64 initialized_time = 5;
+    optional WorkerState state = 6;
 }
 
 enum WorkerState {
@@ -29,18 +29,18 @@ enum ActorRole {
 }
 
 message Log {
-    string id = 1;
-    string message = 2;
+    optional string id = 1;
+    optional string message = 2;
 }
 
 message Dag {
-    string id = 1;
-    string display = 2;
+    optional string id = 1;
+    optional string display = 2;
     repeated Task flattened_tasks = 3;
-    int64 execution_date = 4;
-    int64 start_date = 5;
-    int64 end_date = 6;
-    int64 duration = 7;
+    optional int64 execution_date = 4;
+    optional int64 start_date = 5;
+    optional int64 end_date = 6;
+    optional int64 duration = 7;
     repeated Task uncompleted_tasks = 8;
     repeated Task processing_tasks = 9;
     repeated Task errored_tasks = 10;
@@ -48,38 +48,38 @@ message Dag {
 }
 
 message Task {
-    string id = 1;
-    string display = 2;
+    optional string id = 1;
+    optional string display = 2;
     repeated TaskDependency dependencies = 3;
-    string dag_id = 4;
+    optional string dag_id = 4;
     repeated Log logs = 5;
-    int64 execution_date = 6;
-    int64 start_date = 7;
-    int64 end_date = 8;
-    int64 duration = 9;
-    string first_context_base_64 = 10;
-    string second_context_base_64 = 11;
-    string third_context_base_64 = 12;
+    optional int64 execution_date = 6;
+    optional int64 start_date = 7;
+    optional int64 end_date = 8;
+    optional int64 duration = 9;
+    optional string first_context_base_64 = 10;
+    optional string second_context_base_64 = 11;
+    optional string third_context_base_64 = 12;
 }
 
 message TaskDependency {
-    string id = 1;
-    string parent_task_id = 2;
+    optional string id = 1;
+    optional string parent_task_id = 2;
 }
 
 message AddTaskToDag {
-    string id = 1;
-    Task parent_task = 2;
-    Task new_task = 3;
-    string first_context_base_64 = 4;
-    string second_context_base_64 = 5;
-    string third_context_base_64 = 6;
+    optional string id = 1;
+    optional Task parent_task = 2;
+    optional Task new_task = 3;
+    optional string first_context_base_64 = 4;
+    optional string second_context_base_64 = 5;
+    optional string third_context_base_64 = 6;
 }
 
 message CompleteTask {
-    string id = 1;
-    Task task = 2;
-    WorkerConfiguration worker_configuration = 3;
+    optional string id = 1;
+    optional Task task = 2;
+    optional WorkerConfiguration worker_configuration = 3;
     repeated string logs = 4;
-    bool is_error = 5;
+    optional bool is_error = 5;
 }

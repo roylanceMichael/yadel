@@ -1,5 +1,5 @@
 group 'org.roylance'
-version '0.70-SNAPSHOT'
+version '0.71-SNAPSHOT'
 
 buildscript {
     ext.kotlinVersion = "1.0.3"

@@ -1,6 +1,6 @@
 {
   "name": "yadeljs",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Yet Another Dag Execution Library models for typescript and javascript",
   "main": "index.js",
   "scripts": {
