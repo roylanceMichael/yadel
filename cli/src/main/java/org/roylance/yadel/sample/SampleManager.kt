@@ -1,7 +1,7 @@
 package org.roylance.yadel.sample
 
 import org.roylance.yadel.api.actors.ManagerBase
-import org.roylance.yadel.api.models.YadelModels
+import org.roylance.yadel.YadelModel
 import scala.concurrent.duration.Duration
 import java.lang.management.ManagementFactory
 import java.util.concurrent.TimeUnit

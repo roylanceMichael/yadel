@@ -1,0 +1,27 @@
+{
+  "name": "yadeljs",
+  "version": "0.0.76",
+  "description": "Yet Another Dag Execution Library models for typescript and javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roylanceMichael/yadel.git"
+  },
+  "keywords": [
+    "dag"
+  ],
+  "author": "roylance.michael@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roylanceMichael/yadel/issues"
+  },
+  "homepage": "https://github.com/roylanceMichael/yadel#readme",
+  "dependencies": {
+    "@mroylance/protobuftshelper": "0.0.8",
+    "protobufjs": "^5.0.1",
+    "proto2typescript": "^2.2.0"
+  }
+}

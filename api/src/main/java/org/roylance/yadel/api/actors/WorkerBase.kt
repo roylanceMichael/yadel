@@ -7,13 +7,14 @@ import akka.cluster.ClusterEvent
 import akka.cluster.Member
 import akka.cluster.MemberStatus
 import akka.event.Logging
+import akka.event.LoggingAdapter
+import org.roylance.yadel.YadelModel
 import org.roylance.yadel.api.enums.CommonTokens
-import org.roylance.yadel.api.models.YadelModels
 import java.lang.management.ManagementFactory
 
 abstract class WorkerBase: UntypedActor() {
-    protected val cluster = Cluster.get(this.context.system())
-    protected val log = Logging.getLogger(this.context().system(), this)
+    protected val cluster: Cluster = Cluster.get(this.context.system())
+    protected val log: LoggingAdapter = Logging.getLogger(this.context().system(), this)
 
     protected var foundManagerAddress:String? = null
 
@@ -42,7 +43,7 @@ abstract class WorkerBase: UntypedActor() {
         // inherited class will catch work to be done
     }
 
-    protected fun completeTask(completeTask: YadelModels.CompleteTask) {
+    protected fun completeTask(completeTask: YadelModel.CompleteTask) {
         this.getManagerSelection()?.tell(completeTask, this.self)
     }
 
@@ -67,11 +68,11 @@ abstract class WorkerBase: UntypedActor() {
     }
 
     private fun register(member: Member) {
-        if (member.hasRole(YadelModels.ActorRole.MANAGER.name)) {
+        if (member.hasRole(YadelModel.ActorRole.MANAGER.name)) {
             this.foundManagerAddress = member.address().toString()
             this.getManagerSelection()
                     ?.tell(
-                            YadelModels.WorkerToManagerMessageType.REGISTRATION,
+                            YadelModel.WorkerToManagerMessageType.REGISTRATION,
                             this.self)
         }
     }

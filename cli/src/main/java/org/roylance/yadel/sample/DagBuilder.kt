@@ -1,12 +1,12 @@
 package org.roylance.yadel.sample
 
-import org.roylance.yadel.api.models.YadelModels
-import org.roylance.yadel.api.services.IBuilder
+import org.roylance.common.service.IBuilder
+import org.roylance.yadel.YadelModel
 import java.util.*
 
-class DagBuilder:IBuilder<YadelModels.Dag> {
-    override fun build(): YadelModels.Dag {
-        val dagDefinition = YadelModels.Dag
+class DagBuilder: IBuilder<YadelModel.Dag> {
+    override fun build(): YadelModel.Dag {
+        val dagDefinition = YadelModel.Dag
                 .newBuilder()
                 .setId(UUID.randomUUID().toString())
                 .setDisplay("amazing dag")
@@ -22,15 +22,15 @@ class DagBuilder:IBuilder<YadelModels.Dag> {
         val ninthTask = buildTaskDefinition(NinthTaskId, dagDefinition)
         val tenthTask = buildTaskDefinition(TenthTaskId, dagDefinition)
 
-        tenthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(ninthTask.id))
-        ninthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(sixthTask.id))
-        eigthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(seventhTask.id))
-        seventhTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(fifthTask.id))
-        sixthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(thirdTask.id))
-        fifthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(fourthTask.id))
-        fourthTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(firstTask.id))
-        thirdTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(firstTask.id))
-        secondTask.addDependencies(YadelModels.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(firstTask.id))
+        tenthTask.addDependencies(YadelModel.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(ninthTask.id))
+        ninthTask.addDependencies(YadelModel.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(sixthTask.id))
+        eigthTask.addDependencies(YadelModel.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(seventhTask.id))
+        seventhTask.addDependencies(YadelModel.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(fifthTask.id))
+        sixthTask.addDependencies(YadelModel.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(thirdTask.id))
+        fifthTask.addDependencies(YadelModel.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(fourthTask.id))
+        fourthTask.addDependencies(YadelModel.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(firstTask.id))
+        thirdTask.addDependencies(YadelModel.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(firstTask.id))
+        secondTask.addDependencies(YadelModel.TaskDependency.newBuilder().setId(UUID.randomUUID().toString()).setParentTaskId(firstTask.id))
 
         dagDefinition.addFlattenedTasks(firstTask)
         dagDefinition.addFlattenedTasks(secondTask)
@@ -58,8 +58,8 @@ class DagBuilder:IBuilder<YadelModels.Dag> {
     }
 
     private fun buildTaskDefinition(id:String,
-                                    dagDefinition:YadelModels.Dag.Builder):YadelModels.Task.Builder {
-        return YadelModels.Task.newBuilder()
+                                    dagDefinition:YadelModel.Dag.Builder):YadelModel.Task.Builder {
+        return YadelModel.Task.newBuilder()
                 .setDagId(dagDefinition.id)
                 .setId(UUID.randomUUID().toString())
                 .setDisplay(id)

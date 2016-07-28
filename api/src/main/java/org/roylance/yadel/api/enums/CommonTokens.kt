@@ -1,6 +1,6 @@
 package org.roylance.yadel.api.enums
 
-import org.roylance.yadel.api.models.YadelModels
+import org.roylance.yadel.YadelModel
 
 object CommonTokens {
     const val ClusterName = "YadelCluster"
@@ -17,10 +17,10 @@ object CommonTokens {
     const val TwoThreeFourFive = "2345"
     const val TwoThreeFourSix = "2346"
 
-    val ManagerConfiguration = "akka.cluster.roles = [${YadelModels.ActorRole.MANAGER.name}]"
-    val WorkerConfiguration = "akka.cluster.roles = [${YadelModels.ActorRole.WORKER.name}]"
-    val ManagerLocation = "/user/${YadelModels.ActorRole.MANAGER.name}"
-    val WorkerLocation = "/user/${YadelModels.ActorRole.WORKER.name}"
+    val ManagerConfiguration = "akka.cluster.roles = [${YadelModel.ActorRole.MANAGER.name}]"
+    val WorkerConfiguration = "akka.cluster.roles = [${YadelModel.ActorRole.WORKER.name}]"
+    val ManagerLocation = "/user/${YadelModel.ActorRole.MANAGER.name}"
+    val WorkerLocation = "/user/${YadelModel.ActorRole.WORKER.name}"
 
     val FullManagerLocation = "akka.ssl.tcp://$ClusterName@%s:$TwoThreeFourFour$ManagerLocation"
     val FullFirstSeedNodeWorkerLocation = "akka.ssl.tcp://$ClusterName@%s:$TwoThreeFourFive"

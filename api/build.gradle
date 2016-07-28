@@ -1,5 +1,5 @@
-group 'org.roylance'
-version '0.71-SNAPSHOT'
+group 'org.roylance.yadel'
+version currentVersion
 
 buildscript {
     ext.kotlinVersion = "1.0.3"
@@ -38,8 +38,8 @@ artifactory {
     publish {
         repository {
             repoKey = 'libs-snapshot-local'
-            username = ''
-            password = ''
+            username = System.getenv('ARTIFACTORY_USER')
+            password = System.getenv('ARTIFACTORY_PASSWORD')
         }
 
         defaults {
@@ -63,11 +63,8 @@ dependencies {
     compile 'com.typesafe.akka:akka-cluster_2.11:2.4.7'
     compile 'com.google.protobuf:protobuf-java:3.0.0-beta-3'
     compile 'commons-io:commons-io:2.5'
+    compile 'org.roylance:common:0.3-SNAPSHOT'
 
+    testCompile 'org.roylance.yaclib:core:0.4-SNAPSHOT'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
-
-// todo: fix for different computers
-//task generateProto(type: Exec) {
-//    commandLine "bash generate_proto.sh"
-//}

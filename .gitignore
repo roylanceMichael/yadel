@@ -71,3 +71,8 @@ report/src/main/javascript/**/*.js.map
 report/target
 
 js/node_modules
+
+api/javascript/node_modules
+
+sapi/src/main/javascript/node_modules
+sapi/target
