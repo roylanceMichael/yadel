@@ -36,7 +36,7 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
-    compile 'org.roylance.yadel:api:0.76-SNAPSHOT'
+    compile 'org.roylance.yadel:api:0.84-SNAPSHOT'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 

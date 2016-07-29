@@ -32,14 +32,14 @@ public class ReportController {
     }
 
     @POST
-    @Path("/delete")
-    public void delete(@Suspended AsyncResponse asyncResponse, String request) throws Exception {
+    @Path("/delete-dag")
+    public void delete_dag(@Suspended AsyncResponse asyncResponse, String request) throws Exception {
         new Thread(() -> {
             
             final org.roylance.yadel.YadelReport.UIRequest requestActual =
                     this.serializerService.deserializeFromBase64(request, org.roylance.yadel.YadelReport.UIRequest.getDefaultInstance());
 
-            final org.roylance.yadel.YadelReport.UIResponse response = this.reportService.delete(requestActual);
+            final org.roylance.yadel.YadelReport.UIResponse response = this.reportService.delete_dag(requestActual);
             final String deserializeResponse = this.serializerService.serializeToBase64(response);
             asyncResponse.resume(deserializeResponse);
 

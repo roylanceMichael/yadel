@@ -6,9 +6,9 @@ class ReportService(
         private val restReport: IReportRest,
         private val protoSerializer: IProtoSerializerService): IReportService {
 
-    override fun delete(request: org.roylance.yadel.YadelReport.UIRequest): org.roylance.yadel.YadelReport.UIResponse {
+    override fun delete_dag(request: org.roylance.yadel.YadelReport.UIRequest): org.roylance.yadel.YadelReport.UIResponse {
         val base64request = protoSerializer.serializeToBase64(request)
-        val responseCall = restReport.delete(base64request)
+        val responseCall = restReport.delete_dag(base64request)
         val response = responseCall.execute()
         return protoSerializer.deserializeFromBase64(response.body(),
                 org.roylance.yadel.YadelReport.UIResponse.getDefaultInstance())

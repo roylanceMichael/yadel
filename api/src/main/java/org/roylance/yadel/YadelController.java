@@ -710,17 +710,17 @@ public final class YadelController {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
-    boolean hasDelete();
+    boolean hasDeleteDag();
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
-    org.roylance.yadel.YadelController.CommonAction getDelete();
+    org.roylance.yadel.YadelController.CommonAction getDeleteDag();
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
-    org.roylance.yadel.YadelController.CommonActionOrBuilder getDeleteOrBuilder();
+    org.roylance.yadel.YadelController.CommonActionOrBuilder getDeleteDagOrBuilder();
 
     /**
      * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
@@ -790,12 +790,12 @@ public final class YadelController {
             case 10: {
               org.roylance.yadel.YadelController.CommonAction.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                subBuilder = delete_.toBuilder();
+                subBuilder = deleteDag_.toBuilder();
               }
-              delete_ = input.readMessage(org.roylance.yadel.YadelController.CommonAction.PARSER, extensionRegistry);
+              deleteDag_ = input.readMessage(org.roylance.yadel.YadelController.CommonAction.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(delete_);
-                delete_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(deleteDag_);
+                deleteDag_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000001;
               break;
@@ -853,25 +853,25 @@ public final class YadelController {
     }
 
     private int bitField0_;
-    public static final int DELETE_FIELD_NUMBER = 1;
-    private org.roylance.yadel.YadelController.CommonAction delete_;
+    public static final int DELETE_DAG_FIELD_NUMBER = 1;
+    private org.roylance.yadel.YadelController.CommonAction deleteDag_;
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
-    public boolean hasDelete() {
+    public boolean hasDeleteDag() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
-    public org.roylance.yadel.YadelController.CommonAction getDelete() {
-      return delete_;
+    public org.roylance.yadel.YadelController.CommonAction getDeleteDag() {
+      return deleteDag_;
     }
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
-    public org.roylance.yadel.YadelController.CommonActionOrBuilder getDeleteOrBuilder() {
-      return delete_;
+    public org.roylance.yadel.YadelController.CommonActionOrBuilder getDeleteDagOrBuilder() {
+      return deleteDag_;
     }
 
     public static final int CURRENT_FIELD_NUMBER = 2;
@@ -896,7 +896,7 @@ public final class YadelController {
     }
 
     private void initFields() {
-      delete_ = org.roylance.yadel.YadelController.CommonAction.getDefaultInstance();
+      deleteDag_ = org.roylance.yadel.YadelController.CommonAction.getDefaultInstance();
       current_ = org.roylance.yadel.YadelController.CommonAction.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
@@ -913,7 +913,7 @@ public final class YadelController {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeMessage(1, delete_);
+        output.writeMessage(1, deleteDag_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, current_);
@@ -929,7 +929,7 @@ public final class YadelController {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, delete_);
+          .computeMessageSize(1, deleteDag_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1044,7 +1044,7 @@ public final class YadelController {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getDeleteFieldBuilder();
+          getDeleteDagFieldBuilder();
           getCurrentFieldBuilder();
         }
       }
@@ -1054,10 +1054,10 @@ public final class YadelController {
 
       public Builder clear() {
         super.clear();
-        if (deleteBuilder_ == null) {
-          delete_ = org.roylance.yadel.YadelController.CommonAction.getDefaultInstance();
+        if (deleteDagBuilder_ == null) {
+          deleteDag_ = org.roylance.yadel.YadelController.CommonAction.getDefaultInstance();
         } else {
-          deleteBuilder_.clear();
+          deleteDagBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         if (currentBuilder_ == null) {
@@ -1097,10 +1097,10 @@ public final class YadelController {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        if (deleteBuilder_ == null) {
-          result.delete_ = delete_;
+        if (deleteDagBuilder_ == null) {
+          result.deleteDag_ = deleteDag_;
         } else {
-          result.delete_ = deleteBuilder_.build();
+          result.deleteDag_ = deleteDagBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
@@ -1126,8 +1126,8 @@ public final class YadelController {
 
       public Builder mergeFrom(org.roylance.yadel.YadelController.ReportController other) {
         if (other == org.roylance.yadel.YadelController.ReportController.getDefaultInstance()) return this;
-        if (other.hasDelete()) {
-          mergeDelete(other.getDelete());
+        if (other.hasDeleteDag()) {
+          mergeDeleteDag(other.getDeleteDag());
         }
         if (other.hasCurrent()) {
           mergeCurrent(other.getCurrent());
@@ -1159,120 +1159,120 @@ public final class YadelController {
       }
       private int bitField0_;
 
-      private org.roylance.yadel.YadelController.CommonAction delete_ = org.roylance.yadel.YadelController.CommonAction.getDefaultInstance();
+      private org.roylance.yadel.YadelController.CommonAction deleteDag_ = org.roylance.yadel.YadelController.CommonAction.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder> deleteBuilder_;
+          org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder> deleteDagBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
-      public boolean hasDelete() {
+      public boolean hasDeleteDag() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
-      public org.roylance.yadel.YadelController.CommonAction getDelete() {
-        if (deleteBuilder_ == null) {
-          return delete_;
+      public org.roylance.yadel.YadelController.CommonAction getDeleteDag() {
+        if (deleteDagBuilder_ == null) {
+          return deleteDag_;
         } else {
-          return deleteBuilder_.getMessage();
+          return deleteDagBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
-      public Builder setDelete(org.roylance.yadel.YadelController.CommonAction value) {
-        if (deleteBuilder_ == null) {
+      public Builder setDeleteDag(org.roylance.yadel.YadelController.CommonAction value) {
+        if (deleteDagBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          delete_ = value;
+          deleteDag_ = value;
           onChanged();
         } else {
-          deleteBuilder_.setMessage(value);
+          deleteDagBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
-      public Builder setDelete(
+      public Builder setDeleteDag(
           org.roylance.yadel.YadelController.CommonAction.Builder builderForValue) {
-        if (deleteBuilder_ == null) {
-          delete_ = builderForValue.build();
+        if (deleteDagBuilder_ == null) {
+          deleteDag_ = builderForValue.build();
           onChanged();
         } else {
-          deleteBuilder_.setMessage(builderForValue.build());
+          deleteDagBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
-      public Builder mergeDelete(org.roylance.yadel.YadelController.CommonAction value) {
-        if (deleteBuilder_ == null) {
+      public Builder mergeDeleteDag(org.roylance.yadel.YadelController.CommonAction value) {
+        if (deleteDagBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
-              delete_ != org.roylance.yadel.YadelController.CommonAction.getDefaultInstance()) {
-            delete_ =
-              org.roylance.yadel.YadelController.CommonAction.newBuilder(delete_).mergeFrom(value).buildPartial();
+              deleteDag_ != org.roylance.yadel.YadelController.CommonAction.getDefaultInstance()) {
+            deleteDag_ =
+              org.roylance.yadel.YadelController.CommonAction.newBuilder(deleteDag_).mergeFrom(value).buildPartial();
           } else {
-            delete_ = value;
+            deleteDag_ = value;
           }
           onChanged();
         } else {
-          deleteBuilder_.mergeFrom(value);
+          deleteDagBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
-      public Builder clearDelete() {
-        if (deleteBuilder_ == null) {
-          delete_ = org.roylance.yadel.YadelController.CommonAction.getDefaultInstance();
+      public Builder clearDeleteDag() {
+        if (deleteDagBuilder_ == null) {
+          deleteDag_ = org.roylance.yadel.YadelController.CommonAction.getDefaultInstance();
           onChanged();
         } else {
-          deleteBuilder_.clear();
+          deleteDagBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
-      public org.roylance.yadel.YadelController.CommonAction.Builder getDeleteBuilder() {
+      public org.roylance.yadel.YadelController.CommonAction.Builder getDeleteDagBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
-        return getDeleteFieldBuilder().getBuilder();
+        return getDeleteDagFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
-      public org.roylance.yadel.YadelController.CommonActionOrBuilder getDeleteOrBuilder() {
-        if (deleteBuilder_ != null) {
-          return deleteBuilder_.getMessageOrBuilder();
+      public org.roylance.yadel.YadelController.CommonActionOrBuilder getDeleteDagOrBuilder() {
+        if (deleteDagBuilder_ != null) {
+          return deleteDagBuilder_.getMessageOrBuilder();
         } else {
-          return delete_;
+          return deleteDag_;
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete = 1;</code>
+       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder> 
-          getDeleteFieldBuilder() {
-        if (deleteBuilder_ == null) {
-          deleteBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          getDeleteDagFieldBuilder() {
+        if (deleteDagBuilder_ == null) {
+          deleteDagBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder>(
-                  getDelete(),
+                  getDeleteDag(),
                   getParentForChildren(),
                   isClean());
-          delete_ = null;
+          deleteDag_ = null;
         }
-        return deleteBuilder_;
+        return deleteDagBuilder_;
       }
 
       private org.roylance.yadel.YadelController.CommonAction current_ = org.roylance.yadel.YadelController.CommonAction.getDefaultInstance();
@@ -1425,10 +1425,10 @@ public final class YadelController {
       "adel\032\022yadel_report.proto\"p\n\014CommonAction" +
       "\022.\n\007request\030\001 \001(\0132\035.org.roylance.yadel.U" +
       "IRequest\0220\n\010response\030\002 \001(\0132\036.org.roylanc" +
-      "e.yadel.UIResponse\"w\n\020ReportController\0220" +
-      "\n\006delete\030\001 \001(\0132 .org.roylance.yadel.Comm" +
-      "onAction\0221\n\007current\030\002 \001(\0132 .org.roylance" +
-      ".yadel.CommonAction"
+      "e.yadel.UIResponse\"{\n\020ReportController\0224" +
+      "\n\ndelete_dag\030\001 \001(\0132 .org.roylance.yadel." +
+      "CommonAction\0221\n\007current\030\002 \001(\0132 .org.royl" +
+      "ance.yadel.CommonAction"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1454,7 +1454,7 @@ public final class YadelController {
     internal_static_org_roylance_yadel_ReportController_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_roylance_yadel_ReportController_descriptor,
-        new java.lang.String[] { "Delete", "Current", });
+        new java.lang.String[] { "DeleteDag", "Current", });
     org.roylance.yadel.YadelReport.getDescriptor();
   }
 

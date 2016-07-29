@@ -8,7 +8,7 @@ import scala.concurrent.duration.Duration
 import scala.concurrent.duration.FiniteDuration
 
 class ReportService: IReportService {
-    override fun delete(request: YadelReport.UIRequest): YadelReport.UIResponse {
+    override fun delete_dag(request: YadelReport.UIRequest): YadelReport.UIResponse {
         val future = Patterns.ask(
                 ActorSingleton.getManager(),
                 request,

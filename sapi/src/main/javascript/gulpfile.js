@@ -1,3 +1,4 @@
+
 var gulp = require('gulp');
 var gulpsync = require('gulp-sync')(gulp);
 var sass = require('gulp-sass');
@@ -7,18 +8,21 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var webpack = require('webpack-stream');
 var ts = require('gulp-tsc');
+
 // Clean
-gulp.task('clean', function () {
-    var delConfig = ['dest', '../webapp/dist'];
-    return del(delConfig, { force: true });
+gulp.task('clean', function() {
+    const delConfig = ['dest', '../webapp/dist'];
+    return del(delConfig, { force: true});
 });
+
 // Clean Dest
-gulp.task('clean:dest', function () {
-    var delConfig = ['dest'];
-    return del(delConfig, { force: true });
+gulp.task('clean:dest', function() {
+    const delConfig = ['dest'];
+    return del(delConfig, { force: true});
 });
+
 // Compile Css
-gulp.task('css', function () {
+gulp.task('css', function() {
     return gulp.src(['./node_modules/bootstrap/dist/css/bootstrap.css',
         './node_modules/bootstrap/dist/css/bootstrap-theme.css',
         './node_modules/font-awesome/css/font-awesome.css',
@@ -26,12 +30,10 @@ gulp.task('css', function () {
         .pipe(concat('all.css'))
         .pipe(gulp.dest('../webapp/dist'));
 });
+
 // Concatenate & Minify JS
-gulp.task('scripts:vendor', function () {
+gulp.task('scripts:vendor', function() {
     return gulp.src([
-        // todo: we might not need these...
-        // './node_modules/jquery/dist/jquery.js',
-        // './node_modules/bootstrap/dist/js/bootstrap.js',
         './node_modules/long/dist/long.js',
         './node_modules/bytebuffer/dist/bytebuffer.js',
         './node_modules/protobufjs/dist/protobuf.js',
@@ -43,18 +45,21 @@ gulp.task('scripts:vendor', function () {
         .pipe(rename('vendor.min.js'))
         .pipe(gulp.dest('../webapp/dist'));
 });
-gulp.task('scripts:typescript', function () {
-    return gulp.src(['app/**/*.ts'])
+
+gulp.task('scripts:typescript', function() {
+    return gulp.src(['app/**/*.ts', './node_modules/org.roylance.yadel.api/*.ts'])
         .pipe(ts())
         .pipe(gulp.dest("dest"));
 });
-gulp.task('scripts', function () {
+
+gulp.task('scripts', function() {
     return gulp.src(['dest/**/*'])
         .pipe(webpack())
         .pipe(concat('all.js'))
         .pipe(rename('all.min.js'))
         .pipe(gulp.dest('../webapp/dist'));
 });
+
 // default (no minify)
 gulp.task('default', gulpsync.sync([
     'clean',
@@ -64,4 +69,3 @@ gulp.task('default', gulpsync.sync([
     'scripts',
     'clean:dest'
 ]));
-//# sourceMappingURL=gulpfile.js.map

@@ -1,7 +1,7 @@
 {
   "name": "webapp",
-  "version": "0.0.76",
-  "description": "yadel ui portion",
+  "version": "0.0.84",
+  "description": "org.roylance.yadel.api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,15 +21,17 @@
     "gulp-uglify": "^1.5.3"
   },
   "dependencies": {
-    "yadeljs": "0.0.76",
-    "angular": "^1.5.7",
-    "angular-route": "^1.5.7",
-    "bootstrap": "^3.3.6",
-    "d3": "^3.5.17",
-    "dagre-d3": "^0.4.17",
-    "font-awesome": "^4.6.3",
-    "jquery": "^3.0.0",
-    "protobufjs": "^5.0.1",
-    "webpack-stream": "^3.2.0"
+    "angular": "^1.5.7"
+, "angular-route": "^1.5.7"
+, "bootstrap": "^3.3.6"
+, "d3": "^3.5.17"
+, "dagre-d3": "^0.4.17"
+, "font-awesome": "^4.6.3"
+, "jquery": "^2.2.4"
+, "protobufjs": "^5.0.1"
+, "webpack-stream": "^3.2.0"
+,"org.roylance.yadel.api": "0.0.84"
+
   }
 }
+

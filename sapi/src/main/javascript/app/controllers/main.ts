@@ -1,5 +1,5 @@
 import {IDagService} from "../services/all";
-import {IReportService} from "../../node_modules/yadeljs/IReportService";
+import {IReportService} from "../../node_modules/org.roylance.yadel.api/IReportService";
 import ProtoBufBuilder = org.roylance.yadel.ProtoBufBuilder;
 declare var dcodeIO:any;
 declare var console:any;
@@ -52,7 +52,7 @@ export class MainController {
             const request = new this.protobufBuilder.UIRequest();
             request.setRequestType(org.roylance.yadel.UIRequests.DELETE_DAG);
             request.dag_id = this.selectedDag.id;
-            this.reportService.delete(request,
+            this.reportService.delete_dag(request,
                 function(response: org.roylance.yadel.UIResponse) {
                     self.refresh();
                 },

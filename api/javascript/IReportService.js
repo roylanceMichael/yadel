@@ -1,2 +1,2 @@
 "use strict";
-/// <reference path="./model" />
+/// <reference path="./YadelModel" />

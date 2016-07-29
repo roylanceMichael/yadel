@@ -9,6 +9,6 @@ message CommonAction {
 }
 
 message ReportController {
-    optional CommonAction delete = 1;
+    optional CommonAction delete_dag = 1;
     optional CommonAction current = 2;
 }

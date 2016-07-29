@@ -34,7 +34,7 @@ var MainController = (function () {
             var request = new this.protobufBuilder.UIRequest();
             request.setRequestType(1 /* DELETE_DAG */);
             request.dag_id = this.selectedDag.id;
-            this.reportService.delete(request, function (response) {
+            this.reportService.delete_dag(request, function (response) {
                 self_1.refresh();
             }, function (data) {
                 console.log(data);
