@@ -1,7 +1,7 @@
 {
   "version" : "1.0.1",
   "name" : "capi",
-  "number" : "1469820609564",
+  "number" : "1469859114430",
   "type" : "GRADLE",
   "buildAgent" : {
     "name" : "Gradle",
@@ -11,16 +11,16 @@
     "name" : "Gradle",
     "version" : "2.13"
   },
-  "started" : "2016-07-29T13:30:09.361-0600",
-  "durationMillis" : 1537,
+  "started" : "2016-07-30T00:11:54.217-0600",
+  "durationMillis" : 1172,
   "principal" : "mikeroylance",
   "artifactoryPrincipal" : "admin",
   "licenseControl" : {
     "runChecks" : false,
     "includePublishedArtifacts" : false,
     "autoDiscover" : false,
-    "scopesList" : "",
-    "licenseViolationsRecipientsList" : ""
+    "licenseViolationsRecipientsList" : "",
+    "scopesList" : ""
   },
   "buildRetention" : {
     "count" : -1,
@@ -28,17 +28,17 @@
     "buildNumbersNotToBeDiscarded" : [ ]
   },
   "modules" : [ {
-    "id" : "org.roylance.yadel:capi:0.84-SNAPSHOT",
+    "id" : "org.roylance.yadel:capi:0.85-SNAPSHOT",
     "artifacts" : [ {
       "type" : "pom",
-      "sha1" : "5da08fa0508eb66de1e4e5416841498aef0810a3",
-      "md5" : "f71e661d42e1762afceb74f660e83d76",
-      "name" : "capi-0.84-SNAPSHOT.pom"
+      "sha1" : "a12f003d528ce954d4efebc43fadc22d40c4b083",
+      "md5" : "5da3d12e512ea3c22e160633fd2147e5",
+      "name" : "capi-0.85-SNAPSHOT.pom"
     }, {
       "type" : "jar",
-      "sha1" : "6c84d8f6c53ce3fb59cca60091850f6efd957a5a",
-      "md5" : "cd1148ea1e025be15a9410a41d25147f",
-      "name" : "capi-0.84-SNAPSHOT.jar"
+      "sha1" : "81a700dc4c2f712ae0160536188a353d35347311",
+      "md5" : "9e73e73db22ce783d201414e13798916",
+      "name" : "capi-0.85-SNAPSHOT.jar"
     } ],
     "excludedArtifacts" : [ ],
     "dependencies" : [ {
@@ -67,9 +67,9 @@
       "scopes" : [ "compileClasspath" ]
     }, {
       "type" : "jar",
-      "sha1" : "e5d038399c39dcec6db9515637a7f93dcfb48050",
-      "md5" : "4704fa1053ceaf240dd3dae22109ed17",
-      "id" : "org.roylance.yadel:api:0.84-SNAPSHOT",
+      "sha1" : "6169ae064ff85b824995227ffc724b1d3286ec85",
+      "md5" : "40a0ff41350e8bef19e33fba17e458e0",
+      "id" : "org.roylance.yadel:api:0.85-SNAPSHOT",
       "scopes" : [ "compileClasspath" ]
     }, {
       "type" : "jar",

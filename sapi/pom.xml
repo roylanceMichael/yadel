@@ -6,7 +6,7 @@
 
     <groupId>org.roylance.yadel</groupId>
     <artifactId>sapi</artifactId>
-    <version>0.76-SNAPSHOT</version>
+    <version>0.85-SNAPSHOT</version>
 
     <repositories>
         <repository>
@@ -48,17 +48,19 @@
     </pluginRepositories>
 
     <dependencies>
-        <dependency>
-            <groupId>org.roylance.yadel</groupId>
-            <artifactId>api</artifactId>
-            <version>0.76-SNAPSHOT</version>
-        </dependency>
-
+        
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-cluster_2.11</artifactId>
             <version>2.4.7</version>
         </dependency>
+            
+        <dependency>
+            <groupId>org.roylance.yadel</groupId>
+            <artifactId>api</artifactId>
+            <version>0.85-SNAPSHOT</version>
+        </dependency>
+            
 
         <dependency>
             <groupId>org.roylance</groupId>

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 export TYPESCRIPT_MODEL_FILE_NAME=YadelModel
-export YACLIB_VERSION=84
+export YACLIB_VERSION=85
 
 # autogenerate location
 pushd ..
@@ -23,8 +23,8 @@ echo "building java client (capi), java server (sapi), and typescript services"
 
 pushd javascript
 npm install
-node_modules/protobufjs/bin/pbjs ../src/main/resources/yadel_report.proto  > model.json
-node_modules/protobufjs/bin/pbjs ../src/main/resources/yadel_report.proto -t js > model.js
+node_modules/protobufjs/bin/pbjs ../src/main/resources/*.proto  > model.json
+node_modules/protobufjs/bin/pbjs ../src/main/resources/*.proto -t js > model.js
 node_modules/proto2typescript/bin/proto2typescript-bin.js --file model.json > ${TYPESCRIPT_MODEL_FILE_NAME}.d.ts
 node_modules/@mroylance/protobuftshelper/run.sh model.js ${TYPESCRIPT_MODEL_FILE_NAME}Factory.ts ./${TYPESCRIPT_MODEL_FILE_NAME}.d.ts ${TYPESCRIPT_MODEL_FILE_NAME}
 rm -rf model.json
