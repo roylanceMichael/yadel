@@ -4,8 +4,8 @@ package org.roylance.yadel;
 import "yadel_report.proto";
 
 message CommonAction {
-    optional org.roylance.yadel.UIRequest request = 1;
-    optional org.roylance.yadel.UIResponse response = 2;
+    optional org.roylance.yadel.UIYadelRequest request = 1;
+    optional org.roylance.yadel.UIYadelResponse response = 2;
 }
 
 message ReportController {

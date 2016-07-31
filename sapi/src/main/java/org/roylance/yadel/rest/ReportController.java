@@ -36,10 +36,10 @@ public class ReportController {
     public void delete_dag(@Suspended AsyncResponse asyncResponse, String request) throws Exception {
         new Thread(() -> {
             
-            final org.roylance.yadel.YadelReport.UIRequest requestActual =
-                    this.serializerService.deserializeFromBase64(request, org.roylance.yadel.YadelReport.UIRequest.getDefaultInstance());
+            final org.roylance.yadel.YadelReport.UIYadelRequest requestActual =
+                    this.serializerService.deserializeFromBase64(request, org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance());
 
-            final org.roylance.yadel.YadelReport.UIResponse response = this.reportService.delete_dag(requestActual);
+            final org.roylance.yadel.YadelReport.UIYadelResponse response = this.reportService.delete_dag(requestActual);
             final String deserializeResponse = this.serializerService.serializeToBase64(response);
             asyncResponse.resume(deserializeResponse);
 
@@ -51,10 +51,10 @@ public class ReportController {
     public void current(@Suspended AsyncResponse asyncResponse, String request) throws Exception {
         new Thread(() -> {
             
-            final org.roylance.yadel.YadelReport.UIRequest requestActual =
-                    this.serializerService.deserializeFromBase64(request, org.roylance.yadel.YadelReport.UIRequest.getDefaultInstance());
+            final org.roylance.yadel.YadelReport.UIYadelRequest requestActual =
+                    this.serializerService.deserializeFromBase64(request, org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance());
 
-            final org.roylance.yadel.YadelReport.UIResponse response = this.reportService.current(requestActual);
+            final org.roylance.yadel.YadelReport.UIYadelResponse response = this.reportService.current(requestActual);
             final String deserializeResponse = this.serializerService.serializeToBase64(response);
             asyncResponse.resume(deserializeResponse);
 

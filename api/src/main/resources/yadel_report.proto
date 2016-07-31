@@ -1,17 +1,17 @@
 syntax = "proto2";
 package org.roylance.yadel;
 
-enum UIRequests {
+enum UIYadelRequestType {
     REPORT_DAGS = 0;
     DELETE_DAG = 1;
 }
 
-message UIRequest {
-    optional UIRequests request_type = 1;
+message UIYadelRequest {
+    optional UIYadelRequestType request_type = 1;
     optional string dag_id = 2;
 }
 
-message UIResponse {
+message UIYadelResponse {
     optional string content = 1;
     optional UIDagReport report = 2;
     optional UIDag dag = 3;

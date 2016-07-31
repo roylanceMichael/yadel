@@ -76,3 +76,5 @@ api/javascript/node_modules
 
 sapi/src/main/javascript/node_modules
 sapi/target
+
+javascript/node_modules

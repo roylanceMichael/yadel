@@ -67,18 +67,18 @@ open class ManagerBase :UntypedActor() {
             this.log.info("handling termination")
             this.handleTermination(p0)
         }
-        else if (p0 is YadelReport.UIRequest) {
-            if (p0.requestType.equals(YadelReport.UIRequests.REPORT_DAGS)) {
+        else if (p0 is YadelReport.UIYadelRequest) {
+            if (p0.requestType.equals(YadelReport.UIYadelRequestType.REPORT_DAGS)) {
                 this.handleReport()
             }
-            if (p0.requestType.equals(YadelReport.UIRequests.DELETE_DAG) &&
+            if (p0.requestType.equals(YadelReport.UIYadelRequestType.DELETE_DAG) &&
                 this.activeDags.containsKey(p0.dagId)) {
                 this.log.info("attempting to remove ${p0.dagId}")
                 this.activeDags.remove(p0.dagId)
             }
         }
-        else if (p0 is YadelReport.UIRequests) {
-            if (YadelReport.UIRequests.REPORT_DAGS.equals(p0)) {
+        else if (p0 is YadelReport.UIYadelRequestType) {
+            if (YadelReport.UIYadelRequestType.REPORT_DAGS.equals(p0)) {
                 this.handleReport()
             }
         }

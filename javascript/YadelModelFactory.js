@@ -1,15 +1,14 @@
-
+"use strict";
 /// <reference path="./YadelModel.d.ts" />
-declare var dcodeIO:any;
 var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
     "package": "org.roylance.yadel",
     "messages": [
         {
-            "name": "UIRequest",
+            "name": "UIYadelRequest",
             "fields": [
                 {
                     "rule": "optional",
-                    "type": "UIRequests",
+                    "type": "UIYadelRequestType",
                     "name": "request_type",
                     "id": 1
                 },
@@ -22,7 +21,7 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
             ]
         },
         {
-            "name": "UIResponse",
+            "name": "UIYadelResponse",
             "fields": [
                 {
                     "rule": "optional",
@@ -266,13 +265,13 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
             "fields": [
                 {
                     "rule": "optional",
-                    "type": "UIRequest",
+                    "type": "UIYadelRequest",
                     "name": "request",
                     "id": 1
                 },
                 {
                     "rule": "optional",
-                    "type": "UIResponse",
+                    "type": "UIYadelResponse",
                     "name": "response",
                     "id": 2
                 }
@@ -597,7 +596,7 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
     ],
     "enums": [
         {
-            "name": "UIRequests",
+            "name": "UIYadelRequestType",
             "values": [
                 {
                     "name": "REPORT_DAGS",
@@ -668,4 +667,4 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
         }
     ]
 }).build();
-export var YadelModel = _root;
+exports.YadelModel = _root;

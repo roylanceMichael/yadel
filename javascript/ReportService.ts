@@ -11,21 +11,21 @@ export class ReportService implements IReportService {
         this.httpExecute = httpExecute;
         this.modelFactory = modelFactory;
     }
-	delete_dag(request: org.roylance.yadel.UIRequest, onSuccess:(response: org.roylance.yadel.UIResponse)=>void, onError:(response:any)=>void) {
+	delete_dag(request: org.roylance.yadel.UIYadelRequest, onSuccess:(response: org.roylance.yadel.UIYadelResponse)=>void, onError:(response:any)=>void) {
             const self = this;
             this.httpExecute.performPost("/rest/report/delete-dag",
                     request.toBase64(),
                     function(result:string) {
-                        onSuccess(self.modelFactory.UIResponse.decode64(result));
+                        onSuccess(self.modelFactory.UIYadelResponse.decode64(result));
                     },
                     onError);
         }
-	current(request: org.roylance.yadel.UIRequest, onSuccess:(response: org.roylance.yadel.UIResponse)=>void, onError:(response:any)=>void) {
+	current(request: org.roylance.yadel.UIYadelRequest, onSuccess:(response: org.roylance.yadel.UIYadelResponse)=>void, onError:(response:any)=>void) {
             const self = this;
             this.httpExecute.performPost("/rest/report/current",
                     request.toBase64(),
                     function(result:string) {
-                        onSuccess(self.modelFactory.UIResponse.decode64(result));
+                        onSuccess(self.modelFactory.UIYadelResponse.decode64(result));
                     },
                     onError);
         }

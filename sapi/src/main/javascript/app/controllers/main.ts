@@ -26,8 +26,8 @@ export class MainController {
         this.selectedDag = null;
         this.currentDagReport = null;
 
-        const request = new this.protobufBuilder.UIRequest();
-        this.reportService.current(request, function(response: org.roylance.yadel.UIResponse) {
+        const request = new this.protobufBuilder.UIYadelRequest();
+        this.reportService.current(request, function(response: org.roylance.yadel.UIYadelResponse) {
             self.currentDagReport = response.report;
             if (self.currentDagReport.dags.length > 0) {
                 self.selectedDag = self.currentDagReport.dags[0];
@@ -49,11 +49,11 @@ export class MainController {
         if (this.selectedDag) {
             // delete the dag
             const self = this;
-            const request = new this.protobufBuilder.UIRequest();
-            request.setRequestType(org.roylance.yadel.UIRequests.DELETE_DAG);
+            const request = new this.protobufBuilder.UIYadelRequest();
+            request.setRequestType(org.roylance.yadel.UIYadelRequestType.DELETE_DAG);
             request.dag_id = this.selectedDag.id;
             this.reportService.delete_dag(request,
-                function(response: org.roylance.yadel.UIResponse) {
+                function(response: org.roylance.yadel.UIYadelResponse) {
                     self.refresh();
                 },
                 function(data) {

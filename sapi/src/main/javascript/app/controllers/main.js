@@ -11,7 +11,7 @@ var MainController = (function () {
         var self = this;
         this.selectedDag = null;
         this.currentDagReport = null;
-        var request = new this.protobufBuilder.UIRequest();
+        var request = new this.protobufBuilder.UIYadelRequest();
         this.reportService.current(request, function (response) {
             self.currentDagReport = response.report;
             if (self.currentDagReport.dags.length > 0) {
@@ -31,7 +31,7 @@ var MainController = (function () {
         if (this.selectedDag) {
             // delete the dag
             var self_1 = this;
-            var request = new this.protobufBuilder.UIRequest();
+            var request = new this.protobufBuilder.UIYadelRequest();
             request.setRequestType(1 /* DELETE_DAG */);
             request.dag_id = this.selectedDag.id;
             this.reportService.delete_dag(request, function (response) {

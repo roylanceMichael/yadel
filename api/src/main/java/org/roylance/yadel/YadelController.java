@@ -13,30 +13,30 @@ public final class YadelController {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
     boolean hasRequest();
     /**
-     * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
-    org.roylance.yadel.YadelReport.UIRequest getRequest();
+    org.roylance.yadel.YadelReport.UIYadelRequest getRequest();
     /**
-     * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
-    org.roylance.yadel.YadelReport.UIRequestOrBuilder getRequestOrBuilder();
+    org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
     boolean hasResponse();
     /**
-     * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
-    org.roylance.yadel.YadelReport.UIResponse getResponse();
+    org.roylance.yadel.YadelReport.UIYadelResponse getResponse();
     /**
-     * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
-    org.roylance.yadel.YadelReport.UIResponseOrBuilder getResponseOrBuilder();
+    org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder getResponseOrBuilder();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.CommonAction}
@@ -91,11 +91,11 @@ public final class YadelController {
               break;
             }
             case 10: {
-              org.roylance.yadel.YadelReport.UIRequest.Builder subBuilder = null;
+              org.roylance.yadel.YadelReport.UIYadelRequest.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
                 subBuilder = request_.toBuilder();
               }
-              request_ = input.readMessage(org.roylance.yadel.YadelReport.UIRequest.PARSER, extensionRegistry);
+              request_ = input.readMessage(org.roylance.yadel.YadelReport.UIYadelRequest.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(request_);
                 request_ = subBuilder.buildPartial();
@@ -104,11 +104,11 @@ public final class YadelController {
               break;
             }
             case 18: {
-              org.roylance.yadel.YadelReport.UIResponse.Builder subBuilder = null;
+              org.roylance.yadel.YadelReport.UIYadelResponse.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 subBuilder = response_.toBuilder();
               }
-              response_ = input.readMessage(org.roylance.yadel.YadelReport.UIResponse.PARSER, extensionRegistry);
+              response_ = input.readMessage(org.roylance.yadel.YadelReport.UIYadelResponse.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(response_);
                 response_ = subBuilder.buildPartial();
@@ -157,50 +157,50 @@ public final class YadelController {
 
     private int bitField0_;
     public static final int REQUEST_FIELD_NUMBER = 1;
-    private org.roylance.yadel.YadelReport.UIRequest request_;
+    private org.roylance.yadel.YadelReport.UIYadelRequest request_;
     /**
-     * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
     public boolean hasRequest() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
-    public org.roylance.yadel.YadelReport.UIRequest getRequest() {
+    public org.roylance.yadel.YadelReport.UIYadelRequest getRequest() {
       return request_;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
-    public org.roylance.yadel.YadelReport.UIRequestOrBuilder getRequestOrBuilder() {
+    public org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder getRequestOrBuilder() {
       return request_;
     }
 
     public static final int RESPONSE_FIELD_NUMBER = 2;
-    private org.roylance.yadel.YadelReport.UIResponse response_;
+    private org.roylance.yadel.YadelReport.UIYadelResponse response_;
     /**
-     * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
     public boolean hasResponse() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
-    public org.roylance.yadel.YadelReport.UIResponse getResponse() {
+    public org.roylance.yadel.YadelReport.UIYadelResponse getResponse() {
       return response_;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
-    public org.roylance.yadel.YadelReport.UIResponseOrBuilder getResponseOrBuilder() {
+    public org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder getResponseOrBuilder() {
       return response_;
     }
 
     private void initFields() {
-      request_ = org.roylance.yadel.YadelReport.UIRequest.getDefaultInstance();
-      response_ = org.roylance.yadel.YadelReport.UIResponse.getDefaultInstance();
+      request_ = org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance();
+      response_ = org.roylance.yadel.YadelReport.UIYadelResponse.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -358,13 +358,13 @@ public final class YadelController {
       public Builder clear() {
         super.clear();
         if (requestBuilder_ == null) {
-          request_ = org.roylance.yadel.YadelReport.UIRequest.getDefaultInstance();
+          request_ = org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance();
         } else {
           requestBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         if (responseBuilder_ == null) {
-          response_ = org.roylance.yadel.YadelReport.UIResponse.getDefaultInstance();
+          response_ = org.roylance.yadel.YadelReport.UIYadelResponse.getDefaultInstance();
         } else {
           responseBuilder_.clear();
         }
@@ -462,19 +462,19 @@ public final class YadelController {
       }
       private int bitField0_;
 
-      private org.roylance.yadel.YadelReport.UIRequest request_ = org.roylance.yadel.YadelReport.UIRequest.getDefaultInstance();
+      private org.roylance.yadel.YadelReport.UIYadelRequest request_ = org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          org.roylance.yadel.YadelReport.UIRequest, org.roylance.yadel.YadelReport.UIRequest.Builder, org.roylance.yadel.YadelReport.UIRequestOrBuilder> requestBuilder_;
+          org.roylance.yadel.YadelReport.UIYadelRequest, org.roylance.yadel.YadelReport.UIYadelRequest.Builder, org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       public boolean hasRequest() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
-      public org.roylance.yadel.YadelReport.UIRequest getRequest() {
+      public org.roylance.yadel.YadelReport.UIYadelRequest getRequest() {
         if (requestBuilder_ == null) {
           return request_;
         } else {
@@ -482,9 +482,9 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
-      public Builder setRequest(org.roylance.yadel.YadelReport.UIRequest value) {
+      public Builder setRequest(org.roylance.yadel.YadelReport.UIYadelRequest value) {
         if (requestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -498,10 +498,10 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       public Builder setRequest(
-          org.roylance.yadel.YadelReport.UIRequest.Builder builderForValue) {
+          org.roylance.yadel.YadelReport.UIYadelRequest.Builder builderForValue) {
         if (requestBuilder_ == null) {
           request_ = builderForValue.build();
           onChanged();
@@ -512,14 +512,14 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
-      public Builder mergeRequest(org.roylance.yadel.YadelReport.UIRequest value) {
+      public Builder mergeRequest(org.roylance.yadel.YadelReport.UIYadelRequest value) {
         if (requestBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
-              request_ != org.roylance.yadel.YadelReport.UIRequest.getDefaultInstance()) {
+              request_ != org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance()) {
             request_ =
-              org.roylance.yadel.YadelReport.UIRequest.newBuilder(request_).mergeFrom(value).buildPartial();
+              org.roylance.yadel.YadelReport.UIYadelRequest.newBuilder(request_).mergeFrom(value).buildPartial();
           } else {
             request_ = value;
           }
@@ -531,11 +531,11 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
-          request_ = org.roylance.yadel.YadelReport.UIRequest.getDefaultInstance();
+          request_ = org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance();
           onChanged();
         } else {
           requestBuilder_.clear();
@@ -544,17 +544,17 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
-      public org.roylance.yadel.YadelReport.UIRequest.Builder getRequestBuilder() {
+      public org.roylance.yadel.YadelReport.UIYadelRequest.Builder getRequestBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getRequestFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
-      public org.roylance.yadel.YadelReport.UIRequestOrBuilder getRequestOrBuilder() {
+      public org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
           return requestBuilder_.getMessageOrBuilder();
         } else {
@@ -562,14 +562,14 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIRequest request = 1;</code>
+       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          org.roylance.yadel.YadelReport.UIRequest, org.roylance.yadel.YadelReport.UIRequest.Builder, org.roylance.yadel.YadelReport.UIRequestOrBuilder> 
+          org.roylance.yadel.YadelReport.UIYadelRequest, org.roylance.yadel.YadelReport.UIYadelRequest.Builder, org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder> 
           getRequestFieldBuilder() {
         if (requestBuilder_ == null) {
           requestBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              org.roylance.yadel.YadelReport.UIRequest, org.roylance.yadel.YadelReport.UIRequest.Builder, org.roylance.yadel.YadelReport.UIRequestOrBuilder>(
+              org.roylance.yadel.YadelReport.UIYadelRequest, org.roylance.yadel.YadelReport.UIYadelRequest.Builder, org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder>(
                   getRequest(),
                   getParentForChildren(),
                   isClean());
@@ -578,19 +578,19 @@ public final class YadelController {
         return requestBuilder_;
       }
 
-      private org.roylance.yadel.YadelReport.UIResponse response_ = org.roylance.yadel.YadelReport.UIResponse.getDefaultInstance();
+      private org.roylance.yadel.YadelReport.UIYadelResponse response_ = org.roylance.yadel.YadelReport.UIYadelResponse.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          org.roylance.yadel.YadelReport.UIResponse, org.roylance.yadel.YadelReport.UIResponse.Builder, org.roylance.yadel.YadelReport.UIResponseOrBuilder> responseBuilder_;
+          org.roylance.yadel.YadelReport.UIYadelResponse, org.roylance.yadel.YadelReport.UIYadelResponse.Builder, org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       public boolean hasResponse() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
-      public org.roylance.yadel.YadelReport.UIResponse getResponse() {
+      public org.roylance.yadel.YadelReport.UIYadelResponse getResponse() {
         if (responseBuilder_ == null) {
           return response_;
         } else {
@@ -598,9 +598,9 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
-      public Builder setResponse(org.roylance.yadel.YadelReport.UIResponse value) {
+      public Builder setResponse(org.roylance.yadel.YadelReport.UIYadelResponse value) {
         if (responseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -614,10 +614,10 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       public Builder setResponse(
-          org.roylance.yadel.YadelReport.UIResponse.Builder builderForValue) {
+          org.roylance.yadel.YadelReport.UIYadelResponse.Builder builderForValue) {
         if (responseBuilder_ == null) {
           response_ = builderForValue.build();
           onChanged();
@@ -628,14 +628,14 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
-      public Builder mergeResponse(org.roylance.yadel.YadelReport.UIResponse value) {
+      public Builder mergeResponse(org.roylance.yadel.YadelReport.UIYadelResponse value) {
         if (responseBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              response_ != org.roylance.yadel.YadelReport.UIResponse.getDefaultInstance()) {
+              response_ != org.roylance.yadel.YadelReport.UIYadelResponse.getDefaultInstance()) {
             response_ =
-              org.roylance.yadel.YadelReport.UIResponse.newBuilder(response_).mergeFrom(value).buildPartial();
+              org.roylance.yadel.YadelReport.UIYadelResponse.newBuilder(response_).mergeFrom(value).buildPartial();
           } else {
             response_ = value;
           }
@@ -647,11 +647,11 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       public Builder clearResponse() {
         if (responseBuilder_ == null) {
-          response_ = org.roylance.yadel.YadelReport.UIResponse.getDefaultInstance();
+          response_ = org.roylance.yadel.YadelReport.UIYadelResponse.getDefaultInstance();
           onChanged();
         } else {
           responseBuilder_.clear();
@@ -660,17 +660,17 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
-      public org.roylance.yadel.YadelReport.UIResponse.Builder getResponseBuilder() {
+      public org.roylance.yadel.YadelReport.UIYadelResponse.Builder getResponseBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getResponseFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
-      public org.roylance.yadel.YadelReport.UIResponseOrBuilder getResponseOrBuilder() {
+      public org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder getResponseOrBuilder() {
         if (responseBuilder_ != null) {
           return responseBuilder_.getMessageOrBuilder();
         } else {
@@ -678,14 +678,14 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIResponse response = 2;</code>
+       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          org.roylance.yadel.YadelReport.UIResponse, org.roylance.yadel.YadelReport.UIResponse.Builder, org.roylance.yadel.YadelReport.UIResponseOrBuilder> 
+          org.roylance.yadel.YadelReport.UIYadelResponse, org.roylance.yadel.YadelReport.UIYadelResponse.Builder, org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder> 
           getResponseFieldBuilder() {
         if (responseBuilder_ == null) {
           responseBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              org.roylance.yadel.YadelReport.UIResponse, org.roylance.yadel.YadelReport.UIResponse.Builder, org.roylance.yadel.YadelReport.UIResponseOrBuilder>(
+              org.roylance.yadel.YadelReport.UIYadelResponse, org.roylance.yadel.YadelReport.UIYadelResponse.Builder, org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder>(
                   getResponse(),
                   getParentForChildren(),
                   isClean());
@@ -1422,13 +1422,13 @@ public final class YadelController {
   static {
     java.lang.String[] descriptorData = {
       "\n\026yadel_controller.proto\022\022org.roylance.y" +
-      "adel\032\022yadel_report.proto\"p\n\014CommonAction" +
-      "\022.\n\007request\030\001 \001(\0132\035.org.roylance.yadel.U" +
-      "IRequest\0220\n\010response\030\002 \001(\0132\036.org.roylanc" +
-      "e.yadel.UIResponse\"{\n\020ReportController\0224" +
-      "\n\ndelete_dag\030\001 \001(\0132 .org.roylance.yadel." +
-      "CommonAction\0221\n\007current\030\002 \001(\0132 .org.royl" +
-      "ance.yadel.CommonAction"
+      "adel\032\022yadel_report.proto\"z\n\014CommonAction" +
+      "\0223\n\007request\030\001 \001(\0132\".org.roylance.yadel.U" +
+      "IYadelRequest\0225\n\010response\030\002 \001(\0132#.org.ro" +
+      "ylance.yadel.UIYadelResponse\"{\n\020ReportCo" +
+      "ntroller\0224\n\ndelete_dag\030\001 \001(\0132 .org.royla" +
+      "nce.yadel.CommonAction\0221\n\007current\030\002 \001(\0132" +
+      " .org.roylance.yadel.CommonAction"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -10,8 +10,8 @@ declare module org.roylance.yadel {
 	}
 
 	export interface ProtoBufBuilder {
-		UIRequest: UIRequestBuilder;
-		UIResponse: UIResponseBuilder;
+		UIYadelRequest: UIYadelRequestBuilder;
+		UIYadelResponse: UIYadelResponseBuilder;
 		UIDagReport: UIDagReportBuilder;
 		UIDag: UIDagBuilder;
 		UIEdge: UIEdgeBuilder;
@@ -26,7 +26,7 @@ declare module org.roylance.yadel {
 		TaskDependency: TaskDependencyBuilder;
 		AddTaskToDag: AddTaskToDagBuilder;
 		CompleteTask: CompleteTaskBuilder;
-		UIRequests: UIRequests;
+		UIYadelRequestType: UIYadelRequestType;
 		UIWorkerState: UIWorkerState;
 		WorkerState: WorkerState;
 		WorkerToManagerMessageType: WorkerToManagerMessageType;
@@ -38,29 +38,29 @@ declare module org.roylance.yadel {
 
 declare module org.roylance.yadel {
 
-	export interface UIRequest extends ProtoBufModel {
-		request_type?: UIRequests;
-		getRequestType() : UIRequests;
-		setRequestType(requestType : UIRequests): void;
+	export interface UIYadelRequest extends ProtoBufModel {
+		request_type?: UIYadelRequestType;
+		getRequestType() : UIYadelRequestType;
+		setRequestType(requestType : UIYadelRequestType): void;
 		dag_id?: string;
 		getDagId() : string;
 		setDagId(dagId : string): void;
 		
 	}
 	
-	export interface UIRequestBuilder {
-		new(): UIRequest;
-		decode(buffer: ArrayBuffer) : UIRequest;
-		//decode(buffer: NodeBuffer) : UIRequest;
-		//decode(buffer: ByteArrayBuffer) : UIRequest;
-		decode64(buffer: string) : UIRequest;
+	export interface UIYadelRequestBuilder {
+		new(): UIYadelRequest;
+		decode(buffer: ArrayBuffer) : UIYadelRequest;
+		//decode(buffer: NodeBuffer) : UIYadelRequest;
+		//decode(buffer: ByteArrayBuffer) : UIYadelRequest;
+		decode64(buffer: string) : UIYadelRequest;
 		
 	}	
 }
 
 declare module org.roylance.yadel {
 
-	export interface UIResponse extends ProtoBufModel {
+	export interface UIYadelResponse extends ProtoBufModel {
 		content?: string;
 		getContent() : string;
 		setContent(content : string): void;
@@ -76,12 +76,12 @@ declare module org.roylance.yadel {
 		
 	}
 	
-	export interface UIResponseBuilder {
-		new(): UIResponse;
-		decode(buffer: ArrayBuffer) : UIResponse;
-		//decode(buffer: NodeBuffer) : UIResponse;
-		//decode(buffer: ByteArrayBuffer) : UIResponse;
-		decode64(buffer: string) : UIResponse;
+	export interface UIYadelResponseBuilder {
+		new(): UIYadelResponse;
+		decode(buffer: ArrayBuffer) : UIYadelResponse;
+		//decode(buffer: NodeBuffer) : UIYadelResponse;
+		//decode(buffer: ByteArrayBuffer) : UIYadelResponse;
+		decode64(buffer: string) : UIYadelResponse;
 		
 	}	
 }
@@ -262,12 +262,12 @@ declare module org.roylance.yadel {
 declare module org.roylance.yadel {
 
 	export interface CommonAction extends ProtoBufModel {
-		request?: UIRequest;
-		getRequest() : UIRequest;
-		setRequest(request : UIRequest): void;
-		response?: UIResponse;
-		getResponse() : UIResponse;
-		setResponse(response : UIResponse): void;
+		request?: UIYadelRequest;
+		getRequest() : UIYadelRequest;
+		setRequest(request : UIYadelRequest): void;
+		response?: UIYadelResponse;
+		getResponse() : UIYadelResponse;
+		setResponse(response : UIYadelResponse): void;
 		
 	}
 	
@@ -548,7 +548,7 @@ declare module org.roylance.yadel {
 }
 
 declare module org.roylance.yadel {
-	export const enum UIRequests {
+	export const enum UIYadelRequestType {
 		REPORT_DAGS = 0,
 		DELETE_DAG = 1,
 		
