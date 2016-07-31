@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 export TYPESCRIPT_MODEL_FILE_NAME=YadelModel
-export YACLIB_VERSION=98
+export YACLIB_VERSION=99
 
 # auto-generate location
 pushd ..

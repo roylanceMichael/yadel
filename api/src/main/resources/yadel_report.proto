@@ -9,6 +9,9 @@ enum UIYadelRequestType {
 message UIYadelRequest {
     optional UIYadelRequestType request_type = 1;
     optional string dag_id = 2;
+    optional string token = 3;
+    optional string user_name = 4;
+    optional string password = 5;
 }
 
 message UIYadelResponse {

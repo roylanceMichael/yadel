@@ -45,6 +45,15 @@ declare module org.roylance.yadel {
 		dag_id?: string;
 		getDagId() : string;
 		setDagId(dagId : string): void;
+		token?: string;
+		getToken() : string;
+		setToken(token : string): void;
+		user_name?: string;
+		getUserName() : string;
+		setUserName(userName : string): void;
+		password?: string;
+		getPassword() : string;
+		setPassword(password : string): void;
 		
 	}
 	

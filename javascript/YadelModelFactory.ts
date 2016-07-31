@@ -18,6 +18,24 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "type": "string",
                     "name": "dag_id",
                     "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "token",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "user_name",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "password",
+                    "id": 5
                 }
             ]
         },
