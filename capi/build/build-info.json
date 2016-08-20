@@ -1,7 +1,7 @@
 {
   "version" : "1.0.1",
   "name" : "capi",
-  "number" : "1469938093640",
+  "number" : "1471652371870",
   "type" : "GRADLE",
   "buildAgent" : {
     "name" : "Gradle",
@@ -11,8 +11,8 @@
     "name" : "Gradle",
     "version" : "2.13"
   },
-  "started" : "2016-07-30T22:08:13.424-0600",
-  "durationMillis" : 1154,
+  "started" : "2016-08-19T18:19:31.633-0600",
+  "durationMillis" : 1694,
   "principal" : "mikeroylance",
   "artifactoryPrincipal" : "admin",
   "licenseControl" : {
@@ -28,17 +28,17 @@
     "buildNumbersNotToBeDiscarded" : [ ]
   },
   "modules" : [ {
-    "id" : "org.roylance.yadel:capi:0.99-SNAPSHOT",
+    "id" : "org.roylance.yadel:capi:0.100-SNAPSHOT",
     "artifacts" : [ {
-      "type" : "pom",
-      "sha1" : "92e5a0b5aee8b5c35af664727bb4c2c4682bfb40",
-      "md5" : "09b4366f0cacff601e3c0e14b917f55b",
-      "name" : "capi-0.99-SNAPSHOT.pom"
-    }, {
       "type" : "jar",
-      "sha1" : "0fd85dfe68b925c764392c55e355ef13ecb44477",
-      "md5" : "fe8a769e0b18cfcd727119b57929d499",
-      "name" : "capi-0.99-SNAPSHOT.jar"
+      "sha1" : "a6cfac47f2f6f54d45e535c3c60bc5fcbee4d46b",
+      "md5" : "ebbebd231b4f8c67a631d2e14b6a827d",
+      "name" : "capi-0.100-SNAPSHOT.jar"
+    }, {
+      "type" : "pom",
+      "sha1" : "3b914d28c036d04f89cf7d2dd5850e6f35c2b032",
+      "md5" : "d007146af9fd19ed618dd904fa2ddd8a",
+      "name" : "capi-0.100-SNAPSHOT.pom"
     } ],
     "excludedArtifacts" : [ ],
     "dependencies" : [ {
@@ -67,9 +67,9 @@
       "scopes" : [ "compileClasspath" ]
     }, {
       "type" : "jar",
-      "sha1" : "d74d2ff9d1598842d3d802b734e7cc19507d136d",
-      "md5" : "87dd39363e7b97cae4a9a1792eaaa607",
-      "id" : "org.roylance.yadel:api:0.99-SNAPSHOT",
+      "sha1" : "88703f0d78c1fd1bb1d26139ed5f0280a4a5b299",
+      "md5" : "7ddae602cc73092e12b957d729ff55d1",
+      "id" : "org.roylance.yadel:api:0.100-SNAPSHOT",
       "scopes" : [ "compileClasspath" ]
     }, {
       "type" : "jar",

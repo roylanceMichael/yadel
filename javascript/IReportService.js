@@ -1,2 +1,2 @@
 "use strict";
-/// <reference path="./YadelModel" />
+//# sourceMappingURL=IReportService.js.map

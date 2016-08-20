@@ -1,0 +1,44 @@
+import org.roylance.yaclib.YaclibPlugin
+import org.roylance.yaclib.core.models.DependencyDescriptor
+import org.roylance.yaclib.YaclibModel
+
+group 'org.roylance.yadel'
+version = "0.$actualVersion-SNAPSHOT"
+
+apply plugin: 'java'
+
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url 'http://chaperapp.dyndns-server.com:8081/artifactory/libs-snapshot-local' }
+    }
+    dependencies {
+        classpath "org.roylance.yaclib:core:0.53-SNAPSHOT"
+        classpath "org.roylance.yadel:api:0.$actualVersion-SNAPSHOT"
+    }
+}
+
+task execute(type: YaclibPlugin) {
+    def parentDir = new File(System.getProperty("user.dir")).parentFile.toString()
+
+    typeScriptModelFile = "YadelModel"
+    version = actualVersion.toInteger()
+    location = parentDir
+    mainModel = "org.roylance.yadel.YadelReport"
+    mainController = "org.roylance.yadel.YadelController"
+
+    dependencyDescriptors = new ArrayList<>()
+    thirdPartyServerDependencies = new ArrayList<>()
+
+    def akkaDependency = YaclibModel.Dependency.newBuilder().setType(YaclibModel.DependencyType.JAVA)
+            .setGroup("com.typesafe.akka")
+            .setName("akka-cluster_2.11")
+            .setThirdPartyDependencyVersion("2.4.7")
+            .build()
+
+    thirdPartyServerDependencies.add(akkaDependency)
+
+    println(parentDir)
+}

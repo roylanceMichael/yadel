@@ -1,15 +1,17 @@
 group 'org.roylance.yadel'
-version currentVersion
+version "0.$actualVersion-SNAPSHOT"
 
 buildscript {
     ext.kotlinVersion = "1.0.3"
     repositories {
         jcenter()
         mavenCentral()
+        maven { url 'http://chaperapp.dyndns-server.com:8081/artifactory/libs-snapshot-local' }
     }
     dependencies {
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.roylance.yaclib:core:0.53-SNAPSHOT"
     }
 }
 
@@ -67,4 +69,9 @@ dependencies {
 
     testCompile 'org.roylance.yaclib:core:0.32-SNAPSHOT'
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+task runYaclib(type: GradleBuild) {
+    buildFile = 'yaclib.gradle'
+    tasks = ['execute']
 }

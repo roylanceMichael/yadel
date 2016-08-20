@@ -1,5 +1,4 @@
 "use strict";
-/// <reference path="./YadelModel.d.ts" />
 var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
     "package": "org.roylance.yadel",
     "messages": [
@@ -686,3 +685,4 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
     ]
 }).build();
 exports.YadelModel = _root;
+//# sourceMappingURL=YadelModelFactory.js.map

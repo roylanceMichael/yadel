@@ -6,7 +6,7 @@
 
     <groupId>org.roylance.yadel</groupId>
     <artifactId>sapi</artifactId>
-    <version>0.99-SNAPSHOT</version>
+    <version>0.100-SNAPSHOT</version>
 
     <repositories>
         <repository>
@@ -58,12 +58,12 @@
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>api</artifactId>
-            <version>0.99-SNAPSHOT</version>
+            <version>0.100-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>capi</artifactId>
-            <version>0.99-SNAPSHOT</version>
+            <version>0.100-SNAPSHOT</version>
         </dependency>
             
 
@@ -143,6 +143,12 @@
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
+            <version>2.22.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-multipart</artifactId>
             <version>2.22.2</version>
         </dependency>
 
