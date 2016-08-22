@@ -1,7 +1,7 @@
 {
   "version" : "1.0.1",
   "name" : "capi",
-  "number" : "1471652371870",
+  "number" : "1471894192537",
   "type" : "GRADLE",
   "buildAgent" : {
     "name" : "Gradle",
@@ -11,8 +11,8 @@
     "name" : "Gradle",
     "version" : "2.13"
   },
-  "started" : "2016-08-19T18:19:31.633-0600",
-  "durationMillis" : 1694,
+  "started" : "2016-08-22T13:29:52.026-0600",
+  "durationMillis" : 3293,
   "principal" : "mikeroylance",
   "artifactoryPrincipal" : "admin",
   "licenseControl" : {
@@ -28,17 +28,17 @@
     "buildNumbersNotToBeDiscarded" : [ ]
   },
   "modules" : [ {
-    "id" : "org.roylance.yadel:capi:0.100-SNAPSHOT",
+    "id" : "org.roylance.yadel:capi:0.101-SNAPSHOT",
     "artifacts" : [ {
       "type" : "jar",
-      "sha1" : "a6cfac47f2f6f54d45e535c3c60bc5fcbee4d46b",
-      "md5" : "ebbebd231b4f8c67a631d2e14b6a827d",
-      "name" : "capi-0.100-SNAPSHOT.jar"
+      "sha1" : "ba1ed7a153ad600ff8422989350213ce97cd629c",
+      "md5" : "f1e3906470c87d6b2cb256099c641ba1",
+      "name" : "capi-0.101-SNAPSHOT.jar"
     }, {
       "type" : "pom",
-      "sha1" : "3b914d28c036d04f89cf7d2dd5850e6f35c2b032",
-      "md5" : "d007146af9fd19ed618dd904fa2ddd8a",
-      "name" : "capi-0.100-SNAPSHOT.pom"
+      "sha1" : "b1c576fc6c3080ab35b05785a57c84cc5a0aef82",
+      "md5" : "74e9302454bc0dc3e4c82d6d8ec18d05",
+      "name" : "capi-0.101-SNAPSHOT.pom"
     } ],
     "excludedArtifacts" : [ ],
     "dependencies" : [ {
@@ -46,12 +46,6 @@
       "sha1" : "2de7cd8b95b7021b1d597f049bcb422055119f2c",
       "md5" : "9e42632359093667f096c532b1261eae",
       "id" : "com.squareup.retrofit2:retrofit:2.1.0",
-      "scopes" : [ "compileClasspath" ]
-    }, {
-      "type" : "jar",
-      "sha1" : "ed8c2f9a63cfa770292f8173fd0172bdaa014fe3",
-      "md5" : "6c19b82006db06d6dcc86142a886314f",
-      "id" : "com.google.protobuf:protobuf-java:3.0.0-beta-3",
       "scopes" : [ "compileClasspath" ]
     }, {
       "type" : "jar",
@@ -67,9 +61,9 @@
       "scopes" : [ "compileClasspath" ]
     }, {
       "type" : "jar",
-      "sha1" : "88703f0d78c1fd1bb1d26139ed5f0280a4a5b299",
-      "md5" : "7ddae602cc73092e12b957d729ff55d1",
-      "id" : "org.roylance.yadel:api:0.100-SNAPSHOT",
+      "sha1" : "9a4bd548ec751e2f80d557b5f4b6b2492e79a32e",
+      "md5" : "b3401b5a5ceff44bb7c18a0927f5b956",
+      "id" : "org.roylance.yadel:api:0.101-SNAPSHOT",
       "scopes" : [ "compileClasspath" ]
     }, {
       "type" : "jar",
@@ -148,6 +142,12 @@
       "sha1" : "a31b1b36bcf0d53657733b5d40c78d5f090a5dea",
       "md5" : "909ac53bce637ea51fe7832c8ce97821",
       "id" : "org.scala-lang.modules:scala-java8-compat_2.11:0.7.0",
+      "scopes" : [ "compileClasspath" ]
+    }, {
+      "type" : "jar",
+      "sha1" : "6d325aa7c921661d84577c0a93d82da4df9fa4c8",
+      "md5" : "49102e7f4c0a5df23a0a119cd2914bab",
+      "id" : "com.google.protobuf:protobuf-java:3.0.0",
       "scopes" : [ "compileClasspath" ]
     } ]
   } ],

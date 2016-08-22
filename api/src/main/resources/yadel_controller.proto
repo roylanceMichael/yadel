@@ -1,14 +1,14 @@
-syntax = "proto2";
+syntax = "proto3";
 package org.roylance.yadel;
 
 import "yadel_report.proto";
 
 message CommonAction {
-    optional org.roylance.yadel.UIYadelRequest request = 1;
-    optional org.roylance.yadel.UIYadelResponse response = 2;
+    org.roylance.yadel.UIYadelRequest request = 1;
+    org.roylance.yadel.UIYadelResponse response = 2;
 }
 
 message ReportController {
-    optional CommonAction delete_dag = 1;
-    optional CommonAction current = 2;
+    CommonAction delete_dag = 1;
+    CommonAction current = 2;
 }

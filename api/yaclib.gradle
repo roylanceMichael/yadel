@@ -15,7 +15,7 @@ buildscript {
         maven { url 'http://chaperapp.dyndns-server.com:8081/artifactory/libs-snapshot-local' }
     }
     dependencies {
-        classpath "org.roylance.yaclib:core:0.53-SNAPSHOT"
+        classpath "org.roylance.yaclib:core:0.$yaclibVersion-SNAPSHOT"
         classpath "org.roylance.yadel:api:0.$actualVersion-SNAPSHOT"
     }
 }

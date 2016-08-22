@@ -63,7 +63,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
     compile 'com.typesafe.akka:akka-cluster_2.11:2.4.7'
-    compile 'com.google.protobuf:protobuf-java:3.0.0-beta-3'
+    compile 'com.google.protobuf:protobuf-java:3.0.0'
     compile 'commons-io:commons-io:2.5'
     compile 'org.roylance:common:0.3-SNAPSHOT'
 
