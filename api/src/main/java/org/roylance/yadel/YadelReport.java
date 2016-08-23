@@ -6,7 +6,13 @@ package org.roylance.yadel;
 public final class YadelReport {
   private YadelReport() {}
   public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+
+  public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
    * Protobuf enum {@code org.roylance.yadel.UIYadelRequestType}
@@ -261,11 +267,11 @@ public final class YadelReport {
    * Protobuf type {@code org.roylance.yadel.UIYadelRequest}
    */
   public  static final class UIYadelRequest extends
-      com.google.protobuf.GeneratedMessage implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.UIYadelRequest)
       UIYadelRequestOrBuilder {
     // Use UIYadelRequest.newBuilder() to construct.
-    private UIYadelRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private UIYadelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private UIYadelRequest() {
@@ -347,7 +353,7 @@ public final class YadelReport {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIYadelRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIYadelRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -366,7 +372,7 @@ public final class YadelReport {
      * <code>optional .org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
      */
     public org.roylance.yadel.YadelReport.UIYadelRequestType getRequestType() {
-      org.roylance.yadel.YadelReport.UIYadelRequestType result = org.roylance.yadel.YadelReport.UIYadelRequestType.forNumber(requestType_);
+      org.roylance.yadel.YadelReport.UIYadelRequestType result = org.roylance.yadel.YadelReport.UIYadelRequestType.valueOf(requestType_);
       return result == null ? org.roylance.yadel.YadelReport.UIYadelRequestType.UNRECOGNIZED : result;
     }
 
@@ -522,16 +528,16 @@ public final class YadelReport {
         output.writeEnum(1, requestType_);
       }
       if (!getDagIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, dagId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dagId_);
       }
       if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, token_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, token_);
       }
       if (!getUserNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 4, userName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userName_);
       }
       if (!getPasswordBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 5, password_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, password_);
       }
     }
 
@@ -545,22 +551,67 @@ public final class YadelReport {
           .computeEnumSize(1, requestType_);
       }
       if (!getDagIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, dagId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dagId_);
       }
       if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, token_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, token_);
       }
       if (!getUserNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, userName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userName_);
       }
       if (!getPasswordBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, password_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, password_);
       }
       memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.roylance.yadel.YadelReport.UIYadelRequest)) {
+        return super.equals(obj);
+      }
+      org.roylance.yadel.YadelReport.UIYadelRequest other = (org.roylance.yadel.YadelReport.UIYadelRequest) obj;
+
+      boolean result = true;
+      result = result && requestType_ == other.requestType_;
+      result = result && getDagId()
+          .equals(other.getDagId());
+      result = result && getToken()
+          .equals(other.getToken());
+      result = result && getUserName()
+          .equals(other.getUserName());
+      result = result && getPassword()
+          .equals(other.getPassword());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + REQUEST_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + requestType_;
+      hash = (37 * hash) + DAG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDagId().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
     public static org.roylance.yadel.YadelReport.UIYadelRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -584,39 +635,39 @@ public final class YadelReport {
     }
     public static org.roylance.yadel.YadelReport.UIYadelRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIYadelRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIYadelRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIYadelRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIYadelRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIYadelRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -634,7 +685,7 @@ public final class YadelReport {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -642,7 +693,7 @@ public final class YadelReport {
      * Protobuf type {@code org.roylance.yadel.UIYadelRequest}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:org.roylance.yadel.UIYadelRequest)
         org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -650,7 +701,7 @@ public final class YadelReport {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIYadelRequest_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIYadelRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -663,12 +714,13 @@ public final class YadelReport {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
       public Builder clear() {
@@ -714,6 +766,32 @@ public final class YadelReport {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.roylance.yadel.YadelReport.UIYadelRequest) {
           return mergeFrom((org.roylance.yadel.YadelReport.UIYadelRequest)other);
@@ -789,7 +867,7 @@ public final class YadelReport {
        * <code>optional .org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
        */
       public org.roylance.yadel.YadelReport.UIYadelRequestType getRequestType() {
-        org.roylance.yadel.YadelReport.UIYadelRequestType result = org.roylance.yadel.YadelReport.UIYadelRequestType.forNumber(requestType_);
+        org.roylance.yadel.YadelReport.UIYadelRequestType result = org.roylance.yadel.YadelReport.UIYadelRequestType.valueOf(requestType_);
         return result == null ? org.roylance.yadel.YadelReport.UIYadelRequestType.UNRECOGNIZED : result;
       }
       /**
@@ -1206,11 +1284,11 @@ public final class YadelReport {
    * Protobuf type {@code org.roylance.yadel.UIYadelResponse}
    */
   public  static final class UIYadelResponse extends
-      com.google.protobuf.GeneratedMessage implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.UIYadelResponse)
       UIYadelResponseOrBuilder {
     // Use UIYadelResponse.newBuilder() to construct.
-    private UIYadelResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private UIYadelResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private UIYadelResponse() {
@@ -1280,7 +1358,8 @@ public final class YadelReport {
                 configurations_ = new java.util.ArrayList<org.roylance.yadel.YadelReport.UIWorkerConfiguration>();
                 mutable_bitField0_ |= 0x00000008;
               }
-              configurations_.add(input.readMessage(org.roylance.yadel.YadelReport.UIWorkerConfiguration.parser(), extensionRegistry));
+              configurations_.add(
+                  input.readMessage(org.roylance.yadel.YadelReport.UIWorkerConfiguration.parser(), extensionRegistry));
               break;
             }
           }
@@ -1302,7 +1381,7 @@ public final class YadelReport {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIYadelResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIYadelResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -1434,7 +1513,7 @@ public final class YadelReport {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getContentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, content_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
       }
       if (report_ != null) {
         output.writeMessage(2, getReport());
@@ -1453,7 +1532,7 @@ public final class YadelReport {
 
       size = 0;
       if (!getContentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, content_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
       }
       if (report_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -1472,6 +1551,60 @@ public final class YadelReport {
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.roylance.yadel.YadelReport.UIYadelResponse)) {
+        return super.equals(obj);
+      }
+      org.roylance.yadel.YadelReport.UIYadelResponse other = (org.roylance.yadel.YadelReport.UIYadelResponse) obj;
+
+      boolean result = true;
+      result = result && getContent()
+          .equals(other.getContent());
+      result = result && (hasReport() == other.hasReport());
+      if (hasReport()) {
+        result = result && getReport()
+            .equals(other.getReport());
+      }
+      result = result && (hasDag() == other.hasDag());
+      if (hasDag()) {
+        result = result && getDag()
+            .equals(other.getDag());
+      }
+      result = result && getConfigurationsList()
+          .equals(other.getConfigurationsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+      if (hasReport()) {
+        hash = (37 * hash) + REPORT_FIELD_NUMBER;
+        hash = (53 * hash) + getReport().hashCode();
+      }
+      if (hasDag()) {
+        hash = (37 * hash) + DAG_FIELD_NUMBER;
+        hash = (53 * hash) + getDag().hashCode();
+      }
+      if (getConfigurationsCount() > 0) {
+        hash = (37 * hash) + CONFIGURATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getConfigurationsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
     public static org.roylance.yadel.YadelReport.UIYadelResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1495,39 +1628,39 @@ public final class YadelReport {
     }
     public static org.roylance.yadel.YadelReport.UIYadelResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIYadelResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIYadelResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIYadelResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIYadelResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIYadelResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -1545,7 +1678,7 @@ public final class YadelReport {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1553,7 +1686,7 @@ public final class YadelReport {
      * Protobuf type {@code org.roylance.yadel.UIYadelResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:org.roylance.yadel.UIYadelResponse)
         org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -1561,7 +1694,7 @@ public final class YadelReport {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIYadelResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIYadelResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -1574,12 +1707,13 @@ public final class YadelReport {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getConfigurationsFieldBuilder();
         }
       }
@@ -1654,6 +1788,32 @@ public final class YadelReport {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.roylance.yadel.YadelReport.UIYadelResponse) {
           return mergeFrom((org.roylance.yadel.YadelReport.UIYadelResponse)other);
@@ -1694,7 +1854,7 @@ public final class YadelReport {
               configurations_ = other.configurations_;
               bitField0_ = (bitField0_ & ~0x00000008);
               configurationsBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getConfigurationsFieldBuilder() : null;
             } else {
               configurationsBuilder_.addAllMessages(other.configurations_);
@@ -1798,7 +1958,7 @@ public final class YadelReport {
       }
 
       private org.roylance.yadel.YadelReport.UIDagReport report_ = null;
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIDagReport, org.roylance.yadel.YadelReport.UIDagReport.Builder, org.roylance.yadel.YadelReport.UIDagReportOrBuilder> reportBuilder_;
       /**
        * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
@@ -1900,11 +2060,11 @@ public final class YadelReport {
       /**
        * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIDagReport, org.roylance.yadel.YadelReport.UIDagReport.Builder, org.roylance.yadel.YadelReport.UIDagReportOrBuilder> 
           getReportFieldBuilder() {
         if (reportBuilder_ == null) {
-          reportBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          reportBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.roylance.yadel.YadelReport.UIDagReport, org.roylance.yadel.YadelReport.UIDagReport.Builder, org.roylance.yadel.YadelReport.UIDagReportOrBuilder>(
                   getReport(),
                   getParentForChildren(),
@@ -1915,7 +2075,7 @@ public final class YadelReport {
       }
 
       private org.roylance.yadel.YadelReport.UIDag dag_ = null;
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIDag, org.roylance.yadel.YadelReport.UIDag.Builder, org.roylance.yadel.YadelReport.UIDagOrBuilder> dagBuilder_;
       /**
        * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
@@ -2017,11 +2177,11 @@ public final class YadelReport {
       /**
        * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIDag, org.roylance.yadel.YadelReport.UIDag.Builder, org.roylance.yadel.YadelReport.UIDagOrBuilder> 
           getDagFieldBuilder() {
         if (dagBuilder_ == null) {
-          dagBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          dagBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.roylance.yadel.YadelReport.UIDag, org.roylance.yadel.YadelReport.UIDag.Builder, org.roylance.yadel.YadelReport.UIDagOrBuilder>(
                   getDag(),
                   getParentForChildren(),
@@ -2040,7 +2200,7 @@ public final class YadelReport {
          }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIWorkerConfiguration, org.roylance.yadel.YadelReport.UIWorkerConfiguration.Builder, org.roylance.yadel.YadelReport.UIWorkerConfigurationOrBuilder> configurationsBuilder_;
 
       /**
@@ -2256,11 +2416,11 @@ public final class YadelReport {
            getConfigurationsBuilderList() {
         return getConfigurationsFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIWorkerConfiguration, org.roylance.yadel.YadelReport.UIWorkerConfiguration.Builder, org.roylance.yadel.YadelReport.UIWorkerConfigurationOrBuilder> 
           getConfigurationsFieldBuilder() {
         if (configurationsBuilder_ == null) {
-          configurationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          configurationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.roylance.yadel.YadelReport.UIWorkerConfiguration, org.roylance.yadel.YadelReport.UIWorkerConfiguration.Builder, org.roylance.yadel.YadelReport.UIWorkerConfigurationOrBuilder>(
                   configurations_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
@@ -2375,11 +2535,11 @@ public final class YadelReport {
    * Protobuf type {@code org.roylance.yadel.UIDagReport}
    */
   public  static final class UIDagReport extends
-      com.google.protobuf.GeneratedMessage implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.UIDagReport)
       UIDagReportOrBuilder {
     // Use UIDagReport.newBuilder() to construct.
-    private UIDagReport(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private UIDagReport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private UIDagReport() {
@@ -2417,7 +2577,8 @@ public final class YadelReport {
                 workers_ = new java.util.ArrayList<org.roylance.yadel.YadelReport.UIWorkerConfiguration>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              workers_.add(input.readMessage(org.roylance.yadel.YadelReport.UIWorkerConfiguration.parser(), extensionRegistry));
+              workers_.add(
+                  input.readMessage(org.roylance.yadel.YadelReport.UIWorkerConfiguration.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -2425,7 +2586,8 @@ public final class YadelReport {
                 dags_ = new java.util.ArrayList<org.roylance.yadel.YadelReport.UIDag>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              dags_.add(input.readMessage(org.roylance.yadel.YadelReport.UIDag.parser(), extensionRegistry));
+              dags_.add(
+                  input.readMessage(org.roylance.yadel.YadelReport.UIDag.parser(), extensionRegistry));
               break;
             }
           }
@@ -2450,7 +2612,7 @@ public final class YadelReport {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIDagReport_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIDagReport_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -2565,6 +2727,44 @@ public final class YadelReport {
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.roylance.yadel.YadelReport.UIDagReport)) {
+        return super.equals(obj);
+      }
+      org.roylance.yadel.YadelReport.UIDagReport other = (org.roylance.yadel.YadelReport.UIDagReport) obj;
+
+      boolean result = true;
+      result = result && getWorkersList()
+          .equals(other.getWorkersList());
+      result = result && getDagsList()
+          .equals(other.getDagsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (getWorkersCount() > 0) {
+        hash = (37 * hash) + WORKERS_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkersList().hashCode();
+      }
+      if (getDagsCount() > 0) {
+        hash = (37 * hash) + DAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getDagsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
     public static org.roylance.yadel.YadelReport.UIDagReport parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2588,39 +2788,39 @@ public final class YadelReport {
     }
     public static org.roylance.yadel.YadelReport.UIDagReport parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIDagReport parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIDagReport parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIDagReport parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIDagReport parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIDagReport parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -2638,7 +2838,7 @@ public final class YadelReport {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -2646,7 +2846,7 @@ public final class YadelReport {
      * Protobuf type {@code org.roylance.yadel.UIDagReport}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:org.roylance.yadel.UIDagReport)
         org.roylance.yadel.YadelReport.UIDagReportOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -2654,7 +2854,7 @@ public final class YadelReport {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIDagReport_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIDagReport_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -2667,12 +2867,13 @@ public final class YadelReport {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getWorkersFieldBuilder();
           getDagsFieldBuilder();
         }
@@ -2736,6 +2937,32 @@ public final class YadelReport {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.roylance.yadel.YadelReport.UIDagReport) {
           return mergeFrom((org.roylance.yadel.YadelReport.UIDagReport)other);
@@ -2766,7 +2993,7 @@ public final class YadelReport {
               workers_ = other.workers_;
               bitField0_ = (bitField0_ & ~0x00000001);
               workersBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getWorkersFieldBuilder() : null;
             } else {
               workersBuilder_.addAllMessages(other.workers_);
@@ -2792,7 +3019,7 @@ public final class YadelReport {
               dags_ = other.dags_;
               bitField0_ = (bitField0_ & ~0x00000002);
               dagsBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDagsFieldBuilder() : null;
             } else {
               dagsBuilder_.addAllMessages(other.dags_);
@@ -2835,7 +3062,7 @@ public final class YadelReport {
          }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIWorkerConfiguration, org.roylance.yadel.YadelReport.UIWorkerConfiguration.Builder, org.roylance.yadel.YadelReport.UIWorkerConfigurationOrBuilder> workersBuilder_;
 
       /**
@@ -3051,11 +3278,11 @@ public final class YadelReport {
            getWorkersBuilderList() {
         return getWorkersFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIWorkerConfiguration, org.roylance.yadel.YadelReport.UIWorkerConfiguration.Builder, org.roylance.yadel.YadelReport.UIWorkerConfigurationOrBuilder> 
           getWorkersFieldBuilder() {
         if (workersBuilder_ == null) {
-          workersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          workersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.roylance.yadel.YadelReport.UIWorkerConfiguration, org.roylance.yadel.YadelReport.UIWorkerConfiguration.Builder, org.roylance.yadel.YadelReport.UIWorkerConfigurationOrBuilder>(
                   workers_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
@@ -3075,7 +3302,7 @@ public final class YadelReport {
          }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIDag, org.roylance.yadel.YadelReport.UIDag.Builder, org.roylance.yadel.YadelReport.UIDagOrBuilder> dagsBuilder_;
 
       /**
@@ -3291,11 +3518,11 @@ public final class YadelReport {
            getDagsBuilderList() {
         return getDagsFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIDag, org.roylance.yadel.YadelReport.UIDag.Builder, org.roylance.yadel.YadelReport.UIDagOrBuilder> 
           getDagsFieldBuilder() {
         if (dagsBuilder_ == null) {
-          dagsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          dagsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.roylance.yadel.YadelReport.UIDag, org.roylance.yadel.YadelReport.UIDag.Builder, org.roylance.yadel.YadelReport.UIDagOrBuilder>(
                   dags_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
@@ -3444,7 +3671,7 @@ public final class YadelReport {
     /**
      * <code>repeated string logs = 8;</code>
      */
-    com.google.protobuf.ProtocolStringList
+    java.util.List<java.lang.String>
         getLogsList();
     /**
      * <code>repeated string logs = 8;</code>
@@ -3484,11 +3711,11 @@ public final class YadelReport {
    * Protobuf type {@code org.roylance.yadel.UIDag}
    */
   public  static final class UIDag extends
-      com.google.protobuf.GeneratedMessage implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.UIDag)
       UIDagOrBuilder {
     // Use UIDag.newBuilder() to construct.
-    private UIDag(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private UIDag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private UIDag() {
@@ -3548,7 +3775,8 @@ public final class YadelReport {
                 nodes_ = new java.util.ArrayList<org.roylance.yadel.YadelReport.UINode>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              nodes_.add(input.readMessage(org.roylance.yadel.YadelReport.UINode.parser(), extensionRegistry));
+              nodes_.add(
+                  input.readMessage(org.roylance.yadel.YadelReport.UINode.parser(), extensionRegistry));
               break;
             }
             case 34: {
@@ -3556,7 +3784,8 @@ public final class YadelReport {
                 edges_ = new java.util.ArrayList<org.roylance.yadel.YadelReport.UIEdge>();
                 mutable_bitField0_ |= 0x00000008;
               }
-              edges_.add(input.readMessage(org.roylance.yadel.YadelReport.UIEdge.parser(), extensionRegistry));
+              edges_.add(
+                  input.readMessage(org.roylance.yadel.YadelReport.UIEdge.parser(), extensionRegistry));
               break;
             }
             case 40: {
@@ -3628,7 +3857,7 @@ public final class YadelReport {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIDag_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIDag_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -3879,10 +4108,10 @@ public final class YadelReport {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (!getDisplayBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, display_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, display_);
       }
       for (int i = 0; i < nodes_.size(); i++) {
         output.writeMessage(3, nodes_.get(i));
@@ -3900,7 +4129,7 @@ public final class YadelReport {
         output.writeBool(7, isError_);
       }
       for (int i = 0; i < logs_.size(); i++) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 8, logs_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, logs_.getRaw(i));
       }
       if (numberCompleted_ != 0) {
         output.writeInt32(9, numberCompleted_);
@@ -3922,10 +4151,10 @@ public final class YadelReport {
 
       size = 0;
       if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (!getDisplayBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, display_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, display_);
       }
       for (int i = 0; i < nodes_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -3976,6 +4205,89 @@ public final class YadelReport {
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.roylance.yadel.YadelReport.UIDag)) {
+        return super.equals(obj);
+      }
+      org.roylance.yadel.YadelReport.UIDag other = (org.roylance.yadel.YadelReport.UIDag) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && getDisplay()
+          .equals(other.getDisplay());
+      result = result && getNodesList()
+          .equals(other.getNodesList());
+      result = result && getEdgesList()
+          .equals(other.getEdgesList());
+      result = result && (getIsCompleted()
+          == other.getIsCompleted());
+      result = result && (getIsProcessing()
+          == other.getIsProcessing());
+      result = result && (getIsError()
+          == other.getIsError());
+      result = result && getLogsList()
+          .equals(other.getLogsList());
+      result = result && (getNumberCompleted()
+          == other.getNumberCompleted());
+      result = result && (getNumberProcessing()
+          == other.getNumberProcessing());
+      result = result && (getNumberErrored()
+          == other.getNumberErrored());
+      result = result && (getNumberUnprocessed()
+          == other.getNumberUnprocessed());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + DISPLAY_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplay().hashCode();
+      if (getNodesCount() > 0) {
+        hash = (37 * hash) + NODES_FIELD_NUMBER;
+        hash = (53 * hash) + getNodesList().hashCode();
+      }
+      if (getEdgesCount() > 0) {
+        hash = (37 * hash) + EDGES_FIELD_NUMBER;
+        hash = (53 * hash) + getEdgesList().hashCode();
+      }
+      hash = (37 * hash) + IS_COMPLETED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsCompleted());
+      hash = (37 * hash) + IS_PROCESSING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsProcessing());
+      hash = (37 * hash) + IS_ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsError());
+      if (getLogsCount() > 0) {
+        hash = (37 * hash) + LOGS_FIELD_NUMBER;
+        hash = (53 * hash) + getLogsList().hashCode();
+      }
+      hash = (37 * hash) + NUMBER_COMPLETED_FIELD_NUMBER;
+      hash = (53 * hash) + getNumberCompleted();
+      hash = (37 * hash) + NUMBER_PROCESSING_FIELD_NUMBER;
+      hash = (53 * hash) + getNumberProcessing();
+      hash = (37 * hash) + NUMBER_ERRORED_FIELD_NUMBER;
+      hash = (53 * hash) + getNumberErrored();
+      hash = (37 * hash) + NUMBER_UNPROCESSED_FIELD_NUMBER;
+      hash = (53 * hash) + getNumberUnprocessed();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
     public static org.roylance.yadel.YadelReport.UIDag parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3999,39 +4311,39 @@ public final class YadelReport {
     }
     public static org.roylance.yadel.YadelReport.UIDag parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIDag parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIDag parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIDag parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIDag parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIDag parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -4049,7 +4361,7 @@ public final class YadelReport {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -4057,7 +4369,7 @@ public final class YadelReport {
      * Protobuf type {@code org.roylance.yadel.UIDag}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:org.roylance.yadel.UIDag)
         org.roylance.yadel.YadelReport.UIDagOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -4065,7 +4377,7 @@ public final class YadelReport {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIDag_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIDag_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -4078,12 +4390,13 @@ public final class YadelReport {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getNodesFieldBuilder();
           getEdgesFieldBuilder();
         }
@@ -4183,6 +4496,32 @@ public final class YadelReport {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.roylance.yadel.YadelReport.UIDag) {
           return mergeFrom((org.roylance.yadel.YadelReport.UIDag)other);
@@ -4221,7 +4560,7 @@ public final class YadelReport {
               nodes_ = other.nodes_;
               bitField0_ = (bitField0_ & ~0x00000004);
               nodesBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getNodesFieldBuilder() : null;
             } else {
               nodesBuilder_.addAllMessages(other.nodes_);
@@ -4247,7 +4586,7 @@ public final class YadelReport {
               edges_ = other.edges_;
               bitField0_ = (bitField0_ & ~0x00000008);
               edgesBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getEdgesFieldBuilder() : null;
             } else {
               edgesBuilder_.addAllMessages(other.edges_);
@@ -4459,7 +4798,7 @@ public final class YadelReport {
          }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.roylance.yadel.YadelReport.UINode, org.roylance.yadel.YadelReport.UINode.Builder, org.roylance.yadel.YadelReport.UINodeOrBuilder> nodesBuilder_;
 
       /**
@@ -4675,11 +5014,11 @@ public final class YadelReport {
            getNodesBuilderList() {
         return getNodesFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.roylance.yadel.YadelReport.UINode, org.roylance.yadel.YadelReport.UINode.Builder, org.roylance.yadel.YadelReport.UINodeOrBuilder> 
           getNodesFieldBuilder() {
         if (nodesBuilder_ == null) {
-          nodesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          nodesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.roylance.yadel.YadelReport.UINode, org.roylance.yadel.YadelReport.UINode.Builder, org.roylance.yadel.YadelReport.UINodeOrBuilder>(
                   nodes_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
@@ -4699,7 +5038,7 @@ public final class YadelReport {
          }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIEdge, org.roylance.yadel.YadelReport.UIEdge.Builder, org.roylance.yadel.YadelReport.UIEdgeOrBuilder> edgesBuilder_;
 
       /**
@@ -4915,11 +5254,11 @@ public final class YadelReport {
            getEdgesBuilderList() {
         return getEdgesFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIEdge, org.roylance.yadel.YadelReport.UIEdge.Builder, org.roylance.yadel.YadelReport.UIEdgeOrBuilder> 
           getEdgesFieldBuilder() {
         if (edgesBuilder_ == null) {
-          edgesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          edgesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.roylance.yadel.YadelReport.UIEdge, org.roylance.yadel.YadelReport.UIEdge.Builder, org.roylance.yadel.YadelReport.UIEdgeOrBuilder>(
                   edges_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
@@ -5282,11 +5621,11 @@ public final class YadelReport {
    * Protobuf type {@code org.roylance.yadel.UIEdge}
    */
   public  static final class UIEdge extends
-      com.google.protobuf.GeneratedMessage implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.UIEdge)
       UIEdgeOrBuilder {
     // Use UIEdge.newBuilder() to construct.
-    private UIEdge(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private UIEdge(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private UIEdge() {
@@ -5347,7 +5686,7 @@ public final class YadelReport {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIEdge_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIEdge_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -5435,10 +5774,10 @@ public final class YadelReport {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getNodeId1Bytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, nodeId1_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeId1_);
       }
       if (!getNodeId2Bytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, nodeId2_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeId2_);
       }
     }
 
@@ -5448,16 +5787,50 @@ public final class YadelReport {
 
       size = 0;
       if (!getNodeId1Bytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, nodeId1_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeId1_);
       }
       if (!getNodeId2Bytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, nodeId2_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodeId2_);
       }
       memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.roylance.yadel.YadelReport.UIEdge)) {
+        return super.equals(obj);
+      }
+      org.roylance.yadel.YadelReport.UIEdge other = (org.roylance.yadel.YadelReport.UIEdge) obj;
+
+      boolean result = true;
+      result = result && getNodeId1()
+          .equals(other.getNodeId1());
+      result = result && getNodeId2()
+          .equals(other.getNodeId2());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + NODE_ID_1_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeId1().hashCode();
+      hash = (37 * hash) + NODE_ID_2_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeId2().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
     public static org.roylance.yadel.YadelReport.UIEdge parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5481,39 +5854,39 @@ public final class YadelReport {
     }
     public static org.roylance.yadel.YadelReport.UIEdge parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIEdge parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIEdge parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIEdge parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIEdge parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIEdge parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -5531,7 +5904,7 @@ public final class YadelReport {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -5539,7 +5912,7 @@ public final class YadelReport {
      * Protobuf type {@code org.roylance.yadel.UIEdge}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:org.roylance.yadel.UIEdge)
         org.roylance.yadel.YadelReport.UIEdgeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -5547,7 +5920,7 @@ public final class YadelReport {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIEdge_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIEdge_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -5560,12 +5933,13 @@ public final class YadelReport {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
       public Builder clear() {
@@ -5602,6 +5976,32 @@ public final class YadelReport {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.roylance.yadel.YadelReport.UIEdge) {
           return mergeFrom((org.roylance.yadel.YadelReport.UIEdge)other);
@@ -5895,7 +6295,7 @@ public final class YadelReport {
     /**
      * <code>repeated string logs = 11;</code>
      */
-    com.google.protobuf.ProtocolStringList
+    java.util.List<java.lang.String>
         getLogsList();
     /**
      * <code>repeated string logs = 11;</code>
@@ -5915,11 +6315,11 @@ public final class YadelReport {
    * Protobuf type {@code org.roylance.yadel.UINode}
    */
   public  static final class UINode extends
-      com.google.protobuf.GeneratedMessage implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.UINode)
       UINodeOrBuilder {
     // Use UINode.newBuilder() to construct.
-    private UINode(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private UINode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private UINode() {
@@ -6035,7 +6435,7 @@ public final class YadelReport {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UINode_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UINode_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -6216,10 +6616,10 @@ public final class YadelReport {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (!getDisplayBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, display_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, display_);
       }
       if (executionDate_ != 0L) {
         output.writeInt64(4, executionDate_);
@@ -6243,7 +6643,7 @@ public final class YadelReport {
         output.writeBool(10, isError_);
       }
       for (int i = 0; i < logs_.size(); i++) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 11, logs_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, logs_.getRaw(i));
       }
     }
 
@@ -6253,10 +6653,10 @@ public final class YadelReport {
 
       size = 0;
       if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (!getDisplayBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, display_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, display_);
       }
       if (executionDate_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -6299,6 +6699,81 @@ public final class YadelReport {
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.roylance.yadel.YadelReport.UINode)) {
+        return super.equals(obj);
+      }
+      org.roylance.yadel.YadelReport.UINode other = (org.roylance.yadel.YadelReport.UINode) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && getDisplay()
+          .equals(other.getDisplay());
+      result = result && (getExecutionDate()
+          == other.getExecutionDate());
+      result = result && (getStartDate()
+          == other.getStartDate());
+      result = result && (getEndDate()
+          == other.getEndDate());
+      result = result && (getDuration()
+          == other.getDuration());
+      result = result && (getIsCompleted()
+          == other.getIsCompleted());
+      result = result && (getIsProcessing()
+          == other.getIsProcessing());
+      result = result && (getIsError()
+          == other.getIsError());
+      result = result && getLogsList()
+          .equals(other.getLogsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + DISPLAY_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplay().hashCode();
+      hash = (37 * hash) + EXECUTION_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getExecutionDate());
+      hash = (37 * hash) + START_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStartDate());
+      hash = (37 * hash) + END_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getEndDate());
+      hash = (37 * hash) + DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDuration());
+      hash = (37 * hash) + IS_COMPLETED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsCompleted());
+      hash = (37 * hash) + IS_PROCESSING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsProcessing());
+      hash = (37 * hash) + IS_ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsError());
+      if (getLogsCount() > 0) {
+        hash = (37 * hash) + LOGS_FIELD_NUMBER;
+        hash = (53 * hash) + getLogsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
     public static org.roylance.yadel.YadelReport.UINode parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6322,39 +6797,39 @@ public final class YadelReport {
     }
     public static org.roylance.yadel.YadelReport.UINode parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UINode parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UINode parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UINode parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UINode parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UINode parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -6372,7 +6847,7 @@ public final class YadelReport {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -6380,7 +6855,7 @@ public final class YadelReport {
      * Protobuf type {@code org.roylance.yadel.UINode}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:org.roylance.yadel.UINode)
         org.roylance.yadel.YadelReport.UINodeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -6388,7 +6863,7 @@ public final class YadelReport {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UINode_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UINode_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -6401,12 +6876,13 @@ public final class YadelReport {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
       public Builder clear() {
@@ -6474,6 +6950,32 @@ public final class YadelReport {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.roylance.yadel.YadelReport.UINode) {
           return mergeFrom((org.roylance.yadel.YadelReport.UINode)other);
@@ -7065,11 +7567,11 @@ public final class YadelReport {
    * Protobuf type {@code org.roylance.yadel.UIWorkerConfiguration}
    */
   public  static final class UIWorkerConfiguration extends
-      com.google.protobuf.GeneratedMessage implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:org.roylance.yadel.UIWorkerConfiguration)
       UIWorkerConfigurationOrBuilder {
     // Use UIWorkerConfiguration.newBuilder() to construct.
-    private UIWorkerConfiguration(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private UIWorkerConfiguration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private UIWorkerConfiguration() {
@@ -7150,7 +7652,7 @@ public final class YadelReport {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIWorkerConfiguration_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIWorkerConfiguration_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -7280,7 +7782,7 @@ public final class YadelReport {
      * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
      */
     public org.roylance.yadel.YadelReport.UIWorkerState getState() {
-      org.roylance.yadel.YadelReport.UIWorkerState result = org.roylance.yadel.YadelReport.UIWorkerState.forNumber(state_);
+      org.roylance.yadel.YadelReport.UIWorkerState result = org.roylance.yadel.YadelReport.UIWorkerState.valueOf(state_);
       return result == null ? org.roylance.yadel.YadelReport.UIWorkerState.UNRECOGNIZED : result;
     }
 
@@ -7297,13 +7799,13 @@ public final class YadelReport {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIpBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, ip_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ip_);
       }
       if (!getPortBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, port_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, port_);
       }
       if (!getHostBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, host_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, host_);
       }
       if (initializedTime_ != 0L) {
         output.writeUInt64(4, initializedTime_);
@@ -7319,13 +7821,13 @@ public final class YadelReport {
 
       size = 0;
       if (!getIpBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, ip_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ip_);
       }
       if (!getPortBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, port_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, port_);
       }
       if (!getHostBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, host_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, host_);
       }
       if (initializedTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -7340,6 +7842,52 @@ public final class YadelReport {
     }
 
     private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.roylance.yadel.YadelReport.UIWorkerConfiguration)) {
+        return super.equals(obj);
+      }
+      org.roylance.yadel.YadelReport.UIWorkerConfiguration other = (org.roylance.yadel.YadelReport.UIWorkerConfiguration) obj;
+
+      boolean result = true;
+      result = result && getIp()
+          .equals(other.getIp());
+      result = result && getPort()
+          .equals(other.getPort());
+      result = result && getHost()
+          .equals(other.getHost());
+      result = result && (getInitializedTime()
+          == other.getInitializedTime());
+      result = result && state_ == other.state_;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + IP_FIELD_NUMBER;
+      hash = (53 * hash) + getIp().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort().hashCode();
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
+      hash = (37 * hash) + INITIALIZED_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getInitializedTime());
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
     public static org.roylance.yadel.YadelReport.UIWorkerConfiguration parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7363,39 +7911,39 @@ public final class YadelReport {
     }
     public static org.roylance.yadel.YadelReport.UIWorkerConfiguration parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIWorkerConfiguration parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIWorkerConfiguration parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIWorkerConfiguration parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.roylance.yadel.YadelReport.UIWorkerConfiguration parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static org.roylance.yadel.YadelReport.UIWorkerConfiguration parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -7413,7 +7961,7 @@ public final class YadelReport {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -7421,7 +7969,7 @@ public final class YadelReport {
      * Protobuf type {@code org.roylance.yadel.UIWorkerConfiguration}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:org.roylance.yadel.UIWorkerConfiguration)
         org.roylance.yadel.YadelReport.UIWorkerConfigurationOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -7429,7 +7977,7 @@ public final class YadelReport {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIWorkerConfiguration_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return org.roylance.yadel.YadelReport.internal_static_org_roylance_yadel_UIWorkerConfiguration_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -7442,12 +7990,13 @@ public final class YadelReport {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
       public Builder clear() {
@@ -7493,6 +8042,32 @@ public final class YadelReport {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.roylance.yadel.YadelReport.UIWorkerConfiguration) {
           return mergeFrom((org.roylance.yadel.YadelReport.UIWorkerConfiguration)other);
@@ -7800,7 +8375,7 @@ public final class YadelReport {
        * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
        */
       public org.roylance.yadel.YadelReport.UIWorkerState getState() {
-        org.roylance.yadel.YadelReport.UIWorkerState result = org.roylance.yadel.YadelReport.UIWorkerState.forNumber(state_);
+        org.roylance.yadel.YadelReport.UIWorkerState result = org.roylance.yadel.YadelReport.UIWorkerState.valueOf(state_);
         return result == null ? org.roylance.yadel.YadelReport.UIWorkerState.UNRECOGNIZED : result;
       }
       /**
@@ -7876,37 +8451,37 @@ public final class YadelReport {
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_UIYadelRequest_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_roylance_yadel_UIYadelRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_UIYadelResponse_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_roylance_yadel_UIYadelResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_UIDagReport_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_roylance_yadel_UIDagReport_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_UIDag_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_roylance_yadel_UIDag_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_UIEdge_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_roylance_yadel_UIEdge_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_UINode_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_roylance_yadel_UINode_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_UIWorkerConfiguration_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_roylance_yadel_UIWorkerConfiguration_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
@@ -7966,43 +8541,43 @@ public final class YadelReport {
     internal_static_org_roylance_yadel_UIYadelRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_org_roylance_yadel_UIYadelRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_UIYadelRequest_descriptor,
         new java.lang.String[] { "RequestType", "DagId", "Token", "UserName", "Password", });
     internal_static_org_roylance_yadel_UIYadelResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_org_roylance_yadel_UIYadelResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_UIYadelResponse_descriptor,
         new java.lang.String[] { "Content", "Report", "Dag", "Configurations", });
     internal_static_org_roylance_yadel_UIDagReport_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_org_roylance_yadel_UIDagReport_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_UIDagReport_descriptor,
         new java.lang.String[] { "Workers", "Dags", });
     internal_static_org_roylance_yadel_UIDag_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_org_roylance_yadel_UIDag_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_UIDag_descriptor,
         new java.lang.String[] { "Id", "Display", "Nodes", "Edges", "IsCompleted", "IsProcessing", "IsError", "Logs", "NumberCompleted", "NumberProcessing", "NumberErrored", "NumberUnprocessed", });
     internal_static_org_roylance_yadel_UIEdge_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_org_roylance_yadel_UIEdge_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_UIEdge_descriptor,
         new java.lang.String[] { "NodeId1", "NodeId2", });
     internal_static_org_roylance_yadel_UINode_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_org_roylance_yadel_UINode_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_UINode_descriptor,
         new java.lang.String[] { "Id", "Display", "ExecutionDate", "StartDate", "EndDate", "Duration", "IsCompleted", "IsProcessing", "IsError", "Logs", });
     internal_static_org_roylance_yadel_UIWorkerConfiguration_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_org_roylance_yadel_UIWorkerConfiguration_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_UIWorkerConfiguration_descriptor,
         new java.lang.String[] { "Ip", "Port", "Host", "InitializedTime", "State", });
   }
