@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.roylance.yadel</groupId>
   <artifactId>capi</artifactId>
-  <version>0.105-SNAPSHOT</version>
+  <version>0.106-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>com.squareup.retrofit2</groupId>
@@ -27,7 +27,7 @@
     <dependency>
       <groupId>org.roylance.yadel</groupId>
       <artifactId>api</artifactId>
-      <version>0.105-SNAPSHOT</version>
+      <version>0.106-SNAPSHOT</version>
       <scope>runtime</scope>
     </dependency>
   </dependencies>

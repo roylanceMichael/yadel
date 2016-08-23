@@ -1,5 +1,5 @@
 group 'org.roylance.yadel'
-version '0.105-SNAPSHOT'
+version '0.106-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
@@ -63,6 +63,6 @@ dependencies {
 
     compile 'org.roylance:common:0.4-SNAPSHOT'
     compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.3"
-    compile 'org.roylance.yadel:api:0.105-SNAPSHOT'
+    compile 'org.roylance.yadel:api:0.106-SNAPSHOT'
 
 }
