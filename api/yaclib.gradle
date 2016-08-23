@@ -40,5 +40,8 @@ task execute(type: YaclibPlugin) {
 
     thirdPartyServerDependencies.add(akkaDependency)
 
+    nugetKey = System.getenv('NUGET_KEY')
+
+    println(nugetKey)
     println(parentDir)
 }

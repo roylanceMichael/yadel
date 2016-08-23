@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E198A97D-C475-4E5B-B98A-AD47BF6CCC34}") = "Org.Roylance.Yadel.Api", "Org.Roylance.Yadel.Api.xproj", "{A2ECC1C6-0F35-43AF-90DF-5AE3FAF41D49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2ECC1C6-0F35-43AF-90DF-5AE3FAF41D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2ECC1C6-0F35-43AF-90DF-5AE3FAF41D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2ECC1C6-0F35-43AF-90DF-5AE3FAF41D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2ECC1C6-0F35-43AF-90DF-5AE3FAF41D49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
