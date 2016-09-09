@@ -1,6 +1,6 @@
 // self sign certs like so: http://docs.jboss.org/teiid/7.0.0/client-developers-guide/en-US/html/appendix-selfcerts.html
-import java.nio.file.Files
-import java.nio.file.StandardCopyOption
+
+import org.roylance.yadel.YadelPlugin
 
 group 'org.roylance.yadel'
 version '0.1-SNAPSHOT'
@@ -12,12 +12,11 @@ buildscript {
 
     repositories {
         mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
+        maven { url 'http://mikeapps.org:8081/artifactory/libs-snapshot-local' }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.roylance.yadel:plugin:0.106-20160909.185909-1"
     }
 }
 
@@ -34,98 +33,26 @@ repositories {
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    compile 'org.roylance.yadel:api:0.106-SNAPSHOT'
 
-    compile 'org.roylance.yadel:api:0.85-SNAPSHOT'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
-task packageCLI(type:PackageTask) {
-    serverUrl = CliServerUrl
+task packageServer(type: YadelPlugin) {
+    serverUrl = "192.168.12.130"
     serverVersion = version
-    downloadUrl = wgetUrl
+    projectName = "cli"
+    awsAutoScalingGroupName = "sample_test"
+    keystoreName = "yadel.keystore"
+    truststoreName = "yadel.truststore"
+    fullServerTarUrl = "http://$serverUrl/autoscale/tar"
+    maintainerInfo = "Michael Roylance <roylance.michael@gmail.com>"
 }
 
-packageCLI.dependsOn(installDist)
-
-class PackageTask extends DefaultTask {
-    String serverUrl = "127.0.0.1"
-    String serverVersion = "0.1-SNAPSHOT"
-    String downloadUrl = "http://someurl/some.tar"
-
-    @TaskAction
-    def packageCLI() {
-        println("building yadel with server: " + serverUrl + " and version: " + serverVersion)
-
-        Files.copy(new File("src/main/resources/yadel.keystore").toPath(), new File("build/install/cli/yadel.keystore").toPath())
-        Files.copy(new File("src/main/resources/yadel.truststore").toPath(), new File("build/install/cli/yadel.truststore").toPath())
-
-        def runServerTemplate = new File("debian/run_yadel_server_template.sh")
-        def newServerScript = runServerTemplate.readLines()
-        newServerScript.add(1, "host=\"" + serverUrl + "\"")
-        new File("build/install/cli/yadel_server.sh").write(newServerScript.join("\n"))
-
-        def runActorTemplate = new File("debian/run_yadel_actor_template.sh")
-        def newActorScript = runActorTemplate.readLines()
-        newActorScript.add(1, "host=\"" + serverUrl + "\"")
-        new File("build/install/cli/yadel_actor.sh").write(newActorScript.join("\n"))
-        Files.copy(new File("debian/yadel_stop.sh").toPath(), new File("build/install/cli/yadel_stop.sh").toPath(), StandardCopyOption.REPLACE_EXISTING)
-
-        def createAndInstallPackageTemplate = new File("debian/create_and_install_package_clean_template.sh")
-        def createTemplateScript = createAndInstallPackageTemplate.readLines()
-        createTemplateScript.add(1, "YADEL_VERSION=\"" + serverVersion + "\"")
-
-        def autoScalingTemplate = new File("debian/auto_scaling_template.sh")
-        def autoScalingScript = autoScalingTemplate.readLines()
-        autoScalingScript.add(1, "YADEL_VERSION=\"" + serverVersion + "\"")
-        autoScalingScript.add(2, "wget " + downloadUrl + " -O yadel.cli-" + serverVersion + ".tar")
-        new File("build/install/cli/auto_scaling.sh").write(autoScalingScript.join("\n"))
-
-        new File("build/debian").deleteDir()
-        new File("build/debian").mkdir()
-        new File("build/debian/build").mkdir()
-        new File("build/debian/build/usr").mkdir()
-        new File("build/debian/build/usr/sbin").mkdir()
-        new File("build/debian/build/opt").mkdir()
-        new File("build/debian/build/opt/yadel.cli").mkdir()
-        new File("build/debian/build/etc").mkdir()
-        new File("build/debian/build/etc/init.d").mkdir()
-        new File("build/debian/build/DEBIAN").mkdir()
-
-        newServerScript.add(1, "pushd /opt/yadel.cli/")
-        newActorScript.add(1, "pushd /opt/yadel.cli/")
-
-        new File("build/debian/build/usr/sbin/yadel_server").write(newServerScript.join("\n"))
-        new File("build/debian/build/usr/sbin/yadel_actor").write(newActorScript.join("\n"))
-        new File("build/debian/create_and_install_package_clean.sh").write(createTemplateScript.join("\n"))
-        Files.copy(new File("debian/yadel.sh").toPath(), new File("build/debian/build/etc/init.d/yadel").toPath())
-        Files.copy(new File("debian/yadel_stop.sh").toPath(), new File("build/debian/build/usr/sbin/yadel_stop").toPath())
-
-        new File("build/debian/build/DEBIAN/control").write("Package: yadel\n" +
-                "Version: " + serverVersion + "\n" +
-                "Section: base\n" +
-                "Priority: optional\n" +
-                "Architecture: all\n" +
-                "Depends: oracle-java8-installer\n" +
-                "Maintainer: Mike Roylance <roylance.michael@gmail.com>\n" +
-                "Description: sample yadel CLI tool for ubuntu/debian\n")
-
-        project.copy {
-            from "build/install/cli"
-            into "build/debian/build/opt/yadel.cli"
-        }
-        project.copy {
-            from "build/debian/build"
-            into "build/debian/yadel.cli_" + serverVersion + "_all"
-            fileMode 0755
-        }
-
-        new File("build/debian/build").deleteDir()
-    }
-}
+packageServer.dependsOn(installDist)
 
 task tarYadel(type:Tar) {
     from "build/debian"
 }
 
-tarYadel.dependsOn(packageCLI)
+tarYadel.dependsOn(packageServer)

@@ -80,3 +80,5 @@ sapi/target
 javascript/node_modules
 csharp/Org.Roylance.Yadel.Api/bin
 csharp/Org.Roylance.Yadel.Api/obj
+
+plugin/.gradle

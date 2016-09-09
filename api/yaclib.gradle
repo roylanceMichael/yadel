@@ -1,5 +1,4 @@
 import org.roylance.yaclib.YaclibPlugin
-import org.roylance.yaclib.core.models.DependencyDescriptor
 import org.roylance.yaclib.YaclibModel
 
 group 'org.roylance.yadel'
