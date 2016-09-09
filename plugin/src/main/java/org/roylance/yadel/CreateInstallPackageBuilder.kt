@@ -30,8 +30,8 @@ apt-get update
 apt-get install -f -y
 dpkg -i ${projectName}_${version}_all.deb
 """
-
-        File(this.fileLocation).writeText(template)
+        File(fileLocation).delete()
+        File(fileLocation).writeText(template)
 
         return true
     }

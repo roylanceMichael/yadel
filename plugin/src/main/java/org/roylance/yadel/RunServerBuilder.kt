@@ -21,7 +21,7 @@ bin/$projectName $host $seedIPPort1 > seedNode1.out 2>&1&
 bin/$projectName $host $seedIPPort2 > seedNode2.out 2>&1&
 bin/$projectName $host $managerPort > manager.out 2>&1&
 """
-
+        File(fileLocation).delete()
         File(fileLocation).writeText(template)
         return true
     }

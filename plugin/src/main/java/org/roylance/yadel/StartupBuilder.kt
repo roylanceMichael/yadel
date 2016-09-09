@@ -11,6 +11,7 @@ curl -k $autoscaleTarFullUrl -o ${CommonStringsHelper.ServerTarName}
 tar -xvf ${CommonStringsHelper.ServerTarName}
 bash ${CommonStringsHelper.AutoScalingName}
 """
+        File(fileLocation).delete()
         File(fileLocation).writeText(template)
         return true
     }

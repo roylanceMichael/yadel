@@ -19,6 +19,7 @@ Depends: oracle-java8-installer
 Maintainer: $maintainerInfo
 Description: akka cluster system for $projectName
 """
+        File(fileLocation).delete()
         File(fileLocation).writeText(template)
         return true
     }

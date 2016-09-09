@@ -81,10 +81,12 @@ class YadelPlugin extends DefaultTask {
             return
         }
 
+        // delete if exists
+        new File(CommonStrings.buildInstallPath(projectName.toString(), keystoreName.toString())).delete()
+        new File(CommonStrings.buildInstallPath(projectName, truststoreName)).delete()
+
         // copy ssl files
-        println("LATEST VERSION")
-        def fullPath = CommonStrings.buildInstallPath(projectName.toString(), keystoreName.toString())
-        Files.copy(keystoreFile.toPath(), new File(fullPath).toPath())
+        Files.copy(keystoreFile.toPath(), new File(CommonStrings.buildInstallPath(projectName.toString(), keystoreName.toString())).toPath())
         Files.copy(truststoreFile.toPath(), new File(CommonStrings.buildInstallPath(projectName, truststoreName)).toPath())
 
         new AutoScalingScriptBuilder(sshRSA, additionalAutoScalingSetup, projectName, CommonStrings.buildInstallPath(projectName, CommonStrings.AutoScalingName))

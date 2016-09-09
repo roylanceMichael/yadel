@@ -9,6 +9,7 @@ class RunStopBuilder(private val fileLocation: String,
         val template = """#!/usr/bin/env bash
 ${portsToStop.map { buildKillPortTemplate(it) }.joinToString("\n")}
 """
+        File(fileLocation).delete()
         File(fileLocation).writeText(template)
         return true
     }

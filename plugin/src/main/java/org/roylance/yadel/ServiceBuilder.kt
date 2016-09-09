@@ -26,7 +26,7 @@ esac
 
 exit 0
 """
-
+        File(fileLocation).delete()
         File(fileLocation).writeText(template)
         return true
     }

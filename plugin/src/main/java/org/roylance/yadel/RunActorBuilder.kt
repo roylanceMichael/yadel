@@ -18,7 +18,8 @@ ${if (isSystemWide) "pushd /opt/$projectName" else ""}
 export JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Dakka.cluster.seed-nodes.0=akka.ssl.tcp://YadelCluster@$host:$seedIPPort1 -Dakka.cluster.seed-nodes.1=akka.ssl.tcp://YadelCluster@$host:$seedIPPort2"
 bin/$projectName $host $actorPort > current_$actorPort.out 2>&1&
 """
-        File(this.fileLocation).writeText(template)
+        File(fileLocation).delete()
+        File(fileLocation).writeText(template)
 
         return true
     }

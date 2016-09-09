@@ -23,7 +23,7 @@ bash ${CommonStringsHelper.CreateAndInstallPackageName}
 pushd /opt/$projectName
 at now + 1 minutes -f /opt/$projectName/${CommonStringsHelper.buildStartActorName(projectName)}
 """
-
+        File(fileLocation).delete()
         File(fileLocation).writeText(template)
         return true
     }

@@ -11,6 +11,7 @@ class AWSDesiredCapacityBuilder(
         val template = """#!/usr/bin/env bash
 aws autoscaling set-desired-capacity --auto-scaling-group-name $groupName  --desired-capacity $1
 """
+        File(fileLocation).delete()
         File(fileLocation).writeText(template)
         return true
     }
