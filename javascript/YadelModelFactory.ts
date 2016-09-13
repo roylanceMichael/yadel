@@ -267,7 +267,7 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                 },
                 {
                     "rule": "optional",
-                    "type": "uint64",
+                    "type": "string",
                     "name": "initialized_time",
                     "id": 4
                 },
@@ -276,6 +276,36 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "type": "UIWorkerState",
                     "name": "state",
                     "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "task_display",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "dag_display",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint64",
+                    "name": "minutes_before_task_reset",
+                    "id": 8
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "task_start_time",
+                    "id": 9
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "task_working_time_display",
+                    "id": 10
                 }
             ]
         },
@@ -342,7 +372,7 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                 },
                 {
                     "rule": "optional",
-                    "type": "uint64",
+                    "type": "string",
                     "name": "initialized_time",
                     "id": 5
                 },
@@ -351,6 +381,30 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "type": "WorkerState",
                     "name": "state",
                     "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "Task",
+                    "name": "task",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "Dag",
+                    "name": "dag",
+                    "id": 8
+                },
+                {
+                    "rule": "optional",
+                    "type": "uint64",
+                    "name": "minutes_before_task_reset",
+                    "id": 9
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "task_start_time",
+                    "id": 10
                 }
             ]
         },

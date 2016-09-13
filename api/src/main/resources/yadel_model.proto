@@ -6,8 +6,12 @@ message WorkerConfiguration {
     string ip = 2;
     string port = 3;
     string host = 4;
-    uint64 initialized_time = 5;
+    string initialized_time = 5;
     WorkerState state = 6;
+    Task task = 7;
+    Dag dag = 8;
+    uint64 minutes_before_task_reset = 9;
+    string task_start_time = 10;
 }
 
 enum WorkerState {

@@ -6,8 +6,6 @@ group 'org.roylance.yadel'
 version '0.1-SNAPSHOT'
 
 buildscript {
-    ext.CliServerUrl = "127.0.0.1"
-    ext.wgetUrl = "http://someurl/some.tar"
     ext.kotlinVersion = "1.0.3"
 
     repositories {
@@ -16,7 +14,7 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath "org.roylance.yadel:plugin:0.106-20160909.185909-1"
+        classpath "org.roylance.yadel:plugin:0.108-SNAPSHOT"
     }
 }
 
@@ -33,13 +31,13 @@ repositories {
 }
 
 dependencies {
-    compile 'org.roylance.yadel:api:0.106-SNAPSHOT'
+    compile 'org.roylance.yadel:api:0.108-SNAPSHOT'
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
 task packageServer(type: YadelPlugin) {
-    serverUrl = "192.168.12.130"
+    serverUrl = "192.168.1.5"
     serverVersion = version
     projectName = "cli"
     awsAutoScalingGroupName = "sample_test"

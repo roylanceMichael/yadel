@@ -433,9 +433,14 @@ public final class YadelModel {
         getHostBytes();
 
     /**
-     * <code>optional uint64 initialized_time = 5;</code>
+     * <code>optional string initialized_time = 5;</code>
      */
-    long getInitializedTime();
+    java.lang.String getInitializedTime();
+    /**
+     * <code>optional string initialized_time = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getInitializedTimeBytes();
 
     /**
      * <code>optional .org.roylance.yadel.WorkerState state = 6;</code>
@@ -445,6 +450,47 @@ public final class YadelModel {
      * <code>optional .org.roylance.yadel.WorkerState state = 6;</code>
      */
     org.roylance.yadel.YadelModel.WorkerState getState();
+
+    /**
+     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     */
+    boolean hasTask();
+    /**
+     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     */
+    org.roylance.yadel.YadelModel.Task getTask();
+    /**
+     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     */
+    org.roylance.yadel.YadelModel.TaskOrBuilder getTaskOrBuilder();
+
+    /**
+     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     */
+    boolean hasDag();
+    /**
+     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     */
+    org.roylance.yadel.YadelModel.Dag getDag();
+    /**
+     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     */
+    org.roylance.yadel.YadelModel.DagOrBuilder getDagOrBuilder();
+
+    /**
+     * <code>optional uint64 minutes_before_task_reset = 9;</code>
+     */
+    long getMinutesBeforeTaskReset();
+
+    /**
+     * <code>optional string task_start_time = 10;</code>
+     */
+    java.lang.String getTaskStartTime();
+    /**
+     * <code>optional string task_start_time = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getTaskStartTimeBytes();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.WorkerConfiguration}
@@ -462,8 +508,10 @@ public final class YadelModel {
       ip_ = "";
       port_ = "";
       host_ = "";
-      initializedTime_ = 0L;
+      initializedTime_ = "";
       state_ = 0;
+      minutesBeforeTaskReset_ = 0L;
+      taskStartTime_ = "";
     }
 
     @java.lang.Override
@@ -515,15 +563,53 @@ public final class YadelModel {
               host_ = s;
               break;
             }
-            case 40: {
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              initializedTime_ = input.readUInt64();
+              initializedTime_ = s;
               break;
             }
             case 48: {
               int rawValue = input.readEnum();
 
               state_ = rawValue;
+              break;
+            }
+            case 58: {
+              org.roylance.yadel.YadelModel.Task.Builder subBuilder = null;
+              if (task_ != null) {
+                subBuilder = task_.toBuilder();
+              }
+              task_ = input.readMessage(org.roylance.yadel.YadelModel.Task.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(task_);
+                task_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              org.roylance.yadel.YadelModel.Dag.Builder subBuilder = null;
+              if (dag_ != null) {
+                subBuilder = dag_.toBuilder();
+              }
+              dag_ = input.readMessage(org.roylance.yadel.YadelModel.Dag.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dag_);
+                dag_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 72: {
+
+              minutesBeforeTaskReset_ = input.readUInt64();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              taskStartTime_ = s;
               break;
             }
           }
@@ -686,12 +772,37 @@ public final class YadelModel {
     }
 
     public static final int INITIALIZED_TIME_FIELD_NUMBER = 5;
-    private long initializedTime_;
+    private volatile java.lang.Object initializedTime_;
     /**
-     * <code>optional uint64 initialized_time = 5;</code>
+     * <code>optional string initialized_time = 5;</code>
      */
-    public long getInitializedTime() {
-      return initializedTime_;
+    public java.lang.String getInitializedTime() {
+      java.lang.Object ref = initializedTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        initializedTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string initialized_time = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getInitializedTimeBytes() {
+      java.lang.Object ref = initializedTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        initializedTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int STATE_FIELD_NUMBER = 6;
@@ -708,6 +819,91 @@ public final class YadelModel {
     public org.roylance.yadel.YadelModel.WorkerState getState() {
       org.roylance.yadel.YadelModel.WorkerState result = org.roylance.yadel.YadelModel.WorkerState.valueOf(state_);
       return result == null ? org.roylance.yadel.YadelModel.WorkerState.UNRECOGNIZED : result;
+    }
+
+    public static final int TASK_FIELD_NUMBER = 7;
+    private org.roylance.yadel.YadelModel.Task task_;
+    /**
+     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     */
+    public boolean hasTask() {
+      return task_ != null;
+    }
+    /**
+     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     */
+    public org.roylance.yadel.YadelModel.Task getTask() {
+      return task_ == null ? org.roylance.yadel.YadelModel.Task.getDefaultInstance() : task_;
+    }
+    /**
+     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     */
+    public org.roylance.yadel.YadelModel.TaskOrBuilder getTaskOrBuilder() {
+      return getTask();
+    }
+
+    public static final int DAG_FIELD_NUMBER = 8;
+    private org.roylance.yadel.YadelModel.Dag dag_;
+    /**
+     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     */
+    public boolean hasDag() {
+      return dag_ != null;
+    }
+    /**
+     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     */
+    public org.roylance.yadel.YadelModel.Dag getDag() {
+      return dag_ == null ? org.roylance.yadel.YadelModel.Dag.getDefaultInstance() : dag_;
+    }
+    /**
+     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     */
+    public org.roylance.yadel.YadelModel.DagOrBuilder getDagOrBuilder() {
+      return getDag();
+    }
+
+    public static final int MINUTES_BEFORE_TASK_RESET_FIELD_NUMBER = 9;
+    private long minutesBeforeTaskReset_;
+    /**
+     * <code>optional uint64 minutes_before_task_reset = 9;</code>
+     */
+    public long getMinutesBeforeTaskReset() {
+      return minutesBeforeTaskReset_;
+    }
+
+    public static final int TASK_START_TIME_FIELD_NUMBER = 10;
+    private volatile java.lang.Object taskStartTime_;
+    /**
+     * <code>optional string task_start_time = 10;</code>
+     */
+    public java.lang.String getTaskStartTime() {
+      java.lang.Object ref = taskStartTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskStartTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string task_start_time = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTaskStartTimeBytes() {
+      java.lang.Object ref = taskStartTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskStartTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -734,11 +930,23 @@ public final class YadelModel {
       if (!getHostBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, host_);
       }
-      if (initializedTime_ != 0L) {
-        output.writeUInt64(5, initializedTime_);
+      if (!getInitializedTimeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, initializedTime_);
       }
       if (state_ != org.roylance.yadel.YadelModel.WorkerState.WORKING.getNumber()) {
         output.writeEnum(6, state_);
+      }
+      if (task_ != null) {
+        output.writeMessage(7, getTask());
+      }
+      if (dag_ != null) {
+        output.writeMessage(8, getDag());
+      }
+      if (minutesBeforeTaskReset_ != 0L) {
+        output.writeUInt64(9, minutesBeforeTaskReset_);
+      }
+      if (!getTaskStartTimeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, taskStartTime_);
       }
     }
 
@@ -759,13 +967,27 @@ public final class YadelModel {
       if (!getHostBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, host_);
       }
-      if (initializedTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, initializedTime_);
+      if (!getInitializedTimeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, initializedTime_);
       }
       if (state_ != org.roylance.yadel.YadelModel.WorkerState.WORKING.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, state_);
+      }
+      if (task_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getTask());
+      }
+      if (dag_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getDag());
+      }
+      if (minutesBeforeTaskReset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(9, minutesBeforeTaskReset_);
+      }
+      if (!getTaskStartTimeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, taskStartTime_);
       }
       memoizedSize = size;
       return size;
@@ -791,9 +1013,23 @@ public final class YadelModel {
           .equals(other.getPort());
       result = result && getHost()
           .equals(other.getHost());
-      result = result && (getInitializedTime()
-          == other.getInitializedTime());
+      result = result && getInitializedTime()
+          .equals(other.getInitializedTime());
       result = result && state_ == other.state_;
+      result = result && (hasTask() == other.hasTask());
+      if (hasTask()) {
+        result = result && getTask()
+            .equals(other.getTask());
+      }
+      result = result && (hasDag() == other.hasDag());
+      if (hasDag()) {
+        result = result && getDag()
+            .equals(other.getDag());
+      }
+      result = result && (getMinutesBeforeTaskReset()
+          == other.getMinutesBeforeTaskReset());
+      result = result && getTaskStartTime()
+          .equals(other.getTaskStartTime());
       return result;
     }
 
@@ -813,10 +1049,22 @@ public final class YadelModel {
       hash = (37 * hash) + HOST_FIELD_NUMBER;
       hash = (53 * hash) + getHost().hashCode();
       hash = (37 * hash) + INITIALIZED_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getInitializedTime());
+      hash = (53 * hash) + getInitializedTime().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
+      if (hasTask()) {
+        hash = (37 * hash) + TASK_FIELD_NUMBER;
+        hash = (53 * hash) + getTask().hashCode();
+      }
+      if (hasDag()) {
+        hash = (37 * hash) + DAG_FIELD_NUMBER;
+        hash = (53 * hash) + getDag().hashCode();
+      }
+      hash = (37 * hash) + MINUTES_BEFORE_TASK_RESET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMinutesBeforeTaskReset());
+      hash = (37 * hash) + TASK_START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskStartTime().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -943,9 +1191,25 @@ public final class YadelModel {
 
         host_ = "";
 
-        initializedTime_ = 0L;
+        initializedTime_ = "";
 
         state_ = 0;
+
+        if (taskBuilder_ == null) {
+          task_ = null;
+        } else {
+          task_ = null;
+          taskBuilder_ = null;
+        }
+        if (dagBuilder_ == null) {
+          dag_ = null;
+        } else {
+          dag_ = null;
+          dagBuilder_ = null;
+        }
+        minutesBeforeTaskReset_ = 0L;
+
+        taskStartTime_ = "";
 
         return this;
       }
@@ -975,6 +1239,18 @@ public final class YadelModel {
         result.host_ = host_;
         result.initializedTime_ = initializedTime_;
         result.state_ = state_;
+        if (taskBuilder_ == null) {
+          result.task_ = task_;
+        } else {
+          result.task_ = taskBuilder_.build();
+        }
+        if (dagBuilder_ == null) {
+          result.dag_ = dag_;
+        } else {
+          result.dag_ = dagBuilder_.build();
+        }
+        result.minutesBeforeTaskReset_ = minutesBeforeTaskReset_;
+        result.taskStartTime_ = taskStartTime_;
         onBuilt();
         return result;
       }
@@ -1032,11 +1308,25 @@ public final class YadelModel {
           host_ = other.host_;
           onChanged();
         }
-        if (other.getInitializedTime() != 0L) {
-          setInitializedTime(other.getInitializedTime());
+        if (!other.getInitializedTime().isEmpty()) {
+          initializedTime_ = other.initializedTime_;
+          onChanged();
         }
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
+        }
+        if (other.hasTask()) {
+          mergeTask(other.getTask());
+        }
+        if (other.hasDag()) {
+          mergeDag(other.getDag());
+        }
+        if (other.getMinutesBeforeTaskReset() != 0L) {
+          setMinutesBeforeTaskReset(other.getMinutesBeforeTaskReset());
+        }
+        if (!other.getTaskStartTime().isEmpty()) {
+          taskStartTime_ = other.taskStartTime_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -1340,28 +1630,71 @@ public final class YadelModel {
         return this;
       }
 
-      private long initializedTime_ ;
+      private java.lang.Object initializedTime_ = "";
       /**
-       * <code>optional uint64 initialized_time = 5;</code>
+       * <code>optional string initialized_time = 5;</code>
        */
-      public long getInitializedTime() {
-        return initializedTime_;
+      public java.lang.String getInitializedTime() {
+        java.lang.Object ref = initializedTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          initializedTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional uint64 initialized_time = 5;</code>
+       * <code>optional string initialized_time = 5;</code>
        */
-      public Builder setInitializedTime(long value) {
-        
+      public com.google.protobuf.ByteString
+          getInitializedTimeBytes() {
+        java.lang.Object ref = initializedTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          initializedTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string initialized_time = 5;</code>
+       */
+      public Builder setInitializedTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         initializedTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 initialized_time = 5;</code>
+       * <code>optional string initialized_time = 5;</code>
        */
       public Builder clearInitializedTime() {
         
-        initializedTime_ = 0L;
+        initializedTime_ = getDefaultInstance().getInitializedTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string initialized_time = 5;</code>
+       */
+      public Builder setInitializedTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        initializedTime_ = value;
         onChanged();
         return this;
       }
@@ -1406,6 +1739,335 @@ public final class YadelModel {
       public Builder clearState() {
         
         state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private org.roylance.yadel.YadelModel.Task task_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.Task, org.roylance.yadel.YadelModel.Task.Builder, org.roylance.yadel.YadelModel.TaskOrBuilder> taskBuilder_;
+      /**
+       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       */
+      public boolean hasTask() {
+        return taskBuilder_ != null || task_ != null;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       */
+      public org.roylance.yadel.YadelModel.Task getTask() {
+        if (taskBuilder_ == null) {
+          return task_ == null ? org.roylance.yadel.YadelModel.Task.getDefaultInstance() : task_;
+        } else {
+          return taskBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       */
+      public Builder setTask(org.roylance.yadel.YadelModel.Task value) {
+        if (taskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          task_ = value;
+          onChanged();
+        } else {
+          taskBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       */
+      public Builder setTask(
+          org.roylance.yadel.YadelModel.Task.Builder builderForValue) {
+        if (taskBuilder_ == null) {
+          task_ = builderForValue.build();
+          onChanged();
+        } else {
+          taskBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       */
+      public Builder mergeTask(org.roylance.yadel.YadelModel.Task value) {
+        if (taskBuilder_ == null) {
+          if (task_ != null) {
+            task_ =
+              org.roylance.yadel.YadelModel.Task.newBuilder(task_).mergeFrom(value).buildPartial();
+          } else {
+            task_ = value;
+          }
+          onChanged();
+        } else {
+          taskBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       */
+      public Builder clearTask() {
+        if (taskBuilder_ == null) {
+          task_ = null;
+          onChanged();
+        } else {
+          task_ = null;
+          taskBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       */
+      public org.roylance.yadel.YadelModel.Task.Builder getTaskBuilder() {
+        
+        onChanged();
+        return getTaskFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       */
+      public org.roylance.yadel.YadelModel.TaskOrBuilder getTaskOrBuilder() {
+        if (taskBuilder_ != null) {
+          return taskBuilder_.getMessageOrBuilder();
+        } else {
+          return task_ == null ?
+              org.roylance.yadel.YadelModel.Task.getDefaultInstance() : task_;
+        }
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.Task, org.roylance.yadel.YadelModel.Task.Builder, org.roylance.yadel.YadelModel.TaskOrBuilder> 
+          getTaskFieldBuilder() {
+        if (taskBuilder_ == null) {
+          taskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.roylance.yadel.YadelModel.Task, org.roylance.yadel.YadelModel.Task.Builder, org.roylance.yadel.YadelModel.TaskOrBuilder>(
+                  getTask(),
+                  getParentForChildren(),
+                  isClean());
+          task_ = null;
+        }
+        return taskBuilder_;
+      }
+
+      private org.roylance.yadel.YadelModel.Dag dag_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.Dag, org.roylance.yadel.YadelModel.Dag.Builder, org.roylance.yadel.YadelModel.DagOrBuilder> dagBuilder_;
+      /**
+       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       */
+      public boolean hasDag() {
+        return dagBuilder_ != null || dag_ != null;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       */
+      public org.roylance.yadel.YadelModel.Dag getDag() {
+        if (dagBuilder_ == null) {
+          return dag_ == null ? org.roylance.yadel.YadelModel.Dag.getDefaultInstance() : dag_;
+        } else {
+          return dagBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       */
+      public Builder setDag(org.roylance.yadel.YadelModel.Dag value) {
+        if (dagBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dag_ = value;
+          onChanged();
+        } else {
+          dagBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       */
+      public Builder setDag(
+          org.roylance.yadel.YadelModel.Dag.Builder builderForValue) {
+        if (dagBuilder_ == null) {
+          dag_ = builderForValue.build();
+          onChanged();
+        } else {
+          dagBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       */
+      public Builder mergeDag(org.roylance.yadel.YadelModel.Dag value) {
+        if (dagBuilder_ == null) {
+          if (dag_ != null) {
+            dag_ =
+              org.roylance.yadel.YadelModel.Dag.newBuilder(dag_).mergeFrom(value).buildPartial();
+          } else {
+            dag_ = value;
+          }
+          onChanged();
+        } else {
+          dagBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       */
+      public Builder clearDag() {
+        if (dagBuilder_ == null) {
+          dag_ = null;
+          onChanged();
+        } else {
+          dag_ = null;
+          dagBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       */
+      public org.roylance.yadel.YadelModel.Dag.Builder getDagBuilder() {
+        
+        onChanged();
+        return getDagFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       */
+      public org.roylance.yadel.YadelModel.DagOrBuilder getDagOrBuilder() {
+        if (dagBuilder_ != null) {
+          return dagBuilder_.getMessageOrBuilder();
+        } else {
+          return dag_ == null ?
+              org.roylance.yadel.YadelModel.Dag.getDefaultInstance() : dag_;
+        }
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.Dag, org.roylance.yadel.YadelModel.Dag.Builder, org.roylance.yadel.YadelModel.DagOrBuilder> 
+          getDagFieldBuilder() {
+        if (dagBuilder_ == null) {
+          dagBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.roylance.yadel.YadelModel.Dag, org.roylance.yadel.YadelModel.Dag.Builder, org.roylance.yadel.YadelModel.DagOrBuilder>(
+                  getDag(),
+                  getParentForChildren(),
+                  isClean());
+          dag_ = null;
+        }
+        return dagBuilder_;
+      }
+
+      private long minutesBeforeTaskReset_ ;
+      /**
+       * <code>optional uint64 minutes_before_task_reset = 9;</code>
+       */
+      public long getMinutesBeforeTaskReset() {
+        return minutesBeforeTaskReset_;
+      }
+      /**
+       * <code>optional uint64 minutes_before_task_reset = 9;</code>
+       */
+      public Builder setMinutesBeforeTaskReset(long value) {
+        
+        minutesBeforeTaskReset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 minutes_before_task_reset = 9;</code>
+       */
+      public Builder clearMinutesBeforeTaskReset() {
+        
+        minutesBeforeTaskReset_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object taskStartTime_ = "";
+      /**
+       * <code>optional string task_start_time = 10;</code>
+       */
+      public java.lang.String getTaskStartTime() {
+        java.lang.Object ref = taskStartTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          taskStartTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string task_start_time = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTaskStartTimeBytes() {
+        java.lang.Object ref = taskStartTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          taskStartTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string task_start_time = 10;</code>
+       */
+      public Builder setTaskStartTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        taskStartTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string task_start_time = 10;</code>
+       */
+      public Builder clearTaskStartTime() {
+        
+        taskStartTime_ = getDefaultInstance().getTaskStartTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string task_start_time = 10;</code>
+       */
+      public Builder setTaskStartTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        taskStartTime_ = value;
         onChanged();
         return this;
       }
@@ -10153,44 +10815,48 @@ public final class YadelModel {
   static {
     java.lang.String[] descriptorData = {
       "\n\021yadel_model.proto\022\022org.roylance.yadel\"" +
-      "\223\001\n\023WorkerConfiguration\022\n\n\002id\030\001 \001(\t\022\n\n\002i" +
+      "\235\002\n\023WorkerConfiguration\022\n\n\002id\030\001 \001(\t\022\n\n\002i" +
       "p\030\002 \001(\t\022\014\n\004port\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\022\030\n\020i" +
-      "nitialized_time\030\005 \001(\004\022.\n\005state\030\006 \001(\0162\037.o" +
-      "rg.roylance.yadel.WorkerState\"\"\n\003Log\022\n\n\002" +
-      "id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\"\362\002\n\003Dag\022\n\n\002id\030" +
-      "\001 \001(\t\022\017\n\007display\030\002 \001(\t\0221\n\017flattened_task" +
-      "s\030\003 \003(\0132\030.org.roylance.yadel.Task\022\026\n\016exe" +
-      "cution_date\030\004 \001(\003\022\022\n\nstart_date\030\005 \001(\003\022\020\n" +
-      "\010end_date\030\006 \001(\003\022\020\n\010duration\030\007 \001(\003\0223\n\021unc",
-      "ompleted_tasks\030\010 \003(\0132\030.org.roylance.yade" +
-      "l.Task\0222\n\020processing_tasks\030\t \003(\0132\030.org.r" +
-      "oylance.yadel.Task\022/\n\rerrored_tasks\030\n \003(" +
-      "\0132\030.org.roylance.yadel.Task\0221\n\017completed" +
-      "_tasks\030\013 \003(\0132\030.org.roylance.yadel.Task\"\302" +
-      "\002\n\004Task\022\n\n\002id\030\001 \001(\t\022\017\n\007display\030\002 \001(\t\0228\n\014" +
-      "dependencies\030\003 \003(\0132\".org.roylance.yadel." +
-      "TaskDependency\022\016\n\006dag_id\030\004 \001(\t\022%\n\004logs\030\005" +
-      " \003(\0132\027.org.roylance.yadel.Log\022\026\n\016executi" +
-      "on_date\030\006 \001(\003\022\022\n\nstart_date\030\007 \001(\003\022\020\n\010end",
-      "_date\030\010 \001(\003\022\020\n\010duration\030\t \001(\003\022\035\n\025first_c" +
-      "ontext_base_64\030\n \001(\t\022\036\n\026second_context_b" +
-      "ase_64\030\013 \001(\t\022\035\n\025third_context_base_64\030\014 " +
-      "\001(\t\"4\n\016TaskDependency\022\n\n\002id\030\001 \001(\t\022\026\n\016par" +
-      "ent_task_id\030\002 \001(\t\"\323\001\n\014AddTaskToDag\022\n\n\002id" +
-      "\030\001 \001(\t\022-\n\013parent_task\030\002 \001(\0132\030.org.roylan" +
-      "ce.yadel.Task\022*\n\010new_task\030\003 \001(\0132\030.org.ro" +
-      "ylance.yadel.Task\022\035\n\025first_context_base_" +
-      "64\030\004 \001(\t\022\036\n\026second_context_base_64\030\005 \001(\t" +
-      "\022\035\n\025third_context_base_64\030\006 \001(\t\"\251\001\n\014Comp",
-      "leteTask\022\n\n\002id\030\001 \001(\t\022&\n\004task\030\002 \001(\0132\030.org" +
-      ".roylance.yadel.Task\022E\n\024worker_configura" +
-      "tion\030\003 \001(\0132\'.org.roylance.yadel.WorkerCo" +
-      "nfiguration\022\014\n\004logs\030\004 \003(\t\022\020\n\010is_error\030\005 " +
-      "\001(\010*$\n\013WorkerState\022\013\n\007WORKING\020\000\022\010\n\004IDLE\020" +
-      "\001*.\n\032WorkerToManagerMessageType\022\020\n\014REGIS" +
-      "TRATION\020\000*9\n\033ManagerToManagerMessageType" +
-      "\022\032\n\026ENSURE_WORKERS_WORKING\020\000*$\n\tActorRol" +
-      "e\022\013\n\007MANAGER\020\000\022\n\n\006WORKER\020\001b\006proto3"
+      "nitialized_time\030\005 \001(\t\022.\n\005state\030\006 \001(\0162\037.o" +
+      "rg.roylance.yadel.WorkerState\022&\n\004task\030\007 " +
+      "\001(\0132\030.org.roylance.yadel.Task\022$\n\003dag\030\010 \001" +
+      "(\0132\027.org.roylance.yadel.Dag\022!\n\031minutes_b" +
+      "efore_task_reset\030\t \001(\004\022\027\n\017task_start_tim" +
+      "e\030\n \001(\t\"\"\n\003Log\022\n\n\002id\030\001 \001(\t\022\017\n\007message\030\002 " +
+      "\001(\t\"\362\002\n\003Dag\022\n\n\002id\030\001 \001(\t\022\017\n\007display\030\002 \001(\t",
+      "\0221\n\017flattened_tasks\030\003 \003(\0132\030.org.roylance" +
+      ".yadel.Task\022\026\n\016execution_date\030\004 \001(\003\022\022\n\ns" +
+      "tart_date\030\005 \001(\003\022\020\n\010end_date\030\006 \001(\003\022\020\n\010dur" +
+      "ation\030\007 \001(\003\0223\n\021uncompleted_tasks\030\010 \003(\0132\030" +
+      ".org.roylance.yadel.Task\0222\n\020processing_t" +
+      "asks\030\t \003(\0132\030.org.roylance.yadel.Task\022/\n\r" +
+      "errored_tasks\030\n \003(\0132\030.org.roylance.yadel" +
+      ".Task\0221\n\017completed_tasks\030\013 \003(\0132\030.org.roy" +
+      "lance.yadel.Task\"\302\002\n\004Task\022\n\n\002id\030\001 \001(\t\022\017\n" +
+      "\007display\030\002 \001(\t\0228\n\014dependencies\030\003 \003(\0132\".o",
+      "rg.roylance.yadel.TaskDependency\022\016\n\006dag_" +
+      "id\030\004 \001(\t\022%\n\004logs\030\005 \003(\0132\027.org.roylance.ya" +
+      "del.Log\022\026\n\016execution_date\030\006 \001(\003\022\022\n\nstart" +
+      "_date\030\007 \001(\003\022\020\n\010end_date\030\010 \001(\003\022\020\n\010duratio" +
+      "n\030\t \001(\003\022\035\n\025first_context_base_64\030\n \001(\t\022\036" +
+      "\n\026second_context_base_64\030\013 \001(\t\022\035\n\025third_" +
+      "context_base_64\030\014 \001(\t\"4\n\016TaskDependency\022" +
+      "\n\n\002id\030\001 \001(\t\022\026\n\016parent_task_id\030\002 \001(\t\"\323\001\n\014" +
+      "AddTaskToDag\022\n\n\002id\030\001 \001(\t\022-\n\013parent_task\030" +
+      "\002 \001(\0132\030.org.roylance.yadel.Task\022*\n\010new_t",
+      "ask\030\003 \001(\0132\030.org.roylance.yadel.Task\022\035\n\025f" +
+      "irst_context_base_64\030\004 \001(\t\022\036\n\026second_con" +
+      "text_base_64\030\005 \001(\t\022\035\n\025third_context_base" +
+      "_64\030\006 \001(\t\"\251\001\n\014CompleteTask\022\n\n\002id\030\001 \001(\t\022&" +
+      "\n\004task\030\002 \001(\0132\030.org.roylance.yadel.Task\022E" +
+      "\n\024worker_configuration\030\003 \001(\0132\'.org.royla" +
+      "nce.yadel.WorkerConfiguration\022\014\n\004logs\030\004 " +
+      "\003(\t\022\020\n\010is_error\030\005 \001(\010*$\n\013WorkerState\022\013\n\007" +
+      "WORKING\020\000\022\010\n\004IDLE\020\001*.\n\032WorkerToManagerMe" +
+      "ssageType\022\020\n\014REGISTRATION\020\000*9\n\033ManagerTo",
+      "ManagerMessageType\022\032\n\026ENSURE_WORKERS_WOR" +
+      "KING\020\000*$\n\tActorRole\022\013\n\007MANAGER\020\000\022\n\n\006WORK" +
+      "ER\020\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10209,7 +10875,7 @@ public final class YadelModel {
     internal_static_org_roylance_yadel_WorkerConfiguration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_WorkerConfiguration_descriptor,
-        new java.lang.String[] { "Id", "Ip", "Port", "Host", "InitializedTime", "State", });
+        new java.lang.String[] { "Id", "Ip", "Port", "Host", "InitializedTime", "State", "Task", "Dag", "MinutesBeforeTaskReset", "TaskStartTime", });
     internal_static_org_roylance_yadel_Log_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_org_roylance_yadel_Log_fieldAccessorTable = new

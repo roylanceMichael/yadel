@@ -45,13 +45,16 @@ namespace Org.Roylance.Yadel {
             "Y3V0aW9uX2RhdGUYBCABKAMSEgoKc3RhcnRfZGF0ZRgFIAEoAxIQCghlbmRf",
             "ZGF0ZRgGIAEoAxIQCghkdXJhdGlvbhgHIAEoAxIUCgxpc19jb21wbGV0ZWQY",
             "CCABKAgSFQoNaXNfcHJvY2Vzc2luZxgJIAEoCBIQCghpc19lcnJvchgKIAEo",
-            "CBIMCgRsb2dzGAsgAygJIosBChVVSVdvcmtlckNvbmZpZ3VyYXRpb24SCgoC",
+            "CBIMCgRsb2dzGAsgAygJIpUCChVVSVdvcmtlckNvbmZpZ3VyYXRpb24SCgoC",
             "aXAYASABKAkSDAoEcG9ydBgCIAEoCRIMCgRob3N0GAMgASgJEhgKEGluaXRp",
-            "YWxpemVkX3RpbWUYBCABKAQSMAoFc3RhdGUYBSABKA4yIS5vcmcucm95bGFu",
-            "Y2UueWFkZWwuVUlXb3JrZXJTdGF0ZSo1ChJVSVlhZGVsUmVxdWVzdFR5cGUS",
-            "DwoLUkVQT1JUX0RBR1MQABIOCgpERUxFVEVfREFHEAEqOgoNVUlXb3JrZXJT",
-            "dGF0ZRIVChFDVVJSRU5UTFlfV09SS0lORxAAEhIKDkNVUlJFTlRMWV9JRExF",
-            "EAFiBnByb3RvMw=="));
+            "YWxpemVkX3RpbWUYBCABKAkSMAoFc3RhdGUYBSABKA4yIS5vcmcucm95bGFu",
+            "Y2UueWFkZWwuVUlXb3JrZXJTdGF0ZRIUCgx0YXNrX2Rpc3BsYXkYBiABKAkS",
+            "EwoLZGFnX2Rpc3BsYXkYByABKAkSIQoZbWludXRlc19iZWZvcmVfdGFza19y",
+            "ZXNldBgIIAEoBBIXCg90YXNrX3N0YXJ0X3RpbWUYCSABKAkSIQoZdGFza193",
+            "b3JraW5nX3RpbWVfZGlzcGxheRgKIAEoCSo1ChJVSVlhZGVsUmVxdWVzdFR5",
+            "cGUSDwoLUkVQT1JUX0RBR1MQABIOCgpERUxFVEVfREFHEAEqOgoNVUlXb3Jr",
+            "ZXJTdGF0ZRIVChFDVVJSRU5UTFlfV09SS0lORxAAEhIKDkNVUlJFTlRMWV9J",
+            "RExFEAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Roylance.Yadel.UIYadelRequestType), typeof(global::Org.Roylance.Yadel.UIWorkerState), }, new pbr::GeneratedClrTypeInfo[] {
@@ -61,7 +64,7 @@ namespace Org.Roylance.Yadel {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIDag), global::Org.Roylance.Yadel.UIDag.Parser, new[]{ "Id", "Display", "Nodes", "Edges", "IsCompleted", "IsProcessing", "IsError", "Logs", "NumberCompleted", "NumberProcessing", "NumberErrored", "NumberUnprocessed" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIEdge), global::Org.Roylance.Yadel.UIEdge.Parser, new[]{ "NodeId1", "NodeId2" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UINode), global::Org.Roylance.Yadel.UINode.Parser, new[]{ "Id", "Display", "ExecutionDate", "StartDate", "EndDate", "Duration", "IsCompleted", "IsProcessing", "IsError", "Logs" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIWorkerConfiguration), global::Org.Roylance.Yadel.UIWorkerConfiguration.Parser, new[]{ "Ip", "Port", "Host", "InitializedTime", "State" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIWorkerConfiguration), global::Org.Roylance.Yadel.UIWorkerConfiguration.Parser, new[]{ "Ip", "Port", "Host", "InitializedTime", "State", "TaskDisplay", "DagDisplay", "MinutesBeforeTaskReset", "TaskStartTime", "TaskWorkingTimeDisplay" }, null, null, null)
           }));
     }
     #endregion
@@ -1580,6 +1583,11 @@ namespace Org.Roylance.Yadel {
       host_ = other.host_;
       initializedTime_ = other.initializedTime_;
       state_ = other.state_;
+      taskDisplay_ = other.taskDisplay_;
+      dagDisplay_ = other.dagDisplay_;
+      minutesBeforeTaskReset_ = other.minutesBeforeTaskReset_;
+      taskStartTime_ = other.taskStartTime_;
+      taskWorkingTimeDisplay_ = other.taskWorkingTimeDisplay_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1622,12 +1630,12 @@ namespace Org.Roylance.Yadel {
 
     /// <summary>Field number for the "initialized_time" field.</summary>
     public const int InitializedTimeFieldNumber = 4;
-    private ulong initializedTime_;
+    private string initializedTime_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ulong InitializedTime {
+    public string InitializedTime {
       get { return initializedTime_; }
       set {
-        initializedTime_ = value;
+        initializedTime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1639,6 +1647,61 @@ namespace Org.Roylance.Yadel {
       get { return state_; }
       set {
         state_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "task_display" field.</summary>
+    public const int TaskDisplayFieldNumber = 6;
+    private string taskDisplay_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TaskDisplay {
+      get { return taskDisplay_; }
+      set {
+        taskDisplay_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "dag_display" field.</summary>
+    public const int DagDisplayFieldNumber = 7;
+    private string dagDisplay_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string DagDisplay {
+      get { return dagDisplay_; }
+      set {
+        dagDisplay_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "minutes_before_task_reset" field.</summary>
+    public const int MinutesBeforeTaskResetFieldNumber = 8;
+    private ulong minutesBeforeTaskReset_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong MinutesBeforeTaskReset {
+      get { return minutesBeforeTaskReset_; }
+      set {
+        minutesBeforeTaskReset_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "task_start_time" field.</summary>
+    public const int TaskStartTimeFieldNumber = 9;
+    private string taskStartTime_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TaskStartTime {
+      get { return taskStartTime_; }
+      set {
+        taskStartTime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "task_working_time_display" field.</summary>
+    public const int TaskWorkingTimeDisplayFieldNumber = 10;
+    private string taskWorkingTimeDisplay_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TaskWorkingTimeDisplay {
+      get { return taskWorkingTimeDisplay_; }
+      set {
+        taskWorkingTimeDisplay_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1660,6 +1723,11 @@ namespace Org.Roylance.Yadel {
       if (Host != other.Host) return false;
       if (InitializedTime != other.InitializedTime) return false;
       if (State != other.State) return false;
+      if (TaskDisplay != other.TaskDisplay) return false;
+      if (DagDisplay != other.DagDisplay) return false;
+      if (MinutesBeforeTaskReset != other.MinutesBeforeTaskReset) return false;
+      if (TaskStartTime != other.TaskStartTime) return false;
+      if (TaskWorkingTimeDisplay != other.TaskWorkingTimeDisplay) return false;
       return true;
     }
 
@@ -1669,8 +1737,13 @@ namespace Org.Roylance.Yadel {
       if (Ip.Length != 0) hash ^= Ip.GetHashCode();
       if (Port.Length != 0) hash ^= Port.GetHashCode();
       if (Host.Length != 0) hash ^= Host.GetHashCode();
-      if (InitializedTime != 0UL) hash ^= InitializedTime.GetHashCode();
+      if (InitializedTime.Length != 0) hash ^= InitializedTime.GetHashCode();
       if (State != 0) hash ^= State.GetHashCode();
+      if (TaskDisplay.Length != 0) hash ^= TaskDisplay.GetHashCode();
+      if (DagDisplay.Length != 0) hash ^= DagDisplay.GetHashCode();
+      if (MinutesBeforeTaskReset != 0UL) hash ^= MinutesBeforeTaskReset.GetHashCode();
+      if (TaskStartTime.Length != 0) hash ^= TaskStartTime.GetHashCode();
+      if (TaskWorkingTimeDisplay.Length != 0) hash ^= TaskWorkingTimeDisplay.GetHashCode();
       return hash;
     }
 
@@ -1693,13 +1766,33 @@ namespace Org.Roylance.Yadel {
         output.WriteRawTag(26);
         output.WriteString(Host);
       }
-      if (InitializedTime != 0UL) {
-        output.WriteRawTag(32);
-        output.WriteUInt64(InitializedTime);
+      if (InitializedTime.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(InitializedTime);
       }
       if (State != 0) {
         output.WriteRawTag(40);
         output.WriteEnum((int) State);
+      }
+      if (TaskDisplay.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(TaskDisplay);
+      }
+      if (DagDisplay.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(DagDisplay);
+      }
+      if (MinutesBeforeTaskReset != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(MinutesBeforeTaskReset);
+      }
+      if (TaskStartTime.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(TaskStartTime);
+      }
+      if (TaskWorkingTimeDisplay.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(TaskWorkingTimeDisplay);
       }
     }
 
@@ -1715,11 +1808,26 @@ namespace Org.Roylance.Yadel {
       if (Host.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Host);
       }
-      if (InitializedTime != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(InitializedTime);
+      if (InitializedTime.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InitializedTime);
       }
       if (State != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      }
+      if (TaskDisplay.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskDisplay);
+      }
+      if (DagDisplay.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DagDisplay);
+      }
+      if (MinutesBeforeTaskReset != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(MinutesBeforeTaskReset);
+      }
+      if (TaskStartTime.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskStartTime);
+      }
+      if (TaskWorkingTimeDisplay.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskWorkingTimeDisplay);
       }
       return size;
     }
@@ -1738,11 +1846,26 @@ namespace Org.Roylance.Yadel {
       if (other.Host.Length != 0) {
         Host = other.Host;
       }
-      if (other.InitializedTime != 0UL) {
+      if (other.InitializedTime.Length != 0) {
         InitializedTime = other.InitializedTime;
       }
       if (other.State != 0) {
         State = other.State;
+      }
+      if (other.TaskDisplay.Length != 0) {
+        TaskDisplay = other.TaskDisplay;
+      }
+      if (other.DagDisplay.Length != 0) {
+        DagDisplay = other.DagDisplay;
+      }
+      if (other.MinutesBeforeTaskReset != 0UL) {
+        MinutesBeforeTaskReset = other.MinutesBeforeTaskReset;
+      }
+      if (other.TaskStartTime.Length != 0) {
+        TaskStartTime = other.TaskStartTime;
+      }
+      if (other.TaskWorkingTimeDisplay.Length != 0) {
+        TaskWorkingTimeDisplay = other.TaskWorkingTimeDisplay;
       }
     }
 
@@ -1766,12 +1889,32 @@ namespace Org.Roylance.Yadel {
             Host = input.ReadString();
             break;
           }
-          case 32: {
-            InitializedTime = input.ReadUInt64();
+          case 34: {
+            InitializedTime = input.ReadString();
             break;
           }
           case 40: {
             state_ = (global::Org.Roylance.Yadel.UIWorkerState) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            TaskDisplay = input.ReadString();
+            break;
+          }
+          case 58: {
+            DagDisplay = input.ReadString();
+            break;
+          }
+          case 64: {
+            MinutesBeforeTaskReset = input.ReadUInt64();
+            break;
+          }
+          case 74: {
+            TaskStartTime = input.ReadString();
+            break;
+          }
+          case 82: {
+            TaskWorkingTimeDisplay = input.ReadString();
             break;
           }
         }

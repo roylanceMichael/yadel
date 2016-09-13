@@ -5,6 +5,8 @@ import akka.actor.Terminated
 import akka.actor.UntypedActor
 import akka.event.Logging
 import akka.event.LoggingAdapter
+import org.joda.time.LocalDateTime
+import org.joda.time.Minutes
 import org.roylance.yadel.YadelModel
 import org.roylance.yadel.YadelReport
 import org.roylance.yadel.api.models.ConfigurationActorRef
@@ -102,6 +104,7 @@ open class ManagerBase :UntypedActor() {
         }
 
         this.tellWorkersToDoNewDagWork()
+        this.freeAnyWorkersRunningOverAllowedAmount()
     }
 
     protected fun tellWorkersToDoNewDagWork() {
@@ -119,7 +122,6 @@ open class ManagerBase :UntypedActor() {
                     val foundTuple = workers[workerKey]
                     val newBuilder = foundTuple!!.configuration.toBuilder()
                     newBuilder.state = YadelModel.WorkerState.WORKING
-                    workers[workerKey] = ConfigurationActorRef(openWorker.actorRef, newBuilder.build())
 
                     val task = foundActiveDag.uncompletedTasksBuilderList.first { it.id.equals(uncompletedTaskId) }
                     val taskIdx = foundActiveDag.uncompletedTasksBuilderList.indexOf(task!!)
@@ -128,6 +130,11 @@ open class ManagerBase :UntypedActor() {
                     val updatedTask = task.setExecutionDate(Date().time).setStartDate(Date().time)
                     foundActiveDag.addProcessingTasks(updatedTask.build())
 
+                    newBuilder.task = updatedTask.build()
+                    newBuilder.dag = foundActiveDag.build()
+                    newBuilder.taskStartTime = LocalDateTime.now().toString()
+
+                    workers[workerKey] = ConfigurationActorRef(openWorker.actorRef, newBuilder.build())
                     openWorker.actorRef.tell(task.build(), self)
                 }
             }
@@ -136,6 +143,8 @@ open class ManagerBase :UntypedActor() {
 
     private fun handleReport() {
         val dagReport = YadelReport.UIDagReport.newBuilder()
+        val now = LocalDateTime.now()
+
         this.workers.values.forEach {
             val workerConfiguration = YadelReport.UIWorkerConfiguration
                     .newBuilder()
@@ -144,6 +153,17 @@ open class ManagerBase :UntypedActor() {
                     .setIp(it.configuration.ip)
                     .setPort(it.configuration.port)
                     .setState(if (YadelModel.WorkerState.WORKING.equals(it.configuration.state)) YadelReport.UIWorkerState.CURRENTLY_WORKING else YadelReport.UIWorkerState.CURRENTLY_IDLE)
+                    .setTaskStartTime(it.configuration.taskStartTime)
+
+            if (it.configuration.hasDag()) {
+                workerConfiguration.dagDisplay = it.configuration.dag.display
+            }
+            if (it.configuration.hasTask()) {
+                workerConfiguration.taskDisplay = it.configuration.task.display
+            }
+            if (it.configuration.taskStartTime.length > 0) {
+                workerConfiguration.taskWorkingTimeDisplay = "${Minutes.minutesBetween(LocalDateTime.parse(it.configuration.taskStartTime), now).minutes} minutes"
+            }
 
             dagReport.addWorkers(workerConfiguration)
         }
@@ -209,6 +229,10 @@ open class ManagerBase :UntypedActor() {
             val foundTuple = this.workers[workerKey]
             val newBuilder = foundTuple!!.configuration.toBuilder()
             newBuilder.state = newState
+            newBuilder.clearDag()
+            newBuilder.clearTask()
+            newBuilder.clearTaskStartTime()
+
             this.workers[workerKey] = ConfigurationActorRef(this.sender, newBuilder.build())
         }
     }
@@ -221,6 +245,47 @@ open class ManagerBase :UntypedActor() {
         return openWorkers.first()
     }
 
+    private fun freeAnyWorkersRunningOverAllowedAmount() {
+        val now = LocalDateTime.now()
+
+        val workersToReset = HashSet<String>()
+        this.workers.keys.forEach {
+            val worker = this.workers[it]!!
+
+            if (worker.configuration.state.equals(YadelModel.WorkerState.WORKING)) {
+                val taskStartTime = LocalDateTime.parse(worker.configuration.taskStartTime)
+
+                val minutes = Minutes.minutesBetween(taskStartTime, now).minutes
+                if (minutes > MinutesBeforeTaskReset) {
+                    workersToReset.add(it)
+
+                    if (this.activeDags.containsKey(worker.configuration.dag.id)) {
+                        val activeDag = this.activeDags[worker.configuration.dag.id]!!
+                        val foundTask = activeDag.processingTasksList.firstOrNull { it.id.equals(worker.configuration.task.id) }
+
+                        if (foundTask != null) {
+                            val foundTaskIdx = activeDag.processingTasksList.indexOf(foundTask)
+                            activeDag.removeProcessingTasks(foundTaskIdx)
+                            activeDag.addUncompletedTasks(foundTask)
+                        }
+                    }
+                }
+            }
+        }
+
+        workersToReset.forEach {
+            val foundWorker = this.workers[it]!!
+
+            val tempConfiguration = foundWorker.configuration.toBuilder()
+            tempConfiguration.state = YadelModel.WorkerState.IDLE
+            tempConfiguration.clearDag()
+            tempConfiguration.clearTask()
+            tempConfiguration.clearTaskStartTime()
+
+            this.workers[it] = ConfigurationActorRef(foundWorker.actorRef, tempConfiguration.build())
+        }
+    }
+
     private fun handleRegistration() {
         this.context.watch(this.sender)
         val key = this.getActorRefKey(this.sender)
@@ -229,7 +294,8 @@ open class ManagerBase :UntypedActor() {
                 .setHost(this.sender.path().address().host().get())
                 .setPort(this.sender.path().address().port().get().toString())
                 .setIp(key)
-                .setInitializedTime(Date().time)
+                .setInitializedTime(LocalDateTime.now().toString())
+                .setMinutesBeforeTaskReset(MinutesBeforeTaskReset)
                 .setState(YadelModel.WorkerState.IDLE)
         val tuple = ConfigurationActorRef(this.sender, newConfiguration.build())
         this.workers.put(key, tuple)
@@ -248,5 +314,6 @@ open class ManagerBase :UntypedActor() {
 
     companion object {
         private val OneMinute = Duration.create(1, TimeUnit.MINUTES)
+        private val MinutesBeforeTaskReset = 20L
     }
 }

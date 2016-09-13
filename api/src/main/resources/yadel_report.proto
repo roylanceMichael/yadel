@@ -63,8 +63,13 @@ message UIWorkerConfiguration {
     string ip = 1;
     string port = 2;
     string host = 3;
-    uint64 initialized_time = 4;
+    string initialized_time = 4;
     UIWorkerState state = 5;
+    string task_display = 6;
+    string dag_display = 7;
+    uint64 minutes_before_task_reset = 8;
+    string task_start_time = 9;
+    string task_working_time_display = 10;
 }
 
 enum UIWorkerState {

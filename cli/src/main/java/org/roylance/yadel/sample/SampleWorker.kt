@@ -18,6 +18,12 @@ class SampleWorker:WorkerBase() {
         super.onReceive(p0)
 
         if (p0 is YadelModel.Task) {
+            if (random.nextBoolean()) {
+                Thread.sleep(600000)
+                Thread.sleep(600000)
+                Thread.sleep(100000)
+            }
+
             val completeTask = this.handleMessage(p0.display)
             completeTask.task = p0
             this.completeTask(completeTask.build())
@@ -62,7 +68,6 @@ class SampleWorker:WorkerBase() {
                 returnCompleteTask.addLogs(logMessage)
                 this.log.info(logMessage)
                 startNumber += 20
-                Thread.sleep(500)
             }
         }
         else {

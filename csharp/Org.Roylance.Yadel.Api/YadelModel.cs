@@ -22,45 +22,48 @@ namespace Org.Roylance.Yadel {
     static YadelModelReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChF5YWRlbF9tb2RlbC5wcm90bxISb3JnLnJveWxhbmNlLnlhZGVsIpMBChNX",
+            "ChF5YWRlbF9tb2RlbC5wcm90bxISb3JnLnJveWxhbmNlLnlhZGVsIp0CChNX",
             "b3JrZXJDb25maWd1cmF0aW9uEgoKAmlkGAEgASgJEgoKAmlwGAIgASgJEgwK",
             "BHBvcnQYAyABKAkSDAoEaG9zdBgEIAEoCRIYChBpbml0aWFsaXplZF90aW1l",
-            "GAUgASgEEi4KBXN0YXRlGAYgASgOMh8ub3JnLnJveWxhbmNlLnlhZGVsLldv",
-            "cmtlclN0YXRlIiIKA0xvZxIKCgJpZBgBIAEoCRIPCgdtZXNzYWdlGAIgASgJ",
-            "IvICCgNEYWcSCgoCaWQYASABKAkSDwoHZGlzcGxheRgCIAEoCRIxCg9mbGF0",
-            "dGVuZWRfdGFza3MYAyADKAsyGC5vcmcucm95bGFuY2UueWFkZWwuVGFzaxIW",
-            "Cg5leGVjdXRpb25fZGF0ZRgEIAEoAxISCgpzdGFydF9kYXRlGAUgASgDEhAK",
-            "CGVuZF9kYXRlGAYgASgDEhAKCGR1cmF0aW9uGAcgASgDEjMKEXVuY29tcGxl",
-            "dGVkX3Rhc2tzGAggAygLMhgub3JnLnJveWxhbmNlLnlhZGVsLlRhc2sSMgoQ",
-            "cHJvY2Vzc2luZ190YXNrcxgJIAMoCzIYLm9yZy5yb3lsYW5jZS55YWRlbC5U",
-            "YXNrEi8KDWVycm9yZWRfdGFza3MYCiADKAsyGC5vcmcucm95bGFuY2UueWFk",
-            "ZWwuVGFzaxIxCg9jb21wbGV0ZWRfdGFza3MYCyADKAsyGC5vcmcucm95bGFu",
-            "Y2UueWFkZWwuVGFzayLCAgoEVGFzaxIKCgJpZBgBIAEoCRIPCgdkaXNwbGF5",
-            "GAIgASgJEjgKDGRlcGVuZGVuY2llcxgDIAMoCzIiLm9yZy5yb3lsYW5jZS55",
-            "YWRlbC5UYXNrRGVwZW5kZW5jeRIOCgZkYWdfaWQYBCABKAkSJQoEbG9ncxgF",
-            "IAMoCzIXLm9yZy5yb3lsYW5jZS55YWRlbC5Mb2cSFgoOZXhlY3V0aW9uX2Rh",
-            "dGUYBiABKAMSEgoKc3RhcnRfZGF0ZRgHIAEoAxIQCghlbmRfZGF0ZRgIIAEo",
-            "AxIQCghkdXJhdGlvbhgJIAEoAxIdChVmaXJzdF9jb250ZXh0X2Jhc2VfNjQY",
-            "CiABKAkSHgoWc2Vjb25kX2NvbnRleHRfYmFzZV82NBgLIAEoCRIdChV0aGly",
-            "ZF9jb250ZXh0X2Jhc2VfNjQYDCABKAkiNAoOVGFza0RlcGVuZGVuY3kSCgoC",
-            "aWQYASABKAkSFgoOcGFyZW50X3Rhc2tfaWQYAiABKAki0wEKDEFkZFRhc2tU",
-            "b0RhZxIKCgJpZBgBIAEoCRItCgtwYXJlbnRfdGFzaxgCIAEoCzIYLm9yZy5y",
-            "b3lsYW5jZS55YWRlbC5UYXNrEioKCG5ld190YXNrGAMgASgLMhgub3JnLnJv",
-            "eWxhbmNlLnlhZGVsLlRhc2sSHQoVZmlyc3RfY29udGV4dF9iYXNlXzY0GAQg",
-            "ASgJEh4KFnNlY29uZF9jb250ZXh0X2Jhc2VfNjQYBSABKAkSHQoVdGhpcmRf",
-            "Y29udGV4dF9iYXNlXzY0GAYgASgJIqkBCgxDb21wbGV0ZVRhc2sSCgoCaWQY",
-            "ASABKAkSJgoEdGFzaxgCIAEoCzIYLm9yZy5yb3lsYW5jZS55YWRlbC5UYXNr",
-            "EkUKFHdvcmtlcl9jb25maWd1cmF0aW9uGAMgASgLMicub3JnLnJveWxhbmNl",
-            "LnlhZGVsLldvcmtlckNvbmZpZ3VyYXRpb24SDAoEbG9ncxgEIAMoCRIQCghp",
-            "c19lcnJvchgFIAEoCCokCgtXb3JrZXJTdGF0ZRILCgdXT1JLSU5HEAASCAoE",
-            "SURMRRABKi4KGldvcmtlclRvTWFuYWdlck1lc3NhZ2VUeXBlEhAKDFJFR0lT",
-            "VFJBVElPThAAKjkKG01hbmFnZXJUb01hbmFnZXJNZXNzYWdlVHlwZRIaChZF",
-            "TlNVUkVfV09SS0VSU19XT1JLSU5HEAAqJAoJQWN0b3JSb2xlEgsKB01BTkFH",
-            "RVIQABIKCgZXT1JLRVIQAWIGcHJvdG8z"));
+            "GAUgASgJEi4KBXN0YXRlGAYgASgOMh8ub3JnLnJveWxhbmNlLnlhZGVsLldv",
+            "cmtlclN0YXRlEiYKBHRhc2sYByABKAsyGC5vcmcucm95bGFuY2UueWFkZWwu",
+            "VGFzaxIkCgNkYWcYCCABKAsyFy5vcmcucm95bGFuY2UueWFkZWwuRGFnEiEK",
+            "GW1pbnV0ZXNfYmVmb3JlX3Rhc2tfcmVzZXQYCSABKAQSFwoPdGFza19zdGFy",
+            "dF90aW1lGAogASgJIiIKA0xvZxIKCgJpZBgBIAEoCRIPCgdtZXNzYWdlGAIg",
+            "ASgJIvICCgNEYWcSCgoCaWQYASABKAkSDwoHZGlzcGxheRgCIAEoCRIxCg9m",
+            "bGF0dGVuZWRfdGFza3MYAyADKAsyGC5vcmcucm95bGFuY2UueWFkZWwuVGFz",
+            "axIWCg5leGVjdXRpb25fZGF0ZRgEIAEoAxISCgpzdGFydF9kYXRlGAUgASgD",
+            "EhAKCGVuZF9kYXRlGAYgASgDEhAKCGR1cmF0aW9uGAcgASgDEjMKEXVuY29t",
+            "cGxldGVkX3Rhc2tzGAggAygLMhgub3JnLnJveWxhbmNlLnlhZGVsLlRhc2sS",
+            "MgoQcHJvY2Vzc2luZ190YXNrcxgJIAMoCzIYLm9yZy5yb3lsYW5jZS55YWRl",
+            "bC5UYXNrEi8KDWVycm9yZWRfdGFza3MYCiADKAsyGC5vcmcucm95bGFuY2Uu",
+            "eWFkZWwuVGFzaxIxCg9jb21wbGV0ZWRfdGFza3MYCyADKAsyGC5vcmcucm95",
+            "bGFuY2UueWFkZWwuVGFzayLCAgoEVGFzaxIKCgJpZBgBIAEoCRIPCgdkaXNw",
+            "bGF5GAIgASgJEjgKDGRlcGVuZGVuY2llcxgDIAMoCzIiLm9yZy5yb3lsYW5j",
+            "ZS55YWRlbC5UYXNrRGVwZW5kZW5jeRIOCgZkYWdfaWQYBCABKAkSJQoEbG9n",
+            "cxgFIAMoCzIXLm9yZy5yb3lsYW5jZS55YWRlbC5Mb2cSFgoOZXhlY3V0aW9u",
+            "X2RhdGUYBiABKAMSEgoKc3RhcnRfZGF0ZRgHIAEoAxIQCghlbmRfZGF0ZRgI",
+            "IAEoAxIQCghkdXJhdGlvbhgJIAEoAxIdChVmaXJzdF9jb250ZXh0X2Jhc2Vf",
+            "NjQYCiABKAkSHgoWc2Vjb25kX2NvbnRleHRfYmFzZV82NBgLIAEoCRIdChV0",
+            "aGlyZF9jb250ZXh0X2Jhc2VfNjQYDCABKAkiNAoOVGFza0RlcGVuZGVuY3kS",
+            "CgoCaWQYASABKAkSFgoOcGFyZW50X3Rhc2tfaWQYAiABKAki0wEKDEFkZFRh",
+            "c2tUb0RhZxIKCgJpZBgBIAEoCRItCgtwYXJlbnRfdGFzaxgCIAEoCzIYLm9y",
+            "Zy5yb3lsYW5jZS55YWRlbC5UYXNrEioKCG5ld190YXNrGAMgASgLMhgub3Jn",
+            "LnJveWxhbmNlLnlhZGVsLlRhc2sSHQoVZmlyc3RfY29udGV4dF9iYXNlXzY0",
+            "GAQgASgJEh4KFnNlY29uZF9jb250ZXh0X2Jhc2VfNjQYBSABKAkSHQoVdGhp",
+            "cmRfY29udGV4dF9iYXNlXzY0GAYgASgJIqkBCgxDb21wbGV0ZVRhc2sSCgoC",
+            "aWQYASABKAkSJgoEdGFzaxgCIAEoCzIYLm9yZy5yb3lsYW5jZS55YWRlbC5U",
+            "YXNrEkUKFHdvcmtlcl9jb25maWd1cmF0aW9uGAMgASgLMicub3JnLnJveWxh",
+            "bmNlLnlhZGVsLldvcmtlckNvbmZpZ3VyYXRpb24SDAoEbG9ncxgEIAMoCRIQ",
+            "Cghpc19lcnJvchgFIAEoCCokCgtXb3JrZXJTdGF0ZRILCgdXT1JLSU5HEAAS",
+            "CAoESURMRRABKi4KGldvcmtlclRvTWFuYWdlck1lc3NhZ2VUeXBlEhAKDFJF",
+            "R0lTVFJBVElPThAAKjkKG01hbmFnZXJUb01hbmFnZXJNZXNzYWdlVHlwZRIa",
+            "ChZFTlNVUkVfV09SS0VSU19XT1JLSU5HEAAqJAoJQWN0b3JSb2xlEgsKB01B",
+            "TkFHRVIQABIKCgZXT1JLRVIQAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Roylance.Yadel.WorkerState), typeof(global::Org.Roylance.Yadel.WorkerToManagerMessageType), typeof(global::Org.Roylance.Yadel.ManagerToManagerMessageType), typeof(global::Org.Roylance.Yadel.ActorRole), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.WorkerConfiguration), global::Org.Roylance.Yadel.WorkerConfiguration.Parser, new[]{ "Id", "Ip", "Port", "Host", "InitializedTime", "State" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.WorkerConfiguration), global::Org.Roylance.Yadel.WorkerConfiguration.Parser, new[]{ "Id", "Ip", "Port", "Host", "InitializedTime", "State", "Task", "Dag", "MinutesBeforeTaskReset", "TaskStartTime" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.Log), global::Org.Roylance.Yadel.Log.Parser, new[]{ "Id", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.Dag), global::Org.Roylance.Yadel.Dag.Parser, new[]{ "Id", "Display", "FlattenedTasks", "ExecutionDate", "StartDate", "EndDate", "Duration", "UncompletedTasks", "ProcessingTasks", "ErroredTasks", "CompletedTasks" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.Task), global::Org.Roylance.Yadel.Task.Parser, new[]{ "Id", "Display", "Dependencies", "DagId", "Logs", "ExecutionDate", "StartDate", "EndDate", "Duration", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64" }, null, null, null),
@@ -124,6 +127,10 @@ namespace Org.Roylance.Yadel {
       host_ = other.host_;
       initializedTime_ = other.initializedTime_;
       state_ = other.state_;
+      Task = other.task_ != null ? other.Task.Clone() : null;
+      Dag = other.dag_ != null ? other.Dag.Clone() : null;
+      minutesBeforeTaskReset_ = other.minutesBeforeTaskReset_;
+      taskStartTime_ = other.taskStartTime_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -177,12 +184,12 @@ namespace Org.Roylance.Yadel {
 
     /// <summary>Field number for the "initialized_time" field.</summary>
     public const int InitializedTimeFieldNumber = 5;
-    private ulong initializedTime_;
+    private string initializedTime_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ulong InitializedTime {
+    public string InitializedTime {
       get { return initializedTime_; }
       set {
-        initializedTime_ = value;
+        initializedTime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -194,6 +201,50 @@ namespace Org.Roylance.Yadel {
       get { return state_; }
       set {
         state_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "task" field.</summary>
+    public const int TaskFieldNumber = 7;
+    private global::Org.Roylance.Yadel.Task task_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Org.Roylance.Yadel.Task Task {
+      get { return task_; }
+      set {
+        task_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dag" field.</summary>
+    public const int DagFieldNumber = 8;
+    private global::Org.Roylance.Yadel.Dag dag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Org.Roylance.Yadel.Dag Dag {
+      get { return dag_; }
+      set {
+        dag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "minutes_before_task_reset" field.</summary>
+    public const int MinutesBeforeTaskResetFieldNumber = 9;
+    private ulong minutesBeforeTaskReset_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong MinutesBeforeTaskReset {
+      get { return minutesBeforeTaskReset_; }
+      set {
+        minutesBeforeTaskReset_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "task_start_time" field.</summary>
+    public const int TaskStartTimeFieldNumber = 10;
+    private string taskStartTime_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TaskStartTime {
+      get { return taskStartTime_; }
+      set {
+        taskStartTime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -216,6 +267,10 @@ namespace Org.Roylance.Yadel {
       if (Host != other.Host) return false;
       if (InitializedTime != other.InitializedTime) return false;
       if (State != other.State) return false;
+      if (!object.Equals(Task, other.Task)) return false;
+      if (!object.Equals(Dag, other.Dag)) return false;
+      if (MinutesBeforeTaskReset != other.MinutesBeforeTaskReset) return false;
+      if (TaskStartTime != other.TaskStartTime) return false;
       return true;
     }
 
@@ -226,8 +281,12 @@ namespace Org.Roylance.Yadel {
       if (Ip.Length != 0) hash ^= Ip.GetHashCode();
       if (Port.Length != 0) hash ^= Port.GetHashCode();
       if (Host.Length != 0) hash ^= Host.GetHashCode();
-      if (InitializedTime != 0UL) hash ^= InitializedTime.GetHashCode();
+      if (InitializedTime.Length != 0) hash ^= InitializedTime.GetHashCode();
       if (State != 0) hash ^= State.GetHashCode();
+      if (task_ != null) hash ^= Task.GetHashCode();
+      if (dag_ != null) hash ^= Dag.GetHashCode();
+      if (MinutesBeforeTaskReset != 0UL) hash ^= MinutesBeforeTaskReset.GetHashCode();
+      if (TaskStartTime.Length != 0) hash ^= TaskStartTime.GetHashCode();
       return hash;
     }
 
@@ -254,13 +313,29 @@ namespace Org.Roylance.Yadel {
         output.WriteRawTag(34);
         output.WriteString(Host);
       }
-      if (InitializedTime != 0UL) {
-        output.WriteRawTag(40);
-        output.WriteUInt64(InitializedTime);
+      if (InitializedTime.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(InitializedTime);
       }
       if (State != 0) {
         output.WriteRawTag(48);
         output.WriteEnum((int) State);
+      }
+      if (task_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Task);
+      }
+      if (dag_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Dag);
+      }
+      if (MinutesBeforeTaskReset != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(MinutesBeforeTaskReset);
+      }
+      if (TaskStartTime.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(TaskStartTime);
       }
     }
 
@@ -279,11 +354,23 @@ namespace Org.Roylance.Yadel {
       if (Host.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Host);
       }
-      if (InitializedTime != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(InitializedTime);
+      if (InitializedTime.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InitializedTime);
       }
       if (State != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      }
+      if (task_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Task);
+      }
+      if (dag_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Dag);
+      }
+      if (MinutesBeforeTaskReset != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(MinutesBeforeTaskReset);
+      }
+      if (TaskStartTime.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskStartTime);
       }
       return size;
     }
@@ -305,11 +392,29 @@ namespace Org.Roylance.Yadel {
       if (other.Host.Length != 0) {
         Host = other.Host;
       }
-      if (other.InitializedTime != 0UL) {
+      if (other.InitializedTime.Length != 0) {
         InitializedTime = other.InitializedTime;
       }
       if (other.State != 0) {
         State = other.State;
+      }
+      if (other.task_ != null) {
+        if (task_ == null) {
+          task_ = new global::Org.Roylance.Yadel.Task();
+        }
+        Task.MergeFrom(other.Task);
+      }
+      if (other.dag_ != null) {
+        if (dag_ == null) {
+          dag_ = new global::Org.Roylance.Yadel.Dag();
+        }
+        Dag.MergeFrom(other.Dag);
+      }
+      if (other.MinutesBeforeTaskReset != 0UL) {
+        MinutesBeforeTaskReset = other.MinutesBeforeTaskReset;
+      }
+      if (other.TaskStartTime.Length != 0) {
+        TaskStartTime = other.TaskStartTime;
       }
     }
 
@@ -337,12 +442,34 @@ namespace Org.Roylance.Yadel {
             Host = input.ReadString();
             break;
           }
-          case 40: {
-            InitializedTime = input.ReadUInt64();
+          case 42: {
+            InitializedTime = input.ReadString();
             break;
           }
           case 48: {
             state_ = (global::Org.Roylance.Yadel.WorkerState) input.ReadEnum();
+            break;
+          }
+          case 58: {
+            if (task_ == null) {
+              task_ = new global::Org.Roylance.Yadel.Task();
+            }
+            input.ReadMessage(task_);
+            break;
+          }
+          case 66: {
+            if (dag_ == null) {
+              dag_ = new global::Org.Roylance.Yadel.Dag();
+            }
+            input.ReadMessage(dag_);
+            break;
+          }
+          case 72: {
+            MinutesBeforeTaskReset = input.ReadUInt64();
+            break;
+          }
+          case 82: {
+            TaskStartTime = input.ReadString();
             break;
           }
         }

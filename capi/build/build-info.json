@@ -1,18 +1,18 @@
 {
   "version" : "1.0.1",
   "name" : "capi",
-  "number" : "1471977514237",
+  "number" : "1473787761809",
   "type" : "GRADLE",
   "buildAgent" : {
     "name" : "Gradle",
-    "version" : "2.13"
+    "version" : "3.0"
   },
   "agent" : {
     "name" : "Gradle",
-    "version" : "2.13"
+    "version" : "3.0"
   },
-  "started" : "2016-08-23T12:38:34.010-0600",
-  "durationMillis" : 1663,
+  "started" : "2016-09-13T11:29:21.800-0600",
+  "durationMillis" : 680,
   "principal" : "mikeroylance",
   "artifactoryPrincipal" : "admin",
   "licenseControl" : {
@@ -28,17 +28,17 @@
     "buildNumbersNotToBeDiscarded" : [ ]
   },
   "modules" : [ {
-    "id" : "org.roylance.yadel:capi:0.106-SNAPSHOT",
+    "id" : "org.roylance.yadel:capi:0.108-SNAPSHOT",
     "artifacts" : [ {
       "type" : "pom",
-      "sha1" : "a67c1828fc6226056a2cdbeb158d9d7e0a64ae15",
-      "md5" : "89fb2af6489d6b51f4947e494f927d20",
-      "name" : "capi-0.106-SNAPSHOT.pom"
+      "sha1" : "1db5b5db58629bd3fc75c562c2691f3b88cf476f",
+      "md5" : "46a8567c04f4c38bbf3e16872aaafd5a",
+      "name" : "capi-0.108-SNAPSHOT.pom"
     }, {
       "type" : "jar",
-      "sha1" : "aea223cc75416c8286080e4b0c9748482448fe07",
-      "md5" : "9a52236350ab5ec01d900176a215e6ba",
-      "name" : "capi-0.106-SNAPSHOT.jar"
+      "sha1" : "62df00de4eaddabf13d9dfca95f3a47c7485cb75",
+      "md5" : "7babf8bb14e74e5d45d93178c5c03fb4",
+      "name" : "capi-0.108-SNAPSHOT.jar"
     } ],
     "excludedArtifacts" : [ ],
     "dependencies" : [ {
@@ -61,9 +61,9 @@
       "scopes" : [ "compileClasspath" ]
     }, {
       "type" : "jar",
-      "sha1" : "57d9e2ffcf323611f1485adb1644b1a84bf6a533",
-      "md5" : "09f78a3119e3a6944a4c6b22b7c401a4",
-      "id" : "org.roylance.yadel:api:0.106-SNAPSHOT",
+      "sha1" : "f000f7f7c1c2e2e19ceed5f702db8dea878fefe8",
+      "md5" : "2cc57382f72367520dc91f15c0cfad8e",
+      "id" : "org.roylance.yadel:api:0.108-SNAPSHOT",
       "scopes" : [ "compileClasspath" ]
     }, {
       "type" : "jar",
@@ -94,6 +94,12 @@
       "sha1" : "2852e6e05fbb95076fc091f6d1780f1f8fe35e0f",
       "md5" : "e2d74794fba570ec2115fb9d5b05dc9b",
       "id" : "commons-io:commons-io:2.5",
+      "scopes" : [ "compileClasspath" ]
+    }, {
+      "type" : "jar",
+      "sha1" : "1c295b462f16702ebe720bbb08f62e1ba80da41b",
+      "md5" : "e255d8f6e705d3e6918198bceb5458a0",
+      "id" : "joda-time:joda-time:2.9.4",
       "scopes" : [ "compileClasspath" ]
     }, {
       "type" : "jar",

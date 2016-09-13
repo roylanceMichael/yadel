@@ -1,29 +1,72 @@
 <div style="margin: 20px 20px 80px 20px">
     <div class="row">
-        <div class="col-lg-4">
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label for="dags" class="col-md-2 control-label text-left">Active Dags</label>
-                    <div class="col-md-9 text-left">
-                        <select class="form-control"
-                                id="dags"
-                                name="dags"
-                                ng-model="i.selectedDag"
-                                ng-change="i.onDagChange()"
-                                ng-options="dag as dag.display for dag in i.currentDagReport.dags">
-                        </select>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="row" ng-show="i.selectedDag">
-        <div class="col-md-12">
-            <h2> {{i.selectedDag.display}}
-                <button type="submit" class="btn btn-danger" ng-click="i.deleteDag()">Delete {{i.selectedDag.display}}</button>
-            </h2>
-        </div>
+        <table class="table" ng-show="i.currentDagReport">
+            <tr ng-repeat="worker in i.currentDagReport.workers">
+                <th style="border:none" class="text-center">{{worker.ip}}</th>
+                <td style="border:none">{{worker.state ? "idle" : "working"}}</td>
+                <td style="border:none">{{worker.task_display}}</td>
+                <td style="border:none">{{worker.dag_display}}</td>
+                <td style="border:none">{{worker.task_working_time_display}}</td>
+            </tr>
+        </table>
+        <table class="table" ng-show="i.currentDagReport">
+            <tr>
+                <th style="border:none" class="text-center">total dags</th>
+                <td style="border:none">{{i.currentDagReport.dags.length}}</td>
+            </tr>
+            <tr>
+                <th style="border:none" class="text-center">active dags</th>
+                <td style="border:none">
+                    <select class="form-control"
+                            id="dags"
+                            name="dags"
+                            ng-model="i.selectedDag"
+                            ng-change="i.onDagChange()"
+                            ng-options="dag as dag.display for dag in i.currentDagReport.dags">
+                    </select>
+                </td>
+            </tr>
+            <tr ng-show="i.selectedDag">
+                <th class="text-center">
+                    {{i.selectedDag.display}} ({{i.selectedDag.id}})
+                </th>
+                <td>
+                    <button type="submit" class="btn btn-danger" ng-click="i.deleteDag()">Delete</button>
+                </td>
+            </tr>
+            <tr style="border:none" ng-show="i.selectedDag">
+                <th class="text-right">
+                    number processing
+                </th>
+                <td>
+                    {{i.selectedDag.number_processing}}
+                </td>
+            </tr>
+            <tr style="border:none" ng-show="i.selectedDag">
+                <th class="text-right">
+                    number completed
+                </th>
+                <td>
+                    {{i.selectedDag.number_completed}}
+                </td>
+            </tr>
+            <tr style="border:none" ng-show="i.selectedDag">
+                <th class="text-right">
+                    number errored
+                </th>
+                <td>
+                    {{i.selectedDag.number_errored}}
+                </td>
+            </tr>
+            <tr style="border:none" ng-show="i.selectedDag">
+                <th class="text-right">
+                    number unprocessed
+                </th>
+                <td>
+                    {{i.selectedDag.number_unprocessed}}
+                </td>
+            </tr>
+        </table>
     </div>
 
     <div class="row">

@@ -6,7 +6,7 @@
 
     <groupId>org.roylance.yadel</groupId>
     <artifactId>sapi</artifactId>
-    <version>0.106-SNAPSHOT</version>
+    <version>0.108-SNAPSHOT</version>
 
     <repositories>
         <repository>
@@ -63,12 +63,12 @@
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>api</artifactId>
-            <version>0.106-SNAPSHOT</version>
+            <version>0.108-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>capi</artifactId>
-            <version>0.106-SNAPSHOT</version>
+            <version>0.108-SNAPSHOT</version>
         </dependency>
 
         <dependency>

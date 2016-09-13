@@ -249,12 +249,27 @@ declare module org.roylance.yadel {
 		host?: string;
 		getHost() : string;
 		setHost(host : string): void;
-		initialized_time?: number;
-		getInitializedTime() : number;
-		setInitializedTime(initializedTime : number): void;
+		initialized_time?: string;
+		getInitializedTime() : string;
+		setInitializedTime(initializedTime : string): void;
 		state?: UIWorkerState;
 		getState() : UIWorkerState;
 		setState(state : UIWorkerState): void;
+		task_display?: string;
+		getTaskDisplay() : string;
+		setTaskDisplay(taskDisplay : string): void;
+		dag_display?: string;
+		getDagDisplay() : string;
+		setDagDisplay(dagDisplay : string): void;
+		minutes_before_task_reset?: number;
+		getMinutesBeforeTaskReset() : number;
+		setMinutesBeforeTaskReset(minutesBeforeTaskReset : number): void;
+		task_start_time?: string;
+		getTaskStartTime() : string;
+		setTaskStartTime(taskStartTime : string): void;
+		task_working_time_display?: string;
+		getTaskWorkingTimeDisplay() : string;
+		setTaskWorkingTimeDisplay(taskWorkingTimeDisplay : string): void;
 		
 	}
 	
@@ -327,12 +342,24 @@ declare module org.roylance.yadel {
 		host?: string;
 		getHost() : string;
 		setHost(host : string): void;
-		initialized_time?: number;
-		getInitializedTime() : number;
-		setInitializedTime(initializedTime : number): void;
+		initialized_time?: string;
+		getInitializedTime() : string;
+		setInitializedTime(initializedTime : string): void;
 		state?: WorkerState;
 		getState() : WorkerState;
 		setState(state : WorkerState): void;
+		task?: Task;
+		getTask() : Task;
+		setTask(task : Task): void;
+		dag?: Dag;
+		getDag() : Dag;
+		setDag(dag : Dag): void;
+		minutes_before_task_reset?: number;
+		getMinutesBeforeTaskReset() : number;
+		setMinutesBeforeTaskReset(minutesBeforeTaskReset : number): void;
+		task_start_time?: string;
+		getTaskStartTime() : string;
+		setTaskStartTime(taskStartTime : string): void;
 		
 	}
 	

@@ -7550,9 +7550,14 @@ public final class YadelReport {
         getHostBytes();
 
     /**
-     * <code>optional uint64 initialized_time = 4;</code>
+     * <code>optional string initialized_time = 4;</code>
      */
-    long getInitializedTime();
+    java.lang.String getInitializedTime();
+    /**
+     * <code>optional string initialized_time = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getInitializedTimeBytes();
 
     /**
      * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
@@ -7562,6 +7567,51 @@ public final class YadelReport {
      * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
      */
     org.roylance.yadel.YadelReport.UIWorkerState getState();
+
+    /**
+     * <code>optional string task_display = 6;</code>
+     */
+    java.lang.String getTaskDisplay();
+    /**
+     * <code>optional string task_display = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getTaskDisplayBytes();
+
+    /**
+     * <code>optional string dag_display = 7;</code>
+     */
+    java.lang.String getDagDisplay();
+    /**
+     * <code>optional string dag_display = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getDagDisplayBytes();
+
+    /**
+     * <code>optional uint64 minutes_before_task_reset = 8;</code>
+     */
+    long getMinutesBeforeTaskReset();
+
+    /**
+     * <code>optional string task_start_time = 9;</code>
+     */
+    java.lang.String getTaskStartTime();
+    /**
+     * <code>optional string task_start_time = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getTaskStartTimeBytes();
+
+    /**
+     * <code>optional string task_working_time_display = 10;</code>
+     */
+    java.lang.String getTaskWorkingTimeDisplay();
+    /**
+     * <code>optional string task_working_time_display = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getTaskWorkingTimeDisplayBytes();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.UIWorkerConfiguration}
@@ -7578,8 +7628,13 @@ public final class YadelReport {
       ip_ = "";
       port_ = "";
       host_ = "";
-      initializedTime_ = 0L;
+      initializedTime_ = "";
       state_ = 0;
+      taskDisplay_ = "";
+      dagDisplay_ = "";
+      minutesBeforeTaskReset_ = 0L;
+      taskStartTime_ = "";
+      taskWorkingTimeDisplay_ = "";
     }
 
     @java.lang.Override
@@ -7625,15 +7680,45 @@ public final class YadelReport {
               host_ = s;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              initializedTime_ = input.readUInt64();
+              initializedTime_ = s;
               break;
             }
             case 40: {
               int rawValue = input.readEnum();
 
               state_ = rawValue;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              taskDisplay_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              dagDisplay_ = s;
+              break;
+            }
+            case 64: {
+
+              minutesBeforeTaskReset_ = input.readUInt64();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              taskStartTime_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              taskWorkingTimeDisplay_ = s;
               break;
             }
           }
@@ -7762,12 +7847,37 @@ public final class YadelReport {
     }
 
     public static final int INITIALIZED_TIME_FIELD_NUMBER = 4;
-    private long initializedTime_;
+    private volatile java.lang.Object initializedTime_;
     /**
-     * <code>optional uint64 initialized_time = 4;</code>
+     * <code>optional string initialized_time = 4;</code>
      */
-    public long getInitializedTime() {
-      return initializedTime_;
+    public java.lang.String getInitializedTime() {
+      java.lang.Object ref = initializedTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        initializedTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string initialized_time = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getInitializedTimeBytes() {
+      java.lang.Object ref = initializedTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        initializedTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int STATE_FIELD_NUMBER = 5;
@@ -7784,6 +7894,151 @@ public final class YadelReport {
     public org.roylance.yadel.YadelReport.UIWorkerState getState() {
       org.roylance.yadel.YadelReport.UIWorkerState result = org.roylance.yadel.YadelReport.UIWorkerState.valueOf(state_);
       return result == null ? org.roylance.yadel.YadelReport.UIWorkerState.UNRECOGNIZED : result;
+    }
+
+    public static final int TASK_DISPLAY_FIELD_NUMBER = 6;
+    private volatile java.lang.Object taskDisplay_;
+    /**
+     * <code>optional string task_display = 6;</code>
+     */
+    public java.lang.String getTaskDisplay() {
+      java.lang.Object ref = taskDisplay_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskDisplay_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string task_display = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTaskDisplayBytes() {
+      java.lang.Object ref = taskDisplay_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskDisplay_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DAG_DISPLAY_FIELD_NUMBER = 7;
+    private volatile java.lang.Object dagDisplay_;
+    /**
+     * <code>optional string dag_display = 7;</code>
+     */
+    public java.lang.String getDagDisplay() {
+      java.lang.Object ref = dagDisplay_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dagDisplay_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string dag_display = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDagDisplayBytes() {
+      java.lang.Object ref = dagDisplay_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dagDisplay_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MINUTES_BEFORE_TASK_RESET_FIELD_NUMBER = 8;
+    private long minutesBeforeTaskReset_;
+    /**
+     * <code>optional uint64 minutes_before_task_reset = 8;</code>
+     */
+    public long getMinutesBeforeTaskReset() {
+      return minutesBeforeTaskReset_;
+    }
+
+    public static final int TASK_START_TIME_FIELD_NUMBER = 9;
+    private volatile java.lang.Object taskStartTime_;
+    /**
+     * <code>optional string task_start_time = 9;</code>
+     */
+    public java.lang.String getTaskStartTime() {
+      java.lang.Object ref = taskStartTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskStartTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string task_start_time = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTaskStartTimeBytes() {
+      java.lang.Object ref = taskStartTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskStartTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TASK_WORKING_TIME_DISPLAY_FIELD_NUMBER = 10;
+    private volatile java.lang.Object taskWorkingTimeDisplay_;
+    /**
+     * <code>optional string task_working_time_display = 10;</code>
+     */
+    public java.lang.String getTaskWorkingTimeDisplay() {
+      java.lang.Object ref = taskWorkingTimeDisplay_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskWorkingTimeDisplay_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string task_working_time_display = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTaskWorkingTimeDisplayBytes() {
+      java.lang.Object ref = taskWorkingTimeDisplay_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskWorkingTimeDisplay_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7807,11 +8062,26 @@ public final class YadelReport {
       if (!getHostBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, host_);
       }
-      if (initializedTime_ != 0L) {
-        output.writeUInt64(4, initializedTime_);
+      if (!getInitializedTimeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, initializedTime_);
       }
       if (state_ != org.roylance.yadel.YadelReport.UIWorkerState.CURRENTLY_WORKING.getNumber()) {
         output.writeEnum(5, state_);
+      }
+      if (!getTaskDisplayBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, taskDisplay_);
+      }
+      if (!getDagDisplayBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, dagDisplay_);
+      }
+      if (minutesBeforeTaskReset_ != 0L) {
+        output.writeUInt64(8, minutesBeforeTaskReset_);
+      }
+      if (!getTaskStartTimeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, taskStartTime_);
+      }
+      if (!getTaskWorkingTimeDisplayBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, taskWorkingTimeDisplay_);
       }
     }
 
@@ -7829,13 +8099,28 @@ public final class YadelReport {
       if (!getHostBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, host_);
       }
-      if (initializedTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, initializedTime_);
+      if (!getInitializedTimeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, initializedTime_);
       }
       if (state_ != org.roylance.yadel.YadelReport.UIWorkerState.CURRENTLY_WORKING.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, state_);
+      }
+      if (!getTaskDisplayBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, taskDisplay_);
+      }
+      if (!getDagDisplayBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, dagDisplay_);
+      }
+      if (minutesBeforeTaskReset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(8, minutesBeforeTaskReset_);
+      }
+      if (!getTaskStartTimeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, taskStartTime_);
+      }
+      if (!getTaskWorkingTimeDisplayBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, taskWorkingTimeDisplay_);
       }
       memoizedSize = size;
       return size;
@@ -7859,9 +8144,19 @@ public final class YadelReport {
           .equals(other.getPort());
       result = result && getHost()
           .equals(other.getHost());
-      result = result && (getInitializedTime()
-          == other.getInitializedTime());
+      result = result && getInitializedTime()
+          .equals(other.getInitializedTime());
       result = result && state_ == other.state_;
+      result = result && getTaskDisplay()
+          .equals(other.getTaskDisplay());
+      result = result && getDagDisplay()
+          .equals(other.getDagDisplay());
+      result = result && (getMinutesBeforeTaskReset()
+          == other.getMinutesBeforeTaskReset());
+      result = result && getTaskStartTime()
+          .equals(other.getTaskStartTime());
+      result = result && getTaskWorkingTimeDisplay()
+          .equals(other.getTaskWorkingTimeDisplay());
       return result;
     }
 
@@ -7879,10 +8174,20 @@ public final class YadelReport {
       hash = (37 * hash) + HOST_FIELD_NUMBER;
       hash = (53 * hash) + getHost().hashCode();
       hash = (37 * hash) + INITIALIZED_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getInitializedTime());
+      hash = (53 * hash) + getInitializedTime().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
+      hash = (37 * hash) + TASK_DISPLAY_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskDisplay().hashCode();
+      hash = (37 * hash) + DAG_DISPLAY_FIELD_NUMBER;
+      hash = (53 * hash) + getDagDisplay().hashCode();
+      hash = (37 * hash) + MINUTES_BEFORE_TASK_RESET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMinutesBeforeTaskReset());
+      hash = (37 * hash) + TASK_START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskStartTime().hashCode();
+      hash = (37 * hash) + TASK_WORKING_TIME_DISPLAY_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskWorkingTimeDisplay().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8007,9 +8312,19 @@ public final class YadelReport {
 
         host_ = "";
 
-        initializedTime_ = 0L;
+        initializedTime_ = "";
 
         state_ = 0;
+
+        taskDisplay_ = "";
+
+        dagDisplay_ = "";
+
+        minutesBeforeTaskReset_ = 0L;
+
+        taskStartTime_ = "";
+
+        taskWorkingTimeDisplay_ = "";
 
         return this;
       }
@@ -8038,6 +8353,11 @@ public final class YadelReport {
         result.host_ = host_;
         result.initializedTime_ = initializedTime_;
         result.state_ = state_;
+        result.taskDisplay_ = taskDisplay_;
+        result.dagDisplay_ = dagDisplay_;
+        result.minutesBeforeTaskReset_ = minutesBeforeTaskReset_;
+        result.taskStartTime_ = taskStartTime_;
+        result.taskWorkingTimeDisplay_ = taskWorkingTimeDisplay_;
         onBuilt();
         return result;
       }
@@ -8091,11 +8411,31 @@ public final class YadelReport {
           host_ = other.host_;
           onChanged();
         }
-        if (other.getInitializedTime() != 0L) {
-          setInitializedTime(other.getInitializedTime());
+        if (!other.getInitializedTime().isEmpty()) {
+          initializedTime_ = other.initializedTime_;
+          onChanged();
         }
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
+        }
+        if (!other.getTaskDisplay().isEmpty()) {
+          taskDisplay_ = other.taskDisplay_;
+          onChanged();
+        }
+        if (!other.getDagDisplay().isEmpty()) {
+          dagDisplay_ = other.dagDisplay_;
+          onChanged();
+        }
+        if (other.getMinutesBeforeTaskReset() != 0L) {
+          setMinutesBeforeTaskReset(other.getMinutesBeforeTaskReset());
+        }
+        if (!other.getTaskStartTime().isEmpty()) {
+          taskStartTime_ = other.taskStartTime_;
+          onChanged();
+        }
+        if (!other.getTaskWorkingTimeDisplay().isEmpty()) {
+          taskWorkingTimeDisplay_ = other.taskWorkingTimeDisplay_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -8330,28 +8670,71 @@ public final class YadelReport {
         return this;
       }
 
-      private long initializedTime_ ;
+      private java.lang.Object initializedTime_ = "";
       /**
-       * <code>optional uint64 initialized_time = 4;</code>
+       * <code>optional string initialized_time = 4;</code>
        */
-      public long getInitializedTime() {
-        return initializedTime_;
+      public java.lang.String getInitializedTime() {
+        java.lang.Object ref = initializedTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          initializedTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional uint64 initialized_time = 4;</code>
+       * <code>optional string initialized_time = 4;</code>
        */
-      public Builder setInitializedTime(long value) {
-        
+      public com.google.protobuf.ByteString
+          getInitializedTimeBytes() {
+        java.lang.Object ref = initializedTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          initializedTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string initialized_time = 4;</code>
+       */
+      public Builder setInitializedTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         initializedTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 initialized_time = 4;</code>
+       * <code>optional string initialized_time = 4;</code>
        */
       public Builder clearInitializedTime() {
         
-        initializedTime_ = 0L;
+        initializedTime_ = getDefaultInstance().getInitializedTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string initialized_time = 4;</code>
+       */
+      public Builder setInitializedTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        initializedTime_ = value;
         onChanged();
         return this;
       }
@@ -8396,6 +8779,308 @@ public final class YadelReport {
       public Builder clearState() {
         
         state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object taskDisplay_ = "";
+      /**
+       * <code>optional string task_display = 6;</code>
+       */
+      public java.lang.String getTaskDisplay() {
+        java.lang.Object ref = taskDisplay_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          taskDisplay_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string task_display = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTaskDisplayBytes() {
+        java.lang.Object ref = taskDisplay_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          taskDisplay_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string task_display = 6;</code>
+       */
+      public Builder setTaskDisplay(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        taskDisplay_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string task_display = 6;</code>
+       */
+      public Builder clearTaskDisplay() {
+        
+        taskDisplay_ = getDefaultInstance().getTaskDisplay();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string task_display = 6;</code>
+       */
+      public Builder setTaskDisplayBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        taskDisplay_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object dagDisplay_ = "";
+      /**
+       * <code>optional string dag_display = 7;</code>
+       */
+      public java.lang.String getDagDisplay() {
+        java.lang.Object ref = dagDisplay_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dagDisplay_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string dag_display = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDagDisplayBytes() {
+        java.lang.Object ref = dagDisplay_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          dagDisplay_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string dag_display = 7;</code>
+       */
+      public Builder setDagDisplay(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        dagDisplay_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string dag_display = 7;</code>
+       */
+      public Builder clearDagDisplay() {
+        
+        dagDisplay_ = getDefaultInstance().getDagDisplay();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string dag_display = 7;</code>
+       */
+      public Builder setDagDisplayBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        dagDisplay_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long minutesBeforeTaskReset_ ;
+      /**
+       * <code>optional uint64 minutes_before_task_reset = 8;</code>
+       */
+      public long getMinutesBeforeTaskReset() {
+        return minutesBeforeTaskReset_;
+      }
+      /**
+       * <code>optional uint64 minutes_before_task_reset = 8;</code>
+       */
+      public Builder setMinutesBeforeTaskReset(long value) {
+        
+        minutesBeforeTaskReset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 minutes_before_task_reset = 8;</code>
+       */
+      public Builder clearMinutesBeforeTaskReset() {
+        
+        minutesBeforeTaskReset_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object taskStartTime_ = "";
+      /**
+       * <code>optional string task_start_time = 9;</code>
+       */
+      public java.lang.String getTaskStartTime() {
+        java.lang.Object ref = taskStartTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          taskStartTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string task_start_time = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTaskStartTimeBytes() {
+        java.lang.Object ref = taskStartTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          taskStartTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string task_start_time = 9;</code>
+       */
+      public Builder setTaskStartTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        taskStartTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string task_start_time = 9;</code>
+       */
+      public Builder clearTaskStartTime() {
+        
+        taskStartTime_ = getDefaultInstance().getTaskStartTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string task_start_time = 9;</code>
+       */
+      public Builder setTaskStartTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        taskStartTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object taskWorkingTimeDisplay_ = "";
+      /**
+       * <code>optional string task_working_time_display = 10;</code>
+       */
+      public java.lang.String getTaskWorkingTimeDisplay() {
+        java.lang.Object ref = taskWorkingTimeDisplay_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          taskWorkingTimeDisplay_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string task_working_time_display = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTaskWorkingTimeDisplayBytes() {
+        java.lang.Object ref = taskWorkingTimeDisplay_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          taskWorkingTimeDisplay_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string task_working_time_display = 10;</code>
+       */
+      public Builder setTaskWorkingTimeDisplay(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        taskWorkingTimeDisplay_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string task_working_time_display = 10;</code>
+       */
+      public Builder clearTaskWorkingTimeDisplay() {
+        
+        taskWorkingTimeDisplay_ = getDefaultInstance().getTaskWorkingTimeDisplay();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string task_working_time_display = 10;</code>
+       */
+      public Builder setTaskWorkingTimeDisplayBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        taskWorkingTimeDisplay_ = value;
         onChanged();
         return this;
       }
@@ -8518,13 +9203,17 @@ public final class YadelReport {
       "\nstart_date\030\005 \001(\003\022\020\n\010end_date\030\006 \001(\003\022\020\n\010d" +
       "uration\030\007 \001(\003\022\024\n\014is_completed\030\010 \001(\010\022\025\n\ri" +
       "s_processing\030\t \001(\010\022\020\n\010is_error\030\n \001(\010\022\014\n\004" +
-      "logs\030\013 \003(\t\"\213\001\n\025UIWorkerConfiguration\022\n\n\002" +
+      "logs\030\013 \003(\t\"\225\002\n\025UIWorkerConfiguration\022\n\n\002" +
       "ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\t\022\014\n\004host\030\003 \001(\t\022\030\n\020" +
-      "initialized_time\030\004 \001(\004\0220\n\005state\030\005 \001(\0162!." +
-      "org.roylance.yadel.UIWorkerState*5\n\022UIYa",
-      "delRequestType\022\017\n\013REPORT_DAGS\020\000\022\016\n\nDELET" +
-      "E_DAG\020\001*:\n\rUIWorkerState\022\025\n\021CURRENTLY_WO" +
-      "RKING\020\000\022\022\n\016CURRENTLY_IDLE\020\001b\006proto3"
+      "initialized_time\030\004 \001(\t\0220\n\005state\030\005 \001(\0162!." +
+      "org.roylance.yadel.UIWorkerState\022\024\n\014task",
+      "_display\030\006 \001(\t\022\023\n\013dag_display\030\007 \001(\t\022!\n\031m" +
+      "inutes_before_task_reset\030\010 \001(\004\022\027\n\017task_s" +
+      "tart_time\030\t \001(\t\022!\n\031task_working_time_dis" +
+      "play\030\n \001(\t*5\n\022UIYadelRequestType\022\017\n\013REPO" +
+      "RT_DAGS\020\000\022\016\n\nDELETE_DAG\020\001*:\n\rUIWorkerSta" +
+      "te\022\025\n\021CURRENTLY_WORKING\020\000\022\022\n\016CURRENTLY_I" +
+      "DLE\020\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8579,7 +9268,7 @@ public final class YadelReport {
     internal_static_org_roylance_yadel_UIWorkerConfiguration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_UIWorkerConfiguration_descriptor,
-        new java.lang.String[] { "Ip", "Port", "Host", "InitializedTime", "State", });
+        new java.lang.String[] { "Ip", "Port", "Host", "InitializedTime", "State", "TaskDisplay", "DagDisplay", "MinutesBeforeTaskReset", "TaskStartTime", "TaskWorkingTimeDisplay", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

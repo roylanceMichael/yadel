@@ -1,7 +1,7 @@
 {
   "version" : "1.0.1",
   "name" : "plugin",
-  "number" : "1473458642537",
+  "number" : "1473787842215",
   "type" : "GRADLE",
   "buildAgent" : {
     "name" : "Gradle",
@@ -11,16 +11,16 @@
     "name" : "Gradle",
     "version" : "3.0"
   },
-  "started" : "2016-09-09T16:04:02.528-0600",
-  "durationMillis" : 1435,
+  "started" : "2016-09-13T11:30:42.208-0600",
+  "durationMillis" : 257,
   "principal" : "mikeroylance",
   "artifactoryPrincipal" : "admin",
   "licenseControl" : {
     "runChecks" : false,
     "includePublishedArtifacts" : false,
     "autoDiscover" : false,
-    "scopesList" : "",
-    "licenseViolationsRecipientsList" : ""
+    "licenseViolationsRecipientsList" : "",
+    "scopesList" : ""
   },
   "buildRetention" : {
     "count" : -1,
@@ -28,17 +28,17 @@
     "buildNumbersNotToBeDiscarded" : [ ]
   },
   "modules" : [ {
-    "id" : "org.roylance.yadel:plugin:0.106-SNAPSHOT",
+    "id" : "org.roylance.yadel:plugin:0.108-SNAPSHOT",
     "artifacts" : [ {
-      "type" : "pom",
-      "sha1" : "c3c78bb88d73768cd58020e68dff07ce07e658e5",
-      "md5" : "6cd8daa88e88bdea9ba19d8eba738652",
-      "name" : "plugin-0.106-SNAPSHOT.pom"
-    }, {
       "type" : "jar",
-      "sha1" : "5cea63a95113d6c6b27c969cf0999ea963e0a985",
-      "md5" : "465f7bfdc5925207a988b444faac64a4",
-      "name" : "plugin-0.106-SNAPSHOT.jar"
+      "sha1" : "304ebf54ed3bc50f18593003b3683f093d5abcb0",
+      "md5" : "3c2332593fee2fd5de47fc8313742ffb",
+      "name" : "plugin-0.108-SNAPSHOT.jar"
+    }, {
+      "type" : "pom",
+      "sha1" : "36146aad1d725081da26956f99ed434a190fcf1f",
+      "md5" : "08abc4d2c8aaa406aae959f940676b0d",
+      "name" : "plugin-0.108-SNAPSHOT.pom"
     } ],
     "excludedArtifacts" : [ ],
     "dependencies" : [ {

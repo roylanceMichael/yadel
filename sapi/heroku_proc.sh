@@ -3,7 +3,7 @@ if [ -d "/app/.jdk" ]; then
     export JAVA_HOME=/app/.jdk
 fi
 
-host="192.168.12.120"
+host="192.168.1.5"
 nodeHost1=${host}
 nodeHost2=${host}
 nodePort1=2345
