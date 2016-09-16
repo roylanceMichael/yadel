@@ -10,11 +10,11 @@ buildscript {
 
     repositories {
         mavenCentral()
-        maven { url 'http://mikeapps.org:8081/artifactory/libs-snapshot-local' }
+        maven { url 'http://dl.bintray.com/roylancemichael/maven' }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath "org.roylance.yadel:plugin:0.108-SNAPSHOT"
+        classpath "org.roylance.yadel:plugin:0.109"
     }
 }
 
@@ -27,11 +27,11 @@ mainClassName="org.roylance.yadel.Main"
 
 repositories {
     mavenCentral()
-    maven { url 'http://mikeapps.org:8081/artifactory/libs-snapshot-local' }
+    maven { url 'http://dl.bintray.com/roylancemichael/maven' }
 }
 
 dependencies {
-    compile 'org.roylance.yadel:api:0.108-SNAPSHOT'
+    compile 'org.roylance.yadel:api:0.109'
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }

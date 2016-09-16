@@ -1,4 +1,4 @@
-
+// THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
 var gulp = require('gulp');
 var gulpsync = require('gulp-sync')(gulp);
 var sass = require('gulp-sass');

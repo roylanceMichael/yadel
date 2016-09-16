@@ -1,3 +1,4 @@
+// THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
 import {IReportService} from "./IReportService";
 import {IHttpExecute} from "./IHttpExecute";
 import ProtoBufBuilder = org.roylance.yadel.ProtoBufBuilder;

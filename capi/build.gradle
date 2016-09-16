@@ -1,29 +1,26 @@
-
+// THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
 buildscript {
     ext.kotlin_version = '1.0.3'
-    ext.project_version = '0.110'
     repositories {
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.3"
     }
 }
 
 group 'org.roylance.yadel'
-version project_version
+version '0.110'
 
 apply plugin: 'java'
-apply plugin: 'groovy'
 apply plugin: 'kotlin'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 sourceCompatibility = 1.7
-
 
 publishing {
     publications {
@@ -32,6 +29,7 @@ publishing {
         }
     }
 }
+
 bintray {
     user = System.getenv('BINTRAY_USER')
     key = System.getenv('BINTRAY_KEY')
@@ -39,28 +37,32 @@ bintray {
     publish = true
     pkg {
         repo = 'maven'
-        name = "${group}.${rootProject.name}"
+        name = "org.roylance.yadel.capi"
         userOrg = user
         licenses = ['MIT']
         labels = [rootProject.name]
         publicDownloadNumbers = true
         vcsUrl = 'https://github.com/roylanceMichael/yadel.git'
         version {
-            name = project_version
+            name = "0.110"
         }
     }
 }
 
 repositories {
     mavenCentral()
-    maven { url "http://dl.bintray.com/roylancemichael/maven" }
+    maven { url 'http://dl.bintray.com/roylancemichael/maven'}
+    maven {
+    url "http://dl.bintray.com/roylancemichael/maven"
+}
+
 }
 
 dependencies {
-    compile gradleApi()
-    compile localGroovy()
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
 
     compile 'org.roylance:common:0.6'
+    compile 'org.roylance.yadel:api:0.110'
 
-    testCompile group: 'junit', name: 'junit', version: '4.11'
 }

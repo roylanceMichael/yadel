@@ -1,3 +1,4 @@
+// THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
 package org.roylance.yadel.rest;
 
 import org.roylance.common.service.IProtoSerializerService;

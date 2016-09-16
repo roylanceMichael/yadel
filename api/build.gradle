@@ -4,7 +4,7 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
-        maven { url "http://dl.bintray.com/roylancemichael/maven" }
+        maven { url repoUrl_ }
     }
     dependencies {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
@@ -26,7 +26,7 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    maven { url "http://dl.bintray.com/roylancemichael/maven" }
+    maven { url repoUrl_ }
 }
 
 publishing {
@@ -43,13 +43,13 @@ bintray {
     publications = ['mavenJava']
     publish = true
     pkg {
-        repo = 'maven'
+        repo = repoName_
         name = "${group}.${rootProject.name}"
         userOrg = user
-        licenses = ['Apache-2.0']
+        licenses = [license_]
         labels = [rootProject.name]
         publicDownloadNumbers = true
-        vcsUrl = 'https://github.com/roylanceMichael/yadel.git'
+        vcsUrl = githubRepo_
         version {
             name = project_version
         }

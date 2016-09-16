@@ -6,17 +6,20 @@
 
     <groupId>org.roylance.yadel</groupId>
     <artifactId>sapi</artifactId>
-    <version>0.108</version>
+    <version>0.110</version>
 
     <repositories>
+
         <repository>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <id>bintray-roylancemichael-maven</id>
+            <id>bintray--maven</id>
             <name>bintray</name>
             <url>http://dl.bintray.com/roylancemichael/maven</url>
         </repository>
+
+
         <repository>
             <id>sonatype.oss.snapshots</id>
             <name>Sonatype OSS Snapshot Repository</name>
@@ -45,11 +48,6 @@
     </pluginRepositories>
 
     <dependencies>
-        <dependency>
-            <groupId>org.roylance</groupId>
-            <artifactId>common</artifactId>
-            <version>LATEST</version>
-        </dependency>
         
         <dependency>
             <groupId>com.typesafe.akka</groupId>
@@ -60,14 +58,19 @@
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>api</artifactId>
-            <version>0.108</version>
+            <version>0.110</version>
         </dependency>
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>capi</artifactId>
-            <version>0.108</version>
+            <version>0.110</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.roylance</groupId>
+            <artifactId>common</artifactId>
+            <version>0.6</version>
+        </dependency>
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>
             <artifactId>retrofit</artifactId>

@@ -1,3 +1,4 @@
+// THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
 using System.Threading.Tasks;
 
 namespace Org.Roylance.Yadel.Api

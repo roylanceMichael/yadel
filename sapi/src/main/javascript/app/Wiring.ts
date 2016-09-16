@@ -1,3 +1,4 @@
+// THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
 import {YadelModel} from "../node_modules/org.roylance.yadel.api/YadelModelFactory";
 
 import {ReportService} from "../node_modules/org.roylance.yadel.api/ReportService";

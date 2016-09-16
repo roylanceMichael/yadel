@@ -11,7 +11,7 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
-        maven { url "http://dl.bintray.com/roylancemichael/maven" }
+        maven { url repoUrl_ }
     }
     dependencies {
         classpath "org.roylance.yaclib:core:${yaclibMajor}.${yaclibMinor}"
@@ -41,6 +41,13 @@ task execute(type: YaclibPlugin) {
     thirdPartyServerDependencies.add(akkaDependency)
 
     nugetKey = System.getenv('NUGET_KEY')
+
+    githubRepo = githubRepo_
+    repoUrl = repoUrl_
+    repoUser = ""
+    repoName = repoName_
+    license = license_
+    author = author_
 
     println(nugetKey)
     println(parentDir)
