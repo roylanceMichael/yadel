@@ -1,23 +1,25 @@
-group 'org.roylance.yadel'
-version '0.108-SNAPSHOT'
 
 buildscript {
     ext.kotlin_version = '1.0.3'
-
+    ext.project_version = '0.108'
     repositories {
         jcenter()
         mavenCentral()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
     }
 }
+
+group 'org.roylance.yadel'
+version project_version
 
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'kotlin'
-apply plugin: 'com.jfrog.artifactory'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 sourceCompatibility = 1.7
@@ -30,41 +32,35 @@ publishing {
         }
     }
 }
-
-artifactory {
-    contextUrl = 'http://chaperapp.dyndns-server.com:8081/artifactory'
-    publish {
-        repository {
-            repoKey = 'libs-snapshot-local'
-            username = System.getenv('ARTIFACTORY_USER')
-            password = System.getenv('ARTIFACTORY_PASSWORD')
-        }
-
-        defaults {
-            publications('mavenJava')
-            publishBuildInfo = true
-            publishArtifacts = true
-            properties = ['qa.level': 'basic', 'dev.team' : 'core']
-            publishPom = true
-        }
-    }
-    resolve {
-        repository {
-            repoKey = 'repo'
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
+    publications = ['mavenJava']
+    publish = true
+    pkg {
+        repo = 'maven'
+        name = "${group}.${rootProject.name}"
+        userOrg = user
+        licenses = ['Apache-2.0']
+        labels = [rootProject.name]
+        publicDownloadNumbers = true
+        vcsUrl = 'https://github.com/roylanceMichael/yadel.git'
+        version {
+            name = project_version
         }
     }
 }
 
 repositories {
     mavenCentral()
-    maven { url 'http://chaperapp.dyndns-server.com:8081/artifactory/libs-snapshot-local' }
+    maven { url "http://dl.bintray.com/roylancemichael/maven" }
 }
 
 dependencies {
     compile gradleApi()
     compile localGroovy()
 
-    compile 'org.roylance:common:0.4-SNAPSHOT'
+    compile 'org.roylance:common:0.6'
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }

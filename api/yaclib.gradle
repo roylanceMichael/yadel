@@ -2,7 +2,7 @@ import org.roylance.yaclib.YaclibPlugin
 import org.roylance.yaclib.YaclibModel
 
 group 'org.roylance.yadel'
-version = "0.$actualVersion-SNAPSHOT"
+version = "${actualMajor}.${actualMinor}"
 
 apply plugin: 'java'
 
@@ -11,11 +11,11 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
-        maven { url 'http://chaperapp.dyndns-server.com:8081/artifactory/libs-snapshot-local' }
+        maven { url "http://dl.bintray.com/roylancemichael/maven" }
     }
     dependencies {
-        classpath "org.roylance.yaclib:core:0.$yaclibVersion-SNAPSHOT"
-        classpath "org.roylance.yadel:api:0.$actualVersion-SNAPSHOT"
+        classpath "org.roylance.yaclib:core:${yaclibMajor}.${yaclibMinor}"
+        classpath "org.roylance.yadel:api:${actualMajor}.${actualMinor}"
     }
 }
 
@@ -23,7 +23,8 @@ task execute(type: YaclibPlugin) {
     def parentDir = new File(System.getProperty("user.dir")).parentFile.toString()
 
     typeScriptModelFile = "YadelModel"
-    version = actualVersion.toInteger()
+    majorVersion = actualMajor.toInteger()
+    minorVersion = actualMinor.toInteger()
     location = parentDir
     mainModel = "org.roylance.yadel.YadelReport"
     mainController = "org.roylance.yadel.YadelController"

@@ -6,19 +6,16 @@
 
     <groupId>org.roylance.yadel</groupId>
     <artifactId>sapi</artifactId>
-    <version>0.108-SNAPSHOT</version>
+    <version>0.108</version>
 
     <repositories>
         <repository>
-            <id>mike-MacBook</id>
-            <name>mike-MacBook-snapshots</name>
-            <url>http://chaperapp.dyndns-server.com:8081/artifactory/libs-snapshot-local</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
+            <id>bintray-roylancemichael-maven</id>
+            <name>bintray</name>
+            <url>http://dl.bintray.com/roylancemichael/maven</url>
         </repository>
         <repository>
             <id>sonatype.oss.snapshots</id>
@@ -63,12 +60,12 @@
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>api</artifactId>
-            <version>0.108-SNAPSHOT</version>
+            <version>0.108</version>
         </dependency>
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>capi</artifactId>
-            <version>0.108-SNAPSHOT</version>
+            <version>0.108</version>
         </dependency>
 
         <dependency>

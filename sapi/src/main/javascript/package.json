@@ -1,6 +1,6 @@
 {
   "name": "webapp",
-  "version": "0.0.108",
+  "version": "0.108.0",
   "description": "org.roylance.yadel.api",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,7 @@
 , "jquery": "^2.2.4"
 , "protobufjs": "^5.0.1"
 , "webpack-stream": "^3.2.0"
-,"org.roylance.yadel.api": "0.0.108"
+,"org.roylance.yadel.api": "0.108.0"
 
   }
 }
