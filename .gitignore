@@ -82,3 +82,7 @@ csharp/Org.Roylance.Yadel.Api/bin
 csharp/Org.Roylance.Yadel.Api/obj
 
 plugin/.gradle
+plugin/build
+capi/
+javascript/
+csharp/

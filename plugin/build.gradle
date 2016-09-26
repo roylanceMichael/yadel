@@ -1,7 +1,7 @@
 
 buildscript {
-    ext.kotlin_version = '1.0.3'
-    ext.project_version = '0.110'
+    ext.kotlin_version = '1.0.4'
+    ext.project_version = '0.111'
     repositories {
         jcenter()
         mavenCentral()
@@ -60,7 +60,7 @@ dependencies {
     compile gradleApi()
     compile localGroovy()
 
-    compile 'org.roylance:common:0.6'
+    compile 'org.roylance:common:0.7'
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
