@@ -16,7 +16,12 @@ class RunActorBuilder(
         val template = """#!/usr/bin/env bash
 ${if (isSystemWide) "pushd /opt/$projectName" else ""}
 export JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Dakka.cluster.seed-nodes.0=akka.ssl.tcp://YadelCluster@$host:$seedIPPort1 -Dakka.cluster.seed-nodes.1=akka.ssl.tcp://YadelCluster@$host:$seedIPPort2"
-bin/$projectName $host $actorPort > current_$actorPort.out 2>&1&
+rm -rf current_$actorPort
+mkdir current_$actorPort
+pushd current_$actorPort
+cp ../*.keystore .
+cp ../*.truststore .
+../bin/$projectName $host $actorPort > current_$actorPort.out 2>&1&
 """
         File(fileLocation).delete()
         File(fileLocation).writeText(template)

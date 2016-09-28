@@ -16,9 +16,22 @@ class RunServerBuilder(private val projectName: String,
 ${if (isSystemWide) "pushd /opt/$projectName" else ""}
 export JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Dakka.cluster.seed-nodes.0=akka.ssl.tcp://YadelCluster@$host:$seedIPPort1 -Dakka.cluster.seed-nodes.1=akka.ssl.tcp://YadelCluster@$host:$seedIPPort2"
 # seed node 1
-bin/$projectName $host $seedIPPort1 > seedNode1.out 2>&1&
+rm -rf seed1
+mkdir seed1
+pushd seed1
+cp ../*.keystore .
+cp ../*.truststore .
+../bin/$projectName $host $seedIPPort1 > seedNode1.out 2>&1&
+popd
 # seed node 2
-bin/$projectName $host $seedIPPort2 > seedNode2.out 2>&1&
+rm -rf seed2
+mkdir seed2
+pushd seed2
+cp ../*.keystore .
+cp ../*.truststore .
+../bin/$projectName $host $seedIPPort2 > seedNode2.out 2>&1&
+popd
+# manager
 bin/$projectName $host $managerPort > manager.out 2>&1&
 """
         File(fileLocation).delete()
