@@ -6,17 +6,19 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.4.0"
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.4"
     }
 }
 
 group 'org.roylance.yadel'
-version '0.111'
+version '0.114'
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: "com.jfrog.artifactory"
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
@@ -29,6 +31,7 @@ publishing {
         }
     }
 }
+
 
 bintray {
     user = System.getenv('BINTRAY_USER')
@@ -44,7 +47,7 @@ bintray {
         publicDownloadNumbers = true
         vcsUrl = 'https://github.com/roylanceMichael/yadel.git'
         version {
-            name = "0.111"
+            name = "0.114"
         }
     }
 }
@@ -63,6 +66,6 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
 
     compile 'org.roylance:common:0.7'
-    compile 'org.roylance.yadel:api:0.111'
+    compile 'org.roylance.yadel:api:0.114'
 
 }

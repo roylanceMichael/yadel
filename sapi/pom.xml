@@ -6,46 +6,46 @@
 
     <groupId>org.roylance.yadel</groupId>
     <artifactId>sapi</artifactId>
-    <version>0.111</version>
+    <version>0.114</version>
 
     <repositories>
+        <repository>
+  <snapshots>
+    <enabled>false</enabled>
+  </snapshots>
+  <id>maven</id>
+  <name>maven</name>
+  <url>http://dl.bintray.com/roylancemichael/maven</url>
+</repository>
+
 
         <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray--maven</id>
-            <name>bintray</name>
-            <url>http://dl.bintray.com/roylancemichael/maven</url>
-        </repository>
-
-
-        <repository>
-            <id>sonatype.oss.snapshots</id>
-            <name>Sonatype OSS Snapshot Repository</name>
-            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
+                    <id>sonatype.oss.snapshots</id>
+                    <name>Sonatype OSS Snapshot Repository</name>
+                    <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
     </repositories>
 
     <pluginRepositories>
-        <pluginRepository>
-            <id>sonatype.oss.snapshots</id>
-            <name>Sonatype OSS Snapshot Repository</name>
-            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
+                <pluginRepository>
+                    <id>sonatype.oss.snapshots</id>
+                    <name>Sonatype OSS Snapshot Repository</name>
+                    <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+
 
     <dependencies>
         
@@ -58,12 +58,12 @@
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>api</artifactId>
-            <version>0.111</version>
+            <version>0.114</version>
         </dependency>
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>capi</artifactId>
-            <version>0.111</version>
+            <version>0.114</version>
         </dependency>
 
         <dependency>
@@ -268,11 +268,11 @@
                     <jdkVersion>1.8</jdkVersion>
                     <appName>org.roylance.yadel.api</appName>
                     <processTypes>
-                        <web>sh heroku_proc.sh</web>
+                        <web>sh proc.sh</web>
                     </processTypes>
                     <includes>
                         <include>src/main/webapp</include>
-                        <include>heroku_proc.sh</include>
+                        <include>proc.sh</include>
                     </includes>
                 </configuration>
             </plugin>
