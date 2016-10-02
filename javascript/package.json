@@ -1,12 +1,12 @@
 {
   "name": "org.roylance.yadel.api",
-  "version": "0.114.0",
+  "version": "0.115.0",
   "description": "models to interface with the org.roylance.yadel.api system",
   "author": "roylance.michael@gmail.com",
   "license": "MIT",
+  
   "dependencies": {
-	"protobuftshelper": "0.0.8"
-, 	"protobufjs": "^5.0.1"
+	"protobufjs": "^5.0.1"
 , 	"proto2typescript": "^2.2.0"
 
   }
