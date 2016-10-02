@@ -13,7 +13,7 @@ buildscript {
 }
 
 group 'org.roylance.yadel'
-version '0.115'
+version '0.116'
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
@@ -47,7 +47,7 @@ bintray {
         publicDownloadNumbers = true
         vcsUrl = 'https://github.com/roylanceMichael/yadel.git'
         version {
-            name = "0.115"
+            name = "0.116"
         }
     }
 }
@@ -65,6 +65,6 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
 
     compile 'org.roylance:common:0.7'
-    compile 'org.roylance.yadel:api:0.115'
+    compile 'org.roylance.yadel:api:0.116'
 
 }
