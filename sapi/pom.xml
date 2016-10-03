@@ -6,7 +6,7 @@
 
     <groupId>org.roylance.yadel</groupId>
     <artifactId>sapi</artifactId>
-    <version>0.116</version>
+    <version>0.117</version>
 
     <repositories>
         <repository>
@@ -58,12 +58,12 @@
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>api</artifactId>
-            <version>0.116</version>
+            <version>0.117</version>
         </dependency>
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>capi</artifactId>
-            <version>0.116</version>
+            <version>0.117</version>
         </dependency>
 
         <dependency>

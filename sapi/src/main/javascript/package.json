@@ -1,9 +1,9 @@
 {
   "name": "webapp",
-  "version": "0.116.0",
+  "version": "0.117.0",
   "description": "org.roylance.yadel.api",
   "author": "roylance.michael@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "del": "^2.2.0",
     "gulp": "^3.9.1",
@@ -28,7 +28,7 @@
 , "jquery": "^2.2.4"
 , "protobufjs": "^5.0.1"
 , "webpack-stream": "^3.2.0"
-,"org.roylance.yadel.api": "0.116.0"
+,"org.roylance.yadel.api": "0.117.0"
 
   }
 }
