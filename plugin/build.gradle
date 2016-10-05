@@ -1,7 +1,6 @@
 
 buildscript {
     ext.kotlin_version = '1.0.4'
-    ext.project_version = '0.117'
     repositories {
         jcenter()
         mavenCentral()
@@ -12,8 +11,8 @@ buildscript {
     }
 }
 
-group 'org.roylance.yadel'
-version project_version
+group "$group"
+version "$fullVersion"
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
@@ -46,7 +45,7 @@ bintray {
         publicDownloadNumbers = true
         vcsUrl = 'https://github.com/roylanceMichael/yadel.git'
         version {
-            name = project_version
+            name = "$fullVersion"
         }
     }
 }

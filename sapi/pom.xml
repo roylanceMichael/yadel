@@ -4,9 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>		<group>org.roylance.yadel</group>
+		<name>api</name>
+		<fullName>org.roylance.yadel.api</fullName>
+		<minor>121</minor>
+		<major>0</major>
+		<fullVersion>0.121</fullVersion>
+		<org_roylance_yadel_api>0.121</org_roylance_yadel_api>
+		<com_typesafe_akka_akka_cluster_>2.4.7</com_typesafe_akka_akka_cluster_>
+	</properties>
+
+
     <groupId>org.roylance.yadel</groupId>
     <artifactId>sapi</artifactId>
-    <version>0.117</version>
+    <version>${fullVersion}</version>
 
     <repositories>
         <repository>
@@ -52,18 +63,18 @@
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-cluster_2.11</artifactId>
-            <version>2.4.7</version>
+            <version>${com_typesafe_akka_akka_cluster_}</version>
         </dependency>
             
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>api</artifactId>
-            <version>0.117</version>
+            <version>${org_roylance_yadel_api}</version>
         </dependency>
         <dependency>
             <groupId>org.roylance.yadel</groupId>
             <artifactId>capi</artifactId>
-            <version>0.117</version>
+            <version>${org_roylance_yadel_api}</version>
         </dependency>
 
         <dependency>
@@ -109,7 +120,7 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.6.2</version>
+            <version>2.7</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -266,7 +277,7 @@
                 <version>1.0.3</version>
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
-                    <appName>org.roylance.yadel.api</appName>
+                    <appName>$fullName</appName>
                     <processTypes>
                         <web>sh proc.sh</web>
                     </processTypes>

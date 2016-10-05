@@ -14,7 +14,7 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath "org.roylance.yadel:plugin:0.116"
+        classpath "org.roylance.yadel:plugin:$org_roylance_yadel_api"
     }
 }
 
