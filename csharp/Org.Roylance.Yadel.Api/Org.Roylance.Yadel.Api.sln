@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{DCE184A6-CACD-45DB-BF66-08C30916331C}") = "Org.Roylance.Yadel.Api", "Org.Roylance.Yadel.Api.xproj", "{6E5C06E4-EA2A-4EE4-8A91-4B1F14E9DC9F}"
+Project("{583C9B01-7271-4448-BF98-47B12366D98C}") = "Org.Roylance.Yadel.Api", "Org.Roylance.Yadel.Api.xproj", "{13ADA3BF-965E-42C5-A051-7B2D39E3FDAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6E5C06E4-EA2A-4EE4-8A91-4B1F14E9DC9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E5C06E4-EA2A-4EE4-8A91-4B1F14E9DC9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E5C06E4-EA2A-4EE4-8A91-4B1F14E9DC9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E5C06E4-EA2A-4EE4-8A91-4B1F14E9DC9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13ADA3BF-965E-42C5-A051-7B2D39E3FDAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13ADA3BF-965E-42C5-A051-7B2D39E3FDAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13ADA3BF-965E-42C5-A051-7B2D39E3FDAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13ADA3BF-965E-42C5-A051-7B2D39E3FDAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

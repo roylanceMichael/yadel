@@ -7,10 +7,10 @@
     <properties>		<group>org.roylance.yadel</group>
 		<name>api</name>
 		<fullName>org.roylance.yadel.api</fullName>
-		<minor>121</minor>
+		<minor>124</minor>
 		<major>0</major>
-		<fullVersion>0.121</fullVersion>
-		<org_roylance_yadel_api>0.121</org_roylance_yadel_api>
+		<fullVersion>0.124</fullVersion>
+		<org_roylance_yadel_api>0.124</org_roylance_yadel_api>
 		<com_typesafe_akka_akka_cluster_>2.4.7</com_typesafe_akka_akka_cluster_>
 	</properties>
 
