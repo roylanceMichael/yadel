@@ -224,6 +224,9 @@ declare module org.roylance.yadel {
 		logs: string[];
 		getLogs() : string[];
 		setLogs(logs : string[]): void;
+		is_waiting_for_another_dag_task?: boolean;
+		getIsWaitingForAnotherDagTask() : boolean;
+		setIsWaitingForAnotherDagTask(isWaitingForAnotherDagTask : boolean): void;
 		
 	}
 	
@@ -314,6 +317,9 @@ declare module org.roylance.yadel {
 		current?: CommonAction;
 		getCurrent() : CommonAction;
 		setCurrent(current : CommonAction): void;
+		get_dag_status?: CommonAction;
+		getGetDagStatus() : CommonAction;
+		setGetDagStatus(getDagStatus : CommonAction): void;
 		
 	}
 	
@@ -483,6 +489,9 @@ declare module org.roylance.yadel {
 		third_context_base_64?: string;
 		getThirdContextBase_64() : string;
 		setThirdContextBase_64(thirdContextBase_64 : string): void;
+		is_waiting_for_another_dag_task?: boolean;
+		getIsWaitingForAnotherDagTask() : boolean;
+		setIsWaitingForAnotherDagTask(isWaitingForAnotherDagTask : boolean): void;
 		
 	}
 	
@@ -587,6 +596,7 @@ declare module org.roylance.yadel {
 	export const enum UIYadelRequestType {
 		REPORT_DAGS = 0,
 		DELETE_DAG = 1,
+		GET_DAG_STATUS = 2,
 		
 	}
 }

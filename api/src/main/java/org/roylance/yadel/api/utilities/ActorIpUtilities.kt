@@ -9,7 +9,6 @@ import java.util.*
 object ActorIpUtilities {
     const private val ForwardSlash = "/"
     const private val AtMark = "@"
-    const private val EmptyString = ""
 
     fun getIpFromActorAddress(actor:ActorRef):String? {
         val actorAddress = actor.path().address().toString()
@@ -32,7 +31,7 @@ object ActorIpUtilities {
 
         try {
             val currentIp = InetAddress.getLocalHost().hostAddress.trim()
-            if (!CommonTokens.LocalHost.equals(currentIp) && currentIp.indexOf(":") == -1) {
+            if (CommonTokens.LocalHost != currentIp && currentIp.indexOf(":") == -1) {
                 val distance = StringUtilities.editDistance(seedHostIp, currentIp)
                 ipScoreMap[currentIp] = distance
             }
@@ -51,7 +50,7 @@ object ActorIpUtilities {
                 while(addresses.hasMoreElements()) {
                     val address = addresses.nextElement()
                     val hostAddress = address.hostAddress.trim()
-                    if (!CommonTokens.LocalHost.equals(hostAddress) && hostAddress.indexOf(":") == -1) {
+                    if (CommonTokens.LocalHost != hostAddress && hostAddress.indexOf(":") == -1) {
                         val distanceToAddress = StringUtilities.editDistance(seedHostIp, hostAddress)
                         ipScoreMap[hostAddress] = distanceToAddress
                     }

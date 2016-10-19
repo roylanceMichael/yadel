@@ -241,6 +241,12 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "type": "string",
                     "name": "logs",
                     "id": 11
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "is_waiting_for_another_dag_task",
+                    "id": 12
                 }
             ]
         },
@@ -340,6 +346,12 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "type": "CommonAction",
                     "name": "current",
                     "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "CommonAction",
+                    "name": "get_dag_status",
+                    "id": 3
                 }
             ]
         },
@@ -570,6 +582,12 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "type": "string",
                     "name": "third_context_base_64",
                     "id": 12
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "is_waiting_for_another_dag_task",
+                    "id": 13
                 }
             ]
         },
@@ -678,6 +696,10 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                 {
                     "name": "DELETE_DAG",
                     "id": 1
+                },
+                {
+                    "name": "GET_DAG_STATUS",
+                    "id": 2
                 }
             ]
         },

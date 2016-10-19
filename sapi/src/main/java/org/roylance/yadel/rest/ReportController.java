@@ -61,4 +61,19 @@ public class ReportController {
 
         }).start();
     }
+
+    @POST
+    @Path("/get-dag-status")
+    public void get_dag_status(@Suspended AsyncResponse asyncResponse, String request) throws Exception {
+        new Thread(() -> {
+            
+            final org.roylance.yadel.YadelReport.UIYadelRequest requestActual =
+                    this.serializerService.deserializeFromBase64(request, org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance());
+
+            final org.roylance.yadel.YadelReport.UIYadelResponse response = this.reportService.get_dag_status(requestActual);
+            final String deserializeResponse = this.serializerService.serializeToBase64(response);
+            asyncResponse.resume(deserializeResponse);
+
+        }).start();
+    }
 }

@@ -4,6 +4,7 @@ package org.roylance.yadel;
 enum UIYadelRequestType {
     REPORT_DAGS = 0;
     DELETE_DAG = 1;
+    GET_DAG_STATUS = 2;
 }
 
 message UIYadelRequest {
@@ -57,6 +58,7 @@ message UINode {
     bool is_processing = 9;
     bool is_error = 10;
     repeated string logs = 11;
+    bool is_waiting_for_another_dag_task = 12;
 }
 
 message UIWorkerConfiguration {

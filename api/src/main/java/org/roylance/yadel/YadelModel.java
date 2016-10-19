@@ -5627,6 +5627,11 @@ public final class YadelModel {
      */
     com.google.protobuf.ByteString
         getThirdContextBase64Bytes();
+
+    /**
+     * <code>optional bool is_waiting_for_another_dag_task = 13;</code>
+     */
+    boolean getIsWaitingForAnotherDagTask();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.Task}
@@ -5652,6 +5657,7 @@ public final class YadelModel {
       firstContextBase64_ = "";
       secondContextBase64_ = "";
       thirdContextBase64_ = "";
+      isWaitingForAnotherDagTask_ = false;
     }
 
     @java.lang.Override
@@ -5751,6 +5757,11 @@ public final class YadelModel {
               java.lang.String s = input.readStringRequireUtf8();
 
               thirdContextBase64_ = s;
+              break;
+            }
+            case 104: {
+
+              isWaitingForAnotherDagTask_ = input.readBool();
               break;
             }
           }
@@ -6093,6 +6104,15 @@ public final class YadelModel {
       }
     }
 
+    public static final int IS_WAITING_FOR_ANOTHER_DAG_TASK_FIELD_NUMBER = 13;
+    private boolean isWaitingForAnotherDagTask_;
+    /**
+     * <code>optional bool is_waiting_for_another_dag_task = 13;</code>
+     */
+    public boolean getIsWaitingForAnotherDagTask() {
+      return isWaitingForAnotherDagTask_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -6140,6 +6160,9 @@ public final class YadelModel {
       }
       if (!getThirdContextBase64Bytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, thirdContextBase64_);
+      }
+      if (isWaitingForAnotherDagTask_ != false) {
+        output.writeBool(13, isWaitingForAnotherDagTask_);
       }
     }
 
@@ -6190,6 +6213,10 @@ public final class YadelModel {
       if (!getThirdContextBase64Bytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, thirdContextBase64_);
       }
+      if (isWaitingForAnotherDagTask_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(13, isWaitingForAnotherDagTask_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -6230,6 +6257,8 @@ public final class YadelModel {
           .equals(other.getSecondContextBase64());
       result = result && getThirdContextBase64()
           .equals(other.getThirdContextBase64());
+      result = result && (getIsWaitingForAnotherDagTask()
+          == other.getIsWaitingForAnotherDagTask());
       return result;
     }
 
@@ -6272,6 +6301,9 @@ public final class YadelModel {
       hash = (53 * hash) + getSecondContextBase64().hashCode();
       hash = (37 * hash) + THIRD_CONTEXT_BASE_64_FIELD_NUMBER;
       hash = (53 * hash) + getThirdContextBase64().hashCode();
+      hash = (37 * hash) + IS_WAITING_FOR_ANOTHER_DAG_TASK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsWaitingForAnotherDagTask());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6424,6 +6456,8 @@ public final class YadelModel {
 
         thirdContextBase64_ = "";
 
+        isWaitingForAnotherDagTask_ = false;
+
         return this;
       }
 
@@ -6476,6 +6510,7 @@ public final class YadelModel {
         result.firstContextBase64_ = firstContextBase64_;
         result.secondContextBase64_ = secondContextBase64_;
         result.thirdContextBase64_ = thirdContextBase64_;
+        result.isWaitingForAnotherDagTask_ = isWaitingForAnotherDagTask_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -6605,6 +6640,9 @@ public final class YadelModel {
         if (!other.getThirdContextBase64().isEmpty()) {
           thirdContextBase64_ = other.thirdContextBase64_;
           onChanged();
+        }
+        if (other.getIsWaitingForAnotherDagTask() != false) {
+          setIsWaitingForAnotherDagTask(other.getIsWaitingForAnotherDagTask());
         }
         onChanged();
         return this;
@@ -7627,6 +7665,32 @@ public final class YadelModel {
   checkByteStringIsUtf8(value);
         
         thirdContextBase64_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean isWaitingForAnotherDagTask_ ;
+      /**
+       * <code>optional bool is_waiting_for_another_dag_task = 13;</code>
+       */
+      public boolean getIsWaitingForAnotherDagTask() {
+        return isWaitingForAnotherDagTask_;
+      }
+      /**
+       * <code>optional bool is_waiting_for_another_dag_task = 13;</code>
+       */
+      public Builder setIsWaitingForAnotherDagTask(boolean value) {
+        
+        isWaitingForAnotherDagTask_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool is_waiting_for_another_dag_task = 13;</code>
+       */
+      public Builder clearIsWaitingForAnotherDagTask() {
+        
+        isWaitingForAnotherDagTask_ = false;
         onChanged();
         return this;
       }
@@ -10832,7 +10896,7 @@ public final class YadelModel {
       "asks\030\t \003(\0132\030.org.roylance.yadel.Task\022/\n\r" +
       "errored_tasks\030\n \003(\0132\030.org.roylance.yadel" +
       ".Task\0221\n\017completed_tasks\030\013 \003(\0132\030.org.roy" +
-      "lance.yadel.Task\"\302\002\n\004Task\022\n\n\002id\030\001 \001(\t\022\017\n" +
+      "lance.yadel.Task\"\353\002\n\004Task\022\n\n\002id\030\001 \001(\t\022\017\n" +
       "\007display\030\002 \001(\t\0228\n\014dependencies\030\003 \003(\0132\".o",
       "rg.roylance.yadel.TaskDependency\022\016\n\006dag_" +
       "id\030\004 \001(\t\022%\n\004logs\030\005 \003(\0132\027.org.roylance.ya" +
@@ -10840,23 +10904,24 @@ public final class YadelModel {
       "_date\030\007 \001(\003\022\020\n\010end_date\030\010 \001(\003\022\020\n\010duratio" +
       "n\030\t \001(\003\022\035\n\025first_context_base_64\030\n \001(\t\022\036" +
       "\n\026second_context_base_64\030\013 \001(\t\022\035\n\025third_" +
-      "context_base_64\030\014 \001(\t\"4\n\016TaskDependency\022" +
-      "\n\n\002id\030\001 \001(\t\022\026\n\016parent_task_id\030\002 \001(\t\"\323\001\n\014" +
-      "AddTaskToDag\022\n\n\002id\030\001 \001(\t\022-\n\013parent_task\030" +
-      "\002 \001(\0132\030.org.roylance.yadel.Task\022*\n\010new_t",
-      "ask\030\003 \001(\0132\030.org.roylance.yadel.Task\022\035\n\025f" +
-      "irst_context_base_64\030\004 \001(\t\022\036\n\026second_con" +
-      "text_base_64\030\005 \001(\t\022\035\n\025third_context_base" +
-      "_64\030\006 \001(\t\"\251\001\n\014CompleteTask\022\n\n\002id\030\001 \001(\t\022&" +
-      "\n\004task\030\002 \001(\0132\030.org.roylance.yadel.Task\022E" +
-      "\n\024worker_configuration\030\003 \001(\0132\'.org.royla" +
-      "nce.yadel.WorkerConfiguration\022\014\n\004logs\030\004 " +
-      "\003(\t\022\020\n\010is_error\030\005 \001(\010*$\n\013WorkerState\022\013\n\007" +
-      "WORKING\020\000\022\010\n\004IDLE\020\001*.\n\032WorkerToManagerMe" +
-      "ssageType\022\020\n\014REGISTRATION\020\000*9\n\033ManagerTo",
-      "ManagerMessageType\022\032\n\026ENSURE_WORKERS_WOR" +
-      "KING\020\000*$\n\tActorRole\022\013\n\007MANAGER\020\000\022\n\n\006WORK" +
-      "ER\020\001b\006proto3"
+      "context_base_64\030\014 \001(\t\022\'\n\037is_waiting_for_" +
+      "another_dag_task\030\r \001(\010\"4\n\016TaskDependency" +
+      "\022\n\n\002id\030\001 \001(\t\022\026\n\016parent_task_id\030\002 \001(\t\"\323\001\n" +
+      "\014AddTaskToDag\022\n\n\002id\030\001 \001(\t\022-\n\013parent_task",
+      "\030\002 \001(\0132\030.org.roylance.yadel.Task\022*\n\010new_" +
+      "task\030\003 \001(\0132\030.org.roylance.yadel.Task\022\035\n\025" +
+      "first_context_base_64\030\004 \001(\t\022\036\n\026second_co" +
+      "ntext_base_64\030\005 \001(\t\022\035\n\025third_context_bas" +
+      "e_64\030\006 \001(\t\"\251\001\n\014CompleteTask\022\n\n\002id\030\001 \001(\t\022" +
+      "&\n\004task\030\002 \001(\0132\030.org.roylance.yadel.Task\022" +
+      "E\n\024worker_configuration\030\003 \001(\0132\'.org.royl" +
+      "ance.yadel.WorkerConfiguration\022\014\n\004logs\030\004" +
+      " \003(\t\022\020\n\010is_error\030\005 \001(\010*$\n\013WorkerState\022\013\n" +
+      "\007WORKING\020\000\022\010\n\004IDLE\020\001*.\n\032WorkerToManagerM",
+      "essageType\022\020\n\014REGISTRATION\020\000*9\n\033ManagerT" +
+      "oManagerMessageType\022\032\n\026ENSURE_WORKERS_WO" +
+      "RKING\020\000*$\n\tActorRole\022\013\n\007MANAGER\020\000\022\n\n\006WOR" +
+      "KER\020\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10893,7 +10958,7 @@ public final class YadelModel {
     internal_static_org_roylance_yadel_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_Task_descriptor,
-        new java.lang.String[] { "Id", "Display", "Dependencies", "DagId", "Logs", "ExecutionDate", "StartDate", "EndDate", "Duration", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64", });
+        new java.lang.String[] { "Id", "Display", "Dependencies", "DagId", "Logs", "ExecutionDate", "StartDate", "EndDate", "Duration", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64", "IsWaitingForAnotherDagTask", });
     internal_static_org_roylance_yadel_TaskDependency_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_org_roylance_yadel_TaskDependency_fieldAccessorTable = new

@@ -12,4 +12,7 @@ public interface IReportRest {
 
     @POST("/rest/report/current")
     Call<String> current(@Body String request);
+
+    @POST("/rest/report/get-dag-status")
+    Call<String> get_dag_status(@Body String request);
 }

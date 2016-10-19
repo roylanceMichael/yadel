@@ -30,4 +30,13 @@ export class ReportService implements IReportService {
                     },
                     onError);
         }
+	get_dag_status(request: org.roylance.yadel.UIYadelRequest, onSuccess:(response: org.roylance.yadel.UIYadelResponse)=>void, onError:(response:any)=>void) {
+            const self = this;
+            this.httpExecute.performPost("/rest/report/get-dag-status",
+                    request.toBase64(),
+                    function(result:string) {
+                        onSuccess(self.modelFactory.UIYadelResponse.decode64(result));
+                    },
+                    onError);
+        }
 }

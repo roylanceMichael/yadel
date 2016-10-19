@@ -11,4 +11,5 @@ message CommonAction {
 message ReportController {
     CommonAction delete_dag = 1;
     CommonAction current = 2;
+    CommonAction get_dag_status = 3;
 }

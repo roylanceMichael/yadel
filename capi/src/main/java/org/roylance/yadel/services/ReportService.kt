@@ -22,4 +22,12 @@ class ReportService(
         return protoSerializer.deserializeFromBase64(response.body(),
                 org.roylance.yadel.YadelReport.UIYadelResponse.getDefaultInstance())
     }
+
+    override fun get_dag_status(request: org.roylance.yadel.YadelReport.UIYadelRequest): org.roylance.yadel.YadelReport.UIYadelResponse {
+        val base64request = protoSerializer.serializeToBase64(request)
+        val responseCall = restReport.get_dag_status(base64request)
+        val response = responseCall.execute()
+        return protoSerializer.deserializeFromBase64(response.body(),
+                org.roylance.yadel.YadelReport.UIYadelResponse.getDefaultInstance())
+    }
 }

@@ -21,4 +21,11 @@ class ReportService(object):
 		response.ParseFromString(base64.b64decode(response_call.text))
 		return response
 
+	def get_dag_status(request):
+		base64_request = base64.b64encode(request.SerializeToString())
+		response_call = requests.post(self.base_url + '/rest/report/get-dag-status', data = base64_request)
+		response = yadel_report_pb2.UIYadelResponse()
+		response.ParseFromString(base64.b64decode(response_call.text))
+		return response
+
 

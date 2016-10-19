@@ -64,6 +64,7 @@ message Task {
     string first_context_base_64 = 10;
     string second_context_base_64 = 11;
     string third_context_base_64 = 12;
+    bool is_waiting_for_another_dag_task = 13;
 }
 
 message TaskDependency {

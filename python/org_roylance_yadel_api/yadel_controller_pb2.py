@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yadel_controller.proto',
   package='org.roylance.yadel',
   syntax='proto3',
-  serialized_pb=_b('\n\x16yadel_controller.proto\x12\x12org.roylance.yadel\x1a\x12yadel_report.proto\"z\n\x0c\x43ommonAction\x12\x33\n\x07request\x18\x01 \x01(\x0b\x32\".org.roylance.yadel.UIYadelRequest\x12\x35\n\x08response\x18\x02 \x01(\x0b\x32#.org.roylance.yadel.UIYadelResponse\"{\n\x10ReportController\x12\x34\n\ndelete_dag\x18\x01 \x01(\x0b\x32 .org.roylance.yadel.CommonAction\x12\x31\n\x07\x63urrent\x18\x02 \x01(\x0b\x32 .org.roylance.yadel.CommonActionb\x06proto3')
+  serialized_pb=_b('\n\x16yadel_controller.proto\x12\x12org.roylance.yadel\x1a\x12yadel_report.proto\"z\n\x0c\x43ommonAction\x12\x33\n\x07request\x18\x01 \x01(\x0b\x32\".org.roylance.yadel.UIYadelRequest\x12\x35\n\x08response\x18\x02 \x01(\x0b\x32#.org.roylance.yadel.UIYadelResponse\"\xb5\x01\n\x10ReportController\x12\x34\n\ndelete_dag\x18\x01 \x01(\x0b\x32 .org.roylance.yadel.CommonAction\x12\x31\n\x07\x63urrent\x18\x02 \x01(\x0b\x32 .org.roylance.yadel.CommonAction\x12\x38\n\x0eget_dag_status\x18\x03 \x01(\x0b\x32 .org.roylance.yadel.CommonActionb\x06proto3')
   ,
   dependencies=[yadel__report__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -87,6 +87,13 @@ _REPORTCONTROLLER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='get_dag_status', full_name='org.roylance.yadel.ReportController.get_dag_status', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -99,14 +106,15 @@ _REPORTCONTROLLER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=190,
-  serialized_end=313,
+  serialized_start=191,
+  serialized_end=372,
 )
 
 _COMMONACTION.fields_by_name['request'].message_type = yadel__report__pb2._UIYADELREQUEST
 _COMMONACTION.fields_by_name['response'].message_type = yadel__report__pb2._UIYADELRESPONSE
 _REPORTCONTROLLER.fields_by_name['delete_dag'].message_type = _COMMONACTION
 _REPORTCONTROLLER.fields_by_name['current'].message_type = _COMMONACTION
+_REPORTCONTROLLER.fields_by_name['get_dag_status'].message_type = _COMMONACTION
 DESCRIPTOR.message_types_by_name['CommonAction'] = _COMMONACTION
 DESCRIPTOR.message_types_by_name['ReportController'] = _REPORTCONTROLLER
 

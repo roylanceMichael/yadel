@@ -57,7 +57,7 @@ abstract class WorkerBase: UntypedActor() {
 
     private fun handleCurrentClusterState(state:ClusterEvent.CurrentClusterState) {
         state.members.forEach {
-            if (it.status().equals(MemberStatus.up())) {
+            if (it.status() == MemberStatus.up()) {
                 this.register(it)
             }
         }

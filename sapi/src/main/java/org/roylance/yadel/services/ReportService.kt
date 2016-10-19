@@ -8,6 +8,19 @@ import scala.concurrent.duration.Duration
 import scala.concurrent.duration.FiniteDuration
 
 class ReportService: IReportService {
+    override fun get_dag_status(request: YadelReport.UIYadelRequest): YadelReport.UIYadelResponse {
+        val future = Patterns.ask(
+                ActorSingleton.getManager(),
+                request,
+                this.create500Seconds())
+
+        val result = Await.result(future, create500SecondsDuration()) as YadelReport.UIDag
+
+        return YadelReport.UIYadelResponse.newBuilder()
+            .setDag(result)
+            .build()
+    }
+
     override fun delete_dag(request: YadelReport.UIYadelRequest): YadelReport.UIYadelResponse {
         val future = Patterns.ask(
                 ActorSingleton.getManager(),

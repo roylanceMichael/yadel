@@ -797,6 +797,19 @@ public final class YadelController {
      * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
      */
     org.roylance.yadel.YadelController.CommonActionOrBuilder getCurrentOrBuilder();
+
+    /**
+     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     */
+    boolean hasGetDagStatus();
+    /**
+     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     */
+    org.roylance.yadel.YadelController.CommonAction getGetDagStatus();
+    /**
+     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     */
+    org.roylance.yadel.YadelController.CommonActionOrBuilder getGetDagStatusOrBuilder();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.ReportController}
@@ -859,6 +872,19 @@ public final class YadelController {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(current_);
                 current_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              org.roylance.yadel.YadelController.CommonAction.Builder subBuilder = null;
+              if (getDagStatus_ != null) {
+                subBuilder = getDagStatus_.toBuilder();
+              }
+              getDagStatus_ = input.readMessage(org.roylance.yadel.YadelController.CommonAction.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(getDagStatus_);
+                getDagStatus_ = subBuilder.buildPartial();
               }
 
               break;
@@ -928,6 +954,27 @@ public final class YadelController {
       return getCurrent();
     }
 
+    public static final int GET_DAG_STATUS_FIELD_NUMBER = 3;
+    private org.roylance.yadel.YadelController.CommonAction getDagStatus_;
+    /**
+     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     */
+    public boolean hasGetDagStatus() {
+      return getDagStatus_ != null;
+    }
+    /**
+     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     */
+    public org.roylance.yadel.YadelController.CommonAction getGetDagStatus() {
+      return getDagStatus_ == null ? org.roylance.yadel.YadelController.CommonAction.getDefaultInstance() : getDagStatus_;
+    }
+    /**
+     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     */
+    public org.roylance.yadel.YadelController.CommonActionOrBuilder getGetDagStatusOrBuilder() {
+      return getGetDagStatus();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -946,6 +993,9 @@ public final class YadelController {
       if (current_ != null) {
         output.writeMessage(2, getCurrent());
       }
+      if (getDagStatus_ != null) {
+        output.writeMessage(3, getGetDagStatus());
+      }
     }
 
     public int getSerializedSize() {
@@ -960,6 +1010,10 @@ public final class YadelController {
       if (current_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getCurrent());
+      }
+      if (getDagStatus_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getGetDagStatus());
       }
       memoizedSize = size;
       return size;
@@ -987,6 +1041,11 @@ public final class YadelController {
         result = result && getCurrent()
             .equals(other.getCurrent());
       }
+      result = result && (hasGetDagStatus() == other.hasGetDagStatus());
+      if (hasGetDagStatus()) {
+        result = result && getGetDagStatus()
+            .equals(other.getGetDagStatus());
+      }
       return result;
     }
 
@@ -1004,6 +1063,10 @@ public final class YadelController {
       if (hasCurrent()) {
         hash = (37 * hash) + CURRENT_FIELD_NUMBER;
         hash = (53 * hash) + getCurrent().hashCode();
+      }
+      if (hasGetDagStatus()) {
+        hash = (37 * hash) + GET_DAG_STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getGetDagStatus().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1135,6 +1198,12 @@ public final class YadelController {
           current_ = null;
           currentBuilder_ = null;
         }
+        if (getDagStatusBuilder_ == null) {
+          getDagStatus_ = null;
+        } else {
+          getDagStatus_ = null;
+          getDagStatusBuilder_ = null;
+        }
         return this;
       }
 
@@ -1166,6 +1235,11 @@ public final class YadelController {
           result.current_ = current_;
         } else {
           result.current_ = currentBuilder_.build();
+        }
+        if (getDagStatusBuilder_ == null) {
+          result.getDagStatus_ = getDagStatus_;
+        } else {
+          result.getDagStatus_ = getDagStatusBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1213,6 +1287,9 @@ public final class YadelController {
         }
         if (other.hasCurrent()) {
           mergeCurrent(other.getCurrent());
+        }
+        if (other.hasGetDagStatus()) {
+          mergeGetDagStatus(other.getGetDagStatus());
         }
         onChanged();
         return this;
@@ -1473,6 +1550,123 @@ public final class YadelController {
         }
         return currentBuilder_;
       }
+
+      private org.roylance.yadel.YadelController.CommonAction getDagStatus_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder> getDagStatusBuilder_;
+      /**
+       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       */
+      public boolean hasGetDagStatus() {
+        return getDagStatusBuilder_ != null || getDagStatus_ != null;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       */
+      public org.roylance.yadel.YadelController.CommonAction getGetDagStatus() {
+        if (getDagStatusBuilder_ == null) {
+          return getDagStatus_ == null ? org.roylance.yadel.YadelController.CommonAction.getDefaultInstance() : getDagStatus_;
+        } else {
+          return getDagStatusBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       */
+      public Builder setGetDagStatus(org.roylance.yadel.YadelController.CommonAction value) {
+        if (getDagStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          getDagStatus_ = value;
+          onChanged();
+        } else {
+          getDagStatusBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       */
+      public Builder setGetDagStatus(
+          org.roylance.yadel.YadelController.CommonAction.Builder builderForValue) {
+        if (getDagStatusBuilder_ == null) {
+          getDagStatus_ = builderForValue.build();
+          onChanged();
+        } else {
+          getDagStatusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       */
+      public Builder mergeGetDagStatus(org.roylance.yadel.YadelController.CommonAction value) {
+        if (getDagStatusBuilder_ == null) {
+          if (getDagStatus_ != null) {
+            getDagStatus_ =
+              org.roylance.yadel.YadelController.CommonAction.newBuilder(getDagStatus_).mergeFrom(value).buildPartial();
+          } else {
+            getDagStatus_ = value;
+          }
+          onChanged();
+        } else {
+          getDagStatusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       */
+      public Builder clearGetDagStatus() {
+        if (getDagStatusBuilder_ == null) {
+          getDagStatus_ = null;
+          onChanged();
+        } else {
+          getDagStatus_ = null;
+          getDagStatusBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       */
+      public org.roylance.yadel.YadelController.CommonAction.Builder getGetDagStatusBuilder() {
+        
+        onChanged();
+        return getGetDagStatusFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       */
+      public org.roylance.yadel.YadelController.CommonActionOrBuilder getGetDagStatusOrBuilder() {
+        if (getDagStatusBuilder_ != null) {
+          return getDagStatusBuilder_.getMessageOrBuilder();
+        } else {
+          return getDagStatus_ == null ?
+              org.roylance.yadel.YadelController.CommonAction.getDefaultInstance() : getDagStatus_;
+        }
+      }
+      /**
+       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder> 
+          getGetDagStatusFieldBuilder() {
+        if (getDagStatusBuilder_ == null) {
+          getDagStatusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder>(
+                  getGetDagStatus(),
+                  getParentForChildren(),
+                  isClean());
+          getDagStatus_ = null;
+        }
+        return getDagStatusBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1545,11 +1739,12 @@ public final class YadelController {
       "adel\032\022yadel_report.proto\"z\n\014CommonAction" +
       "\0223\n\007request\030\001 \001(\0132\".org.roylance.yadel.U" +
       "IYadelRequest\0225\n\010response\030\002 \001(\0132#.org.ro" +
-      "ylance.yadel.UIYadelResponse\"{\n\020ReportCo" +
-      "ntroller\0224\n\ndelete_dag\030\001 \001(\0132 .org.royla" +
-      "nce.yadel.CommonAction\0221\n\007current\030\002 \001(\0132" +
-      " .org.roylance.yadel.CommonActionb\006proto" +
-      "3"
+      "ylance.yadel.UIYadelResponse\"\265\001\n\020ReportC" +
+      "ontroller\0224\n\ndelete_dag\030\001 \001(\0132 .org.royl" +
+      "ance.yadel.CommonAction\0221\n\007current\030\002 \001(\013" +
+      "2 .org.roylance.yadel.CommonAction\0228\n\016ge" +
+      "t_dag_status\030\003 \001(\0132 .org.roylance.yadel." +
+      "CommonActionb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1575,7 +1770,7 @@ public final class YadelController {
     internal_static_org_roylance_yadel_ReportController_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_ReportController_descriptor,
-        new java.lang.String[] { "DeleteDag", "Current", });
+        new java.lang.String[] { "DeleteDag", "Current", "GetDagStatus", });
     org.roylance.yadel.YadelReport.getDescriptor();
   }
 

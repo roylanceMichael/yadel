@@ -26,15 +26,16 @@ namespace Org.Roylance.Yadel {
             "EnlhZGVsX3JlcG9ydC5wcm90byJ6CgxDb21tb25BY3Rpb24SMwoHcmVxdWVz",
             "dBgBIAEoCzIiLm9yZy5yb3lsYW5jZS55YWRlbC5VSVlhZGVsUmVxdWVzdBI1",
             "CghyZXNwb25zZRgCIAEoCzIjLm9yZy5yb3lsYW5jZS55YWRlbC5VSVlhZGVs",
-            "UmVzcG9uc2UiewoQUmVwb3J0Q29udHJvbGxlchI0CgpkZWxldGVfZGFnGAEg",
-            "ASgLMiAub3JnLnJveWxhbmNlLnlhZGVsLkNvbW1vbkFjdGlvbhIxCgdjdXJy",
-            "ZW50GAIgASgLMiAub3JnLnJveWxhbmNlLnlhZGVsLkNvbW1vbkFjdGlvbmIG",
-            "cHJvdG8z"));
+            "UmVzcG9uc2UitQEKEFJlcG9ydENvbnRyb2xsZXISNAoKZGVsZXRlX2RhZxgB",
+            "IAEoCzIgLm9yZy5yb3lsYW5jZS55YWRlbC5Db21tb25BY3Rpb24SMQoHY3Vy",
+            "cmVudBgCIAEoCzIgLm9yZy5yb3lsYW5jZS55YWRlbC5Db21tb25BY3Rpb24S",
+            "OAoOZ2V0X2RhZ19zdGF0dXMYAyABKAsyIC5vcmcucm95bGFuY2UueWFkZWwu",
+            "Q29tbW9uQWN0aW9uYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Org.Roylance.Yadel.YadelReportReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.CommonAction), global::Org.Roylance.Yadel.CommonAction.Parser, new[]{ "Request", "Response" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.ReportController), global::Org.Roylance.Yadel.ReportController.Parser, new[]{ "DeleteDag", "Current" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.ReportController), global::Org.Roylance.Yadel.ReportController.Parser, new[]{ "DeleteDag", "Current", "GetDagStatus" }, null, null, null)
           }));
     }
     #endregion
@@ -224,6 +225,7 @@ namespace Org.Roylance.Yadel {
     public ReportController(ReportController other) : this() {
       DeleteDag = other.deleteDag_ != null ? other.DeleteDag.Clone() : null;
       Current = other.current_ != null ? other.Current.Clone() : null;
+      GetDagStatus = other.getDagStatus_ != null ? other.GetDagStatus.Clone() : null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -253,6 +255,17 @@ namespace Org.Roylance.Yadel {
       }
     }
 
+    /// <summary>Field number for the "get_dag_status" field.</summary>
+    public const int GetDagStatusFieldNumber = 3;
+    private global::Org.Roylance.Yadel.CommonAction getDagStatus_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Org.Roylance.Yadel.CommonAction GetDagStatus {
+      get { return getDagStatus_; }
+      set {
+        getDagStatus_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ReportController);
@@ -268,6 +281,7 @@ namespace Org.Roylance.Yadel {
       }
       if (!object.Equals(DeleteDag, other.DeleteDag)) return false;
       if (!object.Equals(Current, other.Current)) return false;
+      if (!object.Equals(GetDagStatus, other.GetDagStatus)) return false;
       return true;
     }
 
@@ -276,6 +290,7 @@ namespace Org.Roylance.Yadel {
       int hash = 1;
       if (deleteDag_ != null) hash ^= DeleteDag.GetHashCode();
       if (current_ != null) hash ^= Current.GetHashCode();
+      if (getDagStatus_ != null) hash ^= GetDagStatus.GetHashCode();
       return hash;
     }
 
@@ -294,6 +309,10 @@ namespace Org.Roylance.Yadel {
         output.WriteRawTag(18);
         output.WriteMessage(Current);
       }
+      if (getDagStatus_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(GetDagStatus);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -304,6 +323,9 @@ namespace Org.Roylance.Yadel {
       }
       if (current_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Current);
+      }
+      if (getDagStatus_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GetDagStatus);
       }
       return size;
     }
@@ -324,6 +346,12 @@ namespace Org.Roylance.Yadel {
           current_ = new global::Org.Roylance.Yadel.CommonAction();
         }
         Current.MergeFrom(other.Current);
+      }
+      if (other.getDagStatus_ != null) {
+        if (getDagStatus_ == null) {
+          getDagStatus_ = new global::Org.Roylance.Yadel.CommonAction();
+        }
+        GetDagStatus.MergeFrom(other.GetDagStatus);
       }
     }
 
@@ -347,6 +375,13 @@ namespace Org.Roylance.Yadel {
               current_ = new global::Org.Roylance.Yadel.CommonAction();
             }
             input.ReadMessage(current_);
+            break;
+          }
+          case 26: {
+            if (getDagStatus_ == null) {
+              getDagStatus_ = new global::Org.Roylance.Yadel.CommonAction();
+            }
+            input.ReadMessage(getDagStatus_);
             break;
           }
         }

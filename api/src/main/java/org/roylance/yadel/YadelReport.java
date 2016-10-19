@@ -27,6 +27,10 @@ public final class YadelReport {
      * <code>DELETE_DAG = 1;</code>
      */
     DELETE_DAG(1),
+    /**
+     * <code>GET_DAG_STATUS = 2;</code>
+     */
+    GET_DAG_STATUS(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -38,6 +42,10 @@ public final class YadelReport {
      * <code>DELETE_DAG = 1;</code>
      */
     public static final int DELETE_DAG_VALUE = 1;
+    /**
+     * <code>GET_DAG_STATUS = 2;</code>
+     */
+    public static final int GET_DAG_STATUS_VALUE = 2;
 
 
     public final int getNumber() {
@@ -60,6 +68,7 @@ public final class YadelReport {
       switch (value) {
         case 0: return REPORT_DAGS;
         case 1: return DELETE_DAG;
+        case 2: return GET_DAG_STATUS;
         default: return null;
       }
     }
@@ -6310,6 +6319,11 @@ public final class YadelReport {
      */
     com.google.protobuf.ByteString
         getLogsBytes(int index);
+
+    /**
+     * <code>optional bool is_waiting_for_another_dag_task = 12;</code>
+     */
+    boolean getIsWaitingForAnotherDagTask();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.UINode}
@@ -6333,6 +6347,7 @@ public final class YadelReport {
       isProcessing_ = false;
       isError_ = false;
       logs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      isWaitingForAnotherDagTask_ = false;
     }
 
     @java.lang.Override
@@ -6414,6 +6429,11 @@ public final class YadelReport {
                 mutable_bitField0_ |= 0x00000200;
               }
               logs_.add(s);
+              break;
+            }
+            case 96: {
+
+              isWaitingForAnotherDagTask_ = input.readBool();
               break;
             }
           }
@@ -6603,6 +6623,15 @@ public final class YadelReport {
       return logs_.getByteString(index);
     }
 
+    public static final int IS_WAITING_FOR_ANOTHER_DAG_TASK_FIELD_NUMBER = 12;
+    private boolean isWaitingForAnotherDagTask_;
+    /**
+     * <code>optional bool is_waiting_for_another_dag_task = 12;</code>
+     */
+    public boolean getIsWaitingForAnotherDagTask() {
+      return isWaitingForAnotherDagTask_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -6644,6 +6673,9 @@ public final class YadelReport {
       }
       for (int i = 0; i < logs_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, logs_.getRaw(i));
+      }
+      if (isWaitingForAnotherDagTask_ != false) {
+        output.writeBool(12, isWaitingForAnotherDagTask_);
       }
     }
 
@@ -6694,6 +6726,10 @@ public final class YadelReport {
         size += dataSize;
         size += 1 * getLogsList().size();
       }
+      if (isWaitingForAnotherDagTask_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isWaitingForAnotherDagTask_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -6730,6 +6766,8 @@ public final class YadelReport {
           == other.getIsError());
       result = result && getLogsList()
           .equals(other.getLogsList());
+      result = result && (getIsWaitingForAnotherDagTask()
+          == other.getIsWaitingForAnotherDagTask());
       return result;
     }
 
@@ -6769,6 +6807,9 @@ public final class YadelReport {
         hash = (37 * hash) + LOGS_FIELD_NUMBER;
         hash = (53 * hash) + getLogsList().hashCode();
       }
+      hash = (37 * hash) + IS_WAITING_FOR_ANOTHER_DAG_TASK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsWaitingForAnotherDagTask());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6907,6 +6948,8 @@ public final class YadelReport {
 
         logs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000200);
+        isWaitingForAnotherDagTask_ = false;
+
         return this;
       }
 
@@ -6945,6 +6988,7 @@ public final class YadelReport {
           bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.logs_ = logs_;
+        result.isWaitingForAnotherDagTask_ = isWaitingForAnotherDagTask_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -7025,6 +7069,9 @@ public final class YadelReport {
             logs_.addAll(other.logs_);
           }
           onChanged();
+        }
+        if (other.getIsWaitingForAnotherDagTask() != false) {
+          setIsWaitingForAnotherDagTask(other.getIsWaitingForAnotherDagTask());
         }
         onChanged();
         return this;
@@ -7463,6 +7510,32 @@ public final class YadelReport {
   checkByteStringIsUtf8(value);
         ensureLogsIsMutable();
         logs_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private boolean isWaitingForAnotherDagTask_ ;
+      /**
+       * <code>optional bool is_waiting_for_another_dag_task = 12;</code>
+       */
+      public boolean getIsWaitingForAnotherDagTask() {
+        return isWaitingForAnotherDagTask_;
+      }
+      /**
+       * <code>optional bool is_waiting_for_another_dag_task = 12;</code>
+       */
+      public Builder setIsWaitingForAnotherDagTask(boolean value) {
+        
+        isWaitingForAnotherDagTask_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool is_waiting_for_another_dag_task = 12;</code>
+       */
+      public Builder clearIsWaitingForAnotherDagTask() {
+        
+        isWaitingForAnotherDagTask_ = false;
         onChanged();
         return this;
       }
@@ -9198,22 +9271,23 @@ public final class YadelReport {
       "\030\t \001(\005\022\031\n\021number_processing\030\n \001(\005\022\026\n\016num" +
       "ber_errored\030\013 \001(\005\022\032\n\022number_unprocessed\030",
       "\014 \001(\005\".\n\006UIEdge\022\021\n\tnode_id_1\030\001 \001(\t\022\021\n\tno" +
-      "de_id_2\030\002 \001(\t\"\302\001\n\006UINode\022\n\n\002id\030\001 \001(\t\022\017\n\007" +
+      "de_id_2\030\002 \001(\t\"\353\001\n\006UINode\022\n\n\002id\030\001 \001(\t\022\017\n\007" +
       "display\030\002 \001(\t\022\026\n\016execution_date\030\004 \001(\003\022\022\n" +
       "\nstart_date\030\005 \001(\003\022\020\n\010end_date\030\006 \001(\003\022\020\n\010d" +
       "uration\030\007 \001(\003\022\024\n\014is_completed\030\010 \001(\010\022\025\n\ri" +
       "s_processing\030\t \001(\010\022\020\n\010is_error\030\n \001(\010\022\014\n\004" +
-      "logs\030\013 \003(\t\"\225\002\n\025UIWorkerConfiguration\022\n\n\002" +
-      "ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\t\022\014\n\004host\030\003 \001(\t\022\030\n\020" +
-      "initialized_time\030\004 \001(\t\0220\n\005state\030\005 \001(\0162!." +
-      "org.roylance.yadel.UIWorkerState\022\024\n\014task",
-      "_display\030\006 \001(\t\022\023\n\013dag_display\030\007 \001(\t\022!\n\031m" +
-      "inutes_before_task_reset\030\010 \001(\004\022\027\n\017task_s" +
-      "tart_time\030\t \001(\t\022!\n\031task_working_time_dis" +
-      "play\030\n \001(\t*5\n\022UIYadelRequestType\022\017\n\013REPO" +
-      "RT_DAGS\020\000\022\016\n\nDELETE_DAG\020\001*:\n\rUIWorkerSta" +
-      "te\022\025\n\021CURRENTLY_WORKING\020\000\022\022\n\016CURRENTLY_I" +
-      "DLE\020\001b\006proto3"
+      "logs\030\013 \003(\t\022\'\n\037is_waiting_for_another_dag" +
+      "_task\030\014 \001(\010\"\225\002\n\025UIWorkerConfiguration\022\n\n" +
+      "\002ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\t\022\014\n\004host\030\003 \001(\t\022\030\n" +
+      "\020initialized_time\030\004 \001(\t\0220\n\005state\030\005 \001(\0162!",
+      ".org.roylance.yadel.UIWorkerState\022\024\n\014tas" +
+      "k_display\030\006 \001(\t\022\023\n\013dag_display\030\007 \001(\t\022!\n\031" +
+      "minutes_before_task_reset\030\010 \001(\004\022\027\n\017task_" +
+      "start_time\030\t \001(\t\022!\n\031task_working_time_di" +
+      "splay\030\n \001(\t*I\n\022UIYadelRequestType\022\017\n\013REP" +
+      "ORT_DAGS\020\000\022\016\n\nDELETE_DAG\020\001\022\022\n\016GET_DAG_ST" +
+      "ATUS\020\002*:\n\rUIWorkerState\022\025\n\021CURRENTLY_WOR" +
+      "KING\020\000\022\022\n\016CURRENTLY_IDLE\020\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9262,7 +9336,7 @@ public final class YadelReport {
     internal_static_org_roylance_yadel_UINode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_UINode_descriptor,
-        new java.lang.String[] { "Id", "Display", "ExecutionDate", "StartDate", "EndDate", "Duration", "IsCompleted", "IsProcessing", "IsError", "Logs", });
+        new java.lang.String[] { "Id", "Display", "ExecutionDate", "StartDate", "EndDate", "Duration", "IsCompleted", "IsProcessing", "IsError", "Logs", "IsWaitingForAnotherDagTask", });
     internal_static_org_roylance_yadel_UIWorkerConfiguration_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_org_roylance_yadel_UIWorkerConfiguration_fieldAccessorTable = new

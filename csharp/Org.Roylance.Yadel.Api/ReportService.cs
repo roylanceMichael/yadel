@@ -27,5 +27,13 @@ namespace Org.Roylance.Yadel.Api
             var bytes = System.Convert.FromBase64String(responseCall);
             return Org.Roylance.Yadel.UIYadelResponse.Parser.ParseFrom(bytes);
         }
+
+        public async Task<Org.Roylance.Yadel.UIYadelResponse> get_dag_status(Org.Roylance.Yadel.UIYadelRequest request)
+        {
+            var base64request = System.Convert.ToBase64String(request.ToByteArray());
+            var responseCall = await this.httpExecute.PostAsync("/rest/report/get-dag-status", base64request);
+            var bytes = System.Convert.FromBase64String(responseCall);
+            return Org.Roylance.Yadel.UIYadelResponse.Parser.ParseFrom(bytes);
+        }
 	}
 }

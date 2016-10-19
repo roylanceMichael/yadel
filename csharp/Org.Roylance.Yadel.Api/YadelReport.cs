@@ -40,21 +40,22 @@ namespace Org.Roylance.Yadel {
             "ZXJyb3IYByABKAgSDAoEbG9ncxgIIAMoCRIYChBudW1iZXJfY29tcGxldGVk",
             "GAkgASgFEhkKEW51bWJlcl9wcm9jZXNzaW5nGAogASgFEhYKDm51bWJlcl9l",
             "cnJvcmVkGAsgASgFEhoKEm51bWJlcl91bnByb2Nlc3NlZBgMIAEoBSIuCgZV",
-            "SUVkZ2USEQoJbm9kZV9pZF8xGAEgASgJEhEKCW5vZGVfaWRfMhgCIAEoCSLC",
+            "SUVkZ2USEQoJbm9kZV9pZF8xGAEgASgJEhEKCW5vZGVfaWRfMhgCIAEoCSLr",
             "AQoGVUlOb2RlEgoKAmlkGAEgASgJEg8KB2Rpc3BsYXkYAiABKAkSFgoOZXhl",
             "Y3V0aW9uX2RhdGUYBCABKAMSEgoKc3RhcnRfZGF0ZRgFIAEoAxIQCghlbmRf",
             "ZGF0ZRgGIAEoAxIQCghkdXJhdGlvbhgHIAEoAxIUCgxpc19jb21wbGV0ZWQY",
             "CCABKAgSFQoNaXNfcHJvY2Vzc2luZxgJIAEoCBIQCghpc19lcnJvchgKIAEo",
-            "CBIMCgRsb2dzGAsgAygJIpUCChVVSVdvcmtlckNvbmZpZ3VyYXRpb24SCgoC",
-            "aXAYASABKAkSDAoEcG9ydBgCIAEoCRIMCgRob3N0GAMgASgJEhgKEGluaXRp",
-            "YWxpemVkX3RpbWUYBCABKAkSMAoFc3RhdGUYBSABKA4yIS5vcmcucm95bGFu",
-            "Y2UueWFkZWwuVUlXb3JrZXJTdGF0ZRIUCgx0YXNrX2Rpc3BsYXkYBiABKAkS",
-            "EwoLZGFnX2Rpc3BsYXkYByABKAkSIQoZbWludXRlc19iZWZvcmVfdGFza19y",
-            "ZXNldBgIIAEoBBIXCg90YXNrX3N0YXJ0X3RpbWUYCSABKAkSIQoZdGFza193",
-            "b3JraW5nX3RpbWVfZGlzcGxheRgKIAEoCSo1ChJVSVlhZGVsUmVxdWVzdFR5",
-            "cGUSDwoLUkVQT1JUX0RBR1MQABIOCgpERUxFVEVfREFHEAEqOgoNVUlXb3Jr",
-            "ZXJTdGF0ZRIVChFDVVJSRU5UTFlfV09SS0lORxAAEhIKDkNVUlJFTlRMWV9J",
-            "RExFEAFiBnByb3RvMw=="));
+            "CBIMCgRsb2dzGAsgAygJEicKH2lzX3dhaXRpbmdfZm9yX2Fub3RoZXJfZGFn",
+            "X3Rhc2sYDCABKAgilQIKFVVJV29ya2VyQ29uZmlndXJhdGlvbhIKCgJpcBgB",
+            "IAEoCRIMCgRwb3J0GAIgASgJEgwKBGhvc3QYAyABKAkSGAoQaW5pdGlhbGl6",
+            "ZWRfdGltZRgEIAEoCRIwCgVzdGF0ZRgFIAEoDjIhLm9yZy5yb3lsYW5jZS55",
+            "YWRlbC5VSVdvcmtlclN0YXRlEhQKDHRhc2tfZGlzcGxheRgGIAEoCRITCgtk",
+            "YWdfZGlzcGxheRgHIAEoCRIhChltaW51dGVzX2JlZm9yZV90YXNrX3Jlc2V0",
+            "GAggASgEEhcKD3Rhc2tfc3RhcnRfdGltZRgJIAEoCRIhChl0YXNrX3dvcmtp",
+            "bmdfdGltZV9kaXNwbGF5GAogASgJKkkKElVJWWFkZWxSZXF1ZXN0VHlwZRIP",
+            "CgtSRVBPUlRfREFHUxAAEg4KCkRFTEVURV9EQUcQARISCg5HRVRfREFHX1NU",
+            "QVRVUxACKjoKDVVJV29ya2VyU3RhdGUSFQoRQ1VSUkVOVExZX1dPUktJTkcQ",
+            "ABISCg5DVVJSRU5UTFlfSURMRRABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Roylance.Yadel.UIYadelRequestType), typeof(global::Org.Roylance.Yadel.UIWorkerState), }, new pbr::GeneratedClrTypeInfo[] {
@@ -63,7 +64,7 @@ namespace Org.Roylance.Yadel {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIDagReport), global::Org.Roylance.Yadel.UIDagReport.Parser, new[]{ "Workers", "Dags" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIDag), global::Org.Roylance.Yadel.UIDag.Parser, new[]{ "Id", "Display", "Nodes", "Edges", "IsCompleted", "IsProcessing", "IsError", "Logs", "NumberCompleted", "NumberProcessing", "NumberErrored", "NumberUnprocessed" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIEdge), global::Org.Roylance.Yadel.UIEdge.Parser, new[]{ "NodeId1", "NodeId2" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UINode), global::Org.Roylance.Yadel.UINode.Parser, new[]{ "Id", "Display", "ExecutionDate", "StartDate", "EndDate", "Duration", "IsCompleted", "IsProcessing", "IsError", "Logs" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UINode), global::Org.Roylance.Yadel.UINode.Parser, new[]{ "Id", "Display", "ExecutionDate", "StartDate", "EndDate", "Duration", "IsCompleted", "IsProcessing", "IsError", "Logs", "IsWaitingForAnotherDagTask" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIWorkerConfiguration), global::Org.Roylance.Yadel.UIWorkerConfiguration.Parser, new[]{ "Ip", "Port", "Host", "InitializedTime", "State", "TaskDisplay", "DagDisplay", "MinutesBeforeTaskReset", "TaskStartTime", "TaskWorkingTimeDisplay" }, null, null, null)
           }));
     }
@@ -74,6 +75,7 @@ namespace Org.Roylance.Yadel {
   public enum UIYadelRequestType {
     [pbr::OriginalName("REPORT_DAGS")] ReportDags = 0,
     [pbr::OriginalName("DELETE_DAG")] DeleteDag = 1,
+    [pbr::OriginalName("GET_DAG_STATUS")] GetDagStatus = 2,
   }
 
   public enum UIWorkerState {
@@ -1227,6 +1229,7 @@ namespace Org.Roylance.Yadel {
       isProcessing_ = other.isProcessing_;
       isError_ = other.isError_;
       logs_ = other.logs_.Clone();
+      isWaitingForAnotherDagTask_ = other.isWaitingForAnotherDagTask_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1343,6 +1346,17 @@ namespace Org.Roylance.Yadel {
       get { return logs_; }
     }
 
+    /// <summary>Field number for the "is_waiting_for_another_dag_task" field.</summary>
+    public const int IsWaitingForAnotherDagTaskFieldNumber = 12;
+    private bool isWaitingForAnotherDagTask_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsWaitingForAnotherDagTask {
+      get { return isWaitingForAnotherDagTask_; }
+      set {
+        isWaitingForAnotherDagTask_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UINode);
@@ -1366,6 +1380,7 @@ namespace Org.Roylance.Yadel {
       if (IsProcessing != other.IsProcessing) return false;
       if (IsError != other.IsError) return false;
       if(!logs_.Equals(other.logs_)) return false;
+      if (IsWaitingForAnotherDagTask != other.IsWaitingForAnotherDagTask) return false;
       return true;
     }
 
@@ -1382,6 +1397,7 @@ namespace Org.Roylance.Yadel {
       if (IsProcessing != false) hash ^= IsProcessing.GetHashCode();
       if (IsError != false) hash ^= IsError.GetHashCode();
       hash ^= logs_.GetHashCode();
+      if (IsWaitingForAnotherDagTask != false) hash ^= IsWaitingForAnotherDagTask.GetHashCode();
       return hash;
     }
 
@@ -1429,6 +1445,10 @@ namespace Org.Roylance.Yadel {
         output.WriteBool(IsError);
       }
       logs_.WriteTo(output, _repeated_logs_codec);
+      if (IsWaitingForAnotherDagTask != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsWaitingForAnotherDagTask);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1462,6 +1482,9 @@ namespace Org.Roylance.Yadel {
         size += 1 + 1;
       }
       size += logs_.CalculateSize(_repeated_logs_codec);
+      if (IsWaitingForAnotherDagTask != false) {
+        size += 1 + 1;
+      }
       return size;
     }
 
@@ -1498,6 +1521,9 @@ namespace Org.Roylance.Yadel {
         IsError = other.IsError;
       }
       logs_.Add(other.logs_);
+      if (other.IsWaitingForAnotherDagTask != false) {
+        IsWaitingForAnotherDagTask = other.IsWaitingForAnotherDagTask;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1546,6 +1572,10 @@ namespace Org.Roylance.Yadel {
           }
           case 90: {
             logs_.AddEntriesFrom(input, _repeated_logs_codec);
+            break;
+          }
+          case 96: {
+            IsWaitingForAnotherDagTask = input.ReadBool();
             break;
           }
         }
