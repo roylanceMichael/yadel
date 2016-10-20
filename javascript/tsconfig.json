@@ -11,7 +11,7 @@
 	"ReportService.ts",
 	"IHttpExecute.ts",
 	"YadelModel.d.ts",
-	"YadelModelFactory.ts"
-
+	"YadelModelFactory.ts",
+	"bytebuffer.d.ts",	"long.d.ts"
     ]
 }
