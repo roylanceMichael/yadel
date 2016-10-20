@@ -1,4 +1,5 @@
 // THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
+/// <reference path="../node_modules/roylance.common/bytebuffer.d.ts" />
 import {YadelModel} from "../node_modules/org.roylance.yadel.api/YadelModelFactory";
 
 import {ReportService} from "../node_modules/org.roylance.yadel.api/ReportService";
