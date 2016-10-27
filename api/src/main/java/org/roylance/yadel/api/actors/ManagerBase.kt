@@ -202,6 +202,7 @@ open class ManagerBase :UntypedActor() {
                             .setIsError(dag.erroredTasksList.any { it.id == task.id })
                             .setIsProcessing(dag.processingTasksList.any { it.id == task.id })
                             .setIsCompleted(dag.completedTasksList.any { it.id == task.id })
+                            .addAllLogs(task.logsList.map { it.message })
 
                     newDag.addNodes(newNode)
                     task.dependenciesList.forEach { dependency ->

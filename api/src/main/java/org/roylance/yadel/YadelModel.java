@@ -9726,25 +9726,6 @@ public final class YadelModel {
     org.roylance.yadel.YadelModel.WorkerConfigurationOrBuilder getWorkerConfigurationOrBuilder();
 
     /**
-     * <code>repeated string logs = 4;</code>
-     */
-    java.util.List<java.lang.String>
-        getLogsList();
-    /**
-     * <code>repeated string logs = 4;</code>
-     */
-    int getLogsCount();
-    /**
-     * <code>repeated string logs = 4;</code>
-     */
-    java.lang.String getLogs(int index);
-    /**
-     * <code>repeated string logs = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getLogsBytes(int index);
-
-    /**
      * <code>optional bool is_error = 5;</code>
      */
     boolean getIsError();
@@ -9762,7 +9743,6 @@ public final class YadelModel {
     }
     private CompleteTask() {
       id_ = "";
-      logs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       isError_ = false;
     }
 
@@ -9823,15 +9803,6 @@ public final class YadelModel {
 
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                logs_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              logs_.add(s);
-              break;
-            }
             case 40: {
 
               isError_ = input.readBool();
@@ -9845,9 +9816,6 @@ public final class YadelModel {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          logs_ = logs_.getUnmodifiableView();
-        }
         makeExtensionsImmutable();
       }
     }
@@ -9863,7 +9831,6 @@ public final class YadelModel {
               org.roylance.yadel.YadelModel.CompleteTask.class, org.roylance.yadel.YadelModel.CompleteTask.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
@@ -9940,35 +9907,6 @@ public final class YadelModel {
       return getWorkerConfiguration();
     }
 
-    public static final int LOGS_FIELD_NUMBER = 4;
-    private com.google.protobuf.LazyStringList logs_;
-    /**
-     * <code>repeated string logs = 4;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getLogsList() {
-      return logs_;
-    }
-    /**
-     * <code>repeated string logs = 4;</code>
-     */
-    public int getLogsCount() {
-      return logs_.size();
-    }
-    /**
-     * <code>repeated string logs = 4;</code>
-     */
-    public java.lang.String getLogs(int index) {
-      return logs_.get(index);
-    }
-    /**
-     * <code>repeated string logs = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getLogsBytes(int index) {
-      return logs_.getByteString(index);
-    }
-
     public static final int IS_ERROR_FIELD_NUMBER = 5;
     private boolean isError_;
     /**
@@ -9999,9 +9937,6 @@ public final class YadelModel {
       if (workerConfiguration_ != null) {
         output.writeMessage(3, getWorkerConfiguration());
       }
-      for (int i = 0; i < logs_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, logs_.getRaw(i));
-      }
       if (isError_ != false) {
         output.writeBool(5, isError_);
       }
@@ -10022,14 +9957,6 @@ public final class YadelModel {
       if (workerConfiguration_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getWorkerConfiguration());
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < logs_.size(); i++) {
-          dataSize += computeStringSizeNoTag(logs_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getLogsList().size();
       }
       if (isError_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -10063,8 +9990,6 @@ public final class YadelModel {
         result = result && getWorkerConfiguration()
             .equals(other.getWorkerConfiguration());
       }
-      result = result && getLogsList()
-          .equals(other.getLogsList());
       result = result && (getIsError()
           == other.getIsError());
       return result;
@@ -10086,10 +10011,6 @@ public final class YadelModel {
       if (hasWorkerConfiguration()) {
         hash = (37 * hash) + WORKER_CONFIGURATION_FIELD_NUMBER;
         hash = (53 * hash) + getWorkerConfiguration().hashCode();
-      }
-      if (getLogsCount() > 0) {
-        hash = (37 * hash) + LOGS_FIELD_NUMBER;
-        hash = (53 * hash) + getLogsList().hashCode();
       }
       hash = (37 * hash) + IS_ERROR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -10226,8 +10147,6 @@ public final class YadelModel {
           workerConfiguration_ = null;
           workerConfigurationBuilder_ = null;
         }
-        logs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
         isError_ = false;
 
         return this;
@@ -10252,8 +10171,6 @@ public final class YadelModel {
 
       public org.roylance.yadel.YadelModel.CompleteTask buildPartial() {
         org.roylance.yadel.YadelModel.CompleteTask result = new org.roylance.yadel.YadelModel.CompleteTask(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.id_ = id_;
         if (taskBuilder_ == null) {
           result.task_ = task_;
@@ -10265,13 +10182,7 @@ public final class YadelModel {
         } else {
           result.workerConfiguration_ = workerConfigurationBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          logs_ = logs_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.logs_ = logs_;
         result.isError_ = isError_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -10323,16 +10234,6 @@ public final class YadelModel {
         if (other.hasWorkerConfiguration()) {
           mergeWorkerConfiguration(other.getWorkerConfiguration());
         }
-        if (!other.logs_.isEmpty()) {
-          if (logs_.isEmpty()) {
-            logs_ = other.logs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureLogsIsMutable();
-            logs_.addAll(other.logs_);
-          }
-          onChanged();
-        }
         if (other.getIsError() != false) {
           setIsError(other.getIsError());
         }
@@ -10361,7 +10262,6 @@ public final class YadelModel {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -10666,100 +10566,6 @@ public final class YadelModel {
         return workerConfigurationBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList logs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureLogsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          logs_ = new com.google.protobuf.LazyStringArrayList(logs_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-      /**
-       * <code>repeated string logs = 4;</code>
-       */
-      public com.google.protobuf.ProtocolStringList
-          getLogsList() {
-        return logs_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string logs = 4;</code>
-       */
-      public int getLogsCount() {
-        return logs_.size();
-      }
-      /**
-       * <code>repeated string logs = 4;</code>
-       */
-      public java.lang.String getLogs(int index) {
-        return logs_.get(index);
-      }
-      /**
-       * <code>repeated string logs = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getLogsBytes(int index) {
-        return logs_.getByteString(index);
-      }
-      /**
-       * <code>repeated string logs = 4;</code>
-       */
-      public Builder setLogs(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureLogsIsMutable();
-        logs_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string logs = 4;</code>
-       */
-      public Builder addLogs(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureLogsIsMutable();
-        logs_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string logs = 4;</code>
-       */
-      public Builder addAllLogs(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureLogsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, logs_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string logs = 4;</code>
-       */
-      public Builder clearLogs() {
-        logs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string logs = 4;</code>
-       */
-      public Builder addLogsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureLogsIsMutable();
-        logs_.add(value);
-        onChanged();
-        return this;
-      }
-
       private boolean isError_ ;
       /**
        * <code>optional bool is_error = 5;</code>
@@ -10912,16 +10718,15 @@ public final class YadelModel {
       "task\030\003 \001(\0132\030.org.roylance.yadel.Task\022\035\n\025" +
       "first_context_base_64\030\004 \001(\t\022\036\n\026second_co" +
       "ntext_base_64\030\005 \001(\t\022\035\n\025third_context_bas" +
-      "e_64\030\006 \001(\t\"\251\001\n\014CompleteTask\022\n\n\002id\030\001 \001(\t\022" +
+      "e_64\030\006 \001(\t\"\233\001\n\014CompleteTask\022\n\n\002id\030\001 \001(\t\022" +
       "&\n\004task\030\002 \001(\0132\030.org.roylance.yadel.Task\022" +
       "E\n\024worker_configuration\030\003 \001(\0132\'.org.royl" +
-      "ance.yadel.WorkerConfiguration\022\014\n\004logs\030\004" +
-      " \003(\t\022\020\n\010is_error\030\005 \001(\010*$\n\013WorkerState\022\013\n" +
-      "\007WORKING\020\000\022\010\n\004IDLE\020\001*.\n\032WorkerToManagerM",
-      "essageType\022\020\n\014REGISTRATION\020\000*9\n\033ManagerT" +
-      "oManagerMessageType\022\032\n\026ENSURE_WORKERS_WO" +
-      "RKING\020\000*$\n\tActorRole\022\013\n\007MANAGER\020\000\022\n\n\006WOR" +
-      "KER\020\001b\006proto3"
+      "ance.yadel.WorkerConfiguration\022\020\n\010is_err" +
+      "or\030\005 \001(\010*$\n\013WorkerState\022\013\n\007WORKING\020\000\022\010\n\004" +
+      "IDLE\020\001*.\n\032WorkerToManagerMessageType\022\020\n\014",
+      "REGISTRATION\020\000*9\n\033ManagerToManagerMessag" +
+      "eType\022\032\n\026ENSURE_WORKERS_WORKING\020\000*$\n\tAct" +
+      "orRole\022\013\n\007MANAGER\020\000\022\n\n\006WORKER\020\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10976,7 +10781,7 @@ public final class YadelModel {
     internal_static_org_roylance_yadel_CompleteTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_CompleteTask_descriptor,
-        new java.lang.String[] { "Id", "Task", "WorkerConfiguration", "Logs", "IsError", });
+        new java.lang.String[] { "Id", "Task", "WorkerConfiguration", "IsError", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

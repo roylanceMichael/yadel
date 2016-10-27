@@ -85,6 +85,5 @@ message CompleteTask {
     string id = 1;
     Task task = 2;
     WorkerConfiguration worker_configuration = 3;
-    repeated string logs = 4;
     bool is_error = 5;
 }

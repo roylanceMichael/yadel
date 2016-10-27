@@ -52,15 +52,15 @@ namespace Org.Roylance.Yadel {
             "eWxhbmNlLnlhZGVsLlRhc2sSKgoIbmV3X3Rhc2sYAyABKAsyGC5vcmcucm95",
             "bGFuY2UueWFkZWwuVGFzaxIdChVmaXJzdF9jb250ZXh0X2Jhc2VfNjQYBCAB",
             "KAkSHgoWc2Vjb25kX2NvbnRleHRfYmFzZV82NBgFIAEoCRIdChV0aGlyZF9j",
-            "b250ZXh0X2Jhc2VfNjQYBiABKAkiqQEKDENvbXBsZXRlVGFzaxIKCgJpZBgB",
+            "b250ZXh0X2Jhc2VfNjQYBiABKAkimwEKDENvbXBsZXRlVGFzaxIKCgJpZBgB",
             "IAEoCRImCgR0YXNrGAIgASgLMhgub3JnLnJveWxhbmNlLnlhZGVsLlRhc2sS",
             "RQoUd29ya2VyX2NvbmZpZ3VyYXRpb24YAyABKAsyJy5vcmcucm95bGFuY2Uu",
-            "eWFkZWwuV29ya2VyQ29uZmlndXJhdGlvbhIMCgRsb2dzGAQgAygJEhAKCGlz",
-            "X2Vycm9yGAUgASgIKiQKC1dvcmtlclN0YXRlEgsKB1dPUktJTkcQABIICgRJ",
-            "RExFEAEqLgoaV29ya2VyVG9NYW5hZ2VyTWVzc2FnZVR5cGUSEAoMUkVHSVNU",
-            "UkFUSU9OEAAqOQobTWFuYWdlclRvTWFuYWdlck1lc3NhZ2VUeXBlEhoKFkVO",
-            "U1VSRV9XT1JLRVJTX1dPUktJTkcQACokCglBY3RvclJvbGUSCwoHTUFOQUdF",
-            "UhAAEgoKBldPUktFUhABYgZwcm90bzM="));
+            "eWFkZWwuV29ya2VyQ29uZmlndXJhdGlvbhIQCghpc19lcnJvchgFIAEoCCok",
+            "CgtXb3JrZXJTdGF0ZRILCgdXT1JLSU5HEAASCAoESURMRRABKi4KGldvcmtl",
+            "clRvTWFuYWdlck1lc3NhZ2VUeXBlEhAKDFJFR0lTVFJBVElPThAAKjkKG01h",
+            "bmFnZXJUb01hbmFnZXJNZXNzYWdlVHlwZRIaChZFTlNVUkVfV09SS0VSU19X",
+            "T1JLSU5HEAAqJAoJQWN0b3JSb2xlEgsKB01BTkFHRVIQABIKCgZXT1JLRVIQ",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Roylance.Yadel.WorkerState), typeof(global::Org.Roylance.Yadel.WorkerToManagerMessageType), typeof(global::Org.Roylance.Yadel.ManagerToManagerMessageType), typeof(global::Org.Roylance.Yadel.ActorRole), }, new pbr::GeneratedClrTypeInfo[] {
@@ -70,7 +70,7 @@ namespace Org.Roylance.Yadel {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.Task), global::Org.Roylance.Yadel.Task.Parser, new[]{ "Id", "Display", "Dependencies", "DagId", "Logs", "ExecutionDate", "StartDate", "EndDate", "Duration", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64", "IsWaitingForAnotherDagTask" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.TaskDependency), global::Org.Roylance.Yadel.TaskDependency.Parser, new[]{ "Id", "ParentTaskId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.AddTaskToDag), global::Org.Roylance.Yadel.AddTaskToDag.Parser, new[]{ "Id", "ParentTask", "NewTask", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.CompleteTask), global::Org.Roylance.Yadel.CompleteTask.Parser, new[]{ "Id", "Task", "WorkerConfiguration", "Logs", "IsError" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.CompleteTask), global::Org.Roylance.Yadel.CompleteTask.Parser, new[]{ "Id", "Task", "WorkerConfiguration", "IsError" }, null, null, null)
           }));
     }
     #endregion
@@ -1859,7 +1859,6 @@ namespace Org.Roylance.Yadel {
       id_ = other.id_;
       Task = other.task_ != null ? other.Task.Clone() : null;
       WorkerConfiguration = other.workerConfiguration_ != null ? other.WorkerConfiguration.Clone() : null;
-      logs_ = other.logs_.Clone();
       isError_ = other.isError_;
     }
 
@@ -1901,16 +1900,6 @@ namespace Org.Roylance.Yadel {
       }
     }
 
-    /// <summary>Field number for the "logs" field.</summary>
-    public const int LogsFieldNumber = 4;
-    private static readonly pb::FieldCodec<string> _repeated_logs_codec
-        = pb::FieldCodec.ForString(34);
-    private readonly pbc::RepeatedField<string> logs_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<string> Logs {
-      get { return logs_; }
-    }
-
     /// <summary>Field number for the "is_error" field.</summary>
     public const int IsErrorFieldNumber = 5;
     private bool isError_;
@@ -1938,7 +1927,6 @@ namespace Org.Roylance.Yadel {
       if (Id != other.Id) return false;
       if (!object.Equals(Task, other.Task)) return false;
       if (!object.Equals(WorkerConfiguration, other.WorkerConfiguration)) return false;
-      if(!logs_.Equals(other.logs_)) return false;
       if (IsError != other.IsError) return false;
       return true;
     }
@@ -1949,7 +1937,6 @@ namespace Org.Roylance.Yadel {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (task_ != null) hash ^= Task.GetHashCode();
       if (workerConfiguration_ != null) hash ^= WorkerConfiguration.GetHashCode();
-      hash ^= logs_.GetHashCode();
       if (IsError != false) hash ^= IsError.GetHashCode();
       return hash;
     }
@@ -1973,7 +1960,6 @@ namespace Org.Roylance.Yadel {
         output.WriteRawTag(26);
         output.WriteMessage(WorkerConfiguration);
       }
-      logs_.WriteTo(output, _repeated_logs_codec);
       if (IsError != false) {
         output.WriteRawTag(40);
         output.WriteBool(IsError);
@@ -1992,7 +1978,6 @@ namespace Org.Roylance.Yadel {
       if (workerConfiguration_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(WorkerConfiguration);
       }
-      size += logs_.CalculateSize(_repeated_logs_codec);
       if (IsError != false) {
         size += 1 + 1;
       }
@@ -2019,7 +2004,6 @@ namespace Org.Roylance.Yadel {
         }
         WorkerConfiguration.MergeFrom(other.WorkerConfiguration);
       }
-      logs_.Add(other.logs_);
       if (other.IsError != false) {
         IsError = other.IsError;
       }
@@ -2049,10 +2033,6 @@ namespace Org.Roylance.Yadel {
               workerConfiguration_ = new global::Org.Roylance.Yadel.WorkerConfiguration();
             }
             input.ReadMessage(workerConfiguration_);
-            break;
-          }
-          case 34: {
-            logs_.AddEntriesFrom(input, _repeated_logs_codec);
             break;
           }
           case 40: {

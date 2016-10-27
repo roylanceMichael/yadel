@@ -669,12 +669,6 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "id": 3
                 },
                 {
-                    "rule": "repeated",
-                    "type": "string",
-                    "name": "logs",
-                    "id": 4
-                },
-                {
                     "rule": "optional",
                     "type": "bool",
                     "name": "is_error",

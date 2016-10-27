@@ -573,9 +573,6 @@ declare module org.roylance.yadel {
 		worker_configuration?: WorkerConfiguration;
 		getWorkerConfiguration() : WorkerConfiguration;
 		setWorkerConfiguration(workerConfiguration : WorkerConfiguration): void;
-		logs: string[];
-		getLogs() : string[];
-		setLogs(logs : string[]): void;
 		is_error?: boolean;
 		getIsError() : boolean;
 		setIsError(isError : boolean): void;

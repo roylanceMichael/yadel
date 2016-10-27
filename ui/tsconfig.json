@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true
+  },
+  "files": [
+    "node_modules/org.roylance.yadel.api/YadelModel.d.ts",
+    "node_modules/org.roylance.yadel.api/YadelModelFactory.ts",
+    "IDagController",
+    "IDagService",
+    "DagService"
+  ]
+}
