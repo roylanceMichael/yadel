@@ -30,7 +30,7 @@ namespace Org.Roylance.Yadel {
             "VGFzaxIkCgNkYWcYCCABKAsyFy5vcmcucm95bGFuY2UueWFkZWwuRGFnEiEK",
             "GW1pbnV0ZXNfYmVmb3JlX3Rhc2tfcmVzZXQYCSABKAQSFwoPdGFza19zdGFy",
             "dF90aW1lGAogASgJIiIKA0xvZxIKCgJpZBgBIAEoCRIPCgdtZXNzYWdlGAIg",
-            "ASgJIvICCgNEYWcSCgoCaWQYASABKAkSDwoHZGlzcGxheRgCIAEoCRIxCg9m",
+            "ASgJIpsDCgNEYWcSCgoCaWQYASABKAkSDwoHZGlzcGxheRgCIAEoCRIxCg9m",
             "bGF0dGVuZWRfdGFza3MYAyADKAsyGC5vcmcucm95bGFuY2UueWFkZWwuVGFz",
             "axIWCg5leGVjdXRpb25fZGF0ZRgEIAEoAxISCgpzdGFydF9kYXRlGAUgASgD",
             "EhAKCGVuZF9kYXRlGAYgASgDEhAKCGR1cmF0aW9uGAcgASgDEjMKEXVuY29t",
@@ -38,35 +38,36 @@ namespace Org.Roylance.Yadel {
             "MgoQcHJvY2Vzc2luZ190YXNrcxgJIAMoCzIYLm9yZy5yb3lsYW5jZS55YWRl",
             "bC5UYXNrEi8KDWVycm9yZWRfdGFza3MYCiADKAsyGC5vcmcucm95bGFuY2Uu",
             "eWFkZWwuVGFzaxIxCg9jb21wbGV0ZWRfdGFza3MYCyADKAsyGC5vcmcucm95",
-            "bGFuY2UueWFkZWwuVGFzayLrAgoEVGFzaxIKCgJpZBgBIAEoCRIPCgdkaXNw",
-            "bGF5GAIgASgJEjgKDGRlcGVuZGVuY2llcxgDIAMoCzIiLm9yZy5yb3lsYW5j",
-            "ZS55YWRlbC5UYXNrRGVwZW5kZW5jeRIOCgZkYWdfaWQYBCABKAkSJQoEbG9n",
-            "cxgFIAMoCzIXLm9yZy5yb3lsYW5jZS55YWRlbC5Mb2cSFgoOZXhlY3V0aW9u",
-            "X2RhdGUYBiABKAMSEgoKc3RhcnRfZGF0ZRgHIAEoAxIQCghlbmRfZGF0ZRgI",
-            "IAEoAxIQCghkdXJhdGlvbhgJIAEoAxIdChVmaXJzdF9jb250ZXh0X2Jhc2Vf",
-            "NjQYCiABKAkSHgoWc2Vjb25kX2NvbnRleHRfYmFzZV82NBgLIAEoCRIdChV0",
-            "aGlyZF9jb250ZXh0X2Jhc2VfNjQYDCABKAkSJwofaXNfd2FpdGluZ19mb3Jf",
-            "YW5vdGhlcl9kYWdfdGFzaxgNIAEoCCI0Cg5UYXNrRGVwZW5kZW5jeRIKCgJp",
-            "ZBgBIAEoCRIWCg5wYXJlbnRfdGFza19pZBgCIAEoCSLTAQoMQWRkVGFza1Rv",
-            "RGFnEgoKAmlkGAEgASgJEi0KC3BhcmVudF90YXNrGAIgASgLMhgub3JnLnJv",
-            "eWxhbmNlLnlhZGVsLlRhc2sSKgoIbmV3X3Rhc2sYAyABKAsyGC5vcmcucm95",
-            "bGFuY2UueWFkZWwuVGFzaxIdChVmaXJzdF9jb250ZXh0X2Jhc2VfNjQYBCAB",
-            "KAkSHgoWc2Vjb25kX2NvbnRleHRfYmFzZV82NBgFIAEoCRIdChV0aGlyZF9j",
-            "b250ZXh0X2Jhc2VfNjQYBiABKAkimwEKDENvbXBsZXRlVGFzaxIKCgJpZBgB",
-            "IAEoCRImCgR0YXNrGAIgASgLMhgub3JnLnJveWxhbmNlLnlhZGVsLlRhc2sS",
-            "RQoUd29ya2VyX2NvbmZpZ3VyYXRpb24YAyABKAsyJy5vcmcucm95bGFuY2Uu",
-            "eWFkZWwuV29ya2VyQ29uZmlndXJhdGlvbhIQCghpc19lcnJvchgFIAEoCCok",
-            "CgtXb3JrZXJTdGF0ZRILCgdXT1JLSU5HEAASCAoESURMRRABKi4KGldvcmtl",
-            "clRvTWFuYWdlck1lc3NhZ2VUeXBlEhAKDFJFR0lTVFJBVElPThAAKjkKG01h",
-            "bmFnZXJUb01hbmFnZXJNZXNzYWdlVHlwZRIaChZFTlNVUkVfV09SS0VSU19X",
-            "T1JLSU5HEAAqJAoJQWN0b3JSb2xlEgsKB01BTkFHRVIQABIKCgZXT1JLRVIQ",
-            "AWIGcHJvdG8z"));
+            "bGFuY2UueWFkZWwuVGFzaxInCgZwYXJlbnQYDCABKAsyFy5vcmcucm95bGFu",
+            "Y2UueWFkZWwuRGFnIusCCgRUYXNrEgoKAmlkGAEgASgJEg8KB2Rpc3BsYXkY",
+            "AiABKAkSOAoMZGVwZW5kZW5jaWVzGAMgAygLMiIub3JnLnJveWxhbmNlLnlh",
+            "ZGVsLlRhc2tEZXBlbmRlbmN5Eg4KBmRhZ19pZBgEIAEoCRIlCgRsb2dzGAUg",
+            "AygLMhcub3JnLnJveWxhbmNlLnlhZGVsLkxvZxIWCg5leGVjdXRpb25fZGF0",
+            "ZRgGIAEoAxISCgpzdGFydF9kYXRlGAcgASgDEhAKCGVuZF9kYXRlGAggASgD",
+            "EhAKCGR1cmF0aW9uGAkgASgDEh0KFWZpcnN0X2NvbnRleHRfYmFzZV82NBgK",
+            "IAEoCRIeChZzZWNvbmRfY29udGV4dF9iYXNlXzY0GAsgASgJEh0KFXRoaXJk",
+            "X2NvbnRleHRfYmFzZV82NBgMIAEoCRInCh9pc193YWl0aW5nX2Zvcl9hbm90",
+            "aGVyX2RhZ190YXNrGA0gASgIIjQKDlRhc2tEZXBlbmRlbmN5EgoKAmlkGAEg",
+            "ASgJEhYKDnBhcmVudF90YXNrX2lkGAIgASgJItMBCgxBZGRUYXNrVG9EYWcS",
+            "CgoCaWQYASABKAkSLQoLcGFyZW50X3Rhc2sYAiABKAsyGC5vcmcucm95bGFu",
+            "Y2UueWFkZWwuVGFzaxIqCghuZXdfdGFzaxgDIAEoCzIYLm9yZy5yb3lsYW5j",
+            "ZS55YWRlbC5UYXNrEh0KFWZpcnN0X2NvbnRleHRfYmFzZV82NBgEIAEoCRIe",
+            "ChZzZWNvbmRfY29udGV4dF9iYXNlXzY0GAUgASgJEh0KFXRoaXJkX2NvbnRl",
+            "eHRfYmFzZV82NBgGIAEoCSKbAQoMQ29tcGxldGVUYXNrEgoKAmlkGAEgASgJ",
+            "EiYKBHRhc2sYAiABKAsyGC5vcmcucm95bGFuY2UueWFkZWwuVGFzaxJFChR3",
+            "b3JrZXJfY29uZmlndXJhdGlvbhgDIAEoCzInLm9yZy5yb3lsYW5jZS55YWRl",
+            "bC5Xb3JrZXJDb25maWd1cmF0aW9uEhAKCGlzX2Vycm9yGAUgASgIKiQKC1dv",
+            "cmtlclN0YXRlEgsKB1dPUktJTkcQABIICgRJRExFEAEqLgoaV29ya2VyVG9N",
+            "YW5hZ2VyTWVzc2FnZVR5cGUSEAoMUkVHSVNUUkFUSU9OEAAqOQobTWFuYWdl",
+            "clRvTWFuYWdlck1lc3NhZ2VUeXBlEhoKFkVOU1VSRV9XT1JLRVJTX1dPUktJ",
+            "TkcQACokCglBY3RvclJvbGUSCwoHTUFOQUdFUhAAEgoKBldPUktFUhABYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Roylance.Yadel.WorkerState), typeof(global::Org.Roylance.Yadel.WorkerToManagerMessageType), typeof(global::Org.Roylance.Yadel.ManagerToManagerMessageType), typeof(global::Org.Roylance.Yadel.ActorRole), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.WorkerConfiguration), global::Org.Roylance.Yadel.WorkerConfiguration.Parser, new[]{ "Id", "Ip", "Port", "Host", "InitializedTime", "State", "Task", "Dag", "MinutesBeforeTaskReset", "TaskStartTime" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.Log), global::Org.Roylance.Yadel.Log.Parser, new[]{ "Id", "Message" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.Dag), global::Org.Roylance.Yadel.Dag.Parser, new[]{ "Id", "Display", "FlattenedTasks", "ExecutionDate", "StartDate", "EndDate", "Duration", "UncompletedTasks", "ProcessingTasks", "ErroredTasks", "CompletedTasks" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.Dag), global::Org.Roylance.Yadel.Dag.Parser, new[]{ "Id", "Display", "FlattenedTasks", "ExecutionDate", "StartDate", "EndDate", "Duration", "UncompletedTasks", "ProcessingTasks", "ErroredTasks", "CompletedTasks", "Parent" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.Task), global::Org.Roylance.Yadel.Task.Parser, new[]{ "Id", "Display", "Dependencies", "DagId", "Logs", "ExecutionDate", "StartDate", "EndDate", "Duration", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64", "IsWaitingForAnotherDagTask" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.TaskDependency), global::Org.Roylance.Yadel.TaskDependency.Parser, new[]{ "Id", "ParentTaskId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.AddTaskToDag), global::Org.Roylance.Yadel.AddTaskToDag.Parser, new[]{ "Id", "ParentTask", "NewTask", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64" }, null, null, null),
@@ -659,6 +660,7 @@ namespace Org.Roylance.Yadel {
       processingTasks_ = other.processingTasks_.Clone();
       erroredTasks_ = other.erroredTasks_.Clone();
       completedTasks_ = other.completedTasks_.Clone();
+      Parent = other.parent_ != null ? other.Parent.Clone() : null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -782,6 +784,17 @@ namespace Org.Roylance.Yadel {
       get { return completedTasks_; }
     }
 
+    /// <summary>Field number for the "parent" field.</summary>
+    public const int ParentFieldNumber = 12;
+    private global::Org.Roylance.Yadel.Dag parent_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Org.Roylance.Yadel.Dag Parent {
+      get { return parent_; }
+      set {
+        parent_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Dag);
@@ -806,6 +819,7 @@ namespace Org.Roylance.Yadel {
       if(!processingTasks_.Equals(other.processingTasks_)) return false;
       if(!erroredTasks_.Equals(other.erroredTasks_)) return false;
       if(!completedTasks_.Equals(other.completedTasks_)) return false;
+      if (!object.Equals(Parent, other.Parent)) return false;
       return true;
     }
 
@@ -823,6 +837,7 @@ namespace Org.Roylance.Yadel {
       hash ^= processingTasks_.GetHashCode();
       hash ^= erroredTasks_.GetHashCode();
       hash ^= completedTasks_.GetHashCode();
+      if (parent_ != null) hash ^= Parent.GetHashCode();
       return hash;
     }
 
@@ -862,6 +877,10 @@ namespace Org.Roylance.Yadel {
       processingTasks_.WriteTo(output, _repeated_processingTasks_codec);
       erroredTasks_.WriteTo(output, _repeated_erroredTasks_codec);
       completedTasks_.WriteTo(output, _repeated_completedTasks_codec);
+      if (parent_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Parent);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -890,6 +909,9 @@ namespace Org.Roylance.Yadel {
       size += processingTasks_.CalculateSize(_repeated_processingTasks_codec);
       size += erroredTasks_.CalculateSize(_repeated_erroredTasks_codec);
       size += completedTasks_.CalculateSize(_repeated_completedTasks_codec);
+      if (parent_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Parent);
+      }
       return size;
     }
 
@@ -921,6 +943,12 @@ namespace Org.Roylance.Yadel {
       processingTasks_.Add(other.processingTasks_);
       erroredTasks_.Add(other.erroredTasks_);
       completedTasks_.Add(other.completedTasks_);
+      if (other.parent_ != null) {
+        if (parent_ == null) {
+          parent_ = new global::Org.Roylance.Yadel.Dag();
+        }
+        Parent.MergeFrom(other.Parent);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -973,6 +1001,13 @@ namespace Org.Roylance.Yadel {
           }
           case 90: {
             completedTasks_.AddEntriesFrom(input, _repeated_completedTasks_codec);
+            break;
+          }
+          case 98: {
+            if (parent_ == null) {
+              parent_ = new global::Org.Roylance.Yadel.Dag();
+            }
+            input.ReadMessage(parent_);
             break;
           }
         }

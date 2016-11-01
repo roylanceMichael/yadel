@@ -33,38 +33,42 @@ namespace Org.Roylance.Yadel {
             "LlVJV29ya2VyQ29uZmlndXJhdGlvbiJyCgtVSURhZ1JlcG9ydBI6Cgd3b3Jr",
             "ZXJzGAEgAygLMikub3JnLnJveWxhbmNlLnlhZGVsLlVJV29ya2VyQ29uZmln",
             "dXJhdGlvbhInCgRkYWdzGAIgAygLMhkub3JnLnJveWxhbmNlLnlhZGVsLlVJ",
-            "RGFnIrACCgVVSURhZxIKCgJpZBgBIAEoCRIPCgdkaXNwbGF5GAIgASgJEikK",
+            "RGFnIt0CCgVVSURhZxIKCgJpZBgBIAEoCRIPCgdkaXNwbGF5GAIgASgJEikK",
             "BW5vZGVzGAMgAygLMhoub3JnLnJveWxhbmNlLnlhZGVsLlVJTm9kZRIpCgVl",
             "ZGdlcxgEIAMoCzIaLm9yZy5yb3lsYW5jZS55YWRlbC5VSUVkZ2USFAoMaXNf",
             "Y29tcGxldGVkGAUgASgIEhUKDWlzX3Byb2Nlc3NpbmcYBiABKAgSEAoIaXNf",
             "ZXJyb3IYByABKAgSDAoEbG9ncxgIIAMoCRIYChBudW1iZXJfY29tcGxldGVk",
             "GAkgASgFEhkKEW51bWJlcl9wcm9jZXNzaW5nGAogASgFEhYKDm51bWJlcl9l",
-            "cnJvcmVkGAsgASgFEhoKEm51bWJlcl91bnByb2Nlc3NlZBgMIAEoBSIuCgZV",
-            "SUVkZ2USEQoJbm9kZV9pZF8xGAEgASgJEhEKCW5vZGVfaWRfMhgCIAEoCSLr",
-            "AQoGVUlOb2RlEgoKAmlkGAEgASgJEg8KB2Rpc3BsYXkYAiABKAkSFgoOZXhl",
+            "cnJvcmVkGAsgASgFEhoKEm51bWJlcl91bnByb2Nlc3NlZBgMIAEoBRIrCghj",
+            "aGlsZHJlbhgNIAMoCzIZLm9yZy5yb3lsYW5jZS55YWRlbC5VSURhZyIuCgZV",
+            "SUVkZ2USEQoJbm9kZV9pZF8xGAEgASgJEhEKCW5vZGVfaWRfMhgCIAEoCSKG",
+            "AgoGVUlOb2RlEgoKAmlkGAEgASgJEg8KB2Rpc3BsYXkYAiABKAkSFgoOZXhl",
             "Y3V0aW9uX2RhdGUYBCABKAMSEgoKc3RhcnRfZGF0ZRgFIAEoAxIQCghlbmRf",
             "ZGF0ZRgGIAEoAxIQCghkdXJhdGlvbhgHIAEoAxIUCgxpc19jb21wbGV0ZWQY",
             "CCABKAgSFQoNaXNfcHJvY2Vzc2luZxgJIAEoCBIQCghpc19lcnJvchgKIAEo",
-            "CBIMCgRsb2dzGAsgAygJEicKH2lzX3dhaXRpbmdfZm9yX2Fub3RoZXJfZGFn",
-            "X3Rhc2sYDCABKAgilQIKFVVJV29ya2VyQ29uZmlndXJhdGlvbhIKCgJpcBgB",
-            "IAEoCRIMCgRwb3J0GAIgASgJEgwKBGhvc3QYAyABKAkSGAoQaW5pdGlhbGl6",
-            "ZWRfdGltZRgEIAEoCRIwCgVzdGF0ZRgFIAEoDjIhLm9yZy5yb3lsYW5jZS55",
-            "YWRlbC5VSVdvcmtlclN0YXRlEhQKDHRhc2tfZGlzcGxheRgGIAEoCRITCgtk",
-            "YWdfZGlzcGxheRgHIAEoCRIhChltaW51dGVzX2JlZm9yZV90YXNrX3Jlc2V0",
-            "GAggASgEEhcKD3Rhc2tfc3RhcnRfdGltZRgJIAEoCRIhChl0YXNrX3dvcmtp",
-            "bmdfdGltZV9kaXNwbGF5GAogASgJKkkKElVJWWFkZWxSZXF1ZXN0VHlwZRIP",
-            "CgtSRVBPUlRfREFHUxAAEg4KCkRFTEVURV9EQUcQARISCg5HRVRfREFHX1NU",
-            "QVRVUxACKjoKDVVJV29ya2VyU3RhdGUSFQoRQ1VSUkVOVExZX1dPUktJTkcQ",
-            "ABISCg5DVVJSRU5UTFlfSURMRRABYgZwcm90bzM="));
+            "CBInCgRsb2dzGAsgAygLMhkub3JnLnJveWxhbmNlLnlhZGVsLlVJTG9nEicK",
+            "H2lzX3dhaXRpbmdfZm9yX2Fub3RoZXJfZGFnX3Rhc2sYDCABKAgiJAoFVUlM",
+            "b2cSCgoCaWQYASABKAkSDwoHbWVzc2FnZRgCIAEoCSKVAgoVVUlXb3JrZXJD",
+            "b25maWd1cmF0aW9uEgoKAmlwGAEgASgJEgwKBHBvcnQYAiABKAkSDAoEaG9z",
+            "dBgDIAEoCRIYChBpbml0aWFsaXplZF90aW1lGAQgASgJEjAKBXN0YXRlGAUg",
+            "ASgOMiEub3JnLnJveWxhbmNlLnlhZGVsLlVJV29ya2VyU3RhdGUSFAoMdGFz",
+            "a19kaXNwbGF5GAYgASgJEhMKC2RhZ19kaXNwbGF5GAcgASgJEiEKGW1pbnV0",
+            "ZXNfYmVmb3JlX3Rhc2tfcmVzZXQYCCABKAQSFwoPdGFza19zdGFydF90aW1l",
+            "GAkgASgJEiEKGXRhc2tfd29ya2luZ190aW1lX2Rpc3BsYXkYCiABKAkqSQoS",
+            "VUlZYWRlbFJlcXVlc3RUeXBlEg8KC1JFUE9SVF9EQUdTEAASDgoKREVMRVRF",
+            "X0RBRxABEhIKDkdFVF9EQUdfU1RBVFVTEAIqOgoNVUlXb3JrZXJTdGF0ZRIV",
+            "ChFDVVJSRU5UTFlfV09SS0lORxAAEhIKDkNVUlJFTlRMWV9JRExFEAFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Roylance.Yadel.UIYadelRequestType), typeof(global::Org.Roylance.Yadel.UIWorkerState), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIYadelRequest), global::Org.Roylance.Yadel.UIYadelRequest.Parser, new[]{ "RequestType", "DagId", "Token", "UserName", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIYadelResponse), global::Org.Roylance.Yadel.UIYadelResponse.Parser, new[]{ "Content", "Report", "Dag", "Configurations" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIDagReport), global::Org.Roylance.Yadel.UIDagReport.Parser, new[]{ "Workers", "Dags" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIDag), global::Org.Roylance.Yadel.UIDag.Parser, new[]{ "Id", "Display", "Nodes", "Edges", "IsCompleted", "IsProcessing", "IsError", "Logs", "NumberCompleted", "NumberProcessing", "NumberErrored", "NumberUnprocessed" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIDag), global::Org.Roylance.Yadel.UIDag.Parser, new[]{ "Id", "Display", "Nodes", "Edges", "IsCompleted", "IsProcessing", "IsError", "Logs", "NumberCompleted", "NumberProcessing", "NumberErrored", "NumberUnprocessed", "Children" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIEdge), global::Org.Roylance.Yadel.UIEdge.Parser, new[]{ "NodeId1", "NodeId2" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UINode), global::Org.Roylance.Yadel.UINode.Parser, new[]{ "Id", "Display", "ExecutionDate", "StartDate", "EndDate", "Duration", "IsCompleted", "IsProcessing", "IsError", "Logs", "IsWaitingForAnotherDagTask" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UILog), global::Org.Roylance.Yadel.UILog.Parser, new[]{ "Id", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIWorkerConfiguration), global::Org.Roylance.Yadel.UIWorkerConfiguration.Parser, new[]{ "Ip", "Port", "Host", "InitializedTime", "State", "TaskDisplay", "DagDisplay", "MinutesBeforeTaskReset", "TaskStartTime", "TaskWorkingTimeDisplay" }, null, null, null)
           }));
     }
@@ -685,6 +689,7 @@ namespace Org.Roylance.Yadel {
       numberProcessing_ = other.numberProcessing_;
       numberErrored_ = other.numberErrored_;
       numberUnprocessed_ = other.numberUnprocessed_;
+      children_ = other.children_.Clone();
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -821,6 +826,16 @@ namespace Org.Roylance.Yadel {
       }
     }
 
+    /// <summary>Field number for the "children" field.</summary>
+    public const int ChildrenFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::Org.Roylance.Yadel.UIDag> _repeated_children_codec
+        = pb::FieldCodec.ForMessage(106, global::Org.Roylance.Yadel.UIDag.Parser);
+    private readonly pbc::RepeatedField<global::Org.Roylance.Yadel.UIDag> children_ = new pbc::RepeatedField<global::Org.Roylance.Yadel.UIDag>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Org.Roylance.Yadel.UIDag> Children {
+      get { return children_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UIDag);
@@ -846,6 +861,7 @@ namespace Org.Roylance.Yadel {
       if (NumberProcessing != other.NumberProcessing) return false;
       if (NumberErrored != other.NumberErrored) return false;
       if (NumberUnprocessed != other.NumberUnprocessed) return false;
+      if(!children_.Equals(other.children_)) return false;
       return true;
     }
 
@@ -864,6 +880,7 @@ namespace Org.Roylance.Yadel {
       if (NumberProcessing != 0) hash ^= NumberProcessing.GetHashCode();
       if (NumberErrored != 0) hash ^= NumberErrored.GetHashCode();
       if (NumberUnprocessed != 0) hash ^= NumberUnprocessed.GetHashCode();
+      hash ^= children_.GetHashCode();
       return hash;
     }
 
@@ -913,6 +930,7 @@ namespace Org.Roylance.Yadel {
         output.WriteRawTag(96);
         output.WriteInt32(NumberUnprocessed);
       }
+      children_.WriteTo(output, _repeated_children_codec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -948,6 +966,7 @@ namespace Org.Roylance.Yadel {
       if (NumberUnprocessed != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(NumberUnprocessed);
       }
+      size += children_.CalculateSize(_repeated_children_codec);
       return size;
     }
 
@@ -986,6 +1005,7 @@ namespace Org.Roylance.Yadel {
       if (other.NumberUnprocessed != 0) {
         NumberUnprocessed = other.NumberUnprocessed;
       }
+      children_.Add(other.children_);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1042,6 +1062,10 @@ namespace Org.Roylance.Yadel {
           }
           case 96: {
             NumberUnprocessed = input.ReadInt32();
+            break;
+          }
+          case 106: {
+            children_.AddEntriesFrom(input, _repeated_children_codec);
             break;
           }
         }
@@ -1338,11 +1362,11 @@ namespace Org.Roylance.Yadel {
 
     /// <summary>Field number for the "logs" field.</summary>
     public const int LogsFieldNumber = 11;
-    private static readonly pb::FieldCodec<string> _repeated_logs_codec
-        = pb::FieldCodec.ForString(90);
-    private readonly pbc::RepeatedField<string> logs_ = new pbc::RepeatedField<string>();
+    private static readonly pb::FieldCodec<global::Org.Roylance.Yadel.UILog> _repeated_logs_codec
+        = pb::FieldCodec.ForMessage(90, global::Org.Roylance.Yadel.UILog.Parser);
+    private readonly pbc::RepeatedField<global::Org.Roylance.Yadel.UILog> logs_ = new pbc::RepeatedField<global::Org.Roylance.Yadel.UILog>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<string> Logs {
+    public pbc::RepeatedField<global::Org.Roylance.Yadel.UILog> Logs {
       get { return logs_; }
     }
 
@@ -1584,6 +1608,151 @@ namespace Org.Roylance.Yadel {
 
   }
 
+  public sealed partial class UILog : pb::IMessage<UILog> {
+    private static readonly pb::MessageParser<UILog> _parser = new pb::MessageParser<UILog>(() => new UILog());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UILog> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Org.Roylance.Yadel.YadelReportReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UILog() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UILog(UILog other) : this() {
+      id_ = other.id_;
+      message_ = other.message_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UILog Clone() {
+      return new UILog(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 2;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UILog);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UILog other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Message != other.Message) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UILog other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class UIWorkerConfiguration : pb::IMessage<UIWorkerConfiguration> {
     private static readonly pb::MessageParser<UIWorkerConfiguration> _parser = new pb::MessageParser<UIWorkerConfiguration>(() => new UIWorkerConfiguration());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1591,7 +1760,7 @@ namespace Org.Roylance.Yadel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Org.Roylance.Yadel.YadelReportReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Org.Roylance.Yadel.YadelReportReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

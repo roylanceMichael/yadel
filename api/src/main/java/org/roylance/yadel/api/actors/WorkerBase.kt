@@ -10,7 +10,9 @@ import akka.event.Logging
 import akka.event.LoggingAdapter
 import org.roylance.yadel.YadelModel
 import org.roylance.yadel.api.enums.CommonTokens
+import org.roylance.yadel.api.services.ITaskLogger
 import java.lang.management.ManagementFactory
+import java.util.*
 
 abstract class WorkerBase: UntypedActor() {
     protected val cluster: Cluster = Cluster.get(this.context.system())
@@ -18,41 +20,60 @@ abstract class WorkerBase: UntypedActor() {
 
     protected var foundManagerAddress:String? = null
 
+    protected val logger = object: ITaskLogger {
+        override val logs = ArrayList<YadelModel.Log>()
+
+        override fun clearLogs() {
+            logs.clear()
+        }
+
+        override fun error(message: String) {
+            log.error(message)
+            logs.add(YadelModel.Log.newBuilder().setId(UUID.randomUUID().toString()).setMessage(message).build())
+        }
+
+        override fun info(message: String) {
+            log.info(message)
+            logs.add(YadelModel.Log.newBuilder().setId(UUID.randomUUID().toString()).setMessage(message).build())
+        }
+    }
+
     override fun preStart() {
-        System.out.println("max memory: ${ManagementFactory.getMemoryMXBean().heapMemoryUsage.max / 1000000} MB")
+        log.info("max memory: ${ManagementFactory.getMemoryMXBean().heapMemoryUsage.max / 1000000} MB")
         super.preStart()
         this.cluster.subscribe(this.self, ClusterEvent.MemberUp::class.java)
     }
 
     override fun postStop() {
-        this.log.info("handling postStop on base")
+        logger.info("handling postStop on base")
         super.postStop()
         this.cluster.unsubscribe(this.self)
     }
 
     override fun onReceive(p0: Any?) {
-        this.log.info("received message")
+        logger.clearLogs()
+        logger.info("received message")
         if (p0 is ClusterEvent.CurrentClusterState) {
-            this.log.info("handling current cluster state")
+            logger.info("handling current cluster state")
             this.handleCurrentClusterState(p0)
         }
         else if (p0 is ClusterEvent.MemberUp) {
-            this.log.info("handling member up")
+            logger.info("handling member up")
             this.handleMemberUp(p0)
         }
         // inherited class will catch work to be done
     }
 
     protected fun completeTask(completeTask: YadelModel.CompleteTask) {
-        this.getManagerSelection()?.tell(completeTask, this.self)
+        getManagerSelection()?.tell(completeTask, self)
     }
 
     protected fun getManagerSelection():ActorSelection? {
-        if (this.foundManagerAddress == null) {
+        if (foundManagerAddress == null) {
             return null
         }
-        return this.context
-                .actorSelection(this.foundManagerAddress + CommonTokens.ManagerLocation)
+        return context
+                .actorSelection(foundManagerAddress + CommonTokens.ManagerLocation)
     }
 
     private fun handleCurrentClusterState(state:ClusterEvent.CurrentClusterState) {

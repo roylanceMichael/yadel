@@ -16,6 +16,7 @@ declare module org.roylance.yadel {
 		UIDag: UIDagBuilder;
 		UIEdge: UIEdgeBuilder;
 		UINode: UINodeBuilder;
+		UILog: UILogBuilder;
 		UIWorkerConfiguration: UIWorkerConfigurationBuilder;
 		CommonAction: CommonActionBuilder;
 		ReportController: ReportControllerBuilder;
@@ -156,6 +157,9 @@ declare module org.roylance.yadel {
 		number_unprocessed?: number;
 		getNumberUnprocessed() : number;
 		setNumberUnprocessed(numberUnprocessed : number): void;
+		children: UIDag[];
+		getChildren() : UIDag[];
+		setChildren(children : UIDag[]): void;
 		
 	}
 	
@@ -221,9 +225,9 @@ declare module org.roylance.yadel {
 		is_error?: boolean;
 		getIsError() : boolean;
 		setIsError(isError : boolean): void;
-		logs: string[];
-		getLogs() : string[];
-		setLogs(logs : string[]): void;
+		logs: UILog[];
+		getLogs() : UILog[];
+		setLogs(logs : UILog[]): void;
 		is_waiting_for_another_dag_task?: boolean;
 		getIsWaitingForAnotherDagTask() : boolean;
 		setIsWaitingForAnotherDagTask(isWaitingForAnotherDagTask : boolean): void;
@@ -236,6 +240,28 @@ declare module org.roylance.yadel {
 		//decode(buffer: NodeBuffer) : UINode;
 		//decode(buffer: ByteArrayBuffer) : UINode;
 		decode64(buffer: string) : UINode;
+		
+	}	
+}
+
+declare module org.roylance.yadel {
+
+	export interface UILog extends ProtoBufModel {
+		id?: string;
+		getId() : string;
+		setId(id : string): void;
+		message?: string;
+		getMessage() : string;
+		setMessage(message : string): void;
+		
+	}
+	
+	export interface UILogBuilder {
+		new(): UILog;
+		decode(buffer: ArrayBuffer) : UILog;
+		//decode(buffer: NodeBuffer) : UILog;
+		//decode(buffer: ByteArrayBuffer) : UILog;
+		decode64(buffer: string) : UILog;
 		
 	}	
 }
@@ -437,6 +463,9 @@ declare module org.roylance.yadel {
 		completed_tasks: Task[];
 		getCompletedTasks() : Task[];
 		setCompletedTasks(completedTasks : Task[]): void;
+		parent?: Dag;
+		getParent() : Dag;
+		setParent(parent : Dag): void;
 		
 	}
 	

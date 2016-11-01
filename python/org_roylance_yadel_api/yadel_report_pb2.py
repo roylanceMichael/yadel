@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yadel_report.proto',
   package='org.roylance.yadel',
   syntax='proto3',
-  serialized_pb=_b('\n\x12yadel_report.proto\x12\x12org.roylance.yadel\"\x92\x01\n\x0eUIYadelRequest\x12<\n\x0crequest_type\x18\x01 \x01(\x0e\x32&.org.roylance.yadel.UIYadelRequestType\x12\x0e\n\x06\x64\x61g_id\x18\x02 \x01(\t\x12\r\n\x05token\x18\x03 \x01(\t\x12\x11\n\tuser_name\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\"\xbe\x01\n\x0fUIYadelResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12/\n\x06report\x18\x02 \x01(\x0b\x32\x1f.org.roylance.yadel.UIDagReport\x12&\n\x03\x64\x61g\x18\x03 \x01(\x0b\x32\x19.org.roylance.yadel.UIDag\x12\x41\n\x0e\x63onfigurations\x18\x04 \x03(\x0b\x32).org.roylance.yadel.UIWorkerConfiguration\"r\n\x0bUIDagReport\x12:\n\x07workers\x18\x01 \x03(\x0b\x32).org.roylance.yadel.UIWorkerConfiguration\x12\'\n\x04\x64\x61gs\x18\x02 \x03(\x0b\x32\x19.org.roylance.yadel.UIDag\"\xb0\x02\n\x05UIDag\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isplay\x18\x02 \x01(\t\x12)\n\x05nodes\x18\x03 \x03(\x0b\x32\x1a.org.roylance.yadel.UINode\x12)\n\x05\x65\x64ges\x18\x04 \x03(\x0b\x32\x1a.org.roylance.yadel.UIEdge\x12\x14\n\x0cis_completed\x18\x05 \x01(\x08\x12\x15\n\ris_processing\x18\x06 \x01(\x08\x12\x10\n\x08is_error\x18\x07 \x01(\x08\x12\x0c\n\x04logs\x18\x08 \x03(\t\x12\x18\n\x10number_completed\x18\t \x01(\x05\x12\x19\n\x11number_processing\x18\n \x01(\x05\x12\x16\n\x0enumber_errored\x18\x0b \x01(\x05\x12\x1a\n\x12number_unprocessed\x18\x0c \x01(\x05\".\n\x06UIEdge\x12\x11\n\tnode_id_1\x18\x01 \x01(\t\x12\x11\n\tnode_id_2\x18\x02 \x01(\t\"\xeb\x01\n\x06UINode\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isplay\x18\x02 \x01(\t\x12\x16\n\x0e\x65xecution_date\x18\x04 \x01(\x03\x12\x12\n\nstart_date\x18\x05 \x01(\x03\x12\x10\n\x08\x65nd_date\x18\x06 \x01(\x03\x12\x10\n\x08\x64uration\x18\x07 \x01(\x03\x12\x14\n\x0cis_completed\x18\x08 \x01(\x08\x12\x15\n\ris_processing\x18\t \x01(\x08\x12\x10\n\x08is_error\x18\n \x01(\x08\x12\x0c\n\x04logs\x18\x0b \x03(\t\x12\'\n\x1fis_waiting_for_another_dag_task\x18\x0c \x01(\x08\"\x95\x02\n\x15UIWorkerConfiguration\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\t\x12\x0c\n\x04host\x18\x03 \x01(\t\x12\x18\n\x10initialized_time\x18\x04 \x01(\t\x12\x30\n\x05state\x18\x05 \x01(\x0e\x32!.org.roylance.yadel.UIWorkerState\x12\x14\n\x0ctask_display\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x61g_display\x18\x07 \x01(\t\x12!\n\x19minutes_before_task_reset\x18\x08 \x01(\x04\x12\x17\n\x0ftask_start_time\x18\t \x01(\t\x12!\n\x19task_working_time_display\x18\n \x01(\t*I\n\x12UIYadelRequestType\x12\x0f\n\x0bREPORT_DAGS\x10\x00\x12\x0e\n\nDELETE_DAG\x10\x01\x12\x12\n\x0eGET_DAG_STATUS\x10\x02*:\n\rUIWorkerState\x12\x15\n\x11\x43URRENTLY_WORKING\x10\x00\x12\x12\n\x0e\x43URRENTLY_IDLE\x10\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x12yadel_report.proto\x12\x12org.roylance.yadel\"\x92\x01\n\x0eUIYadelRequest\x12<\n\x0crequest_type\x18\x01 \x01(\x0e\x32&.org.roylance.yadel.UIYadelRequestType\x12\x0e\n\x06\x64\x61g_id\x18\x02 \x01(\t\x12\r\n\x05token\x18\x03 \x01(\t\x12\x11\n\tuser_name\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\"\xbe\x01\n\x0fUIYadelResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12/\n\x06report\x18\x02 \x01(\x0b\x32\x1f.org.roylance.yadel.UIDagReport\x12&\n\x03\x64\x61g\x18\x03 \x01(\x0b\x32\x19.org.roylance.yadel.UIDag\x12\x41\n\x0e\x63onfigurations\x18\x04 \x03(\x0b\x32).org.roylance.yadel.UIWorkerConfiguration\"r\n\x0bUIDagReport\x12:\n\x07workers\x18\x01 \x03(\x0b\x32).org.roylance.yadel.UIWorkerConfiguration\x12\'\n\x04\x64\x61gs\x18\x02 \x03(\x0b\x32\x19.org.roylance.yadel.UIDag\"\xdd\x02\n\x05UIDag\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isplay\x18\x02 \x01(\t\x12)\n\x05nodes\x18\x03 \x03(\x0b\x32\x1a.org.roylance.yadel.UINode\x12)\n\x05\x65\x64ges\x18\x04 \x03(\x0b\x32\x1a.org.roylance.yadel.UIEdge\x12\x14\n\x0cis_completed\x18\x05 \x01(\x08\x12\x15\n\ris_processing\x18\x06 \x01(\x08\x12\x10\n\x08is_error\x18\x07 \x01(\x08\x12\x0c\n\x04logs\x18\x08 \x03(\t\x12\x18\n\x10number_completed\x18\t \x01(\x05\x12\x19\n\x11number_processing\x18\n \x01(\x05\x12\x16\n\x0enumber_errored\x18\x0b \x01(\x05\x12\x1a\n\x12number_unprocessed\x18\x0c \x01(\x05\x12+\n\x08\x63hildren\x18\r \x03(\x0b\x32\x19.org.roylance.yadel.UIDag\".\n\x06UIEdge\x12\x11\n\tnode_id_1\x18\x01 \x01(\t\x12\x11\n\tnode_id_2\x18\x02 \x01(\t\"\x86\x02\n\x06UINode\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isplay\x18\x02 \x01(\t\x12\x16\n\x0e\x65xecution_date\x18\x04 \x01(\x03\x12\x12\n\nstart_date\x18\x05 \x01(\x03\x12\x10\n\x08\x65nd_date\x18\x06 \x01(\x03\x12\x10\n\x08\x64uration\x18\x07 \x01(\x03\x12\x14\n\x0cis_completed\x18\x08 \x01(\x08\x12\x15\n\ris_processing\x18\t \x01(\x08\x12\x10\n\x08is_error\x18\n \x01(\x08\x12\'\n\x04logs\x18\x0b \x03(\x0b\x32\x19.org.roylance.yadel.UILog\x12\'\n\x1fis_waiting_for_another_dag_task\x18\x0c \x01(\x08\"$\n\x05UILog\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x95\x02\n\x15UIWorkerConfiguration\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\t\x12\x0c\n\x04host\x18\x03 \x01(\t\x12\x18\n\x10initialized_time\x18\x04 \x01(\t\x12\x30\n\x05state\x18\x05 \x01(\x0e\x32!.org.roylance.yadel.UIWorkerState\x12\x14\n\x0ctask_display\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x61g_display\x18\x07 \x01(\t\x12!\n\x19minutes_before_task_reset\x18\x08 \x01(\x04\x12\x17\n\x0ftask_start_time\x18\t \x01(\t\x12!\n\x19task_working_time_display\x18\n \x01(\t*I\n\x12UIYadelRequestType\x12\x0f\n\x0bREPORT_DAGS\x10\x00\x12\x0e\n\nDELETE_DAG\x10\x01\x12\x12\n\x0eGET_DAG_STATUS\x10\x02*:\n\rUIWorkerState\x12\x15\n\x11\x43URRENTLY_WORKING\x10\x00\x12\x12\n\x0e\x43URRENTLY_IDLE\x10\x01\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -45,8 +45,8 @@ _UIYADELREQUESTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1373,
-  serialized_end=1446,
+  serialized_start=1483,
+  serialized_end=1556,
 )
 _sym_db.RegisterEnumDescriptor(_UIYADELREQUESTTYPE)
 
@@ -68,8 +68,8 @@ _UIWORKERSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1448,
-  serialized_end=1506,
+  serialized_start=1558,
+  serialized_end=1616,
 )
 _sym_db.RegisterEnumDescriptor(_UIWORKERSTATE)
 
@@ -322,6 +322,13 @@ _UIDAG = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='children', full_name='org.roylance.yadel.UIDag.children', index=12,
+      number=13, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -335,7 +342,7 @@ _UIDAG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=501,
-  serialized_end=805,
+  serialized_end=850,
 )
 
 
@@ -372,8 +379,8 @@ _UIEDGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=807,
-  serialized_end=853,
+  serialized_start=852,
+  serialized_end=898,
 )
 
 
@@ -449,7 +456,7 @@ _UINODE = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='logs', full_name='org.roylance.yadel.UINode.logs', index=9,
-      number=11, type=9, cpp_type=9, label=3,
+      number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -473,8 +480,46 @@ _UINODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=856,
-  serialized_end=1091,
+  serialized_start=901,
+  serialized_end=1163,
+)
+
+
+_UILOG = _descriptor.Descriptor(
+  name='UILog',
+  full_name='org.roylance.yadel.UILog',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='org.roylance.yadel.UILog.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='org.roylance.yadel.UILog.message', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1165,
+  serialized_end=1201,
 )
 
 
@@ -567,8 +612,8 @@ _UIWORKERCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1094,
-  serialized_end=1371,
+  serialized_start=1204,
+  serialized_end=1481,
 )
 
 _UIYADELREQUEST.fields_by_name['request_type'].enum_type = _UIYADELREQUESTTYPE
@@ -579,6 +624,8 @@ _UIDAGREPORT.fields_by_name['workers'].message_type = _UIWORKERCONFIGURATION
 _UIDAGREPORT.fields_by_name['dags'].message_type = _UIDAG
 _UIDAG.fields_by_name['nodes'].message_type = _UINODE
 _UIDAG.fields_by_name['edges'].message_type = _UIEDGE
+_UIDAG.fields_by_name['children'].message_type = _UIDAG
+_UINODE.fields_by_name['logs'].message_type = _UILOG
 _UIWORKERCONFIGURATION.fields_by_name['state'].enum_type = _UIWORKERSTATE
 DESCRIPTOR.message_types_by_name['UIYadelRequest'] = _UIYADELREQUEST
 DESCRIPTOR.message_types_by_name['UIYadelResponse'] = _UIYADELRESPONSE
@@ -586,6 +633,7 @@ DESCRIPTOR.message_types_by_name['UIDagReport'] = _UIDAGREPORT
 DESCRIPTOR.message_types_by_name['UIDag'] = _UIDAG
 DESCRIPTOR.message_types_by_name['UIEdge'] = _UIEDGE
 DESCRIPTOR.message_types_by_name['UINode'] = _UINODE
+DESCRIPTOR.message_types_by_name['UILog'] = _UILOG
 DESCRIPTOR.message_types_by_name['UIWorkerConfiguration'] = _UIWORKERCONFIGURATION
 DESCRIPTOR.enum_types_by_name['UIYadelRequestType'] = _UIYADELREQUESTTYPE
 DESCRIPTOR.enum_types_by_name['UIWorkerState'] = _UIWORKERSTATE
@@ -631,6 +679,13 @@ UINode = _reflection.GeneratedProtocolMessageType('UINode', (_message.Message,),
   # @@protoc_insertion_point(class_scope:org.roylance.yadel.UINode)
   ))
 _sym_db.RegisterMessage(UINode)
+
+UILog = _reflection.GeneratedProtocolMessageType('UILog', (_message.Message,), dict(
+  DESCRIPTOR = _UILOG,
+  __module__ = 'yadel_report_pb2'
+  # @@protoc_insertion_point(class_scope:org.roylance.yadel.UILog)
+  ))
+_sym_db.RegisterMessage(UILog)
 
 UIWorkerConfiguration = _reflection.GeneratedProtocolMessageType('UIWorkerConfiguration', (_message.Message,), dict(
   DESCRIPTOR = _UIWORKERCONFIGURATION,

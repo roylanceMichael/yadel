@@ -1,4 +1,3 @@
-/// <reference path="node_modules/org.roylance.yadel.api/YadelModel.d.ts" />
 import {IDagController} from "./IDagController";
 import {IDagService} from "./IDagService";
 

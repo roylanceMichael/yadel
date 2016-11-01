@@ -2923,6 +2923,19 @@ public final class YadelModel {
      */
     org.roylance.yadel.YadelModel.TaskOrBuilder getCompletedTasksOrBuilder(
         int index);
+
+    /**
+     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     */
+    boolean hasParent();
+    /**
+     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     */
+    org.roylance.yadel.YadelModel.Dag getParent();
+    /**
+     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     */
+    org.roylance.yadel.YadelModel.DagOrBuilder getParentOrBuilder();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.Dag}
@@ -3049,6 +3062,19 @@ public final class YadelModel {
               }
               completedTasks_.add(
                   input.readMessage(org.roylance.yadel.YadelModel.Task.parser(), extensionRegistry));
+              break;
+            }
+            case 98: {
+              org.roylance.yadel.YadelModel.Dag.Builder subBuilder = null;
+              if (parent_ != null) {
+                subBuilder = parent_.toBuilder();
+              }
+              parent_ = input.readMessage(org.roylance.yadel.YadelModel.Dag.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(parent_);
+                parent_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -3369,6 +3395,27 @@ public final class YadelModel {
       return completedTasks_.get(index);
     }
 
+    public static final int PARENT_FIELD_NUMBER = 12;
+    private org.roylance.yadel.YadelModel.Dag parent_;
+    /**
+     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     */
+    public boolean hasParent() {
+      return parent_ != null;
+    }
+    /**
+     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     */
+    public org.roylance.yadel.YadelModel.Dag getParent() {
+      return parent_ == null ? org.roylance.yadel.YadelModel.Dag.getDefaultInstance() : parent_;
+    }
+    /**
+     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     */
+    public org.roylance.yadel.YadelModel.DagOrBuilder getParentOrBuilder() {
+      return getParent();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3413,6 +3460,9 @@ public final class YadelModel {
       }
       for (int i = 0; i < completedTasks_.size(); i++) {
         output.writeMessage(11, completedTasks_.get(i));
+      }
+      if (parent_ != null) {
+        output.writeMessage(12, getParent());
       }
     }
 
@@ -3463,6 +3513,10 @@ public final class YadelModel {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, completedTasks_.get(i));
       }
+      if (parent_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getParent());
+      }
       memoizedSize = size;
       return size;
     }
@@ -3501,6 +3555,11 @@ public final class YadelModel {
           .equals(other.getErroredTasksList());
       result = result && getCompletedTasksList()
           .equals(other.getCompletedTasksList());
+      result = result && (hasParent() == other.hasParent());
+      if (hasParent()) {
+        result = result && getParent()
+            .equals(other.getParent());
+      }
       return result;
     }
 
@@ -3546,6 +3605,10 @@ public final class YadelModel {
       if (getCompletedTasksCount() > 0) {
         hash = (37 * hash) + COMPLETED_TASKS_FIELD_NUMBER;
         hash = (53 * hash) + getCompletedTasksList().hashCode();
+      }
+      if (hasParent()) {
+        hash = (37 * hash) + PARENT_FIELD_NUMBER;
+        hash = (53 * hash) + getParent().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3712,6 +3775,12 @@ public final class YadelModel {
         } else {
           completedTasksBuilder_.clear();
         }
+        if (parentBuilder_ == null) {
+          parent_ = null;
+        } else {
+          parent_ = null;
+          parentBuilder_ = null;
+        }
         return this;
       }
 
@@ -3786,6 +3855,11 @@ public final class YadelModel {
           result.completedTasks_ = completedTasks_;
         } else {
           result.completedTasks_ = completedTasksBuilder_.build();
+        }
+        if (parentBuilder_ == null) {
+          result.parent_ = parent_;
+        } else {
+          result.parent_ = parentBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -3978,6 +4052,9 @@ public final class YadelModel {
               completedTasksBuilder_.addAllMessages(other.completedTasks_);
             }
           }
+        }
+        if (other.hasParent()) {
+          mergeParent(other.getParent());
         }
         onChanged();
         return this;
@@ -5446,6 +5523,123 @@ public final class YadelModel {
           completedTasks_ = null;
         }
         return completedTasksBuilder_;
+      }
+
+      private org.roylance.yadel.YadelModel.Dag parent_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.Dag, org.roylance.yadel.YadelModel.Dag.Builder, org.roylance.yadel.YadelModel.DagOrBuilder> parentBuilder_;
+      /**
+       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       */
+      public boolean hasParent() {
+        return parentBuilder_ != null || parent_ != null;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       */
+      public org.roylance.yadel.YadelModel.Dag getParent() {
+        if (parentBuilder_ == null) {
+          return parent_ == null ? org.roylance.yadel.YadelModel.Dag.getDefaultInstance() : parent_;
+        } else {
+          return parentBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       */
+      public Builder setParent(org.roylance.yadel.YadelModel.Dag value) {
+        if (parentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          parent_ = value;
+          onChanged();
+        } else {
+          parentBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       */
+      public Builder setParent(
+          org.roylance.yadel.YadelModel.Dag.Builder builderForValue) {
+        if (parentBuilder_ == null) {
+          parent_ = builderForValue.build();
+          onChanged();
+        } else {
+          parentBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       */
+      public Builder mergeParent(org.roylance.yadel.YadelModel.Dag value) {
+        if (parentBuilder_ == null) {
+          if (parent_ != null) {
+            parent_ =
+              org.roylance.yadel.YadelModel.Dag.newBuilder(parent_).mergeFrom(value).buildPartial();
+          } else {
+            parent_ = value;
+          }
+          onChanged();
+        } else {
+          parentBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       */
+      public Builder clearParent() {
+        if (parentBuilder_ == null) {
+          parent_ = null;
+          onChanged();
+        } else {
+          parent_ = null;
+          parentBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       */
+      public org.roylance.yadel.YadelModel.Dag.Builder getParentBuilder() {
+        
+        onChanged();
+        return getParentFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       */
+      public org.roylance.yadel.YadelModel.DagOrBuilder getParentOrBuilder() {
+        if (parentBuilder_ != null) {
+          return parentBuilder_.getMessageOrBuilder();
+        } else {
+          return parent_ == null ?
+              org.roylance.yadel.YadelModel.Dag.getDefaultInstance() : parent_;
+        }
+      }
+      /**
+       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.Dag, org.roylance.yadel.YadelModel.Dag.Builder, org.roylance.yadel.YadelModel.DagOrBuilder> 
+          getParentFieldBuilder() {
+        if (parentBuilder_ == null) {
+          parentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.roylance.yadel.YadelModel.Dag, org.roylance.yadel.YadelModel.Dag.Builder, org.roylance.yadel.YadelModel.DagOrBuilder>(
+                  getParent(),
+                  getParentForChildren(),
+                  isClean());
+          parent_ = null;
+        }
+        return parentBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10693,7 +10887,7 @@ public final class YadelModel {
       "(\0132\027.org.roylance.yadel.Dag\022!\n\031minutes_b" +
       "efore_task_reset\030\t \001(\004\022\027\n\017task_start_tim" +
       "e\030\n \001(\t\"\"\n\003Log\022\n\n\002id\030\001 \001(\t\022\017\n\007message\030\002 " +
-      "\001(\t\"\362\002\n\003Dag\022\n\n\002id\030\001 \001(\t\022\017\n\007display\030\002 \001(\t",
+      "\001(\t\"\233\003\n\003Dag\022\n\n\002id\030\001 \001(\t\022\017\n\007display\030\002 \001(\t",
       "\0221\n\017flattened_tasks\030\003 \003(\0132\030.org.roylance" +
       ".yadel.Task\022\026\n\016execution_date\030\004 \001(\003\022\022\n\ns" +
       "tart_date\030\005 \001(\003\022\020\n\010end_date\030\006 \001(\003\022\020\n\010dur" +
@@ -10702,31 +10896,32 @@ public final class YadelModel {
       "asks\030\t \003(\0132\030.org.roylance.yadel.Task\022/\n\r" +
       "errored_tasks\030\n \003(\0132\030.org.roylance.yadel" +
       ".Task\0221\n\017completed_tasks\030\013 \003(\0132\030.org.roy" +
-      "lance.yadel.Task\"\353\002\n\004Task\022\n\n\002id\030\001 \001(\t\022\017\n" +
-      "\007display\030\002 \001(\t\0228\n\014dependencies\030\003 \003(\0132\".o",
-      "rg.roylance.yadel.TaskDependency\022\016\n\006dag_" +
-      "id\030\004 \001(\t\022%\n\004logs\030\005 \003(\0132\027.org.roylance.ya" +
-      "del.Log\022\026\n\016execution_date\030\006 \001(\003\022\022\n\nstart" +
-      "_date\030\007 \001(\003\022\020\n\010end_date\030\010 \001(\003\022\020\n\010duratio" +
-      "n\030\t \001(\003\022\035\n\025first_context_base_64\030\n \001(\t\022\036" +
-      "\n\026second_context_base_64\030\013 \001(\t\022\035\n\025third_" +
-      "context_base_64\030\014 \001(\t\022\'\n\037is_waiting_for_" +
-      "another_dag_task\030\r \001(\010\"4\n\016TaskDependency" +
-      "\022\n\n\002id\030\001 \001(\t\022\026\n\016parent_task_id\030\002 \001(\t\"\323\001\n" +
-      "\014AddTaskToDag\022\n\n\002id\030\001 \001(\t\022-\n\013parent_task",
-      "\030\002 \001(\0132\030.org.roylance.yadel.Task\022*\n\010new_" +
-      "task\030\003 \001(\0132\030.org.roylance.yadel.Task\022\035\n\025" +
-      "first_context_base_64\030\004 \001(\t\022\036\n\026second_co" +
-      "ntext_base_64\030\005 \001(\t\022\035\n\025third_context_bas" +
-      "e_64\030\006 \001(\t\"\233\001\n\014CompleteTask\022\n\n\002id\030\001 \001(\t\022" +
-      "&\n\004task\030\002 \001(\0132\030.org.roylance.yadel.Task\022" +
-      "E\n\024worker_configuration\030\003 \001(\0132\'.org.royl" +
-      "ance.yadel.WorkerConfiguration\022\020\n\010is_err" +
-      "or\030\005 \001(\010*$\n\013WorkerState\022\013\n\007WORKING\020\000\022\010\n\004" +
-      "IDLE\020\001*.\n\032WorkerToManagerMessageType\022\020\n\014",
-      "REGISTRATION\020\000*9\n\033ManagerToManagerMessag" +
-      "eType\022\032\n\026ENSURE_WORKERS_WORKING\020\000*$\n\tAct" +
-      "orRole\022\013\n\007MANAGER\020\000\022\n\n\006WORKER\020\001b\006proto3"
+      "lance.yadel.Task\022\'\n\006parent\030\014 \001(\0132\027.org.r" +
+      "oylance.yadel.Dag\"\353\002\n\004Task\022\n\n\002id\030\001 \001(\t\022\017",
+      "\n\007display\030\002 \001(\t\0228\n\014dependencies\030\003 \003(\0132\"." +
+      "org.roylance.yadel.TaskDependency\022\016\n\006dag" +
+      "_id\030\004 \001(\t\022%\n\004logs\030\005 \003(\0132\027.org.roylance.y" +
+      "adel.Log\022\026\n\016execution_date\030\006 \001(\003\022\022\n\nstar" +
+      "t_date\030\007 \001(\003\022\020\n\010end_date\030\010 \001(\003\022\020\n\010durati" +
+      "on\030\t \001(\003\022\035\n\025first_context_base_64\030\n \001(\t\022" +
+      "\036\n\026second_context_base_64\030\013 \001(\t\022\035\n\025third" +
+      "_context_base_64\030\014 \001(\t\022\'\n\037is_waiting_for" +
+      "_another_dag_task\030\r \001(\010\"4\n\016TaskDependenc" +
+      "y\022\n\n\002id\030\001 \001(\t\022\026\n\016parent_task_id\030\002 \001(\t\"\323\001",
+      "\n\014AddTaskToDag\022\n\n\002id\030\001 \001(\t\022-\n\013parent_tas" +
+      "k\030\002 \001(\0132\030.org.roylance.yadel.Task\022*\n\010new" +
+      "_task\030\003 \001(\0132\030.org.roylance.yadel.Task\022\035\n" +
+      "\025first_context_base_64\030\004 \001(\t\022\036\n\026second_c" +
+      "ontext_base_64\030\005 \001(\t\022\035\n\025third_context_ba" +
+      "se_64\030\006 \001(\t\"\233\001\n\014CompleteTask\022\n\n\002id\030\001 \001(\t" +
+      "\022&\n\004task\030\002 \001(\0132\030.org.roylance.yadel.Task" +
+      "\022E\n\024worker_configuration\030\003 \001(\0132\'.org.roy" +
+      "lance.yadel.WorkerConfiguration\022\020\n\010is_er" +
+      "ror\030\005 \001(\010*$\n\013WorkerState\022\013\n\007WORKING\020\000\022\010\n",
+      "\004IDLE\020\001*.\n\032WorkerToManagerMessageType\022\020\n" +
+      "\014REGISTRATION\020\000*9\n\033ManagerToManagerMessa" +
+      "geType\022\032\n\026ENSURE_WORKERS_WORKING\020\000*$\n\tAc" +
+      "torRole\022\013\n\007MANAGER\020\000\022\n\n\006WORKER\020\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10757,7 +10952,7 @@ public final class YadelModel {
     internal_static_org_roylance_yadel_Dag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_Dag_descriptor,
-        new java.lang.String[] { "Id", "Display", "FlattenedTasks", "ExecutionDate", "StartDate", "EndDate", "Duration", "UncompletedTasks", "ProcessingTasks", "ErroredTasks", "CompletedTasks", });
+        new java.lang.String[] { "Id", "Display", "FlattenedTasks", "ExecutionDate", "StartDate", "EndDate", "Duration", "UncompletedTasks", "ProcessingTasks", "ErroredTasks", "CompletedTasks", "Parent", });
     internal_static_org_roylance_yadel_Task_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_org_roylance_yadel_Task_fieldAccessorTable = new

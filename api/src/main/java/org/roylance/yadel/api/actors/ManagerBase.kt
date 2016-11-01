@@ -10,12 +10,13 @@ import org.joda.time.Minutes
 import org.roylance.yadel.YadelModel
 import org.roylance.yadel.YadelReport
 import org.roylance.yadel.api.models.ConfigurationActorRef
+import org.roylance.yadel.api.utilities.DagUtilities
 import scala.concurrent.duration.Duration
 import java.lang.management.ManagementFactory
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-open class ManagerBase :UntypedActor() {
+abstract class ManagerBase: UntypedActor() {
     protected val workers = HashMap<String, ConfigurationActorRef>()
     protected val activeDags = HashMap<String, YadelModel.Dag.Builder>()
 
@@ -81,7 +82,7 @@ open class ManagerBase :UntypedActor() {
             }
             if (p0.requestType == YadelReport.UIYadelRequestType.GET_DAG_STATUS &&
                 activeDags.containsKey(p0.dagId)) {
-                val uiDag = buildUIDagFromDag(activeDags[p0.dagId]!!)
+                val uiDag = DagUtilities.buildUIDagFromDag(activeDags[p0.dagId]!!)
                 sender.tell(uiDag.build(), self)
             }
         }
@@ -94,7 +95,7 @@ open class ManagerBase :UntypedActor() {
             this.log.info("Have ${this.activeDags.size} active dags with ${this.workers.size} workers:")
 
             this.activeDags.values.forEach { actualDag ->
-                val availableTaskIds = getAllAvailableTaskIds(actualDag)
+                val availableTaskIds = DagUtilities.getAllAvailableTaskIds(actualDag)
                 this.log.info("${actualDag.display} (${actualDag.id})")
                 this.log.info("${actualDag.uncompletedTasksCount} uncompleted tasks")
                 this.log.info("${actualDag.processingTasksCount} processing tasks")
@@ -117,9 +118,12 @@ open class ManagerBase :UntypedActor() {
             return
         }
 
-        this.activeDags.values.forEach { foundActiveDag ->
-            val taskIdsToProcess = getAllAvailableTaskIds(foundActiveDag)
+        activeDags.values.forEach { foundActiveDag ->
+            if (!DagUtilities.canProcessDag(foundActiveDag, activeDags)) {
+                return@forEach
+            }
 
+            val taskIdsToProcess = DagUtilities.getAllAvailableTaskIds(foundActiveDag)
             taskIdsToProcess.forEach { uncompletedTaskId ->
                 val openWorker = getOpenWorker()
                 if (openWorker != null) {
@@ -148,93 +152,20 @@ open class ManagerBase :UntypedActor() {
 
     private fun handleReport() {
         val dagReport = YadelReport.UIDagReport.newBuilder()
-        val now = LocalDateTime.now()
 
-        this.workers.values.forEach {
-            val workerConfiguration = YadelReport.UIWorkerConfiguration
-                    .newBuilder()
-                    .setHost(it.configuration.host)
-                    .setInitializedTime(it.configuration.initializedTime)
-                    .setIp(it.configuration.ip)
-                    .setPort(it.configuration.port)
-                    .setState(if (YadelModel.WorkerState.WORKING == it.configuration.state) YadelReport.UIWorkerState.CURRENTLY_WORKING else YadelReport.UIWorkerState.CURRENTLY_IDLE)
-                    .setTaskStartTime(it.configuration.taskStartTime)
-
-            if (it.configuration.hasDag()) {
-                workerConfiguration.dagDisplay = it.configuration.dag.display
-            }
-            if (it.configuration.hasTask()) {
-                workerConfiguration.taskDisplay = it.configuration.task.display
-            }
-            if (it.configuration.taskStartTime.length > 0) {
-                workerConfiguration.taskWorkingTimeDisplay = "${Minutes.minutesBetween(LocalDateTime.parse(it.configuration.taskStartTime), now).minutes} minutes"
-            }
-
-            dagReport.addWorkers(workerConfiguration)
+        workers.values.forEach {
+            dagReport.addWorkers(DagUtilities.buildWorkerConfiguration(it))
         }
 
-        activeDags.values.forEach { dag ->
-            dagReport.addDags(buildUIDagFromDag(dag))
-        }
+        val rootDags = DagUtilities.buildDagTree(activeDags)
+        dagReport.addAllDags(rootDags)
 
         // respond with message, but encode in base 64
-        this.sender.tell(dagReport.build(), this.self)
-    }
-
-    private fun buildUIDagFromDag(dag: YadelModel.Dag.Builder): YadelReport.UIDag.Builder {
-        val newDag = YadelReport.UIDag.newBuilder()
-                .setId(dag.id)
-                .setDisplay(dag.display)
-                .setIsProcessing(dag.processingTasksCount > 0)
-                .setIsError(dag.erroredTasksCount > 0)
-                .setIsCompleted(dag.uncompletedTasksCount == 0)
-                .setNumberCompleted(dag.completedTasksCount)
-                .setNumberErrored(dag.erroredTasksCount)
-                .setNumberProcessing(dag.processingTasksCount)
-                .setNumberUnprocessed(dag.uncompletedTasksCount)
-
-        dag
-                .flattenedTasksList
-                .forEach { task ->
-                    val newNode = YadelReport.UINode.newBuilder()
-                            .setId(task.id)
-                            .setDisplay(task.display)
-                            .setIsError(dag.erroredTasksList.any { it.id == task.id })
-                            .setIsProcessing(dag.processingTasksList.any { it.id == task.id })
-                            .setIsCompleted(dag.completedTasksList.any { it.id == task.id })
-                            .addAllLogs(task.logsList.map { it.message })
-
-                    newDag.addNodes(newNode)
-                    task.dependenciesList.forEach { dependency ->
-                        val newEdge = YadelReport.UIEdge.newBuilder()
-                                .setNodeId1(task.id)
-                                .setNodeId2(dependency.parentTaskId)
-
-                        newDag.addEdges(newEdge)
-                    }
-                }
-
-        return newDag
-    }
-
-    private fun getAllAvailableTaskIds(foundActiveDag: YadelModel.Dag.Builder):List<String> {
-        val taskIdsToProcess = ArrayList<String>()
-        foundActiveDag.uncompletedTasksList.forEach { uncompletedTask ->
-            if (uncompletedTask.dependenciesCount == 0) {
-                // process this
-                taskIdsToProcess.add(uncompletedTask.id)
-            } else if (uncompletedTask.dependenciesList.all { dependency ->
-                foundActiveDag.completedTasksList.any { it.id == dependency.parentTaskId } }) {
-                // process this
-                taskIdsToProcess.add(uncompletedTask.id)
-            }
-        }
-
-        return taskIdsToProcess
+        sender.tell(dagReport.build(), self)
     }
 
     private fun updateSenderStatus(newState:YadelModel.WorkerState) {
-        val workerKey = this.getActorRefKey(this.sender)
+        val workerKey = this.getActorRefKey(sender)
         if (this.workers.containsKey(workerKey)) {
             val foundTuple = this.workers[workerKey]
             val newBuilder = foundTuple!!.configuration.toBuilder()
@@ -243,7 +174,7 @@ open class ManagerBase :UntypedActor() {
             newBuilder.clearTask()
             newBuilder.clearTaskStartTime()
 
-            this.workers[workerKey] = ConfigurationActorRef(this.sender, newBuilder.build())
+            this.workers[workerKey] = ConfigurationActorRef(sender, newBuilder.build())
         }
     }
 

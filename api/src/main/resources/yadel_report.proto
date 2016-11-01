@@ -40,6 +40,7 @@ message UIDag {
     int32 number_processing = 10;
     int32 number_errored = 11;
     int32 number_unprocessed = 12;
+    repeated UIDag children = 13;
 }
 
 message UIEdge {
@@ -57,8 +58,13 @@ message UINode {
     bool is_completed = 8;
     bool is_processing = 9;
     bool is_error = 10;
-    repeated string logs = 11;
+    repeated UILog logs = 11;
     bool is_waiting_for_another_dag_task = 12;
+}
+
+message UILog {
+    string id = 1;
+    string message = 2;
 }
 
 message UIWorkerConfiguration {

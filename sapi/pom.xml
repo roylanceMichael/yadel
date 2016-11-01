@@ -7,17 +7,17 @@
     <properties>		<group>org.roylance.yadel</group>
 		<name>api</name>
 		<fullName>org.roylance.yadel.api</fullName>
-		<minor>129</minor>
+		<minor>134</minor>
 		<major>0</major>
-		<fullVersion>0.129</fullVersion>
-		<org_roylance_yadel_api>0.129</org_roylance_yadel_api>
+		<fullVersion>0.134</fullVersion>
+		<org_roylance_yadel_api>0.134</org_roylance_yadel_api>
 		<com_typesafe_akka_akka_cluster_>2.4.7</com_typesafe_akka_akka_cluster_>
 	</properties>
 
 
     <groupId>org.roylance.yadel</groupId>
     <artifactId>sapi</artifactId>
-    <version>0.129</version>
+    <version>0.134</version>
 
     <repositories>
         <repository>

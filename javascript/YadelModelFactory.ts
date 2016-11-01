@@ -159,6 +159,12 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "type": "int32",
                     "name": "number_unprocessed",
                     "id": 12
+                },
+                {
+                    "rule": "repeated",
+                    "type": "UIDag",
+                    "name": "children",
+                    "id": 13
                 }
             ]
         },
@@ -238,7 +244,7 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                 },
                 {
                     "rule": "repeated",
-                    "type": "string",
+                    "type": "UILog",
                     "name": "logs",
                     "id": 11
                 },
@@ -247,6 +253,23 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "type": "bool",
                     "name": "is_waiting_for_another_dag_task",
                     "id": 12
+                }
+            ]
+        },
+        {
+            "name": "UILog",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "message",
+                    "id": 2
                 }
             ]
         },
@@ -505,6 +528,12 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "type": "Task",
                     "name": "completed_tasks",
                     "id": 11
+                },
+                {
+                    "rule": "optional",
+                    "type": "Dag",
+                    "name": "parent",
+                    "id": 12
                 }
             ]
         },

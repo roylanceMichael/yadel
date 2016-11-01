@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yadel_model.proto',
   package='org.roylance.yadel',
   syntax='proto3',
-  serialized_pb=_b('\n\x11yadel_model.proto\x12\x12org.roylance.yadel\"\x9d\x02\n\x13WorkerConfiguration\x12\n\n\x02id\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\t\x12\x0c\n\x04host\x18\x04 \x01(\t\x12\x18\n\x10initialized_time\x18\x05 \x01(\t\x12.\n\x05state\x18\x06 \x01(\x0e\x32\x1f.org.roylance.yadel.WorkerState\x12&\n\x04task\x18\x07 \x01(\x0b\x32\x18.org.roylance.yadel.Task\x12$\n\x03\x64\x61g\x18\x08 \x01(\x0b\x32\x17.org.roylance.yadel.Dag\x12!\n\x19minutes_before_task_reset\x18\t \x01(\x04\x12\x17\n\x0ftask_start_time\x18\n \x01(\t\"\"\n\x03Log\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xf2\x02\n\x03\x44\x61g\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isplay\x18\x02 \x01(\t\x12\x31\n\x0f\x66lattened_tasks\x18\x03 \x03(\x0b\x32\x18.org.roylance.yadel.Task\x12\x16\n\x0e\x65xecution_date\x18\x04 \x01(\x03\x12\x12\n\nstart_date\x18\x05 \x01(\x03\x12\x10\n\x08\x65nd_date\x18\x06 \x01(\x03\x12\x10\n\x08\x64uration\x18\x07 \x01(\x03\x12\x33\n\x11uncompleted_tasks\x18\x08 \x03(\x0b\x32\x18.org.roylance.yadel.Task\x12\x32\n\x10processing_tasks\x18\t \x03(\x0b\x32\x18.org.roylance.yadel.Task\x12/\n\rerrored_tasks\x18\n \x03(\x0b\x32\x18.org.roylance.yadel.Task\x12\x31\n\x0f\x63ompleted_tasks\x18\x0b \x03(\x0b\x32\x18.org.roylance.yadel.Task\"\xeb\x02\n\x04Task\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isplay\x18\x02 \x01(\t\x12\x38\n\x0c\x64\x65pendencies\x18\x03 \x03(\x0b\x32\".org.roylance.yadel.TaskDependency\x12\x0e\n\x06\x64\x61g_id\x18\x04 \x01(\t\x12%\n\x04logs\x18\x05 \x03(\x0b\x32\x17.org.roylance.yadel.Log\x12\x16\n\x0e\x65xecution_date\x18\x06 \x01(\x03\x12\x12\n\nstart_date\x18\x07 \x01(\x03\x12\x10\n\x08\x65nd_date\x18\x08 \x01(\x03\x12\x10\n\x08\x64uration\x18\t \x01(\x03\x12\x1d\n\x15\x66irst_context_base_64\x18\n \x01(\t\x12\x1e\n\x16second_context_base_64\x18\x0b \x01(\t\x12\x1d\n\x15third_context_base_64\x18\x0c \x01(\t\x12\'\n\x1fis_waiting_for_another_dag_task\x18\r \x01(\x08\"4\n\x0eTaskDependency\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0eparent_task_id\x18\x02 \x01(\t\"\xd3\x01\n\x0c\x41\x64\x64TaskToDag\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\x0bparent_task\x18\x02 \x01(\x0b\x32\x18.org.roylance.yadel.Task\x12*\n\x08new_task\x18\x03 \x01(\x0b\x32\x18.org.roylance.yadel.Task\x12\x1d\n\x15\x66irst_context_base_64\x18\x04 \x01(\t\x12\x1e\n\x16second_context_base_64\x18\x05 \x01(\t\x12\x1d\n\x15third_context_base_64\x18\x06 \x01(\t\"\x9b\x01\n\x0c\x43ompleteTask\x12\n\n\x02id\x18\x01 \x01(\t\x12&\n\x04task\x18\x02 \x01(\x0b\x32\x18.org.roylance.yadel.Task\x12\x45\n\x14worker_configuration\x18\x03 \x01(\x0b\x32\'.org.roylance.yadel.WorkerConfiguration\x12\x10\n\x08is_error\x18\x05 \x01(\x08*$\n\x0bWorkerState\x12\x0b\n\x07WORKING\x10\x00\x12\x08\n\x04IDLE\x10\x01*.\n\x1aWorkerToManagerMessageType\x12\x10\n\x0cREGISTRATION\x10\x00*9\n\x1bManagerToManagerMessageType\x12\x1a\n\x16\x45NSURE_WORKERS_WORKING\x10\x00*$\n\tActorRole\x12\x0b\n\x07MANAGER\x10\x00\x12\n\n\x06WORKER\x10\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x11yadel_model.proto\x12\x12org.roylance.yadel\"\x9d\x02\n\x13WorkerConfiguration\x12\n\n\x02id\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\t\x12\x0c\n\x04host\x18\x04 \x01(\t\x12\x18\n\x10initialized_time\x18\x05 \x01(\t\x12.\n\x05state\x18\x06 \x01(\x0e\x32\x1f.org.roylance.yadel.WorkerState\x12&\n\x04task\x18\x07 \x01(\x0b\x32\x18.org.roylance.yadel.Task\x12$\n\x03\x64\x61g\x18\x08 \x01(\x0b\x32\x17.org.roylance.yadel.Dag\x12!\n\x19minutes_before_task_reset\x18\t \x01(\x04\x12\x17\n\x0ftask_start_time\x18\n \x01(\t\"\"\n\x03Log\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x9b\x03\n\x03\x44\x61g\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isplay\x18\x02 \x01(\t\x12\x31\n\x0f\x66lattened_tasks\x18\x03 \x03(\x0b\x32\x18.org.roylance.yadel.Task\x12\x16\n\x0e\x65xecution_date\x18\x04 \x01(\x03\x12\x12\n\nstart_date\x18\x05 \x01(\x03\x12\x10\n\x08\x65nd_date\x18\x06 \x01(\x03\x12\x10\n\x08\x64uration\x18\x07 \x01(\x03\x12\x33\n\x11uncompleted_tasks\x18\x08 \x03(\x0b\x32\x18.org.roylance.yadel.Task\x12\x32\n\x10processing_tasks\x18\t \x03(\x0b\x32\x18.org.roylance.yadel.Task\x12/\n\rerrored_tasks\x18\n \x03(\x0b\x32\x18.org.roylance.yadel.Task\x12\x31\n\x0f\x63ompleted_tasks\x18\x0b \x03(\x0b\x32\x18.org.roylance.yadel.Task\x12\'\n\x06parent\x18\x0c \x01(\x0b\x32\x17.org.roylance.yadel.Dag\"\xeb\x02\n\x04Task\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isplay\x18\x02 \x01(\t\x12\x38\n\x0c\x64\x65pendencies\x18\x03 \x03(\x0b\x32\".org.roylance.yadel.TaskDependency\x12\x0e\n\x06\x64\x61g_id\x18\x04 \x01(\t\x12%\n\x04logs\x18\x05 \x03(\x0b\x32\x17.org.roylance.yadel.Log\x12\x16\n\x0e\x65xecution_date\x18\x06 \x01(\x03\x12\x12\n\nstart_date\x18\x07 \x01(\x03\x12\x10\n\x08\x65nd_date\x18\x08 \x01(\x03\x12\x10\n\x08\x64uration\x18\t \x01(\x03\x12\x1d\n\x15\x66irst_context_base_64\x18\n \x01(\t\x12\x1e\n\x16second_context_base_64\x18\x0b \x01(\t\x12\x1d\n\x15third_context_base_64\x18\x0c \x01(\t\x12\'\n\x1fis_waiting_for_another_dag_task\x18\r \x01(\x08\"4\n\x0eTaskDependency\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0eparent_task_id\x18\x02 \x01(\t\"\xd3\x01\n\x0c\x41\x64\x64TaskToDag\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\x0bparent_task\x18\x02 \x01(\x0b\x32\x18.org.roylance.yadel.Task\x12*\n\x08new_task\x18\x03 \x01(\x0b\x32\x18.org.roylance.yadel.Task\x12\x1d\n\x15\x66irst_context_base_64\x18\x04 \x01(\t\x12\x1e\n\x16second_context_base_64\x18\x05 \x01(\t\x12\x1d\n\x15third_context_base_64\x18\x06 \x01(\t\"\x9b\x01\n\x0c\x43ompleteTask\x12\n\n\x02id\x18\x01 \x01(\t\x12&\n\x04task\x18\x02 \x01(\x0b\x32\x18.org.roylance.yadel.Task\x12\x45\n\x14worker_configuration\x18\x03 \x01(\x0b\x32\'.org.roylance.yadel.WorkerConfiguration\x12\x10\n\x08is_error\x18\x05 \x01(\x08*$\n\x0bWorkerState\x12\x0b\n\x07WORKING\x10\x00\x12\x08\n\x04IDLE\x10\x01*.\n\x1aWorkerToManagerMessageType\x12\x10\n\x0cREGISTRATION\x10\x00*9\n\x1bManagerToManagerMessageType\x12\x1a\n\x16\x45NSURE_WORKERS_WORKING\x10\x00*$\n\tActorRole\x12\x0b\n\x07MANAGER\x10\x00\x12\n\n\x06WORKER\x10\x01\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -41,8 +41,8 @@ _WORKERSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1530,
-  serialized_end=1566,
+  serialized_start=1571,
+  serialized_end=1607,
 )
 _sym_db.RegisterEnumDescriptor(_WORKERSTATE)
 
@@ -60,8 +60,8 @@ _WORKERTOMANAGERMESSAGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1568,
-  serialized_end=1614,
+  serialized_start=1609,
+  serialized_end=1655,
 )
 _sym_db.RegisterEnumDescriptor(_WORKERTOMANAGERMESSAGETYPE)
 
@@ -79,8 +79,8 @@ _MANAGERTOMANAGERMESSAGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1616,
-  serialized_end=1673,
+  serialized_start=1657,
+  serialized_end=1714,
 )
 _sym_db.RegisterEnumDescriptor(_MANAGERTOMANAGERMESSAGETYPE)
 
@@ -102,8 +102,8 @@ _ACTORROLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1675,
-  serialized_end=1711,
+  serialized_start=1716,
+  serialized_end=1752,
 )
 _sym_db.RegisterEnumDescriptor(_ACTORROLE)
 
@@ -333,6 +333,13 @@ _DAG = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='parent', full_name='org.roylance.yadel.Dag.parent', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -346,7 +353,7 @@ _DAG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=366,
-  serialized_end=736,
+  serialized_end=777,
 )
 
 
@@ -460,8 +467,8 @@ _TASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=739,
-  serialized_end=1102,
+  serialized_start=780,
+  serialized_end=1143,
 )
 
 
@@ -498,8 +505,8 @@ _TASKDEPENDENCY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1104,
-  serialized_end=1156,
+  serialized_start=1145,
+  serialized_end=1197,
 )
 
 
@@ -564,8 +571,8 @@ _ADDTASKTODAG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1159,
-  serialized_end=1370,
+  serialized_start=1200,
+  serialized_end=1411,
 )
 
 
@@ -616,8 +623,8 @@ _COMPLETETASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1373,
-  serialized_end=1528,
+  serialized_start=1414,
+  serialized_end=1569,
 )
 
 _WORKERCONFIGURATION.fields_by_name['state'].enum_type = _WORKERSTATE
@@ -628,6 +635,7 @@ _DAG.fields_by_name['uncompleted_tasks'].message_type = _TASK
 _DAG.fields_by_name['processing_tasks'].message_type = _TASK
 _DAG.fields_by_name['errored_tasks'].message_type = _TASK
 _DAG.fields_by_name['completed_tasks'].message_type = _TASK
+_DAG.fields_by_name['parent'].message_type = _DAG
 _TASK.fields_by_name['dependencies'].message_type = _TASKDEPENDENCY
 _TASK.fields_by_name['logs'].message_type = _LOG
 _ADDTASKTODAG.fields_by_name['parent_task'].message_type = _TASK

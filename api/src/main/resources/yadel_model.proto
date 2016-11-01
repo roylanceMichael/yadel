@@ -49,6 +49,7 @@ message Dag {
     repeated Task processing_tasks = 9;
     repeated Task errored_tasks = 10;
     repeated Task completed_tasks = 11;
+    Dag parent = 12;
 }
 
 message Task {
