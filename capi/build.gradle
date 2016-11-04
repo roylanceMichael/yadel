@@ -1,4 +1,4 @@
-// THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
+// This file was auto-generated, but can be altered. It will not be overwritten.
 buildscript {
     ext.kotlin_version = '1.0.4'
     repositories {
@@ -13,7 +13,7 @@ buildscript {
 }
 
 group "$group"
-version "$fullVersion"
+version "$major.$minor"
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
@@ -47,7 +47,7 @@ bintray {
         publicDownloadNumbers = true
         vcsUrl = 'https://github.com/roylanceMichael/yadel.git'
         version {
-            name = "$fullVersion"
+            name = "org.roylance.yadel.capi"
         }
     }
 }

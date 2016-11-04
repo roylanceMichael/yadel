@@ -1,10 +1,11 @@
 from setuptools import setup, find_packages
 import properties
 
-
+actual_name = properties.group + "_" + properties.name
+actual_version = properties.major + "." + properties.minor
 setup(
-    name=properties.fullName,
-    version=properties.fullVersion,
+    name=actual_name,
+    version=actual_version,
     author=properties.author,
     license=properties.license,
     include_package_data=True,
