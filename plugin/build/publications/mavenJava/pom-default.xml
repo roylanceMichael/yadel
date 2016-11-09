@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.roylance.yadel</groupId>
   <artifactId>plugin</artifactId>
-  <version>0.136</version>
+  <version>0.137</version>
   <dependencies>
     <dependency>
       <groupId>org.roylance</groupId>
       <artifactId>common</artifactId>
-      <version>0.7</version>
+      <version>0.8</version>
       <scope>runtime</scope>
     </dependency>
   </dependencies>

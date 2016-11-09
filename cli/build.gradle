@@ -6,7 +6,7 @@ group 'org.roylance.yadel'
 version '0.1-SNAPSHOT'
 
 buildscript {
-    ext.kotlinVersion = "1.0.4"
+    ext.kotlinVersion = "1.0.5"
 
     repositories {
         mavenCentral()
@@ -31,7 +31,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.roylance.yadel:api:0.116'
+    compile "org.roylance.yadel:api:$org_roylance_yadel_capi"
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }

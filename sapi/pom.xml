@@ -6,16 +6,16 @@
 
     <properties>		<group>org.roylance.yadel</group>
 		<name>api</name>
-		<minor>136</minor>
+		<minor>137</minor>
 		<major>0</major>
-		<org_roylance_yadel_api>0.136</org_roylance_yadel_api>
+		<org_roylance_yadel_api>0.137</org_roylance_yadel_api>
 		<com_typesafe_akka_akka_cluster_>2.4.7</com_typesafe_akka_akka_cluster_>
 	</properties>
 
 
     <groupId>org.roylance.yadel</groupId>
     <artifactId>sapi</artifactId>
-    <version>0.136</version>
+    <version>0.137</version>
 
     <repositories>
         <repository>
@@ -78,7 +78,7 @@
         <dependency>
             <groupId>org.roylance</groupId>
             <artifactId>common</artifactId>
-            <version>0.7</version>
+            <version>0.8</version>
         </dependency>
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>
@@ -123,7 +123,7 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
         </dependency>
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
@@ -252,7 +252,7 @@
             <plugin>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <groupId>org.jetbrains.kotlin</groupId>
-                <version>1.0.4</version>
+                <version>1.0.5</version>
 
                 <executions>
                     <execution>
