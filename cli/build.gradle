@@ -37,6 +37,7 @@ dependencies {
 }
 
 task packageServer(type: YadelPlugin) {
+//    serverUrl = "192.168.12.130"
     serverUrl = "192.168.1.5"
     serverVersion = version
     projectName = "cli"

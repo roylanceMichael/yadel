@@ -704,6 +704,23 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "id": 5
                 }
             ]
+        },
+        {
+            "name": "AllDags",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "Dag",
+                    "name": "dags",
+                    "id": 1
+                },
+                {
+                    "rule": "repeated",
+                    "type": "WorkerConfiguration",
+                    "name": "workers",
+                    "id": 2
+                }
+            ]
         }
     ],
     "enums": [

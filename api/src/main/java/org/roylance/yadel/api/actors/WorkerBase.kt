@@ -11,10 +11,13 @@ import akka.event.LoggingAdapter
 import org.roylance.yadel.YadelModel
 import org.roylance.yadel.api.enums.CommonTokens
 import org.roylance.yadel.api.services.ITaskLogger
+import org.roylance.yadel.api.utilities.ActorUtilities
 import java.lang.management.ManagementFactory
 import java.util.*
 
 abstract class WorkerBase: UntypedActor() {
+    protected val messageHistory = ArrayList<YadelModel.WorkerState>()
+
     protected val cluster: Cluster = Cluster.get(this.context.system())
     protected val log: LoggingAdapter = Logging.getLogger(this.context().system(), this)
 
@@ -42,6 +45,11 @@ abstract class WorkerBase: UntypedActor() {
         log.info("max memory: ${ManagementFactory.getMemoryMXBean().heapMemoryUsage.max / 1000000} MB")
         super.preStart()
         this.cluster.subscribe(this.self, ClusterEvent.MemberUp::class.java)
+
+        val runnable = Runnable {
+            self.tell(YadelModel.WorkerState.IDLE, this.self)
+        }
+        context.system().scheduler().schedule(ActorUtilities.OneMinute, ActorUtilities.OneMinute, runnable, this.context.system().dispatcher())
     }
 
     override fun postStop() {
@@ -50,16 +58,33 @@ abstract class WorkerBase: UntypedActor() {
         this.cluster.unsubscribe(this.self)
     }
 
-    override fun onReceive(p0: Any?) {
+    override fun onReceive(message: Any?) {
         logger.clearLogs()
         logger.info("received message")
-        if (p0 is ClusterEvent.CurrentClusterState) {
-            logger.info("handling current cluster state")
-            this.handleCurrentClusterState(p0)
+
+        // this will automatically clear a worker who gets stuck
+        if (message is YadelModel.WorkerState &&
+                message == YadelModel.WorkerState.IDLE) {
+            messageHistory.add(YadelModel.WorkerState.IDLE)
+            logger.info("handling $message (${messageHistory.size} / $MaxArraySize)")
+
+            if (messageHistory.size >= MaxArraySize) {
+                logger.info("we've reached max messageHistory size, telling manager to clear this worker")
+                messageHistory.clear()
+                getManagerSelection()?.tell(YadelModel.WorkerState.IDLE, self)
+            }
         }
-        else if (p0 is ClusterEvent.MemberUp) {
+        else {
+            messageHistory.clear()
+        }
+
+        if (message is ClusterEvent.CurrentClusterState) {
+            logger.info("handling current cluster state")
+            this.handleCurrentClusterState(message)
+        }
+        else if (message is ClusterEvent.MemberUp) {
             logger.info("handling member up")
-            this.handleMemberUp(p0)
+            this.handleMemberUp(message)
         }
         // inherited class will catch work to be done
     }
@@ -96,5 +121,9 @@ abstract class WorkerBase: UntypedActor() {
                             YadelModel.WorkerToManagerMessageType.REGISTRATION,
                             this.self)
         }
+    }
+
+    companion object {
+        private const val MaxArraySize = 10
     }
 }

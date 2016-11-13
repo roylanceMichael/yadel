@@ -4,10 +4,15 @@ import org.joda.time.LocalDateTime
 import org.joda.time.Minutes
 import org.roylance.yadel.YadelModel
 import org.roylance.yadel.YadelReport
-import org.roylance.yadel.api.models.ConfigurationActorRef
+import org.roylance.yadel.api.services.IDagStore
+import scala.concurrent.duration.Duration
 import java.util.*
+import java.util.concurrent.TimeUnit
 
-object DagUtilities {
+object ActorUtilities {
+    val OneMinute = Duration.create(1, TimeUnit.MINUTES)
+    val CommonDagFile = "savedDags.bin"
+
     fun isDagComplete(dag: YadelModel.Dag.Builder): Boolean {
         return dag.completedTasksCount == dag.flattenedTasksCount
     }
@@ -16,9 +21,9 @@ object DagUtilities {
         return dag.erroredTasksCount > 0
     }
 
-    fun canProcessDag(dag: YadelModel.Dag.Builder, activeDags: HashMap<String, YadelModel.Dag.Builder>): Boolean {
+    fun canProcessDag(dag: YadelModel.Dag.Builder, activeDags: IDagStore): Boolean {
         if (dag.hasParent() && activeDags.containsKey(dag.parent.id)) {
-            val parent = activeDags[dag.parent.id]!!
+            val parent = activeDags.get(dag.parent.id)!!
             return isDagComplete(parent) && !isDagError(dag)
         }
 
@@ -119,50 +124,56 @@ object DagUtilities {
                 .build()
     }
 
-    fun buildDagTree(dags: HashMap<String, YadelModel.Dag.Builder>): List<YadelReport.UIDag> {
+    fun buildDagTree(dags: List<IDagStore>): List<YadelReport.UIDag> {
         val flattenedUIDags = HashMap<String, YadelReport.UIDag.Builder>()
 
-        dags.values.forEach { dag ->
-            val uiDag = buildUIDagFromDag(dag)
-            flattenedUIDags[uiDag.id] = uiDag
+        dags.forEach {
+            it.values().forEach { dag ->
+                val uiDag = buildUIDagFromDag(dag)
+                flattenedUIDags[uiDag.id] = uiDag
+            }
         }
 
-        dags.values.forEach { dag ->
-            val currentDag = flattenedUIDags[dag.id]!!
-            if (dag.hasParent() && flattenedUIDags.containsKey(dag.parent.id)) {
-                val foundParent = flattenedUIDags[dag.parent.id]!!
-                foundParent.addChildren(currentDag)
+        dags.forEach {
+            it.values().forEach { dag ->
+                val currentDag = flattenedUIDags[dag.id]!!
+                if (dag.hasParent() && flattenedUIDags.containsKey(dag.parent.id)) {
+                    val foundParent = flattenedUIDags[dag.parent.id]!!
+                    foundParent.addChildren(currentDag)
+                }
             }
         }
 
         val rootDags = ArrayList<YadelReport.UIDag>()
-        dags.values.forEach { dag ->
-            if (!dag.hasParent()) {
-                rootDags.add(flattenedUIDags[dag.id]!!.build())
+        dags.forEach {
+            it.values().forEach { dag ->
+                if (!dag.hasParent()) {
+                    rootDags.add(flattenedUIDags[dag.id]!!.build())
+                }
             }
         }
 
         return rootDags
     }
 
-    fun buildWorkerConfiguration(configurationActorRef: ConfigurationActorRef): YadelReport.UIWorkerConfiguration {
+    fun buildWorkerConfiguration(configurationActorRef: YadelModel.WorkerConfiguration): YadelReport.UIWorkerConfiguration {
         val workerConfiguration = YadelReport.UIWorkerConfiguration
                 .newBuilder()
-                .setHost(configurationActorRef.configuration.host)
-                .setInitializedTime(configurationActorRef.configuration.initializedTime)
-                .setIp(configurationActorRef.configuration.ip)
-                .setPort(configurationActorRef.configuration.port)
-                .setState(if (YadelModel.WorkerState.WORKING == configurationActorRef.configuration.state) YadelReport.UIWorkerState.CURRENTLY_WORKING else YadelReport.UIWorkerState.CURRENTLY_IDLE)
-                .setTaskStartTime(configurationActorRef.configuration.taskStartTime)
+                .setHost(configurationActorRef.host)
+                .setInitializedTime(configurationActorRef.initializedTime)
+                .setIp(configurationActorRef.ip)
+                .setPort(configurationActorRef.port)
+                .setState(if (YadelModel.WorkerState.WORKING == configurationActorRef.state) YadelReport.UIWorkerState.CURRENTLY_WORKING else YadelReport.UIWorkerState.CURRENTLY_IDLE)
+                .setTaskStartTime(configurationActorRef.taskStartTime)
 
-        if (configurationActorRef.configuration.hasDag()) {
-            workerConfiguration.dagDisplay = configurationActorRef.configuration.dag.display
+        if (configurationActorRef.hasDag()) {
+            workerConfiguration.dagDisplay = configurationActorRef.dag.display
         }
-        if (configurationActorRef.configuration.hasTask()) {
-            workerConfiguration.taskDisplay = configurationActorRef.configuration.task.display
+        if (configurationActorRef.hasTask()) {
+            workerConfiguration.taskDisplay = configurationActorRef.task.display
         }
-        if (configurationActorRef.configuration.taskStartTime.length > 0) {
-            workerConfiguration.taskWorkingTimeDisplay = "${Minutes.minutesBetween(LocalDateTime.parse(configurationActorRef.configuration.taskStartTime), LocalDateTime.now()).minutes} minutes"
+        if (configurationActorRef.taskStartTime.isNotEmpty()) {
+            workerConfiguration.taskWorkingTimeDisplay = "${Minutes.minutesBetween(LocalDateTime.parse(configurationActorRef.taskStartTime), LocalDateTime.now()).minutes} minutes"
         }
 
         return workerConfiguration.build()

@@ -19,10 +19,10 @@
     <orderEntry type="library" name="Maven: com.typesafe.akka:akka-protobuf_2.11:2.4.7" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty:3.10.3.Final" level="project" />
     <orderEntry type="library" name="Maven: org.uncommons.maths:uncommons-maths:1.2.2a" level="project" />
-    <orderEntry type="library" name="Maven: org.roylance.yadel:api:0.126" level="project" />
+    <orderEntry type="library" name="Maven: org.roylance.yadel:api:0.143" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: joda-time:joda-time:2.9.4" level="project" />
-    <orderEntry type="library" name="Maven: org.roylance.yadel:capi:0.126" level="project" />
-    <orderEntry type="library" name="Maven: org.roylance:common:0.7" level="project" />
+    <orderEntry type="library" name="Maven: org.roylance.yadel:capi:0.143" level="project" />
+    <orderEntry type="library" name="Maven: org.roylance:common:0.8" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.retrofit2:retrofit:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.8.0" level="project" />
@@ -41,8 +41,8 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-jasper-el:8.0.28" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-jsp-api:8.0.28" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.7" level="project" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.0.4" level="project" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-runtime:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-runtime:1.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: c3p0:c3p0:0.9.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.6" level="project" />

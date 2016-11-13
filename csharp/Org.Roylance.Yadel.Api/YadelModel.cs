@@ -56,12 +56,14 @@ namespace Org.Roylance.Yadel {
             "eHRfYmFzZV82NBgGIAEoCSKbAQoMQ29tcGxldGVUYXNrEgoKAmlkGAEgASgJ",
             "EiYKBHRhc2sYAiABKAsyGC5vcmcucm95bGFuY2UueWFkZWwuVGFzaxJFChR3",
             "b3JrZXJfY29uZmlndXJhdGlvbhgDIAEoCzInLm9yZy5yb3lsYW5jZS55YWRl",
-            "bC5Xb3JrZXJDb25maWd1cmF0aW9uEhAKCGlzX2Vycm9yGAUgASgIKiQKC1dv",
-            "cmtlclN0YXRlEgsKB1dPUktJTkcQABIICgRJRExFEAEqLgoaV29ya2VyVG9N",
-            "YW5hZ2VyTWVzc2FnZVR5cGUSEAoMUkVHSVNUUkFUSU9OEAAqOQobTWFuYWdl",
-            "clRvTWFuYWdlck1lc3NhZ2VUeXBlEhoKFkVOU1VSRV9XT1JLRVJTX1dPUktJ",
-            "TkcQACokCglBY3RvclJvbGUSCwoHTUFOQUdFUhAAEgoKBldPUktFUhABYgZw",
-            "cm90bzM="));
+            "bC5Xb3JrZXJDb25maWd1cmF0aW9uEhAKCGlzX2Vycm9yGAUgASgIImoKB0Fs",
+            "bERhZ3MSJQoEZGFncxgBIAMoCzIXLm9yZy5yb3lsYW5jZS55YWRlbC5EYWcS",
+            "OAoHd29ya2VycxgCIAMoCzInLm9yZy5yb3lsYW5jZS55YWRlbC5Xb3JrZXJD",
+            "b25maWd1cmF0aW9uKiQKC1dvcmtlclN0YXRlEgsKB1dPUktJTkcQABIICgRJ",
+            "RExFEAEqLgoaV29ya2VyVG9NYW5hZ2VyTWVzc2FnZVR5cGUSEAoMUkVHSVNU",
+            "UkFUSU9OEAAqOQobTWFuYWdlclRvTWFuYWdlck1lc3NhZ2VUeXBlEhoKFkVO",
+            "U1VSRV9XT1JLRVJTX1dPUktJTkcQACokCglBY3RvclJvbGUSCwoHTUFOQUdF",
+            "UhAAEgoKBldPUktFUhABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Roylance.Yadel.WorkerState), typeof(global::Org.Roylance.Yadel.WorkerToManagerMessageType), typeof(global::Org.Roylance.Yadel.ManagerToManagerMessageType), typeof(global::Org.Roylance.Yadel.ActorRole), }, new pbr::GeneratedClrTypeInfo[] {
@@ -71,7 +73,8 @@ namespace Org.Roylance.Yadel {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.Task), global::Org.Roylance.Yadel.Task.Parser, new[]{ "Id", "Display", "Dependencies", "DagId", "Logs", "ExecutionDate", "StartDate", "EndDate", "Duration", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64", "IsWaitingForAnotherDagTask" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.TaskDependency), global::Org.Roylance.Yadel.TaskDependency.Parser, new[]{ "Id", "ParentTaskId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.AddTaskToDag), global::Org.Roylance.Yadel.AddTaskToDag.Parser, new[]{ "Id", "ParentTask", "NewTask", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.CompleteTask), global::Org.Roylance.Yadel.CompleteTask.Parser, new[]{ "Id", "Task", "WorkerConfiguration", "IsError" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.CompleteTask), global::Org.Roylance.Yadel.CompleteTask.Parser, new[]{ "Id", "Task", "WorkerConfiguration", "IsError" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.AllDags), global::Org.Roylance.Yadel.AllDags.Parser, new[]{ "Dags", "Workers" }, null, null, null)
           }));
     }
     #endregion
@@ -2072,6 +2075,135 @@ namespace Org.Roylance.Yadel {
           }
           case 40: {
             IsError = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class AllDags : pb::IMessage<AllDags> {
+    private static readonly pb::MessageParser<AllDags> _parser = new pb::MessageParser<AllDags>(() => new AllDags());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<AllDags> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Org.Roylance.Yadel.YadelModelReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AllDags() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AllDags(AllDags other) : this() {
+      dags_ = other.dags_.Clone();
+      workers_ = other.workers_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AllDags Clone() {
+      return new AllDags(this);
+    }
+
+    /// <summary>Field number for the "dags" field.</summary>
+    public const int DagsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Org.Roylance.Yadel.Dag> _repeated_dags_codec
+        = pb::FieldCodec.ForMessage(10, global::Org.Roylance.Yadel.Dag.Parser);
+    private readonly pbc::RepeatedField<global::Org.Roylance.Yadel.Dag> dags_ = new pbc::RepeatedField<global::Org.Roylance.Yadel.Dag>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Org.Roylance.Yadel.Dag> Dags {
+      get { return dags_; }
+    }
+
+    /// <summary>Field number for the "workers" field.</summary>
+    public const int WorkersFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Org.Roylance.Yadel.WorkerConfiguration> _repeated_workers_codec
+        = pb::FieldCodec.ForMessage(18, global::Org.Roylance.Yadel.WorkerConfiguration.Parser);
+    private readonly pbc::RepeatedField<global::Org.Roylance.Yadel.WorkerConfiguration> workers_ = new pbc::RepeatedField<global::Org.Roylance.Yadel.WorkerConfiguration>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Org.Roylance.Yadel.WorkerConfiguration> Workers {
+      get { return workers_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as AllDags);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(AllDags other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!dags_.Equals(other.dags_)) return false;
+      if(!workers_.Equals(other.workers_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= dags_.GetHashCode();
+      hash ^= workers_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      dags_.WriteTo(output, _repeated_dags_codec);
+      workers_.WriteTo(output, _repeated_workers_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += dags_.CalculateSize(_repeated_dags_codec);
+      size += workers_.CalculateSize(_repeated_workers_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(AllDags other) {
+      if (other == null) {
+        return;
+      }
+      dags_.Add(other.dags_);
+      workers_.Add(other.workers_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            dags_.AddEntriesFrom(input, _repeated_dags_codec);
+            break;
+          }
+          case 18: {
+            workers_.AddEntriesFrom(input, _repeated_workers_codec);
             break;
           }
         }

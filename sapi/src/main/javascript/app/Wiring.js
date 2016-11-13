@@ -1,4 +1,6 @@
 "use strict";
+// THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
+/// <reference path="../node_modules/roylance.common/bytebuffer.d.ts" />
 var YadelModelFactory_1 = require("../node_modules/org.roylance.yadel.api/YadelModelFactory");
 var ReportService_1 = require("../node_modules/org.roylance.yadel.api/ReportService");
 var HttpExecute_1 = require("./HttpExecute");

@@ -27,6 +27,7 @@ declare module org.roylance.yadel {
 		TaskDependency: TaskDependencyBuilder;
 		AddTaskToDag: AddTaskToDagBuilder;
 		CompleteTask: CompleteTaskBuilder;
+		AllDags: AllDagsBuilder;
 		UIYadelRequestType: UIYadelRequestType;
 		UIWorkerState: UIWorkerState;
 		WorkerState: WorkerState;
@@ -614,6 +615,28 @@ declare module org.roylance.yadel {
 		//decode(buffer: NodeBuffer) : CompleteTask;
 		//decode(buffer: ByteArrayBuffer) : CompleteTask;
 		decode64(buffer: string) : CompleteTask;
+		
+	}	
+}
+
+declare module org.roylance.yadel {
+
+	export interface AllDags extends ProtoBufModel {
+		dags: Dag[];
+		getDags() : Dag[];
+		setDags(dags : Dag[]): void;
+		workers: WorkerConfiguration[];
+		getWorkers() : WorkerConfiguration[];
+		setWorkers(workers : WorkerConfiguration[]): void;
+		
+	}
+	
+	export interface AllDagsBuilder {
+		new(): AllDags;
+		decode(buffer: ArrayBuffer) : AllDags;
+		//decode(buffer: NodeBuffer) : AllDags;
+		//decode(buffer: ByteArrayBuffer) : AllDags;
+		decode64(buffer: string) : AllDags;
 		
 	}	
 }

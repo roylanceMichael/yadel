@@ -88,3 +88,8 @@ message CompleteTask {
     WorkerConfiguration worker_configuration = 3;
     bool is_error = 5;
 }
+
+message AllDags {
+    repeated Dag dags = 1;
+    repeated WorkerConfiguration workers = 2;
+}
