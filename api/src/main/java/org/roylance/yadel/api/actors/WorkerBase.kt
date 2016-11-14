@@ -39,6 +39,10 @@ abstract class WorkerBase: UntypedActor() {
             log.info(message)
             logs.add(YadelModel.Log.newBuilder().setId(UUID.randomUUID().toString()).setMessage(message).build())
         }
+
+        override fun debug(message: String) {
+            log.info(message)
+        }
     }
 
     override fun preStart() {
