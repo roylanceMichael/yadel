@@ -1,0 +1,57 @@
+// self sign certs like so: http://docs.jboss.org/teiid/7.0.0/client-developers-guide/en-US/html/appendix-selfcerts.html
+
+import org.roylance.yadel.YadelPlugin
+
+group 'org.roylance.yadel'
+version '0.1-SNAPSHOT'
+
+buildscript {
+    ext.kotlinVersion = "1.0.5"
+
+    repositories {
+        mavenCentral()
+        maven { url 'http://dl.bintray.com/roylancemichael/maven' }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.roylance.yadel:plugin:$org_roylance_yadel_api"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+mainClassName="org.roylance.yadel.Main"
+
+repositories {
+    mavenCentral()
+    maven { url 'http://dl.bintray.com/roylancemichael/maven' }
+}
+
+dependencies {
+    compile "org.roylance.yadel:api:$org_roylance_yadel_capi"
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+task packageServer(type: YadelPlugin) {
+//    serverUrl = "192.168.12.130"
+    serverUrl = "192.168.1.5"
+    serverVersion = version
+    projectName = "cli"
+    awsAutoScalingGroupName = "sample_test"
+    keystoreName = "yadel.keystore"
+    truststoreName = "yadel.truststore"
+    fullServerTarUrl = "http://$serverUrl/autoscale/tar"
+    maintainerInfo = "Michael Roylance <roylance.michael@gmail.com>"
+}
+
+packageServer.dependsOn(installDist)
+
+task tarYadel(type:Tar) {
+    from "build/debian"
+}
+
+tarYadel.dependsOn(packageServer)

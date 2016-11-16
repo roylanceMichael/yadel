@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# /etc/init.d/sapi
+
+touch /var/lock/sapi
+
+case "$1" in
+  start)
+    pushd /opt/sapi
+    bash proc.sh > web.out 2>&1&
+    ;;
+  stop)
+    kill -9 $(lsof -i:8080 -t)
+    ;;
+  *)
+    echo "Usage: /etc/init.d/sapi {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
