@@ -2,6 +2,7 @@ package org.roylance.yadel
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
+import org.roylance.yaclib.core.utilities.FileProcessUtilities
 
 import java.nio.file.Files
 
@@ -29,7 +30,7 @@ class YadelPlugin extends DefaultTask {
 
     @TaskAction
     def packageServer() {
-        println("building hades with server: " + serverUrl + " and version: " + serverVersion)
+        println("building hades with server: " + serverUrl + " and serverVersion: " + serverVersion)
 
         if (keystoreName.length() == 0) {
             println("unknown keystore location")
@@ -144,6 +145,13 @@ class YadelPlugin extends DefaultTask {
         }
 
         new File(CommonStrings.DebianBuildBuild).deleteDir()
+
+        def currentDir = System.getProperty("user.dir")
+
+        FileProcessUtilities.INSTANCE.executeProcess(currentDir, "dpkg-deb", "--build " + "${CommonStrings.DebianBuild}${projectName}_${serverVersion}_all")
+        new File("${CommonStrings.DebianBuild}${projectName}_${serverVersion}_all").deleteDir()
+
+        project.tarTree(new File(CommonStrings.DebianBuild))
     }
 
     private def buildDebianDirectoryStructure() {

@@ -1,8 +1,0 @@
-Package: sapi
-Version: 0.147
-Section: base
-Priority: optional
-Architecture: all
-Depends: oracle-java8-installer
-Maintainer: roylance.michael@gmail.com
-Description: sapi application

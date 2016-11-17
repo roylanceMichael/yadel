@@ -87,6 +87,7 @@ task execute(type: YaclibPlugin) {
             .setGroup("org.roylance.yadel")
             .setName("plugin").build())
             .addFromDependencies(mainDependency)
+            .addFromDependencies(YaclibModel.Dependency.newBuilder().setGroup("org.roylance.yaclib").setName("core").setThirdPartyDependencyVersion("$yaclibMajor.$yaclibMinor").setMajorVersion(yaclibMajor.toInteger()).setMinorVersion(yaclibMinor.toInteger()).build())
             .build()
 
     def javaScriptUI = YaclibModel.AuxiliaryProject.newBuilder()

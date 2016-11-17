@@ -24,7 +24,6 @@ service $projectName stop
 apt-get -y remove $projectName
 rm -rf /opt/$projectName
 
-dpkg-deb --build ${projectName}_${version}_all
 dpkg -i ${projectName}_${version}_all.deb
 apt-get update
 apt-get install -f -y

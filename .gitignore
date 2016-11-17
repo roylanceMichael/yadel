@@ -88,3 +88,4 @@ javascript/
 csharp/
 ui/node_modules
 capi/.gradle
+sapi/build

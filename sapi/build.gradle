@@ -1,16 +1,16 @@
-// THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
+// This file was auto-generated, but can be altered. It will not be overwritten.
 import org.roylance.yaclib.YaclibPackagePlugin;
 
 buildscript {
-    ext.kotlin_version = '1.0.5'
+    ext.kotlin_version = "$yaclib_kotlin"
     repositories {
         jcenter()
         mavenCentral()
-        maven { url "http://dl.bintray.com/roylancemichael/maven" }
+        maven { url 'http://dl.bintray.com/roylancemichael/maven'}
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.5"
-        classpath "org.roylance.yaclib:core:0.174"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$yaclib_kotlin"
+        classpath "org.roylance.yaclib:core:$yaclib_version"
     }
 }
 
@@ -35,16 +35,16 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
-    compile "org.eclipse.jetty:jetty-server:9.3.14.v20161028"
-    compile "org.eclipse.jetty:jetty-servlet:9.3.14.v20161028"
-    compile "org.eclipse.jetty:jetty-webapp:9.3.14.v20161028"
+    compile "org.eclipse.jetty:jetty-server:$yaclib_jetty"
+    compile "org.eclipse.jetty:jetty-servlet:$yaclib_jetty"
+    compile "org.eclipse.jetty:jetty-webapp:$yaclib_jetty"
 
-    compile "org.glassfish.jersey.core:jersey-server:2.22.2"
-    compile "org.glassfish.jersey.containers:jersey-container-servlet-core:2.22.2"
-    compile "org.glassfish.jersey.containers:jersey-container-servlet:2.22.2"
-    compile "org.glassfish.jersey.media:jersey-media-multipart:2.22.2"
+    compile "org.glassfish.jersey.core:jersey-server:$yaclib_jersey"
+    compile "org.glassfish.jersey.containers:jersey-container-servlet-core:$yaclib_jersey"
+    compile "org.glassfish.jersey.containers:jersey-container-servlet:$yaclib_jersey"
+    compile "org.glassfish.jersey.media:jersey-media-multipart:$yaclib_jersey"
 
-    compile "org.apache.httpcomponents:httpclient:4.5.1"
+    compile "org.apache.httpcomponents:httpclient:$yaclib_http_components"
 
     compile "com.typesafe.akka:akka-cluster_2.11:$com_typesafe_akka_akka_cluster_"
     compile "org.roylance.yadel:capi:$org_roylance_yadel_api"
@@ -52,11 +52,10 @@ dependencies {
 }
 
 task packageApp(type: YaclibPackagePlugin) {
-    appName = 'sapi'
+    appName = "$name"
     serverVersion = "$major.$minor"
     maintainerInfo = "roylance.michael@gmail.com"
-    serverPort = 8080
-    includeFiles = ["yadel.keystore", "yadel.truststore"]
+    serverPort = "$yaclib_server_port".toInteger()
 }
 
 packageApp.dependsOn(installDist)
