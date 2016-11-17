@@ -60,7 +60,7 @@ task execute(type: YaclibPlugin) {
     def tempAuxiliaryProjects = YaclibModel.AuxiliaryProjects.newBuilder()
     def cli = YaclibModel.AuxiliaryProject.newBuilder()
             .setProjectType(YaclibModel.ProjectType.GRADLE_PROJECT_TYPE)
-            .setHandleBefore(YaclibModel.ExecutionPhase.BUILD_TYPESCRIPT_SERVER)
+            .setHandleBefore(YaclibModel.ExecutionPhase.BUILD_PACKAGE_JAVA_SERVER)
             .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_SET_VERSION)
             .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_UPDATE_DEPENDENCIES)
             .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_CLEAN)

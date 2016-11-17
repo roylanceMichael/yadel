@@ -1,6 +1,6 @@
 {
   "name": "org.roylance.yadel.api",
-  "version": "0.153.0",
+  "version": "0.156.0",
   "description": "models to interface with the org.roylance.yadel.api system",
   "author": "roylance.michael@gmail.com",
   "license": "MIT",

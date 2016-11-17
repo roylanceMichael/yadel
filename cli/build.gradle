@@ -3,7 +3,7 @@
 import org.roylance.yadel.YadelPlugin
 
 group 'org.roylance.yadel'
-version '0.1-SNAPSHOT'
+version "$major.$minor"
 
 buildscript {
     ext.kotlinVersion = "1.0.5"
@@ -36,9 +36,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
-task packageServer(type: YadelPlugin) {
-    serverUrl = "192.168.12.130"
-//    serverUrl = "192.168.1.5"
+task packageApp(type: YadelPlugin) {
+    serverUrl = "$serverUrl_"
     serverVersion = version
     projectName = "cli"
     awsAutoScalingGroupName = "sample_test"
@@ -48,10 +47,10 @@ task packageServer(type: YadelPlugin) {
     maintainerInfo = "Michael Roylance <roylance.michael@gmail.com>"
 }
 
-packageServer.dependsOn(installDist)
+packageApp.dependsOn(installDist)
 
-task tarYadel(type:Tar) {
+task tarApp(type:Tar) {
     from "build/debian"
 }
 
-tarYadel.dependsOn(packageServer)
+tarApp.dependsOn(packageApp)

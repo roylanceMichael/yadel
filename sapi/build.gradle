@@ -1,5 +1,6 @@
 // This file was auto-generated, but can be altered. It will not be overwritten.
 import org.roylance.yaclib.YaclibPackagePlugin;
+import org.roylance.yadel.YadelServerPlugin;
 
 buildscript {
     ext.kotlin_version = "$yaclib_kotlin"
@@ -11,6 +12,7 @@ buildscript {
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$yaclib_kotlin"
         classpath "org.roylance.yaclib:core:$yaclib_version"
+        classpath "org.roylance.yadel:plugin:$major.$minor"
     }
 }
 
@@ -52,10 +54,19 @@ dependencies {
 }
 
 task packageApp(type: YaclibPackagePlugin) {
-    appName = "$name"
+    appName = rootProject.name
     serverVersion = "$major.$minor"
     maintainerInfo = "roylance.michael@gmail.com"
     serverPort = "$yaclib_server_port".toInteger()
 }
 
 packageApp.dependsOn(installDist)
+
+task completePackageApp(type: YadelServerPlugin) {
+    currentProjectName = rootProject.name
+    projectName = 'cli'
+    serverVersion = "$major.$minor"
+    serverUrl = "192.168.12.130"
+    awsAutoScalingGroupName = "test-autoscale-group"
+    fullServerTarUrl = "http://localhost/rest/autoscale/tar"
+}
