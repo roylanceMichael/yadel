@@ -14,19 +14,20 @@ import org.roylance.yadel.api.models.ConfigurationActorRef
 import org.roylance.yadel.api.services.file.FileDagStore
 import org.roylance.yadel.api.services.memory.MemoryDagStore
 import org.roylance.yadel.api.utilities.ActorUtilities
-import java.lang.management.ManagementFactory
 import java.util.*
 
 abstract class ManagerBase: UntypedActor() {
     protected val workers = HashMap<String, ConfigurationActorRef>()
     protected val activeDags = MemoryDagStore()
     protected val savedDags = FileDagStore(ActorUtilities.CommonDagFile)
+    protected val unprocessedDags = FileDagStore(ActorUtilities.UnprocessedDags)
 
     protected val reportActor = this.context().system().actorOf(Props.create(ReportActor::class.java))!!
-    protected val log: LoggingAdapter = Logging.getLogger(this.context().system(), this)
+    protected val log: LoggingAdapter
+        get() = Logging.getLogger(this.context().system(), this)
 
     override fun preStart() {
-        System.out.println("max memory: ${ManagementFactory.getMemoryMXBean().heapMemoryUsage.max / 1000000} MB")
+        println(ActorUtilities.buildMemoryLogMessage())
 
         super.preStart()
         val runnable = Runnable {
@@ -41,10 +42,17 @@ abstract class ManagerBase: UntypedActor() {
             updateSenderStatus(YadelModel.WorkerState.IDLE, true)
         }
         else if (message is YadelModel.Dag) {
-            activeDags.set(message.id, message.toBuilder())
+            if (activeDags.size() > ActorUtilities.MaxActiveDags) {
+                unprocessedDags.set(message.id, message.toBuilder())
+            }
+            else {
+                activeDags.set(message.id, message.toBuilder())
+            }
         }
-        else if (message is YadelModel.AddTaskToDag && message.hasNewTask() &&
-                this.activeDags.containsKey(message.newTask.dagId)) {
+        // not going to try to add tasks to an unprocessed dag
+        else if (message is YadelModel.AddTaskToDag &&
+                message.hasNewTask() &&
+                activeDags.containsKey(message.newTask.dagId)) {
             this.log.info("looking for ${message.newTask.dagId}")
             val foundDag = this.activeDags.get(message.newTask.dagId)!!
             foundDag.addUncompletedTasks(message.newTask).addFlattenedTasks(message.newTask)
@@ -75,6 +83,13 @@ abstract class ManagerBase: UntypedActor() {
                 foundDag.processingTasksCount == 0) {
                 activeDags.remove(foundDag.id)
                 savedDags.set(foundDag.id, foundDag)
+
+                val currentUnprocessedDags = unprocessedDags.values()
+                if (currentUnprocessedDags.isNotEmpty()) {
+                    val unprocessedDagToUse = currentUnprocessedDags.first()
+                    unprocessedDags.remove(unprocessedDagToUse.id)
+                    activeDags.set(unprocessedDagToUse.id, unprocessedDagToUse)
+                }
             }
             else {
                 activeDags.set(foundDag.id, foundDag)
@@ -120,8 +135,11 @@ abstract class ManagerBase: UntypedActor() {
         else if (message is YadelModel.ManagerToManagerMessageType &&
                 YadelModel.ManagerToManagerMessageType.ENSURE_WORKERS_WORKING == message) {
             log.info("Have ${this.activeDags.values().size} active dags with ${this.workers.size} workers:")
+            log.info("with ${unprocessedDags.size()} unprocessed dags")
+            log.info("with ${savedDags.size()} saved dags")
+            log.info(ActorUtilities.buildMemoryLogMessage())
 
-            this.activeDags.values().forEach { actualDag ->
+            activeDags.values().forEach { actualDag ->
                 val availableTaskIds = ActorUtilities.getAllAvailableTaskIds(actualDag)
                 this.log.info("${actualDag.display} (${actualDag.id})")
                 this.log.info("${actualDag.uncompletedTasksCount} uncompleted tasks")
@@ -143,6 +161,14 @@ abstract class ManagerBase: UntypedActor() {
     protected fun tellWorkersToDoNewDagWork() {
         if (this.workers.values.filter { it.configuration.state == YadelModel.WorkerState.IDLE }.isEmpty()) {
             return
+        }
+
+        // move unprocessed to active, if exists...
+        if (activeDags.size() < ActorUtilities.MaxActiveDags &&
+            unprocessedDags.size() > 0) {
+            val firstUnprocessedDag = unprocessedDags.values().first()
+            unprocessedDags.remove(firstUnprocessedDag.id)
+            activeDags.set(firstUnprocessedDag.id, firstUnprocessedDag)
         }
 
         activeDags.values().forEach { foundActiveDag ->
@@ -199,14 +225,12 @@ abstract class ManagerBase: UntypedActor() {
             val foundWorker = foundTuple!!.configuration.toBuilder()
             foundWorker.state = newState
 
-            log.info("worker has dag: ${foundWorker.hasDag()}")
-            log.info("worker has task: ${foundWorker.hasTask()} ${foundWorker.task}")
             if (setTaskToUnprocessed &&
                     foundWorker.hasDag() &&
                     foundWorker.hasTask() &&
                     activeDags.containsKey(foundWorker.dag.id)) {
                 val foundDag = activeDags.get(foundWorker.dag.id)!!
-                log.info("also updating ${foundDag.display} task")
+
                 val foundTask = foundDag.processingTasksList.firstOrNull { it.id == foundWorker.task.id }
                 if (foundTask != null) {
                     log.info("setting ${foundTask.display} back to unprocessed")

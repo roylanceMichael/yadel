@@ -30,41 +30,43 @@ namespace Org.Roylance.Yadel {
             "CRIvCgZyZXBvcnQYAiABKAsyHy5vcmcucm95bGFuY2UueWFkZWwuVUlEYWdS",
             "ZXBvcnQSJgoDZGFnGAMgASgLMhkub3JnLnJveWxhbmNlLnlhZGVsLlVJRGFn",
             "EkEKDmNvbmZpZ3VyYXRpb25zGAQgAygLMikub3JnLnJveWxhbmNlLnlhZGVs",
-            "LlVJV29ya2VyQ29uZmlndXJhdGlvbiJyCgtVSURhZ1JlcG9ydBI6Cgd3b3Jr",
-            "ZXJzGAEgAygLMikub3JnLnJveWxhbmNlLnlhZGVsLlVJV29ya2VyQ29uZmln",
-            "dXJhdGlvbhInCgRkYWdzGAIgAygLMhkub3JnLnJveWxhbmNlLnlhZGVsLlVJ",
-            "RGFnIt0CCgVVSURhZxIKCgJpZBgBIAEoCRIPCgdkaXNwbGF5GAIgASgJEikK",
-            "BW5vZGVzGAMgAygLMhoub3JnLnJveWxhbmNlLnlhZGVsLlVJTm9kZRIpCgVl",
-            "ZGdlcxgEIAMoCzIaLm9yZy5yb3lsYW5jZS55YWRlbC5VSUVkZ2USFAoMaXNf",
-            "Y29tcGxldGVkGAUgASgIEhUKDWlzX3Byb2Nlc3NpbmcYBiABKAgSEAoIaXNf",
-            "ZXJyb3IYByABKAgSDAoEbG9ncxgIIAMoCRIYChBudW1iZXJfY29tcGxldGVk",
-            "GAkgASgFEhkKEW51bWJlcl9wcm9jZXNzaW5nGAogASgFEhYKDm51bWJlcl9l",
-            "cnJvcmVkGAsgASgFEhoKEm51bWJlcl91bnByb2Nlc3NlZBgMIAEoBRIrCghj",
-            "aGlsZHJlbhgNIAMoCzIZLm9yZy5yb3lsYW5jZS55YWRlbC5VSURhZyIuCgZV",
-            "SUVkZ2USEQoJbm9kZV9pZF8xGAEgASgJEhEKCW5vZGVfaWRfMhgCIAEoCSKG",
-            "AgoGVUlOb2RlEgoKAmlkGAEgASgJEg8KB2Rpc3BsYXkYAiABKAkSFgoOZXhl",
-            "Y3V0aW9uX2RhdGUYBCABKAMSEgoKc3RhcnRfZGF0ZRgFIAEoAxIQCghlbmRf",
-            "ZGF0ZRgGIAEoAxIQCghkdXJhdGlvbhgHIAEoAxIUCgxpc19jb21wbGV0ZWQY",
-            "CCABKAgSFQoNaXNfcHJvY2Vzc2luZxgJIAEoCBIQCghpc19lcnJvchgKIAEo",
-            "CBInCgRsb2dzGAsgAygLMhkub3JnLnJveWxhbmNlLnlhZGVsLlVJTG9nEicK",
-            "H2lzX3dhaXRpbmdfZm9yX2Fub3RoZXJfZGFnX3Rhc2sYDCABKAgiJAoFVUlM",
-            "b2cSCgoCaWQYASABKAkSDwoHbWVzc2FnZRgCIAEoCSKVAgoVVUlXb3JrZXJD",
-            "b25maWd1cmF0aW9uEgoKAmlwGAEgASgJEgwKBHBvcnQYAiABKAkSDAoEaG9z",
-            "dBgDIAEoCRIYChBpbml0aWFsaXplZF90aW1lGAQgASgJEjAKBXN0YXRlGAUg",
-            "ASgOMiEub3JnLnJveWxhbmNlLnlhZGVsLlVJV29ya2VyU3RhdGUSFAoMdGFz",
-            "a19kaXNwbGF5GAYgASgJEhMKC2RhZ19kaXNwbGF5GAcgASgJEiEKGW1pbnV0",
-            "ZXNfYmVmb3JlX3Rhc2tfcmVzZXQYCCABKAQSFwoPdGFza19zdGFydF90aW1l",
-            "GAkgASgJEiEKGXRhc2tfd29ya2luZ190aW1lX2Rpc3BsYXkYCiABKAkqSQoS",
-            "VUlZYWRlbFJlcXVlc3RUeXBlEg8KC1JFUE9SVF9EQUdTEAASDgoKREVMRVRF",
-            "X0RBRxABEhIKDkdFVF9EQUdfU1RBVFVTEAIqOgoNVUlXb3JrZXJTdGF0ZRIV",
-            "ChFDVVJSRU5UTFlfV09SS0lORxAAEhIKDkNVUlJFTlRMWV9JRExFEAFiBnBy",
-            "b3RvMw=="));
+            "LlVJV29ya2VyQ29uZmlndXJhdGlvbiLwAQoLVUlEYWdSZXBvcnQSOgoHd29y",
+            "a2VycxgBIAMoCzIpLm9yZy5yb3lsYW5jZS55YWRlbC5VSVdvcmtlckNvbmZp",
+            "Z3VyYXRpb24SJwoEZGFncxgCIAMoCzIZLm9yZy5yb3lsYW5jZS55YWRlbC5V",
+            "SURhZxIbChN1c2VkX21hbmFnZXJfbWVtb3J5GAMgASgJEhwKFHRvdGFsX21h",
+            "bmFnZXJfbWVtb3J5GAQgASgJEhMKC2FjdGl2ZV9kYWdzGAUgASgFEhgKEHVu",
+            "cHJvY2Vzc2VkX2RhZ3MYBiABKAUSEgoKc2F2ZWRfZGFncxgHIAEoBSLdAgoF",
+            "VUlEYWcSCgoCaWQYASABKAkSDwoHZGlzcGxheRgCIAEoCRIpCgVub2RlcxgD",
+            "IAMoCzIaLm9yZy5yb3lsYW5jZS55YWRlbC5VSU5vZGUSKQoFZWRnZXMYBCAD",
+            "KAsyGi5vcmcucm95bGFuY2UueWFkZWwuVUlFZGdlEhQKDGlzX2NvbXBsZXRl",
+            "ZBgFIAEoCBIVCg1pc19wcm9jZXNzaW5nGAYgASgIEhAKCGlzX2Vycm9yGAcg",
+            "ASgIEgwKBGxvZ3MYCCADKAkSGAoQbnVtYmVyX2NvbXBsZXRlZBgJIAEoBRIZ",
+            "ChFudW1iZXJfcHJvY2Vzc2luZxgKIAEoBRIWCg5udW1iZXJfZXJyb3JlZBgL",
+            "IAEoBRIaChJudW1iZXJfdW5wcm9jZXNzZWQYDCABKAUSKwoIY2hpbGRyZW4Y",
+            "DSADKAsyGS5vcmcucm95bGFuY2UueWFkZWwuVUlEYWciLgoGVUlFZGdlEhEK",
+            "CW5vZGVfaWRfMRgBIAEoCRIRCglub2RlX2lkXzIYAiABKAkihgIKBlVJTm9k",
+            "ZRIKCgJpZBgBIAEoCRIPCgdkaXNwbGF5GAIgASgJEhYKDmV4ZWN1dGlvbl9k",
+            "YXRlGAQgASgDEhIKCnN0YXJ0X2RhdGUYBSABKAMSEAoIZW5kX2RhdGUYBiAB",
+            "KAMSEAoIZHVyYXRpb24YByABKAMSFAoMaXNfY29tcGxldGVkGAggASgIEhUK",
+            "DWlzX3Byb2Nlc3NpbmcYCSABKAgSEAoIaXNfZXJyb3IYCiABKAgSJwoEbG9n",
+            "cxgLIAMoCzIZLm9yZy5yb3lsYW5jZS55YWRlbC5VSUxvZxInCh9pc193YWl0",
+            "aW5nX2Zvcl9hbm90aGVyX2RhZ190YXNrGAwgASgIIiQKBVVJTG9nEgoKAmlk",
+            "GAEgASgJEg8KB21lc3NhZ2UYAiABKAkilQIKFVVJV29ya2VyQ29uZmlndXJh",
+            "dGlvbhIKCgJpcBgBIAEoCRIMCgRwb3J0GAIgASgJEgwKBGhvc3QYAyABKAkS",
+            "GAoQaW5pdGlhbGl6ZWRfdGltZRgEIAEoCRIwCgVzdGF0ZRgFIAEoDjIhLm9y",
+            "Zy5yb3lsYW5jZS55YWRlbC5VSVdvcmtlclN0YXRlEhQKDHRhc2tfZGlzcGxh",
+            "eRgGIAEoCRITCgtkYWdfZGlzcGxheRgHIAEoCRIhChltaW51dGVzX2JlZm9y",
+            "ZV90YXNrX3Jlc2V0GAggASgEEhcKD3Rhc2tfc3RhcnRfdGltZRgJIAEoCRIh",
+            "Chl0YXNrX3dvcmtpbmdfdGltZV9kaXNwbGF5GAogASgJKkkKElVJWWFkZWxS",
+            "ZXF1ZXN0VHlwZRIPCgtSRVBPUlRfREFHUxAAEg4KCkRFTEVURV9EQUcQARIS",
+            "Cg5HRVRfREFHX1NUQVRVUxACKjoKDVVJV29ya2VyU3RhdGUSFQoRQ1VSUkVO",
+            "VExZX1dPUktJTkcQABISCg5DVVJSRU5UTFlfSURMRRABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Roylance.Yadel.UIYadelRequestType), typeof(global::Org.Roylance.Yadel.UIWorkerState), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIYadelRequest), global::Org.Roylance.Yadel.UIYadelRequest.Parser, new[]{ "RequestType", "DagId", "Token", "UserName", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIYadelResponse), global::Org.Roylance.Yadel.UIYadelResponse.Parser, new[]{ "Content", "Report", "Dag", "Configurations" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIDagReport), global::Org.Roylance.Yadel.UIDagReport.Parser, new[]{ "Workers", "Dags" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIDagReport), global::Org.Roylance.Yadel.UIDagReport.Parser, new[]{ "Workers", "Dags", "UsedManagerMemory", "TotalManagerMemory", "ActiveDags", "UnprocessedDags", "SavedDags" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIDag), global::Org.Roylance.Yadel.UIDag.Parser, new[]{ "Id", "Display", "Nodes", "Edges", "IsCompleted", "IsProcessing", "IsError", "Logs", "NumberCompleted", "NumberProcessing", "NumberErrored", "NumberUnprocessed", "Children" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UIEdge), global::Org.Roylance.Yadel.UIEdge.Parser, new[]{ "NodeId1", "NodeId2" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.UINode), global::Org.Roylance.Yadel.UINode.Parser, new[]{ "Id", "Display", "ExecutionDate", "StartDate", "EndDate", "Duration", "IsCompleted", "IsProcessing", "IsError", "Logs", "IsWaitingForAnotherDagTask" }, null, null, null),
@@ -550,6 +552,11 @@ namespace Org.Roylance.Yadel {
     public UIDagReport(UIDagReport other) : this() {
       workers_ = other.workers_.Clone();
       dags_ = other.dags_.Clone();
+      usedManagerMemory_ = other.usedManagerMemory_;
+      totalManagerMemory_ = other.totalManagerMemory_;
+      activeDags_ = other.activeDags_;
+      unprocessedDags_ = other.unprocessedDags_;
+      savedDags_ = other.savedDags_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -577,6 +584,61 @@ namespace Org.Roylance.Yadel {
       get { return dags_; }
     }
 
+    /// <summary>Field number for the "used_manager_memory" field.</summary>
+    public const int UsedManagerMemoryFieldNumber = 3;
+    private string usedManagerMemory_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string UsedManagerMemory {
+      get { return usedManagerMemory_; }
+      set {
+        usedManagerMemory_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "total_manager_memory" field.</summary>
+    public const int TotalManagerMemoryFieldNumber = 4;
+    private string totalManagerMemory_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TotalManagerMemory {
+      get { return totalManagerMemory_; }
+      set {
+        totalManagerMemory_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "active_dags" field.</summary>
+    public const int ActiveDagsFieldNumber = 5;
+    private int activeDags_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ActiveDags {
+      get { return activeDags_; }
+      set {
+        activeDags_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "unprocessed_dags" field.</summary>
+    public const int UnprocessedDagsFieldNumber = 6;
+    private int unprocessedDags_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int UnprocessedDags {
+      get { return unprocessedDags_; }
+      set {
+        unprocessedDags_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "saved_dags" field.</summary>
+    public const int SavedDagsFieldNumber = 7;
+    private int savedDags_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SavedDags {
+      get { return savedDags_; }
+      set {
+        savedDags_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UIDagReport);
@@ -592,6 +654,11 @@ namespace Org.Roylance.Yadel {
       }
       if(!workers_.Equals(other.workers_)) return false;
       if(!dags_.Equals(other.dags_)) return false;
+      if (UsedManagerMemory != other.UsedManagerMemory) return false;
+      if (TotalManagerMemory != other.TotalManagerMemory) return false;
+      if (ActiveDags != other.ActiveDags) return false;
+      if (UnprocessedDags != other.UnprocessedDags) return false;
+      if (SavedDags != other.SavedDags) return false;
       return true;
     }
 
@@ -600,6 +667,11 @@ namespace Org.Roylance.Yadel {
       int hash = 1;
       hash ^= workers_.GetHashCode();
       hash ^= dags_.GetHashCode();
+      if (UsedManagerMemory.Length != 0) hash ^= UsedManagerMemory.GetHashCode();
+      if (TotalManagerMemory.Length != 0) hash ^= TotalManagerMemory.GetHashCode();
+      if (ActiveDags != 0) hash ^= ActiveDags.GetHashCode();
+      if (UnprocessedDags != 0) hash ^= UnprocessedDags.GetHashCode();
+      if (SavedDags != 0) hash ^= SavedDags.GetHashCode();
       return hash;
     }
 
@@ -612,6 +684,26 @@ namespace Org.Roylance.Yadel {
     public void WriteTo(pb::CodedOutputStream output) {
       workers_.WriteTo(output, _repeated_workers_codec);
       dags_.WriteTo(output, _repeated_dags_codec);
+      if (UsedManagerMemory.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(UsedManagerMemory);
+      }
+      if (TotalManagerMemory.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(TotalManagerMemory);
+      }
+      if (ActiveDags != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(ActiveDags);
+      }
+      if (UnprocessedDags != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(UnprocessedDags);
+      }
+      if (SavedDags != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(SavedDags);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -619,6 +711,21 @@ namespace Org.Roylance.Yadel {
       int size = 0;
       size += workers_.CalculateSize(_repeated_workers_codec);
       size += dags_.CalculateSize(_repeated_dags_codec);
+      if (UsedManagerMemory.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(UsedManagerMemory);
+      }
+      if (TotalManagerMemory.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TotalManagerMemory);
+      }
+      if (ActiveDags != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ActiveDags);
+      }
+      if (UnprocessedDags != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(UnprocessedDags);
+      }
+      if (SavedDags != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SavedDags);
+      }
       return size;
     }
 
@@ -629,6 +736,21 @@ namespace Org.Roylance.Yadel {
       }
       workers_.Add(other.workers_);
       dags_.Add(other.dags_);
+      if (other.UsedManagerMemory.Length != 0) {
+        UsedManagerMemory = other.UsedManagerMemory;
+      }
+      if (other.TotalManagerMemory.Length != 0) {
+        TotalManagerMemory = other.TotalManagerMemory;
+      }
+      if (other.ActiveDags != 0) {
+        ActiveDags = other.ActiveDags;
+      }
+      if (other.UnprocessedDags != 0) {
+        UnprocessedDags = other.UnprocessedDags;
+      }
+      if (other.SavedDags != 0) {
+        SavedDags = other.SavedDags;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -645,6 +767,26 @@ namespace Org.Roylance.Yadel {
           }
           case 18: {
             dags_.AddEntriesFrom(input, _repeated_dags_codec);
+            break;
+          }
+          case 26: {
+            UsedManagerMemory = input.ReadString();
+            break;
+          }
+          case 34: {
+            TotalManagerMemory = input.ReadString();
+            break;
+          }
+          case 40: {
+            ActiveDags = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            UnprocessedDags = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            SavedDags = input.ReadInt32();
             break;
           }
         }

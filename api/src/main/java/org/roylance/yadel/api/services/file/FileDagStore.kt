@@ -6,6 +6,17 @@ import java.io.File
 import java.util.*
 
 class FileDagStore(private val fileLocation: String) : IDagStore {
+    override fun size(): Int {
+        val dagFile = File(fileLocation)
+        if (!dagFile.exists()) {
+            return 0
+        }
+
+        val allBytes = dagFile.readBytes()
+        val allDags = YadelModel.AllDags.parseFrom(allBytes)
+        return allDags.dagsCount
+    }
+
     override fun get(key: String): YadelModel.Dag.Builder? {
         val dagFile = File(fileLocation)
         if (!dagFile.exists()) {

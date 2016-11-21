@@ -19,6 +19,7 @@ class SampleWorker:WorkerBase() {
 
         if (message is YadelModel.Task) {
             if (random.nextBoolean() && random.nextBoolean() && random.nextBoolean()) {
+                Thread.sleep(1000)
                 throw Exception("death and destruction!")
             }
 

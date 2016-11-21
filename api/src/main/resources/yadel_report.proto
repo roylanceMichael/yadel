@@ -25,6 +25,11 @@ message UIYadelResponse {
 message UIDagReport {
     repeated UIWorkerConfiguration workers = 1;
     repeated UIDag dags = 2;
+    string used_manager_memory = 3;
+    string total_manager_memory = 4;
+    int32 active_dags = 5;
+    int32 unprocessed_dags = 6;
+    int32 saved_dags = 7;
 }
 
 message UIDag {

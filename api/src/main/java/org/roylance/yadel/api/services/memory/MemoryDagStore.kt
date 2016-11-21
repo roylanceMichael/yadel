@@ -33,4 +33,8 @@ class MemoryDagStore: IDagStore {
         }
         return false
     }
+
+    override fun size(): Int {
+        return activeDags.size
+    }
 }

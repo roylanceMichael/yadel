@@ -2539,6 +2539,41 @@ public final class YadelReport {
      */
     org.roylance.yadel.YadelReport.UIDagOrBuilder getDagsOrBuilder(
         int index);
+
+    /**
+     * <code>optional string used_manager_memory = 3;</code>
+     */
+    java.lang.String getUsedManagerMemory();
+    /**
+     * <code>optional string used_manager_memory = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getUsedManagerMemoryBytes();
+
+    /**
+     * <code>optional string total_manager_memory = 4;</code>
+     */
+    java.lang.String getTotalManagerMemory();
+    /**
+     * <code>optional string total_manager_memory = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getTotalManagerMemoryBytes();
+
+    /**
+     * <code>optional int32 active_dags = 5;</code>
+     */
+    int getActiveDags();
+
+    /**
+     * <code>optional int32 unprocessed_dags = 6;</code>
+     */
+    int getUnprocessedDags();
+
+    /**
+     * <code>optional int32 saved_dags = 7;</code>
+     */
+    int getSavedDags();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.UIDagReport}
@@ -2554,6 +2589,11 @@ public final class YadelReport {
     private UIDagReport() {
       workers_ = java.util.Collections.emptyList();
       dags_ = java.util.Collections.emptyList();
+      usedManagerMemory_ = "";
+      totalManagerMemory_ = "";
+      activeDags_ = 0;
+      unprocessedDags_ = 0;
+      savedDags_ = 0;
     }
 
     @java.lang.Override
@@ -2599,6 +2639,33 @@ public final class YadelReport {
                   input.readMessage(org.roylance.yadel.YadelReport.UIDag.parser(), extensionRegistry));
               break;
             }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              usedManagerMemory_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              totalManagerMemory_ = s;
+              break;
+            }
+            case 40: {
+
+              activeDags_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              unprocessedDags_ = input.readInt32();
+              break;
+            }
+            case 56: {
+
+              savedDags_ = input.readInt32();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2628,6 +2695,7 @@ public final class YadelReport {
               org.roylance.yadel.YadelReport.UIDagReport.class, org.roylance.yadel.YadelReport.UIDagReport.Builder.class);
     }
 
+    private int bitField0_;
     public static final int WORKERS_FIELD_NUMBER = 1;
     private java.util.List<org.roylance.yadel.YadelReport.UIWorkerConfiguration> workers_;
     /**
@@ -2698,6 +2766,101 @@ public final class YadelReport {
       return dags_.get(index);
     }
 
+    public static final int USED_MANAGER_MEMORY_FIELD_NUMBER = 3;
+    private volatile java.lang.Object usedManagerMemory_;
+    /**
+     * <code>optional string used_manager_memory = 3;</code>
+     */
+    public java.lang.String getUsedManagerMemory() {
+      java.lang.Object ref = usedManagerMemory_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        usedManagerMemory_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string used_manager_memory = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsedManagerMemoryBytes() {
+      java.lang.Object ref = usedManagerMemory_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        usedManagerMemory_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOTAL_MANAGER_MEMORY_FIELD_NUMBER = 4;
+    private volatile java.lang.Object totalManagerMemory_;
+    /**
+     * <code>optional string total_manager_memory = 4;</code>
+     */
+    public java.lang.String getTotalManagerMemory() {
+      java.lang.Object ref = totalManagerMemory_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        totalManagerMemory_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string total_manager_memory = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTotalManagerMemoryBytes() {
+      java.lang.Object ref = totalManagerMemory_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        totalManagerMemory_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACTIVE_DAGS_FIELD_NUMBER = 5;
+    private int activeDags_;
+    /**
+     * <code>optional int32 active_dags = 5;</code>
+     */
+    public int getActiveDags() {
+      return activeDags_;
+    }
+
+    public static final int UNPROCESSED_DAGS_FIELD_NUMBER = 6;
+    private int unprocessedDags_;
+    /**
+     * <code>optional int32 unprocessed_dags = 6;</code>
+     */
+    public int getUnprocessedDags() {
+      return unprocessedDags_;
+    }
+
+    public static final int SAVED_DAGS_FIELD_NUMBER = 7;
+    private int savedDags_;
+    /**
+     * <code>optional int32 saved_dags = 7;</code>
+     */
+    public int getSavedDags() {
+      return savedDags_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -2716,6 +2879,21 @@ public final class YadelReport {
       for (int i = 0; i < dags_.size(); i++) {
         output.writeMessage(2, dags_.get(i));
       }
+      if (!getUsedManagerMemoryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, usedManagerMemory_);
+      }
+      if (!getTotalManagerMemoryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, totalManagerMemory_);
+      }
+      if (activeDags_ != 0) {
+        output.writeInt32(5, activeDags_);
+      }
+      if (unprocessedDags_ != 0) {
+        output.writeInt32(6, unprocessedDags_);
+      }
+      if (savedDags_ != 0) {
+        output.writeInt32(7, savedDags_);
+      }
     }
 
     public int getSerializedSize() {
@@ -2730,6 +2908,24 @@ public final class YadelReport {
       for (int i = 0; i < dags_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, dags_.get(i));
+      }
+      if (!getUsedManagerMemoryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, usedManagerMemory_);
+      }
+      if (!getTotalManagerMemoryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, totalManagerMemory_);
+      }
+      if (activeDags_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, activeDags_);
+      }
+      if (unprocessedDags_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, unprocessedDags_);
+      }
+      if (savedDags_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, savedDags_);
       }
       memoizedSize = size;
       return size;
@@ -2751,6 +2947,16 @@ public final class YadelReport {
           .equals(other.getWorkersList());
       result = result && getDagsList()
           .equals(other.getDagsList());
+      result = result && getUsedManagerMemory()
+          .equals(other.getUsedManagerMemory());
+      result = result && getTotalManagerMemory()
+          .equals(other.getTotalManagerMemory());
+      result = result && (getActiveDags()
+          == other.getActiveDags());
+      result = result && (getUnprocessedDags()
+          == other.getUnprocessedDags());
+      result = result && (getSavedDags()
+          == other.getSavedDags());
       return result;
     }
 
@@ -2769,6 +2975,16 @@ public final class YadelReport {
         hash = (37 * hash) + DAGS_FIELD_NUMBER;
         hash = (53 * hash) + getDagsList().hashCode();
       }
+      hash = (37 * hash) + USED_MANAGER_MEMORY_FIELD_NUMBER;
+      hash = (53 * hash) + getUsedManagerMemory().hashCode();
+      hash = (37 * hash) + TOTAL_MANAGER_MEMORY_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalManagerMemory().hashCode();
+      hash = (37 * hash) + ACTIVE_DAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getActiveDags();
+      hash = (37 * hash) + UNPROCESSED_DAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getUnprocessedDags();
+      hash = (37 * hash) + SAVED_DAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSavedDags();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2901,6 +3117,16 @@ public final class YadelReport {
         } else {
           dagsBuilder_.clear();
         }
+        usedManagerMemory_ = "";
+
+        totalManagerMemory_ = "";
+
+        activeDags_ = 0;
+
+        unprocessedDags_ = 0;
+
+        savedDags_ = 0;
+
         return this;
       }
 
@@ -2924,6 +3150,7 @@ public final class YadelReport {
       public org.roylance.yadel.YadelReport.UIDagReport buildPartial() {
         org.roylance.yadel.YadelReport.UIDagReport result = new org.roylance.yadel.YadelReport.UIDagReport(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (workersBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
             workers_ = java.util.Collections.unmodifiableList(workers_);
@@ -2942,6 +3169,12 @@ public final class YadelReport {
         } else {
           result.dags_ = dagsBuilder_.build();
         }
+        result.usedManagerMemory_ = usedManagerMemory_;
+        result.totalManagerMemory_ = totalManagerMemory_;
+        result.activeDags_ = activeDags_;
+        result.unprocessedDags_ = unprocessedDags_;
+        result.savedDags_ = savedDags_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3034,6 +3267,23 @@ public final class YadelReport {
               dagsBuilder_.addAllMessages(other.dags_);
             }
           }
+        }
+        if (!other.getUsedManagerMemory().isEmpty()) {
+          usedManagerMemory_ = other.usedManagerMemory_;
+          onChanged();
+        }
+        if (!other.getTotalManagerMemory().isEmpty()) {
+          totalManagerMemory_ = other.totalManagerMemory_;
+          onChanged();
+        }
+        if (other.getActiveDags() != 0) {
+          setActiveDags(other.getActiveDags());
+        }
+        if (other.getUnprocessedDags() != 0) {
+          setUnprocessedDags(other.getUnprocessedDags());
+        }
+        if (other.getSavedDags() != 0) {
+          setSavedDags(other.getSavedDags());
         }
         onChanged();
         return this;
@@ -3540,6 +3790,222 @@ public final class YadelReport {
           dags_ = null;
         }
         return dagsBuilder_;
+      }
+
+      private java.lang.Object usedManagerMemory_ = "";
+      /**
+       * <code>optional string used_manager_memory = 3;</code>
+       */
+      public java.lang.String getUsedManagerMemory() {
+        java.lang.Object ref = usedManagerMemory_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          usedManagerMemory_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string used_manager_memory = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUsedManagerMemoryBytes() {
+        java.lang.Object ref = usedManagerMemory_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          usedManagerMemory_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string used_manager_memory = 3;</code>
+       */
+      public Builder setUsedManagerMemory(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        usedManagerMemory_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string used_manager_memory = 3;</code>
+       */
+      public Builder clearUsedManagerMemory() {
+        
+        usedManagerMemory_ = getDefaultInstance().getUsedManagerMemory();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string used_manager_memory = 3;</code>
+       */
+      public Builder setUsedManagerMemoryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        usedManagerMemory_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object totalManagerMemory_ = "";
+      /**
+       * <code>optional string total_manager_memory = 4;</code>
+       */
+      public java.lang.String getTotalManagerMemory() {
+        java.lang.Object ref = totalManagerMemory_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          totalManagerMemory_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string total_manager_memory = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTotalManagerMemoryBytes() {
+        java.lang.Object ref = totalManagerMemory_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          totalManagerMemory_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string total_manager_memory = 4;</code>
+       */
+      public Builder setTotalManagerMemory(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        totalManagerMemory_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string total_manager_memory = 4;</code>
+       */
+      public Builder clearTotalManagerMemory() {
+        
+        totalManagerMemory_ = getDefaultInstance().getTotalManagerMemory();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string total_manager_memory = 4;</code>
+       */
+      public Builder setTotalManagerMemoryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        totalManagerMemory_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int activeDags_ ;
+      /**
+       * <code>optional int32 active_dags = 5;</code>
+       */
+      public int getActiveDags() {
+        return activeDags_;
+      }
+      /**
+       * <code>optional int32 active_dags = 5;</code>
+       */
+      public Builder setActiveDags(int value) {
+        
+        activeDags_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 active_dags = 5;</code>
+       */
+      public Builder clearActiveDags() {
+        
+        activeDags_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int unprocessedDags_ ;
+      /**
+       * <code>optional int32 unprocessed_dags = 6;</code>
+       */
+      public int getUnprocessedDags() {
+        return unprocessedDags_;
+      }
+      /**
+       * <code>optional int32 unprocessed_dags = 6;</code>
+       */
+      public Builder setUnprocessedDags(int value) {
+        
+        unprocessedDags_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 unprocessed_dags = 6;</code>
+       */
+      public Builder clearUnprocessedDags() {
+        
+        unprocessedDags_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int savedDags_ ;
+      /**
+       * <code>optional int32 saved_dags = 7;</code>
+       */
+      public int getSavedDags() {
+        return savedDags_;
+      }
+      /**
+       * <code>optional int32 saved_dags = 7;</code>
+       */
+      public Builder setSavedDags(int value) {
+        
+        savedDags_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 saved_dags = 7;</code>
+       */
+      public Builder clearSavedDags() {
+        
+        savedDags_ = 0;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10449,38 +10915,41 @@ public final class YadelReport {
       "(\0132\037.org.roylance.yadel.UIDagReport\022&\n\003d" +
       "ag\030\003 \001(\0132\031.org.roylance.yadel.UIDag\022A\n\016c" +
       "onfigurations\030\004 \003(\0132).org.roylance.yadel" +
-      ".UIWorkerConfiguration\"r\n\013UIDagReport\022:\n",
-      "\007workers\030\001 \003(\0132).org.roylance.yadel.UIWo" +
-      "rkerConfiguration\022\'\n\004dags\030\002 \003(\0132\031.org.ro" +
-      "ylance.yadel.UIDag\"\335\002\n\005UIDag\022\n\n\002id\030\001 \001(\t" +
-      "\022\017\n\007display\030\002 \001(\t\022)\n\005nodes\030\003 \003(\0132\032.org.r" +
-      "oylance.yadel.UINode\022)\n\005edges\030\004 \003(\0132\032.or" +
-      "g.roylance.yadel.UIEdge\022\024\n\014is_completed\030" +
-      "\005 \001(\010\022\025\n\ris_processing\030\006 \001(\010\022\020\n\010is_error" +
-      "\030\007 \001(\010\022\014\n\004logs\030\010 \003(\t\022\030\n\020number_completed" +
-      "\030\t \001(\005\022\031\n\021number_processing\030\n \001(\005\022\026\n\016num" +
-      "ber_errored\030\013 \001(\005\022\032\n\022number_unprocessed\030",
-      "\014 \001(\005\022+\n\010children\030\r \003(\0132\031.org.roylance.y" +
-      "adel.UIDag\".\n\006UIEdge\022\021\n\tnode_id_1\030\001 \001(\t\022" +
-      "\021\n\tnode_id_2\030\002 \001(\t\"\206\002\n\006UINode\022\n\n\002id\030\001 \001(" +
-      "\t\022\017\n\007display\030\002 \001(\t\022\026\n\016execution_date\030\004 \001" +
-      "(\003\022\022\n\nstart_date\030\005 \001(\003\022\020\n\010end_date\030\006 \001(\003" +
-      "\022\020\n\010duration\030\007 \001(\003\022\024\n\014is_completed\030\010 \001(\010" +
-      "\022\025\n\ris_processing\030\t \001(\010\022\020\n\010is_error\030\n \001(" +
-      "\010\022\'\n\004logs\030\013 \003(\0132\031.org.roylance.yadel.UIL" +
-      "og\022\'\n\037is_waiting_for_another_dag_task\030\014 " +
-      "\001(\010\"$\n\005UILog\022\n\n\002id\030\001 \001(\t\022\017\n\007message\030\002 \001(",
-      "\t\"\225\002\n\025UIWorkerConfiguration\022\n\n\002ip\030\001 \001(\t\022" +
-      "\014\n\004port\030\002 \001(\t\022\014\n\004host\030\003 \001(\t\022\030\n\020initializ" +
-      "ed_time\030\004 \001(\t\0220\n\005state\030\005 \001(\0162!.org.royla" +
-      "nce.yadel.UIWorkerState\022\024\n\014task_display\030" +
-      "\006 \001(\t\022\023\n\013dag_display\030\007 \001(\t\022!\n\031minutes_be" +
-      "fore_task_reset\030\010 \001(\004\022\027\n\017task_start_time" +
-      "\030\t \001(\t\022!\n\031task_working_time_display\030\n \001(" +
-      "\t*I\n\022UIYadelRequestType\022\017\n\013REPORT_DAGS\020\000" +
-      "\022\016\n\nDELETE_DAG\020\001\022\022\n\016GET_DAG_STATUS\020\002*:\n\r" +
-      "UIWorkerState\022\025\n\021CURRENTLY_WORKING\020\000\022\022\n\016",
-      "CURRENTLY_IDLE\020\001b\006proto3"
+      ".UIWorkerConfiguration\"\360\001\n\013UIDagReport\022:",
+      "\n\007workers\030\001 \003(\0132).org.roylance.yadel.UIW" +
+      "orkerConfiguration\022\'\n\004dags\030\002 \003(\0132\031.org.r" +
+      "oylance.yadel.UIDag\022\033\n\023used_manager_memo" +
+      "ry\030\003 \001(\t\022\034\n\024total_manager_memory\030\004 \001(\t\022\023" +
+      "\n\013active_dags\030\005 \001(\005\022\030\n\020unprocessed_dags\030" +
+      "\006 \001(\005\022\022\n\nsaved_dags\030\007 \001(\005\"\335\002\n\005UIDag\022\n\n\002i" +
+      "d\030\001 \001(\t\022\017\n\007display\030\002 \001(\t\022)\n\005nodes\030\003 \003(\0132" +
+      "\032.org.roylance.yadel.UINode\022)\n\005edges\030\004 \003" +
+      "(\0132\032.org.roylance.yadel.UIEdge\022\024\n\014is_com" +
+      "pleted\030\005 \001(\010\022\025\n\ris_processing\030\006 \001(\010\022\020\n\010i",
+      "s_error\030\007 \001(\010\022\014\n\004logs\030\010 \003(\t\022\030\n\020number_co" +
+      "mpleted\030\t \001(\005\022\031\n\021number_processing\030\n \001(\005" +
+      "\022\026\n\016number_errored\030\013 \001(\005\022\032\n\022number_unpro" +
+      "cessed\030\014 \001(\005\022+\n\010children\030\r \003(\0132\031.org.roy" +
+      "lance.yadel.UIDag\".\n\006UIEdge\022\021\n\tnode_id_1" +
+      "\030\001 \001(\t\022\021\n\tnode_id_2\030\002 \001(\t\"\206\002\n\006UINode\022\n\n\002" +
+      "id\030\001 \001(\t\022\017\n\007display\030\002 \001(\t\022\026\n\016execution_d" +
+      "ate\030\004 \001(\003\022\022\n\nstart_date\030\005 \001(\003\022\020\n\010end_dat" +
+      "e\030\006 \001(\003\022\020\n\010duration\030\007 \001(\003\022\024\n\014is_complete" +
+      "d\030\010 \001(\010\022\025\n\ris_processing\030\t \001(\010\022\020\n\010is_err",
+      "or\030\n \001(\010\022\'\n\004logs\030\013 \003(\0132\031.org.roylance.ya" +
+      "del.UILog\022\'\n\037is_waiting_for_another_dag_" +
+      "task\030\014 \001(\010\"$\n\005UILog\022\n\n\002id\030\001 \001(\t\022\017\n\007messa" +
+      "ge\030\002 \001(\t\"\225\002\n\025UIWorkerConfiguration\022\n\n\002ip" +
+      "\030\001 \001(\t\022\014\n\004port\030\002 \001(\t\022\014\n\004host\030\003 \001(\t\022\030\n\020in" +
+      "itialized_time\030\004 \001(\t\0220\n\005state\030\005 \001(\0162!.or" +
+      "g.roylance.yadel.UIWorkerState\022\024\n\014task_d" +
+      "isplay\030\006 \001(\t\022\023\n\013dag_display\030\007 \001(\t\022!\n\031min" +
+      "utes_before_task_reset\030\010 \001(\004\022\027\n\017task_sta" +
+      "rt_time\030\t \001(\t\022!\n\031task_working_time_displ",
+      "ay\030\n \001(\t*I\n\022UIYadelRequestType\022\017\n\013REPORT" +
+      "_DAGS\020\000\022\016\n\nDELETE_DAG\020\001\022\022\n\016GET_DAG_STATU" +
+      "S\020\002*:\n\rUIWorkerState\022\025\n\021CURRENTLY_WORKIN" +
+      "G\020\000\022\022\n\016CURRENTLY_IDLE\020\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10511,7 +10980,7 @@ public final class YadelReport {
     internal_static_org_roylance_yadel_UIDagReport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_UIDagReport_descriptor,
-        new java.lang.String[] { "Workers", "Dags", });
+        new java.lang.String[] { "Workers", "Dags", "UsedManagerMemory", "TotalManagerMemory", "ActiveDags", "UnprocessedDags", "SavedDags", });
     internal_static_org_roylance_yadel_UIDag_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_org_roylance_yadel_UIDag_fieldAccessorTable = new

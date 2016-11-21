@@ -82,6 +82,36 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "type": "UIDag",
                     "name": "dags",
                     "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "used_manager_memory",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "total_manager_memory",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "active_dags",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "unprocessed_dags",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "saved_dags",
+                    "id": 7
                 }
             ]
         },

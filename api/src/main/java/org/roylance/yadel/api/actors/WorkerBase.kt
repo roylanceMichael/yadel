@@ -16,10 +16,12 @@ import java.lang.management.ManagementFactory
 import java.util.*
 
 abstract class WorkerBase: UntypedActor() {
+    protected val HeapMemory = ManagementFactory.getMemoryMXBean().heapMemoryUsage.max
     protected val messageHistory = ArrayList<YadelModel.WorkerState>()
 
     protected val cluster: Cluster = Cluster.get(this.context.system())
-    protected val log: LoggingAdapter = Logging.getLogger(this.context().system(), this)
+    protected val log: LoggingAdapter
+        get() = Logging.getLogger(this.context().system(), this)
 
     protected var foundManagerAddress:String? = null
 
@@ -46,7 +48,7 @@ abstract class WorkerBase: UntypedActor() {
     }
 
     override fun preStart() {
-        log.info("max memory: ${ManagementFactory.getMemoryMXBean().heapMemoryUsage.max / 1000000} MB")
+        log.info(ActorUtilities.buildMemoryLogMessage())
         super.preStart()
         this.cluster.subscribe(this.self, ClusterEvent.MemberUp::class.java)
 
@@ -64,7 +66,7 @@ abstract class WorkerBase: UntypedActor() {
 
     override fun onReceive(message: Any?) {
         logger.clearLogs()
-        logger.info("received message")
+        logger.info("received message, ${ActorUtilities.buildMemoryLogMessage()}")
 
         // this will automatically clear a worker who gets stuck
         if (message is YadelModel.WorkerState &&
@@ -121,8 +123,7 @@ abstract class WorkerBase: UntypedActor() {
         if (member.hasRole(YadelModel.ActorRole.MANAGER.name)) {
             this.foundManagerAddress = member.address().toString()
             this.getManagerSelection()
-                    ?.tell(
-                            YadelModel.WorkerToManagerMessageType.REGISTRATION,
+                    ?.tell(YadelModel.WorkerToManagerMessageType.REGISTRATION,
                             this.self)
         }
     }

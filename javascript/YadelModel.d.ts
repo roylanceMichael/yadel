@@ -106,6 +106,21 @@ declare module org.roylance.yadel {
 		dags: UIDag[];
 		getDags() : UIDag[];
 		setDags(dags : UIDag[]): void;
+		used_manager_memory?: string;
+		getUsedManagerMemory() : string;
+		setUsedManagerMemory(usedManagerMemory : string): void;
+		total_manager_memory?: string;
+		getTotalManagerMemory() : string;
+		setTotalManagerMemory(totalManagerMemory : string): void;
+		active_dags?: number;
+		getActiveDags() : number;
+		setActiveDags(activeDags : number): void;
+		unprocessed_dags?: number;
+		getUnprocessedDags() : number;
+		setUnprocessedDags(unprocessedDags : number): void;
+		saved_dags?: number;
+		getSavedDags() : number;
+		setSavedDags(savedDags : number): void;
 		
 	}
 	

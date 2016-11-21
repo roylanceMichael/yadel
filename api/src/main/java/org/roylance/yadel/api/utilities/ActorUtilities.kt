@@ -6,12 +6,22 @@ import org.roylance.yadel.YadelModel
 import org.roylance.yadel.YadelReport
 import org.roylance.yadel.api.services.IDagStore
 import scala.concurrent.duration.Duration
+import java.lang.management.ManagementFactory
 import java.util.*
 import java.util.concurrent.TimeUnit
 
 object ActorUtilities {
-    val OneMinute = Duration.create(1, TimeUnit.MINUTES)
-    val CommonDagFile = "savedDags.bin"
+    const val MB = 1024*1024
+    const val MaxActiveDags = 5
+    const val CommonDagFile = "savedDags.bin"
+    const val UnprocessedDags = "unprocessedDags.bin"
+
+    val OneMinute = Duration.create(1, TimeUnit.MINUTES)!!
+    val RunTime = Runtime.getRuntime()!!
+
+    fun buildMemoryLogMessage(): String {
+        return "used memory: ${(ActorUtilities.RunTime.totalMemory() - ActorUtilities.RunTime.freeMemory())/ActorUtilities.MB}, total memory: ${ActorUtilities.RunTime.totalMemory()/ ActorUtilities.MB}"
+    }
 
     fun isDagComplete(dag: YadelModel.Dag.Builder): Boolean {
         return dag.completedTasksCount == dag.flattenedTasksCount

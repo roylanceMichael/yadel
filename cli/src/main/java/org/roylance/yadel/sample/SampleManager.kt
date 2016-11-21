@@ -7,8 +7,12 @@ class SampleManager:ManagerBase() {
     override fun preStart() {
         super.preStart()
         println("max memory: ${ManagementFactory.getMemoryMXBean().heapMemoryUsage.max / 1000000} MB")
-        val newDag = DagBuilder().build()
-        this.self.tell(newDag, this.self)
+        var i = 0
+        while (i < 50) {
+            val newDag = DagBuilder().build()
+            self.tell(newDag, this.self)
+            i++
+        }
     }
 
     override fun onReceive(message: Any?) {
