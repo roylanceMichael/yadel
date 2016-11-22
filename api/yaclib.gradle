@@ -29,6 +29,12 @@ task execute(type: YaclibPlugin) {
     dependencyDescriptors = new ArrayList<>()
     thirdPartyServerDependencies = new ArrayList<>()
 
+    def kotlinVersion = YaclibModel.Dependency.newBuilder().setType(YaclibModel.DependencyType.JAVA)
+            .setGroup("org.jetbrains")
+            .setName("kotlin")
+            .setThirdPartyDependencyVersion("1.0.5-2")
+            .build()
+
     def akkaDependency = YaclibModel.Dependency.newBuilder().setType(YaclibModel.DependencyType.JAVA)
             .setGroup("com.typesafe.akka")
             .setName("akka-cluster_2.11")

@@ -6,7 +6,7 @@ group 'org.roylance.yadel'
 version "$major.$minor"
 
 buildscript {
-    ext.kotlinVersion = "1.0.5"
+    ext.kotlinVersion = "$yaclib_kotlin"
 
     repositories {
         mavenCentral()

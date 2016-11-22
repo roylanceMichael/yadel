@@ -83,13 +83,6 @@ abstract class ManagerBase: UntypedActor() {
                 foundDag.processingTasksCount == 0) {
                 activeDags.remove(foundDag.id)
                 savedDags.set(foundDag.id, foundDag)
-
-                val currentUnprocessedDags = unprocessedDags.values()
-                if (currentUnprocessedDags.isNotEmpty()) {
-                    val unprocessedDagToUse = currentUnprocessedDags.first()
-                    unprocessedDags.remove(unprocessedDagToUse.id)
-                    activeDags.set(unprocessedDagToUse.id, unprocessedDagToUse)
-                }
             }
             else {
                 activeDags.set(foundDag.id, foundDag)

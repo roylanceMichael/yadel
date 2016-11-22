@@ -1,5 +1,4 @@
 buildscript {
-    ext.kotlinVersion = "1.0.5"
     ext.project_version = "${actualMajor}.${actualMinor}"
     repositories {
         jcenter()
@@ -8,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$yaclib_kotlin"
         classpath "org.roylance.yaclib:core:${yaclibMajor}.${yaclibMinor}"
     }
 }
@@ -61,7 +60,7 @@ dependencies {
     compile 'commons-io:commons-io:2.5'
     compile 'joda-time:joda-time:2.9.4'
 
-    compile 'org.roylance:common:0.9'
+    compile "org.roylance:common:0.$yaclib_roylance_common"
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
