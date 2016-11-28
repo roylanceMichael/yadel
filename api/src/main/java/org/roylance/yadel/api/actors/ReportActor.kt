@@ -5,9 +5,11 @@ import akka.event.Logging
 import akka.event.LoggingAdapter
 import org.roylance.yadel.YadelModel
 import org.roylance.yadel.YadelReport
+import org.roylance.yadel.api.services.IDagStore
 import org.roylance.yadel.api.services.file.FileDagStore
 import org.roylance.yadel.api.services.memory.MemoryDagStore
 import org.roylance.yadel.api.utilities.ActorUtilities
+import java.util.*
 
 class ReportActor : UntypedActor() {
     private val savedDags = FileDagStore(ActorUtilities.CommonDagFile)
@@ -34,7 +36,16 @@ class ReportActor : UntypedActor() {
                 memoryDag.set(dag.id, dag.toBuilder())
             }
 
-            val uiDags = ActorUtilities.buildDagTree(listOf(memoryDag, unprocessedDags, savedDags))
+            val dagList = ArrayList<IDagStore>()
+            dagList.add(memoryDag)
+            if (message.includeUnprocessed) {
+                dagList.add(unprocessedDags)
+            }
+            if (message.includeFileSaved) {
+                dagList.add(savedDags)
+            }
+
+            val uiDags = ActorUtilities.buildDagTree(dagList)
             dagReport.addAllDags(uiDags)
 
             sender.tell(dagReport.build(), self)

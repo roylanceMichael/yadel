@@ -10885,6 +10885,16 @@ public final class YadelModel {
      */
     org.roylance.yadel.YadelModel.WorkerConfigurationOrBuilder getWorkersOrBuilder(
         int index);
+
+    /**
+     * <code>optional bool include_unprocessed = 3;</code>
+     */
+    boolean getIncludeUnprocessed();
+
+    /**
+     * <code>optional bool include_file_saved = 4;</code>
+     */
+    boolean getIncludeFileSaved();
   }
   /**
    * Protobuf type {@code org.roylance.yadel.AllDags}
@@ -10900,6 +10910,8 @@ public final class YadelModel {
     private AllDags() {
       dags_ = java.util.Collections.emptyList();
       workers_ = java.util.Collections.emptyList();
+      includeUnprocessed_ = false;
+      includeFileSaved_ = false;
     }
 
     @java.lang.Override
@@ -10945,6 +10957,16 @@ public final class YadelModel {
                   input.readMessage(org.roylance.yadel.YadelModel.WorkerConfiguration.parser(), extensionRegistry));
               break;
             }
+            case 24: {
+
+              includeUnprocessed_ = input.readBool();
+              break;
+            }
+            case 32: {
+
+              includeFileSaved_ = input.readBool();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -10974,6 +10996,7 @@ public final class YadelModel {
               org.roylance.yadel.YadelModel.AllDags.class, org.roylance.yadel.YadelModel.AllDags.Builder.class);
     }
 
+    private int bitField0_;
     public static final int DAGS_FIELD_NUMBER = 1;
     private java.util.List<org.roylance.yadel.YadelModel.Dag> dags_;
     /**
@@ -11044,6 +11067,24 @@ public final class YadelModel {
       return workers_.get(index);
     }
 
+    public static final int INCLUDE_UNPROCESSED_FIELD_NUMBER = 3;
+    private boolean includeUnprocessed_;
+    /**
+     * <code>optional bool include_unprocessed = 3;</code>
+     */
+    public boolean getIncludeUnprocessed() {
+      return includeUnprocessed_;
+    }
+
+    public static final int INCLUDE_FILE_SAVED_FIELD_NUMBER = 4;
+    private boolean includeFileSaved_;
+    /**
+     * <code>optional bool include_file_saved = 4;</code>
+     */
+    public boolean getIncludeFileSaved() {
+      return includeFileSaved_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -11062,6 +11103,12 @@ public final class YadelModel {
       for (int i = 0; i < workers_.size(); i++) {
         output.writeMessage(2, workers_.get(i));
       }
+      if (includeUnprocessed_ != false) {
+        output.writeBool(3, includeUnprocessed_);
+      }
+      if (includeFileSaved_ != false) {
+        output.writeBool(4, includeFileSaved_);
+      }
     }
 
     public int getSerializedSize() {
@@ -11076,6 +11123,14 @@ public final class YadelModel {
       for (int i = 0; i < workers_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, workers_.get(i));
+      }
+      if (includeUnprocessed_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, includeUnprocessed_);
+      }
+      if (includeFileSaved_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, includeFileSaved_);
       }
       memoizedSize = size;
       return size;
@@ -11097,6 +11152,10 @@ public final class YadelModel {
           .equals(other.getDagsList());
       result = result && getWorkersList()
           .equals(other.getWorkersList());
+      result = result && (getIncludeUnprocessed()
+          == other.getIncludeUnprocessed());
+      result = result && (getIncludeFileSaved()
+          == other.getIncludeFileSaved());
       return result;
     }
 
@@ -11115,6 +11174,12 @@ public final class YadelModel {
         hash = (37 * hash) + WORKERS_FIELD_NUMBER;
         hash = (53 * hash) + getWorkersList().hashCode();
       }
+      hash = (37 * hash) + INCLUDE_UNPROCESSED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIncludeUnprocessed());
+      hash = (37 * hash) + INCLUDE_FILE_SAVED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIncludeFileSaved());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11247,6 +11312,10 @@ public final class YadelModel {
         } else {
           workersBuilder_.clear();
         }
+        includeUnprocessed_ = false;
+
+        includeFileSaved_ = false;
+
         return this;
       }
 
@@ -11270,6 +11339,7 @@ public final class YadelModel {
       public org.roylance.yadel.YadelModel.AllDags buildPartial() {
         org.roylance.yadel.YadelModel.AllDags result = new org.roylance.yadel.YadelModel.AllDags(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (dagsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
             dags_ = java.util.Collections.unmodifiableList(dags_);
@@ -11288,6 +11358,9 @@ public final class YadelModel {
         } else {
           result.workers_ = workersBuilder_.build();
         }
+        result.includeUnprocessed_ = includeUnprocessed_;
+        result.includeFileSaved_ = includeFileSaved_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -11380,6 +11453,12 @@ public final class YadelModel {
               workersBuilder_.addAllMessages(other.workers_);
             }
           }
+        }
+        if (other.getIncludeUnprocessed() != false) {
+          setIncludeUnprocessed(other.getIncludeUnprocessed());
+        }
+        if (other.getIncludeFileSaved() != false) {
+          setIncludeFileSaved(other.getIncludeFileSaved());
         }
         onChanged();
         return this;
@@ -11887,6 +11966,58 @@ public final class YadelModel {
         }
         return workersBuilder_;
       }
+
+      private boolean includeUnprocessed_ ;
+      /**
+       * <code>optional bool include_unprocessed = 3;</code>
+       */
+      public boolean getIncludeUnprocessed() {
+        return includeUnprocessed_;
+      }
+      /**
+       * <code>optional bool include_unprocessed = 3;</code>
+       */
+      public Builder setIncludeUnprocessed(boolean value) {
+        
+        includeUnprocessed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool include_unprocessed = 3;</code>
+       */
+      public Builder clearIncludeUnprocessed() {
+        
+        includeUnprocessed_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean includeFileSaved_ ;
+      /**
+       * <code>optional bool include_file_saved = 4;</code>
+       */
+      public boolean getIncludeFileSaved() {
+        return includeFileSaved_;
+      }
+      /**
+       * <code>optional bool include_file_saved = 4;</code>
+       */
+      public Builder setIncludeFileSaved(boolean value) {
+        
+        includeFileSaved_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool include_file_saved = 4;</code>
+       */
+      public Builder clearIncludeFileSaved() {
+        
+        includeFileSaved_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -12024,14 +12155,16 @@ public final class YadelModel {
       "\022&\n\004task\030\002 \001(\0132\030.org.roylance.yadel.Task" +
       "\022E\n\024worker_configuration\030\003 \001(\0132\'.org.roy" +
       "lance.yadel.WorkerConfiguration\022\020\n\010is_er" +
-      "ror\030\005 \001(\010\"j\n\007AllDags\022%\n\004dags\030\001 \003(\0132\027.org",
-      ".roylance.yadel.Dag\0228\n\007workers\030\002 \003(\0132\'.o" +
-      "rg.roylance.yadel.WorkerConfiguration*$\n" +
-      "\013WorkerState\022\013\n\007WORKING\020\000\022\010\n\004IDLE\020\001*.\n\032W" +
-      "orkerToManagerMessageType\022\020\n\014REGISTRATIO" +
-      "N\020\000*9\n\033ManagerToManagerMessageType\022\032\n\026EN" +
-      "SURE_WORKERS_WORKING\020\000*$\n\tActorRole\022\013\n\007M" +
-      "ANAGER\020\000\022\n\n\006WORKER\020\001b\006proto3"
+      "ror\030\005 \001(\010\"\243\001\n\007AllDags\022%\n\004dags\030\001 \003(\0132\027.or",
+      "g.roylance.yadel.Dag\0228\n\007workers\030\002 \003(\0132\'." +
+      "org.roylance.yadel.WorkerConfiguration\022\033" +
+      "\n\023include_unprocessed\030\003 \001(\010\022\032\n\022include_f" +
+      "ile_saved\030\004 \001(\010*$\n\013WorkerState\022\013\n\007WORKIN" +
+      "G\020\000\022\010\n\004IDLE\020\001*.\n\032WorkerToManagerMessageT" +
+      "ype\022\020\n\014REGISTRATION\020\000*9\n\033ManagerToManage" +
+      "rMessageType\022\032\n\026ENSURE_WORKERS_WORKING\020\000" +
+      "*$\n\tActorRole\022\013\n\007MANAGER\020\000\022\n\n\006WORKER\020\001b\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12092,7 +12225,7 @@ public final class YadelModel {
     internal_static_org_roylance_yadel_AllDags_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_AllDags_descriptor,
-        new java.lang.String[] { "Dags", "Workers", });
+        new java.lang.String[] { "Dags", "Workers", "IncludeUnprocessed", "IncludeFileSaved", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

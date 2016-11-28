@@ -5,6 +5,7 @@ enum UIYadelRequestType {
     REPORT_DAGS = 0;
     DELETE_DAG = 1;
     GET_DAG_STATUS = 2;
+    REPORT_DAGS_ACTIVE = 3;
 }
 
 message UIYadelRequest {

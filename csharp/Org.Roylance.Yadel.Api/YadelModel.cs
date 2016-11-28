@@ -56,14 +56,15 @@ namespace Org.Roylance.Yadel {
             "eHRfYmFzZV82NBgGIAEoCSKbAQoMQ29tcGxldGVUYXNrEgoKAmlkGAEgASgJ",
             "EiYKBHRhc2sYAiABKAsyGC5vcmcucm95bGFuY2UueWFkZWwuVGFzaxJFChR3",
             "b3JrZXJfY29uZmlndXJhdGlvbhgDIAEoCzInLm9yZy5yb3lsYW5jZS55YWRl",
-            "bC5Xb3JrZXJDb25maWd1cmF0aW9uEhAKCGlzX2Vycm9yGAUgASgIImoKB0Fs",
-            "bERhZ3MSJQoEZGFncxgBIAMoCzIXLm9yZy5yb3lsYW5jZS55YWRlbC5EYWcS",
-            "OAoHd29ya2VycxgCIAMoCzInLm9yZy5yb3lsYW5jZS55YWRlbC5Xb3JrZXJD",
-            "b25maWd1cmF0aW9uKiQKC1dvcmtlclN0YXRlEgsKB1dPUktJTkcQABIICgRJ",
-            "RExFEAEqLgoaV29ya2VyVG9NYW5hZ2VyTWVzc2FnZVR5cGUSEAoMUkVHSVNU",
-            "UkFUSU9OEAAqOQobTWFuYWdlclRvTWFuYWdlck1lc3NhZ2VUeXBlEhoKFkVO",
-            "U1VSRV9XT1JLRVJTX1dPUktJTkcQACokCglBY3RvclJvbGUSCwoHTUFOQUdF",
-            "UhAAEgoKBldPUktFUhABYgZwcm90bzM="));
+            "bC5Xb3JrZXJDb25maWd1cmF0aW9uEhAKCGlzX2Vycm9yGAUgASgIIqMBCgdB",
+            "bGxEYWdzEiUKBGRhZ3MYASADKAsyFy5vcmcucm95bGFuY2UueWFkZWwuRGFn",
+            "EjgKB3dvcmtlcnMYAiADKAsyJy5vcmcucm95bGFuY2UueWFkZWwuV29ya2Vy",
+            "Q29uZmlndXJhdGlvbhIbChNpbmNsdWRlX3VucHJvY2Vzc2VkGAMgASgIEhoK",
+            "EmluY2x1ZGVfZmlsZV9zYXZlZBgEIAEoCCokCgtXb3JrZXJTdGF0ZRILCgdX",
+            "T1JLSU5HEAASCAoESURMRRABKi4KGldvcmtlclRvTWFuYWdlck1lc3NhZ2VU",
+            "eXBlEhAKDFJFR0lTVFJBVElPThAAKjkKG01hbmFnZXJUb01hbmFnZXJNZXNz",
+            "YWdlVHlwZRIaChZFTlNVUkVfV09SS0VSU19XT1JLSU5HEAAqJAoJQWN0b3JS",
+            "b2xlEgsKB01BTkFHRVIQABIKCgZXT1JLRVIQAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Roylance.Yadel.WorkerState), typeof(global::Org.Roylance.Yadel.WorkerToManagerMessageType), typeof(global::Org.Roylance.Yadel.ManagerToManagerMessageType), typeof(global::Org.Roylance.Yadel.ActorRole), }, new pbr::GeneratedClrTypeInfo[] {
@@ -74,7 +75,7 @@ namespace Org.Roylance.Yadel {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.TaskDependency), global::Org.Roylance.Yadel.TaskDependency.Parser, new[]{ "Id", "ParentTaskId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.AddTaskToDag), global::Org.Roylance.Yadel.AddTaskToDag.Parser, new[]{ "Id", "ParentTask", "NewTask", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.CompleteTask), global::Org.Roylance.Yadel.CompleteTask.Parser, new[]{ "Id", "Task", "WorkerConfiguration", "IsError" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.AllDags), global::Org.Roylance.Yadel.AllDags.Parser, new[]{ "Dags", "Workers" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Roylance.Yadel.AllDags), global::Org.Roylance.Yadel.AllDags.Parser, new[]{ "Dags", "Workers", "IncludeUnprocessed", "IncludeFileSaved" }, null, null, null)
           }));
     }
     #endregion
@@ -2109,6 +2110,8 @@ namespace Org.Roylance.Yadel {
     public AllDags(AllDags other) : this() {
       dags_ = other.dags_.Clone();
       workers_ = other.workers_.Clone();
+      includeUnprocessed_ = other.includeUnprocessed_;
+      includeFileSaved_ = other.includeFileSaved_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2136,6 +2139,28 @@ namespace Org.Roylance.Yadel {
       get { return workers_; }
     }
 
+    /// <summary>Field number for the "include_unprocessed" field.</summary>
+    public const int IncludeUnprocessedFieldNumber = 3;
+    private bool includeUnprocessed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IncludeUnprocessed {
+      get { return includeUnprocessed_; }
+      set {
+        includeUnprocessed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "include_file_saved" field.</summary>
+    public const int IncludeFileSavedFieldNumber = 4;
+    private bool includeFileSaved_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IncludeFileSaved {
+      get { return includeFileSaved_; }
+      set {
+        includeFileSaved_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as AllDags);
@@ -2151,6 +2176,8 @@ namespace Org.Roylance.Yadel {
       }
       if(!dags_.Equals(other.dags_)) return false;
       if(!workers_.Equals(other.workers_)) return false;
+      if (IncludeUnprocessed != other.IncludeUnprocessed) return false;
+      if (IncludeFileSaved != other.IncludeFileSaved) return false;
       return true;
     }
 
@@ -2159,6 +2186,8 @@ namespace Org.Roylance.Yadel {
       int hash = 1;
       hash ^= dags_.GetHashCode();
       hash ^= workers_.GetHashCode();
+      if (IncludeUnprocessed != false) hash ^= IncludeUnprocessed.GetHashCode();
+      if (IncludeFileSaved != false) hash ^= IncludeFileSaved.GetHashCode();
       return hash;
     }
 
@@ -2171,6 +2200,14 @@ namespace Org.Roylance.Yadel {
     public void WriteTo(pb::CodedOutputStream output) {
       dags_.WriteTo(output, _repeated_dags_codec);
       workers_.WriteTo(output, _repeated_workers_codec);
+      if (IncludeUnprocessed != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IncludeUnprocessed);
+      }
+      if (IncludeFileSaved != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IncludeFileSaved);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2178,6 +2215,12 @@ namespace Org.Roylance.Yadel {
       int size = 0;
       size += dags_.CalculateSize(_repeated_dags_codec);
       size += workers_.CalculateSize(_repeated_workers_codec);
+      if (IncludeUnprocessed != false) {
+        size += 1 + 1;
+      }
+      if (IncludeFileSaved != false) {
+        size += 1 + 1;
+      }
       return size;
     }
 
@@ -2188,6 +2231,12 @@ namespace Org.Roylance.Yadel {
       }
       dags_.Add(other.dags_);
       workers_.Add(other.workers_);
+      if (other.IncludeUnprocessed != false) {
+        IncludeUnprocessed = other.IncludeUnprocessed;
+      }
+      if (other.IncludeFileSaved != false) {
+        IncludeFileSaved = other.IncludeFileSaved;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2204,6 +2253,14 @@ namespace Org.Roylance.Yadel {
           }
           case 18: {
             workers_.AddEntriesFrom(input, _repeated_workers_codec);
+            break;
+          }
+          case 24: {
+            IncludeUnprocessed = input.ReadBool();
+            break;
+          }
+          case 32: {
+            IncludeFileSaved = input.ReadBool();
             break;
           }
         }

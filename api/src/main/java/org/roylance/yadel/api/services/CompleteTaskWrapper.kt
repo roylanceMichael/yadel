@@ -9,13 +9,17 @@ class CompleteTaskWrapper(
         val executable: IBuilder<Boolean>): IBuilder<YadelModel.CompleteTask> {
     override fun build(): YadelModel.CompleteTask {
         val completeTask = YadelModel.CompleteTask.newBuilder()
-                .setTask(task.toBuilder().setFirstContextBase64(""))
+                .setTask(task.toBuilder())
 
         try {
             val result = executable.build()
             return completeTask
                     .setIsError(!result)
-                    .setTask(completeTask.task.toBuilder().addAllLogs(logger.logs))
+                    .setTask(completeTask.task.toBuilder()
+                            .addAllLogs(logger.logs)
+                            .clearFirstContextBase64()
+                            .clearSecondContextBase64()
+                            .clearThirdContextBase64())
                     .build()
         }
         catch (e: Exception) {
@@ -24,7 +28,11 @@ class CompleteTaskWrapper(
 
             return completeTask
                     .setIsError(true)
-                    .setTask(completeTask.task.toBuilder().addAllLogs(logger.logs))
+                    .setTask(completeTask.task.toBuilder()
+                            .addAllLogs(logger.logs)
+                            .clearFirstContextBase64()
+                            .clearSecondContextBase64()
+                            .clearThirdContextBase64())
                     .build()
         }
     }

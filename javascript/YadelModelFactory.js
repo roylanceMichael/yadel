@@ -749,6 +749,18 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                     "type": "WorkerConfiguration",
                     "name": "workers",
                     "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "include_unprocessed",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "bool",
+                    "name": "include_file_saved",
+                    "id": 4
                 }
             ]
         }
@@ -768,6 +780,10 @@ var _root = dcodeIO.ProtoBuf.newBuilder({})['import']({
                 {
                     "name": "GET_DAG_STATUS",
                     "id": 2
+                },
+                {
+                    "name": "REPORT_DAGS_ACTIVE",
+                    "id": 3
                 }
             ]
         },

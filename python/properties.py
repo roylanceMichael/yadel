@@ -1,10 +1,10 @@
-#generated from yaclib on Tue Nov 22 11:41:46 MST 2016
-#Tue Nov 22 11:41:46 MST 2016
+#generated from yaclib on Mon Nov 28 12:48:11 MST 2016
+#Mon Nov 28 12:48:11 MST 2016
 major="0"
 name="api"
 githubUrl="https\://github.com/roylanceMichael/yadel.git"
 author="roylance.michael@gmail.com"
 description="models to interface with the org.roylance.yadel.api system"
 license="MIT"
-minor="166"
+minor="169"
 group="org.roylance.yadel"

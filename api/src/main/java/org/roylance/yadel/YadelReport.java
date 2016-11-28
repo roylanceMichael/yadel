@@ -31,6 +31,10 @@ public final class YadelReport {
      * <code>GET_DAG_STATUS = 2;</code>
      */
     GET_DAG_STATUS(2),
+    /**
+     * <code>REPORT_DAGS_ACTIVE = 3;</code>
+     */
+    REPORT_DAGS_ACTIVE(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -46,6 +50,10 @@ public final class YadelReport {
      * <code>GET_DAG_STATUS = 2;</code>
      */
     public static final int GET_DAG_STATUS_VALUE = 2;
+    /**
+     * <code>REPORT_DAGS_ACTIVE = 3;</code>
+     */
+    public static final int REPORT_DAGS_ACTIVE_VALUE = 3;
 
 
     public final int getNumber() {
@@ -69,6 +77,7 @@ public final class YadelReport {
         case 0: return REPORT_DAGS;
         case 1: return DELETE_DAG;
         case 2: return GET_DAG_STATUS;
+        case 3: return REPORT_DAGS_ACTIVE;
         default: return null;
       }
     }
@@ -10946,10 +10955,11 @@ public final class YadelReport {
       "isplay\030\006 \001(\t\022\023\n\013dag_display\030\007 \001(\t\022!\n\031min" +
       "utes_before_task_reset\030\010 \001(\004\022\027\n\017task_sta" +
       "rt_time\030\t \001(\t\022!\n\031task_working_time_displ",
-      "ay\030\n \001(\t*I\n\022UIYadelRequestType\022\017\n\013REPORT" +
+      "ay\030\n \001(\t*a\n\022UIYadelRequestType\022\017\n\013REPORT" +
       "_DAGS\020\000\022\016\n\nDELETE_DAG\020\001\022\022\n\016GET_DAG_STATU" +
-      "S\020\002*:\n\rUIWorkerState\022\025\n\021CURRENTLY_WORKIN" +
-      "G\020\000\022\022\n\016CURRENTLY_IDLE\020\001b\006proto3"
+      "S\020\002\022\026\n\022REPORT_DAGS_ACTIVE\020\003*:\n\rUIWorkerS" +
+      "tate\022\025\n\021CURRENTLY_WORKING\020\000\022\022\n\016CURRENTLY" +
+      "_IDLE\020\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

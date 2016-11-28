@@ -11,22 +11,29 @@ import org.joda.time.Minutes
 import org.roylance.yadel.YadelModel
 import org.roylance.yadel.YadelReport
 import org.roylance.yadel.api.models.ConfigurationActorRef
+import org.roylance.yadel.api.services.IDagStore
 import org.roylance.yadel.api.services.file.FileDagStore
 import org.roylance.yadel.api.services.memory.MemoryDagStore
 import org.roylance.yadel.api.utilities.ActorUtilities
 import java.util.*
 
 abstract class ManagerBase: UntypedActor() {
+
+    protected var includeSavedDagsInReport: Boolean = true
+    protected var savedDags: IDagStore? = FileDagStore(ActorUtilities.CommonDagFile)
+
     protected val workers = HashMap<String, ConfigurationActorRef>()
     protected val activeDags = MemoryDagStore()
-    protected val savedDags = FileDagStore(ActorUtilities.CommonDagFile)
-    protected val unprocessedDags = FileDagStore(ActorUtilities.UnprocessedDags)
+
+    protected val unprocessedDags: IDagStore = FileDagStore(ActorUtilities.UnprocessedDags)
 
     protected val reportActor = this.context().system().actorOf(Props.create(ReportActor::class.java))!!
     protected val log: LoggingAdapter
         get() = Logging.getLogger(this.context().system(), this)
 
     override fun preStart() {
+        super.preStart()
+
         println(ActorUtilities.buildMemoryLogMessage())
 
         super.preStart()
@@ -74,18 +81,21 @@ abstract class ManagerBase: UntypedActor() {
 
             if (message.isError) {
                 foundDag.addErroredTasks(message.task)
+
+                activeDags.remove(foundDag.id)
+                savedDags?.set(foundDag.id, foundDag)
             }
             else {
                 foundDag.addCompletedTasks(message.task)
-            }
 
-            if (foundDag.uncompletedTasksCount == 0 &&
-                foundDag.processingTasksCount == 0) {
-                activeDags.remove(foundDag.id)
-                savedDags.set(foundDag.id, foundDag)
-            }
-            else {
-                activeDags.set(foundDag.id, foundDag)
+                if (foundDag.uncompletedTasksCount == 0 &&
+                        foundDag.processingTasksCount == 0) {
+                    activeDags.remove(foundDag.id)
+                    savedDags?.set(foundDag.id, foundDag)
+                }
+                else {
+                    activeDags.set(foundDag.id, foundDag)
+                }
             }
         }
         else if (message is YadelModel.WorkerToManagerMessageType &&
@@ -106,8 +116,8 @@ abstract class ManagerBase: UntypedActor() {
                 if (activeDags.containsKey(message.dagId)) {
                     activeDags.remove(message.dagId)
                 }
-                else if (savedDags.containsKey(message.dagId)) {
-                    savedDags.remove(message.dagId)
+                else if (savedDags != null && savedDags!!.containsKey(message.dagId)) {
+                    savedDags?.remove(message.dagId)
                 }
             }
             if (message.requestType == YadelReport.UIYadelRequestType.GET_DAG_STATUS) {
@@ -115,8 +125,8 @@ abstract class ManagerBase: UntypedActor() {
                     val uiDag = ActorUtilities.buildUIDagFromDag(activeDags.get(message.dagId)!!)
                     sender.tell(uiDag.build(), self)
                 }
-                else if (savedDags.containsKey(message.dagId)) {
-                    val uiDag = ActorUtilities.buildUIDagFromDag(savedDags.get(message.dagId)!!)
+                else if (savedDags != null && savedDags!!.containsKey(message.dagId)) {
+                    val uiDag = ActorUtilities.buildUIDagFromDag(savedDags!!.get(message.dagId)!!)
                     sender.tell(uiDag.build(), self)
                 }
             }
@@ -129,7 +139,10 @@ abstract class ManagerBase: UntypedActor() {
                 YadelModel.ManagerToManagerMessageType.ENSURE_WORKERS_WORKING == message) {
             log.info("Have ${this.activeDags.values().size} active dags with ${this.workers.size} workers:")
             log.info("with ${unprocessedDags.size()} unprocessed dags")
-            log.info("with ${savedDags.size()} saved dags")
+            if (savedDags != null) {
+                log.info("with ${savedDags!!.size()} saved dags")
+            }
+
             log.info(ActorUtilities.buildMemoryLogMessage())
 
             activeDags.values().forEach { actualDag ->
@@ -196,8 +209,10 @@ abstract class ManagerBase: UntypedActor() {
         }
     }
 
-    private fun handleReport() {
+    private fun handleReport(includeUnprocessed: Boolean = true) {
         val allDags = YadelModel.AllDags.newBuilder()
+                .setIncludeUnprocessed(includeUnprocessed)
+                .setIncludeFileSaved(includeSavedDagsInReport && savedDags is FileDagStore)
 
         workers.values.forEach {
             allDags.addWorkers(it.configuration)
@@ -207,7 +222,13 @@ abstract class ManagerBase: UntypedActor() {
             allDags.addDags(it)
         }
 
-        reportActor.forward(allDags.build(), context)
+        if (includeSavedDagsInReport && savedDags !is FileDagStore) {
+            savedDags!!.values().forEach {
+                allDags.addDags(it)
+            }
+        }
+
+        reportActor.tell(allDags.build(), self)
     }
 
     private fun updateSenderStatus(newState:YadelModel.WorkerState, setTaskToUnprocessed: Boolean = false) {

@@ -57,10 +57,11 @@ namespace Org.Roylance.Yadel {
             "Zy5yb3lsYW5jZS55YWRlbC5VSVdvcmtlclN0YXRlEhQKDHRhc2tfZGlzcGxh",
             "eRgGIAEoCRITCgtkYWdfZGlzcGxheRgHIAEoCRIhChltaW51dGVzX2JlZm9y",
             "ZV90YXNrX3Jlc2V0GAggASgEEhcKD3Rhc2tfc3RhcnRfdGltZRgJIAEoCRIh",
-            "Chl0YXNrX3dvcmtpbmdfdGltZV9kaXNwbGF5GAogASgJKkkKElVJWWFkZWxS",
+            "Chl0YXNrX3dvcmtpbmdfdGltZV9kaXNwbGF5GAogASgJKmEKElVJWWFkZWxS",
             "ZXF1ZXN0VHlwZRIPCgtSRVBPUlRfREFHUxAAEg4KCkRFTEVURV9EQUcQARIS",
-            "Cg5HRVRfREFHX1NUQVRVUxACKjoKDVVJV29ya2VyU3RhdGUSFQoRQ1VSUkVO",
-            "VExZX1dPUktJTkcQABISCg5DVVJSRU5UTFlfSURMRRABYgZwcm90bzM="));
+            "Cg5HRVRfREFHX1NUQVRVUxACEhYKElJFUE9SVF9EQUdTX0FDVElWRRADKjoK",
+            "DVVJV29ya2VyU3RhdGUSFQoRQ1VSUkVOVExZX1dPUktJTkcQABISCg5DVVJS",
+            "RU5UTFlfSURMRRABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Roylance.Yadel.UIYadelRequestType), typeof(global::Org.Roylance.Yadel.UIWorkerState), }, new pbr::GeneratedClrTypeInfo[] {
@@ -82,6 +83,7 @@ namespace Org.Roylance.Yadel {
     [pbr::OriginalName("REPORT_DAGS")] ReportDags = 0,
     [pbr::OriginalName("DELETE_DAG")] DeleteDag = 1,
     [pbr::OriginalName("GET_DAG_STATUS")] GetDagStatus = 2,
+    [pbr::OriginalName("REPORT_DAGS_ACTIVE")] ReportDagsActive = 3,
   }
 
   public enum UIWorkerState {

@@ -92,4 +92,6 @@ message CompleteTask {
 message AllDags {
     repeated Dag dags = 1;
     repeated WorkerConfiguration workers = 2;
+    bool include_unprocessed = 3;
+    bool include_file_saved = 4;
 }

@@ -96,6 +96,23 @@ task execute(type: YaclibPlugin) {
             .addFromDependencies(YaclibModel.Dependency.newBuilder().setGroup("org.roylance.yaclib").setName("core").setThirdPartyDependencyVersion("$yaclibMajor.$yaclibMinor").setMajorVersion(yaclibMajor.toInteger()).setMinorVersion(yaclibMinor.toInteger()).build())
             .build()
 
+    def yaorm = YaclibModel.AuxiliaryProject.newBuilder()
+            .setProjectType(YaclibModel.ProjectType.GRADLE_PROJECT_TYPE)
+            .setHandleBefore(YaclibModel.ExecutionPhase.BUILD_PACKAGE_JAVA_SERVER)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_SET_VERSION)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_UPDATE_DEPENDENCIES)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_CLEAN)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_BUILD)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_PUBLISH)
+            .setTargetDependency(YaclibModel.Dependency.newBuilder()
+            .setMinorVersion(mainDependency.minorVersion)
+            .setMajorVersion(mainDependency.majorVersion)
+            .setGroup("org.roylance.yadel")
+            .setName("yaorm").build())
+            .addFromDependencies(mainDependency)
+            .addFromDependencies(YaclibModel.Dependency.newBuilder().setGroup("org.roylance.yaorm").setName("api").setThirdPartyDependencyVersion("$yaormMajor.$yaormMinor").setMajorVersion(yaormMajor.toInteger()).setMinorVersion(yaormMinor.toInteger()).build())
+            .build()
+
     def javaScriptUI = YaclibModel.AuxiliaryProject.newBuilder()
             .setProjectType(YaclibModel.ProjectType.NPM_PROJECT_TYPE)
             .setHandleBefore(YaclibModel.ExecutionPhase.BUILD_TYPESCRIPT_SERVER)
@@ -112,7 +129,7 @@ task execute(type: YaclibPlugin) {
             .addFromDependencies(mainDependency)
             .build()
 
-    tempAuxiliaryProjects.addProjects(cli).addProjects(plugin).addProjects(javaScriptUI)
+    tempAuxiliaryProjects.addProjects(cli).addProjects(plugin).addProjects(javaScriptUI).addProjects(yaorm)
     auxiliaryProjects = tempAuxiliaryProjects.build()
 
     println(nugetKey)

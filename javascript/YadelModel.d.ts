@@ -643,6 +643,12 @@ declare module org.roylance.yadel {
 		workers: WorkerConfiguration[];
 		getWorkers() : WorkerConfiguration[];
 		setWorkers(workers : WorkerConfiguration[]): void;
+		include_unprocessed?: boolean;
+		getIncludeUnprocessed() : boolean;
+		setIncludeUnprocessed(includeUnprocessed : boolean): void;
+		include_file_saved?: boolean;
+		getIncludeFileSaved() : boolean;
+		setIncludeFileSaved(includeFileSaved : boolean): void;
 		
 	}
 	
@@ -661,6 +667,7 @@ declare module org.roylance.yadel {
 		REPORT_DAGS = 0,
 		DELETE_DAG = 1,
 		GET_DAG_STATUS = 2,
+		REPORT_DAGS_ACTIVE = 3,
 		
 	}
 }
