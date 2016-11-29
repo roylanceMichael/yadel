@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.roylance.yadel</groupId>
   <artifactId>yaorm</artifactId>
-  <version>0.169</version>
+  <version>0.170</version>
   <dependencies>
     <dependency>
       <groupId>org.roylance.yadel</groupId>
       <artifactId>api</artifactId>
-      <version>0.169</version>
+      <version>0.170</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>

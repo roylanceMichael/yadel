@@ -228,7 +228,7 @@ abstract class ManagerBase: UntypedActor() {
             }
         }
 
-        reportActor.tell(allDags.build(), self)
+        reportActor.forward(allDags.build(), context)
     }
 
     private fun updateSenderStatus(newState:YadelModel.WorkerState, setTaskToUnprocessed: Boolean = false) {
