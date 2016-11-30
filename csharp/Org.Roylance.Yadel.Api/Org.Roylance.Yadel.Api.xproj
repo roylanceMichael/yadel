@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>5EB3DB7D-55C1-4F3C-9140-28C3CB3CEF02</ProjectGuid>
+    <ProjectGuid>15232750-BF3C-49FE-B5D8-F84E74674D75</ProjectGuid>
     <RootNamespace>Org.Roylance.Yadel.Api</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)' == ''">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)' == ''">.\bin\</OutputPath>
