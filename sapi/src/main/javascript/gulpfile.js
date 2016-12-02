@@ -25,7 +25,7 @@ gulp.task('css', function() {
     return gulp.src(['./node_modules/bootstrap/dist/css/bootstrap.css',
         './node_modules/bootstrap/dist/css/bootstrap-theme.css',
         './node_modules/font-awesome/css/font-awesome.css',
-        './css/site.css'])
+        './css/*'])
         .pipe(concat('all.css'))
         .pipe(gulp.dest('../webapp/dist'));
 });
