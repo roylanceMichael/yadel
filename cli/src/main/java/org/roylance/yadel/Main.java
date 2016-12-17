@@ -1,6 +1,6 @@
 package org.roylance.yadel;
 
-import org.roylance.yadel.api.services.MainLogic;
+import org.roylance.yadel.services.MainLogic;
 import org.roylance.yadel.sample.SampleManager;
 import org.roylance.yadel.sample.SampleWorker;
 

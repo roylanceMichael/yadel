@@ -1,11 +1,11 @@
 package org.roylance.yadel.sample
 
-import org.roylance.yadel.api.actors.WorkerBase
+import org.roylance.yadel.actors.WorkerBase
 import org.roylance.yadel.YadelModel
 import java.lang.management.ManagementFactory
 import java.util.*
 
-class SampleWorker:WorkerBase() {
+class SampleWorker : WorkerBase() {
     private val random = Random()
 
     override fun preStart() {

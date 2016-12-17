@@ -4,8 +4,8 @@ import akka.actor.ActorSelection;
 import akka.actor.ActorSystem;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
-import org.roylance.yadel.api.enums.CommonTokens;
-import org.roylance.yadel.api.utilities.ActorIpUtilities;
+import org.roylance.yadel.enums.CommonTokens;
+import org.roylance.yadel.utilities.ActorIpUtilities;
 
 class ActorSingleton {
     private static ActorSystem actorSystem;

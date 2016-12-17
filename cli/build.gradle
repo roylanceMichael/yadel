@@ -6,14 +6,12 @@ group 'org.roylance.yadel'
 version "$major.$minor"
 
 buildscript {
-    ext.kotlinVersion = "$yaclib_kotlin"
-
     repositories {
         mavenCentral()
         maven { url 'http://dl.bintray.com/roylancemichael/maven' }
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$yaclib_kotlin"
         classpath "org.roylance.yadel:plugin:$org_roylance_yadel_api"
     }
 }
@@ -31,7 +29,7 @@ repositories {
 }
 
 dependencies {
-    compile "org.roylance.yadel:api:$org_roylance_yadel_capi"
+    compile "org.roylance.yadel:core:$org_roylance_yadel_core"
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }

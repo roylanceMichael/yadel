@@ -48,8 +48,8 @@ dependencies {
 
     compile "org.apache.httpcomponents:httpclient:$yaclib_http_components"
 
-    compile "com.typesafe.akka:akka-cluster_2.11:$com_typesafe_akka_akka_cluster_"
-    compile "org.roylance.yadel:capi:$org_roylance_yadel_api"
+    compile "org.roylance.yadel:capi:$major.$minor"
+    compile "org.roylance.yadel:core:$org_roylance_yadel_core"
 
 }
 

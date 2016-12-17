@@ -29,19 +29,17 @@ task execute(type: YaclibPlugin) {
     dependencyDescriptors = new ArrayList<>()
     thirdPartyServerDependencies = new ArrayList<>()
 
-    def kotlinVersion = YaclibModel.Dependency.newBuilder().setType(YaclibModel.DependencyType.JAVA)
-            .setGroup("org.jetbrains")
-            .setName("kotlin")
-            .setThirdPartyDependencyVersion("1.0.5-2")
+    def coreDependency = YaclibModel.Dependency.newBuilder()
+            .setType(YaclibModel.DependencyType.JAVA)
+            .setGroup("org.roylance.yadel")
+            .setName("core")
+            .setMavenRepository(YaclibModel.Repository.newBuilder()
+                .setName(repoName_)
+                .setUrl(repoUrl_)
+                .setRepositoryType(YaclibModel.RepositoryType.BINTRAY).build())
             .build()
 
-    def akkaDependency = YaclibModel.Dependency.newBuilder().setType(YaclibModel.DependencyType.JAVA)
-            .setGroup("com.typesafe.akka")
-            .setName("akka-cluster_2.11")
-            .setThirdPartyDependencyVersion("2.4.7")
-            .build()
-
-    thirdPartyServerDependencies.add(akkaDependency)
+    thirdPartyServerDependencies.add(coreDependency)
 
     nugetKey = System.getenv('NUGET_KEY')
 
@@ -64,6 +62,19 @@ task execute(type: YaclibPlugin) {
             .build()
 
     def tempAuxiliaryProjects = YaclibModel.AuxiliaryProjects.newBuilder()
+
+    def core = YaclibModel.AuxiliaryProject.newBuilder()
+            .setProjectType(YaclibModel.ProjectType.GRADLE_PROJECT_TYPE)
+            .setHandleBefore(YaclibModel.ExecutionPhase.BUILD_PUBLISH_TYPESCRIPT)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_INCREMENT_VERSION)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_UPDATE_DEPENDENCIES)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_CLEAN)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_BUILD)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_PUBLISH)
+            .setTargetDependency(coreDependency)
+            .addFromDependencies(mainDependency)
+            .build()
+
     def cli = YaclibModel.AuxiliaryProject.newBuilder()
             .setProjectType(YaclibModel.ProjectType.GRADLE_PROJECT_TYPE)
             .setHandleBefore(YaclibModel.ExecutionPhase.BUILD_PACKAGE_JAVA_SERVER)
@@ -77,6 +88,7 @@ task execute(type: YaclibPlugin) {
             .setGroup("org.roylance.yadel")
             .setName("cli").build())
             .addFromDependencies(mainDependency)
+            .addFromDependencies(coreDependency)
             .build()
 
     def plugin = YaclibModel.AuxiliaryProject.newBuilder()
@@ -92,7 +104,6 @@ task execute(type: YaclibPlugin) {
             .setMajorVersion(mainDependency.majorVersion)
             .setGroup("org.roylance.yadel")
             .setName("plugin").build())
-            .addFromDependencies(mainDependency)
             .addFromDependencies(YaclibModel.Dependency.newBuilder().setGroup("org.roylance.yaclib").setName("core").setThirdPartyDependencyVersion("$yaclibMajor.$yaclibMinor").setMajorVersion(yaclibMajor.toInteger()).setMinorVersion(yaclibMinor.toInteger()).build())
             .build()
 
@@ -109,7 +120,7 @@ task execute(type: YaclibPlugin) {
             .setMajorVersion(mainDependency.majorVersion)
             .setGroup("org.roylance.yadel")
             .setName("yaorm").build())
-            .addFromDependencies(mainDependency)
+            .addFromDependencies(coreDependency)
             .addFromDependencies(YaclibModel.Dependency.newBuilder().setGroup("org.roylance.yaorm").setName("api").setThirdPartyDependencyVersion("$yaormMajor.$yaormMinor").setMajorVersion(yaormMajor.toInteger()).setMinorVersion(yaormMinor.toInteger()).build())
             .build()
 
@@ -129,7 +140,7 @@ task execute(type: YaclibPlugin) {
             .addFromDependencies(mainDependency)
             .build()
 
-    tempAuxiliaryProjects.addProjects(cli).addProjects(plugin).addProjects(javaScriptUI).addProjects(yaorm)
+    tempAuxiliaryProjects.addProjects(core).addProjects(cli).addProjects(plugin).addProjects(javaScriptUI).addProjects(yaorm)
     auxiliaryProjects = tempAuxiliaryProjects.build()
 
     println(nugetKey)
