@@ -93,6 +93,9 @@ yaorm/.gradle
 sapi/build
 *.~
 
+yaorm/build
+yaorm/.gradle
+
 csharp
 python
 javascript
