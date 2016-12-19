@@ -88,5 +88,12 @@ javascript/
 csharp/
 ui/node_modules
 capi/.gradle
+core/.gradle
+yaorm/.gradle
 sapi/build
 *.~
+
+csharp
+python
+javascript
+capi

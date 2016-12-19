@@ -2,7 +2,7 @@ package org.roylance.yadel
 
 import org.roylance.yadel.services.IDagStore
 import org.roylance.yaorm.YaormModel
-import org.roylance.yaorm.services.proto.IEntityMessageService
+import org.roylance.yaorm.services.IEntityMessageService
 import org.roylance.yaorm.utilities.YaormUtils
 
 class EntityDagStore(private val entityMessageService: IEntityMessageService) : IDagStore {
