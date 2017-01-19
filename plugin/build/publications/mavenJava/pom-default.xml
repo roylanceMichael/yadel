@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.roylance.yadel</groupId>
   <artifactId>plugin</artifactId>
-  <version>0.185</version>
+  <version>0.186</version>
   <dependencies>
     <dependency>
       <groupId>org.roylance.yaclib</groupId>
