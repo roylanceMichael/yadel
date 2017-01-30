@@ -100,3 +100,6 @@ csharp
 python
 javascript
 capi
+
+sapi/.gradle
+core/.gradle
