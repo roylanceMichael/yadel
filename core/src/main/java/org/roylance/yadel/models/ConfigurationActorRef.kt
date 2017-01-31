@@ -1,8 +1,8 @@
 package org.roylance.yadel.models
 
-import akka.actor.ActorRef
 import org.roylance.yadel.YadelModel
+import org.roylance.yadel.services.IActor
 
 class ConfigurationActorRef(
-        val actorRef: ActorRef,
+        val actorRef: IActor,
         val configuration: YadelModel.WorkerConfiguration)

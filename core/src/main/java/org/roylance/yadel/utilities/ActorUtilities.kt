@@ -1,9 +1,12 @@
 package org.roylance.yadel.utilities
 
+import akka.actor.ActorContext
+import akka.actor.ActorRef
 import org.joda.time.LocalDateTime
 import org.joda.time.Minutes
 import org.roylance.yadel.YadelModel
 import org.roylance.yadel.YadelReport
+import org.roylance.yadel.services.IActor
 import org.roylance.yadel.services.IDagStore
 import scala.concurrent.duration.Duration
 import java.util.*
@@ -186,5 +189,35 @@ object ActorUtilities {
         }
 
         return workerConfiguration.build()
+    }
+
+    fun getActorRefKey(actorRef: ActorRef):String {
+        return actorRef.path().address().toString()
+    }
+
+    fun buildIActor(baseActorRef: ActorRef,
+                    baseActorContext: ActorContext,
+                    sender: ActorRef): IActor {
+        return object: IActor {
+            override fun forward(message: Any) {
+                sender.forward(message, baseActorContext)
+            }
+
+            override fun tell(message: Any) {
+                sender.tell(message, baseActorRef)
+            }
+
+            override fun key(): String {
+                return sender.path().address().toString()
+            }
+
+            override fun host(): String {
+                return sender.path().address().host().get()
+            }
+
+            override fun port(): String {
+                return sender.path().address().port().get().toString()
+            }
+        }
     }
 }

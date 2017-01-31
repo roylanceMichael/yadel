@@ -92,6 +92,9 @@ core/.gradle
 yaorm/.gradle
 sapi/build
 *.~
+core/build
+core/.idea
+core/gradle
 
 yaorm/build
 yaorm/.gradle
