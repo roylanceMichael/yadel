@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #// This file was auto-generated, but can be altered. It will not be overwritten.
-host="192.168.12.130"
-#host="192.168.1.5"
+host="192.168.1.7"
 nodeHost1=${host}
 nodeHost2=${host}
 nodePort1=2345

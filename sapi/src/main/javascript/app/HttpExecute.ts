@@ -13,7 +13,11 @@ export class HttpExecute implements IHttpExecute {
             url: url,
             method: this.httpPost,
             data: data
-        }).success(onSuccess)
-          .error(onError);
+        }).then(function(response) {
+                onSuccess(response.data);
+            },
+            function(response) {
+                onError(response.data);
+            });
     }
 }
