@@ -318,7 +318,6 @@ class ManagerService(
 
                     workers[workerKey] = ConfigurationActorRef(openWorker.actorRef, worker.build())
 
-
                     openWorker.actorRef.tell(task.build())
                 }
             }

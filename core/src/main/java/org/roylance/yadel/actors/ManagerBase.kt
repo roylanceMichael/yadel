@@ -53,7 +53,7 @@ abstract class ManagerBase: UntypedActor() {
     override fun preStart() {
         super.preStart()
 
-        println(ActorUtilities.buildMemoryLogMessage())
+        logger.info(ActorUtilities.buildMemoryLogMessage())
 
         super.preStart()
         val runnable = Runnable {
