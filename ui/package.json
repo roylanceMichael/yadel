@@ -1,10 +1,10 @@
 {
   "name": "org.roylance.yadel.ui",
-  "version": "0.191.0",
+  "version": "0.192.0",
   "description": "common UI methods for yadel dags",
   "author": "roylance.michael@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "org.roylance.yadel.api": "0.191.0"
+    "org.roylance.yadel.api": "0.192.0"
   }
 }

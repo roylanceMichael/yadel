@@ -5,7 +5,7 @@ import SwiftProtobuf
 
 public class ReportService: IReportService {
     let baseUrl: String
-    init(baseUrl: String) {
+    public init(baseUrl: String) {
         self.baseUrl = baseUrl
     }
 	public func delete_dag(request: Org_Roylance_Yadel_UIYadelRequest, onSuccess: @escaping (_ response: Org_Roylance_Yadel_UIYadelResponse) -> Void, onError: @escaping (_ response: String) -> Void) {
