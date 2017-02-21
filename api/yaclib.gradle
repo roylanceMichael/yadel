@@ -22,6 +22,7 @@ buildscript {
 task execute(type: YaclibPlugin) {
     def parentDir = new File(System.getProperty("user.dir")).parentFile.toString()
 
+    processSwift = true
     location = parentDir
     mainModel = "org.roylance.yadel.YadelReport"
     mainController = "org.roylance.yadel.YadelController"

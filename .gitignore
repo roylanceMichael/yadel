@@ -106,3 +106,6 @@ capi
 
 sapi/.gradle
 core/.gradle
+build
+Carthage
+Cartfile.resolved
