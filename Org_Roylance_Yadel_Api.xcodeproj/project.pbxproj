@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E344CC7976B60677A8B6CAB /* yadel_report.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70834850B3F669C10C0F9DB1 /* yadel_report.pb.swift */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5F864A2C8D800150255246CD /* yadel_controller.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03054D1887867EBB6064E42B /* yadel_controller.pb.swift */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		71D74AF5A672797BF6D20FBD /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88F4D61A29B0BE4E25DF960 /* ReportService.swift */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		73CE4C6AA8D75456CD749224 /* SwiftProtobuf.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBC40C28E3F673797B9ECE5 /* SwiftProtobuf.framework */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7AF949D4847DD89CA342B7EE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03D64784AB5DC2871DBFD629 /* Alamofire.framework */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7C2447179332DB2C5AB51533 /* yadel_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E641A29CFBE84B1E85D051 /* yadel_model.pb.swift */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B5B648A0902630538C53690A /* IReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD44AB8187287F24DFF07A /* IReportService.swift */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C6E0498290015B48264C59D2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D64784AB5DC2871DBFD629 /* Alamofire.framework */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F16D46C18376CD20D9DD9B60 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBC40C28E3F673797B9ECE5 /* SwiftProtobuf.framework */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1C01486F92776F75E6E5A7B5 /* SwiftProtobuf.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 804F4E90A003FDE954AA125F /* SwiftProtobuf.framework */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20654D5B875A154621FD58C6 /* IReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FE4FFA8792226DE88799A0 /* IReportService.swift */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E0E464EA27988BA6E2BF477 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 283B42989F4ED718EEDAC665 /* Alamofire.framework */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		380442D78AC7802947F47598 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F4313AA4E4E9756DCDD40 /* ReportService.swift */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B88B400AA601D2DA8D747CB8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283B42989F4ED718EEDAC665 /* Alamofire.framework */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0D04AC59E831784BD888862 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804F4E90A003FDE954AA125F /* SwiftProtobuf.framework */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DDF8400AAA95FA1B37BC73E2 /* yadel_controller.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F143328BCFD7E9E8D6E645 /* yadel_controller.pb.swift */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E683446380FE16FAF4A81B74 /* yadel_report.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8044B7B86B0516D690AC8D /* yadel_report.pb.swift */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FD8755A61E5A30C400087F70 /* Org_Roylance_Yadel_Api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD87559C1E5A30C300087F70 /* Org_Roylance_Yadel_Api.framework */; };
+		FE934CDD8A8D26CF767536D1 /* yadel_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561A4908A8A144DD1BDF701F /* yadel_model.pb.swift */; settings = {ATTRIBUTES = (Weak, CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +30,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C6AD4D01B1C953D0EB462149 /* Embed Frameworks */ = {
+		E5F5471EA58DAEE764837CE6 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7AF949D4847DD89CA342B7EE /* Alamofire.framework in Embed Frameworks */,
-				73CE4C6AA8D75456CD749224 /* SwiftProtobuf.framework in Embed Frameworks */,
+				2E0E464EA27988BA6E2BF477 /* Alamofire.framework in Embed Frameworks */,
+				1C01486F92776F75E6E5A7B5 /* SwiftProtobuf.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,13 +45,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03054D1887867EBB6064E42B /* yadel_controller.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = yadel_controller.pb.swift; path = swift/Source/yadel_controller.pb.swift; sourceTree = SOURCE_ROOT; };
-		03D64784AB5DC2871DBFD629 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
-		10E641A29CFBE84B1E85D051 /* yadel_model.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = yadel_model.pb.swift; path = swift/Source/yadel_model.pb.swift; sourceTree = SOURCE_ROOT; };
-		1DBC40C28E3F673797B9ECE5 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftProtobuf.framework; path = Carthage/Build/iOS/SwiftProtobuf.framework; sourceTree = SOURCE_ROOT; };
-		70834850B3F669C10C0F9DB1 /* yadel_report.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = yadel_report.pb.swift; path = swift/Source/yadel_report.pb.swift; sourceTree = SOURCE_ROOT; };
-		D88F4D61A29B0BE4E25DF960 /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReportService.swift; path = swift/Source/ReportService.swift; sourceTree = SOURCE_ROOT; };
-		E6BD44AB8187287F24DFF07A /* IReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IReportService.swift; path = swift/Source/IReportService.swift; sourceTree = SOURCE_ROOT; };
+		0A8044B7B86B0516D690AC8D /* yadel_report.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = yadel_report.pb.swift; path = swift/Source/yadel_report.pb.swift; sourceTree = SOURCE_ROOT; };
+		283B42989F4ED718EEDAC665 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		561A4908A8A144DD1BDF701F /* yadel_model.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = yadel_model.pb.swift; path = swift/Source/yadel_model.pb.swift; sourceTree = SOURCE_ROOT; };
+		660F4313AA4E4E9756DCDD40 /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReportService.swift; path = swift/Source/ReportService.swift; sourceTree = SOURCE_ROOT; };
+		804F4E90A003FDE954AA125F /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftProtobuf.framework; path = Carthage/Build/iOS/SwiftProtobuf.framework; sourceTree = SOURCE_ROOT; };
+		99F143328BCFD7E9E8D6E645 /* yadel_controller.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = yadel_controller.pb.swift; path = swift/Source/yadel_controller.pb.swift; sourceTree = SOURCE_ROOT; };
+		B7FE4FFA8792226DE88799A0 /* IReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IReportService.swift; path = swift/Source/IReportService.swift; sourceTree = SOURCE_ROOT; };
 		FD87559C1E5A30C300087F70 /* Org_Roylance_Yadel_Api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Org_Roylance_Yadel_Api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8755A01E5A30C300087F70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,8 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6E0498290015B48264C59D2 /* Alamofire.framework in Frameworks */,
-				F16D46C18376CD20D9DD9B60 /* SwiftProtobuf.framework in Frameworks */,
+				B88B400AA601D2DA8D747CB8 /* Alamofire.framework in Frameworks */,
+				D0D04AC59E831784BD888862 /* SwiftProtobuf.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,13 +82,13 @@
 			children = (
 				FD87559E1E5A30C300087F70,
 				FD87559D1E5A30C300087F70 /* Products */,
-				E6BD44AB8187287F24DFF07A /* IReportService.swift */,
-				D88F4D61A29B0BE4E25DF960 /* ReportService.swift */,
-				03054D1887867EBB6064E42B /* yadel_controller.pb.swift */,
-				10E641A29CFBE84B1E85D051 /* yadel_model.pb.swift */,
-				70834850B3F669C10C0F9DB1 /* yadel_report.pb.swift */,
-				03D64784AB5DC2871DBFD629 /* Alamofire.framework */,
-				1DBC40C28E3F673797B9ECE5 /* SwiftProtobuf.framework */,
+				B7FE4FFA8792226DE88799A0 /* IReportService.swift */,
+				660F4313AA4E4E9756DCDD40 /* ReportService.swift */,
+				99F143328BCFD7E9E8D6E645 /* yadel_controller.pb.swift */,
+				561A4908A8A144DD1BDF701F /* yadel_model.pb.swift */,
+				0A8044B7B86B0516D690AC8D /* yadel_report.pb.swift */,
+				283B42989F4ED718EEDAC665 /* Alamofire.framework */,
+				804F4E90A003FDE954AA125F /* SwiftProtobuf.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,7 +121,7 @@
 				FD8755981E5A30C300087F70 /* Frameworks */,
 				FD8755991E5A30C300087F70 /* Headers */,
 				FD87559A1E5A30C300087F70 /* Resources */,
-				C6AD4D01B1C953D0EB462149 /* Embed Frameworks */,
+				E5F5471EA58DAEE764837CE6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,11 +193,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5B648A0902630538C53690A /* IReportService.swift in Sources */,
-				71D74AF5A672797BF6D20FBD /* ReportService.swift in Sources */,
-				5F864A2C8D800150255246CD /* yadel_controller.pb.swift in Sources */,
-				7C2447179332DB2C5AB51533 /* yadel_model.pb.swift in Sources */,
-				2E344CC7976B60677A8B6CAB /* yadel_report.pb.swift in Sources */,
+				20654D5B875A154621FD58C6 /* IReportService.swift in Sources */,
+				380442D78AC7802947F47598 /* ReportService.swift in Sources */,
+				DDF8400AAA95FA1B37BC73E2 /* yadel_controller.pb.swift in Sources */,
+				FE934CDD8A8D26CF767536D1 /* yadel_model.pb.swift in Sources */,
+				E683446380FE16FAF4A81B74 /* yadel_report.pb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +235,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.192;
+				CURRENT_PROJECT_VERSION = 0.194;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -288,7 +288,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.192;
+				CURRENT_PROJECT_VERSION = 0.194;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
