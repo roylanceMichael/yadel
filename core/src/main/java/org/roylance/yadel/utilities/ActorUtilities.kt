@@ -11,6 +11,7 @@ import org.roylance.yadel.services.IDagStore
 import scala.concurrent.duration.Duration
 import java.util.*
 import java.util.concurrent.TimeUnit
+import kotlin.collections.HashMap
 
 object ActorUtilities {
     const val MB = 1024*1024
@@ -220,4 +221,133 @@ object ActorUtilities {
             }
         }
     }
+
+    fun buildWorkerProperties(): YadelModel.WorkerProperties {
+        val versionSplit = System.getProperty("os.version").split(".")
+        val workerProperties = YadelModel.WorkerProperties.newBuilder()
+                .setId(UUID.randomUUID().toString())
+                .setOsBitVersion(getArchitecture())
+                .setOsTypeVersion(getOsVersion())
+
+        if (versionSplit.size > 2) {
+            workerProperties.osMajorVersion = versionSplit[0]
+            workerProperties.osMinorVersion = versionSplit[1]
+            workerProperties.osBuildVersion = versionSplit[2]
+        }
+        if (versionSplit.size > 1) {
+            workerProperties.osMajorVersion = versionSplit[0]
+            workerProperties.osMinorVersion = versionSplit[1]
+        }
+        if (versionSplit.size == 1) {
+            workerProperties.osMajorVersion = versionSplit[0]
+        }
+
+        return workerProperties.build()
+    }
+
+    fun getArchitecture(): YadelModel.OSBitVersion {
+        val architecture = System.getProperty("os.arch").toLowerCase()
+        if (architecture == "x86_64") {
+            return YadelModel.OSBitVersion.V_64_BIT_VERSION
+        }
+        return YadelModel.OSBitVersion.V_32_BIT_VERSION
+    }
+
+    fun getOsVersion(): YadelModel.OSTypeVersion {
+        val osName = System.getProperty("os.name").toLowerCase()
+
+        if (osName.indexOf("win") >= 0) {
+            return YadelModel.OSTypeVersion.WIN_OS_TYPE_VERSION
+        }
+        else if (osName.indexOf("mac") >= 0) {
+            return YadelModel.OSTypeVersion.MAC_OS_TYPE_VERSION
+        }
+        return YadelModel.OSTypeVersion.LINUX_OS_TYPE_VERSION
+    }
+
+    fun comparison(task: YadelModel.Task, worker: YadelModel.WorkerConfiguration) {
+        task.filtersList.forEach {  }
+
+    }
+
+    fun filterComparison(filter: YadelModel.WorkerFilter, worker: YadelModel.WorkerConfiguration): Boolean {
+        var firstTrue = true
+        var secondTrue = true
+        if (filter.hasFirstComparison()) {
+            firstTrue = filterComparison(filter.firstComparison, worker)
+        }
+        else if (filter.hasFirstProperty()) {
+            firstTrue = worker.propertiesList.any {
+                it.key == filter.firstProperty.key && propertyComparison(it, filter.firstProperty, filter.firstOperator)
+            }
+        }
+
+        if (filter.hasSecondComparison()) {
+            secondTrue = filterComparison(filter.secondComparison, worker)
+        }
+        else if (filter.hasSecondComparison()) {
+            secondTrue = worker.propertiesList.any {
+
+                it.key == filter.secondProperty.key && propertyComparison(it, filter.secondProperty, filter.secondOperator)
+            }
+        }
+
+        if (filter.connection == YadelModel.WorkerConnection.AND) {
+            return firstTrue && secondTrue
+        }
+
+        // none case as well
+        return firstTrue || secondTrue
+    }
+
+    fun propertyComparison(firstProperty: YadelModel.WorkerProperty,
+                           compareProperty: YadelModel.WorkerProperty,
+                           operator: YadelModel.WorkerOperationsComparison): Boolean {
+        if (operator == YadelModel.WorkerOperationsComparison.EQUALS_OPERATION) {
+            return firstProperty.value == compareProperty.value
+        }
+
+        if (operator == YadelModel.WorkerOperationsComparison.NOT_EQUALS_OPERATION) {
+            return firstProperty.value != compareProperty.value
+        }
+
+        if (operator == YadelModel.WorkerOperationsComparison.CONTAINS_OPERATION) {
+            return compareProperty.value.contains(firstProperty.value)
+        }
+
+        if (operator == YadelModel.WorkerOperationsComparison.MATCHES_OPERATION) {
+            return Regex(compareProperty.value).matches(compareProperty.value)
+        }
+
+        val firstNumber = convertToDouble(firstProperty.value)
+        val compareNumber = convertToDouble(compareProperty.value)
+
+        if (firstNumber == null || compareNumber == null) {
+            return true
+        }
+
+        if (operator == YadelModel.WorkerOperationsComparison.GREATER_THAN_OPERATION) {
+            return firstNumber > compareNumber
+        }
+
+        if (operator == YadelModel.WorkerOperationsComparison.LESS_THAN_OPERATION) {
+            return firstNumber < compareNumber
+        }
+
+        if (operator == YadelModel.WorkerOperationsComparison.GREATER_THAN_OR_EQUALS_OPERATION) {
+            return firstNumber >= compareNumber
+        }
+
+        if (operator == YadelModel.WorkerOperationsComparison.LESS_THAN_OR_EQUALS_OPERATION) {
+            return firstNumber <= compareNumber
+        }
+
+        return true
+    }
+
+    fun convertToDouble(item: String): Double? {
+        return item.toDoubleOrNull()
+    }
+
+
 }

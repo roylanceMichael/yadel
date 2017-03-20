@@ -55,7 +55,12 @@ abstract class WorkerBase: UntypedActor() {
         val runnable = Runnable {
             self.tell(YadelModel.WorkerState.IDLE, this.self)
         }
-        context.system().scheduler().schedule(ActorUtilities.OneMinute, ActorUtilities.OneMinute, runnable, this.context.system().dispatcher())
+        context.system().scheduler().schedule(ActorUtilities.OneMinute,
+                ActorUtilities.OneMinute,
+                runnable,
+                this.context.system().dispatcher())
+
+        self.tell(SendInitialWorkerProperties, this.self)
     }
 
     override fun postStop() {
@@ -92,6 +97,10 @@ abstract class WorkerBase: UntypedActor() {
             logger.info("handling member up")
             this.handleMemberUp(message)
         }
+
+        if (message == SendInitialWorkerProperties) {
+            getManagerSelection()?.tell(ActorUtilities.buildWorkerProperties(), self)
+        }
         // inherited class will catch work to be done
     }
 
@@ -107,7 +116,7 @@ abstract class WorkerBase: UntypedActor() {
                 .actorSelection(foundManagerAddress + CommonTokens.ManagerLocation)
     }
 
-    private fun handleCurrentClusterState(state:ClusterEvent.CurrentClusterState) {
+    private fun handleCurrentClusterState(state: ClusterEvent.CurrentClusterState) {
         state.members.forEach {
             if (it.status() == MemberStatus.up()) {
                 this.register(it)
@@ -115,7 +124,7 @@ abstract class WorkerBase: UntypedActor() {
         }
     }
 
-    private fun handleMemberUp(memberUp:ClusterEvent.MemberUp) {
+    private fun handleMemberUp(memberUp: ClusterEvent.MemberUp) {
         this.register(memberUp.member())
     }
 
@@ -130,5 +139,6 @@ abstract class WorkerBase: UntypedActor() {
 
     companion object {
         private const val MaxArraySize = 10
+        private const val SendInitialWorkerProperties = 7552
     }
 }

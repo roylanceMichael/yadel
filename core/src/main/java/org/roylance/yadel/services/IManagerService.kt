@@ -22,10 +22,11 @@ interface IManagerService {
     fun updateSenderStatus(newState: YadelModel.WorkerState,
                            setTaskToUnprocessed: Boolean = false,
                            sender: IActor)
-    fun getOpenWorker(): ConfigurationActorRef?
+    fun getOpenWorker(task: YadelModel.Task.Builder): ConfigurationActorRef?
     fun freeAnyWorkersRunningOverAllowedAmount()
     fun handleRegistration(sender: IActor)
     fun handleTermination(sender: IActor)
     fun handleEnsureWorkersWorking()
     fun handleTellWorkersToDoNewDagWork()
+    fun updateWorkerProperties(actor: IActor, properties: YadelModel.WorkerProperties)
 }

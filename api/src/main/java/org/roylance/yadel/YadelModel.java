@@ -15,6 +15,247 @@ public final class YadelModel {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * Protobuf enum {@code org.roylance.yadel.OSBitVersion}
+   */
+  public enum OSBitVersion
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>V_64_BIT_VERSION = 0;</code>
+     */
+    V_64_BIT_VERSION(0),
+    /**
+     * <code>V_32_BIT_VERSION = 1;</code>
+     */
+    V_32_BIT_VERSION(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>V_64_BIT_VERSION = 0;</code>
+     */
+    public static final int V_64_BIT_VERSION_VALUE = 0;
+    /**
+     * <code>V_32_BIT_VERSION = 1;</code>
+     */
+    public static final int V_32_BIT_VERSION_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OSBitVersion valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static OSBitVersion forNumber(int value) {
+      switch (value) {
+        case 0: return V_64_BIT_VERSION;
+        case 1: return V_32_BIT_VERSION;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OSBitVersion>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        OSBitVersion> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<OSBitVersion>() {
+            public OSBitVersion findValueByNumber(int number) {
+              return OSBitVersion.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final OSBitVersion[] VALUES = values();
+
+    public static OSBitVersion valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OSBitVersion(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:org.roylance.yadel.OSBitVersion)
+  }
+
+  /**
+   * Protobuf enum {@code org.roylance.yadel.OSTypeVersion}
+   */
+  public enum OSTypeVersion
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>MAC_OS_TYPE_VERSION = 0;</code>
+     */
+    MAC_OS_TYPE_VERSION(0),
+    /**
+     * <code>WIN_OS_TYPE_VERSION = 1;</code>
+     */
+    WIN_OS_TYPE_VERSION(1),
+    /**
+     * <code>UBUNTU_OS_TYPE_VERSION = 2;</code>
+     */
+    UBUNTU_OS_TYPE_VERSION(2),
+    /**
+     * <code>CENTOS_OS_TYPE_VERSION = 3;</code>
+     */
+    CENTOS_OS_TYPE_VERSION(3),
+    /**
+     * <code>FEDORA_OS_TYPE_VERSION = 4;</code>
+     */
+    FEDORA_OS_TYPE_VERSION(4),
+    /**
+     * <code>REDHAT_OS_TYPE_VERSION = 5;</code>
+     */
+    REDHAT_OS_TYPE_VERSION(5),
+    /**
+     * <code>LINUX_OS_TYPE_VERSION = 6;</code>
+     */
+    LINUX_OS_TYPE_VERSION(6),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>MAC_OS_TYPE_VERSION = 0;</code>
+     */
+    public static final int MAC_OS_TYPE_VERSION_VALUE = 0;
+    /**
+     * <code>WIN_OS_TYPE_VERSION = 1;</code>
+     */
+    public static final int WIN_OS_TYPE_VERSION_VALUE = 1;
+    /**
+     * <code>UBUNTU_OS_TYPE_VERSION = 2;</code>
+     */
+    public static final int UBUNTU_OS_TYPE_VERSION_VALUE = 2;
+    /**
+     * <code>CENTOS_OS_TYPE_VERSION = 3;</code>
+     */
+    public static final int CENTOS_OS_TYPE_VERSION_VALUE = 3;
+    /**
+     * <code>FEDORA_OS_TYPE_VERSION = 4;</code>
+     */
+    public static final int FEDORA_OS_TYPE_VERSION_VALUE = 4;
+    /**
+     * <code>REDHAT_OS_TYPE_VERSION = 5;</code>
+     */
+    public static final int REDHAT_OS_TYPE_VERSION_VALUE = 5;
+    /**
+     * <code>LINUX_OS_TYPE_VERSION = 6;</code>
+     */
+    public static final int LINUX_OS_TYPE_VERSION_VALUE = 6;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OSTypeVersion valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static OSTypeVersion forNumber(int value) {
+      switch (value) {
+        case 0: return MAC_OS_TYPE_VERSION;
+        case 1: return WIN_OS_TYPE_VERSION;
+        case 2: return UBUNTU_OS_TYPE_VERSION;
+        case 3: return CENTOS_OS_TYPE_VERSION;
+        case 4: return FEDORA_OS_TYPE_VERSION;
+        case 5: return REDHAT_OS_TYPE_VERSION;
+        case 6: return LINUX_OS_TYPE_VERSION;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OSTypeVersion>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        OSTypeVersion> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<OSTypeVersion>() {
+            public OSTypeVersion findValueByNumber(int number) {
+              return OSTypeVersion.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final OSTypeVersion[] VALUES = values();
+
+    public static OSTypeVersion valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OSTypeVersion(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:org.roylance.yadel.OSTypeVersion)
+  }
+
+  /**
    * Protobuf enum {@code org.roylance.yadel.WorkerState}
    */
   public enum WorkerState
@@ -86,7 +327,7 @@ public final class YadelModel {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(0);
+      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final WorkerState[] VALUES = values();
@@ -175,7 +416,7 @@ public final class YadelModel {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(1);
+      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final WorkerToManagerMessageType[] VALUES = values();
@@ -264,7 +505,7 @@ public final class YadelModel {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(2);
+      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final ManagerToManagerMessageType[] VALUES = values();
@@ -362,7 +603,7 @@ public final class YadelModel {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(3);
+      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final ActorRole[] VALUES = values();
@@ -388,109 +629,3114 @@ public final class YadelModel {
     // @@protoc_insertion_point(enum_scope:org.roylance.yadel.ActorRole)
   }
 
-  public interface WorkerConfigurationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.roylance.yadel.WorkerConfiguration)
+  /**
+   * Protobuf enum {@code org.roylance.yadel.WorkerOperationsComparison}
+   */
+  public enum WorkerOperationsComparison
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>EQUALS_OPERATION = 0;</code>
+     */
+    EQUALS_OPERATION(0),
+    /**
+     * <code>NOT_EQUALS_OPERATION = 1;</code>
+     */
+    NOT_EQUALS_OPERATION(1),
+    /**
+     * <code>GREATER_THAN_OPERATION = 2;</code>
+     */
+    GREATER_THAN_OPERATION(2),
+    /**
+     * <code>LESS_THAN_OPERATION = 3;</code>
+     */
+    LESS_THAN_OPERATION(3),
+    /**
+     * <code>GREATER_THAN_OR_EQUALS_OPERATION = 4;</code>
+     */
+    GREATER_THAN_OR_EQUALS_OPERATION(4),
+    /**
+     * <code>LESS_THAN_OR_EQUALS_OPERATION = 5;</code>
+     */
+    LESS_THAN_OR_EQUALS_OPERATION(5),
+    /**
+     * <code>CONTAINS_OPERATION = 6;</code>
+     */
+    CONTAINS_OPERATION(6),
+    /**
+     * <code>MATCHES_OPERATION = 7;</code>
+     */
+    MATCHES_OPERATION(7),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>EQUALS_OPERATION = 0;</code>
+     */
+    public static final int EQUALS_OPERATION_VALUE = 0;
+    /**
+     * <code>NOT_EQUALS_OPERATION = 1;</code>
+     */
+    public static final int NOT_EQUALS_OPERATION_VALUE = 1;
+    /**
+     * <code>GREATER_THAN_OPERATION = 2;</code>
+     */
+    public static final int GREATER_THAN_OPERATION_VALUE = 2;
+    /**
+     * <code>LESS_THAN_OPERATION = 3;</code>
+     */
+    public static final int LESS_THAN_OPERATION_VALUE = 3;
+    /**
+     * <code>GREATER_THAN_OR_EQUALS_OPERATION = 4;</code>
+     */
+    public static final int GREATER_THAN_OR_EQUALS_OPERATION_VALUE = 4;
+    /**
+     * <code>LESS_THAN_OR_EQUALS_OPERATION = 5;</code>
+     */
+    public static final int LESS_THAN_OR_EQUALS_OPERATION_VALUE = 5;
+    /**
+     * <code>CONTAINS_OPERATION = 6;</code>
+     */
+    public static final int CONTAINS_OPERATION_VALUE = 6;
+    /**
+     * <code>MATCHES_OPERATION = 7;</code>
+     */
+    public static final int MATCHES_OPERATION_VALUE = 7;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkerOperationsComparison valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static WorkerOperationsComparison forNumber(int value) {
+      switch (value) {
+        case 0: return EQUALS_OPERATION;
+        case 1: return NOT_EQUALS_OPERATION;
+        case 2: return GREATER_THAN_OPERATION;
+        case 3: return LESS_THAN_OPERATION;
+        case 4: return GREATER_THAN_OR_EQUALS_OPERATION;
+        case 5: return LESS_THAN_OR_EQUALS_OPERATION;
+        case 6: return CONTAINS_OPERATION;
+        case 7: return MATCHES_OPERATION;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkerOperationsComparison>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WorkerOperationsComparison> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WorkerOperationsComparison>() {
+            public WorkerOperationsComparison findValueByNumber(int number) {
+              return WorkerOperationsComparison.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(6);
+    }
+
+    private static final WorkerOperationsComparison[] VALUES = values();
+
+    public static WorkerOperationsComparison valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkerOperationsComparison(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:org.roylance.yadel.WorkerOperationsComparison)
+  }
+
+  /**
+   * Protobuf enum {@code org.roylance.yadel.WorkerConnection}
+   */
+  public enum WorkerConnection
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>NONE = 0;</code>
+     */
+    NONE(0),
+    /**
+     * <code>AND = 1;</code>
+     */
+    AND(1),
+    /**
+     * <code>OR = 2;</code>
+     */
+    OR(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>NONE = 0;</code>
+     */
+    public static final int NONE_VALUE = 0;
+    /**
+     * <code>AND = 1;</code>
+     */
+    public static final int AND_VALUE = 1;
+    /**
+     * <code>OR = 2;</code>
+     */
+    public static final int OR_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkerConnection valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static WorkerConnection forNumber(int value) {
+      switch (value) {
+        case 0: return NONE;
+        case 1: return AND;
+        case 2: return OR;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkerConnection>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WorkerConnection> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WorkerConnection>() {
+            public WorkerConnection findValueByNumber(int number) {
+              return WorkerConnection.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.roylance.yadel.YadelModel.getDescriptor().getEnumTypes().get(7);
+    }
+
+    private static final WorkerConnection[] VALUES = values();
+
+    public static WorkerConnection valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkerConnection(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:org.roylance.yadel.WorkerConnection)
+  }
+
+  public interface WorkerPropertyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.roylance.yadel.WorkerProperty)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional string ip = 2;</code>
+     * <code>string key = 2;</code>
+     */
+    java.lang.String getKey();
+    /**
+     * <code>string key = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
+    /**
+     * <code>string value = 3;</code>
+     */
+    java.lang.String getValue();
+    /**
+     * <code>string value = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
+
+    /**
+     * <code>double number_value = 4;</code>
+     */
+    double getNumberValue();
+
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 5;</code>
+     */
+    int getOsBitVersionValue();
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 5;</code>
+     */
+    org.roylance.yadel.YadelModel.OSBitVersion getOsBitVersion();
+
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 6;</code>
+     */
+    int getOsTypeVersionValue();
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 6;</code>
+     */
+    org.roylance.yadel.YadelModel.OSTypeVersion getOsTypeVersion();
+  }
+  /**
+   * Protobuf type {@code org.roylance.yadel.WorkerProperty}
+   */
+  public  static final class WorkerProperty extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:org.roylance.yadel.WorkerProperty)
+      WorkerPropertyOrBuilder {
+    // Use WorkerProperty.newBuilder() to construct.
+    private WorkerProperty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerProperty() {
+      id_ = "";
+      key_ = "";
+      value_ = "";
+      numberValue_ = 0D;
+      osBitVersion_ = 0;
+      osTypeVersion_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private WorkerProperty(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
+              break;
+            }
+            case 33: {
+
+              numberValue_ = input.readDouble();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              osBitVersion_ = rawValue;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              osTypeVersion_ = rawValue;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerProperty_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerProperty_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.roylance.yadel.YadelModel.WorkerProperty.class, org.roylance.yadel.YadelModel.WorkerProperty.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object key_;
+    /**
+     * <code>string key = 2;</code>
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string key = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object value_;
+    /**
+     * <code>string value = 3;</code>
+     */
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string value = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NUMBER_VALUE_FIELD_NUMBER = 4;
+    private double numberValue_;
+    /**
+     * <code>double number_value = 4;</code>
+     */
+    public double getNumberValue() {
+      return numberValue_;
+    }
+
+    public static final int OS_BIT_VERSION_FIELD_NUMBER = 5;
+    private int osBitVersion_;
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 5;</code>
+     */
+    public int getOsBitVersionValue() {
+      return osBitVersion_;
+    }
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 5;</code>
+     */
+    public org.roylance.yadel.YadelModel.OSBitVersion getOsBitVersion() {
+      org.roylance.yadel.YadelModel.OSBitVersion result = org.roylance.yadel.YadelModel.OSBitVersion.valueOf(osBitVersion_);
+      return result == null ? org.roylance.yadel.YadelModel.OSBitVersion.UNRECOGNIZED : result;
+    }
+
+    public static final int OS_TYPE_VERSION_FIELD_NUMBER = 6;
+    private int osTypeVersion_;
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 6;</code>
+     */
+    public int getOsTypeVersionValue() {
+      return osTypeVersion_;
+    }
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 6;</code>
+     */
+    public org.roylance.yadel.YadelModel.OSTypeVersion getOsTypeVersion() {
+      org.roylance.yadel.YadelModel.OSTypeVersion result = org.roylance.yadel.YadelModel.OSTypeVersion.valueOf(osTypeVersion_);
+      return result == null ? org.roylance.yadel.YadelModel.OSTypeVersion.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, key_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, value_);
+      }
+      if (numberValue_ != 0D) {
+        output.writeDouble(4, numberValue_);
+      }
+      if (osBitVersion_ != org.roylance.yadel.YadelModel.OSBitVersion.V_64_BIT_VERSION.getNumber()) {
+        output.writeEnum(5, osBitVersion_);
+      }
+      if (osTypeVersion_ != org.roylance.yadel.YadelModel.OSTypeVersion.MAC_OS_TYPE_VERSION.getNumber()) {
+        output.writeEnum(6, osTypeVersion_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, key_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, value_);
+      }
+      if (numberValue_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, numberValue_);
+      }
+      if (osBitVersion_ != org.roylance.yadel.YadelModel.OSBitVersion.V_64_BIT_VERSION.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, osBitVersion_);
+      }
+      if (osTypeVersion_ != org.roylance.yadel.YadelModel.OSTypeVersion.MAC_OS_TYPE_VERSION.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, osTypeVersion_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.roylance.yadel.YadelModel.WorkerProperty)) {
+        return super.equals(obj);
+      }
+      org.roylance.yadel.YadelModel.WorkerProperty other = (org.roylance.yadel.YadelModel.WorkerProperty) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && getKey()
+          .equals(other.getKey());
+      result = result && getValue()
+          .equals(other.getValue());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getNumberValue())
+          == java.lang.Double.doubleToLongBits(
+              other.getNumberValue()));
+      result = result && osBitVersion_ == other.osBitVersion_;
+      result = result && osTypeVersion_ == other.osTypeVersion_;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (37 * hash) + NUMBER_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getNumberValue()));
+      hash = (37 * hash) + OS_BIT_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + osBitVersion_;
+      hash = (37 * hash) + OS_TYPE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + osTypeVersion_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.roylance.yadel.YadelModel.WorkerProperty parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperty parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperty parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperty parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperty parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperty parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperty parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperty parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperty parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperty parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.roylance.yadel.YadelModel.WorkerProperty prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code org.roylance.yadel.WorkerProperty}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:org.roylance.yadel.WorkerProperty)
+        org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerProperty_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerProperty_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.roylance.yadel.YadelModel.WorkerProperty.class, org.roylance.yadel.YadelModel.WorkerProperty.Builder.class);
+      }
+
+      // Construct using org.roylance.yadel.YadelModel.WorkerProperty.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        key_ = "";
+
+        value_ = "";
+
+        numberValue_ = 0D;
+
+        osBitVersion_ = 0;
+
+        osTypeVersion_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerProperty_descriptor;
+      }
+
+      public org.roylance.yadel.YadelModel.WorkerProperty getDefaultInstanceForType() {
+        return org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance();
+      }
+
+      public org.roylance.yadel.YadelModel.WorkerProperty build() {
+        org.roylance.yadel.YadelModel.WorkerProperty result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.roylance.yadel.YadelModel.WorkerProperty buildPartial() {
+        org.roylance.yadel.YadelModel.WorkerProperty result = new org.roylance.yadel.YadelModel.WorkerProperty(this);
+        result.id_ = id_;
+        result.key_ = key_;
+        result.value_ = value_;
+        result.numberValue_ = numberValue_;
+        result.osBitVersion_ = osBitVersion_;
+        result.osTypeVersion_ = osTypeVersion_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.roylance.yadel.YadelModel.WorkerProperty) {
+          return mergeFrom((org.roylance.yadel.YadelModel.WorkerProperty)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.roylance.yadel.YadelModel.WorkerProperty other) {
+        if (other == org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          onChanged();
+        }
+        if (other.getNumberValue() != 0D) {
+          setNumberValue(other.getNumberValue());
+        }
+        if (other.osBitVersion_ != 0) {
+          setOsBitVersionValue(other.getOsBitVersionValue());
+        }
+        if (other.osTypeVersion_ != 0) {
+          setOsTypeVersionValue(other.getOsTypeVersionValue());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.roylance.yadel.YadelModel.WorkerProperty parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.roylance.yadel.YadelModel.WorkerProperty) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object key_ = "";
+      /**
+       * <code>string key = 2;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string key = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string key = 2;</code>
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 2;</code>
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 2;</code>
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+      /**
+       * <code>string value = 3;</code>
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string value = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string value = 3;</code>
+       */
+      public Builder setValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string value = 3;</code>
+       */
+      public Builder clearValue() {
+        
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string value = 3;</code>
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        value_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double numberValue_ ;
+      /**
+       * <code>double number_value = 4;</code>
+       */
+      public double getNumberValue() {
+        return numberValue_;
+      }
+      /**
+       * <code>double number_value = 4;</code>
+       */
+      public Builder setNumberValue(double value) {
+        
+        numberValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double number_value = 4;</code>
+       */
+      public Builder clearNumberValue() {
+        
+        numberValue_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int osBitVersion_ = 0;
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 5;</code>
+       */
+      public int getOsBitVersionValue() {
+        return osBitVersion_;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 5;</code>
+       */
+      public Builder setOsBitVersionValue(int value) {
+        osBitVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 5;</code>
+       */
+      public org.roylance.yadel.YadelModel.OSBitVersion getOsBitVersion() {
+        org.roylance.yadel.YadelModel.OSBitVersion result = org.roylance.yadel.YadelModel.OSBitVersion.valueOf(osBitVersion_);
+        return result == null ? org.roylance.yadel.YadelModel.OSBitVersion.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 5;</code>
+       */
+      public Builder setOsBitVersion(org.roylance.yadel.YadelModel.OSBitVersion value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        osBitVersion_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 5;</code>
+       */
+      public Builder clearOsBitVersion() {
+        
+        osBitVersion_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int osTypeVersion_ = 0;
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 6;</code>
+       */
+      public int getOsTypeVersionValue() {
+        return osTypeVersion_;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 6;</code>
+       */
+      public Builder setOsTypeVersionValue(int value) {
+        osTypeVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 6;</code>
+       */
+      public org.roylance.yadel.YadelModel.OSTypeVersion getOsTypeVersion() {
+        org.roylance.yadel.YadelModel.OSTypeVersion result = org.roylance.yadel.YadelModel.OSTypeVersion.valueOf(osTypeVersion_);
+        return result == null ? org.roylance.yadel.YadelModel.OSTypeVersion.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 6;</code>
+       */
+      public Builder setOsTypeVersion(org.roylance.yadel.YadelModel.OSTypeVersion value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        osTypeVersion_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 6;</code>
+       */
+      public Builder clearOsTypeVersion() {
+        
+        osTypeVersion_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:org.roylance.yadel.WorkerProperty)
+    }
+
+    // @@protoc_insertion_point(class_scope:org.roylance.yadel.WorkerProperty)
+    private static final org.roylance.yadel.YadelModel.WorkerProperty DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.roylance.yadel.YadelModel.WorkerProperty();
+    }
+
+    public static org.roylance.yadel.YadelModel.WorkerProperty getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerProperty>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerProperty>() {
+      public WorkerProperty parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WorkerProperty(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerProperty> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerProperty> getParserForType() {
+      return PARSER;
+    }
+
+    public org.roylance.yadel.YadelModel.WorkerProperty getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WorkerFilterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.roylance.yadel.WorkerFilter)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+     */
+    boolean hasFirstProperty();
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerProperty getFirstProperty();
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getFirstPropertyOrBuilder();
+
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+     */
+    boolean hasFirstComparison();
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerFilter getFirstComparison();
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerFilterOrBuilder getFirstComparisonOrBuilder();
+
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+     */
+    boolean hasSecondProperty();
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerProperty getSecondProperty();
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getSecondPropertyOrBuilder();
+
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+     */
+    boolean hasSecondComparison();
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerFilter getSecondComparison();
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerFilterOrBuilder getSecondComparisonOrBuilder();
+
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison operation = 6;</code>
+     */
+    int getOperationValue();
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison operation = 6;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerOperationsComparison getOperation();
+
+    /**
+     * <code>.org.roylance.yadel.WorkerConnection connection = 7;</code>
+     */
+    int getConnectionValue();
+    /**
+     * <code>.org.roylance.yadel.WorkerConnection connection = 7;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerConnection getConnection();
+
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison first_operator = 8;</code>
+     */
+    int getFirstOperatorValue();
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison first_operator = 8;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerOperationsComparison getFirstOperator();
+
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison second_operator = 9;</code>
+     */
+    int getSecondOperatorValue();
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison second_operator = 9;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerOperationsComparison getSecondOperator();
+  }
+  /**
+   * Protobuf type {@code org.roylance.yadel.WorkerFilter}
+   */
+  public  static final class WorkerFilter extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:org.roylance.yadel.WorkerFilter)
+      WorkerFilterOrBuilder {
+    // Use WorkerFilter.newBuilder() to construct.
+    private WorkerFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerFilter() {
+      id_ = "";
+      operation_ = 0;
+      connection_ = 0;
+      firstOperator_ = 0;
+      secondOperator_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private WorkerFilter(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              org.roylance.yadel.YadelModel.WorkerProperty.Builder subBuilder = null;
+              if (firstProperty_ != null) {
+                subBuilder = firstProperty_.toBuilder();
+              }
+              firstProperty_ = input.readMessage(org.roylance.yadel.YadelModel.WorkerProperty.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(firstProperty_);
+                firstProperty_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              org.roylance.yadel.YadelModel.WorkerFilter.Builder subBuilder = null;
+              if (firstComparison_ != null) {
+                subBuilder = firstComparison_.toBuilder();
+              }
+              firstComparison_ = input.readMessage(org.roylance.yadel.YadelModel.WorkerFilter.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(firstComparison_);
+                firstComparison_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              org.roylance.yadel.YadelModel.WorkerProperty.Builder subBuilder = null;
+              if (secondProperty_ != null) {
+                subBuilder = secondProperty_.toBuilder();
+              }
+              secondProperty_ = input.readMessage(org.roylance.yadel.YadelModel.WorkerProperty.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(secondProperty_);
+                secondProperty_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              org.roylance.yadel.YadelModel.WorkerFilter.Builder subBuilder = null;
+              if (secondComparison_ != null) {
+                subBuilder = secondComparison_.toBuilder();
+              }
+              secondComparison_ = input.readMessage(org.roylance.yadel.YadelModel.WorkerFilter.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(secondComparison_);
+                secondComparison_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              operation_ = rawValue;
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              connection_ = rawValue;
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              firstOperator_ = rawValue;
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              secondOperator_ = rawValue;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerFilter_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerFilter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.roylance.yadel.YadelModel.WorkerFilter.class, org.roylance.yadel.YadelModel.WorkerFilter.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FIRST_PROPERTY_FIELD_NUMBER = 2;
+    private org.roylance.yadel.YadelModel.WorkerProperty firstProperty_;
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+     */
+    public boolean hasFirstProperty() {
+      return firstProperty_ != null;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerProperty getFirstProperty() {
+      return firstProperty_ == null ? org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance() : firstProperty_;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getFirstPropertyOrBuilder() {
+      return getFirstProperty();
+    }
+
+    public static final int FIRST_COMPARISON_FIELD_NUMBER = 3;
+    private org.roylance.yadel.YadelModel.WorkerFilter firstComparison_;
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+     */
+    public boolean hasFirstComparison() {
+      return firstComparison_ != null;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerFilter getFirstComparison() {
+      return firstComparison_ == null ? org.roylance.yadel.YadelModel.WorkerFilter.getDefaultInstance() : firstComparison_;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerFilterOrBuilder getFirstComparisonOrBuilder() {
+      return getFirstComparison();
+    }
+
+    public static final int SECOND_PROPERTY_FIELD_NUMBER = 4;
+    private org.roylance.yadel.YadelModel.WorkerProperty secondProperty_;
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+     */
+    public boolean hasSecondProperty() {
+      return secondProperty_ != null;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerProperty getSecondProperty() {
+      return secondProperty_ == null ? org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance() : secondProperty_;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getSecondPropertyOrBuilder() {
+      return getSecondProperty();
+    }
+
+    public static final int SECOND_COMPARISON_FIELD_NUMBER = 5;
+    private org.roylance.yadel.YadelModel.WorkerFilter secondComparison_;
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+     */
+    public boolean hasSecondComparison() {
+      return secondComparison_ != null;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerFilter getSecondComparison() {
+      return secondComparison_ == null ? org.roylance.yadel.YadelModel.WorkerFilter.getDefaultInstance() : secondComparison_;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerFilterOrBuilder getSecondComparisonOrBuilder() {
+      return getSecondComparison();
+    }
+
+    public static final int OPERATION_FIELD_NUMBER = 6;
+    private int operation_;
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison operation = 6;</code>
+     */
+    public int getOperationValue() {
+      return operation_;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison operation = 6;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerOperationsComparison getOperation() {
+      org.roylance.yadel.YadelModel.WorkerOperationsComparison result = org.roylance.yadel.YadelModel.WorkerOperationsComparison.valueOf(operation_);
+      return result == null ? org.roylance.yadel.YadelModel.WorkerOperationsComparison.UNRECOGNIZED : result;
+    }
+
+    public static final int CONNECTION_FIELD_NUMBER = 7;
+    private int connection_;
+    /**
+     * <code>.org.roylance.yadel.WorkerConnection connection = 7;</code>
+     */
+    public int getConnectionValue() {
+      return connection_;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerConnection connection = 7;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerConnection getConnection() {
+      org.roylance.yadel.YadelModel.WorkerConnection result = org.roylance.yadel.YadelModel.WorkerConnection.valueOf(connection_);
+      return result == null ? org.roylance.yadel.YadelModel.WorkerConnection.UNRECOGNIZED : result;
+    }
+
+    public static final int FIRST_OPERATOR_FIELD_NUMBER = 8;
+    private int firstOperator_;
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison first_operator = 8;</code>
+     */
+    public int getFirstOperatorValue() {
+      return firstOperator_;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison first_operator = 8;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerOperationsComparison getFirstOperator() {
+      org.roylance.yadel.YadelModel.WorkerOperationsComparison result = org.roylance.yadel.YadelModel.WorkerOperationsComparison.valueOf(firstOperator_);
+      return result == null ? org.roylance.yadel.YadelModel.WorkerOperationsComparison.UNRECOGNIZED : result;
+    }
+
+    public static final int SECOND_OPERATOR_FIELD_NUMBER = 9;
+    private int secondOperator_;
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison second_operator = 9;</code>
+     */
+    public int getSecondOperatorValue() {
+      return secondOperator_;
+    }
+    /**
+     * <code>.org.roylance.yadel.WorkerOperationsComparison second_operator = 9;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerOperationsComparison getSecondOperator() {
+      org.roylance.yadel.YadelModel.WorkerOperationsComparison result = org.roylance.yadel.YadelModel.WorkerOperationsComparison.valueOf(secondOperator_);
+      return result == null ? org.roylance.yadel.YadelModel.WorkerOperationsComparison.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (firstProperty_ != null) {
+        output.writeMessage(2, getFirstProperty());
+      }
+      if (firstComparison_ != null) {
+        output.writeMessage(3, getFirstComparison());
+      }
+      if (secondProperty_ != null) {
+        output.writeMessage(4, getSecondProperty());
+      }
+      if (secondComparison_ != null) {
+        output.writeMessage(5, getSecondComparison());
+      }
+      if (operation_ != org.roylance.yadel.YadelModel.WorkerOperationsComparison.EQUALS_OPERATION.getNumber()) {
+        output.writeEnum(6, operation_);
+      }
+      if (connection_ != org.roylance.yadel.YadelModel.WorkerConnection.NONE.getNumber()) {
+        output.writeEnum(7, connection_);
+      }
+      if (firstOperator_ != org.roylance.yadel.YadelModel.WorkerOperationsComparison.EQUALS_OPERATION.getNumber()) {
+        output.writeEnum(8, firstOperator_);
+      }
+      if (secondOperator_ != org.roylance.yadel.YadelModel.WorkerOperationsComparison.EQUALS_OPERATION.getNumber()) {
+        output.writeEnum(9, secondOperator_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (firstProperty_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getFirstProperty());
+      }
+      if (firstComparison_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getFirstComparison());
+      }
+      if (secondProperty_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getSecondProperty());
+      }
+      if (secondComparison_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getSecondComparison());
+      }
+      if (operation_ != org.roylance.yadel.YadelModel.WorkerOperationsComparison.EQUALS_OPERATION.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, operation_);
+      }
+      if (connection_ != org.roylance.yadel.YadelModel.WorkerConnection.NONE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, connection_);
+      }
+      if (firstOperator_ != org.roylance.yadel.YadelModel.WorkerOperationsComparison.EQUALS_OPERATION.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, firstOperator_);
+      }
+      if (secondOperator_ != org.roylance.yadel.YadelModel.WorkerOperationsComparison.EQUALS_OPERATION.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, secondOperator_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.roylance.yadel.YadelModel.WorkerFilter)) {
+        return super.equals(obj);
+      }
+      org.roylance.yadel.YadelModel.WorkerFilter other = (org.roylance.yadel.YadelModel.WorkerFilter) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && (hasFirstProperty() == other.hasFirstProperty());
+      if (hasFirstProperty()) {
+        result = result && getFirstProperty()
+            .equals(other.getFirstProperty());
+      }
+      result = result && (hasFirstComparison() == other.hasFirstComparison());
+      if (hasFirstComparison()) {
+        result = result && getFirstComparison()
+            .equals(other.getFirstComparison());
+      }
+      result = result && (hasSecondProperty() == other.hasSecondProperty());
+      if (hasSecondProperty()) {
+        result = result && getSecondProperty()
+            .equals(other.getSecondProperty());
+      }
+      result = result && (hasSecondComparison() == other.hasSecondComparison());
+      if (hasSecondComparison()) {
+        result = result && getSecondComparison()
+            .equals(other.getSecondComparison());
+      }
+      result = result && operation_ == other.operation_;
+      result = result && connection_ == other.connection_;
+      result = result && firstOperator_ == other.firstOperator_;
+      result = result && secondOperator_ == other.secondOperator_;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      if (hasFirstProperty()) {
+        hash = (37 * hash) + FIRST_PROPERTY_FIELD_NUMBER;
+        hash = (53 * hash) + getFirstProperty().hashCode();
+      }
+      if (hasFirstComparison()) {
+        hash = (37 * hash) + FIRST_COMPARISON_FIELD_NUMBER;
+        hash = (53 * hash) + getFirstComparison().hashCode();
+      }
+      if (hasSecondProperty()) {
+        hash = (37 * hash) + SECOND_PROPERTY_FIELD_NUMBER;
+        hash = (53 * hash) + getSecondProperty().hashCode();
+      }
+      if (hasSecondComparison()) {
+        hash = (37 * hash) + SECOND_COMPARISON_FIELD_NUMBER;
+        hash = (53 * hash) + getSecondComparison().hashCode();
+      }
+      hash = (37 * hash) + OPERATION_FIELD_NUMBER;
+      hash = (53 * hash) + operation_;
+      hash = (37 * hash) + CONNECTION_FIELD_NUMBER;
+      hash = (53 * hash) + connection_;
+      hash = (37 * hash) + FIRST_OPERATOR_FIELD_NUMBER;
+      hash = (53 * hash) + firstOperator_;
+      hash = (37 * hash) + SECOND_OPERATOR_FIELD_NUMBER;
+      hash = (53 * hash) + secondOperator_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.roylance.yadel.YadelModel.WorkerFilter parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerFilter parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerFilter parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerFilter parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerFilter parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerFilter parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerFilter parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerFilter parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerFilter parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerFilter parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.roylance.yadel.YadelModel.WorkerFilter prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code org.roylance.yadel.WorkerFilter}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:org.roylance.yadel.WorkerFilter)
+        org.roylance.yadel.YadelModel.WorkerFilterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerFilter_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerFilter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.roylance.yadel.YadelModel.WorkerFilter.class, org.roylance.yadel.YadelModel.WorkerFilter.Builder.class);
+      }
+
+      // Construct using org.roylance.yadel.YadelModel.WorkerFilter.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        if (firstPropertyBuilder_ == null) {
+          firstProperty_ = null;
+        } else {
+          firstProperty_ = null;
+          firstPropertyBuilder_ = null;
+        }
+        if (firstComparisonBuilder_ == null) {
+          firstComparison_ = null;
+        } else {
+          firstComparison_ = null;
+          firstComparisonBuilder_ = null;
+        }
+        if (secondPropertyBuilder_ == null) {
+          secondProperty_ = null;
+        } else {
+          secondProperty_ = null;
+          secondPropertyBuilder_ = null;
+        }
+        if (secondComparisonBuilder_ == null) {
+          secondComparison_ = null;
+        } else {
+          secondComparison_ = null;
+          secondComparisonBuilder_ = null;
+        }
+        operation_ = 0;
+
+        connection_ = 0;
+
+        firstOperator_ = 0;
+
+        secondOperator_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerFilter_descriptor;
+      }
+
+      public org.roylance.yadel.YadelModel.WorkerFilter getDefaultInstanceForType() {
+        return org.roylance.yadel.YadelModel.WorkerFilter.getDefaultInstance();
+      }
+
+      public org.roylance.yadel.YadelModel.WorkerFilter build() {
+        org.roylance.yadel.YadelModel.WorkerFilter result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.roylance.yadel.YadelModel.WorkerFilter buildPartial() {
+        org.roylance.yadel.YadelModel.WorkerFilter result = new org.roylance.yadel.YadelModel.WorkerFilter(this);
+        result.id_ = id_;
+        if (firstPropertyBuilder_ == null) {
+          result.firstProperty_ = firstProperty_;
+        } else {
+          result.firstProperty_ = firstPropertyBuilder_.build();
+        }
+        if (firstComparisonBuilder_ == null) {
+          result.firstComparison_ = firstComparison_;
+        } else {
+          result.firstComparison_ = firstComparisonBuilder_.build();
+        }
+        if (secondPropertyBuilder_ == null) {
+          result.secondProperty_ = secondProperty_;
+        } else {
+          result.secondProperty_ = secondPropertyBuilder_.build();
+        }
+        if (secondComparisonBuilder_ == null) {
+          result.secondComparison_ = secondComparison_;
+        } else {
+          result.secondComparison_ = secondComparisonBuilder_.build();
+        }
+        result.operation_ = operation_;
+        result.connection_ = connection_;
+        result.firstOperator_ = firstOperator_;
+        result.secondOperator_ = secondOperator_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.roylance.yadel.YadelModel.WorkerFilter) {
+          return mergeFrom((org.roylance.yadel.YadelModel.WorkerFilter)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.roylance.yadel.YadelModel.WorkerFilter other) {
+        if (other == org.roylance.yadel.YadelModel.WorkerFilter.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.hasFirstProperty()) {
+          mergeFirstProperty(other.getFirstProperty());
+        }
+        if (other.hasFirstComparison()) {
+          mergeFirstComparison(other.getFirstComparison());
+        }
+        if (other.hasSecondProperty()) {
+          mergeSecondProperty(other.getSecondProperty());
+        }
+        if (other.hasSecondComparison()) {
+          mergeSecondComparison(other.getSecondComparison());
+        }
+        if (other.operation_ != 0) {
+          setOperationValue(other.getOperationValue());
+        }
+        if (other.connection_ != 0) {
+          setConnectionValue(other.getConnectionValue());
+        }
+        if (other.firstOperator_ != 0) {
+          setFirstOperatorValue(other.getFirstOperatorValue());
+        }
+        if (other.secondOperator_ != 0) {
+          setSecondOperatorValue(other.getSecondOperatorValue());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.roylance.yadel.YadelModel.WorkerFilter parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.roylance.yadel.YadelModel.WorkerFilter) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private org.roylance.yadel.YadelModel.WorkerProperty firstProperty_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> firstPropertyBuilder_;
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+       */
+      public boolean hasFirstProperty() {
+        return firstPropertyBuilder_ != null || firstProperty_ != null;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty getFirstProperty() {
+        if (firstPropertyBuilder_ == null) {
+          return firstProperty_ == null ? org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance() : firstProperty_;
+        } else {
+          return firstPropertyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+       */
+      public Builder setFirstProperty(org.roylance.yadel.YadelModel.WorkerProperty value) {
+        if (firstPropertyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          firstProperty_ = value;
+          onChanged();
+        } else {
+          firstPropertyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+       */
+      public Builder setFirstProperty(
+          org.roylance.yadel.YadelModel.WorkerProperty.Builder builderForValue) {
+        if (firstPropertyBuilder_ == null) {
+          firstProperty_ = builderForValue.build();
+          onChanged();
+        } else {
+          firstPropertyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+       */
+      public Builder mergeFirstProperty(org.roylance.yadel.YadelModel.WorkerProperty value) {
+        if (firstPropertyBuilder_ == null) {
+          if (firstProperty_ != null) {
+            firstProperty_ =
+              org.roylance.yadel.YadelModel.WorkerProperty.newBuilder(firstProperty_).mergeFrom(value).buildPartial();
+          } else {
+            firstProperty_ = value;
+          }
+          onChanged();
+        } else {
+          firstPropertyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+       */
+      public Builder clearFirstProperty() {
+        if (firstPropertyBuilder_ == null) {
+          firstProperty_ = null;
+          onChanged();
+        } else {
+          firstProperty_ = null;
+          firstPropertyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty.Builder getFirstPropertyBuilder() {
+        
+        onChanged();
+        return getFirstPropertyFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getFirstPropertyOrBuilder() {
+        if (firstPropertyBuilder_ != null) {
+          return firstPropertyBuilder_.getMessageOrBuilder();
+        } else {
+          return firstProperty_ == null ?
+              org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance() : firstProperty_;
+        }
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty first_property = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> 
+          getFirstPropertyFieldBuilder() {
+        if (firstPropertyBuilder_ == null) {
+          firstPropertyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder>(
+                  getFirstProperty(),
+                  getParentForChildren(),
+                  isClean());
+          firstProperty_ = null;
+        }
+        return firstPropertyBuilder_;
+      }
+
+      private org.roylance.yadel.YadelModel.WorkerFilter firstComparison_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerFilter, org.roylance.yadel.YadelModel.WorkerFilter.Builder, org.roylance.yadel.YadelModel.WorkerFilterOrBuilder> firstComparisonBuilder_;
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+       */
+      public boolean hasFirstComparison() {
+        return firstComparisonBuilder_ != null || firstComparison_ != null;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerFilter getFirstComparison() {
+        if (firstComparisonBuilder_ == null) {
+          return firstComparison_ == null ? org.roylance.yadel.YadelModel.WorkerFilter.getDefaultInstance() : firstComparison_;
+        } else {
+          return firstComparisonBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+       */
+      public Builder setFirstComparison(org.roylance.yadel.YadelModel.WorkerFilter value) {
+        if (firstComparisonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          firstComparison_ = value;
+          onChanged();
+        } else {
+          firstComparisonBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+       */
+      public Builder setFirstComparison(
+          org.roylance.yadel.YadelModel.WorkerFilter.Builder builderForValue) {
+        if (firstComparisonBuilder_ == null) {
+          firstComparison_ = builderForValue.build();
+          onChanged();
+        } else {
+          firstComparisonBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+       */
+      public Builder mergeFirstComparison(org.roylance.yadel.YadelModel.WorkerFilter value) {
+        if (firstComparisonBuilder_ == null) {
+          if (firstComparison_ != null) {
+            firstComparison_ =
+              org.roylance.yadel.YadelModel.WorkerFilter.newBuilder(firstComparison_).mergeFrom(value).buildPartial();
+          } else {
+            firstComparison_ = value;
+          }
+          onChanged();
+        } else {
+          firstComparisonBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+       */
+      public Builder clearFirstComparison() {
+        if (firstComparisonBuilder_ == null) {
+          firstComparison_ = null;
+          onChanged();
+        } else {
+          firstComparison_ = null;
+          firstComparisonBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerFilter.Builder getFirstComparisonBuilder() {
+        
+        onChanged();
+        return getFirstComparisonFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerFilterOrBuilder getFirstComparisonOrBuilder() {
+        if (firstComparisonBuilder_ != null) {
+          return firstComparisonBuilder_.getMessageOrBuilder();
+        } else {
+          return firstComparison_ == null ?
+              org.roylance.yadel.YadelModel.WorkerFilter.getDefaultInstance() : firstComparison_;
+        }
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter first_comparison = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerFilter, org.roylance.yadel.YadelModel.WorkerFilter.Builder, org.roylance.yadel.YadelModel.WorkerFilterOrBuilder> 
+          getFirstComparisonFieldBuilder() {
+        if (firstComparisonBuilder_ == null) {
+          firstComparisonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.roylance.yadel.YadelModel.WorkerFilter, org.roylance.yadel.YadelModel.WorkerFilter.Builder, org.roylance.yadel.YadelModel.WorkerFilterOrBuilder>(
+                  getFirstComparison(),
+                  getParentForChildren(),
+                  isClean());
+          firstComparison_ = null;
+        }
+        return firstComparisonBuilder_;
+      }
+
+      private org.roylance.yadel.YadelModel.WorkerProperty secondProperty_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> secondPropertyBuilder_;
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+       */
+      public boolean hasSecondProperty() {
+        return secondPropertyBuilder_ != null || secondProperty_ != null;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty getSecondProperty() {
+        if (secondPropertyBuilder_ == null) {
+          return secondProperty_ == null ? org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance() : secondProperty_;
+        } else {
+          return secondPropertyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+       */
+      public Builder setSecondProperty(org.roylance.yadel.YadelModel.WorkerProperty value) {
+        if (secondPropertyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          secondProperty_ = value;
+          onChanged();
+        } else {
+          secondPropertyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+       */
+      public Builder setSecondProperty(
+          org.roylance.yadel.YadelModel.WorkerProperty.Builder builderForValue) {
+        if (secondPropertyBuilder_ == null) {
+          secondProperty_ = builderForValue.build();
+          onChanged();
+        } else {
+          secondPropertyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+       */
+      public Builder mergeSecondProperty(org.roylance.yadel.YadelModel.WorkerProperty value) {
+        if (secondPropertyBuilder_ == null) {
+          if (secondProperty_ != null) {
+            secondProperty_ =
+              org.roylance.yadel.YadelModel.WorkerProperty.newBuilder(secondProperty_).mergeFrom(value).buildPartial();
+          } else {
+            secondProperty_ = value;
+          }
+          onChanged();
+        } else {
+          secondPropertyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+       */
+      public Builder clearSecondProperty() {
+        if (secondPropertyBuilder_ == null) {
+          secondProperty_ = null;
+          onChanged();
+        } else {
+          secondProperty_ = null;
+          secondPropertyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty.Builder getSecondPropertyBuilder() {
+        
+        onChanged();
+        return getSecondPropertyFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getSecondPropertyOrBuilder() {
+        if (secondPropertyBuilder_ != null) {
+          return secondPropertyBuilder_.getMessageOrBuilder();
+        } else {
+          return secondProperty_ == null ?
+              org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance() : secondProperty_;
+        }
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerProperty second_property = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> 
+          getSecondPropertyFieldBuilder() {
+        if (secondPropertyBuilder_ == null) {
+          secondPropertyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder>(
+                  getSecondProperty(),
+                  getParentForChildren(),
+                  isClean());
+          secondProperty_ = null;
+        }
+        return secondPropertyBuilder_;
+      }
+
+      private org.roylance.yadel.YadelModel.WorkerFilter secondComparison_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerFilter, org.roylance.yadel.YadelModel.WorkerFilter.Builder, org.roylance.yadel.YadelModel.WorkerFilterOrBuilder> secondComparisonBuilder_;
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+       */
+      public boolean hasSecondComparison() {
+        return secondComparisonBuilder_ != null || secondComparison_ != null;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerFilter getSecondComparison() {
+        if (secondComparisonBuilder_ == null) {
+          return secondComparison_ == null ? org.roylance.yadel.YadelModel.WorkerFilter.getDefaultInstance() : secondComparison_;
+        } else {
+          return secondComparisonBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+       */
+      public Builder setSecondComparison(org.roylance.yadel.YadelModel.WorkerFilter value) {
+        if (secondComparisonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          secondComparison_ = value;
+          onChanged();
+        } else {
+          secondComparisonBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+       */
+      public Builder setSecondComparison(
+          org.roylance.yadel.YadelModel.WorkerFilter.Builder builderForValue) {
+        if (secondComparisonBuilder_ == null) {
+          secondComparison_ = builderForValue.build();
+          onChanged();
+        } else {
+          secondComparisonBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+       */
+      public Builder mergeSecondComparison(org.roylance.yadel.YadelModel.WorkerFilter value) {
+        if (secondComparisonBuilder_ == null) {
+          if (secondComparison_ != null) {
+            secondComparison_ =
+              org.roylance.yadel.YadelModel.WorkerFilter.newBuilder(secondComparison_).mergeFrom(value).buildPartial();
+          } else {
+            secondComparison_ = value;
+          }
+          onChanged();
+        } else {
+          secondComparisonBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+       */
+      public Builder clearSecondComparison() {
+        if (secondComparisonBuilder_ == null) {
+          secondComparison_ = null;
+          onChanged();
+        } else {
+          secondComparison_ = null;
+          secondComparisonBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerFilter.Builder getSecondComparisonBuilder() {
+        
+        onChanged();
+        return getSecondComparisonFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerFilterOrBuilder getSecondComparisonOrBuilder() {
+        if (secondComparisonBuilder_ != null) {
+          return secondComparisonBuilder_.getMessageOrBuilder();
+        } else {
+          return secondComparison_ == null ?
+              org.roylance.yadel.YadelModel.WorkerFilter.getDefaultInstance() : secondComparison_;
+        }
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerFilter second_comparison = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerFilter, org.roylance.yadel.YadelModel.WorkerFilter.Builder, org.roylance.yadel.YadelModel.WorkerFilterOrBuilder> 
+          getSecondComparisonFieldBuilder() {
+        if (secondComparisonBuilder_ == null) {
+          secondComparisonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.roylance.yadel.YadelModel.WorkerFilter, org.roylance.yadel.YadelModel.WorkerFilter.Builder, org.roylance.yadel.YadelModel.WorkerFilterOrBuilder>(
+                  getSecondComparison(),
+                  getParentForChildren(),
+                  isClean());
+          secondComparison_ = null;
+        }
+        return secondComparisonBuilder_;
+      }
+
+      private int operation_ = 0;
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison operation = 6;</code>
+       */
+      public int getOperationValue() {
+        return operation_;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison operation = 6;</code>
+       */
+      public Builder setOperationValue(int value) {
+        operation_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison operation = 6;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerOperationsComparison getOperation() {
+        org.roylance.yadel.YadelModel.WorkerOperationsComparison result = org.roylance.yadel.YadelModel.WorkerOperationsComparison.valueOf(operation_);
+        return result == null ? org.roylance.yadel.YadelModel.WorkerOperationsComparison.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison operation = 6;</code>
+       */
+      public Builder setOperation(org.roylance.yadel.YadelModel.WorkerOperationsComparison value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        operation_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison operation = 6;</code>
+       */
+      public Builder clearOperation() {
+        
+        operation_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int connection_ = 0;
+      /**
+       * <code>.org.roylance.yadel.WorkerConnection connection = 7;</code>
+       */
+      public int getConnectionValue() {
+        return connection_;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerConnection connection = 7;</code>
+       */
+      public Builder setConnectionValue(int value) {
+        connection_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerConnection connection = 7;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerConnection getConnection() {
+        org.roylance.yadel.YadelModel.WorkerConnection result = org.roylance.yadel.YadelModel.WorkerConnection.valueOf(connection_);
+        return result == null ? org.roylance.yadel.YadelModel.WorkerConnection.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerConnection connection = 7;</code>
+       */
+      public Builder setConnection(org.roylance.yadel.YadelModel.WorkerConnection value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        connection_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerConnection connection = 7;</code>
+       */
+      public Builder clearConnection() {
+        
+        connection_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int firstOperator_ = 0;
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison first_operator = 8;</code>
+       */
+      public int getFirstOperatorValue() {
+        return firstOperator_;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison first_operator = 8;</code>
+       */
+      public Builder setFirstOperatorValue(int value) {
+        firstOperator_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison first_operator = 8;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerOperationsComparison getFirstOperator() {
+        org.roylance.yadel.YadelModel.WorkerOperationsComparison result = org.roylance.yadel.YadelModel.WorkerOperationsComparison.valueOf(firstOperator_);
+        return result == null ? org.roylance.yadel.YadelModel.WorkerOperationsComparison.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison first_operator = 8;</code>
+       */
+      public Builder setFirstOperator(org.roylance.yadel.YadelModel.WorkerOperationsComparison value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        firstOperator_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison first_operator = 8;</code>
+       */
+      public Builder clearFirstOperator() {
+        
+        firstOperator_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int secondOperator_ = 0;
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison second_operator = 9;</code>
+       */
+      public int getSecondOperatorValue() {
+        return secondOperator_;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison second_operator = 9;</code>
+       */
+      public Builder setSecondOperatorValue(int value) {
+        secondOperator_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison second_operator = 9;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerOperationsComparison getSecondOperator() {
+        org.roylance.yadel.YadelModel.WorkerOperationsComparison result = org.roylance.yadel.YadelModel.WorkerOperationsComparison.valueOf(secondOperator_);
+        return result == null ? org.roylance.yadel.YadelModel.WorkerOperationsComparison.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison second_operator = 9;</code>
+       */
+      public Builder setSecondOperator(org.roylance.yadel.YadelModel.WorkerOperationsComparison value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        secondOperator_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.WorkerOperationsComparison second_operator = 9;</code>
+       */
+      public Builder clearSecondOperator() {
+        
+        secondOperator_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:org.roylance.yadel.WorkerFilter)
+    }
+
+    // @@protoc_insertion_point(class_scope:org.roylance.yadel.WorkerFilter)
+    private static final org.roylance.yadel.YadelModel.WorkerFilter DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.roylance.yadel.YadelModel.WorkerFilter();
+    }
+
+    public static org.roylance.yadel.YadelModel.WorkerFilter getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerFilter>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerFilter>() {
+      public WorkerFilter parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WorkerFilter(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerFilter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerFilter> getParserForType() {
+      return PARSER;
+    }
+
+    public org.roylance.yadel.YadelModel.WorkerFilter getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WorkerConfigurationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.roylance.yadel.WorkerConfiguration)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string ip = 2;</code>
      */
     java.lang.String getIp();
     /**
-     * <code>optional string ip = 2;</code>
+     * <code>string ip = 2;</code>
      */
     com.google.protobuf.ByteString
         getIpBytes();
 
     /**
-     * <code>optional string port = 3;</code>
+     * <code>string port = 3;</code>
      */
     java.lang.String getPort();
     /**
-     * <code>optional string port = 3;</code>
+     * <code>string port = 3;</code>
      */
     com.google.protobuf.ByteString
         getPortBytes();
 
     /**
-     * <code>optional string host = 4;</code>
+     * <code>string host = 4;</code>
      */
     java.lang.String getHost();
     /**
-     * <code>optional string host = 4;</code>
+     * <code>string host = 4;</code>
      */
     com.google.protobuf.ByteString
         getHostBytes();
 
     /**
-     * <code>optional string initialized_time = 5;</code>
+     * <code>string initialized_time = 5;</code>
      */
     java.lang.String getInitializedTime();
     /**
-     * <code>optional string initialized_time = 5;</code>
+     * <code>string initialized_time = 5;</code>
      */
     com.google.protobuf.ByteString
         getInitializedTimeBytes();
 
     /**
-     * <code>optional .org.roylance.yadel.WorkerState state = 6;</code>
+     * <code>.org.roylance.yadel.WorkerState state = 6;</code>
      */
     int getStateValue();
     /**
-     * <code>optional .org.roylance.yadel.WorkerState state = 6;</code>
+     * <code>.org.roylance.yadel.WorkerState state = 6;</code>
      */
     org.roylance.yadel.YadelModel.WorkerState getState();
 
     /**
-     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     * <code>.org.roylance.yadel.Task task = 7;</code>
      */
     boolean hasTask();
     /**
-     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     * <code>.org.roylance.yadel.Task task = 7;</code>
      */
     org.roylance.yadel.YadelModel.Task getTask();
     /**
-     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     * <code>.org.roylance.yadel.Task task = 7;</code>
      */
     org.roylance.yadel.YadelModel.TaskOrBuilder getTaskOrBuilder();
 
     /**
-     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     * <code>.org.roylance.yadel.Dag dag = 8;</code>
      */
     boolean hasDag();
     /**
-     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     * <code>.org.roylance.yadel.Dag dag = 8;</code>
      */
     org.roylance.yadel.YadelModel.Dag getDag();
     /**
-     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     * <code>.org.roylance.yadel.Dag dag = 8;</code>
      */
     org.roylance.yadel.YadelModel.DagOrBuilder getDagOrBuilder();
 
     /**
-     * <code>optional uint64 minutes_before_task_reset = 9;</code>
+     * <code>uint64 minutes_before_task_reset = 9;</code>
      */
     long getMinutesBeforeTaskReset();
 
     /**
-     * <code>optional string task_start_time = 10;</code>
+     * <code>string task_start_time = 10;</code>
      */
     java.lang.String getTaskStartTime();
     /**
-     * <code>optional string task_start_time = 10;</code>
+     * <code>string task_start_time = 10;</code>
      */
     com.google.protobuf.ByteString
         getTaskStartTimeBytes();
+
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 11;</code>
+     */
+    int getOsBitVersionValue();
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 11;</code>
+     */
+    org.roylance.yadel.YadelModel.OSBitVersion getOsBitVersion();
+
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 12;</code>
+     */
+    int getOsTypeVersionValue();
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 12;</code>
+     */
+    org.roylance.yadel.YadelModel.OSTypeVersion getOsTypeVersion();
+
+    /**
+     * <code>string os_major_version = 13;</code>
+     */
+    java.lang.String getOsMajorVersion();
+    /**
+     * <code>string os_major_version = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getOsMajorVersionBytes();
+
+    /**
+     * <code>string os_minor_version = 14;</code>
+     */
+    java.lang.String getOsMinorVersion();
+    /**
+     * <code>string os_minor_version = 14;</code>
+     */
+    com.google.protobuf.ByteString
+        getOsMinorVersionBytes();
+
+    /**
+     * <code>string os_build_version = 15;</code>
+     */
+    java.lang.String getOsBuildVersion();
+    /**
+     * <code>string os_build_version = 15;</code>
+     */
+    com.google.protobuf.ByteString
+        getOsBuildVersionBytes();
+
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+     */
+    java.util.List<org.roylance.yadel.YadelModel.WorkerProperty> 
+        getPropertiesList();
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerProperty getProperties(int index);
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+     */
+    int getPropertiesCount();
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+     */
+    java.util.List<? extends org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> 
+        getPropertiesOrBuilderList();
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getPropertiesOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code org.roylance.yadel.WorkerConfiguration}
@@ -512,6 +3758,12 @@ public final class YadelModel {
       state_ = 0;
       minutesBeforeTaskReset_ = 0L;
       taskStartTime_ = "";
+      osBitVersion_ = 0;
+      osTypeVersion_ = 0;
+      osMajorVersion_ = "";
+      osMinorVersion_ = "";
+      osBuildVersion_ = "";
+      properties_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -612,6 +3864,45 @@ public final class YadelModel {
               taskStartTime_ = s;
               break;
             }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              osBitVersion_ = rawValue;
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              osTypeVersion_ = rawValue;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              osMajorVersion_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              osMinorVersion_ = s;
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              osBuildVersion_ = s;
+              break;
+            }
+            case 130: {
+              if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+                properties_ = new java.util.ArrayList<org.roylance.yadel.YadelModel.WorkerProperty>();
+                mutable_bitField0_ |= 0x00008000;
+              }
+              properties_.add(
+                  input.readMessage(org.roylance.yadel.YadelModel.WorkerProperty.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -620,6 +3911,9 @@ public final class YadelModel {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+          properties_ = java.util.Collections.unmodifiableList(properties_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -635,10 +3929,11 @@ public final class YadelModel {
               org.roylance.yadel.YadelModel.WorkerConfiguration.class, org.roylance.yadel.YadelModel.WorkerConfiguration.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -653,7 +3948,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -672,7 +3967,7 @@ public final class YadelModel {
     public static final int IP_FIELD_NUMBER = 2;
     private volatile java.lang.Object ip_;
     /**
-     * <code>optional string ip = 2;</code>
+     * <code>string ip = 2;</code>
      */
     public java.lang.String getIp() {
       java.lang.Object ref = ip_;
@@ -687,7 +3982,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string ip = 2;</code>
+     * <code>string ip = 2;</code>
      */
     public com.google.protobuf.ByteString
         getIpBytes() {
@@ -706,7 +4001,7 @@ public final class YadelModel {
     public static final int PORT_FIELD_NUMBER = 3;
     private volatile java.lang.Object port_;
     /**
-     * <code>optional string port = 3;</code>
+     * <code>string port = 3;</code>
      */
     public java.lang.String getPort() {
       java.lang.Object ref = port_;
@@ -721,7 +4016,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string port = 3;</code>
+     * <code>string port = 3;</code>
      */
     public com.google.protobuf.ByteString
         getPortBytes() {
@@ -740,7 +4035,7 @@ public final class YadelModel {
     public static final int HOST_FIELD_NUMBER = 4;
     private volatile java.lang.Object host_;
     /**
-     * <code>optional string host = 4;</code>
+     * <code>string host = 4;</code>
      */
     public java.lang.String getHost() {
       java.lang.Object ref = host_;
@@ -755,7 +4050,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string host = 4;</code>
+     * <code>string host = 4;</code>
      */
     public com.google.protobuf.ByteString
         getHostBytes() {
@@ -774,7 +4069,7 @@ public final class YadelModel {
     public static final int INITIALIZED_TIME_FIELD_NUMBER = 5;
     private volatile java.lang.Object initializedTime_;
     /**
-     * <code>optional string initialized_time = 5;</code>
+     * <code>string initialized_time = 5;</code>
      */
     public java.lang.String getInitializedTime() {
       java.lang.Object ref = initializedTime_;
@@ -789,7 +4084,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string initialized_time = 5;</code>
+     * <code>string initialized_time = 5;</code>
      */
     public com.google.protobuf.ByteString
         getInitializedTimeBytes() {
@@ -808,13 +4103,13 @@ public final class YadelModel {
     public static final int STATE_FIELD_NUMBER = 6;
     private int state_;
     /**
-     * <code>optional .org.roylance.yadel.WorkerState state = 6;</code>
+     * <code>.org.roylance.yadel.WorkerState state = 6;</code>
      */
     public int getStateValue() {
       return state_;
     }
     /**
-     * <code>optional .org.roylance.yadel.WorkerState state = 6;</code>
+     * <code>.org.roylance.yadel.WorkerState state = 6;</code>
      */
     public org.roylance.yadel.YadelModel.WorkerState getState() {
       org.roylance.yadel.YadelModel.WorkerState result = org.roylance.yadel.YadelModel.WorkerState.valueOf(state_);
@@ -824,19 +4119,19 @@ public final class YadelModel {
     public static final int TASK_FIELD_NUMBER = 7;
     private org.roylance.yadel.YadelModel.Task task_;
     /**
-     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     * <code>.org.roylance.yadel.Task task = 7;</code>
      */
     public boolean hasTask() {
       return task_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     * <code>.org.roylance.yadel.Task task = 7;</code>
      */
     public org.roylance.yadel.YadelModel.Task getTask() {
       return task_ == null ? org.roylance.yadel.YadelModel.Task.getDefaultInstance() : task_;
     }
     /**
-     * <code>optional .org.roylance.yadel.Task task = 7;</code>
+     * <code>.org.roylance.yadel.Task task = 7;</code>
      */
     public org.roylance.yadel.YadelModel.TaskOrBuilder getTaskOrBuilder() {
       return getTask();
@@ -845,19 +4140,19 @@ public final class YadelModel {
     public static final int DAG_FIELD_NUMBER = 8;
     private org.roylance.yadel.YadelModel.Dag dag_;
     /**
-     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     * <code>.org.roylance.yadel.Dag dag = 8;</code>
      */
     public boolean hasDag() {
       return dag_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     * <code>.org.roylance.yadel.Dag dag = 8;</code>
      */
     public org.roylance.yadel.YadelModel.Dag getDag() {
       return dag_ == null ? org.roylance.yadel.YadelModel.Dag.getDefaultInstance() : dag_;
     }
     /**
-     * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+     * <code>.org.roylance.yadel.Dag dag = 8;</code>
      */
     public org.roylance.yadel.YadelModel.DagOrBuilder getDagOrBuilder() {
       return getDag();
@@ -866,7 +4161,7 @@ public final class YadelModel {
     public static final int MINUTES_BEFORE_TASK_RESET_FIELD_NUMBER = 9;
     private long minutesBeforeTaskReset_;
     /**
-     * <code>optional uint64 minutes_before_task_reset = 9;</code>
+     * <code>uint64 minutes_before_task_reset = 9;</code>
      */
     public long getMinutesBeforeTaskReset() {
       return minutesBeforeTaskReset_;
@@ -875,7 +4170,7 @@ public final class YadelModel {
     public static final int TASK_START_TIME_FIELD_NUMBER = 10;
     private volatile java.lang.Object taskStartTime_;
     /**
-     * <code>optional string task_start_time = 10;</code>
+     * <code>string task_start_time = 10;</code>
      */
     public java.lang.String getTaskStartTime() {
       java.lang.Object ref = taskStartTime_;
@@ -890,7 +4185,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string task_start_time = 10;</code>
+     * <code>string task_start_time = 10;</code>
      */
     public com.google.protobuf.ByteString
         getTaskStartTimeBytes() {
@@ -904,6 +4199,175 @@ public final class YadelModel {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int OS_BIT_VERSION_FIELD_NUMBER = 11;
+    private int osBitVersion_;
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 11;</code>
+     */
+    public int getOsBitVersionValue() {
+      return osBitVersion_;
+    }
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 11;</code>
+     */
+    public org.roylance.yadel.YadelModel.OSBitVersion getOsBitVersion() {
+      org.roylance.yadel.YadelModel.OSBitVersion result = org.roylance.yadel.YadelModel.OSBitVersion.valueOf(osBitVersion_);
+      return result == null ? org.roylance.yadel.YadelModel.OSBitVersion.UNRECOGNIZED : result;
+    }
+
+    public static final int OS_TYPE_VERSION_FIELD_NUMBER = 12;
+    private int osTypeVersion_;
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 12;</code>
+     */
+    public int getOsTypeVersionValue() {
+      return osTypeVersion_;
+    }
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 12;</code>
+     */
+    public org.roylance.yadel.YadelModel.OSTypeVersion getOsTypeVersion() {
+      org.roylance.yadel.YadelModel.OSTypeVersion result = org.roylance.yadel.YadelModel.OSTypeVersion.valueOf(osTypeVersion_);
+      return result == null ? org.roylance.yadel.YadelModel.OSTypeVersion.UNRECOGNIZED : result;
+    }
+
+    public static final int OS_MAJOR_VERSION_FIELD_NUMBER = 13;
+    private volatile java.lang.Object osMajorVersion_;
+    /**
+     * <code>string os_major_version = 13;</code>
+     */
+    public java.lang.String getOsMajorVersion() {
+      java.lang.Object ref = osMajorVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osMajorVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string os_major_version = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOsMajorVersionBytes() {
+      java.lang.Object ref = osMajorVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osMajorVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OS_MINOR_VERSION_FIELD_NUMBER = 14;
+    private volatile java.lang.Object osMinorVersion_;
+    /**
+     * <code>string os_minor_version = 14;</code>
+     */
+    public java.lang.String getOsMinorVersion() {
+      java.lang.Object ref = osMinorVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osMinorVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string os_minor_version = 14;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOsMinorVersionBytes() {
+      java.lang.Object ref = osMinorVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osMinorVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OS_BUILD_VERSION_FIELD_NUMBER = 15;
+    private volatile java.lang.Object osBuildVersion_;
+    /**
+     * <code>string os_build_version = 15;</code>
+     */
+    public java.lang.String getOsBuildVersion() {
+      java.lang.Object ref = osBuildVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osBuildVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string os_build_version = 15;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOsBuildVersionBytes() {
+      java.lang.Object ref = osBuildVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osBuildVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROPERTIES_FIELD_NUMBER = 16;
+    private java.util.List<org.roylance.yadel.YadelModel.WorkerProperty> properties_;
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+     */
+    public java.util.List<org.roylance.yadel.YadelModel.WorkerProperty> getPropertiesList() {
+      return properties_;
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+     */
+    public java.util.List<? extends org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> 
+        getPropertiesOrBuilderList() {
+      return properties_;
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+     */
+    public int getPropertiesCount() {
+      return properties_.size();
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerProperty getProperties(int index) {
+      return properties_.get(index);
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getPropertiesOrBuilder(
+        int index) {
+      return properties_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -948,6 +4412,24 @@ public final class YadelModel {
       if (!getTaskStartTimeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, taskStartTime_);
       }
+      if (osBitVersion_ != org.roylance.yadel.YadelModel.OSBitVersion.V_64_BIT_VERSION.getNumber()) {
+        output.writeEnum(11, osBitVersion_);
+      }
+      if (osTypeVersion_ != org.roylance.yadel.YadelModel.OSTypeVersion.MAC_OS_TYPE_VERSION.getNumber()) {
+        output.writeEnum(12, osTypeVersion_);
+      }
+      if (!getOsMajorVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, osMajorVersion_);
+      }
+      if (!getOsMinorVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, osMinorVersion_);
+      }
+      if (!getOsBuildVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, osBuildVersion_);
+      }
+      for (int i = 0; i < properties_.size(); i++) {
+        output.writeMessage(16, properties_.get(i));
+      }
     }
 
     public int getSerializedSize() {
@@ -988,6 +4470,27 @@ public final class YadelModel {
       }
       if (!getTaskStartTimeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, taskStartTime_);
+      }
+      if (osBitVersion_ != org.roylance.yadel.YadelModel.OSBitVersion.V_64_BIT_VERSION.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, osBitVersion_);
+      }
+      if (osTypeVersion_ != org.roylance.yadel.YadelModel.OSTypeVersion.MAC_OS_TYPE_VERSION.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(12, osTypeVersion_);
+      }
+      if (!getOsMajorVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, osMajorVersion_);
+      }
+      if (!getOsMinorVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, osMinorVersion_);
+      }
+      if (!getOsBuildVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, osBuildVersion_);
+      }
+      for (int i = 0; i < properties_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, properties_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -1030,6 +4533,16 @@ public final class YadelModel {
           == other.getMinutesBeforeTaskReset());
       result = result && getTaskStartTime()
           .equals(other.getTaskStartTime());
+      result = result && osBitVersion_ == other.osBitVersion_;
+      result = result && osTypeVersion_ == other.osTypeVersion_;
+      result = result && getOsMajorVersion()
+          .equals(other.getOsMajorVersion());
+      result = result && getOsMinorVersion()
+          .equals(other.getOsMinorVersion());
+      result = result && getOsBuildVersion()
+          .equals(other.getOsBuildVersion());
+      result = result && getPropertiesList()
+          .equals(other.getPropertiesList());
       return result;
     }
 
@@ -1039,7 +4552,7 @@ public final class YadelModel {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + IP_FIELD_NUMBER;
@@ -1065,6 +4578,20 @@ public final class YadelModel {
           getMinutesBeforeTaskReset());
       hash = (37 * hash) + TASK_START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getTaskStartTime().hashCode();
+      hash = (37 * hash) + OS_BIT_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + osBitVersion_;
+      hash = (37 * hash) + OS_TYPE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + osTypeVersion_;
+      hash = (37 * hash) + OS_MAJOR_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getOsMajorVersion().hashCode();
+      hash = (37 * hash) + OS_MINOR_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getOsMinorVersion().hashCode();
+      hash = (37 * hash) + OS_BUILD_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getOsBuildVersion().hashCode();
+      if (getPropertiesCount() > 0) {
+        hash = (37 * hash) + PROPERTIES_FIELD_NUMBER;
+        hash = (53 * hash) + getPropertiesList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1179,6 +4706,7 @@ public final class YadelModel {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getPropertiesFieldBuilder();
         }
       }
       public Builder clear() {
@@ -1211,6 +4739,22 @@ public final class YadelModel {
 
         taskStartTime_ = "";
 
+        osBitVersion_ = 0;
+
+        osTypeVersion_ = 0;
+
+        osMajorVersion_ = "";
+
+        osMinorVersion_ = "";
+
+        osBuildVersion_ = "";
+
+        if (propertiesBuilder_ == null) {
+          properties_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00008000);
+        } else {
+          propertiesBuilder_.clear();
+        }
         return this;
       }
 
@@ -1233,6 +4777,8 @@ public final class YadelModel {
 
       public org.roylance.yadel.YadelModel.WorkerConfiguration buildPartial() {
         org.roylance.yadel.YadelModel.WorkerConfiguration result = new org.roylance.yadel.YadelModel.WorkerConfiguration(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.id_ = id_;
         result.ip_ = ip_;
         result.port_ = port_;
@@ -1251,6 +4797,21 @@ public final class YadelModel {
         }
         result.minutesBeforeTaskReset_ = minutesBeforeTaskReset_;
         result.taskStartTime_ = taskStartTime_;
+        result.osBitVersion_ = osBitVersion_;
+        result.osTypeVersion_ = osTypeVersion_;
+        result.osMajorVersion_ = osMajorVersion_;
+        result.osMinorVersion_ = osMinorVersion_;
+        result.osBuildVersion_ = osBuildVersion_;
+        if (propertiesBuilder_ == null) {
+          if (((bitField0_ & 0x00008000) == 0x00008000)) {
+            properties_ = java.util.Collections.unmodifiableList(properties_);
+            bitField0_ = (bitField0_ & ~0x00008000);
+          }
+          result.properties_ = properties_;
+        } else {
+          result.properties_ = propertiesBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1328,6 +4889,50 @@ public final class YadelModel {
           taskStartTime_ = other.taskStartTime_;
           onChanged();
         }
+        if (other.osBitVersion_ != 0) {
+          setOsBitVersionValue(other.getOsBitVersionValue());
+        }
+        if (other.osTypeVersion_ != 0) {
+          setOsTypeVersionValue(other.getOsTypeVersionValue());
+        }
+        if (!other.getOsMajorVersion().isEmpty()) {
+          osMajorVersion_ = other.osMajorVersion_;
+          onChanged();
+        }
+        if (!other.getOsMinorVersion().isEmpty()) {
+          osMinorVersion_ = other.osMinorVersion_;
+          onChanged();
+        }
+        if (!other.getOsBuildVersion().isEmpty()) {
+          osBuildVersion_ = other.osBuildVersion_;
+          onChanged();
+        }
+        if (propertiesBuilder_ == null) {
+          if (!other.properties_.isEmpty()) {
+            if (properties_.isEmpty()) {
+              properties_ = other.properties_;
+              bitField0_ = (bitField0_ & ~0x00008000);
+            } else {
+              ensurePropertiesIsMutable();
+              properties_.addAll(other.properties_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.properties_.isEmpty()) {
+            if (propertiesBuilder_.isEmpty()) {
+              propertiesBuilder_.dispose();
+              propertiesBuilder_ = null;
+              properties_ = other.properties_;
+              bitField0_ = (bitField0_ & ~0x00008000);
+              propertiesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPropertiesFieldBuilder() : null;
+            } else {
+              propertiesBuilder_.addAllMessages(other.properties_);
+            }
+          }
+        }
         onChanged();
         return this;
       }
@@ -1353,10 +4958,11 @@ public final class YadelModel {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -1371,7 +4977,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -1387,7 +4993,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -1400,7 +5006,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -1409,7 +5015,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1425,7 +5031,7 @@ public final class YadelModel {
 
       private java.lang.Object ip_ = "";
       /**
-       * <code>optional string ip = 2;</code>
+       * <code>string ip = 2;</code>
        */
       public java.lang.String getIp() {
         java.lang.Object ref = ip_;
@@ -1440,7 +5046,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string ip = 2;</code>
+       * <code>string ip = 2;</code>
        */
       public com.google.protobuf.ByteString
           getIpBytes() {
@@ -1456,7 +5062,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string ip = 2;</code>
+       * <code>string ip = 2;</code>
        */
       public Builder setIp(
           java.lang.String value) {
@@ -1469,7 +5075,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string ip = 2;</code>
+       * <code>string ip = 2;</code>
        */
       public Builder clearIp() {
         
@@ -1478,7 +5084,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string ip = 2;</code>
+       * <code>string ip = 2;</code>
        */
       public Builder setIpBytes(
           com.google.protobuf.ByteString value) {
@@ -1494,7 +5100,7 @@ public final class YadelModel {
 
       private java.lang.Object port_ = "";
       /**
-       * <code>optional string port = 3;</code>
+       * <code>string port = 3;</code>
        */
       public java.lang.String getPort() {
         java.lang.Object ref = port_;
@@ -1509,7 +5115,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string port = 3;</code>
+       * <code>string port = 3;</code>
        */
       public com.google.protobuf.ByteString
           getPortBytes() {
@@ -1525,7 +5131,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string port = 3;</code>
+       * <code>string port = 3;</code>
        */
       public Builder setPort(
           java.lang.String value) {
@@ -1538,7 +5144,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string port = 3;</code>
+       * <code>string port = 3;</code>
        */
       public Builder clearPort() {
         
@@ -1547,7 +5153,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string port = 3;</code>
+       * <code>string port = 3;</code>
        */
       public Builder setPortBytes(
           com.google.protobuf.ByteString value) {
@@ -1563,7 +5169,7 @@ public final class YadelModel {
 
       private java.lang.Object host_ = "";
       /**
-       * <code>optional string host = 4;</code>
+       * <code>string host = 4;</code>
        */
       public java.lang.String getHost() {
         java.lang.Object ref = host_;
@@ -1578,7 +5184,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string host = 4;</code>
+       * <code>string host = 4;</code>
        */
       public com.google.protobuf.ByteString
           getHostBytes() {
@@ -1594,7 +5200,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string host = 4;</code>
+       * <code>string host = 4;</code>
        */
       public Builder setHost(
           java.lang.String value) {
@@ -1607,7 +5213,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string host = 4;</code>
+       * <code>string host = 4;</code>
        */
       public Builder clearHost() {
         
@@ -1616,7 +5222,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string host = 4;</code>
+       * <code>string host = 4;</code>
        */
       public Builder setHostBytes(
           com.google.protobuf.ByteString value) {
@@ -1632,7 +5238,7 @@ public final class YadelModel {
 
       private java.lang.Object initializedTime_ = "";
       /**
-       * <code>optional string initialized_time = 5;</code>
+       * <code>string initialized_time = 5;</code>
        */
       public java.lang.String getInitializedTime() {
         java.lang.Object ref = initializedTime_;
@@ -1647,7 +5253,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string initialized_time = 5;</code>
+       * <code>string initialized_time = 5;</code>
        */
       public com.google.protobuf.ByteString
           getInitializedTimeBytes() {
@@ -1663,7 +5269,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string initialized_time = 5;</code>
+       * <code>string initialized_time = 5;</code>
        */
       public Builder setInitializedTime(
           java.lang.String value) {
@@ -1676,7 +5282,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string initialized_time = 5;</code>
+       * <code>string initialized_time = 5;</code>
        */
       public Builder clearInitializedTime() {
         
@@ -1685,7 +5291,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string initialized_time = 5;</code>
+       * <code>string initialized_time = 5;</code>
        */
       public Builder setInitializedTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -1701,13 +5307,13 @@ public final class YadelModel {
 
       private int state_ = 0;
       /**
-       * <code>optional .org.roylance.yadel.WorkerState state = 6;</code>
+       * <code>.org.roylance.yadel.WorkerState state = 6;</code>
        */
       public int getStateValue() {
         return state_;
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerState state = 6;</code>
+       * <code>.org.roylance.yadel.WorkerState state = 6;</code>
        */
       public Builder setStateValue(int value) {
         state_ = value;
@@ -1715,14 +5321,14 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerState state = 6;</code>
+       * <code>.org.roylance.yadel.WorkerState state = 6;</code>
        */
       public org.roylance.yadel.YadelModel.WorkerState getState() {
         org.roylance.yadel.YadelModel.WorkerState result = org.roylance.yadel.YadelModel.WorkerState.valueOf(state_);
         return result == null ? org.roylance.yadel.YadelModel.WorkerState.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerState state = 6;</code>
+       * <code>.org.roylance.yadel.WorkerState state = 6;</code>
        */
       public Builder setState(org.roylance.yadel.YadelModel.WorkerState value) {
         if (value == null) {
@@ -1734,7 +5340,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerState state = 6;</code>
+       * <code>.org.roylance.yadel.WorkerState state = 6;</code>
        */
       public Builder clearState() {
         
@@ -1747,13 +5353,13 @@ public final class YadelModel {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Task, org.roylance.yadel.YadelModel.Task.Builder, org.roylance.yadel.YadelModel.TaskOrBuilder> taskBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       * <code>.org.roylance.yadel.Task task = 7;</code>
        */
       public boolean hasTask() {
         return taskBuilder_ != null || task_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       * <code>.org.roylance.yadel.Task task = 7;</code>
        */
       public org.roylance.yadel.YadelModel.Task getTask() {
         if (taskBuilder_ == null) {
@@ -1763,7 +5369,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       * <code>.org.roylance.yadel.Task task = 7;</code>
        */
       public Builder setTask(org.roylance.yadel.YadelModel.Task value) {
         if (taskBuilder_ == null) {
@@ -1779,7 +5385,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       * <code>.org.roylance.yadel.Task task = 7;</code>
        */
       public Builder setTask(
           org.roylance.yadel.YadelModel.Task.Builder builderForValue) {
@@ -1793,7 +5399,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       * <code>.org.roylance.yadel.Task task = 7;</code>
        */
       public Builder mergeTask(org.roylance.yadel.YadelModel.Task value) {
         if (taskBuilder_ == null) {
@@ -1811,7 +5417,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       * <code>.org.roylance.yadel.Task task = 7;</code>
        */
       public Builder clearTask() {
         if (taskBuilder_ == null) {
@@ -1825,7 +5431,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       * <code>.org.roylance.yadel.Task task = 7;</code>
        */
       public org.roylance.yadel.YadelModel.Task.Builder getTaskBuilder() {
         
@@ -1833,7 +5439,7 @@ public final class YadelModel {
         return getTaskFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       * <code>.org.roylance.yadel.Task task = 7;</code>
        */
       public org.roylance.yadel.YadelModel.TaskOrBuilder getTaskOrBuilder() {
         if (taskBuilder_ != null) {
@@ -1844,7 +5450,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 7;</code>
+       * <code>.org.roylance.yadel.Task task = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Task, org.roylance.yadel.YadelModel.Task.Builder, org.roylance.yadel.YadelModel.TaskOrBuilder> 
@@ -1864,13 +5470,13 @@ public final class YadelModel {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Dag, org.roylance.yadel.YadelModel.Dag.Builder, org.roylance.yadel.YadelModel.DagOrBuilder> dagBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       * <code>.org.roylance.yadel.Dag dag = 8;</code>
        */
       public boolean hasDag() {
         return dagBuilder_ != null || dag_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       * <code>.org.roylance.yadel.Dag dag = 8;</code>
        */
       public org.roylance.yadel.YadelModel.Dag getDag() {
         if (dagBuilder_ == null) {
@@ -1880,7 +5486,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       * <code>.org.roylance.yadel.Dag dag = 8;</code>
        */
       public Builder setDag(org.roylance.yadel.YadelModel.Dag value) {
         if (dagBuilder_ == null) {
@@ -1896,7 +5502,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       * <code>.org.roylance.yadel.Dag dag = 8;</code>
        */
       public Builder setDag(
           org.roylance.yadel.YadelModel.Dag.Builder builderForValue) {
@@ -1910,7 +5516,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       * <code>.org.roylance.yadel.Dag dag = 8;</code>
        */
       public Builder mergeDag(org.roylance.yadel.YadelModel.Dag value) {
         if (dagBuilder_ == null) {
@@ -1928,7 +5534,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       * <code>.org.roylance.yadel.Dag dag = 8;</code>
        */
       public Builder clearDag() {
         if (dagBuilder_ == null) {
@@ -1942,7 +5548,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       * <code>.org.roylance.yadel.Dag dag = 8;</code>
        */
       public org.roylance.yadel.YadelModel.Dag.Builder getDagBuilder() {
         
@@ -1950,7 +5556,7 @@ public final class YadelModel {
         return getDagFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       * <code>.org.roylance.yadel.Dag dag = 8;</code>
        */
       public org.roylance.yadel.YadelModel.DagOrBuilder getDagOrBuilder() {
         if (dagBuilder_ != null) {
@@ -1961,7 +5567,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag dag = 8;</code>
+       * <code>.org.roylance.yadel.Dag dag = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Dag, org.roylance.yadel.YadelModel.Dag.Builder, org.roylance.yadel.YadelModel.DagOrBuilder> 
@@ -1979,13 +5585,13 @@ public final class YadelModel {
 
       private long minutesBeforeTaskReset_ ;
       /**
-       * <code>optional uint64 minutes_before_task_reset = 9;</code>
+       * <code>uint64 minutes_before_task_reset = 9;</code>
        */
       public long getMinutesBeforeTaskReset() {
         return minutesBeforeTaskReset_;
       }
       /**
-       * <code>optional uint64 minutes_before_task_reset = 9;</code>
+       * <code>uint64 minutes_before_task_reset = 9;</code>
        */
       public Builder setMinutesBeforeTaskReset(long value) {
         
@@ -1994,7 +5600,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional uint64 minutes_before_task_reset = 9;</code>
+       * <code>uint64 minutes_before_task_reset = 9;</code>
        */
       public Builder clearMinutesBeforeTaskReset() {
         
@@ -2005,7 +5611,7 @@ public final class YadelModel {
 
       private java.lang.Object taskStartTime_ = "";
       /**
-       * <code>optional string task_start_time = 10;</code>
+       * <code>string task_start_time = 10;</code>
        */
       public java.lang.String getTaskStartTime() {
         java.lang.Object ref = taskStartTime_;
@@ -2020,7 +5626,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string task_start_time = 10;</code>
+       * <code>string task_start_time = 10;</code>
        */
       public com.google.protobuf.ByteString
           getTaskStartTimeBytes() {
@@ -2036,7 +5642,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string task_start_time = 10;</code>
+       * <code>string task_start_time = 10;</code>
        */
       public Builder setTaskStartTime(
           java.lang.String value) {
@@ -2049,7 +5655,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string task_start_time = 10;</code>
+       * <code>string task_start_time = 10;</code>
        */
       public Builder clearTaskStartTime() {
         
@@ -2058,7 +5664,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string task_start_time = 10;</code>
+       * <code>string task_start_time = 10;</code>
        */
       public Builder setTaskStartTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -2070,6 +5676,541 @@ public final class YadelModel {
         taskStartTime_ = value;
         onChanged();
         return this;
+      }
+
+      private int osBitVersion_ = 0;
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 11;</code>
+       */
+      public int getOsBitVersionValue() {
+        return osBitVersion_;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 11;</code>
+       */
+      public Builder setOsBitVersionValue(int value) {
+        osBitVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 11;</code>
+       */
+      public org.roylance.yadel.YadelModel.OSBitVersion getOsBitVersion() {
+        org.roylance.yadel.YadelModel.OSBitVersion result = org.roylance.yadel.YadelModel.OSBitVersion.valueOf(osBitVersion_);
+        return result == null ? org.roylance.yadel.YadelModel.OSBitVersion.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 11;</code>
+       */
+      public Builder setOsBitVersion(org.roylance.yadel.YadelModel.OSBitVersion value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        osBitVersion_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 11;</code>
+       */
+      public Builder clearOsBitVersion() {
+        
+        osBitVersion_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int osTypeVersion_ = 0;
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 12;</code>
+       */
+      public int getOsTypeVersionValue() {
+        return osTypeVersion_;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 12;</code>
+       */
+      public Builder setOsTypeVersionValue(int value) {
+        osTypeVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 12;</code>
+       */
+      public org.roylance.yadel.YadelModel.OSTypeVersion getOsTypeVersion() {
+        org.roylance.yadel.YadelModel.OSTypeVersion result = org.roylance.yadel.YadelModel.OSTypeVersion.valueOf(osTypeVersion_);
+        return result == null ? org.roylance.yadel.YadelModel.OSTypeVersion.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 12;</code>
+       */
+      public Builder setOsTypeVersion(org.roylance.yadel.YadelModel.OSTypeVersion value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        osTypeVersion_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 12;</code>
+       */
+      public Builder clearOsTypeVersion() {
+        
+        osTypeVersion_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object osMajorVersion_ = "";
+      /**
+       * <code>string os_major_version = 13;</code>
+       */
+      public java.lang.String getOsMajorVersion() {
+        java.lang.Object ref = osMajorVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osMajorVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string os_major_version = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOsMajorVersionBytes() {
+        java.lang.Object ref = osMajorVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          osMajorVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string os_major_version = 13;</code>
+       */
+      public Builder setOsMajorVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        osMajorVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_major_version = 13;</code>
+       */
+      public Builder clearOsMajorVersion() {
+        
+        osMajorVersion_ = getDefaultInstance().getOsMajorVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_major_version = 13;</code>
+       */
+      public Builder setOsMajorVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        osMajorVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object osMinorVersion_ = "";
+      /**
+       * <code>string os_minor_version = 14;</code>
+       */
+      public java.lang.String getOsMinorVersion() {
+        java.lang.Object ref = osMinorVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osMinorVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string os_minor_version = 14;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOsMinorVersionBytes() {
+        java.lang.Object ref = osMinorVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          osMinorVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string os_minor_version = 14;</code>
+       */
+      public Builder setOsMinorVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        osMinorVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_minor_version = 14;</code>
+       */
+      public Builder clearOsMinorVersion() {
+        
+        osMinorVersion_ = getDefaultInstance().getOsMinorVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_minor_version = 14;</code>
+       */
+      public Builder setOsMinorVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        osMinorVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object osBuildVersion_ = "";
+      /**
+       * <code>string os_build_version = 15;</code>
+       */
+      public java.lang.String getOsBuildVersion() {
+        java.lang.Object ref = osBuildVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osBuildVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string os_build_version = 15;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOsBuildVersionBytes() {
+        java.lang.Object ref = osBuildVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          osBuildVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string os_build_version = 15;</code>
+       */
+      public Builder setOsBuildVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        osBuildVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_build_version = 15;</code>
+       */
+      public Builder clearOsBuildVersion() {
+        
+        osBuildVersion_ = getDefaultInstance().getOsBuildVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_build_version = 15;</code>
+       */
+      public Builder setOsBuildVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        osBuildVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<org.roylance.yadel.YadelModel.WorkerProperty> properties_ =
+        java.util.Collections.emptyList();
+      private void ensurePropertiesIsMutable() {
+        if (!((bitField0_ & 0x00008000) == 0x00008000)) {
+          properties_ = new java.util.ArrayList<org.roylance.yadel.YadelModel.WorkerProperty>(properties_);
+          bitField0_ |= 0x00008000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> propertiesBuilder_;
+
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public java.util.List<org.roylance.yadel.YadelModel.WorkerProperty> getPropertiesList() {
+        if (propertiesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(properties_);
+        } else {
+          return propertiesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public int getPropertiesCount() {
+        if (propertiesBuilder_ == null) {
+          return properties_.size();
+        } else {
+          return propertiesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty getProperties(int index) {
+        if (propertiesBuilder_ == null) {
+          return properties_.get(index);
+        } else {
+          return propertiesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public Builder setProperties(
+          int index, org.roylance.yadel.YadelModel.WorkerProperty value) {
+        if (propertiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePropertiesIsMutable();
+          properties_.set(index, value);
+          onChanged();
+        } else {
+          propertiesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public Builder setProperties(
+          int index, org.roylance.yadel.YadelModel.WorkerProperty.Builder builderForValue) {
+        if (propertiesBuilder_ == null) {
+          ensurePropertiesIsMutable();
+          properties_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          propertiesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public Builder addProperties(org.roylance.yadel.YadelModel.WorkerProperty value) {
+        if (propertiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePropertiesIsMutable();
+          properties_.add(value);
+          onChanged();
+        } else {
+          propertiesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public Builder addProperties(
+          int index, org.roylance.yadel.YadelModel.WorkerProperty value) {
+        if (propertiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePropertiesIsMutable();
+          properties_.add(index, value);
+          onChanged();
+        } else {
+          propertiesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public Builder addProperties(
+          org.roylance.yadel.YadelModel.WorkerProperty.Builder builderForValue) {
+        if (propertiesBuilder_ == null) {
+          ensurePropertiesIsMutable();
+          properties_.add(builderForValue.build());
+          onChanged();
+        } else {
+          propertiesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public Builder addProperties(
+          int index, org.roylance.yadel.YadelModel.WorkerProperty.Builder builderForValue) {
+        if (propertiesBuilder_ == null) {
+          ensurePropertiesIsMutable();
+          properties_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          propertiesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public Builder addAllProperties(
+          java.lang.Iterable<? extends org.roylance.yadel.YadelModel.WorkerProperty> values) {
+        if (propertiesBuilder_ == null) {
+          ensurePropertiesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, properties_);
+          onChanged();
+        } else {
+          propertiesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public Builder clearProperties() {
+        if (propertiesBuilder_ == null) {
+          properties_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00008000);
+          onChanged();
+        } else {
+          propertiesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public Builder removeProperties(int index) {
+        if (propertiesBuilder_ == null) {
+          ensurePropertiesIsMutable();
+          properties_.remove(index);
+          onChanged();
+        } else {
+          propertiesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty.Builder getPropertiesBuilder(
+          int index) {
+        return getPropertiesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getPropertiesOrBuilder(
+          int index) {
+        if (propertiesBuilder_ == null) {
+          return properties_.get(index);  } else {
+          return propertiesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public java.util.List<? extends org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> 
+           getPropertiesOrBuilderList() {
+        if (propertiesBuilder_ != null) {
+          return propertiesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(properties_);
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty.Builder addPropertiesBuilder() {
+        return getPropertiesFieldBuilder().addBuilder(
+            org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty.Builder addPropertiesBuilder(
+          int index) {
+        return getPropertiesFieldBuilder().addBuilder(
+            index, org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 16;</code>
+       */
+      public java.util.List<org.roylance.yadel.YadelModel.WorkerProperty.Builder> 
+           getPropertiesBuilderList() {
+        return getPropertiesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> 
+          getPropertiesFieldBuilder() {
+        if (propertiesBuilder_ == null) {
+          propertiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder>(
+                  properties_,
+                  ((bitField0_ & 0x00008000) == 0x00008000),
+                  getParentForChildren(),
+                  isClean());
+          properties_ = null;
+        }
+        return propertiesBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2125,21 +6266,21 @@ public final class YadelModel {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional string message = 2;</code>
+     * <code>string message = 2;</code>
      */
     java.lang.String getMessage();
     /**
-     * <code>optional string message = 2;</code>
+     * <code>string message = 2;</code>
      */
     com.google.protobuf.ByteString
         getMessageBytes();
@@ -2223,7 +6364,7 @@ public final class YadelModel {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -2238,7 +6379,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -2257,7 +6398,7 @@ public final class YadelModel {
     public static final int MESSAGE_FIELD_NUMBER = 2;
     private volatile java.lang.Object message_;
     /**
-     * <code>optional string message = 2;</code>
+     * <code>string message = 2;</code>
      */
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
@@ -2272,7 +6413,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string message = 2;</code>
+     * <code>string message = 2;</code>
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
@@ -2348,7 +6489,7 @@ public final class YadelModel {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
@@ -2576,7 +6717,7 @@ public final class YadelModel {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -2591,7 +6732,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -2607,7 +6748,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -2620,7 +6761,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -2629,7 +6770,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -2645,7 +6786,7 @@ public final class YadelModel {
 
       private java.lang.Object message_ = "";
       /**
-       * <code>optional string message = 2;</code>
+       * <code>string message = 2;</code>
        */
       public java.lang.String getMessage() {
         java.lang.Object ref = message_;
@@ -2660,7 +6801,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string message = 2;</code>
+       * <code>string message = 2;</code>
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
@@ -2676,7 +6817,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string message = 2;</code>
+       * <code>string message = 2;</code>
        */
       public Builder setMessage(
           java.lang.String value) {
@@ -2689,7 +6830,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string message = 2;</code>
+       * <code>string message = 2;</code>
        */
       public Builder clearMessage() {
         
@@ -2698,7 +6839,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string message = 2;</code>
+       * <code>string message = 2;</code>
        */
       public Builder setMessageBytes(
           com.google.protobuf.ByteString value) {
@@ -2765,21 +6906,21 @@ public final class YadelModel {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     java.lang.String getDisplay();
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     com.google.protobuf.ByteString
         getDisplayBytes();
@@ -2809,22 +6950,22 @@ public final class YadelModel {
         int index);
 
     /**
-     * <code>optional int64 execution_date = 4;</code>
+     * <code>int64 execution_date = 4;</code>
      */
     long getExecutionDate();
 
     /**
-     * <code>optional int64 start_date = 5;</code>
+     * <code>int64 start_date = 5;</code>
      */
     long getStartDate();
 
     /**
-     * <code>optional int64 end_date = 6;</code>
+     * <code>int64 end_date = 6;</code>
      */
     long getEndDate();
 
     /**
-     * <code>optional int64 duration = 7;</code>
+     * <code>int64 duration = 7;</code>
      */
     long getDuration();
 
@@ -2925,15 +7066,15 @@ public final class YadelModel {
         int index);
 
     /**
-     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     * <code>.org.roylance.yadel.Dag parent = 12;</code>
      */
     boolean hasParent();
     /**
-     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     * <code>.org.roylance.yadel.Dag parent = 12;</code>
      */
     org.roylance.yadel.YadelModel.Dag getParent();
     /**
-     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     * <code>.org.roylance.yadel.Dag parent = 12;</code>
      */
     org.roylance.yadel.YadelModel.DagOrBuilder getParentOrBuilder();
   }
@@ -3119,7 +7260,7 @@ public final class YadelModel {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -3134,7 +7275,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -3153,7 +7294,7 @@ public final class YadelModel {
     public static final int DISPLAY_FIELD_NUMBER = 2;
     private volatile java.lang.Object display_;
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     public java.lang.String getDisplay() {
       java.lang.Object ref = display_;
@@ -3168,7 +7309,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     public com.google.protobuf.ByteString
         getDisplayBytes() {
@@ -3222,7 +7363,7 @@ public final class YadelModel {
     public static final int EXECUTION_DATE_FIELD_NUMBER = 4;
     private long executionDate_;
     /**
-     * <code>optional int64 execution_date = 4;</code>
+     * <code>int64 execution_date = 4;</code>
      */
     public long getExecutionDate() {
       return executionDate_;
@@ -3231,7 +7372,7 @@ public final class YadelModel {
     public static final int START_DATE_FIELD_NUMBER = 5;
     private long startDate_;
     /**
-     * <code>optional int64 start_date = 5;</code>
+     * <code>int64 start_date = 5;</code>
      */
     public long getStartDate() {
       return startDate_;
@@ -3240,7 +7381,7 @@ public final class YadelModel {
     public static final int END_DATE_FIELD_NUMBER = 6;
     private long endDate_;
     /**
-     * <code>optional int64 end_date = 6;</code>
+     * <code>int64 end_date = 6;</code>
      */
     public long getEndDate() {
       return endDate_;
@@ -3249,7 +7390,7 @@ public final class YadelModel {
     public static final int DURATION_FIELD_NUMBER = 7;
     private long duration_;
     /**
-     * <code>optional int64 duration = 7;</code>
+     * <code>int64 duration = 7;</code>
      */
     public long getDuration() {
       return duration_;
@@ -3398,19 +7539,19 @@ public final class YadelModel {
     public static final int PARENT_FIELD_NUMBER = 12;
     private org.roylance.yadel.YadelModel.Dag parent_;
     /**
-     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     * <code>.org.roylance.yadel.Dag parent = 12;</code>
      */
     public boolean hasParent() {
       return parent_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     * <code>.org.roylance.yadel.Dag parent = 12;</code>
      */
     public org.roylance.yadel.YadelModel.Dag getParent() {
       return parent_ == null ? org.roylance.yadel.YadelModel.Dag.getDefaultInstance() : parent_;
     }
     /**
-     * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+     * <code>.org.roylance.yadel.Dag parent = 12;</code>
      */
     public org.roylance.yadel.YadelModel.DagOrBuilder getParentOrBuilder() {
       return getParent();
@@ -3569,7 +7710,7 @@ public final class YadelModel {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + DISPLAY_FIELD_NUMBER;
@@ -4085,7 +8226,7 @@ public final class YadelModel {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -4100,7 +8241,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -4116,7 +8257,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -4129,7 +8270,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -4138,7 +8279,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -4154,7 +8295,7 @@ public final class YadelModel {
 
       private java.lang.Object display_ = "";
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public java.lang.String getDisplay() {
         java.lang.Object ref = display_;
@@ -4169,7 +8310,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public com.google.protobuf.ByteString
           getDisplayBytes() {
@@ -4185,7 +8326,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder setDisplay(
           java.lang.String value) {
@@ -4198,7 +8339,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder clearDisplay() {
         
@@ -4207,7 +8348,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder setDisplayBytes(
           com.google.protobuf.ByteString value) {
@@ -4463,13 +8604,13 @@ public final class YadelModel {
 
       private long executionDate_ ;
       /**
-       * <code>optional int64 execution_date = 4;</code>
+       * <code>int64 execution_date = 4;</code>
        */
       public long getExecutionDate() {
         return executionDate_;
       }
       /**
-       * <code>optional int64 execution_date = 4;</code>
+       * <code>int64 execution_date = 4;</code>
        */
       public Builder setExecutionDate(long value) {
         
@@ -4478,7 +8619,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional int64 execution_date = 4;</code>
+       * <code>int64 execution_date = 4;</code>
        */
       public Builder clearExecutionDate() {
         
@@ -4489,13 +8630,13 @@ public final class YadelModel {
 
       private long startDate_ ;
       /**
-       * <code>optional int64 start_date = 5;</code>
+       * <code>int64 start_date = 5;</code>
        */
       public long getStartDate() {
         return startDate_;
       }
       /**
-       * <code>optional int64 start_date = 5;</code>
+       * <code>int64 start_date = 5;</code>
        */
       public Builder setStartDate(long value) {
         
@@ -4504,7 +8645,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional int64 start_date = 5;</code>
+       * <code>int64 start_date = 5;</code>
        */
       public Builder clearStartDate() {
         
@@ -4515,13 +8656,13 @@ public final class YadelModel {
 
       private long endDate_ ;
       /**
-       * <code>optional int64 end_date = 6;</code>
+       * <code>int64 end_date = 6;</code>
        */
       public long getEndDate() {
         return endDate_;
       }
       /**
-       * <code>optional int64 end_date = 6;</code>
+       * <code>int64 end_date = 6;</code>
        */
       public Builder setEndDate(long value) {
         
@@ -4530,7 +8671,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional int64 end_date = 6;</code>
+       * <code>int64 end_date = 6;</code>
        */
       public Builder clearEndDate() {
         
@@ -4541,13 +8682,13 @@ public final class YadelModel {
 
       private long duration_ ;
       /**
-       * <code>optional int64 duration = 7;</code>
+       * <code>int64 duration = 7;</code>
        */
       public long getDuration() {
         return duration_;
       }
       /**
-       * <code>optional int64 duration = 7;</code>
+       * <code>int64 duration = 7;</code>
        */
       public Builder setDuration(long value) {
         
@@ -4556,7 +8697,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional int64 duration = 7;</code>
+       * <code>int64 duration = 7;</code>
        */
       public Builder clearDuration() {
         
@@ -5529,13 +9670,13 @@ public final class YadelModel {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Dag, org.roylance.yadel.YadelModel.Dag.Builder, org.roylance.yadel.YadelModel.DagOrBuilder> parentBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       * <code>.org.roylance.yadel.Dag parent = 12;</code>
        */
       public boolean hasParent() {
         return parentBuilder_ != null || parent_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       * <code>.org.roylance.yadel.Dag parent = 12;</code>
        */
       public org.roylance.yadel.YadelModel.Dag getParent() {
         if (parentBuilder_ == null) {
@@ -5545,7 +9686,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       * <code>.org.roylance.yadel.Dag parent = 12;</code>
        */
       public Builder setParent(org.roylance.yadel.YadelModel.Dag value) {
         if (parentBuilder_ == null) {
@@ -5561,7 +9702,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       * <code>.org.roylance.yadel.Dag parent = 12;</code>
        */
       public Builder setParent(
           org.roylance.yadel.YadelModel.Dag.Builder builderForValue) {
@@ -5575,7 +9716,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       * <code>.org.roylance.yadel.Dag parent = 12;</code>
        */
       public Builder mergeParent(org.roylance.yadel.YadelModel.Dag value) {
         if (parentBuilder_ == null) {
@@ -5593,7 +9734,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       * <code>.org.roylance.yadel.Dag parent = 12;</code>
        */
       public Builder clearParent() {
         if (parentBuilder_ == null) {
@@ -5607,7 +9748,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       * <code>.org.roylance.yadel.Dag parent = 12;</code>
        */
       public org.roylance.yadel.YadelModel.Dag.Builder getParentBuilder() {
         
@@ -5615,7 +9756,7 @@ public final class YadelModel {
         return getParentFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       * <code>.org.roylance.yadel.Dag parent = 12;</code>
        */
       public org.roylance.yadel.YadelModel.DagOrBuilder getParentOrBuilder() {
         if (parentBuilder_ != null) {
@@ -5626,7 +9767,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Dag parent = 12;</code>
+       * <code>.org.roylance.yadel.Dag parent = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Dag, org.roylance.yadel.YadelModel.Dag.Builder, org.roylance.yadel.YadelModel.DagOrBuilder> 
@@ -5695,21 +9836,21 @@ public final class YadelModel {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     java.lang.String getDisplay();
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     com.google.protobuf.ByteString
         getDisplayBytes();
@@ -5739,11 +9880,11 @@ public final class YadelModel {
         int index);
 
     /**
-     * <code>optional string dag_id = 4;</code>
+     * <code>string dag_id = 4;</code>
      */
     java.lang.String getDagId();
     /**
-     * <code>optional string dag_id = 4;</code>
+     * <code>string dag_id = 4;</code>
      */
     com.google.protobuf.ByteString
         getDagIdBytes();
@@ -5773,59 +9914,83 @@ public final class YadelModel {
         int index);
 
     /**
-     * <code>optional int64 execution_date = 6;</code>
+     * <code>int64 execution_date = 6;</code>
      */
     long getExecutionDate();
 
     /**
-     * <code>optional int64 start_date = 7;</code>
+     * <code>int64 start_date = 7;</code>
      */
     long getStartDate();
 
     /**
-     * <code>optional int64 end_date = 8;</code>
+     * <code>int64 end_date = 8;</code>
      */
     long getEndDate();
 
     /**
-     * <code>optional int64 duration = 9;</code>
+     * <code>int64 duration = 9;</code>
      */
     long getDuration();
 
     /**
-     * <code>optional string first_context_base_64 = 10;</code>
+     * <code>string first_context_base_64 = 10;</code>
      */
     java.lang.String getFirstContextBase64();
     /**
-     * <code>optional string first_context_base_64 = 10;</code>
+     * <code>string first_context_base_64 = 10;</code>
      */
     com.google.protobuf.ByteString
         getFirstContextBase64Bytes();
 
     /**
-     * <code>optional string second_context_base_64 = 11;</code>
+     * <code>string second_context_base_64 = 11;</code>
      */
     java.lang.String getSecondContextBase64();
     /**
-     * <code>optional string second_context_base_64 = 11;</code>
+     * <code>string second_context_base_64 = 11;</code>
      */
     com.google.protobuf.ByteString
         getSecondContextBase64Bytes();
 
     /**
-     * <code>optional string third_context_base_64 = 12;</code>
+     * <code>string third_context_base_64 = 12;</code>
      */
     java.lang.String getThirdContextBase64();
     /**
-     * <code>optional string third_context_base_64 = 12;</code>
+     * <code>string third_context_base_64 = 12;</code>
      */
     com.google.protobuf.ByteString
         getThirdContextBase64Bytes();
 
     /**
-     * <code>optional bool is_waiting_for_another_dag_task = 13;</code>
+     * <code>bool is_waiting_for_another_dag_task = 13;</code>
      */
     boolean getIsWaitingForAnotherDagTask();
+
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+     */
+    java.util.List<org.roylance.yadel.YadelModel.WorkerFilter> 
+        getFiltersList();
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerFilter getFilters(int index);
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+     */
+    int getFiltersCount();
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+     */
+    java.util.List<? extends org.roylance.yadel.YadelModel.WorkerFilterOrBuilder> 
+        getFiltersOrBuilderList();
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerFilterOrBuilder getFiltersOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code org.roylance.yadel.Task}
@@ -5852,6 +10017,7 @@ public final class YadelModel {
       secondContextBase64_ = "";
       thirdContextBase64_ = "";
       isWaitingForAnotherDagTask_ = false;
+      filters_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -5958,6 +10124,15 @@ public final class YadelModel {
               isWaitingForAnotherDagTask_ = input.readBool();
               break;
             }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+                filters_ = new java.util.ArrayList<org.roylance.yadel.YadelModel.WorkerFilter>();
+                mutable_bitField0_ |= 0x00002000;
+              }
+              filters_.add(
+                  input.readMessage(org.roylance.yadel.YadelModel.WorkerFilter.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5971,6 +10146,9 @@ public final class YadelModel {
         }
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           logs_ = java.util.Collections.unmodifiableList(logs_);
+        }
+        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+          filters_ = java.util.Collections.unmodifiableList(filters_);
         }
         makeExtensionsImmutable();
       }
@@ -5991,7 +10169,7 @@ public final class YadelModel {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -6006,7 +10184,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -6025,7 +10203,7 @@ public final class YadelModel {
     public static final int DISPLAY_FIELD_NUMBER = 2;
     private volatile java.lang.Object display_;
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     public java.lang.String getDisplay() {
       java.lang.Object ref = display_;
@@ -6040,7 +10218,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     public com.google.protobuf.ByteString
         getDisplayBytes() {
@@ -6094,7 +10272,7 @@ public final class YadelModel {
     public static final int DAG_ID_FIELD_NUMBER = 4;
     private volatile java.lang.Object dagId_;
     /**
-     * <code>optional string dag_id = 4;</code>
+     * <code>string dag_id = 4;</code>
      */
     public java.lang.String getDagId() {
       java.lang.Object ref = dagId_;
@@ -6109,7 +10287,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string dag_id = 4;</code>
+     * <code>string dag_id = 4;</code>
      */
     public com.google.protobuf.ByteString
         getDagIdBytes() {
@@ -6163,7 +10341,7 @@ public final class YadelModel {
     public static final int EXECUTION_DATE_FIELD_NUMBER = 6;
     private long executionDate_;
     /**
-     * <code>optional int64 execution_date = 6;</code>
+     * <code>int64 execution_date = 6;</code>
      */
     public long getExecutionDate() {
       return executionDate_;
@@ -6172,7 +10350,7 @@ public final class YadelModel {
     public static final int START_DATE_FIELD_NUMBER = 7;
     private long startDate_;
     /**
-     * <code>optional int64 start_date = 7;</code>
+     * <code>int64 start_date = 7;</code>
      */
     public long getStartDate() {
       return startDate_;
@@ -6181,7 +10359,7 @@ public final class YadelModel {
     public static final int END_DATE_FIELD_NUMBER = 8;
     private long endDate_;
     /**
-     * <code>optional int64 end_date = 8;</code>
+     * <code>int64 end_date = 8;</code>
      */
     public long getEndDate() {
       return endDate_;
@@ -6190,7 +10368,7 @@ public final class YadelModel {
     public static final int DURATION_FIELD_NUMBER = 9;
     private long duration_;
     /**
-     * <code>optional int64 duration = 9;</code>
+     * <code>int64 duration = 9;</code>
      */
     public long getDuration() {
       return duration_;
@@ -6199,7 +10377,7 @@ public final class YadelModel {
     public static final int FIRST_CONTEXT_BASE_64_FIELD_NUMBER = 10;
     private volatile java.lang.Object firstContextBase64_;
     /**
-     * <code>optional string first_context_base_64 = 10;</code>
+     * <code>string first_context_base_64 = 10;</code>
      */
     public java.lang.String getFirstContextBase64() {
       java.lang.Object ref = firstContextBase64_;
@@ -6214,7 +10392,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string first_context_base_64 = 10;</code>
+     * <code>string first_context_base_64 = 10;</code>
      */
     public com.google.protobuf.ByteString
         getFirstContextBase64Bytes() {
@@ -6233,7 +10411,7 @@ public final class YadelModel {
     public static final int SECOND_CONTEXT_BASE_64_FIELD_NUMBER = 11;
     private volatile java.lang.Object secondContextBase64_;
     /**
-     * <code>optional string second_context_base_64 = 11;</code>
+     * <code>string second_context_base_64 = 11;</code>
      */
     public java.lang.String getSecondContextBase64() {
       java.lang.Object ref = secondContextBase64_;
@@ -6248,7 +10426,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string second_context_base_64 = 11;</code>
+     * <code>string second_context_base_64 = 11;</code>
      */
     public com.google.protobuf.ByteString
         getSecondContextBase64Bytes() {
@@ -6267,7 +10445,7 @@ public final class YadelModel {
     public static final int THIRD_CONTEXT_BASE_64_FIELD_NUMBER = 12;
     private volatile java.lang.Object thirdContextBase64_;
     /**
-     * <code>optional string third_context_base_64 = 12;</code>
+     * <code>string third_context_base_64 = 12;</code>
      */
     public java.lang.String getThirdContextBase64() {
       java.lang.Object ref = thirdContextBase64_;
@@ -6282,7 +10460,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string third_context_base_64 = 12;</code>
+     * <code>string third_context_base_64 = 12;</code>
      */
     public com.google.protobuf.ByteString
         getThirdContextBase64Bytes() {
@@ -6301,10 +10479,45 @@ public final class YadelModel {
     public static final int IS_WAITING_FOR_ANOTHER_DAG_TASK_FIELD_NUMBER = 13;
     private boolean isWaitingForAnotherDagTask_;
     /**
-     * <code>optional bool is_waiting_for_another_dag_task = 13;</code>
+     * <code>bool is_waiting_for_another_dag_task = 13;</code>
      */
     public boolean getIsWaitingForAnotherDagTask() {
       return isWaitingForAnotherDagTask_;
+    }
+
+    public static final int FILTERS_FIELD_NUMBER = 14;
+    private java.util.List<org.roylance.yadel.YadelModel.WorkerFilter> filters_;
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+     */
+    public java.util.List<org.roylance.yadel.YadelModel.WorkerFilter> getFiltersList() {
+      return filters_;
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+     */
+    public java.util.List<? extends org.roylance.yadel.YadelModel.WorkerFilterOrBuilder> 
+        getFiltersOrBuilderList() {
+      return filters_;
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+     */
+    public int getFiltersCount() {
+      return filters_.size();
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerFilter getFilters(int index) {
+      return filters_.get(index);
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerFilterOrBuilder getFiltersOrBuilder(
+        int index) {
+      return filters_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6357,6 +10570,9 @@ public final class YadelModel {
       }
       if (isWaitingForAnotherDagTask_ != false) {
         output.writeBool(13, isWaitingForAnotherDagTask_);
+      }
+      for (int i = 0; i < filters_.size(); i++) {
+        output.writeMessage(14, filters_.get(i));
       }
     }
 
@@ -6411,6 +10627,10 @@ public final class YadelModel {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isWaitingForAnotherDagTask_);
       }
+      for (int i = 0; i < filters_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, filters_.get(i));
+      }
       memoizedSize = size;
       return size;
     }
@@ -6453,6 +10673,8 @@ public final class YadelModel {
           .equals(other.getThirdContextBase64());
       result = result && (getIsWaitingForAnotherDagTask()
           == other.getIsWaitingForAnotherDagTask());
+      result = result && getFiltersList()
+          .equals(other.getFiltersList());
       return result;
     }
 
@@ -6462,7 +10684,7 @@ public final class YadelModel {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + DISPLAY_FIELD_NUMBER;
@@ -6498,6 +10720,10 @@ public final class YadelModel {
       hash = (37 * hash) + IS_WAITING_FOR_ANOTHER_DAG_TASK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsWaitingForAnotherDagTask());
+      if (getFiltersCount() > 0) {
+        hash = (37 * hash) + FILTERS_FIELD_NUMBER;
+        hash = (53 * hash) + getFiltersList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6614,6 +10840,7 @@ public final class YadelModel {
                 .alwaysUseFieldBuilders) {
           getDependenciesFieldBuilder();
           getLogsFieldBuilder();
+          getFiltersFieldBuilder();
         }
       }
       public Builder clear() {
@@ -6652,6 +10879,12 @@ public final class YadelModel {
 
         isWaitingForAnotherDagTask_ = false;
 
+        if (filtersBuilder_ == null) {
+          filters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+        } else {
+          filtersBuilder_.clear();
+        }
         return this;
       }
 
@@ -6705,6 +10938,15 @@ public final class YadelModel {
         result.secondContextBase64_ = secondContextBase64_;
         result.thirdContextBase64_ = thirdContextBase64_;
         result.isWaitingForAnotherDagTask_ = isWaitingForAnotherDagTask_;
+        if (filtersBuilder_ == null) {
+          if (((bitField0_ & 0x00002000) == 0x00002000)) {
+            filters_ = java.util.Collections.unmodifiableList(filters_);
+            bitField0_ = (bitField0_ & ~0x00002000);
+          }
+          result.filters_ = filters_;
+        } else {
+          result.filters_ = filtersBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -6838,6 +11080,32 @@ public final class YadelModel {
         if (other.getIsWaitingForAnotherDagTask() != false) {
           setIsWaitingForAnotherDagTask(other.getIsWaitingForAnotherDagTask());
         }
+        if (filtersBuilder_ == null) {
+          if (!other.filters_.isEmpty()) {
+            if (filters_.isEmpty()) {
+              filters_ = other.filters_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+            } else {
+              ensureFiltersIsMutable();
+              filters_.addAll(other.filters_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.filters_.isEmpty()) {
+            if (filtersBuilder_.isEmpty()) {
+              filtersBuilder_.dispose();
+              filtersBuilder_ = null;
+              filters_ = other.filters_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+              filtersBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getFiltersFieldBuilder() : null;
+            } else {
+              filtersBuilder_.addAllMessages(other.filters_);
+            }
+          }
+        }
         onChanged();
         return this;
       }
@@ -6867,7 +11135,7 @@ public final class YadelModel {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -6882,7 +11150,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -6898,7 +11166,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -6911,7 +11179,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -6920,7 +11188,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -6936,7 +11204,7 @@ public final class YadelModel {
 
       private java.lang.Object display_ = "";
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public java.lang.String getDisplay() {
         java.lang.Object ref = display_;
@@ -6951,7 +11219,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public com.google.protobuf.ByteString
           getDisplayBytes() {
@@ -6967,7 +11235,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder setDisplay(
           java.lang.String value) {
@@ -6980,7 +11248,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder clearDisplay() {
         
@@ -6989,7 +11257,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder setDisplayBytes(
           com.google.protobuf.ByteString value) {
@@ -7245,7 +11513,7 @@ public final class YadelModel {
 
       private java.lang.Object dagId_ = "";
       /**
-       * <code>optional string dag_id = 4;</code>
+       * <code>string dag_id = 4;</code>
        */
       public java.lang.String getDagId() {
         java.lang.Object ref = dagId_;
@@ -7260,7 +11528,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string dag_id = 4;</code>
+       * <code>string dag_id = 4;</code>
        */
       public com.google.protobuf.ByteString
           getDagIdBytes() {
@@ -7276,7 +11544,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string dag_id = 4;</code>
+       * <code>string dag_id = 4;</code>
        */
       public Builder setDagId(
           java.lang.String value) {
@@ -7289,7 +11557,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string dag_id = 4;</code>
+       * <code>string dag_id = 4;</code>
        */
       public Builder clearDagId() {
         
@@ -7298,7 +11566,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string dag_id = 4;</code>
+       * <code>string dag_id = 4;</code>
        */
       public Builder setDagIdBytes(
           com.google.protobuf.ByteString value) {
@@ -7554,13 +11822,13 @@ public final class YadelModel {
 
       private long executionDate_ ;
       /**
-       * <code>optional int64 execution_date = 6;</code>
+       * <code>int64 execution_date = 6;</code>
        */
       public long getExecutionDate() {
         return executionDate_;
       }
       /**
-       * <code>optional int64 execution_date = 6;</code>
+       * <code>int64 execution_date = 6;</code>
        */
       public Builder setExecutionDate(long value) {
         
@@ -7569,7 +11837,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional int64 execution_date = 6;</code>
+       * <code>int64 execution_date = 6;</code>
        */
       public Builder clearExecutionDate() {
         
@@ -7580,13 +11848,13 @@ public final class YadelModel {
 
       private long startDate_ ;
       /**
-       * <code>optional int64 start_date = 7;</code>
+       * <code>int64 start_date = 7;</code>
        */
       public long getStartDate() {
         return startDate_;
       }
       /**
-       * <code>optional int64 start_date = 7;</code>
+       * <code>int64 start_date = 7;</code>
        */
       public Builder setStartDate(long value) {
         
@@ -7595,7 +11863,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional int64 start_date = 7;</code>
+       * <code>int64 start_date = 7;</code>
        */
       public Builder clearStartDate() {
         
@@ -7606,13 +11874,13 @@ public final class YadelModel {
 
       private long endDate_ ;
       /**
-       * <code>optional int64 end_date = 8;</code>
+       * <code>int64 end_date = 8;</code>
        */
       public long getEndDate() {
         return endDate_;
       }
       /**
-       * <code>optional int64 end_date = 8;</code>
+       * <code>int64 end_date = 8;</code>
        */
       public Builder setEndDate(long value) {
         
@@ -7621,7 +11889,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional int64 end_date = 8;</code>
+       * <code>int64 end_date = 8;</code>
        */
       public Builder clearEndDate() {
         
@@ -7632,13 +11900,13 @@ public final class YadelModel {
 
       private long duration_ ;
       /**
-       * <code>optional int64 duration = 9;</code>
+       * <code>int64 duration = 9;</code>
        */
       public long getDuration() {
         return duration_;
       }
       /**
-       * <code>optional int64 duration = 9;</code>
+       * <code>int64 duration = 9;</code>
        */
       public Builder setDuration(long value) {
         
@@ -7647,7 +11915,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional int64 duration = 9;</code>
+       * <code>int64 duration = 9;</code>
        */
       public Builder clearDuration() {
         
@@ -7658,7 +11926,7 @@ public final class YadelModel {
 
       private java.lang.Object firstContextBase64_ = "";
       /**
-       * <code>optional string first_context_base_64 = 10;</code>
+       * <code>string first_context_base_64 = 10;</code>
        */
       public java.lang.String getFirstContextBase64() {
         java.lang.Object ref = firstContextBase64_;
@@ -7673,7 +11941,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string first_context_base_64 = 10;</code>
+       * <code>string first_context_base_64 = 10;</code>
        */
       public com.google.protobuf.ByteString
           getFirstContextBase64Bytes() {
@@ -7689,7 +11957,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string first_context_base_64 = 10;</code>
+       * <code>string first_context_base_64 = 10;</code>
        */
       public Builder setFirstContextBase64(
           java.lang.String value) {
@@ -7702,7 +11970,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string first_context_base_64 = 10;</code>
+       * <code>string first_context_base_64 = 10;</code>
        */
       public Builder clearFirstContextBase64() {
         
@@ -7711,7 +11979,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string first_context_base_64 = 10;</code>
+       * <code>string first_context_base_64 = 10;</code>
        */
       public Builder setFirstContextBase64Bytes(
           com.google.protobuf.ByteString value) {
@@ -7727,7 +11995,7 @@ public final class YadelModel {
 
       private java.lang.Object secondContextBase64_ = "";
       /**
-       * <code>optional string second_context_base_64 = 11;</code>
+       * <code>string second_context_base_64 = 11;</code>
        */
       public java.lang.String getSecondContextBase64() {
         java.lang.Object ref = secondContextBase64_;
@@ -7742,7 +12010,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string second_context_base_64 = 11;</code>
+       * <code>string second_context_base_64 = 11;</code>
        */
       public com.google.protobuf.ByteString
           getSecondContextBase64Bytes() {
@@ -7758,7 +12026,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string second_context_base_64 = 11;</code>
+       * <code>string second_context_base_64 = 11;</code>
        */
       public Builder setSecondContextBase64(
           java.lang.String value) {
@@ -7771,7 +12039,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string second_context_base_64 = 11;</code>
+       * <code>string second_context_base_64 = 11;</code>
        */
       public Builder clearSecondContextBase64() {
         
@@ -7780,7 +12048,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string second_context_base_64 = 11;</code>
+       * <code>string second_context_base_64 = 11;</code>
        */
       public Builder setSecondContextBase64Bytes(
           com.google.protobuf.ByteString value) {
@@ -7796,7 +12064,7 @@ public final class YadelModel {
 
       private java.lang.Object thirdContextBase64_ = "";
       /**
-       * <code>optional string third_context_base_64 = 12;</code>
+       * <code>string third_context_base_64 = 12;</code>
        */
       public java.lang.String getThirdContextBase64() {
         java.lang.Object ref = thirdContextBase64_;
@@ -7811,7 +12079,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string third_context_base_64 = 12;</code>
+       * <code>string third_context_base_64 = 12;</code>
        */
       public com.google.protobuf.ByteString
           getThirdContextBase64Bytes() {
@@ -7827,7 +12095,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string third_context_base_64 = 12;</code>
+       * <code>string third_context_base_64 = 12;</code>
        */
       public Builder setThirdContextBase64(
           java.lang.String value) {
@@ -7840,7 +12108,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string third_context_base_64 = 12;</code>
+       * <code>string third_context_base_64 = 12;</code>
        */
       public Builder clearThirdContextBase64() {
         
@@ -7849,7 +12117,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string third_context_base_64 = 12;</code>
+       * <code>string third_context_base_64 = 12;</code>
        */
       public Builder setThirdContextBase64Bytes(
           com.google.protobuf.ByteString value) {
@@ -7865,13 +12133,13 @@ public final class YadelModel {
 
       private boolean isWaitingForAnotherDagTask_ ;
       /**
-       * <code>optional bool is_waiting_for_another_dag_task = 13;</code>
+       * <code>bool is_waiting_for_another_dag_task = 13;</code>
        */
       public boolean getIsWaitingForAnotherDagTask() {
         return isWaitingForAnotherDagTask_;
       }
       /**
-       * <code>optional bool is_waiting_for_another_dag_task = 13;</code>
+       * <code>bool is_waiting_for_another_dag_task = 13;</code>
        */
       public Builder setIsWaitingForAnotherDagTask(boolean value) {
         
@@ -7880,13 +12148,253 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional bool is_waiting_for_another_dag_task = 13;</code>
+       * <code>bool is_waiting_for_another_dag_task = 13;</code>
        */
       public Builder clearIsWaitingForAnotherDagTask() {
         
         isWaitingForAnotherDagTask_ = false;
         onChanged();
         return this;
+      }
+
+      private java.util.List<org.roylance.yadel.YadelModel.WorkerFilter> filters_ =
+        java.util.Collections.emptyList();
+      private void ensureFiltersIsMutable() {
+        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+          filters_ = new java.util.ArrayList<org.roylance.yadel.YadelModel.WorkerFilter>(filters_);
+          bitField0_ |= 0x00002000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerFilter, org.roylance.yadel.YadelModel.WorkerFilter.Builder, org.roylance.yadel.YadelModel.WorkerFilterOrBuilder> filtersBuilder_;
+
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public java.util.List<org.roylance.yadel.YadelModel.WorkerFilter> getFiltersList() {
+        if (filtersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(filters_);
+        } else {
+          return filtersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public int getFiltersCount() {
+        if (filtersBuilder_ == null) {
+          return filters_.size();
+        } else {
+          return filtersBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerFilter getFilters(int index) {
+        if (filtersBuilder_ == null) {
+          return filters_.get(index);
+        } else {
+          return filtersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public Builder setFilters(
+          int index, org.roylance.yadel.YadelModel.WorkerFilter value) {
+        if (filtersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFiltersIsMutable();
+          filters_.set(index, value);
+          onChanged();
+        } else {
+          filtersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public Builder setFilters(
+          int index, org.roylance.yadel.YadelModel.WorkerFilter.Builder builderForValue) {
+        if (filtersBuilder_ == null) {
+          ensureFiltersIsMutable();
+          filters_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          filtersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public Builder addFilters(org.roylance.yadel.YadelModel.WorkerFilter value) {
+        if (filtersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFiltersIsMutable();
+          filters_.add(value);
+          onChanged();
+        } else {
+          filtersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public Builder addFilters(
+          int index, org.roylance.yadel.YadelModel.WorkerFilter value) {
+        if (filtersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFiltersIsMutable();
+          filters_.add(index, value);
+          onChanged();
+        } else {
+          filtersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public Builder addFilters(
+          org.roylance.yadel.YadelModel.WorkerFilter.Builder builderForValue) {
+        if (filtersBuilder_ == null) {
+          ensureFiltersIsMutable();
+          filters_.add(builderForValue.build());
+          onChanged();
+        } else {
+          filtersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public Builder addFilters(
+          int index, org.roylance.yadel.YadelModel.WorkerFilter.Builder builderForValue) {
+        if (filtersBuilder_ == null) {
+          ensureFiltersIsMutable();
+          filters_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          filtersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public Builder addAllFilters(
+          java.lang.Iterable<? extends org.roylance.yadel.YadelModel.WorkerFilter> values) {
+        if (filtersBuilder_ == null) {
+          ensureFiltersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, filters_);
+          onChanged();
+        } else {
+          filtersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public Builder clearFilters() {
+        if (filtersBuilder_ == null) {
+          filters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+          onChanged();
+        } else {
+          filtersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public Builder removeFilters(int index) {
+        if (filtersBuilder_ == null) {
+          ensureFiltersIsMutable();
+          filters_.remove(index);
+          onChanged();
+        } else {
+          filtersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerFilter.Builder getFiltersBuilder(
+          int index) {
+        return getFiltersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerFilterOrBuilder getFiltersOrBuilder(
+          int index) {
+        if (filtersBuilder_ == null) {
+          return filters_.get(index);  } else {
+          return filtersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public java.util.List<? extends org.roylance.yadel.YadelModel.WorkerFilterOrBuilder> 
+           getFiltersOrBuilderList() {
+        if (filtersBuilder_ != null) {
+          return filtersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(filters_);
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerFilter.Builder addFiltersBuilder() {
+        return getFiltersFieldBuilder().addBuilder(
+            org.roylance.yadel.YadelModel.WorkerFilter.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerFilter.Builder addFiltersBuilder(
+          int index) {
+        return getFiltersFieldBuilder().addBuilder(
+            index, org.roylance.yadel.YadelModel.WorkerFilter.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerFilter filters = 14;</code>
+       */
+      public java.util.List<org.roylance.yadel.YadelModel.WorkerFilter.Builder> 
+           getFiltersBuilderList() {
+        return getFiltersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerFilter, org.roylance.yadel.YadelModel.WorkerFilter.Builder, org.roylance.yadel.YadelModel.WorkerFilterOrBuilder> 
+          getFiltersFieldBuilder() {
+        if (filtersBuilder_ == null) {
+          filtersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.roylance.yadel.YadelModel.WorkerFilter, org.roylance.yadel.YadelModel.WorkerFilter.Builder, org.roylance.yadel.YadelModel.WorkerFilterOrBuilder>(
+                  filters_,
+                  ((bitField0_ & 0x00002000) == 0x00002000),
+                  getParentForChildren(),
+                  isClean());
+          filters_ = null;
+        }
+        return filtersBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7942,21 +12450,21 @@ public final class YadelModel {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional string parent_task_id = 2;</code>
+     * <code>string parent_task_id = 2;</code>
      */
     java.lang.String getParentTaskId();
     /**
-     * <code>optional string parent_task_id = 2;</code>
+     * <code>string parent_task_id = 2;</code>
      */
     com.google.protobuf.ByteString
         getParentTaskIdBytes();
@@ -8040,7 +12548,7 @@ public final class YadelModel {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -8055,7 +12563,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -8074,7 +12582,7 @@ public final class YadelModel {
     public static final int PARENT_TASK_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object parentTaskId_;
     /**
-     * <code>optional string parent_task_id = 2;</code>
+     * <code>string parent_task_id = 2;</code>
      */
     public java.lang.String getParentTaskId() {
       java.lang.Object ref = parentTaskId_;
@@ -8089,7 +12597,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string parent_task_id = 2;</code>
+     * <code>string parent_task_id = 2;</code>
      */
     public com.google.protobuf.ByteString
         getParentTaskIdBytes() {
@@ -8165,7 +12673,7 @@ public final class YadelModel {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + PARENT_TASK_ID_FIELD_NUMBER;
@@ -8393,7 +12901,7 @@ public final class YadelModel {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -8408,7 +12916,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -8424,7 +12932,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -8437,7 +12945,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -8446,7 +12954,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -8462,7 +12970,7 @@ public final class YadelModel {
 
       private java.lang.Object parentTaskId_ = "";
       /**
-       * <code>optional string parent_task_id = 2;</code>
+       * <code>string parent_task_id = 2;</code>
        */
       public java.lang.String getParentTaskId() {
         java.lang.Object ref = parentTaskId_;
@@ -8477,7 +12985,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string parent_task_id = 2;</code>
+       * <code>string parent_task_id = 2;</code>
        */
       public com.google.protobuf.ByteString
           getParentTaskIdBytes() {
@@ -8493,7 +13001,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string parent_task_id = 2;</code>
+       * <code>string parent_task_id = 2;</code>
        */
       public Builder setParentTaskId(
           java.lang.String value) {
@@ -8506,7 +13014,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string parent_task_id = 2;</code>
+       * <code>string parent_task_id = 2;</code>
        */
       public Builder clearParentTaskId() {
         
@@ -8515,7 +13023,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string parent_task_id = 2;</code>
+       * <code>string parent_task_id = 2;</code>
        */
       public Builder setParentTaskIdBytes(
           com.google.protobuf.ByteString value) {
@@ -8582,67 +13090,67 @@ public final class YadelModel {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+     * <code>.org.roylance.yadel.Task parent_task = 2;</code>
      */
     boolean hasParentTask();
     /**
-     * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+     * <code>.org.roylance.yadel.Task parent_task = 2;</code>
      */
     org.roylance.yadel.YadelModel.Task getParentTask();
     /**
-     * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+     * <code>.org.roylance.yadel.Task parent_task = 2;</code>
      */
     org.roylance.yadel.YadelModel.TaskOrBuilder getParentTaskOrBuilder();
 
     /**
-     * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+     * <code>.org.roylance.yadel.Task new_task = 3;</code>
      */
     boolean hasNewTask();
     /**
-     * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+     * <code>.org.roylance.yadel.Task new_task = 3;</code>
      */
     org.roylance.yadel.YadelModel.Task getNewTask();
     /**
-     * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+     * <code>.org.roylance.yadel.Task new_task = 3;</code>
      */
     org.roylance.yadel.YadelModel.TaskOrBuilder getNewTaskOrBuilder();
 
     /**
-     * <code>optional string first_context_base_64 = 4;</code>
+     * <code>string first_context_base_64 = 4;</code>
      */
     java.lang.String getFirstContextBase64();
     /**
-     * <code>optional string first_context_base_64 = 4;</code>
+     * <code>string first_context_base_64 = 4;</code>
      */
     com.google.protobuf.ByteString
         getFirstContextBase64Bytes();
 
     /**
-     * <code>optional string second_context_base_64 = 5;</code>
+     * <code>string second_context_base_64 = 5;</code>
      */
     java.lang.String getSecondContextBase64();
     /**
-     * <code>optional string second_context_base_64 = 5;</code>
+     * <code>string second_context_base_64 = 5;</code>
      */
     com.google.protobuf.ByteString
         getSecondContextBase64Bytes();
 
     /**
-     * <code>optional string third_context_base_64 = 6;</code>
+     * <code>string third_context_base_64 = 6;</code>
      */
     java.lang.String getThirdContextBase64();
     /**
-     * <code>optional string third_context_base_64 = 6;</code>
+     * <code>string third_context_base_64 = 6;</code>
      */
     com.google.protobuf.ByteString
         getThirdContextBase64Bytes();
@@ -8766,7 +13274,7 @@ public final class YadelModel {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -8781,7 +13289,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -8800,19 +13308,19 @@ public final class YadelModel {
     public static final int PARENT_TASK_FIELD_NUMBER = 2;
     private org.roylance.yadel.YadelModel.Task parentTask_;
     /**
-     * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+     * <code>.org.roylance.yadel.Task parent_task = 2;</code>
      */
     public boolean hasParentTask() {
       return parentTask_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+     * <code>.org.roylance.yadel.Task parent_task = 2;</code>
      */
     public org.roylance.yadel.YadelModel.Task getParentTask() {
       return parentTask_ == null ? org.roylance.yadel.YadelModel.Task.getDefaultInstance() : parentTask_;
     }
     /**
-     * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+     * <code>.org.roylance.yadel.Task parent_task = 2;</code>
      */
     public org.roylance.yadel.YadelModel.TaskOrBuilder getParentTaskOrBuilder() {
       return getParentTask();
@@ -8821,19 +13329,19 @@ public final class YadelModel {
     public static final int NEW_TASK_FIELD_NUMBER = 3;
     private org.roylance.yadel.YadelModel.Task newTask_;
     /**
-     * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+     * <code>.org.roylance.yadel.Task new_task = 3;</code>
      */
     public boolean hasNewTask() {
       return newTask_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+     * <code>.org.roylance.yadel.Task new_task = 3;</code>
      */
     public org.roylance.yadel.YadelModel.Task getNewTask() {
       return newTask_ == null ? org.roylance.yadel.YadelModel.Task.getDefaultInstance() : newTask_;
     }
     /**
-     * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+     * <code>.org.roylance.yadel.Task new_task = 3;</code>
      */
     public org.roylance.yadel.YadelModel.TaskOrBuilder getNewTaskOrBuilder() {
       return getNewTask();
@@ -8842,7 +13350,7 @@ public final class YadelModel {
     public static final int FIRST_CONTEXT_BASE_64_FIELD_NUMBER = 4;
     private volatile java.lang.Object firstContextBase64_;
     /**
-     * <code>optional string first_context_base_64 = 4;</code>
+     * <code>string first_context_base_64 = 4;</code>
      */
     public java.lang.String getFirstContextBase64() {
       java.lang.Object ref = firstContextBase64_;
@@ -8857,7 +13365,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string first_context_base_64 = 4;</code>
+     * <code>string first_context_base_64 = 4;</code>
      */
     public com.google.protobuf.ByteString
         getFirstContextBase64Bytes() {
@@ -8876,7 +13384,7 @@ public final class YadelModel {
     public static final int SECOND_CONTEXT_BASE_64_FIELD_NUMBER = 5;
     private volatile java.lang.Object secondContextBase64_;
     /**
-     * <code>optional string second_context_base_64 = 5;</code>
+     * <code>string second_context_base_64 = 5;</code>
      */
     public java.lang.String getSecondContextBase64() {
       java.lang.Object ref = secondContextBase64_;
@@ -8891,7 +13399,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string second_context_base_64 = 5;</code>
+     * <code>string second_context_base_64 = 5;</code>
      */
     public com.google.protobuf.ByteString
         getSecondContextBase64Bytes() {
@@ -8910,7 +13418,7 @@ public final class YadelModel {
     public static final int THIRD_CONTEXT_BASE_64_FIELD_NUMBER = 6;
     private volatile java.lang.Object thirdContextBase64_;
     /**
-     * <code>optional string third_context_base_64 = 6;</code>
+     * <code>string third_context_base_64 = 6;</code>
      */
     public java.lang.String getThirdContextBase64() {
       java.lang.Object ref = thirdContextBase64_;
@@ -8925,7 +13433,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string third_context_base_64 = 6;</code>
+     * <code>string third_context_base_64 = 6;</code>
      */
     public com.google.protobuf.ByteString
         getThirdContextBase64Bytes() {
@@ -9041,7 +13549,7 @@ public final class YadelModel {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       if (hasParentTask()) {
@@ -9323,7 +13831,7 @@ public final class YadelModel {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -9338,7 +13846,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -9354,7 +13862,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -9367,7 +13875,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -9376,7 +13884,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -9394,13 +13902,13 @@ public final class YadelModel {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Task, org.roylance.yadel.YadelModel.Task.Builder, org.roylance.yadel.YadelModel.TaskOrBuilder> parentTaskBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+       * <code>.org.roylance.yadel.Task parent_task = 2;</code>
        */
       public boolean hasParentTask() {
         return parentTaskBuilder_ != null || parentTask_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+       * <code>.org.roylance.yadel.Task parent_task = 2;</code>
        */
       public org.roylance.yadel.YadelModel.Task getParentTask() {
         if (parentTaskBuilder_ == null) {
@@ -9410,7 +13918,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+       * <code>.org.roylance.yadel.Task parent_task = 2;</code>
        */
       public Builder setParentTask(org.roylance.yadel.YadelModel.Task value) {
         if (parentTaskBuilder_ == null) {
@@ -9426,7 +13934,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+       * <code>.org.roylance.yadel.Task parent_task = 2;</code>
        */
       public Builder setParentTask(
           org.roylance.yadel.YadelModel.Task.Builder builderForValue) {
@@ -9440,7 +13948,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+       * <code>.org.roylance.yadel.Task parent_task = 2;</code>
        */
       public Builder mergeParentTask(org.roylance.yadel.YadelModel.Task value) {
         if (parentTaskBuilder_ == null) {
@@ -9458,7 +13966,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+       * <code>.org.roylance.yadel.Task parent_task = 2;</code>
        */
       public Builder clearParentTask() {
         if (parentTaskBuilder_ == null) {
@@ -9472,7 +13980,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+       * <code>.org.roylance.yadel.Task parent_task = 2;</code>
        */
       public org.roylance.yadel.YadelModel.Task.Builder getParentTaskBuilder() {
         
@@ -9480,7 +13988,7 @@ public final class YadelModel {
         return getParentTaskFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+       * <code>.org.roylance.yadel.Task parent_task = 2;</code>
        */
       public org.roylance.yadel.YadelModel.TaskOrBuilder getParentTaskOrBuilder() {
         if (parentTaskBuilder_ != null) {
@@ -9491,7 +13999,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Task parent_task = 2;</code>
+       * <code>.org.roylance.yadel.Task parent_task = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Task, org.roylance.yadel.YadelModel.Task.Builder, org.roylance.yadel.YadelModel.TaskOrBuilder> 
@@ -9511,13 +14019,13 @@ public final class YadelModel {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Task, org.roylance.yadel.YadelModel.Task.Builder, org.roylance.yadel.YadelModel.TaskOrBuilder> newTaskBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+       * <code>.org.roylance.yadel.Task new_task = 3;</code>
        */
       public boolean hasNewTask() {
         return newTaskBuilder_ != null || newTask_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+       * <code>.org.roylance.yadel.Task new_task = 3;</code>
        */
       public org.roylance.yadel.YadelModel.Task getNewTask() {
         if (newTaskBuilder_ == null) {
@@ -9527,7 +14035,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+       * <code>.org.roylance.yadel.Task new_task = 3;</code>
        */
       public Builder setNewTask(org.roylance.yadel.YadelModel.Task value) {
         if (newTaskBuilder_ == null) {
@@ -9543,7 +14051,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+       * <code>.org.roylance.yadel.Task new_task = 3;</code>
        */
       public Builder setNewTask(
           org.roylance.yadel.YadelModel.Task.Builder builderForValue) {
@@ -9557,7 +14065,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+       * <code>.org.roylance.yadel.Task new_task = 3;</code>
        */
       public Builder mergeNewTask(org.roylance.yadel.YadelModel.Task value) {
         if (newTaskBuilder_ == null) {
@@ -9575,7 +14083,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+       * <code>.org.roylance.yadel.Task new_task = 3;</code>
        */
       public Builder clearNewTask() {
         if (newTaskBuilder_ == null) {
@@ -9589,7 +14097,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+       * <code>.org.roylance.yadel.Task new_task = 3;</code>
        */
       public org.roylance.yadel.YadelModel.Task.Builder getNewTaskBuilder() {
         
@@ -9597,7 +14105,7 @@ public final class YadelModel {
         return getNewTaskFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+       * <code>.org.roylance.yadel.Task new_task = 3;</code>
        */
       public org.roylance.yadel.YadelModel.TaskOrBuilder getNewTaskOrBuilder() {
         if (newTaskBuilder_ != null) {
@@ -9608,7 +14116,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Task new_task = 3;</code>
+       * <code>.org.roylance.yadel.Task new_task = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Task, org.roylance.yadel.YadelModel.Task.Builder, org.roylance.yadel.YadelModel.TaskOrBuilder> 
@@ -9626,7 +14134,7 @@ public final class YadelModel {
 
       private java.lang.Object firstContextBase64_ = "";
       /**
-       * <code>optional string first_context_base_64 = 4;</code>
+       * <code>string first_context_base_64 = 4;</code>
        */
       public java.lang.String getFirstContextBase64() {
         java.lang.Object ref = firstContextBase64_;
@@ -9641,7 +14149,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string first_context_base_64 = 4;</code>
+       * <code>string first_context_base_64 = 4;</code>
        */
       public com.google.protobuf.ByteString
           getFirstContextBase64Bytes() {
@@ -9657,7 +14165,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string first_context_base_64 = 4;</code>
+       * <code>string first_context_base_64 = 4;</code>
        */
       public Builder setFirstContextBase64(
           java.lang.String value) {
@@ -9670,7 +14178,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string first_context_base_64 = 4;</code>
+       * <code>string first_context_base_64 = 4;</code>
        */
       public Builder clearFirstContextBase64() {
         
@@ -9679,7 +14187,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string first_context_base_64 = 4;</code>
+       * <code>string first_context_base_64 = 4;</code>
        */
       public Builder setFirstContextBase64Bytes(
           com.google.protobuf.ByteString value) {
@@ -9695,7 +14203,7 @@ public final class YadelModel {
 
       private java.lang.Object secondContextBase64_ = "";
       /**
-       * <code>optional string second_context_base_64 = 5;</code>
+       * <code>string second_context_base_64 = 5;</code>
        */
       public java.lang.String getSecondContextBase64() {
         java.lang.Object ref = secondContextBase64_;
@@ -9710,7 +14218,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string second_context_base_64 = 5;</code>
+       * <code>string second_context_base_64 = 5;</code>
        */
       public com.google.protobuf.ByteString
           getSecondContextBase64Bytes() {
@@ -9726,7 +14234,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string second_context_base_64 = 5;</code>
+       * <code>string second_context_base_64 = 5;</code>
        */
       public Builder setSecondContextBase64(
           java.lang.String value) {
@@ -9739,7 +14247,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string second_context_base_64 = 5;</code>
+       * <code>string second_context_base_64 = 5;</code>
        */
       public Builder clearSecondContextBase64() {
         
@@ -9748,7 +14256,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string second_context_base_64 = 5;</code>
+       * <code>string second_context_base_64 = 5;</code>
        */
       public Builder setSecondContextBase64Bytes(
           com.google.protobuf.ByteString value) {
@@ -9764,7 +14272,7 @@ public final class YadelModel {
 
       private java.lang.Object thirdContextBase64_ = "";
       /**
-       * <code>optional string third_context_base_64 = 6;</code>
+       * <code>string third_context_base_64 = 6;</code>
        */
       public java.lang.String getThirdContextBase64() {
         java.lang.Object ref = thirdContextBase64_;
@@ -9779,7 +14287,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string third_context_base_64 = 6;</code>
+       * <code>string third_context_base_64 = 6;</code>
        */
       public com.google.protobuf.ByteString
           getThirdContextBase64Bytes() {
@@ -9795,7 +14303,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string third_context_base_64 = 6;</code>
+       * <code>string third_context_base_64 = 6;</code>
        */
       public Builder setThirdContextBase64(
           java.lang.String value) {
@@ -9808,7 +14316,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string third_context_base_64 = 6;</code>
+       * <code>string third_context_base_64 = 6;</code>
        */
       public Builder clearThirdContextBase64() {
         
@@ -9817,7 +14325,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string third_context_base_64 = 6;</code>
+       * <code>string third_context_base_64 = 6;</code>
        */
       public Builder setThirdContextBase64Bytes(
           com.google.protobuf.ByteString value) {
@@ -9884,43 +14392,43 @@ public final class YadelModel {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional .org.roylance.yadel.Task task = 2;</code>
+     * <code>.org.roylance.yadel.Task task = 2;</code>
      */
     boolean hasTask();
     /**
-     * <code>optional .org.roylance.yadel.Task task = 2;</code>
+     * <code>.org.roylance.yadel.Task task = 2;</code>
      */
     org.roylance.yadel.YadelModel.Task getTask();
     /**
-     * <code>optional .org.roylance.yadel.Task task = 2;</code>
+     * <code>.org.roylance.yadel.Task task = 2;</code>
      */
     org.roylance.yadel.YadelModel.TaskOrBuilder getTaskOrBuilder();
 
     /**
-     * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+     * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
      */
     boolean hasWorkerConfiguration();
     /**
-     * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+     * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
      */
     org.roylance.yadel.YadelModel.WorkerConfiguration getWorkerConfiguration();
     /**
-     * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+     * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
      */
     org.roylance.yadel.YadelModel.WorkerConfigurationOrBuilder getWorkerConfigurationOrBuilder();
 
     /**
-     * <code>optional bool is_error = 5;</code>
+     * <code>bool is_error = 5;</code>
      */
     boolean getIsError();
   }
@@ -10028,7 +14536,7 @@ public final class YadelModel {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -10043,7 +14551,7 @@ public final class YadelModel {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -10062,19 +14570,19 @@ public final class YadelModel {
     public static final int TASK_FIELD_NUMBER = 2;
     private org.roylance.yadel.YadelModel.Task task_;
     /**
-     * <code>optional .org.roylance.yadel.Task task = 2;</code>
+     * <code>.org.roylance.yadel.Task task = 2;</code>
      */
     public boolean hasTask() {
       return task_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.Task task = 2;</code>
+     * <code>.org.roylance.yadel.Task task = 2;</code>
      */
     public org.roylance.yadel.YadelModel.Task getTask() {
       return task_ == null ? org.roylance.yadel.YadelModel.Task.getDefaultInstance() : task_;
     }
     /**
-     * <code>optional .org.roylance.yadel.Task task = 2;</code>
+     * <code>.org.roylance.yadel.Task task = 2;</code>
      */
     public org.roylance.yadel.YadelModel.TaskOrBuilder getTaskOrBuilder() {
       return getTask();
@@ -10083,19 +14591,19 @@ public final class YadelModel {
     public static final int WORKER_CONFIGURATION_FIELD_NUMBER = 3;
     private org.roylance.yadel.YadelModel.WorkerConfiguration workerConfiguration_;
     /**
-     * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+     * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
      */
     public boolean hasWorkerConfiguration() {
       return workerConfiguration_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+     * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
      */
     public org.roylance.yadel.YadelModel.WorkerConfiguration getWorkerConfiguration() {
       return workerConfiguration_ == null ? org.roylance.yadel.YadelModel.WorkerConfiguration.getDefaultInstance() : workerConfiguration_;
     }
     /**
-     * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+     * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
      */
     public org.roylance.yadel.YadelModel.WorkerConfigurationOrBuilder getWorkerConfigurationOrBuilder() {
       return getWorkerConfiguration();
@@ -10104,7 +14612,7 @@ public final class YadelModel {
     public static final int IS_ERROR_FIELD_NUMBER = 5;
     private boolean isError_;
     /**
-     * <code>optional bool is_error = 5;</code>
+     * <code>bool is_error = 5;</code>
      */
     public boolean getIsError() {
       return isError_;
@@ -10195,7 +14703,7 @@ public final class YadelModel {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       if (hasTask()) {
@@ -10459,7 +14967,7 @@ public final class YadelModel {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -10474,7 +14982,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -10490,7 +14998,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -10503,7 +15011,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -10512,7 +15020,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -10530,13 +15038,13 @@ public final class YadelModel {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Task, org.roylance.yadel.YadelModel.Task.Builder, org.roylance.yadel.YadelModel.TaskOrBuilder> taskBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.Task task = 2;</code>
+       * <code>.org.roylance.yadel.Task task = 2;</code>
        */
       public boolean hasTask() {
         return taskBuilder_ != null || task_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 2;</code>
+       * <code>.org.roylance.yadel.Task task = 2;</code>
        */
       public org.roylance.yadel.YadelModel.Task getTask() {
         if (taskBuilder_ == null) {
@@ -10546,7 +15054,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 2;</code>
+       * <code>.org.roylance.yadel.Task task = 2;</code>
        */
       public Builder setTask(org.roylance.yadel.YadelModel.Task value) {
         if (taskBuilder_ == null) {
@@ -10562,7 +15070,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 2;</code>
+       * <code>.org.roylance.yadel.Task task = 2;</code>
        */
       public Builder setTask(
           org.roylance.yadel.YadelModel.Task.Builder builderForValue) {
@@ -10576,7 +15084,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 2;</code>
+       * <code>.org.roylance.yadel.Task task = 2;</code>
        */
       public Builder mergeTask(org.roylance.yadel.YadelModel.Task value) {
         if (taskBuilder_ == null) {
@@ -10594,7 +15102,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 2;</code>
+       * <code>.org.roylance.yadel.Task task = 2;</code>
        */
       public Builder clearTask() {
         if (taskBuilder_ == null) {
@@ -10608,7 +15116,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 2;</code>
+       * <code>.org.roylance.yadel.Task task = 2;</code>
        */
       public org.roylance.yadel.YadelModel.Task.Builder getTaskBuilder() {
         
@@ -10616,7 +15124,7 @@ public final class YadelModel {
         return getTaskFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 2;</code>
+       * <code>.org.roylance.yadel.Task task = 2;</code>
        */
       public org.roylance.yadel.YadelModel.TaskOrBuilder getTaskOrBuilder() {
         if (taskBuilder_ != null) {
@@ -10627,7 +15135,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.Task task = 2;</code>
+       * <code>.org.roylance.yadel.Task task = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.Task, org.roylance.yadel.YadelModel.Task.Builder, org.roylance.yadel.YadelModel.TaskOrBuilder> 
@@ -10647,13 +15155,13 @@ public final class YadelModel {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.WorkerConfiguration, org.roylance.yadel.YadelModel.WorkerConfiguration.Builder, org.roylance.yadel.YadelModel.WorkerConfigurationOrBuilder> workerConfigurationBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+       * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
        */
       public boolean hasWorkerConfiguration() {
         return workerConfigurationBuilder_ != null || workerConfiguration_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+       * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
        */
       public org.roylance.yadel.YadelModel.WorkerConfiguration getWorkerConfiguration() {
         if (workerConfigurationBuilder_ == null) {
@@ -10663,7 +15171,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+       * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
        */
       public Builder setWorkerConfiguration(org.roylance.yadel.YadelModel.WorkerConfiguration value) {
         if (workerConfigurationBuilder_ == null) {
@@ -10679,7 +15187,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+       * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
        */
       public Builder setWorkerConfiguration(
           org.roylance.yadel.YadelModel.WorkerConfiguration.Builder builderForValue) {
@@ -10693,7 +15201,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+       * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
        */
       public Builder mergeWorkerConfiguration(org.roylance.yadel.YadelModel.WorkerConfiguration value) {
         if (workerConfigurationBuilder_ == null) {
@@ -10711,7 +15219,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+       * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
        */
       public Builder clearWorkerConfiguration() {
         if (workerConfigurationBuilder_ == null) {
@@ -10725,7 +15233,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+       * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
        */
       public org.roylance.yadel.YadelModel.WorkerConfiguration.Builder getWorkerConfigurationBuilder() {
         
@@ -10733,7 +15241,7 @@ public final class YadelModel {
         return getWorkerConfigurationFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+       * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
        */
       public org.roylance.yadel.YadelModel.WorkerConfigurationOrBuilder getWorkerConfigurationOrBuilder() {
         if (workerConfigurationBuilder_ != null) {
@@ -10744,7 +15252,7 @@ public final class YadelModel {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
+       * <code>.org.roylance.yadel.WorkerConfiguration worker_configuration = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelModel.WorkerConfiguration, org.roylance.yadel.YadelModel.WorkerConfiguration.Builder, org.roylance.yadel.YadelModel.WorkerConfigurationOrBuilder> 
@@ -10762,13 +15270,13 @@ public final class YadelModel {
 
       private boolean isError_ ;
       /**
-       * <code>optional bool is_error = 5;</code>
+       * <code>bool is_error = 5;</code>
        */
       public boolean getIsError() {
         return isError_;
       }
       /**
-       * <code>optional bool is_error = 5;</code>
+       * <code>bool is_error = 5;</code>
        */
       public Builder setIsError(boolean value) {
         
@@ -10777,7 +15285,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional bool is_error = 5;</code>
+       * <code>bool is_error = 5;</code>
        */
       public Builder clearIsError() {
         
@@ -10887,12 +15395,12 @@ public final class YadelModel {
         int index);
 
     /**
-     * <code>optional bool include_unprocessed = 3;</code>
+     * <code>bool include_unprocessed = 3;</code>
      */
     boolean getIncludeUnprocessed();
 
     /**
-     * <code>optional bool include_file_saved = 4;</code>
+     * <code>bool include_file_saved = 4;</code>
      */
     boolean getIncludeFileSaved();
   }
@@ -11070,7 +15578,7 @@ public final class YadelModel {
     public static final int INCLUDE_UNPROCESSED_FIELD_NUMBER = 3;
     private boolean includeUnprocessed_;
     /**
-     * <code>optional bool include_unprocessed = 3;</code>
+     * <code>bool include_unprocessed = 3;</code>
      */
     public boolean getIncludeUnprocessed() {
       return includeUnprocessed_;
@@ -11079,7 +15587,7 @@ public final class YadelModel {
     public static final int INCLUDE_FILE_SAVED_FIELD_NUMBER = 4;
     private boolean includeFileSaved_;
     /**
-     * <code>optional bool include_file_saved = 4;</code>
+     * <code>bool include_file_saved = 4;</code>
      */
     public boolean getIncludeFileSaved() {
       return includeFileSaved_;
@@ -11165,7 +15673,7 @@ public final class YadelModel {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getDagsCount() > 0) {
         hash = (37 * hash) + DAGS_FIELD_NUMBER;
         hash = (53 * hash) + getDagsList().hashCode();
@@ -11969,13 +16477,13 @@ public final class YadelModel {
 
       private boolean includeUnprocessed_ ;
       /**
-       * <code>optional bool include_unprocessed = 3;</code>
+       * <code>bool include_unprocessed = 3;</code>
        */
       public boolean getIncludeUnprocessed() {
         return includeUnprocessed_;
       }
       /**
-       * <code>optional bool include_unprocessed = 3;</code>
+       * <code>bool include_unprocessed = 3;</code>
        */
       public Builder setIncludeUnprocessed(boolean value) {
         
@@ -11984,7 +16492,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional bool include_unprocessed = 3;</code>
+       * <code>bool include_unprocessed = 3;</code>
        */
       public Builder clearIncludeUnprocessed() {
         
@@ -11995,13 +16503,13 @@ public final class YadelModel {
 
       private boolean includeFileSaved_ ;
       /**
-       * <code>optional bool include_file_saved = 4;</code>
+       * <code>bool include_file_saved = 4;</code>
        */
       public boolean getIncludeFileSaved() {
         return includeFileSaved_;
       }
       /**
-       * <code>optional bool include_file_saved = 4;</code>
+       * <code>bool include_file_saved = 4;</code>
        */
       public Builder setIncludeFileSaved(boolean value) {
         
@@ -12010,7 +16518,7 @@ public final class YadelModel {
         return this;
       }
       /**
-       * <code>optional bool include_file_saved = 4;</code>
+       * <code>bool include_file_saved = 4;</code>
        */
       public Builder clearIncludeFileSaved() {
         
@@ -12067,6 +16575,1486 @@ public final class YadelModel {
 
   }
 
+  public interface WorkerPropertiesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.roylance.yadel.WorkerProperties)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 2;</code>
+     */
+    int getOsBitVersionValue();
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 2;</code>
+     */
+    org.roylance.yadel.YadelModel.OSBitVersion getOsBitVersion();
+
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 3;</code>
+     */
+    int getOsTypeVersionValue();
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 3;</code>
+     */
+    org.roylance.yadel.YadelModel.OSTypeVersion getOsTypeVersion();
+
+    /**
+     * <code>string os_major_version = 4;</code>
+     */
+    java.lang.String getOsMajorVersion();
+    /**
+     * <code>string os_major_version = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getOsMajorVersionBytes();
+
+    /**
+     * <code>string os_minor_version = 5;</code>
+     */
+    java.lang.String getOsMinorVersion();
+    /**
+     * <code>string os_minor_version = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getOsMinorVersionBytes();
+
+    /**
+     * <code>string os_build_version = 6;</code>
+     */
+    java.lang.String getOsBuildVersion();
+    /**
+     * <code>string os_build_version = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getOsBuildVersionBytes();
+
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+     */
+    java.util.List<org.roylance.yadel.YadelModel.WorkerProperty> 
+        getPropertiesList();
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerProperty getProperties(int index);
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+     */
+    int getPropertiesCount();
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+     */
+    java.util.List<? extends org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> 
+        getPropertiesOrBuilderList();
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+     */
+    org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getPropertiesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code org.roylance.yadel.WorkerProperties}
+   */
+  public  static final class WorkerProperties extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:org.roylance.yadel.WorkerProperties)
+      WorkerPropertiesOrBuilder {
+    // Use WorkerProperties.newBuilder() to construct.
+    private WorkerProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerProperties() {
+      id_ = "";
+      osBitVersion_ = 0;
+      osTypeVersion_ = 0;
+      osMajorVersion_ = "";
+      osMinorVersion_ = "";
+      osBuildVersion_ = "";
+      properties_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private WorkerProperties(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              osBitVersion_ = rawValue;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              osTypeVersion_ = rawValue;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              osMajorVersion_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              osMinorVersion_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              osBuildVersion_ = s;
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                properties_ = new java.util.ArrayList<org.roylance.yadel.YadelModel.WorkerProperty>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              properties_.add(
+                  input.readMessage(org.roylance.yadel.YadelModel.WorkerProperty.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          properties_ = java.util.Collections.unmodifiableList(properties_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerProperties_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerProperties_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.roylance.yadel.YadelModel.WorkerProperties.class, org.roylance.yadel.YadelModel.WorkerProperties.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OS_BIT_VERSION_FIELD_NUMBER = 2;
+    private int osBitVersion_;
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 2;</code>
+     */
+    public int getOsBitVersionValue() {
+      return osBitVersion_;
+    }
+    /**
+     * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 2;</code>
+     */
+    public org.roylance.yadel.YadelModel.OSBitVersion getOsBitVersion() {
+      org.roylance.yadel.YadelModel.OSBitVersion result = org.roylance.yadel.YadelModel.OSBitVersion.valueOf(osBitVersion_);
+      return result == null ? org.roylance.yadel.YadelModel.OSBitVersion.UNRECOGNIZED : result;
+    }
+
+    public static final int OS_TYPE_VERSION_FIELD_NUMBER = 3;
+    private int osTypeVersion_;
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 3;</code>
+     */
+    public int getOsTypeVersionValue() {
+      return osTypeVersion_;
+    }
+    /**
+     * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 3;</code>
+     */
+    public org.roylance.yadel.YadelModel.OSTypeVersion getOsTypeVersion() {
+      org.roylance.yadel.YadelModel.OSTypeVersion result = org.roylance.yadel.YadelModel.OSTypeVersion.valueOf(osTypeVersion_);
+      return result == null ? org.roylance.yadel.YadelModel.OSTypeVersion.UNRECOGNIZED : result;
+    }
+
+    public static final int OS_MAJOR_VERSION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object osMajorVersion_;
+    /**
+     * <code>string os_major_version = 4;</code>
+     */
+    public java.lang.String getOsMajorVersion() {
+      java.lang.Object ref = osMajorVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osMajorVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string os_major_version = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOsMajorVersionBytes() {
+      java.lang.Object ref = osMajorVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osMajorVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OS_MINOR_VERSION_FIELD_NUMBER = 5;
+    private volatile java.lang.Object osMinorVersion_;
+    /**
+     * <code>string os_minor_version = 5;</code>
+     */
+    public java.lang.String getOsMinorVersion() {
+      java.lang.Object ref = osMinorVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osMinorVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string os_minor_version = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOsMinorVersionBytes() {
+      java.lang.Object ref = osMinorVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osMinorVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OS_BUILD_VERSION_FIELD_NUMBER = 6;
+    private volatile java.lang.Object osBuildVersion_;
+    /**
+     * <code>string os_build_version = 6;</code>
+     */
+    public java.lang.String getOsBuildVersion() {
+      java.lang.Object ref = osBuildVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osBuildVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string os_build_version = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOsBuildVersionBytes() {
+      java.lang.Object ref = osBuildVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osBuildVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROPERTIES_FIELD_NUMBER = 7;
+    private java.util.List<org.roylance.yadel.YadelModel.WorkerProperty> properties_;
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+     */
+    public java.util.List<org.roylance.yadel.YadelModel.WorkerProperty> getPropertiesList() {
+      return properties_;
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+     */
+    public java.util.List<? extends org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> 
+        getPropertiesOrBuilderList() {
+      return properties_;
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+     */
+    public int getPropertiesCount() {
+      return properties_.size();
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerProperty getProperties(int index) {
+      return properties_.get(index);
+    }
+    /**
+     * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+     */
+    public org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getPropertiesOrBuilder(
+        int index) {
+      return properties_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (osBitVersion_ != org.roylance.yadel.YadelModel.OSBitVersion.V_64_BIT_VERSION.getNumber()) {
+        output.writeEnum(2, osBitVersion_);
+      }
+      if (osTypeVersion_ != org.roylance.yadel.YadelModel.OSTypeVersion.MAC_OS_TYPE_VERSION.getNumber()) {
+        output.writeEnum(3, osTypeVersion_);
+      }
+      if (!getOsMajorVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, osMajorVersion_);
+      }
+      if (!getOsMinorVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, osMinorVersion_);
+      }
+      if (!getOsBuildVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, osBuildVersion_);
+      }
+      for (int i = 0; i < properties_.size(); i++) {
+        output.writeMessage(7, properties_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (osBitVersion_ != org.roylance.yadel.YadelModel.OSBitVersion.V_64_BIT_VERSION.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, osBitVersion_);
+      }
+      if (osTypeVersion_ != org.roylance.yadel.YadelModel.OSTypeVersion.MAC_OS_TYPE_VERSION.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, osTypeVersion_);
+      }
+      if (!getOsMajorVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, osMajorVersion_);
+      }
+      if (!getOsMinorVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, osMinorVersion_);
+      }
+      if (!getOsBuildVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, osBuildVersion_);
+      }
+      for (int i = 0; i < properties_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, properties_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.roylance.yadel.YadelModel.WorkerProperties)) {
+        return super.equals(obj);
+      }
+      org.roylance.yadel.YadelModel.WorkerProperties other = (org.roylance.yadel.YadelModel.WorkerProperties) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && osBitVersion_ == other.osBitVersion_;
+      result = result && osTypeVersion_ == other.osTypeVersion_;
+      result = result && getOsMajorVersion()
+          .equals(other.getOsMajorVersion());
+      result = result && getOsMinorVersion()
+          .equals(other.getOsMinorVersion());
+      result = result && getOsBuildVersion()
+          .equals(other.getOsBuildVersion());
+      result = result && getPropertiesList()
+          .equals(other.getPropertiesList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + OS_BIT_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + osBitVersion_;
+      hash = (37 * hash) + OS_TYPE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + osTypeVersion_;
+      hash = (37 * hash) + OS_MAJOR_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getOsMajorVersion().hashCode();
+      hash = (37 * hash) + OS_MINOR_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getOsMinorVersion().hashCode();
+      hash = (37 * hash) + OS_BUILD_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getOsBuildVersion().hashCode();
+      if (getPropertiesCount() > 0) {
+        hash = (37 * hash) + PROPERTIES_FIELD_NUMBER;
+        hash = (53 * hash) + getPropertiesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.roylance.yadel.YadelModel.WorkerProperties parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperties parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperties parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperties parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperties parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperties parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperties parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperties parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperties parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.roylance.yadel.YadelModel.WorkerProperties parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.roylance.yadel.YadelModel.WorkerProperties prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code org.roylance.yadel.WorkerProperties}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:org.roylance.yadel.WorkerProperties)
+        org.roylance.yadel.YadelModel.WorkerPropertiesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerProperties_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerProperties_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.roylance.yadel.YadelModel.WorkerProperties.class, org.roylance.yadel.YadelModel.WorkerProperties.Builder.class);
+      }
+
+      // Construct using org.roylance.yadel.YadelModel.WorkerProperties.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPropertiesFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        osBitVersion_ = 0;
+
+        osTypeVersion_ = 0;
+
+        osMajorVersion_ = "";
+
+        osMinorVersion_ = "";
+
+        osBuildVersion_ = "";
+
+        if (propertiesBuilder_ == null) {
+          properties_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          propertiesBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.roylance.yadel.YadelModel.internal_static_org_roylance_yadel_WorkerProperties_descriptor;
+      }
+
+      public org.roylance.yadel.YadelModel.WorkerProperties getDefaultInstanceForType() {
+        return org.roylance.yadel.YadelModel.WorkerProperties.getDefaultInstance();
+      }
+
+      public org.roylance.yadel.YadelModel.WorkerProperties build() {
+        org.roylance.yadel.YadelModel.WorkerProperties result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.roylance.yadel.YadelModel.WorkerProperties buildPartial() {
+        org.roylance.yadel.YadelModel.WorkerProperties result = new org.roylance.yadel.YadelModel.WorkerProperties(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.id_ = id_;
+        result.osBitVersion_ = osBitVersion_;
+        result.osTypeVersion_ = osTypeVersion_;
+        result.osMajorVersion_ = osMajorVersion_;
+        result.osMinorVersion_ = osMinorVersion_;
+        result.osBuildVersion_ = osBuildVersion_;
+        if (propertiesBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            properties_ = java.util.Collections.unmodifiableList(properties_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.properties_ = properties_;
+        } else {
+          result.properties_ = propertiesBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.roylance.yadel.YadelModel.WorkerProperties) {
+          return mergeFrom((org.roylance.yadel.YadelModel.WorkerProperties)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.roylance.yadel.YadelModel.WorkerProperties other) {
+        if (other == org.roylance.yadel.YadelModel.WorkerProperties.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.osBitVersion_ != 0) {
+          setOsBitVersionValue(other.getOsBitVersionValue());
+        }
+        if (other.osTypeVersion_ != 0) {
+          setOsTypeVersionValue(other.getOsTypeVersionValue());
+        }
+        if (!other.getOsMajorVersion().isEmpty()) {
+          osMajorVersion_ = other.osMajorVersion_;
+          onChanged();
+        }
+        if (!other.getOsMinorVersion().isEmpty()) {
+          osMinorVersion_ = other.osMinorVersion_;
+          onChanged();
+        }
+        if (!other.getOsBuildVersion().isEmpty()) {
+          osBuildVersion_ = other.osBuildVersion_;
+          onChanged();
+        }
+        if (propertiesBuilder_ == null) {
+          if (!other.properties_.isEmpty()) {
+            if (properties_.isEmpty()) {
+              properties_ = other.properties_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensurePropertiesIsMutable();
+              properties_.addAll(other.properties_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.properties_.isEmpty()) {
+            if (propertiesBuilder_.isEmpty()) {
+              propertiesBuilder_.dispose();
+              propertiesBuilder_ = null;
+              properties_ = other.properties_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              propertiesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPropertiesFieldBuilder() : null;
+            } else {
+              propertiesBuilder_.addAllMessages(other.properties_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.roylance.yadel.YadelModel.WorkerProperties parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.roylance.yadel.YadelModel.WorkerProperties) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int osBitVersion_ = 0;
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 2;</code>
+       */
+      public int getOsBitVersionValue() {
+        return osBitVersion_;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 2;</code>
+       */
+      public Builder setOsBitVersionValue(int value) {
+        osBitVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 2;</code>
+       */
+      public org.roylance.yadel.YadelModel.OSBitVersion getOsBitVersion() {
+        org.roylance.yadel.YadelModel.OSBitVersion result = org.roylance.yadel.YadelModel.OSBitVersion.valueOf(osBitVersion_);
+        return result == null ? org.roylance.yadel.YadelModel.OSBitVersion.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 2;</code>
+       */
+      public Builder setOsBitVersion(org.roylance.yadel.YadelModel.OSBitVersion value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        osBitVersion_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSBitVersion os_bit_version = 2;</code>
+       */
+      public Builder clearOsBitVersion() {
+        
+        osBitVersion_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int osTypeVersion_ = 0;
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 3;</code>
+       */
+      public int getOsTypeVersionValue() {
+        return osTypeVersion_;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 3;</code>
+       */
+      public Builder setOsTypeVersionValue(int value) {
+        osTypeVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 3;</code>
+       */
+      public org.roylance.yadel.YadelModel.OSTypeVersion getOsTypeVersion() {
+        org.roylance.yadel.YadelModel.OSTypeVersion result = org.roylance.yadel.YadelModel.OSTypeVersion.valueOf(osTypeVersion_);
+        return result == null ? org.roylance.yadel.YadelModel.OSTypeVersion.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 3;</code>
+       */
+      public Builder setOsTypeVersion(org.roylance.yadel.YadelModel.OSTypeVersion value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        osTypeVersion_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.org.roylance.yadel.OSTypeVersion os_type_version = 3;</code>
+       */
+      public Builder clearOsTypeVersion() {
+        
+        osTypeVersion_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object osMajorVersion_ = "";
+      /**
+       * <code>string os_major_version = 4;</code>
+       */
+      public java.lang.String getOsMajorVersion() {
+        java.lang.Object ref = osMajorVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osMajorVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string os_major_version = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOsMajorVersionBytes() {
+        java.lang.Object ref = osMajorVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          osMajorVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string os_major_version = 4;</code>
+       */
+      public Builder setOsMajorVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        osMajorVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_major_version = 4;</code>
+       */
+      public Builder clearOsMajorVersion() {
+        
+        osMajorVersion_ = getDefaultInstance().getOsMajorVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_major_version = 4;</code>
+       */
+      public Builder setOsMajorVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        osMajorVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object osMinorVersion_ = "";
+      /**
+       * <code>string os_minor_version = 5;</code>
+       */
+      public java.lang.String getOsMinorVersion() {
+        java.lang.Object ref = osMinorVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osMinorVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string os_minor_version = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOsMinorVersionBytes() {
+        java.lang.Object ref = osMinorVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          osMinorVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string os_minor_version = 5;</code>
+       */
+      public Builder setOsMinorVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        osMinorVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_minor_version = 5;</code>
+       */
+      public Builder clearOsMinorVersion() {
+        
+        osMinorVersion_ = getDefaultInstance().getOsMinorVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_minor_version = 5;</code>
+       */
+      public Builder setOsMinorVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        osMinorVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object osBuildVersion_ = "";
+      /**
+       * <code>string os_build_version = 6;</code>
+       */
+      public java.lang.String getOsBuildVersion() {
+        java.lang.Object ref = osBuildVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osBuildVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string os_build_version = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOsBuildVersionBytes() {
+        java.lang.Object ref = osBuildVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          osBuildVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string os_build_version = 6;</code>
+       */
+      public Builder setOsBuildVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        osBuildVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_build_version = 6;</code>
+       */
+      public Builder clearOsBuildVersion() {
+        
+        osBuildVersion_ = getDefaultInstance().getOsBuildVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_build_version = 6;</code>
+       */
+      public Builder setOsBuildVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        osBuildVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<org.roylance.yadel.YadelModel.WorkerProperty> properties_ =
+        java.util.Collections.emptyList();
+      private void ensurePropertiesIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          properties_ = new java.util.ArrayList<org.roylance.yadel.YadelModel.WorkerProperty>(properties_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> propertiesBuilder_;
+
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public java.util.List<org.roylance.yadel.YadelModel.WorkerProperty> getPropertiesList() {
+        if (propertiesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(properties_);
+        } else {
+          return propertiesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public int getPropertiesCount() {
+        if (propertiesBuilder_ == null) {
+          return properties_.size();
+        } else {
+          return propertiesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty getProperties(int index) {
+        if (propertiesBuilder_ == null) {
+          return properties_.get(index);
+        } else {
+          return propertiesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public Builder setProperties(
+          int index, org.roylance.yadel.YadelModel.WorkerProperty value) {
+        if (propertiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePropertiesIsMutable();
+          properties_.set(index, value);
+          onChanged();
+        } else {
+          propertiesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public Builder setProperties(
+          int index, org.roylance.yadel.YadelModel.WorkerProperty.Builder builderForValue) {
+        if (propertiesBuilder_ == null) {
+          ensurePropertiesIsMutable();
+          properties_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          propertiesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public Builder addProperties(org.roylance.yadel.YadelModel.WorkerProperty value) {
+        if (propertiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePropertiesIsMutable();
+          properties_.add(value);
+          onChanged();
+        } else {
+          propertiesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public Builder addProperties(
+          int index, org.roylance.yadel.YadelModel.WorkerProperty value) {
+        if (propertiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePropertiesIsMutable();
+          properties_.add(index, value);
+          onChanged();
+        } else {
+          propertiesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public Builder addProperties(
+          org.roylance.yadel.YadelModel.WorkerProperty.Builder builderForValue) {
+        if (propertiesBuilder_ == null) {
+          ensurePropertiesIsMutable();
+          properties_.add(builderForValue.build());
+          onChanged();
+        } else {
+          propertiesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public Builder addProperties(
+          int index, org.roylance.yadel.YadelModel.WorkerProperty.Builder builderForValue) {
+        if (propertiesBuilder_ == null) {
+          ensurePropertiesIsMutable();
+          properties_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          propertiesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public Builder addAllProperties(
+          java.lang.Iterable<? extends org.roylance.yadel.YadelModel.WorkerProperty> values) {
+        if (propertiesBuilder_ == null) {
+          ensurePropertiesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, properties_);
+          onChanged();
+        } else {
+          propertiesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public Builder clearProperties() {
+        if (propertiesBuilder_ == null) {
+          properties_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          propertiesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public Builder removeProperties(int index) {
+        if (propertiesBuilder_ == null) {
+          ensurePropertiesIsMutable();
+          properties_.remove(index);
+          onChanged();
+        } else {
+          propertiesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty.Builder getPropertiesBuilder(
+          int index) {
+        return getPropertiesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder getPropertiesOrBuilder(
+          int index) {
+        if (propertiesBuilder_ == null) {
+          return properties_.get(index);  } else {
+          return propertiesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public java.util.List<? extends org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> 
+           getPropertiesOrBuilderList() {
+        if (propertiesBuilder_ != null) {
+          return propertiesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(properties_);
+        }
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty.Builder addPropertiesBuilder() {
+        return getPropertiesFieldBuilder().addBuilder(
+            org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public org.roylance.yadel.YadelModel.WorkerProperty.Builder addPropertiesBuilder(
+          int index) {
+        return getPropertiesFieldBuilder().addBuilder(
+            index, org.roylance.yadel.YadelModel.WorkerProperty.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.roylance.yadel.WorkerProperty properties = 7;</code>
+       */
+      public java.util.List<org.roylance.yadel.YadelModel.WorkerProperty.Builder> 
+           getPropertiesBuilderList() {
+        return getPropertiesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder> 
+          getPropertiesFieldBuilder() {
+        if (propertiesBuilder_ == null) {
+          propertiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.roylance.yadel.YadelModel.WorkerProperty, org.roylance.yadel.YadelModel.WorkerProperty.Builder, org.roylance.yadel.YadelModel.WorkerPropertyOrBuilder>(
+                  properties_,
+                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  getParentForChildren(),
+                  isClean());
+          properties_ = null;
+        }
+        return propertiesBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:org.roylance.yadel.WorkerProperties)
+    }
+
+    // @@protoc_insertion_point(class_scope:org.roylance.yadel.WorkerProperties)
+    private static final org.roylance.yadel.YadelModel.WorkerProperties DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.roylance.yadel.YadelModel.WorkerProperties();
+    }
+
+    public static org.roylance.yadel.YadelModel.WorkerProperties getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerProperties>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerProperties>() {
+      public WorkerProperties parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WorkerProperties(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerProperties> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerProperties> getParserForType() {
+      return PARSER;
+    }
+
+    public org.roylance.yadel.YadelModel.WorkerProperties getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_roylance_yadel_WorkerProperty_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_org_roylance_yadel_WorkerProperty_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_roylance_yadel_WorkerFilter_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_org_roylance_yadel_WorkerFilter_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_roylance_yadel_WorkerConfiguration_descriptor;
   private static final 
@@ -12107,6 +18095,11 @@ public final class YadelModel {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_roylance_yadel_AllDags_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_roylance_yadel_WorkerProperties_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_org_roylance_yadel_WorkerProperties_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -12117,54 +18110,101 @@ public final class YadelModel {
   static {
     java.lang.String[] descriptorData = {
       "\n\021yadel_model.proto\022\022org.roylance.yadel\"" +
-      "\235\002\n\023WorkerConfiguration\022\n\n\002id\030\001 \001(\t\022\n\n\002i" +
-      "p\030\002 \001(\t\022\014\n\004port\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\022\030\n\020i" +
-      "nitialized_time\030\005 \001(\t\022.\n\005state\030\006 \001(\0162\037.o" +
-      "rg.roylance.yadel.WorkerState\022&\n\004task\030\007 " +
-      "\001(\0132\030.org.roylance.yadel.Task\022$\n\003dag\030\010 \001" +
-      "(\0132\027.org.roylance.yadel.Dag\022!\n\031minutes_b" +
-      "efore_task_reset\030\t \001(\004\022\027\n\017task_start_tim" +
-      "e\030\n \001(\t\"\"\n\003Log\022\n\n\002id\030\001 \001(\t\022\017\n\007message\030\002 " +
-      "\001(\t\"\233\003\n\003Dag\022\n\n\002id\030\001 \001(\t\022\017\n\007display\030\002 \001(\t",
-      "\0221\n\017flattened_tasks\030\003 \003(\0132\030.org.roylance" +
-      ".yadel.Task\022\026\n\016execution_date\030\004 \001(\003\022\022\n\ns" +
-      "tart_date\030\005 \001(\003\022\020\n\010end_date\030\006 \001(\003\022\020\n\010dur" +
-      "ation\030\007 \001(\003\0223\n\021uncompleted_tasks\030\010 \003(\0132\030" +
-      ".org.roylance.yadel.Task\0222\n\020processing_t" +
-      "asks\030\t \003(\0132\030.org.roylance.yadel.Task\022/\n\r" +
-      "errored_tasks\030\n \003(\0132\030.org.roylance.yadel" +
-      ".Task\0221\n\017completed_tasks\030\013 \003(\0132\030.org.roy" +
-      "lance.yadel.Task\022\'\n\006parent\030\014 \001(\0132\027.org.r" +
-      "oylance.yadel.Dag\"\353\002\n\004Task\022\n\n\002id\030\001 \001(\t\022\017",
-      "\n\007display\030\002 \001(\t\0228\n\014dependencies\030\003 \003(\0132\"." +
-      "org.roylance.yadel.TaskDependency\022\016\n\006dag" +
-      "_id\030\004 \001(\t\022%\n\004logs\030\005 \003(\0132\027.org.roylance.y" +
-      "adel.Log\022\026\n\016execution_date\030\006 \001(\003\022\022\n\nstar" +
-      "t_date\030\007 \001(\003\022\020\n\010end_date\030\010 \001(\003\022\020\n\010durati" +
-      "on\030\t \001(\003\022\035\n\025first_context_base_64\030\n \001(\t\022" +
-      "\036\n\026second_context_base_64\030\013 \001(\t\022\035\n\025third" +
-      "_context_base_64\030\014 \001(\t\022\'\n\037is_waiting_for" +
-      "_another_dag_task\030\r \001(\010\"4\n\016TaskDependenc" +
-      "y\022\n\n\002id\030\001 \001(\t\022\026\n\016parent_task_id\030\002 \001(\t\"\323\001",
-      "\n\014AddTaskToDag\022\n\n\002id\030\001 \001(\t\022-\n\013parent_tas" +
-      "k\030\002 \001(\0132\030.org.roylance.yadel.Task\022*\n\010new" +
-      "_task\030\003 \001(\0132\030.org.roylance.yadel.Task\022\035\n" +
-      "\025first_context_base_64\030\004 \001(\t\022\036\n\026second_c" +
-      "ontext_base_64\030\005 \001(\t\022\035\n\025third_context_ba" +
-      "se_64\030\006 \001(\t\"\233\001\n\014CompleteTask\022\n\n\002id\030\001 \001(\t" +
-      "\022&\n\004task\030\002 \001(\0132\030.org.roylance.yadel.Task" +
-      "\022E\n\024worker_configuration\030\003 \001(\0132\'.org.roy" +
-      "lance.yadel.WorkerConfiguration\022\020\n\010is_er" +
-      "ror\030\005 \001(\010\"\243\001\n\007AllDags\022%\n\004dags\030\001 \003(\0132\027.or",
-      "g.roylance.yadel.Dag\0228\n\007workers\030\002 \003(\0132\'." +
-      "org.roylance.yadel.WorkerConfiguration\022\033" +
-      "\n\023include_unprocessed\030\003 \001(\010\022\032\n\022include_f" +
-      "ile_saved\030\004 \001(\010*$\n\013WorkerState\022\013\n\007WORKIN" +
-      "G\020\000\022\010\n\004IDLE\020\001*.\n\032WorkerToManagerMessageT" +
-      "ype\022\020\n\014REGISTRATION\020\000*9\n\033ManagerToManage" +
-      "rMessageType\022\032\n\026ENSURE_WORKERS_WORKING\020\000" +
-      "*$\n\tActorRole\022\013\n\007MANAGER\020\000\022\n\n\006WORKER\020\001b\006" +
-      "proto3"
+      "\304\001\n\016WorkerProperty\022\n\n\002id\030\001 \001(\t\022\013\n\003key\030\002 " +
+      "\001(\t\022\r\n\005value\030\003 \001(\t\022\024\n\014number_value\030\004 \001(\001" +
+      "\0228\n\016os_bit_version\030\005 \001(\0162 .org.roylance." +
+      "yadel.OSBitVersion\022:\n\017os_type_version\030\006 " +
+      "\001(\0162!.org.roylance.yadel.OSTypeVersion\"\232" +
+      "\004\n\014WorkerFilter\022\n\n\002id\030\001 \001(\t\022:\n\016first_pro" +
+      "perty\030\002 \001(\0132\".org.roylance.yadel.WorkerP" +
+      "roperty\022:\n\020first_comparison\030\003 \001(\0132 .org." +
+      "roylance.yadel.WorkerFilter\022;\n\017second_pr",
+      "operty\030\004 \001(\0132\".org.roylance.yadel.Worker" +
+      "Property\022;\n\021second_comparison\030\005 \001(\0132 .or" +
+      "g.roylance.yadel.WorkerFilter\022A\n\toperati" +
+      "on\030\006 \001(\0162..org.roylance.yadel.WorkerOper" +
+      "ationsComparison\0228\n\nconnection\030\007 \001(\0162$.o" +
+      "rg.roylance.yadel.WorkerConnection\022F\n\016fi" +
+      "rst_operator\030\010 \001(\0162..org.roylance.yadel." +
+      "WorkerOperationsComparison\022G\n\017second_ope" +
+      "rator\030\t \001(\0162..org.roylance.yadel.WorkerO" +
+      "perationsComparison\"\231\004\n\023WorkerConfigurat",
+      "ion\022\n\n\002id\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\014\n\004port\030\003 \001(" +
+      "\t\022\014\n\004host\030\004 \001(\t\022\030\n\020initialized_time\030\005 \001(" +
+      "\t\022.\n\005state\030\006 \001(\0162\037.org.roylance.yadel.Wo" +
+      "rkerState\022&\n\004task\030\007 \001(\0132\030.org.roylance.y" +
+      "adel.Task\022$\n\003dag\030\010 \001(\0132\027.org.roylance.ya" +
+      "del.Dag\022!\n\031minutes_before_task_reset\030\t \001" +
+      "(\004\022\027\n\017task_start_time\030\n \001(\t\0228\n\016os_bit_ve" +
+      "rsion\030\013 \001(\0162 .org.roylance.yadel.OSBitVe" +
+      "rsion\022:\n\017os_type_version\030\014 \001(\0162!.org.roy" +
+      "lance.yadel.OSTypeVersion\022\030\n\020os_major_ve",
+      "rsion\030\r \001(\t\022\030\n\020os_minor_version\030\016 \001(\t\022\030\n" +
+      "\020os_build_version\030\017 \001(\t\0226\n\nproperties\030\020 " +
+      "\003(\0132\".org.roylance.yadel.WorkerProperty\"" +
+      "\"\n\003Log\022\n\n\002id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\"\233\003\n\003" +
+      "Dag\022\n\n\002id\030\001 \001(\t\022\017\n\007display\030\002 \001(\t\0221\n\017flat" +
+      "tened_tasks\030\003 \003(\0132\030.org.roylance.yadel.T" +
+      "ask\022\026\n\016execution_date\030\004 \001(\003\022\022\n\nstart_dat" +
+      "e\030\005 \001(\003\022\020\n\010end_date\030\006 \001(\003\022\020\n\010duration\030\007 " +
+      "\001(\003\0223\n\021uncompleted_tasks\030\010 \003(\0132\030.org.roy" +
+      "lance.yadel.Task\0222\n\020processing_tasks\030\t \003",
+      "(\0132\030.org.roylance.yadel.Task\022/\n\rerrored_" +
+      "tasks\030\n \003(\0132\030.org.roylance.yadel.Task\0221\n" +
+      "\017completed_tasks\030\013 \003(\0132\030.org.roylance.ya" +
+      "del.Task\022\'\n\006parent\030\014 \001(\0132\027.org.roylance." +
+      "yadel.Dag\"\236\003\n\004Task\022\n\n\002id\030\001 \001(\t\022\017\n\007displa" +
+      "y\030\002 \001(\t\0228\n\014dependencies\030\003 \003(\0132\".org.royl" +
+      "ance.yadel.TaskDependency\022\016\n\006dag_id\030\004 \001(" +
+      "\t\022%\n\004logs\030\005 \003(\0132\027.org.roylance.yadel.Log" +
+      "\022\026\n\016execution_date\030\006 \001(\003\022\022\n\nstart_date\030\007" +
+      " \001(\003\022\020\n\010end_date\030\010 \001(\003\022\020\n\010duration\030\t \001(\003",
+      "\022\035\n\025first_context_base_64\030\n \001(\t\022\036\n\026secon" +
+      "d_context_base_64\030\013 \001(\t\022\035\n\025third_context" +
+      "_base_64\030\014 \001(\t\022\'\n\037is_waiting_for_another" +
+      "_dag_task\030\r \001(\010\0221\n\007filters\030\016 \003(\0132 .org.r" +
+      "oylance.yadel.WorkerFilter\"4\n\016TaskDepend" +
+      "ency\022\n\n\002id\030\001 \001(\t\022\026\n\016parent_task_id\030\002 \001(\t" +
+      "\"\323\001\n\014AddTaskToDag\022\n\n\002id\030\001 \001(\t\022-\n\013parent_" +
+      "task\030\002 \001(\0132\030.org.roylance.yadel.Task\022*\n\010" +
+      "new_task\030\003 \001(\0132\030.org.roylance.yadel.Task" +
+      "\022\035\n\025first_context_base_64\030\004 \001(\t\022\036\n\026secon",
+      "d_context_base_64\030\005 \001(\t\022\035\n\025third_context" +
+      "_base_64\030\006 \001(\t\"\233\001\n\014CompleteTask\022\n\n\002id\030\001 " +
+      "\001(\t\022&\n\004task\030\002 \001(\0132\030.org.roylance.yadel.T" +
+      "ask\022E\n\024worker_configuration\030\003 \001(\0132\'.org." +
+      "roylance.yadel.WorkerConfiguration\022\020\n\010is" +
+      "_error\030\005 \001(\010\"\243\001\n\007AllDags\022%\n\004dags\030\001 \003(\0132\027" +
+      ".org.roylance.yadel.Dag\0228\n\007workers\030\002 \003(\013" +
+      "2\'.org.roylance.yadel.WorkerConfiguratio" +
+      "n\022\033\n\023include_unprocessed\030\003 \001(\010\022\032\n\022includ" +
+      "e_file_saved\030\004 \001(\010\"\232\002\n\020WorkerProperties\022",
+      "\n\n\002id\030\001 \001(\t\0228\n\016os_bit_version\030\002 \001(\0162 .or" +
+      "g.roylance.yadel.OSBitVersion\022:\n\017os_type" +
+      "_version\030\003 \001(\0162!.org.roylance.yadel.OSTy" +
+      "peVersion\022\030\n\020os_major_version\030\004 \001(\t\022\030\n\020o" +
+      "s_minor_version\030\005 \001(\t\022\030\n\020os_build_versio" +
+      "n\030\006 \001(\t\0226\n\nproperties\030\007 \003(\0132\".org.roylan" +
+      "ce.yadel.WorkerProperty*:\n\014OSBitVersion\022" +
+      "\024\n\020V_64_BIT_VERSION\020\000\022\024\n\020V_32_BIT_VERSIO" +
+      "N\020\001*\314\001\n\rOSTypeVersion\022\027\n\023MAC_OS_TYPE_VER" +
+      "SION\020\000\022\027\n\023WIN_OS_TYPE_VERSION\020\001\022\032\n\026UBUNT",
+      "U_OS_TYPE_VERSION\020\002\022\032\n\026CENTOS_OS_TYPE_VE" +
+      "RSION\020\003\022\032\n\026FEDORA_OS_TYPE_VERSION\020\004\022\032\n\026R" +
+      "EDHAT_OS_TYPE_VERSION\020\005\022\031\n\025LINUX_OS_TYPE" +
+      "_VERSION\020\006*$\n\013WorkerState\022\013\n\007WORKING\020\000\022\010" +
+      "\n\004IDLE\020\001*.\n\032WorkerToManagerMessageType\022\020" +
+      "\n\014REGISTRATION\020\000*9\n\033ManagerToManagerMess" +
+      "ageType\022\032\n\026ENSURE_WORKERS_WORKING\020\000*$\n\tA" +
+      "ctorRole\022\013\n\007MANAGER\020\000\022\n\n\006WORKER\020\001*\371\001\n\032Wo" +
+      "rkerOperationsComparison\022\024\n\020EQUALS_OPERA" +
+      "TION\020\000\022\030\n\024NOT_EQUALS_OPERATION\020\001\022\032\n\026GREA",
+      "TER_THAN_OPERATION\020\002\022\027\n\023LESS_THAN_OPERAT" +
+      "ION\020\003\022$\n GREATER_THAN_OR_EQUALS_OPERATIO" +
+      "N\020\004\022!\n\035LESS_THAN_OR_EQUALS_OPERATION\020\005\022\026" +
+      "\n\022CONTAINS_OPERATION\020\006\022\025\n\021MATCHES_OPERAT" +
+      "ION\020\007*-\n\020WorkerConnection\022\010\n\004NONE\020\000\022\007\n\003A" +
+      "ND\020\001\022\006\n\002OR\020\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12178,54 +18218,72 @@ public final class YadelModel {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_org_roylance_yadel_WorkerConfiguration_descriptor =
+    internal_static_org_roylance_yadel_WorkerProperty_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_org_roylance_yadel_WorkerProperty_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_org_roylance_yadel_WorkerProperty_descriptor,
+        new java.lang.String[] { "Id", "Key", "Value", "NumberValue", "OsBitVersion", "OsTypeVersion", });
+    internal_static_org_roylance_yadel_WorkerFilter_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_org_roylance_yadel_WorkerFilter_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_org_roylance_yadel_WorkerFilter_descriptor,
+        new java.lang.String[] { "Id", "FirstProperty", "FirstComparison", "SecondProperty", "SecondComparison", "Operation", "Connection", "FirstOperator", "SecondOperator", });
+    internal_static_org_roylance_yadel_WorkerConfiguration_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_org_roylance_yadel_WorkerConfiguration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_WorkerConfiguration_descriptor,
-        new java.lang.String[] { "Id", "Ip", "Port", "Host", "InitializedTime", "State", "Task", "Dag", "MinutesBeforeTaskReset", "TaskStartTime", });
+        new java.lang.String[] { "Id", "Ip", "Port", "Host", "InitializedTime", "State", "Task", "Dag", "MinutesBeforeTaskReset", "TaskStartTime", "OsBitVersion", "OsTypeVersion", "OsMajorVersion", "OsMinorVersion", "OsBuildVersion", "Properties", });
     internal_static_org_roylance_yadel_Log_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_org_roylance_yadel_Log_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_Log_descriptor,
         new java.lang.String[] { "Id", "Message", });
     internal_static_org_roylance_yadel_Dag_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_org_roylance_yadel_Dag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_Dag_descriptor,
         new java.lang.String[] { "Id", "Display", "FlattenedTasks", "ExecutionDate", "StartDate", "EndDate", "Duration", "UncompletedTasks", "ProcessingTasks", "ErroredTasks", "CompletedTasks", "Parent", });
     internal_static_org_roylance_yadel_Task_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_org_roylance_yadel_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_Task_descriptor,
-        new java.lang.String[] { "Id", "Display", "Dependencies", "DagId", "Logs", "ExecutionDate", "StartDate", "EndDate", "Duration", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64", "IsWaitingForAnotherDagTask", });
+        new java.lang.String[] { "Id", "Display", "Dependencies", "DagId", "Logs", "ExecutionDate", "StartDate", "EndDate", "Duration", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64", "IsWaitingForAnotherDagTask", "Filters", });
     internal_static_org_roylance_yadel_TaskDependency_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_org_roylance_yadel_TaskDependency_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_TaskDependency_descriptor,
         new java.lang.String[] { "Id", "ParentTaskId", });
     internal_static_org_roylance_yadel_AddTaskToDag_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_org_roylance_yadel_AddTaskToDag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_AddTaskToDag_descriptor,
         new java.lang.String[] { "Id", "ParentTask", "NewTask", "FirstContextBase64", "SecondContextBase64", "ThirdContextBase64", });
     internal_static_org_roylance_yadel_CompleteTask_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_org_roylance_yadel_CompleteTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_CompleteTask_descriptor,
         new java.lang.String[] { "Id", "Task", "WorkerConfiguration", "IsError", });
     internal_static_org_roylance_yadel_AllDags_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_org_roylance_yadel_AllDags_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_roylance_yadel_AllDags_descriptor,
         new java.lang.String[] { "Dags", "Workers", "IncludeUnprocessed", "IncludeFileSaved", });
+    internal_static_org_roylance_yadel_WorkerProperties_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_org_roylance_yadel_WorkerProperties_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_org_roylance_yadel_WorkerProperties_descriptor,
+        new java.lang.String[] { "Id", "OsBitVersion", "OsTypeVersion", "OsMajorVersion", "OsMinorVersion", "OsBuildVersion", "Properties", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

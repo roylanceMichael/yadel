@@ -4,7 +4,7 @@ import org.roylance.yadel.actors.ManagerBase
 import org.roylance.yadel.actors.WorkerBase
 import org.roylance.yadel.enums.CommonTokens
 
-object MainLogic {
+object YadelMainLogic {
     fun <T:ManagerBase, K:WorkerBase> main(args:Array<String>, managerClass:Class<T>, workerClass:Class<K>) {
         println("expecting: hostname port seedNode1Host seedNode1Port seedNode2Host seedNode2Port " +
                 "<port ${CommonTokens.TwoThreeFourFour} will always start the manager, other ports will start workers>")

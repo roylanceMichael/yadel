@@ -18,7 +18,6 @@ class ManagerService(
         private val reportActor: IActor,
         private val log: ITaskLogger,
         private val minutesBeforeTaskReset: Long = 20L): IManagerService {
-
     override fun getWorkers(): Map<String, ConfigurationActorRef> {
         return workers
     }
@@ -154,8 +153,10 @@ class ManagerService(
         }
     }
 
-    override fun getOpenWorker(): ConfigurationActorRef? {
-        val openWorkers = this.workers.values.filter { it.configuration.state == YadelModel.WorkerState.IDLE }
+    override fun getOpenWorker(task: YadelModel.Task.Builder): ConfigurationActorRef? {
+        val openWorkers = this.workers.values
+                .filter { it.configuration.state == YadelModel.WorkerState.IDLE }
+
         if (openWorkers.isEmpty()) {
             return null
         }
@@ -298,14 +299,15 @@ class ManagerService(
 
             val taskIdsToProcess = ActorUtilities.getAllAvailableTaskIds(foundActiveDag)
             taskIdsToProcess.forEach { uncompletedTaskId ->
-                val openWorker = getOpenWorker()
+                val task = foundActiveDag.uncompletedTasksBuilderList.first { it.id == uncompletedTaskId }
+
+                val openWorker = getOpenWorker(task)
                 if (openWorker != null) {
                     val workerKey = openWorker.actorRef.key()
                     val foundTuple = workers[workerKey]
                     val worker = foundTuple!!.configuration.toBuilder()
                     worker.state = YadelModel.WorkerState.WORKING
 
-                    val task = foundActiveDag.uncompletedTasksBuilderList.first { it.id == uncompletedTaskId }
                     val taskIdx = foundActiveDag.uncompletedTasksBuilderList.indexOf(task!!)
                     foundActiveDag.removeUncompletedTasks(taskIdx)
 
@@ -321,6 +323,23 @@ class ManagerService(
                     openWorker.actorRef.tell(task.build())
                 }
             }
+        }
+    }
+
+    override fun updateWorkerProperties(actor: IActor,
+                                        properties: YadelModel.WorkerProperties) {
+        if (workers.containsKey(actor.key())) {
+            val worker = workers[actor.key()]!!
+            val configuration = worker.configuration.toBuilder()
+            configuration.clearProperties()
+            configuration.addAllProperties(properties.propertiesList)
+            configuration.osBitVersion = properties.osBitVersion
+            configuration.osTypeVersion = properties.osTypeVersion
+            configuration.osMajorVersion = properties.osMajorVersion
+            configuration.osMinorVersion = properties.osMinorVersion
+            configuration.osBuildVersion = properties.osBuildVersion
+            val newWorker = ConfigurationActorRef(actor, configuration.build())
+            workers.put(actor.key(), newWorker)
         }
     }
 }

@@ -3,6 +3,7 @@ package org.roylance.yadel
 import org.junit.Test
 import org.roylance.yadel.services.ManagerService
 import org.roylance.yadel.services.memory.MemoryDagStore
+import org.roylance.yadel.utilities.ActorUtilities
 import org.roylance.yadel.utilities.TestActor
 import org.roylance.yadel.utilities.TestUtilities
 import java.util.*
@@ -87,4 +88,14 @@ class ManagerServiceTests {
         assert(managerService.activeDags().get(dagId)!!.processingTasksCount == 1)
     }
 
+    @Test
+    fun simpleArchitectureTest() {
+        // arrange
+        // act
+        val workerProperties = ActorUtilities.buildWorkerProperties()
+        println(workerProperties)
+        println(workerProperties.osBitVersion)
+        println(workerProperties.osTypeVersion)
+        // assert
+    }
 }

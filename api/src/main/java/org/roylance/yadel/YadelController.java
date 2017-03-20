@@ -19,28 +19,28 @@ public final class YadelController {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+     * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
     boolean hasRequest();
     /**
-     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+     * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
     org.roylance.yadel.YadelReport.UIYadelRequest getRequest();
     /**
-     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+     * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
     org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+     * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
     boolean hasResponse();
     /**
-     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+     * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
     org.roylance.yadel.YadelReport.UIYadelResponse getResponse();
     /**
-     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+     * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
     org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder getResponseOrBuilder();
   }
@@ -135,19 +135,19 @@ public final class YadelController {
     public static final int REQUEST_FIELD_NUMBER = 1;
     private org.roylance.yadel.YadelReport.UIYadelRequest request_;
     /**
-     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+     * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+     * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
     public org.roylance.yadel.YadelReport.UIYadelRequest getRequest() {
       return request_ == null ? org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+     * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
      */
     public org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder getRequestOrBuilder() {
       return getRequest();
@@ -156,19 +156,19 @@ public final class YadelController {
     public static final int RESPONSE_FIELD_NUMBER = 2;
     private org.roylance.yadel.YadelReport.UIYadelResponse response_;
     /**
-     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+     * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+     * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
     public org.roylance.yadel.YadelReport.UIYadelResponse getResponse() {
       return response_ == null ? org.roylance.yadel.YadelReport.UIYadelResponse.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+     * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
      */
     public org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder getResponseOrBuilder() {
       return getResponse();
@@ -242,7 +242,7 @@ public final class YadelController {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasRequest()) {
         hash = (37 * hash) + REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getRequest().hashCode();
@@ -490,13 +490,13 @@ public final class YadelController {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIYadelRequest, org.roylance.yadel.YadelReport.UIYadelRequest.Builder, org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder> requestBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       public boolean hasRequest() {
         return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       public org.roylance.yadel.YadelReport.UIYadelRequest getRequest() {
         if (requestBuilder_ == null) {
@@ -506,7 +506,7 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       public Builder setRequest(org.roylance.yadel.YadelReport.UIYadelRequest value) {
         if (requestBuilder_ == null) {
@@ -522,7 +522,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       public Builder setRequest(
           org.roylance.yadel.YadelReport.UIYadelRequest.Builder builderForValue) {
@@ -536,7 +536,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       public Builder mergeRequest(org.roylance.yadel.YadelReport.UIYadelRequest value) {
         if (requestBuilder_ == null) {
@@ -554,7 +554,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       public org.roylance.yadel.YadelReport.UIYadelRequest.Builder getRequestBuilder() {
         
@@ -576,7 +576,7 @@ public final class YadelController {
         return getRequestFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       public org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
@@ -587,7 +587,7 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequest request = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequest request = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIYadelRequest, org.roylance.yadel.YadelReport.UIYadelRequest.Builder, org.roylance.yadel.YadelReport.UIYadelRequestOrBuilder> 
@@ -607,13 +607,13 @@ public final class YadelController {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIYadelResponse, org.roylance.yadel.YadelReport.UIYadelResponse.Builder, org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder> responseBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+       * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       public boolean hasResponse() {
         return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+       * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       public org.roylance.yadel.YadelReport.UIYadelResponse getResponse() {
         if (responseBuilder_ == null) {
@@ -623,7 +623,7 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+       * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       public Builder setResponse(org.roylance.yadel.YadelReport.UIYadelResponse value) {
         if (responseBuilder_ == null) {
@@ -639,7 +639,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+       * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       public Builder setResponse(
           org.roylance.yadel.YadelReport.UIYadelResponse.Builder builderForValue) {
@@ -653,7 +653,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+       * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       public Builder mergeResponse(org.roylance.yadel.YadelReport.UIYadelResponse value) {
         if (responseBuilder_ == null) {
@@ -671,7 +671,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+       * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       public Builder clearResponse() {
         if (responseBuilder_ == null) {
@@ -685,7 +685,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+       * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       public org.roylance.yadel.YadelReport.UIYadelResponse.Builder getResponseBuilder() {
         
@@ -693,7 +693,7 @@ public final class YadelController {
         return getResponseFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+       * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       public org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder getResponseOrBuilder() {
         if (responseBuilder_ != null) {
@@ -704,7 +704,7 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelResponse response = 2;</code>
+       * <code>.org.roylance.yadel.UIYadelResponse response = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIYadelResponse, org.roylance.yadel.YadelReport.UIYadelResponse.Builder, org.roylance.yadel.YadelReport.UIYadelResponseOrBuilder> 
@@ -773,41 +773,41 @@ public final class YadelController {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+     * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
     boolean hasDeleteDag();
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+     * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
     org.roylance.yadel.YadelController.CommonAction getDeleteDag();
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+     * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
     org.roylance.yadel.YadelController.CommonActionOrBuilder getDeleteDagOrBuilder();
 
     /**
-     * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+     * <code>.org.roylance.yadel.CommonAction current = 2;</code>
      */
     boolean hasCurrent();
     /**
-     * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+     * <code>.org.roylance.yadel.CommonAction current = 2;</code>
      */
     org.roylance.yadel.YadelController.CommonAction getCurrent();
     /**
-     * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+     * <code>.org.roylance.yadel.CommonAction current = 2;</code>
      */
     org.roylance.yadel.YadelController.CommonActionOrBuilder getCurrentOrBuilder();
 
     /**
-     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
      */
     boolean hasGetDagStatus();
     /**
-     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
      */
     org.roylance.yadel.YadelController.CommonAction getGetDagStatus();
     /**
-     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
      */
     org.roylance.yadel.YadelController.CommonActionOrBuilder getGetDagStatusOrBuilder();
   }
@@ -915,19 +915,19 @@ public final class YadelController {
     public static final int DELETE_DAG_FIELD_NUMBER = 1;
     private org.roylance.yadel.YadelController.CommonAction deleteDag_;
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+     * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
     public boolean hasDeleteDag() {
       return deleteDag_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+     * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
     public org.roylance.yadel.YadelController.CommonAction getDeleteDag() {
       return deleteDag_ == null ? org.roylance.yadel.YadelController.CommonAction.getDefaultInstance() : deleteDag_;
     }
     /**
-     * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+     * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
      */
     public org.roylance.yadel.YadelController.CommonActionOrBuilder getDeleteDagOrBuilder() {
       return getDeleteDag();
@@ -936,19 +936,19 @@ public final class YadelController {
     public static final int CURRENT_FIELD_NUMBER = 2;
     private org.roylance.yadel.YadelController.CommonAction current_;
     /**
-     * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+     * <code>.org.roylance.yadel.CommonAction current = 2;</code>
      */
     public boolean hasCurrent() {
       return current_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+     * <code>.org.roylance.yadel.CommonAction current = 2;</code>
      */
     public org.roylance.yadel.YadelController.CommonAction getCurrent() {
       return current_ == null ? org.roylance.yadel.YadelController.CommonAction.getDefaultInstance() : current_;
     }
     /**
-     * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+     * <code>.org.roylance.yadel.CommonAction current = 2;</code>
      */
     public org.roylance.yadel.YadelController.CommonActionOrBuilder getCurrentOrBuilder() {
       return getCurrent();
@@ -957,19 +957,19 @@ public final class YadelController {
     public static final int GET_DAG_STATUS_FIELD_NUMBER = 3;
     private org.roylance.yadel.YadelController.CommonAction getDagStatus_;
     /**
-     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
      */
     public boolean hasGetDagStatus() {
       return getDagStatus_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
      */
     public org.roylance.yadel.YadelController.CommonAction getGetDagStatus() {
       return getDagStatus_ == null ? org.roylance.yadel.YadelController.CommonAction.getDefaultInstance() : getDagStatus_;
     }
     /**
-     * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+     * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
      */
     public org.roylance.yadel.YadelController.CommonActionOrBuilder getGetDagStatusOrBuilder() {
       return getGetDagStatus();
@@ -1055,7 +1055,7 @@ public final class YadelController {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasDeleteDag()) {
         hash = (37 * hash) + DELETE_DAG_FIELD_NUMBER;
         hash = (53 * hash) + getDeleteDag().hashCode();
@@ -1321,13 +1321,13 @@ public final class YadelController {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder> deleteDagBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+       * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
       public boolean hasDeleteDag() {
         return deleteDagBuilder_ != null || deleteDag_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+       * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
       public org.roylance.yadel.YadelController.CommonAction getDeleteDag() {
         if (deleteDagBuilder_ == null) {
@@ -1337,7 +1337,7 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+       * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
       public Builder setDeleteDag(org.roylance.yadel.YadelController.CommonAction value) {
         if (deleteDagBuilder_ == null) {
@@ -1353,7 +1353,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+       * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
       public Builder setDeleteDag(
           org.roylance.yadel.YadelController.CommonAction.Builder builderForValue) {
@@ -1367,7 +1367,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+       * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
       public Builder mergeDeleteDag(org.roylance.yadel.YadelController.CommonAction value) {
         if (deleteDagBuilder_ == null) {
@@ -1385,7 +1385,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+       * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
       public Builder clearDeleteDag() {
         if (deleteDagBuilder_ == null) {
@@ -1399,7 +1399,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+       * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
       public org.roylance.yadel.YadelController.CommonAction.Builder getDeleteDagBuilder() {
         
@@ -1407,7 +1407,7 @@ public final class YadelController {
         return getDeleteDagFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+       * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
       public org.roylance.yadel.YadelController.CommonActionOrBuilder getDeleteDagOrBuilder() {
         if (deleteDagBuilder_ != null) {
@@ -1418,7 +1418,7 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction delete_dag = 1;</code>
+       * <code>.org.roylance.yadel.CommonAction delete_dag = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder> 
@@ -1438,13 +1438,13 @@ public final class YadelController {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder> currentBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+       * <code>.org.roylance.yadel.CommonAction current = 2;</code>
        */
       public boolean hasCurrent() {
         return currentBuilder_ != null || current_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+       * <code>.org.roylance.yadel.CommonAction current = 2;</code>
        */
       public org.roylance.yadel.YadelController.CommonAction getCurrent() {
         if (currentBuilder_ == null) {
@@ -1454,7 +1454,7 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+       * <code>.org.roylance.yadel.CommonAction current = 2;</code>
        */
       public Builder setCurrent(org.roylance.yadel.YadelController.CommonAction value) {
         if (currentBuilder_ == null) {
@@ -1470,7 +1470,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+       * <code>.org.roylance.yadel.CommonAction current = 2;</code>
        */
       public Builder setCurrent(
           org.roylance.yadel.YadelController.CommonAction.Builder builderForValue) {
@@ -1484,7 +1484,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+       * <code>.org.roylance.yadel.CommonAction current = 2;</code>
        */
       public Builder mergeCurrent(org.roylance.yadel.YadelController.CommonAction value) {
         if (currentBuilder_ == null) {
@@ -1502,7 +1502,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+       * <code>.org.roylance.yadel.CommonAction current = 2;</code>
        */
       public Builder clearCurrent() {
         if (currentBuilder_ == null) {
@@ -1516,7 +1516,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+       * <code>.org.roylance.yadel.CommonAction current = 2;</code>
        */
       public org.roylance.yadel.YadelController.CommonAction.Builder getCurrentBuilder() {
         
@@ -1524,7 +1524,7 @@ public final class YadelController {
         return getCurrentFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+       * <code>.org.roylance.yadel.CommonAction current = 2;</code>
        */
       public org.roylance.yadel.YadelController.CommonActionOrBuilder getCurrentOrBuilder() {
         if (currentBuilder_ != null) {
@@ -1535,7 +1535,7 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction current = 2;</code>
+       * <code>.org.roylance.yadel.CommonAction current = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder> 
@@ -1555,13 +1555,13 @@ public final class YadelController {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder> getDagStatusBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
        */
       public boolean hasGetDagStatus() {
         return getDagStatusBuilder_ != null || getDagStatus_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
        */
       public org.roylance.yadel.YadelController.CommonAction getGetDagStatus() {
         if (getDagStatusBuilder_ == null) {
@@ -1571,7 +1571,7 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
        */
       public Builder setGetDagStatus(org.roylance.yadel.YadelController.CommonAction value) {
         if (getDagStatusBuilder_ == null) {
@@ -1587,7 +1587,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
        */
       public Builder setGetDagStatus(
           org.roylance.yadel.YadelController.CommonAction.Builder builderForValue) {
@@ -1601,7 +1601,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
        */
       public Builder mergeGetDagStatus(org.roylance.yadel.YadelController.CommonAction value) {
         if (getDagStatusBuilder_ == null) {
@@ -1619,7 +1619,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
        */
       public Builder clearGetDagStatus() {
         if (getDagStatusBuilder_ == null) {
@@ -1633,7 +1633,7 @@ public final class YadelController {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
        */
       public org.roylance.yadel.YadelController.CommonAction.Builder getGetDagStatusBuilder() {
         
@@ -1641,7 +1641,7 @@ public final class YadelController {
         return getGetDagStatusFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
        */
       public org.roylance.yadel.YadelController.CommonActionOrBuilder getGetDagStatusOrBuilder() {
         if (getDagStatusBuilder_ != null) {
@@ -1652,7 +1652,7 @@ public final class YadelController {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.CommonAction get_dag_status = 3;</code>
+       * <code>.org.roylance.yadel.CommonAction get_dag_status = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelController.CommonAction, org.roylance.yadel.YadelController.CommonAction.Builder, org.roylance.yadel.YadelController.CommonActionOrBuilder> 

@@ -67,6 +67,7 @@ abstract class ManagerBase: UntypedActor() {
 
     override fun onReceive(message: Any?) {
         val senderActor = ActorUtilities.buildIActor(self, context, sender)
+
         // is this a dag from someone?
         if (message is YadelModel.WorkerState && message == YadelModel.WorkerState.IDLE) {
             managerService.updateSenderStatus(YadelModel.WorkerState.IDLE, true, senderActor)
@@ -107,6 +108,9 @@ abstract class ManagerBase: UntypedActor() {
         else if (message is YadelModel.ManagerToManagerMessageType &&
                 YadelModel.ManagerToManagerMessageType.ENSURE_WORKERS_WORKING == message) {
             managerService.handleEnsureWorkersWorking()
+        }
+        else if (message is YadelModel.WorkerProperties) {
+            managerService.updateWorkerProperties(senderActor, message)
         }
 
         managerService.handleTellWorkersToDoNewDagWork()

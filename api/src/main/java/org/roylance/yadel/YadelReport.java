@@ -233,50 +233,50 @@ public final class YadelReport {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
+     * <code>.org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
      */
     int getRequestTypeValue();
     /**
-     * <code>optional .org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
+     * <code>.org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
      */
     org.roylance.yadel.YadelReport.UIYadelRequestType getRequestType();
 
     /**
-     * <code>optional string dag_id = 2;</code>
+     * <code>string dag_id = 2;</code>
      */
     java.lang.String getDagId();
     /**
-     * <code>optional string dag_id = 2;</code>
+     * <code>string dag_id = 2;</code>
      */
     com.google.protobuf.ByteString
         getDagIdBytes();
 
     /**
-     * <code>optional string token = 3;</code>
+     * <code>string token = 3;</code>
      */
     java.lang.String getToken();
     /**
-     * <code>optional string token = 3;</code>
+     * <code>string token = 3;</code>
      */
     com.google.protobuf.ByteString
         getTokenBytes();
 
     /**
-     * <code>optional string user_name = 4;</code>
+     * <code>string user_name = 4;</code>
      */
     java.lang.String getUserName();
     /**
-     * <code>optional string user_name = 4;</code>
+     * <code>string user_name = 4;</code>
      */
     com.google.protobuf.ByteString
         getUserNameBytes();
 
     /**
-     * <code>optional string password = 5;</code>
+     * <code>string password = 5;</code>
      */
     java.lang.String getPassword();
     /**
-     * <code>optional string password = 5;</code>
+     * <code>string password = 5;</code>
      */
     com.google.protobuf.ByteString
         getPasswordBytes();
@@ -381,13 +381,13 @@ public final class YadelReport {
     public static final int REQUEST_TYPE_FIELD_NUMBER = 1;
     private int requestType_;
     /**
-     * <code>optional .org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
+     * <code>.org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
      */
     public int getRequestTypeValue() {
       return requestType_;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
+     * <code>.org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
      */
     public org.roylance.yadel.YadelReport.UIYadelRequestType getRequestType() {
       org.roylance.yadel.YadelReport.UIYadelRequestType result = org.roylance.yadel.YadelReport.UIYadelRequestType.valueOf(requestType_);
@@ -397,7 +397,7 @@ public final class YadelReport {
     public static final int DAG_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object dagId_;
     /**
-     * <code>optional string dag_id = 2;</code>
+     * <code>string dag_id = 2;</code>
      */
     public java.lang.String getDagId() {
       java.lang.Object ref = dagId_;
@@ -412,7 +412,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string dag_id = 2;</code>
+     * <code>string dag_id = 2;</code>
      */
     public com.google.protobuf.ByteString
         getDagIdBytes() {
@@ -431,7 +431,7 @@ public final class YadelReport {
     public static final int TOKEN_FIELD_NUMBER = 3;
     private volatile java.lang.Object token_;
     /**
-     * <code>optional string token = 3;</code>
+     * <code>string token = 3;</code>
      */
     public java.lang.String getToken() {
       java.lang.Object ref = token_;
@@ -446,7 +446,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string token = 3;</code>
+     * <code>string token = 3;</code>
      */
     public com.google.protobuf.ByteString
         getTokenBytes() {
@@ -465,7 +465,7 @@ public final class YadelReport {
     public static final int USER_NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object userName_;
     /**
-     * <code>optional string user_name = 4;</code>
+     * <code>string user_name = 4;</code>
      */
     public java.lang.String getUserName() {
       java.lang.Object ref = userName_;
@@ -480,7 +480,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string user_name = 4;</code>
+     * <code>string user_name = 4;</code>
      */
     public com.google.protobuf.ByteString
         getUserNameBytes() {
@@ -499,7 +499,7 @@ public final class YadelReport {
     public static final int PASSWORD_FIELD_NUMBER = 5;
     private volatile java.lang.Object password_;
     /**
-     * <code>optional string password = 5;</code>
+     * <code>string password = 5;</code>
      */
     public java.lang.String getPassword() {
       java.lang.Object ref = password_;
@@ -514,7 +514,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string password = 5;</code>
+     * <code>string password = 5;</code>
      */
     public com.google.protobuf.ByteString
         getPasswordBytes() {
@@ -614,7 +614,7 @@ public final class YadelReport {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + REQUEST_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + requestType_;
       hash = (37 * hash) + DAG_ID_FIELD_NUMBER;
@@ -868,13 +868,13 @@ public final class YadelReport {
 
       private int requestType_ = 0;
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
        */
       public int getRequestTypeValue() {
         return requestType_;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
        */
       public Builder setRequestTypeValue(int value) {
         requestType_ = value;
@@ -882,14 +882,14 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
        */
       public org.roylance.yadel.YadelReport.UIYadelRequestType getRequestType() {
         org.roylance.yadel.YadelReport.UIYadelRequestType result = org.roylance.yadel.YadelReport.UIYadelRequestType.valueOf(requestType_);
         return result == null ? org.roylance.yadel.YadelReport.UIYadelRequestType.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
        */
       public Builder setRequestType(org.roylance.yadel.YadelReport.UIYadelRequestType value) {
         if (value == null) {
@@ -901,7 +901,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
+       * <code>.org.roylance.yadel.UIYadelRequestType request_type = 1;</code>
        */
       public Builder clearRequestType() {
         
@@ -912,7 +912,7 @@ public final class YadelReport {
 
       private java.lang.Object dagId_ = "";
       /**
-       * <code>optional string dag_id = 2;</code>
+       * <code>string dag_id = 2;</code>
        */
       public java.lang.String getDagId() {
         java.lang.Object ref = dagId_;
@@ -927,7 +927,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string dag_id = 2;</code>
+       * <code>string dag_id = 2;</code>
        */
       public com.google.protobuf.ByteString
           getDagIdBytes() {
@@ -943,7 +943,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string dag_id = 2;</code>
+       * <code>string dag_id = 2;</code>
        */
       public Builder setDagId(
           java.lang.String value) {
@@ -956,7 +956,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string dag_id = 2;</code>
+       * <code>string dag_id = 2;</code>
        */
       public Builder clearDagId() {
         
@@ -965,7 +965,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string dag_id = 2;</code>
+       * <code>string dag_id = 2;</code>
        */
       public Builder setDagIdBytes(
           com.google.protobuf.ByteString value) {
@@ -981,7 +981,7 @@ public final class YadelReport {
 
       private java.lang.Object token_ = "";
       /**
-       * <code>optional string token = 3;</code>
+       * <code>string token = 3;</code>
        */
       public java.lang.String getToken() {
         java.lang.Object ref = token_;
@@ -996,7 +996,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>string token = 3;</code>
        */
       public com.google.protobuf.ByteString
           getTokenBytes() {
@@ -1012,7 +1012,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>string token = 3;</code>
        */
       public Builder setToken(
           java.lang.String value) {
@@ -1025,7 +1025,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>string token = 3;</code>
        */
       public Builder clearToken() {
         
@@ -1034,7 +1034,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string token = 3;</code>
+       * <code>string token = 3;</code>
        */
       public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
@@ -1050,7 +1050,7 @@ public final class YadelReport {
 
       private java.lang.Object userName_ = "";
       /**
-       * <code>optional string user_name = 4;</code>
+       * <code>string user_name = 4;</code>
        */
       public java.lang.String getUserName() {
         java.lang.Object ref = userName_;
@@ -1065,7 +1065,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string user_name = 4;</code>
+       * <code>string user_name = 4;</code>
        */
       public com.google.protobuf.ByteString
           getUserNameBytes() {
@@ -1081,7 +1081,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string user_name = 4;</code>
+       * <code>string user_name = 4;</code>
        */
       public Builder setUserName(
           java.lang.String value) {
@@ -1094,7 +1094,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string user_name = 4;</code>
+       * <code>string user_name = 4;</code>
        */
       public Builder clearUserName() {
         
@@ -1103,7 +1103,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string user_name = 4;</code>
+       * <code>string user_name = 4;</code>
        */
       public Builder setUserNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1119,7 +1119,7 @@ public final class YadelReport {
 
       private java.lang.Object password_ = "";
       /**
-       * <code>optional string password = 5;</code>
+       * <code>string password = 5;</code>
        */
       public java.lang.String getPassword() {
         java.lang.Object ref = password_;
@@ -1134,7 +1134,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string password = 5;</code>
+       * <code>string password = 5;</code>
        */
       public com.google.protobuf.ByteString
           getPasswordBytes() {
@@ -1150,7 +1150,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string password = 5;</code>
+       * <code>string password = 5;</code>
        */
       public Builder setPassword(
           java.lang.String value) {
@@ -1163,7 +1163,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string password = 5;</code>
+       * <code>string password = 5;</code>
        */
       public Builder clearPassword() {
         
@@ -1172,7 +1172,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string password = 5;</code>
+       * <code>string password = 5;</code>
        */
       public Builder setPasswordBytes(
           com.google.protobuf.ByteString value) {
@@ -1239,38 +1239,38 @@ public final class YadelReport {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string content = 1;</code>
+     * <code>string content = 1;</code>
      */
     java.lang.String getContent();
     /**
-     * <code>optional string content = 1;</code>
+     * <code>string content = 1;</code>
      */
     com.google.protobuf.ByteString
         getContentBytes();
 
     /**
-     * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+     * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
      */
     boolean hasReport();
     /**
-     * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+     * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
      */
     org.roylance.yadel.YadelReport.UIDagReport getReport();
     /**
-     * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+     * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
      */
     org.roylance.yadel.YadelReport.UIDagReportOrBuilder getReportOrBuilder();
 
     /**
-     * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+     * <code>.org.roylance.yadel.UIDag dag = 3;</code>
      */
     boolean hasDag();
     /**
-     * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+     * <code>.org.roylance.yadel.UIDag dag = 3;</code>
      */
     org.roylance.yadel.YadelReport.UIDag getDag();
     /**
-     * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+     * <code>.org.roylance.yadel.UIDag dag = 3;</code>
      */
     org.roylance.yadel.YadelReport.UIDagOrBuilder getDagOrBuilder();
 
@@ -1410,7 +1410,7 @@ public final class YadelReport {
     public static final int CONTENT_FIELD_NUMBER = 1;
     private volatile java.lang.Object content_;
     /**
-     * <code>optional string content = 1;</code>
+     * <code>string content = 1;</code>
      */
     public java.lang.String getContent() {
       java.lang.Object ref = content_;
@@ -1425,7 +1425,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string content = 1;</code>
+     * <code>string content = 1;</code>
      */
     public com.google.protobuf.ByteString
         getContentBytes() {
@@ -1444,19 +1444,19 @@ public final class YadelReport {
     public static final int REPORT_FIELD_NUMBER = 2;
     private org.roylance.yadel.YadelReport.UIDagReport report_;
     /**
-     * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+     * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
      */
     public boolean hasReport() {
       return report_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+     * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
      */
     public org.roylance.yadel.YadelReport.UIDagReport getReport() {
       return report_ == null ? org.roylance.yadel.YadelReport.UIDagReport.getDefaultInstance() : report_;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+     * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
      */
     public org.roylance.yadel.YadelReport.UIDagReportOrBuilder getReportOrBuilder() {
       return getReport();
@@ -1465,19 +1465,19 @@ public final class YadelReport {
     public static final int DAG_FIELD_NUMBER = 3;
     private org.roylance.yadel.YadelReport.UIDag dag_;
     /**
-     * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+     * <code>.org.roylance.yadel.UIDag dag = 3;</code>
      */
     public boolean hasDag() {
       return dag_ != null;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+     * <code>.org.roylance.yadel.UIDag dag = 3;</code>
      */
     public org.roylance.yadel.YadelReport.UIDag getDag() {
       return dag_ == null ? org.roylance.yadel.YadelReport.UIDag.getDefaultInstance() : dag_;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+     * <code>.org.roylance.yadel.UIDag dag = 3;</code>
      */
     public org.roylance.yadel.YadelReport.UIDagOrBuilder getDagOrBuilder() {
       return getDag();
@@ -1603,7 +1603,7 @@ public final class YadelReport {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
       if (hasReport()) {
@@ -1908,7 +1908,7 @@ public final class YadelReport {
 
       private java.lang.Object content_ = "";
       /**
-       * <code>optional string content = 1;</code>
+       * <code>string content = 1;</code>
        */
       public java.lang.String getContent() {
         java.lang.Object ref = content_;
@@ -1923,7 +1923,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string content = 1;</code>
+       * <code>string content = 1;</code>
        */
       public com.google.protobuf.ByteString
           getContentBytes() {
@@ -1939,7 +1939,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string content = 1;</code>
+       * <code>string content = 1;</code>
        */
       public Builder setContent(
           java.lang.String value) {
@@ -1952,7 +1952,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string content = 1;</code>
+       * <code>string content = 1;</code>
        */
       public Builder clearContent() {
         
@@ -1961,7 +1961,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string content = 1;</code>
+       * <code>string content = 1;</code>
        */
       public Builder setContentBytes(
           com.google.protobuf.ByteString value) {
@@ -1979,13 +1979,13 @@ public final class YadelReport {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIDagReport, org.roylance.yadel.YadelReport.UIDagReport.Builder, org.roylance.yadel.YadelReport.UIDagReportOrBuilder> reportBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+       * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
        */
       public boolean hasReport() {
         return reportBuilder_ != null || report_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+       * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
        */
       public org.roylance.yadel.YadelReport.UIDagReport getReport() {
         if (reportBuilder_ == null) {
@@ -1995,7 +1995,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+       * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
        */
       public Builder setReport(org.roylance.yadel.YadelReport.UIDagReport value) {
         if (reportBuilder_ == null) {
@@ -2011,7 +2011,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+       * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
        */
       public Builder setReport(
           org.roylance.yadel.YadelReport.UIDagReport.Builder builderForValue) {
@@ -2025,7 +2025,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+       * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
        */
       public Builder mergeReport(org.roylance.yadel.YadelReport.UIDagReport value) {
         if (reportBuilder_ == null) {
@@ -2043,7 +2043,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+       * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
        */
       public Builder clearReport() {
         if (reportBuilder_ == null) {
@@ -2057,7 +2057,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+       * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
        */
       public org.roylance.yadel.YadelReport.UIDagReport.Builder getReportBuilder() {
         
@@ -2065,7 +2065,7 @@ public final class YadelReport {
         return getReportFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+       * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
        */
       public org.roylance.yadel.YadelReport.UIDagReportOrBuilder getReportOrBuilder() {
         if (reportBuilder_ != null) {
@@ -2076,7 +2076,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDagReport report = 2;</code>
+       * <code>.org.roylance.yadel.UIDagReport report = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIDagReport, org.roylance.yadel.YadelReport.UIDagReport.Builder, org.roylance.yadel.YadelReport.UIDagReportOrBuilder> 
@@ -2096,13 +2096,13 @@ public final class YadelReport {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIDag, org.roylance.yadel.YadelReport.UIDag.Builder, org.roylance.yadel.YadelReport.UIDagOrBuilder> dagBuilder_;
       /**
-       * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+       * <code>.org.roylance.yadel.UIDag dag = 3;</code>
        */
       public boolean hasDag() {
         return dagBuilder_ != null || dag_ != null;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+       * <code>.org.roylance.yadel.UIDag dag = 3;</code>
        */
       public org.roylance.yadel.YadelReport.UIDag getDag() {
         if (dagBuilder_ == null) {
@@ -2112,7 +2112,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+       * <code>.org.roylance.yadel.UIDag dag = 3;</code>
        */
       public Builder setDag(org.roylance.yadel.YadelReport.UIDag value) {
         if (dagBuilder_ == null) {
@@ -2128,7 +2128,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+       * <code>.org.roylance.yadel.UIDag dag = 3;</code>
        */
       public Builder setDag(
           org.roylance.yadel.YadelReport.UIDag.Builder builderForValue) {
@@ -2142,7 +2142,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+       * <code>.org.roylance.yadel.UIDag dag = 3;</code>
        */
       public Builder mergeDag(org.roylance.yadel.YadelReport.UIDag value) {
         if (dagBuilder_ == null) {
@@ -2160,7 +2160,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+       * <code>.org.roylance.yadel.UIDag dag = 3;</code>
        */
       public Builder clearDag() {
         if (dagBuilder_ == null) {
@@ -2174,7 +2174,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+       * <code>.org.roylance.yadel.UIDag dag = 3;</code>
        */
       public org.roylance.yadel.YadelReport.UIDag.Builder getDagBuilder() {
         
@@ -2182,7 +2182,7 @@ public final class YadelReport {
         return getDagFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+       * <code>.org.roylance.yadel.UIDag dag = 3;</code>
        */
       public org.roylance.yadel.YadelReport.UIDagOrBuilder getDagOrBuilder() {
         if (dagBuilder_ != null) {
@@ -2193,7 +2193,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional .org.roylance.yadel.UIDag dag = 3;</code>
+       * <code>.org.roylance.yadel.UIDag dag = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.roylance.yadel.YadelReport.UIDag, org.roylance.yadel.YadelReport.UIDag.Builder, org.roylance.yadel.YadelReport.UIDagOrBuilder> 
@@ -2550,37 +2550,37 @@ public final class YadelReport {
         int index);
 
     /**
-     * <code>optional string used_manager_memory = 3;</code>
+     * <code>string used_manager_memory = 3;</code>
      */
     java.lang.String getUsedManagerMemory();
     /**
-     * <code>optional string used_manager_memory = 3;</code>
+     * <code>string used_manager_memory = 3;</code>
      */
     com.google.protobuf.ByteString
         getUsedManagerMemoryBytes();
 
     /**
-     * <code>optional string total_manager_memory = 4;</code>
+     * <code>string total_manager_memory = 4;</code>
      */
     java.lang.String getTotalManagerMemory();
     /**
-     * <code>optional string total_manager_memory = 4;</code>
+     * <code>string total_manager_memory = 4;</code>
      */
     com.google.protobuf.ByteString
         getTotalManagerMemoryBytes();
 
     /**
-     * <code>optional int32 active_dags = 5;</code>
+     * <code>int32 active_dags = 5;</code>
      */
     int getActiveDags();
 
     /**
-     * <code>optional int32 unprocessed_dags = 6;</code>
+     * <code>int32 unprocessed_dags = 6;</code>
      */
     int getUnprocessedDags();
 
     /**
-     * <code>optional int32 saved_dags = 7;</code>
+     * <code>int32 saved_dags = 7;</code>
      */
     int getSavedDags();
   }
@@ -2778,7 +2778,7 @@ public final class YadelReport {
     public static final int USED_MANAGER_MEMORY_FIELD_NUMBER = 3;
     private volatile java.lang.Object usedManagerMemory_;
     /**
-     * <code>optional string used_manager_memory = 3;</code>
+     * <code>string used_manager_memory = 3;</code>
      */
     public java.lang.String getUsedManagerMemory() {
       java.lang.Object ref = usedManagerMemory_;
@@ -2793,7 +2793,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string used_manager_memory = 3;</code>
+     * <code>string used_manager_memory = 3;</code>
      */
     public com.google.protobuf.ByteString
         getUsedManagerMemoryBytes() {
@@ -2812,7 +2812,7 @@ public final class YadelReport {
     public static final int TOTAL_MANAGER_MEMORY_FIELD_NUMBER = 4;
     private volatile java.lang.Object totalManagerMemory_;
     /**
-     * <code>optional string total_manager_memory = 4;</code>
+     * <code>string total_manager_memory = 4;</code>
      */
     public java.lang.String getTotalManagerMemory() {
       java.lang.Object ref = totalManagerMemory_;
@@ -2827,7 +2827,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string total_manager_memory = 4;</code>
+     * <code>string total_manager_memory = 4;</code>
      */
     public com.google.protobuf.ByteString
         getTotalManagerMemoryBytes() {
@@ -2846,7 +2846,7 @@ public final class YadelReport {
     public static final int ACTIVE_DAGS_FIELD_NUMBER = 5;
     private int activeDags_;
     /**
-     * <code>optional int32 active_dags = 5;</code>
+     * <code>int32 active_dags = 5;</code>
      */
     public int getActiveDags() {
       return activeDags_;
@@ -2855,7 +2855,7 @@ public final class YadelReport {
     public static final int UNPROCESSED_DAGS_FIELD_NUMBER = 6;
     private int unprocessedDags_;
     /**
-     * <code>optional int32 unprocessed_dags = 6;</code>
+     * <code>int32 unprocessed_dags = 6;</code>
      */
     public int getUnprocessedDags() {
       return unprocessedDags_;
@@ -2864,7 +2864,7 @@ public final class YadelReport {
     public static final int SAVED_DAGS_FIELD_NUMBER = 7;
     private int savedDags_;
     /**
-     * <code>optional int32 saved_dags = 7;</code>
+     * <code>int32 saved_dags = 7;</code>
      */
     public int getSavedDags() {
       return savedDags_;
@@ -2975,7 +2975,7 @@ public final class YadelReport {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getWorkersCount() > 0) {
         hash = (37 * hash) + WORKERS_FIELD_NUMBER;
         hash = (53 * hash) + getWorkersList().hashCode();
@@ -3803,7 +3803,7 @@ public final class YadelReport {
 
       private java.lang.Object usedManagerMemory_ = "";
       /**
-       * <code>optional string used_manager_memory = 3;</code>
+       * <code>string used_manager_memory = 3;</code>
        */
       public java.lang.String getUsedManagerMemory() {
         java.lang.Object ref = usedManagerMemory_;
@@ -3818,7 +3818,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string used_manager_memory = 3;</code>
+       * <code>string used_manager_memory = 3;</code>
        */
       public com.google.protobuf.ByteString
           getUsedManagerMemoryBytes() {
@@ -3834,7 +3834,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string used_manager_memory = 3;</code>
+       * <code>string used_manager_memory = 3;</code>
        */
       public Builder setUsedManagerMemory(
           java.lang.String value) {
@@ -3847,7 +3847,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string used_manager_memory = 3;</code>
+       * <code>string used_manager_memory = 3;</code>
        */
       public Builder clearUsedManagerMemory() {
         
@@ -3856,7 +3856,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string used_manager_memory = 3;</code>
+       * <code>string used_manager_memory = 3;</code>
        */
       public Builder setUsedManagerMemoryBytes(
           com.google.protobuf.ByteString value) {
@@ -3872,7 +3872,7 @@ public final class YadelReport {
 
       private java.lang.Object totalManagerMemory_ = "";
       /**
-       * <code>optional string total_manager_memory = 4;</code>
+       * <code>string total_manager_memory = 4;</code>
        */
       public java.lang.String getTotalManagerMemory() {
         java.lang.Object ref = totalManagerMemory_;
@@ -3887,7 +3887,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string total_manager_memory = 4;</code>
+       * <code>string total_manager_memory = 4;</code>
        */
       public com.google.protobuf.ByteString
           getTotalManagerMemoryBytes() {
@@ -3903,7 +3903,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string total_manager_memory = 4;</code>
+       * <code>string total_manager_memory = 4;</code>
        */
       public Builder setTotalManagerMemory(
           java.lang.String value) {
@@ -3916,7 +3916,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string total_manager_memory = 4;</code>
+       * <code>string total_manager_memory = 4;</code>
        */
       public Builder clearTotalManagerMemory() {
         
@@ -3925,7 +3925,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string total_manager_memory = 4;</code>
+       * <code>string total_manager_memory = 4;</code>
        */
       public Builder setTotalManagerMemoryBytes(
           com.google.protobuf.ByteString value) {
@@ -3941,13 +3941,13 @@ public final class YadelReport {
 
       private int activeDags_ ;
       /**
-       * <code>optional int32 active_dags = 5;</code>
+       * <code>int32 active_dags = 5;</code>
        */
       public int getActiveDags() {
         return activeDags_;
       }
       /**
-       * <code>optional int32 active_dags = 5;</code>
+       * <code>int32 active_dags = 5;</code>
        */
       public Builder setActiveDags(int value) {
         
@@ -3956,7 +3956,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional int32 active_dags = 5;</code>
+       * <code>int32 active_dags = 5;</code>
        */
       public Builder clearActiveDags() {
         
@@ -3967,13 +3967,13 @@ public final class YadelReport {
 
       private int unprocessedDags_ ;
       /**
-       * <code>optional int32 unprocessed_dags = 6;</code>
+       * <code>int32 unprocessed_dags = 6;</code>
        */
       public int getUnprocessedDags() {
         return unprocessedDags_;
       }
       /**
-       * <code>optional int32 unprocessed_dags = 6;</code>
+       * <code>int32 unprocessed_dags = 6;</code>
        */
       public Builder setUnprocessedDags(int value) {
         
@@ -3982,7 +3982,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional int32 unprocessed_dags = 6;</code>
+       * <code>int32 unprocessed_dags = 6;</code>
        */
       public Builder clearUnprocessedDags() {
         
@@ -3993,13 +3993,13 @@ public final class YadelReport {
 
       private int savedDags_ ;
       /**
-       * <code>optional int32 saved_dags = 7;</code>
+       * <code>int32 saved_dags = 7;</code>
        */
       public int getSavedDags() {
         return savedDags_;
       }
       /**
-       * <code>optional int32 saved_dags = 7;</code>
+       * <code>int32 saved_dags = 7;</code>
        */
       public Builder setSavedDags(int value) {
         
@@ -4008,7 +4008,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional int32 saved_dags = 7;</code>
+       * <code>int32 saved_dags = 7;</code>
        */
       public Builder clearSavedDags() {
         
@@ -4070,21 +4070,21 @@ public final class YadelReport {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     java.lang.String getDisplay();
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     com.google.protobuf.ByteString
         getDisplayBytes();
@@ -4138,17 +4138,17 @@ public final class YadelReport {
         int index);
 
     /**
-     * <code>optional bool is_completed = 5;</code>
+     * <code>bool is_completed = 5;</code>
      */
     boolean getIsCompleted();
 
     /**
-     * <code>optional bool is_processing = 6;</code>
+     * <code>bool is_processing = 6;</code>
      */
     boolean getIsProcessing();
 
     /**
-     * <code>optional bool is_error = 7;</code>
+     * <code>bool is_error = 7;</code>
      */
     boolean getIsError();
 
@@ -4172,22 +4172,22 @@ public final class YadelReport {
         getLogsBytes(int index);
 
     /**
-     * <code>optional int32 number_completed = 9;</code>
+     * <code>int32 number_completed = 9;</code>
      */
     int getNumberCompleted();
 
     /**
-     * <code>optional int32 number_processing = 10;</code>
+     * <code>int32 number_processing = 10;</code>
      */
     int getNumberProcessing();
 
     /**
-     * <code>optional int32 number_errored = 11;</code>
+     * <code>int32 number_errored = 11;</code>
      */
     int getNumberErrored();
 
     /**
-     * <code>optional int32 number_unprocessed = 12;</code>
+     * <code>int32 number_unprocessed = 12;</code>
      */
     int getNumberUnprocessed();
 
@@ -4389,7 +4389,7 @@ public final class YadelReport {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -4404,7 +4404,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -4423,7 +4423,7 @@ public final class YadelReport {
     public static final int DISPLAY_FIELD_NUMBER = 2;
     private volatile java.lang.Object display_;
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     public java.lang.String getDisplay() {
       java.lang.Object ref = display_;
@@ -4438,7 +4438,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     public com.google.protobuf.ByteString
         getDisplayBytes() {
@@ -4527,7 +4527,7 @@ public final class YadelReport {
     public static final int IS_COMPLETED_FIELD_NUMBER = 5;
     private boolean isCompleted_;
     /**
-     * <code>optional bool is_completed = 5;</code>
+     * <code>bool is_completed = 5;</code>
      */
     public boolean getIsCompleted() {
       return isCompleted_;
@@ -4536,7 +4536,7 @@ public final class YadelReport {
     public static final int IS_PROCESSING_FIELD_NUMBER = 6;
     private boolean isProcessing_;
     /**
-     * <code>optional bool is_processing = 6;</code>
+     * <code>bool is_processing = 6;</code>
      */
     public boolean getIsProcessing() {
       return isProcessing_;
@@ -4545,7 +4545,7 @@ public final class YadelReport {
     public static final int IS_ERROR_FIELD_NUMBER = 7;
     private boolean isError_;
     /**
-     * <code>optional bool is_error = 7;</code>
+     * <code>bool is_error = 7;</code>
      */
     public boolean getIsError() {
       return isError_;
@@ -4583,7 +4583,7 @@ public final class YadelReport {
     public static final int NUMBER_COMPLETED_FIELD_NUMBER = 9;
     private int numberCompleted_;
     /**
-     * <code>optional int32 number_completed = 9;</code>
+     * <code>int32 number_completed = 9;</code>
      */
     public int getNumberCompleted() {
       return numberCompleted_;
@@ -4592,7 +4592,7 @@ public final class YadelReport {
     public static final int NUMBER_PROCESSING_FIELD_NUMBER = 10;
     private int numberProcessing_;
     /**
-     * <code>optional int32 number_processing = 10;</code>
+     * <code>int32 number_processing = 10;</code>
      */
     public int getNumberProcessing() {
       return numberProcessing_;
@@ -4601,7 +4601,7 @@ public final class YadelReport {
     public static final int NUMBER_ERRORED_FIELD_NUMBER = 11;
     private int numberErrored_;
     /**
-     * <code>optional int32 number_errored = 11;</code>
+     * <code>int32 number_errored = 11;</code>
      */
     public int getNumberErrored() {
       return numberErrored_;
@@ -4610,7 +4610,7 @@ public final class YadelReport {
     public static final int NUMBER_UNPROCESSED_FIELD_NUMBER = 12;
     private int numberUnprocessed_;
     /**
-     * <code>optional int32 number_unprocessed = 12;</code>
+     * <code>int32 number_unprocessed = 12;</code>
      */
     public int getNumberUnprocessed() {
       return numberUnprocessed_;
@@ -4814,7 +4814,7 @@ public final class YadelReport {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + DISPLAY_FIELD_NUMBER;
@@ -5264,7 +5264,7 @@ public final class YadelReport {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -5279,7 +5279,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -5295,7 +5295,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -5308,7 +5308,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -5317,7 +5317,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -5333,7 +5333,7 @@ public final class YadelReport {
 
       private java.lang.Object display_ = "";
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public java.lang.String getDisplay() {
         java.lang.Object ref = display_;
@@ -5348,7 +5348,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public com.google.protobuf.ByteString
           getDisplayBytes() {
@@ -5364,7 +5364,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder setDisplay(
           java.lang.String value) {
@@ -5377,7 +5377,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder clearDisplay() {
         
@@ -5386,7 +5386,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder setDisplayBytes(
           com.google.protobuf.ByteString value) {
@@ -5882,13 +5882,13 @@ public final class YadelReport {
 
       private boolean isCompleted_ ;
       /**
-       * <code>optional bool is_completed = 5;</code>
+       * <code>bool is_completed = 5;</code>
        */
       public boolean getIsCompleted() {
         return isCompleted_;
       }
       /**
-       * <code>optional bool is_completed = 5;</code>
+       * <code>bool is_completed = 5;</code>
        */
       public Builder setIsCompleted(boolean value) {
         
@@ -5897,7 +5897,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional bool is_completed = 5;</code>
+       * <code>bool is_completed = 5;</code>
        */
       public Builder clearIsCompleted() {
         
@@ -5908,13 +5908,13 @@ public final class YadelReport {
 
       private boolean isProcessing_ ;
       /**
-       * <code>optional bool is_processing = 6;</code>
+       * <code>bool is_processing = 6;</code>
        */
       public boolean getIsProcessing() {
         return isProcessing_;
       }
       /**
-       * <code>optional bool is_processing = 6;</code>
+       * <code>bool is_processing = 6;</code>
        */
       public Builder setIsProcessing(boolean value) {
         
@@ -5923,7 +5923,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional bool is_processing = 6;</code>
+       * <code>bool is_processing = 6;</code>
        */
       public Builder clearIsProcessing() {
         
@@ -5934,13 +5934,13 @@ public final class YadelReport {
 
       private boolean isError_ ;
       /**
-       * <code>optional bool is_error = 7;</code>
+       * <code>bool is_error = 7;</code>
        */
       public boolean getIsError() {
         return isError_;
       }
       /**
-       * <code>optional bool is_error = 7;</code>
+       * <code>bool is_error = 7;</code>
        */
       public Builder setIsError(boolean value) {
         
@@ -5949,7 +5949,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional bool is_error = 7;</code>
+       * <code>bool is_error = 7;</code>
        */
       public Builder clearIsError() {
         
@@ -6054,13 +6054,13 @@ public final class YadelReport {
 
       private int numberCompleted_ ;
       /**
-       * <code>optional int32 number_completed = 9;</code>
+       * <code>int32 number_completed = 9;</code>
        */
       public int getNumberCompleted() {
         return numberCompleted_;
       }
       /**
-       * <code>optional int32 number_completed = 9;</code>
+       * <code>int32 number_completed = 9;</code>
        */
       public Builder setNumberCompleted(int value) {
         
@@ -6069,7 +6069,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional int32 number_completed = 9;</code>
+       * <code>int32 number_completed = 9;</code>
        */
       public Builder clearNumberCompleted() {
         
@@ -6080,13 +6080,13 @@ public final class YadelReport {
 
       private int numberProcessing_ ;
       /**
-       * <code>optional int32 number_processing = 10;</code>
+       * <code>int32 number_processing = 10;</code>
        */
       public int getNumberProcessing() {
         return numberProcessing_;
       }
       /**
-       * <code>optional int32 number_processing = 10;</code>
+       * <code>int32 number_processing = 10;</code>
        */
       public Builder setNumberProcessing(int value) {
         
@@ -6095,7 +6095,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional int32 number_processing = 10;</code>
+       * <code>int32 number_processing = 10;</code>
        */
       public Builder clearNumberProcessing() {
         
@@ -6106,13 +6106,13 @@ public final class YadelReport {
 
       private int numberErrored_ ;
       /**
-       * <code>optional int32 number_errored = 11;</code>
+       * <code>int32 number_errored = 11;</code>
        */
       public int getNumberErrored() {
         return numberErrored_;
       }
       /**
-       * <code>optional int32 number_errored = 11;</code>
+       * <code>int32 number_errored = 11;</code>
        */
       public Builder setNumberErrored(int value) {
         
@@ -6121,7 +6121,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional int32 number_errored = 11;</code>
+       * <code>int32 number_errored = 11;</code>
        */
       public Builder clearNumberErrored() {
         
@@ -6132,13 +6132,13 @@ public final class YadelReport {
 
       private int numberUnprocessed_ ;
       /**
-       * <code>optional int32 number_unprocessed = 12;</code>
+       * <code>int32 number_unprocessed = 12;</code>
        */
       public int getNumberUnprocessed() {
         return numberUnprocessed_;
       }
       /**
-       * <code>optional int32 number_unprocessed = 12;</code>
+       * <code>int32 number_unprocessed = 12;</code>
        */
       public Builder setNumberUnprocessed(int value) {
         
@@ -6147,7 +6147,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional int32 number_unprocessed = 12;</code>
+       * <code>int32 number_unprocessed = 12;</code>
        */
       public Builder clearNumberUnprocessed() {
         
@@ -6449,21 +6449,21 @@ public final class YadelReport {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string node_id_1 = 1;</code>
+     * <code>string node_id_1 = 1;</code>
      */
     java.lang.String getNodeId1();
     /**
-     * <code>optional string node_id_1 = 1;</code>
+     * <code>string node_id_1 = 1;</code>
      */
     com.google.protobuf.ByteString
         getNodeId1Bytes();
 
     /**
-     * <code>optional string node_id_2 = 2;</code>
+     * <code>string node_id_2 = 2;</code>
      */
     java.lang.String getNodeId2();
     /**
-     * <code>optional string node_id_2 = 2;</code>
+     * <code>string node_id_2 = 2;</code>
      */
     com.google.protobuf.ByteString
         getNodeId2Bytes();
@@ -6547,7 +6547,7 @@ public final class YadelReport {
     public static final int NODE_ID_1_FIELD_NUMBER = 1;
     private volatile java.lang.Object nodeId1_;
     /**
-     * <code>optional string node_id_1 = 1;</code>
+     * <code>string node_id_1 = 1;</code>
      */
     public java.lang.String getNodeId1() {
       java.lang.Object ref = nodeId1_;
@@ -6562,7 +6562,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string node_id_1 = 1;</code>
+     * <code>string node_id_1 = 1;</code>
      */
     public com.google.protobuf.ByteString
         getNodeId1Bytes() {
@@ -6581,7 +6581,7 @@ public final class YadelReport {
     public static final int NODE_ID_2_FIELD_NUMBER = 2;
     private volatile java.lang.Object nodeId2_;
     /**
-     * <code>optional string node_id_2 = 2;</code>
+     * <code>string node_id_2 = 2;</code>
      */
     public java.lang.String getNodeId2() {
       java.lang.Object ref = nodeId2_;
@@ -6596,7 +6596,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string node_id_2 = 2;</code>
+     * <code>string node_id_2 = 2;</code>
      */
     public com.google.protobuf.ByteString
         getNodeId2Bytes() {
@@ -6672,7 +6672,7 @@ public final class YadelReport {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_ID_1_FIELD_NUMBER;
       hash = (53 * hash) + getNodeId1().hashCode();
       hash = (37 * hash) + NODE_ID_2_FIELD_NUMBER;
@@ -6900,7 +6900,7 @@ public final class YadelReport {
 
       private java.lang.Object nodeId1_ = "";
       /**
-       * <code>optional string node_id_1 = 1;</code>
+       * <code>string node_id_1 = 1;</code>
        */
       public java.lang.String getNodeId1() {
         java.lang.Object ref = nodeId1_;
@@ -6915,7 +6915,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string node_id_1 = 1;</code>
+       * <code>string node_id_1 = 1;</code>
        */
       public com.google.protobuf.ByteString
           getNodeId1Bytes() {
@@ -6931,7 +6931,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string node_id_1 = 1;</code>
+       * <code>string node_id_1 = 1;</code>
        */
       public Builder setNodeId1(
           java.lang.String value) {
@@ -6944,7 +6944,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string node_id_1 = 1;</code>
+       * <code>string node_id_1 = 1;</code>
        */
       public Builder clearNodeId1() {
         
@@ -6953,7 +6953,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string node_id_1 = 1;</code>
+       * <code>string node_id_1 = 1;</code>
        */
       public Builder setNodeId1Bytes(
           com.google.protobuf.ByteString value) {
@@ -6969,7 +6969,7 @@ public final class YadelReport {
 
       private java.lang.Object nodeId2_ = "";
       /**
-       * <code>optional string node_id_2 = 2;</code>
+       * <code>string node_id_2 = 2;</code>
        */
       public java.lang.String getNodeId2() {
         java.lang.Object ref = nodeId2_;
@@ -6984,7 +6984,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string node_id_2 = 2;</code>
+       * <code>string node_id_2 = 2;</code>
        */
       public com.google.protobuf.ByteString
           getNodeId2Bytes() {
@@ -7000,7 +7000,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string node_id_2 = 2;</code>
+       * <code>string node_id_2 = 2;</code>
        */
       public Builder setNodeId2(
           java.lang.String value) {
@@ -7013,7 +7013,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string node_id_2 = 2;</code>
+       * <code>string node_id_2 = 2;</code>
        */
       public Builder clearNodeId2() {
         
@@ -7022,7 +7022,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string node_id_2 = 2;</code>
+       * <code>string node_id_2 = 2;</code>
        */
       public Builder setNodeId2Bytes(
           com.google.protobuf.ByteString value) {
@@ -7089,57 +7089,57 @@ public final class YadelReport {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     java.lang.String getDisplay();
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     com.google.protobuf.ByteString
         getDisplayBytes();
 
     /**
-     * <code>optional int64 execution_date = 4;</code>
+     * <code>int64 execution_date = 4;</code>
      */
     long getExecutionDate();
 
     /**
-     * <code>optional int64 start_date = 5;</code>
+     * <code>int64 start_date = 5;</code>
      */
     long getStartDate();
 
     /**
-     * <code>optional int64 end_date = 6;</code>
+     * <code>int64 end_date = 6;</code>
      */
     long getEndDate();
 
     /**
-     * <code>optional int64 duration = 7;</code>
+     * <code>int64 duration = 7;</code>
      */
     long getDuration();
 
     /**
-     * <code>optional bool is_completed = 8;</code>
+     * <code>bool is_completed = 8;</code>
      */
     boolean getIsCompleted();
 
     /**
-     * <code>optional bool is_processing = 9;</code>
+     * <code>bool is_processing = 9;</code>
      */
     boolean getIsProcessing();
 
     /**
-     * <code>optional bool is_error = 10;</code>
+     * <code>bool is_error = 10;</code>
      */
     boolean getIsError();
 
@@ -7168,7 +7168,7 @@ public final class YadelReport {
         int index);
 
     /**
-     * <code>optional bool is_waiting_for_another_dag_task = 12;</code>
+     * <code>bool is_waiting_for_another_dag_task = 12;</code>
      */
     boolean getIsWaitingForAnotherDagTask();
   }
@@ -7313,7 +7313,7 @@ public final class YadelReport {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -7328,7 +7328,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -7347,7 +7347,7 @@ public final class YadelReport {
     public static final int DISPLAY_FIELD_NUMBER = 2;
     private volatile java.lang.Object display_;
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     public java.lang.String getDisplay() {
       java.lang.Object ref = display_;
@@ -7362,7 +7362,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string display = 2;</code>
+     * <code>string display = 2;</code>
      */
     public com.google.protobuf.ByteString
         getDisplayBytes() {
@@ -7381,7 +7381,7 @@ public final class YadelReport {
     public static final int EXECUTION_DATE_FIELD_NUMBER = 4;
     private long executionDate_;
     /**
-     * <code>optional int64 execution_date = 4;</code>
+     * <code>int64 execution_date = 4;</code>
      */
     public long getExecutionDate() {
       return executionDate_;
@@ -7390,7 +7390,7 @@ public final class YadelReport {
     public static final int START_DATE_FIELD_NUMBER = 5;
     private long startDate_;
     /**
-     * <code>optional int64 start_date = 5;</code>
+     * <code>int64 start_date = 5;</code>
      */
     public long getStartDate() {
       return startDate_;
@@ -7399,7 +7399,7 @@ public final class YadelReport {
     public static final int END_DATE_FIELD_NUMBER = 6;
     private long endDate_;
     /**
-     * <code>optional int64 end_date = 6;</code>
+     * <code>int64 end_date = 6;</code>
      */
     public long getEndDate() {
       return endDate_;
@@ -7408,7 +7408,7 @@ public final class YadelReport {
     public static final int DURATION_FIELD_NUMBER = 7;
     private long duration_;
     /**
-     * <code>optional int64 duration = 7;</code>
+     * <code>int64 duration = 7;</code>
      */
     public long getDuration() {
       return duration_;
@@ -7417,7 +7417,7 @@ public final class YadelReport {
     public static final int IS_COMPLETED_FIELD_NUMBER = 8;
     private boolean isCompleted_;
     /**
-     * <code>optional bool is_completed = 8;</code>
+     * <code>bool is_completed = 8;</code>
      */
     public boolean getIsCompleted() {
       return isCompleted_;
@@ -7426,7 +7426,7 @@ public final class YadelReport {
     public static final int IS_PROCESSING_FIELD_NUMBER = 9;
     private boolean isProcessing_;
     /**
-     * <code>optional bool is_processing = 9;</code>
+     * <code>bool is_processing = 9;</code>
      */
     public boolean getIsProcessing() {
       return isProcessing_;
@@ -7435,7 +7435,7 @@ public final class YadelReport {
     public static final int IS_ERROR_FIELD_NUMBER = 10;
     private boolean isError_;
     /**
-     * <code>optional bool is_error = 10;</code>
+     * <code>bool is_error = 10;</code>
      */
     public boolean getIsError() {
       return isError_;
@@ -7479,7 +7479,7 @@ public final class YadelReport {
     public static final int IS_WAITING_FOR_ANOTHER_DAG_TASK_FIELD_NUMBER = 12;
     private boolean isWaitingForAnotherDagTask_;
     /**
-     * <code>optional bool is_waiting_for_another_dag_task = 12;</code>
+     * <code>bool is_waiting_for_another_dag_task = 12;</code>
      */
     public boolean getIsWaitingForAnotherDagTask() {
       return isWaitingForAnotherDagTask_;
@@ -7626,7 +7626,7 @@ public final class YadelReport {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + DISPLAY_FIELD_NUMBER;
@@ -7976,7 +7976,7 @@ public final class YadelReport {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -7991,7 +7991,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -8007,7 +8007,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -8020,7 +8020,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -8029,7 +8029,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -8045,7 +8045,7 @@ public final class YadelReport {
 
       private java.lang.Object display_ = "";
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public java.lang.String getDisplay() {
         java.lang.Object ref = display_;
@@ -8060,7 +8060,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public com.google.protobuf.ByteString
           getDisplayBytes() {
@@ -8076,7 +8076,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder setDisplay(
           java.lang.String value) {
@@ -8089,7 +8089,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder clearDisplay() {
         
@@ -8098,7 +8098,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string display = 2;</code>
+       * <code>string display = 2;</code>
        */
       public Builder setDisplayBytes(
           com.google.protobuf.ByteString value) {
@@ -8114,13 +8114,13 @@ public final class YadelReport {
 
       private long executionDate_ ;
       /**
-       * <code>optional int64 execution_date = 4;</code>
+       * <code>int64 execution_date = 4;</code>
        */
       public long getExecutionDate() {
         return executionDate_;
       }
       /**
-       * <code>optional int64 execution_date = 4;</code>
+       * <code>int64 execution_date = 4;</code>
        */
       public Builder setExecutionDate(long value) {
         
@@ -8129,7 +8129,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional int64 execution_date = 4;</code>
+       * <code>int64 execution_date = 4;</code>
        */
       public Builder clearExecutionDate() {
         
@@ -8140,13 +8140,13 @@ public final class YadelReport {
 
       private long startDate_ ;
       /**
-       * <code>optional int64 start_date = 5;</code>
+       * <code>int64 start_date = 5;</code>
        */
       public long getStartDate() {
         return startDate_;
       }
       /**
-       * <code>optional int64 start_date = 5;</code>
+       * <code>int64 start_date = 5;</code>
        */
       public Builder setStartDate(long value) {
         
@@ -8155,7 +8155,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional int64 start_date = 5;</code>
+       * <code>int64 start_date = 5;</code>
        */
       public Builder clearStartDate() {
         
@@ -8166,13 +8166,13 @@ public final class YadelReport {
 
       private long endDate_ ;
       /**
-       * <code>optional int64 end_date = 6;</code>
+       * <code>int64 end_date = 6;</code>
        */
       public long getEndDate() {
         return endDate_;
       }
       /**
-       * <code>optional int64 end_date = 6;</code>
+       * <code>int64 end_date = 6;</code>
        */
       public Builder setEndDate(long value) {
         
@@ -8181,7 +8181,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional int64 end_date = 6;</code>
+       * <code>int64 end_date = 6;</code>
        */
       public Builder clearEndDate() {
         
@@ -8192,13 +8192,13 @@ public final class YadelReport {
 
       private long duration_ ;
       /**
-       * <code>optional int64 duration = 7;</code>
+       * <code>int64 duration = 7;</code>
        */
       public long getDuration() {
         return duration_;
       }
       /**
-       * <code>optional int64 duration = 7;</code>
+       * <code>int64 duration = 7;</code>
        */
       public Builder setDuration(long value) {
         
@@ -8207,7 +8207,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional int64 duration = 7;</code>
+       * <code>int64 duration = 7;</code>
        */
       public Builder clearDuration() {
         
@@ -8218,13 +8218,13 @@ public final class YadelReport {
 
       private boolean isCompleted_ ;
       /**
-       * <code>optional bool is_completed = 8;</code>
+       * <code>bool is_completed = 8;</code>
        */
       public boolean getIsCompleted() {
         return isCompleted_;
       }
       /**
-       * <code>optional bool is_completed = 8;</code>
+       * <code>bool is_completed = 8;</code>
        */
       public Builder setIsCompleted(boolean value) {
         
@@ -8233,7 +8233,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional bool is_completed = 8;</code>
+       * <code>bool is_completed = 8;</code>
        */
       public Builder clearIsCompleted() {
         
@@ -8244,13 +8244,13 @@ public final class YadelReport {
 
       private boolean isProcessing_ ;
       /**
-       * <code>optional bool is_processing = 9;</code>
+       * <code>bool is_processing = 9;</code>
        */
       public boolean getIsProcessing() {
         return isProcessing_;
       }
       /**
-       * <code>optional bool is_processing = 9;</code>
+       * <code>bool is_processing = 9;</code>
        */
       public Builder setIsProcessing(boolean value) {
         
@@ -8259,7 +8259,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional bool is_processing = 9;</code>
+       * <code>bool is_processing = 9;</code>
        */
       public Builder clearIsProcessing() {
         
@@ -8270,13 +8270,13 @@ public final class YadelReport {
 
       private boolean isError_ ;
       /**
-       * <code>optional bool is_error = 10;</code>
+       * <code>bool is_error = 10;</code>
        */
       public boolean getIsError() {
         return isError_;
       }
       /**
-       * <code>optional bool is_error = 10;</code>
+       * <code>bool is_error = 10;</code>
        */
       public Builder setIsError(boolean value) {
         
@@ -8285,7 +8285,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional bool is_error = 10;</code>
+       * <code>bool is_error = 10;</code>
        */
       public Builder clearIsError() {
         
@@ -8536,13 +8536,13 @@ public final class YadelReport {
 
       private boolean isWaitingForAnotherDagTask_ ;
       /**
-       * <code>optional bool is_waiting_for_another_dag_task = 12;</code>
+       * <code>bool is_waiting_for_another_dag_task = 12;</code>
        */
       public boolean getIsWaitingForAnotherDagTask() {
         return isWaitingForAnotherDagTask_;
       }
       /**
-       * <code>optional bool is_waiting_for_another_dag_task = 12;</code>
+       * <code>bool is_waiting_for_another_dag_task = 12;</code>
        */
       public Builder setIsWaitingForAnotherDagTask(boolean value) {
         
@@ -8551,7 +8551,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional bool is_waiting_for_another_dag_task = 12;</code>
+       * <code>bool is_waiting_for_another_dag_task = 12;</code>
        */
       public Builder clearIsWaitingForAnotherDagTask() {
         
@@ -8613,21 +8613,21 @@ public final class YadelReport {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional string message = 2;</code>
+     * <code>string message = 2;</code>
      */
     java.lang.String getMessage();
     /**
-     * <code>optional string message = 2;</code>
+     * <code>string message = 2;</code>
      */
     com.google.protobuf.ByteString
         getMessageBytes();
@@ -8711,7 +8711,7 @@ public final class YadelReport {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -8726,7 +8726,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -8745,7 +8745,7 @@ public final class YadelReport {
     public static final int MESSAGE_FIELD_NUMBER = 2;
     private volatile java.lang.Object message_;
     /**
-     * <code>optional string message = 2;</code>
+     * <code>string message = 2;</code>
      */
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
@@ -8760,7 +8760,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string message = 2;</code>
+     * <code>string message = 2;</code>
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
@@ -8836,7 +8836,7 @@ public final class YadelReport {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
@@ -9064,7 +9064,7 @@ public final class YadelReport {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -9079,7 +9079,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -9095,7 +9095,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -9108,7 +9108,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -9117,7 +9117,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -9133,7 +9133,7 @@ public final class YadelReport {
 
       private java.lang.Object message_ = "";
       /**
-       * <code>optional string message = 2;</code>
+       * <code>string message = 2;</code>
        */
       public java.lang.String getMessage() {
         java.lang.Object ref = message_;
@@ -9148,7 +9148,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string message = 2;</code>
+       * <code>string message = 2;</code>
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
@@ -9164,7 +9164,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string message = 2;</code>
+       * <code>string message = 2;</code>
        */
       public Builder setMessage(
           java.lang.String value) {
@@ -9177,7 +9177,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string message = 2;</code>
+       * <code>string message = 2;</code>
        */
       public Builder clearMessage() {
         
@@ -9186,7 +9186,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string message = 2;</code>
+       * <code>string message = 2;</code>
        */
       public Builder setMessageBytes(
           com.google.protobuf.ByteString value) {
@@ -9253,95 +9253,95 @@ public final class YadelReport {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string ip = 1;</code>
+     * <code>string ip = 1;</code>
      */
     java.lang.String getIp();
     /**
-     * <code>optional string ip = 1;</code>
+     * <code>string ip = 1;</code>
      */
     com.google.protobuf.ByteString
         getIpBytes();
 
     /**
-     * <code>optional string port = 2;</code>
+     * <code>string port = 2;</code>
      */
     java.lang.String getPort();
     /**
-     * <code>optional string port = 2;</code>
+     * <code>string port = 2;</code>
      */
     com.google.protobuf.ByteString
         getPortBytes();
 
     /**
-     * <code>optional string host = 3;</code>
+     * <code>string host = 3;</code>
      */
     java.lang.String getHost();
     /**
-     * <code>optional string host = 3;</code>
+     * <code>string host = 3;</code>
      */
     com.google.protobuf.ByteString
         getHostBytes();
 
     /**
-     * <code>optional string initialized_time = 4;</code>
+     * <code>string initialized_time = 4;</code>
      */
     java.lang.String getInitializedTime();
     /**
-     * <code>optional string initialized_time = 4;</code>
+     * <code>string initialized_time = 4;</code>
      */
     com.google.protobuf.ByteString
         getInitializedTimeBytes();
 
     /**
-     * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
+     * <code>.org.roylance.yadel.UIWorkerState state = 5;</code>
      */
     int getStateValue();
     /**
-     * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
+     * <code>.org.roylance.yadel.UIWorkerState state = 5;</code>
      */
     org.roylance.yadel.YadelReport.UIWorkerState getState();
 
     /**
-     * <code>optional string task_display = 6;</code>
+     * <code>string task_display = 6;</code>
      */
     java.lang.String getTaskDisplay();
     /**
-     * <code>optional string task_display = 6;</code>
+     * <code>string task_display = 6;</code>
      */
     com.google.protobuf.ByteString
         getTaskDisplayBytes();
 
     /**
-     * <code>optional string dag_display = 7;</code>
+     * <code>string dag_display = 7;</code>
      */
     java.lang.String getDagDisplay();
     /**
-     * <code>optional string dag_display = 7;</code>
+     * <code>string dag_display = 7;</code>
      */
     com.google.protobuf.ByteString
         getDagDisplayBytes();
 
     /**
-     * <code>optional uint64 minutes_before_task_reset = 8;</code>
+     * <code>uint64 minutes_before_task_reset = 8;</code>
      */
     long getMinutesBeforeTaskReset();
 
     /**
-     * <code>optional string task_start_time = 9;</code>
+     * <code>string task_start_time = 9;</code>
      */
     java.lang.String getTaskStartTime();
     /**
-     * <code>optional string task_start_time = 9;</code>
+     * <code>string task_start_time = 9;</code>
      */
     com.google.protobuf.ByteString
         getTaskStartTimeBytes();
 
     /**
-     * <code>optional string task_working_time_display = 10;</code>
+     * <code>string task_working_time_display = 10;</code>
      */
     java.lang.String getTaskWorkingTimeDisplay();
     /**
-     * <code>optional string task_working_time_display = 10;</code>
+     * <code>string task_working_time_display = 10;</code>
      */
     com.google.protobuf.ByteString
         getTaskWorkingTimeDisplayBytes();
@@ -9480,7 +9480,7 @@ public final class YadelReport {
     public static final int IP_FIELD_NUMBER = 1;
     private volatile java.lang.Object ip_;
     /**
-     * <code>optional string ip = 1;</code>
+     * <code>string ip = 1;</code>
      */
     public java.lang.String getIp() {
       java.lang.Object ref = ip_;
@@ -9495,7 +9495,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string ip = 1;</code>
+     * <code>string ip = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIpBytes() {
@@ -9514,7 +9514,7 @@ public final class YadelReport {
     public static final int PORT_FIELD_NUMBER = 2;
     private volatile java.lang.Object port_;
     /**
-     * <code>optional string port = 2;</code>
+     * <code>string port = 2;</code>
      */
     public java.lang.String getPort() {
       java.lang.Object ref = port_;
@@ -9529,7 +9529,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string port = 2;</code>
+     * <code>string port = 2;</code>
      */
     public com.google.protobuf.ByteString
         getPortBytes() {
@@ -9548,7 +9548,7 @@ public final class YadelReport {
     public static final int HOST_FIELD_NUMBER = 3;
     private volatile java.lang.Object host_;
     /**
-     * <code>optional string host = 3;</code>
+     * <code>string host = 3;</code>
      */
     public java.lang.String getHost() {
       java.lang.Object ref = host_;
@@ -9563,7 +9563,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string host = 3;</code>
+     * <code>string host = 3;</code>
      */
     public com.google.protobuf.ByteString
         getHostBytes() {
@@ -9582,7 +9582,7 @@ public final class YadelReport {
     public static final int INITIALIZED_TIME_FIELD_NUMBER = 4;
     private volatile java.lang.Object initializedTime_;
     /**
-     * <code>optional string initialized_time = 4;</code>
+     * <code>string initialized_time = 4;</code>
      */
     public java.lang.String getInitializedTime() {
       java.lang.Object ref = initializedTime_;
@@ -9597,7 +9597,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string initialized_time = 4;</code>
+     * <code>string initialized_time = 4;</code>
      */
     public com.google.protobuf.ByteString
         getInitializedTimeBytes() {
@@ -9616,13 +9616,13 @@ public final class YadelReport {
     public static final int STATE_FIELD_NUMBER = 5;
     private int state_;
     /**
-     * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
+     * <code>.org.roylance.yadel.UIWorkerState state = 5;</code>
      */
     public int getStateValue() {
       return state_;
     }
     /**
-     * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
+     * <code>.org.roylance.yadel.UIWorkerState state = 5;</code>
      */
     public org.roylance.yadel.YadelReport.UIWorkerState getState() {
       org.roylance.yadel.YadelReport.UIWorkerState result = org.roylance.yadel.YadelReport.UIWorkerState.valueOf(state_);
@@ -9632,7 +9632,7 @@ public final class YadelReport {
     public static final int TASK_DISPLAY_FIELD_NUMBER = 6;
     private volatile java.lang.Object taskDisplay_;
     /**
-     * <code>optional string task_display = 6;</code>
+     * <code>string task_display = 6;</code>
      */
     public java.lang.String getTaskDisplay() {
       java.lang.Object ref = taskDisplay_;
@@ -9647,7 +9647,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string task_display = 6;</code>
+     * <code>string task_display = 6;</code>
      */
     public com.google.protobuf.ByteString
         getTaskDisplayBytes() {
@@ -9666,7 +9666,7 @@ public final class YadelReport {
     public static final int DAG_DISPLAY_FIELD_NUMBER = 7;
     private volatile java.lang.Object dagDisplay_;
     /**
-     * <code>optional string dag_display = 7;</code>
+     * <code>string dag_display = 7;</code>
      */
     public java.lang.String getDagDisplay() {
       java.lang.Object ref = dagDisplay_;
@@ -9681,7 +9681,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string dag_display = 7;</code>
+     * <code>string dag_display = 7;</code>
      */
     public com.google.protobuf.ByteString
         getDagDisplayBytes() {
@@ -9700,7 +9700,7 @@ public final class YadelReport {
     public static final int MINUTES_BEFORE_TASK_RESET_FIELD_NUMBER = 8;
     private long minutesBeforeTaskReset_;
     /**
-     * <code>optional uint64 minutes_before_task_reset = 8;</code>
+     * <code>uint64 minutes_before_task_reset = 8;</code>
      */
     public long getMinutesBeforeTaskReset() {
       return minutesBeforeTaskReset_;
@@ -9709,7 +9709,7 @@ public final class YadelReport {
     public static final int TASK_START_TIME_FIELD_NUMBER = 9;
     private volatile java.lang.Object taskStartTime_;
     /**
-     * <code>optional string task_start_time = 9;</code>
+     * <code>string task_start_time = 9;</code>
      */
     public java.lang.String getTaskStartTime() {
       java.lang.Object ref = taskStartTime_;
@@ -9724,7 +9724,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string task_start_time = 9;</code>
+     * <code>string task_start_time = 9;</code>
      */
     public com.google.protobuf.ByteString
         getTaskStartTimeBytes() {
@@ -9743,7 +9743,7 @@ public final class YadelReport {
     public static final int TASK_WORKING_TIME_DISPLAY_FIELD_NUMBER = 10;
     private volatile java.lang.Object taskWorkingTimeDisplay_;
     /**
-     * <code>optional string task_working_time_display = 10;</code>
+     * <code>string task_working_time_display = 10;</code>
      */
     public java.lang.String getTaskWorkingTimeDisplay() {
       java.lang.Object ref = taskWorkingTimeDisplay_;
@@ -9758,7 +9758,7 @@ public final class YadelReport {
       }
     }
     /**
-     * <code>optional string task_working_time_display = 10;</code>
+     * <code>string task_working_time_display = 10;</code>
      */
     public com.google.protobuf.ByteString
         getTaskWorkingTimeDisplayBytes() {
@@ -9899,7 +9899,7 @@ public final class YadelReport {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + IP_FIELD_NUMBER;
       hash = (53 * hash) + getIp().hashCode();
       hash = (37 * hash) + PORT_FIELD_NUMBER;
@@ -10198,7 +10198,7 @@ public final class YadelReport {
 
       private java.lang.Object ip_ = "";
       /**
-       * <code>optional string ip = 1;</code>
+       * <code>string ip = 1;</code>
        */
       public java.lang.String getIp() {
         java.lang.Object ref = ip_;
@@ -10213,7 +10213,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string ip = 1;</code>
+       * <code>string ip = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIpBytes() {
@@ -10229,7 +10229,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string ip = 1;</code>
+       * <code>string ip = 1;</code>
        */
       public Builder setIp(
           java.lang.String value) {
@@ -10242,7 +10242,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string ip = 1;</code>
+       * <code>string ip = 1;</code>
        */
       public Builder clearIp() {
         
@@ -10251,7 +10251,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string ip = 1;</code>
+       * <code>string ip = 1;</code>
        */
       public Builder setIpBytes(
           com.google.protobuf.ByteString value) {
@@ -10267,7 +10267,7 @@ public final class YadelReport {
 
       private java.lang.Object port_ = "";
       /**
-       * <code>optional string port = 2;</code>
+       * <code>string port = 2;</code>
        */
       public java.lang.String getPort() {
         java.lang.Object ref = port_;
@@ -10282,7 +10282,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string port = 2;</code>
+       * <code>string port = 2;</code>
        */
       public com.google.protobuf.ByteString
           getPortBytes() {
@@ -10298,7 +10298,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string port = 2;</code>
+       * <code>string port = 2;</code>
        */
       public Builder setPort(
           java.lang.String value) {
@@ -10311,7 +10311,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string port = 2;</code>
+       * <code>string port = 2;</code>
        */
       public Builder clearPort() {
         
@@ -10320,7 +10320,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string port = 2;</code>
+       * <code>string port = 2;</code>
        */
       public Builder setPortBytes(
           com.google.protobuf.ByteString value) {
@@ -10336,7 +10336,7 @@ public final class YadelReport {
 
       private java.lang.Object host_ = "";
       /**
-       * <code>optional string host = 3;</code>
+       * <code>string host = 3;</code>
        */
       public java.lang.String getHost() {
         java.lang.Object ref = host_;
@@ -10351,7 +10351,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string host = 3;</code>
+       * <code>string host = 3;</code>
        */
       public com.google.protobuf.ByteString
           getHostBytes() {
@@ -10367,7 +10367,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string host = 3;</code>
+       * <code>string host = 3;</code>
        */
       public Builder setHost(
           java.lang.String value) {
@@ -10380,7 +10380,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string host = 3;</code>
+       * <code>string host = 3;</code>
        */
       public Builder clearHost() {
         
@@ -10389,7 +10389,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string host = 3;</code>
+       * <code>string host = 3;</code>
        */
       public Builder setHostBytes(
           com.google.protobuf.ByteString value) {
@@ -10405,7 +10405,7 @@ public final class YadelReport {
 
       private java.lang.Object initializedTime_ = "";
       /**
-       * <code>optional string initialized_time = 4;</code>
+       * <code>string initialized_time = 4;</code>
        */
       public java.lang.String getInitializedTime() {
         java.lang.Object ref = initializedTime_;
@@ -10420,7 +10420,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string initialized_time = 4;</code>
+       * <code>string initialized_time = 4;</code>
        */
       public com.google.protobuf.ByteString
           getInitializedTimeBytes() {
@@ -10436,7 +10436,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string initialized_time = 4;</code>
+       * <code>string initialized_time = 4;</code>
        */
       public Builder setInitializedTime(
           java.lang.String value) {
@@ -10449,7 +10449,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string initialized_time = 4;</code>
+       * <code>string initialized_time = 4;</code>
        */
       public Builder clearInitializedTime() {
         
@@ -10458,7 +10458,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string initialized_time = 4;</code>
+       * <code>string initialized_time = 4;</code>
        */
       public Builder setInitializedTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -10474,13 +10474,13 @@ public final class YadelReport {
 
       private int state_ = 0;
       /**
-       * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
+       * <code>.org.roylance.yadel.UIWorkerState state = 5;</code>
        */
       public int getStateValue() {
         return state_;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
+       * <code>.org.roylance.yadel.UIWorkerState state = 5;</code>
        */
       public Builder setStateValue(int value) {
         state_ = value;
@@ -10488,14 +10488,14 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
+       * <code>.org.roylance.yadel.UIWorkerState state = 5;</code>
        */
       public org.roylance.yadel.YadelReport.UIWorkerState getState() {
         org.roylance.yadel.YadelReport.UIWorkerState result = org.roylance.yadel.YadelReport.UIWorkerState.valueOf(state_);
         return result == null ? org.roylance.yadel.YadelReport.UIWorkerState.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
+       * <code>.org.roylance.yadel.UIWorkerState state = 5;</code>
        */
       public Builder setState(org.roylance.yadel.YadelReport.UIWorkerState value) {
         if (value == null) {
@@ -10507,7 +10507,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional .org.roylance.yadel.UIWorkerState state = 5;</code>
+       * <code>.org.roylance.yadel.UIWorkerState state = 5;</code>
        */
       public Builder clearState() {
         
@@ -10518,7 +10518,7 @@ public final class YadelReport {
 
       private java.lang.Object taskDisplay_ = "";
       /**
-       * <code>optional string task_display = 6;</code>
+       * <code>string task_display = 6;</code>
        */
       public java.lang.String getTaskDisplay() {
         java.lang.Object ref = taskDisplay_;
@@ -10533,7 +10533,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string task_display = 6;</code>
+       * <code>string task_display = 6;</code>
        */
       public com.google.protobuf.ByteString
           getTaskDisplayBytes() {
@@ -10549,7 +10549,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string task_display = 6;</code>
+       * <code>string task_display = 6;</code>
        */
       public Builder setTaskDisplay(
           java.lang.String value) {
@@ -10562,7 +10562,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string task_display = 6;</code>
+       * <code>string task_display = 6;</code>
        */
       public Builder clearTaskDisplay() {
         
@@ -10571,7 +10571,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string task_display = 6;</code>
+       * <code>string task_display = 6;</code>
        */
       public Builder setTaskDisplayBytes(
           com.google.protobuf.ByteString value) {
@@ -10587,7 +10587,7 @@ public final class YadelReport {
 
       private java.lang.Object dagDisplay_ = "";
       /**
-       * <code>optional string dag_display = 7;</code>
+       * <code>string dag_display = 7;</code>
        */
       public java.lang.String getDagDisplay() {
         java.lang.Object ref = dagDisplay_;
@@ -10602,7 +10602,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string dag_display = 7;</code>
+       * <code>string dag_display = 7;</code>
        */
       public com.google.protobuf.ByteString
           getDagDisplayBytes() {
@@ -10618,7 +10618,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string dag_display = 7;</code>
+       * <code>string dag_display = 7;</code>
        */
       public Builder setDagDisplay(
           java.lang.String value) {
@@ -10631,7 +10631,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string dag_display = 7;</code>
+       * <code>string dag_display = 7;</code>
        */
       public Builder clearDagDisplay() {
         
@@ -10640,7 +10640,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string dag_display = 7;</code>
+       * <code>string dag_display = 7;</code>
        */
       public Builder setDagDisplayBytes(
           com.google.protobuf.ByteString value) {
@@ -10656,13 +10656,13 @@ public final class YadelReport {
 
       private long minutesBeforeTaskReset_ ;
       /**
-       * <code>optional uint64 minutes_before_task_reset = 8;</code>
+       * <code>uint64 minutes_before_task_reset = 8;</code>
        */
       public long getMinutesBeforeTaskReset() {
         return minutesBeforeTaskReset_;
       }
       /**
-       * <code>optional uint64 minutes_before_task_reset = 8;</code>
+       * <code>uint64 minutes_before_task_reset = 8;</code>
        */
       public Builder setMinutesBeforeTaskReset(long value) {
         
@@ -10671,7 +10671,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional uint64 minutes_before_task_reset = 8;</code>
+       * <code>uint64 minutes_before_task_reset = 8;</code>
        */
       public Builder clearMinutesBeforeTaskReset() {
         
@@ -10682,7 +10682,7 @@ public final class YadelReport {
 
       private java.lang.Object taskStartTime_ = "";
       /**
-       * <code>optional string task_start_time = 9;</code>
+       * <code>string task_start_time = 9;</code>
        */
       public java.lang.String getTaskStartTime() {
         java.lang.Object ref = taskStartTime_;
@@ -10697,7 +10697,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string task_start_time = 9;</code>
+       * <code>string task_start_time = 9;</code>
        */
       public com.google.protobuf.ByteString
           getTaskStartTimeBytes() {
@@ -10713,7 +10713,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string task_start_time = 9;</code>
+       * <code>string task_start_time = 9;</code>
        */
       public Builder setTaskStartTime(
           java.lang.String value) {
@@ -10726,7 +10726,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string task_start_time = 9;</code>
+       * <code>string task_start_time = 9;</code>
        */
       public Builder clearTaskStartTime() {
         
@@ -10735,7 +10735,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string task_start_time = 9;</code>
+       * <code>string task_start_time = 9;</code>
        */
       public Builder setTaskStartTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -10751,7 +10751,7 @@ public final class YadelReport {
 
       private java.lang.Object taskWorkingTimeDisplay_ = "";
       /**
-       * <code>optional string task_working_time_display = 10;</code>
+       * <code>string task_working_time_display = 10;</code>
        */
       public java.lang.String getTaskWorkingTimeDisplay() {
         java.lang.Object ref = taskWorkingTimeDisplay_;
@@ -10766,7 +10766,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string task_working_time_display = 10;</code>
+       * <code>string task_working_time_display = 10;</code>
        */
       public com.google.protobuf.ByteString
           getTaskWorkingTimeDisplayBytes() {
@@ -10782,7 +10782,7 @@ public final class YadelReport {
         }
       }
       /**
-       * <code>optional string task_working_time_display = 10;</code>
+       * <code>string task_working_time_display = 10;</code>
        */
       public Builder setTaskWorkingTimeDisplay(
           java.lang.String value) {
@@ -10795,7 +10795,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string task_working_time_display = 10;</code>
+       * <code>string task_working_time_display = 10;</code>
        */
       public Builder clearTaskWorkingTimeDisplay() {
         
@@ -10804,7 +10804,7 @@ public final class YadelReport {
         return this;
       }
       /**
-       * <code>optional string task_working_time_display = 10;</code>
+       * <code>string task_working_time_display = 10;</code>
        */
       public Builder setTaskWorkingTimeDisplayBytes(
           com.google.protobuf.ByteString value) {

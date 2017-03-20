@@ -1,17 +1,18 @@
 syntax = "proto3";
 package org.roylance.yadel;
 
-message WorkerConfiguration {
-    string id = 1;
-    string ip = 2;
-    string port = 3;
-    string host = 4;
-    string initialized_time = 5;
-    WorkerState state = 6;
-    Task task = 7;
-    Dag dag = 8;
-    uint64 minutes_before_task_reset = 9;
-    string task_start_time = 10;
+enum OSBitVersion {
+    V_64_BIT_VERSION = 0;
+    V_32_BIT_VERSION = 1;
+}
+enum OSTypeVersion {
+    MAC_OS_TYPE_VERSION = 0;
+    WIN_OS_TYPE_VERSION = 1;
+    UBUNTU_OS_TYPE_VERSION = 2;
+    CENTOS_OS_TYPE_VERSION = 3;
+    FEDORA_OS_TYPE_VERSION = 4;
+    REDHAT_OS_TYPE_VERSION = 5;
+    LINUX_OS_TYPE_VERSION = 6;
 }
 
 enum WorkerState {
@@ -30,6 +31,63 @@ enum ManagerToManagerMessageType {
 enum ActorRole {
     MANAGER = 0;
     WORKER = 1;
+}
+
+enum WorkerOperationsComparison {
+    EQUALS_OPERATION = 0;
+    NOT_EQUALS_OPERATION = 1;
+    GREATER_THAN_OPERATION = 2;
+    LESS_THAN_OPERATION = 3;
+    GREATER_THAN_OR_EQUALS_OPERATION = 4;
+    LESS_THAN_OR_EQUALS_OPERATION = 5;
+    CONTAINS_OPERATION = 6;
+    MATCHES_OPERATION = 7;
+}
+
+enum WorkerConnection {
+    NONE = 0;
+    AND = 1;
+    OR = 2;
+}
+
+message WorkerProperty {
+    string id = 1;
+    string key = 2;
+    string value = 3;
+    double number_value = 4;
+    OSBitVersion os_bit_version = 5;
+    OSTypeVersion os_type_version = 6;
+}
+
+message WorkerFilter {
+    string id = 1;
+    WorkerProperty first_property = 2;
+    WorkerFilter first_comparison = 3;
+    WorkerProperty second_property = 4;
+    WorkerFilter second_comparison = 5;
+    WorkerOperationsComparison operation = 6;
+    WorkerConnection connection = 7;
+    WorkerOperationsComparison first_operator = 8;
+    WorkerOperationsComparison second_operator = 9;
+}
+
+message WorkerConfiguration {
+    string id = 1;
+    string ip = 2;
+    string port = 3;
+    string host = 4;
+    string initialized_time = 5;
+    WorkerState state = 6;
+    Task task = 7;
+    Dag dag = 8;
+    uint64 minutes_before_task_reset = 9;
+    string task_start_time = 10;
+    OSBitVersion os_bit_version = 11;
+    OSTypeVersion os_type_version = 12;
+    string os_major_version = 13;
+    string os_minor_version = 14;
+    string os_build_version = 15;
+    repeated WorkerProperty properties = 16;
 }
 
 message Log {
@@ -66,6 +124,7 @@ message Task {
     string second_context_base_64 = 11;
     string third_context_base_64 = 12;
     bool is_waiting_for_another_dag_task = 13;
+    repeated WorkerFilter filters = 14;
 }
 
 message TaskDependency {
@@ -94,4 +153,14 @@ message AllDags {
     repeated WorkerConfiguration workers = 2;
     bool include_unprocessed = 3;
     bool include_file_saved = 4;
+}
+
+message WorkerProperties {
+    string id = 1;
+    OSBitVersion os_bit_version = 2;
+    OSTypeVersion os_type_version = 3;
+    string os_major_version = 4;
+    string os_minor_version = 5;
+    string os_build_version = 6;
+    repeated WorkerProperty properties = 7;
 }

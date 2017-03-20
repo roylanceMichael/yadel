@@ -10,6 +10,198 @@ import Foundation
 import SwiftProtobuf
 
 
+public enum Org_Roylance_Yadel_OSBitVersion: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
+  case v64BitVersion // = 0
+  case v32BitVersion // = 1
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .v64BitVersion
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .v64BitVersion
+    case 1: self = .v32BitVersion
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public init?(name: String) {
+    switch name {
+    case "v64BitVersion": self = .v64BitVersion
+    case "v32BitVersion": self = .v32BitVersion
+    default: return nil
+    }
+  }
+
+  public init?(jsonName: String) {
+    switch jsonName {
+    case "V_64_BIT_VERSION": self = .v64BitVersion
+    case "V_32_BIT_VERSION": self = .v32BitVersion
+    default: return nil
+    }
+  }
+
+  public init?(protoName: String) {
+    switch protoName {
+    case "V_64_BIT_VERSION": self = .v64BitVersion
+    case "V_32_BIT_VERSION": self = .v32BitVersion
+    default: return nil
+    }
+  }
+
+  public var rawValue: Int {
+    get {
+      switch self {
+      case .v64BitVersion: return 0
+      case .v32BitVersion: return 1
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+  }
+
+  public var json: String {
+    get {
+      switch self {
+      case .v64BitVersion: return "\"V_64_BIT_VERSION\""
+      case .v32BitVersion: return "\"V_32_BIT_VERSION\""
+      case .UNRECOGNIZED(let i): return String(i)
+      }
+    }
+  }
+
+  public var hashValue: Int { return rawValue }
+
+  public var debugDescription: String {
+    get {
+      switch self {
+      case .v64BitVersion: return ".v64BitVersion"
+      case .v32BitVersion: return ".v32BitVersion"
+      case .UNRECOGNIZED(let v): return ".UNRECOGNIZED(\(v))"
+      }
+    }
+  }
+
+}
+
+public enum Org_Roylance_Yadel_OSTypeVersion: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
+  case macOsTypeVersion // = 0
+  case winOsTypeVersion // = 1
+  case ubuntuOsTypeVersion // = 2
+  case centosOsTypeVersion // = 3
+  case fedoraOsTypeVersion // = 4
+  case redhatOsTypeVersion // = 5
+  case linuxOsTypeVersion // = 6
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .macOsTypeVersion
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .macOsTypeVersion
+    case 1: self = .winOsTypeVersion
+    case 2: self = .ubuntuOsTypeVersion
+    case 3: self = .centosOsTypeVersion
+    case 4: self = .fedoraOsTypeVersion
+    case 5: self = .redhatOsTypeVersion
+    case 6: self = .linuxOsTypeVersion
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public init?(name: String) {
+    switch name {
+    case "macOsTypeVersion": self = .macOsTypeVersion
+    case "winOsTypeVersion": self = .winOsTypeVersion
+    case "ubuntuOsTypeVersion": self = .ubuntuOsTypeVersion
+    case "centosOsTypeVersion": self = .centosOsTypeVersion
+    case "fedoraOsTypeVersion": self = .fedoraOsTypeVersion
+    case "redhatOsTypeVersion": self = .redhatOsTypeVersion
+    case "linuxOsTypeVersion": self = .linuxOsTypeVersion
+    default: return nil
+    }
+  }
+
+  public init?(jsonName: String) {
+    switch jsonName {
+    case "MAC_OS_TYPE_VERSION": self = .macOsTypeVersion
+    case "WIN_OS_TYPE_VERSION": self = .winOsTypeVersion
+    case "UBUNTU_OS_TYPE_VERSION": self = .ubuntuOsTypeVersion
+    case "CENTOS_OS_TYPE_VERSION": self = .centosOsTypeVersion
+    case "FEDORA_OS_TYPE_VERSION": self = .fedoraOsTypeVersion
+    case "REDHAT_OS_TYPE_VERSION": self = .redhatOsTypeVersion
+    case "LINUX_OS_TYPE_VERSION": self = .linuxOsTypeVersion
+    default: return nil
+    }
+  }
+
+  public init?(protoName: String) {
+    switch protoName {
+    case "MAC_OS_TYPE_VERSION": self = .macOsTypeVersion
+    case "WIN_OS_TYPE_VERSION": self = .winOsTypeVersion
+    case "UBUNTU_OS_TYPE_VERSION": self = .ubuntuOsTypeVersion
+    case "CENTOS_OS_TYPE_VERSION": self = .centosOsTypeVersion
+    case "FEDORA_OS_TYPE_VERSION": self = .fedoraOsTypeVersion
+    case "REDHAT_OS_TYPE_VERSION": self = .redhatOsTypeVersion
+    case "LINUX_OS_TYPE_VERSION": self = .linuxOsTypeVersion
+    default: return nil
+    }
+  }
+
+  public var rawValue: Int {
+    get {
+      switch self {
+      case .macOsTypeVersion: return 0
+      case .winOsTypeVersion: return 1
+      case .ubuntuOsTypeVersion: return 2
+      case .centosOsTypeVersion: return 3
+      case .fedoraOsTypeVersion: return 4
+      case .redhatOsTypeVersion: return 5
+      case .linuxOsTypeVersion: return 6
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+  }
+
+  public var json: String {
+    get {
+      switch self {
+      case .macOsTypeVersion: return "\"MAC_OS_TYPE_VERSION\""
+      case .winOsTypeVersion: return "\"WIN_OS_TYPE_VERSION\""
+      case .ubuntuOsTypeVersion: return "\"UBUNTU_OS_TYPE_VERSION\""
+      case .centosOsTypeVersion: return "\"CENTOS_OS_TYPE_VERSION\""
+      case .fedoraOsTypeVersion: return "\"FEDORA_OS_TYPE_VERSION\""
+      case .redhatOsTypeVersion: return "\"REDHAT_OS_TYPE_VERSION\""
+      case .linuxOsTypeVersion: return "\"LINUX_OS_TYPE_VERSION\""
+      case .UNRECOGNIZED(let i): return String(i)
+      }
+    }
+  }
+
+  public var hashValue: Int { return rawValue }
+
+  public var debugDescription: String {
+    get {
+      switch self {
+      case .macOsTypeVersion: return ".macOsTypeVersion"
+      case .winOsTypeVersion: return ".winOsTypeVersion"
+      case .ubuntuOsTypeVersion: return ".ubuntuOsTypeVersion"
+      case .centosOsTypeVersion: return ".centosOsTypeVersion"
+      case .fedoraOsTypeVersion: return ".fedoraOsTypeVersion"
+      case .redhatOsTypeVersion: return ".redhatOsTypeVersion"
+      case .linuxOsTypeVersion: return ".linuxOsTypeVersion"
+      case .UNRECOGNIZED(let v): return ".UNRECOGNIZED(\(v))"
+      }
+    }
+  }
+
+}
+
 public enum Org_Roylance_Yadel_WorkerState: SwiftProtobuf.Enum {
   public typealias RawValue = Int
   case working // = 0
@@ -298,6 +490,483 @@ public enum Org_Roylance_Yadel_ActorRole: SwiftProtobuf.Enum {
 
 }
 
+public enum Org_Roylance_Yadel_WorkerOperationsComparison: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
+  case equalsOperation // = 0
+  case notEqualsOperation // = 1
+  case greaterThanOperation // = 2
+  case lessThanOperation // = 3
+  case greaterThanOrEqualsOperation // = 4
+  case lessThanOrEqualsOperation // = 5
+  case containsOperation // = 6
+  case matchesOperation // = 7
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .equalsOperation
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .equalsOperation
+    case 1: self = .notEqualsOperation
+    case 2: self = .greaterThanOperation
+    case 3: self = .lessThanOperation
+    case 4: self = .greaterThanOrEqualsOperation
+    case 5: self = .lessThanOrEqualsOperation
+    case 6: self = .containsOperation
+    case 7: self = .matchesOperation
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public init?(name: String) {
+    switch name {
+    case "equalsOperation": self = .equalsOperation
+    case "notEqualsOperation": self = .notEqualsOperation
+    case "greaterThanOperation": self = .greaterThanOperation
+    case "lessThanOperation": self = .lessThanOperation
+    case "greaterThanOrEqualsOperation": self = .greaterThanOrEqualsOperation
+    case "lessThanOrEqualsOperation": self = .lessThanOrEqualsOperation
+    case "containsOperation": self = .containsOperation
+    case "matchesOperation": self = .matchesOperation
+    default: return nil
+    }
+  }
+
+  public init?(jsonName: String) {
+    switch jsonName {
+    case "EQUALS_OPERATION": self = .equalsOperation
+    case "NOT_EQUALS_OPERATION": self = .notEqualsOperation
+    case "GREATER_THAN_OPERATION": self = .greaterThanOperation
+    case "LESS_THAN_OPERATION": self = .lessThanOperation
+    case "GREATER_THAN_OR_EQUALS_OPERATION": self = .greaterThanOrEqualsOperation
+    case "LESS_THAN_OR_EQUALS_OPERATION": self = .lessThanOrEqualsOperation
+    case "CONTAINS_OPERATION": self = .containsOperation
+    case "MATCHES_OPERATION": self = .matchesOperation
+    default: return nil
+    }
+  }
+
+  public init?(protoName: String) {
+    switch protoName {
+    case "EQUALS_OPERATION": self = .equalsOperation
+    case "NOT_EQUALS_OPERATION": self = .notEqualsOperation
+    case "GREATER_THAN_OPERATION": self = .greaterThanOperation
+    case "LESS_THAN_OPERATION": self = .lessThanOperation
+    case "GREATER_THAN_OR_EQUALS_OPERATION": self = .greaterThanOrEqualsOperation
+    case "LESS_THAN_OR_EQUALS_OPERATION": self = .lessThanOrEqualsOperation
+    case "CONTAINS_OPERATION": self = .containsOperation
+    case "MATCHES_OPERATION": self = .matchesOperation
+    default: return nil
+    }
+  }
+
+  public var rawValue: Int {
+    get {
+      switch self {
+      case .equalsOperation: return 0
+      case .notEqualsOperation: return 1
+      case .greaterThanOperation: return 2
+      case .lessThanOperation: return 3
+      case .greaterThanOrEqualsOperation: return 4
+      case .lessThanOrEqualsOperation: return 5
+      case .containsOperation: return 6
+      case .matchesOperation: return 7
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+  }
+
+  public var json: String {
+    get {
+      switch self {
+      case .equalsOperation: return "\"EQUALS_OPERATION\""
+      case .notEqualsOperation: return "\"NOT_EQUALS_OPERATION\""
+      case .greaterThanOperation: return "\"GREATER_THAN_OPERATION\""
+      case .lessThanOperation: return "\"LESS_THAN_OPERATION\""
+      case .greaterThanOrEqualsOperation: return "\"GREATER_THAN_OR_EQUALS_OPERATION\""
+      case .lessThanOrEqualsOperation: return "\"LESS_THAN_OR_EQUALS_OPERATION\""
+      case .containsOperation: return "\"CONTAINS_OPERATION\""
+      case .matchesOperation: return "\"MATCHES_OPERATION\""
+      case .UNRECOGNIZED(let i): return String(i)
+      }
+    }
+  }
+
+  public var hashValue: Int { return rawValue }
+
+  public var debugDescription: String {
+    get {
+      switch self {
+      case .equalsOperation: return ".equalsOperation"
+      case .notEqualsOperation: return ".notEqualsOperation"
+      case .greaterThanOperation: return ".greaterThanOperation"
+      case .lessThanOperation: return ".lessThanOperation"
+      case .greaterThanOrEqualsOperation: return ".greaterThanOrEqualsOperation"
+      case .lessThanOrEqualsOperation: return ".lessThanOrEqualsOperation"
+      case .containsOperation: return ".containsOperation"
+      case .matchesOperation: return ".matchesOperation"
+      case .UNRECOGNIZED(let v): return ".UNRECOGNIZED(\(v))"
+      }
+    }
+  }
+
+}
+
+public enum Org_Roylance_Yadel_WorkerConnection: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
+  case none // = 0
+  case and // = 1
+  case or // = 2
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .none
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .none
+    case 1: self = .and
+    case 2: self = .or
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public init?(name: String) {
+    switch name {
+    case "none": self = .none
+    case "and": self = .and
+    case "or": self = .or
+    default: return nil
+    }
+  }
+
+  public init?(jsonName: String) {
+    switch jsonName {
+    case "NONE": self = .none
+    case "AND": self = .and
+    case "OR": self = .or
+    default: return nil
+    }
+  }
+
+  public init?(protoName: String) {
+    switch protoName {
+    case "NONE": self = .none
+    case "AND": self = .and
+    case "OR": self = .or
+    default: return nil
+    }
+  }
+
+  public var rawValue: Int {
+    get {
+      switch self {
+      case .none: return 0
+      case .and: return 1
+      case .or: return 2
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+  }
+
+  public var json: String {
+    get {
+      switch self {
+      case .none: return "\"NONE\""
+      case .and: return "\"AND\""
+      case .or: return "\"OR\""
+      case .UNRECOGNIZED(let i): return String(i)
+      }
+    }
+  }
+
+  public var hashValue: Int { return rawValue }
+
+  public var debugDescription: String {
+    get {
+      switch self {
+      case .none: return ".none"
+      case .and: return ".and"
+      case .or: return ".or"
+      case .UNRECOGNIZED(let v): return ".UNRECOGNIZED(\(v))"
+      }
+    }
+  }
+
+}
+
+public struct Org_Roylance_Yadel_WorkerProperty: SwiftProtobuf.Message, SwiftProtobuf.Proto3Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf.ProtoNameProviding {
+  public var swiftClassName: String {return "Org_Roylance_Yadel_WorkerProperty"}
+  public var protoMessageName: String {return "WorkerProperty"}
+  public var protoPackageName: String {return "org.roylance.yadel"}
+  public static let _protobuf_fieldNames: FieldNameMap = [
+    1: .same(proto: "id", swift: "id"),
+    2: .same(proto: "key", swift: "key"),
+    3: .same(proto: "value", swift: "value"),
+    4: .unique(proto: "number_value", json: "numberValue", swift: "numberValue"),
+    5: .unique(proto: "os_bit_version", json: "osBitVersion", swift: "osBitVersion"),
+    6: .unique(proto: "os_type_version", json: "osTypeVersion", swift: "osTypeVersion"),
+  ]
+
+
+  public var id: String = ""
+
+  public var key: String = ""
+
+  public var value: String = ""
+
+  public var numberValue: Double = 0
+
+  public var osBitVersion: Org_Roylance_Yadel_OSBitVersion = Org_Roylance_Yadel_OSBitVersion.v64BitVersion
+
+  public var osTypeVersion: Org_Roylance_Yadel_OSTypeVersion = Org_Roylance_Yadel_OSTypeVersion.macOsTypeVersion
+
+  public init() {}
+
+  public mutating func _protoc_generated_decodeField<T: SwiftProtobuf.FieldDecoder>(setter: inout T, protoFieldNumber: Int) throws {
+    switch protoFieldNumber {
+    case 1: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &id)
+    case 2: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &key)
+    case 3: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &value)
+    case 4: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufDouble.self, value: &numberValue)
+    case 5: try setter.decodeSingularField(fieldType: Org_Roylance_Yadel_OSBitVersion.self, value: &osBitVersion)
+    case 6: try setter.decodeSingularField(fieldType: Org_Roylance_Yadel_OSTypeVersion.self, value: &osTypeVersion)
+    default: break
+    }
+  }
+
+  public func _protoc_generated_traverse(visitor: SwiftProtobuf.Visitor) throws {
+    if id != "" {
+      try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: id, fieldNumber: 1)
+    }
+    if key != "" {
+      try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: key, fieldNumber: 2)
+    }
+    if value != "" {
+      try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: value, fieldNumber: 3)
+    }
+    if numberValue != 0 {
+      try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufDouble.self, value: numberValue, fieldNumber: 4)
+    }
+    if osBitVersion != Org_Roylance_Yadel_OSBitVersion.v64BitVersion {
+      try visitor.visitSingularField(fieldType: Org_Roylance_Yadel_OSBitVersion.self, value: osBitVersion, fieldNumber: 5)
+    }
+    if osTypeVersion != Org_Roylance_Yadel_OSTypeVersion.macOsTypeVersion {
+      try visitor.visitSingularField(fieldType: Org_Roylance_Yadel_OSTypeVersion.self, value: osTypeVersion, fieldNumber: 6)
+    }
+  }
+
+  public func _protoc_generated_isEqualTo(other: Org_Roylance_Yadel_WorkerProperty) -> Bool {
+    if id != other.id {return false}
+    if key != other.key {return false}
+    if value != other.value {return false}
+    if numberValue != other.numberValue {return false}
+    if osBitVersion != other.osBitVersion {return false}
+    if osTypeVersion != other.osTypeVersion {return false}
+    return true
+  }
+}
+
+public struct Org_Roylance_Yadel_WorkerFilter: SwiftProtobuf.Message, SwiftProtobuf.Proto3Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf.ProtoNameProviding {
+  public var swiftClassName: String {return "Org_Roylance_Yadel_WorkerFilter"}
+  public var protoMessageName: String {return "WorkerFilter"}
+  public var protoPackageName: String {return "org.roylance.yadel"}
+  public static let _protobuf_fieldNames: FieldNameMap = [
+    1: .same(proto: "id", swift: "id"),
+    2: .unique(proto: "first_property", json: "firstProperty", swift: "firstProperty"),
+    3: .unique(proto: "first_comparison", json: "firstComparison", swift: "firstComparison"),
+    4: .unique(proto: "second_property", json: "secondProperty", swift: "secondProperty"),
+    5: .unique(proto: "second_comparison", json: "secondComparison", swift: "secondComparison"),
+    6: .same(proto: "operation", swift: "operation"),
+    7: .same(proto: "connection", swift: "connection"),
+    8: .unique(proto: "first_operator", json: "firstOperator", swift: "firstOperator"),
+    9: .unique(proto: "second_operator", json: "secondOperator", swift: "secondOperator"),
+  ]
+
+  private class _StorageClass {
+    typealias ExtendedMessage = Org_Roylance_Yadel_WorkerFilter
+    var _id: String = ""
+    var _firstProperty: Org_Roylance_Yadel_WorkerProperty? = nil
+    var _firstComparison: Org_Roylance_Yadel_WorkerFilter? = nil
+    var _secondProperty: Org_Roylance_Yadel_WorkerProperty? = nil
+    var _secondComparison: Org_Roylance_Yadel_WorkerFilter? = nil
+    var _operation: Org_Roylance_Yadel_WorkerOperationsComparison = Org_Roylance_Yadel_WorkerOperationsComparison.equalsOperation
+    var _connection: Org_Roylance_Yadel_WorkerConnection = Org_Roylance_Yadel_WorkerConnection.none
+    var _firstOperator: Org_Roylance_Yadel_WorkerOperationsComparison = Org_Roylance_Yadel_WorkerOperationsComparison.equalsOperation
+    var _secondOperator: Org_Roylance_Yadel_WorkerOperationsComparison = Org_Roylance_Yadel_WorkerOperationsComparison.equalsOperation
+
+    init() {}
+
+    func decodeField<T: SwiftProtobuf.FieldDecoder>(setter: inout T, protoFieldNumber: Int) throws {
+      switch protoFieldNumber {
+      case 1: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &_id)
+      case 2: try setter.decodeSingularMessageField(fieldType: Org_Roylance_Yadel_WorkerProperty.self, value: &_firstProperty)
+      case 3: try setter.decodeSingularMessageField(fieldType: Org_Roylance_Yadel_WorkerFilter.self, value: &_firstComparison)
+      case 4: try setter.decodeSingularMessageField(fieldType: Org_Roylance_Yadel_WorkerProperty.self, value: &_secondProperty)
+      case 5: try setter.decodeSingularMessageField(fieldType: Org_Roylance_Yadel_WorkerFilter.self, value: &_secondComparison)
+      case 6: try setter.decodeSingularField(fieldType: Org_Roylance_Yadel_WorkerOperationsComparison.self, value: &_operation)
+      case 7: try setter.decodeSingularField(fieldType: Org_Roylance_Yadel_WorkerConnection.self, value: &_connection)
+      case 8: try setter.decodeSingularField(fieldType: Org_Roylance_Yadel_WorkerOperationsComparison.self, value: &_firstOperator)
+      case 9: try setter.decodeSingularField(fieldType: Org_Roylance_Yadel_WorkerOperationsComparison.self, value: &_secondOperator)
+      default: break
+      }
+    }
+
+    func traverse(visitor: SwiftProtobuf.Visitor) throws {
+      if _id != "" {
+        try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: _id, fieldNumber: 1)
+      }
+      if let v = _firstProperty {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if let v = _firstComparison {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      }
+      if let v = _secondProperty {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+      }
+      if let v = _secondComparison {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+      }
+      if _operation != Org_Roylance_Yadel_WorkerOperationsComparison.equalsOperation {
+        try visitor.visitSingularField(fieldType: Org_Roylance_Yadel_WorkerOperationsComparison.self, value: _operation, fieldNumber: 6)
+      }
+      if _connection != Org_Roylance_Yadel_WorkerConnection.none {
+        try visitor.visitSingularField(fieldType: Org_Roylance_Yadel_WorkerConnection.self, value: _connection, fieldNumber: 7)
+      }
+      if _firstOperator != Org_Roylance_Yadel_WorkerOperationsComparison.equalsOperation {
+        try visitor.visitSingularField(fieldType: Org_Roylance_Yadel_WorkerOperationsComparison.self, value: _firstOperator, fieldNumber: 8)
+      }
+      if _secondOperator != Org_Roylance_Yadel_WorkerOperationsComparison.equalsOperation {
+        try visitor.visitSingularField(fieldType: Org_Roylance_Yadel_WorkerOperationsComparison.self, value: _secondOperator, fieldNumber: 9)
+      }
+    }
+
+    func isEqualTo(other: _StorageClass) -> Bool {
+      if _id != other._id {return false}
+      if _firstProperty != other._firstProperty {return false}
+      if _firstComparison != other._firstComparison {return false}
+      if _secondProperty != other._secondProperty {return false}
+      if _secondComparison != other._secondComparison {return false}
+      if _operation != other._operation {return false}
+      if _connection != other._connection {return false}
+      if _firstOperator != other._firstOperator {return false}
+      if _secondOperator != other._secondOperator {return false}
+      return true
+    }
+
+    func copy() -> _StorageClass {
+      let clone = _StorageClass()
+      clone._id = _id
+      clone._firstProperty = _firstProperty
+      clone._firstComparison = _firstComparison
+      clone._secondProperty = _secondProperty
+      clone._secondComparison = _secondComparison
+      clone._operation = _operation
+      clone._connection = _connection
+      clone._firstOperator = _firstOperator
+      clone._secondOperator = _secondOperator
+      return clone
+    }
+  }
+
+  private var _storage = _StorageClass()
+
+
+  public var id: String {
+    get {return _storage._id}
+    set {_uniqueStorage()._id = newValue}
+  }
+
+  public var firstProperty: Org_Roylance_Yadel_WorkerProperty {
+    get {return _storage._firstProperty ?? Org_Roylance_Yadel_WorkerProperty()}
+    set {_uniqueStorage()._firstProperty = newValue}
+  }
+  public var hasFirstProperty: Bool {
+    return _storage._firstProperty != nil
+  }
+  public mutating func clearFirstProperty() {
+    return _storage._firstProperty = nil
+  }
+
+  public var firstComparison: Org_Roylance_Yadel_WorkerFilter {
+    get {return _storage._firstComparison ?? Org_Roylance_Yadel_WorkerFilter()}
+    set {_uniqueStorage()._firstComparison = newValue}
+  }
+  public var hasFirstComparison: Bool {
+    return _storage._firstComparison != nil
+  }
+  public mutating func clearFirstComparison() {
+    return _storage._firstComparison = nil
+  }
+
+  public var secondProperty: Org_Roylance_Yadel_WorkerProperty {
+    get {return _storage._secondProperty ?? Org_Roylance_Yadel_WorkerProperty()}
+    set {_uniqueStorage()._secondProperty = newValue}
+  }
+  public var hasSecondProperty: Bool {
+    return _storage._secondProperty != nil
+  }
+  public mutating func clearSecondProperty() {
+    return _storage._secondProperty = nil
+  }
+
+  public var secondComparison: Org_Roylance_Yadel_WorkerFilter {
+    get {return _storage._secondComparison ?? Org_Roylance_Yadel_WorkerFilter()}
+    set {_uniqueStorage()._secondComparison = newValue}
+  }
+  public var hasSecondComparison: Bool {
+    return _storage._secondComparison != nil
+  }
+  public mutating func clearSecondComparison() {
+    return _storage._secondComparison = nil
+  }
+
+  public var operation: Org_Roylance_Yadel_WorkerOperationsComparison {
+    get {return _storage._operation}
+    set {_uniqueStorage()._operation = newValue}
+  }
+
+  public var connection: Org_Roylance_Yadel_WorkerConnection {
+    get {return _storage._connection}
+    set {_uniqueStorage()._connection = newValue}
+  }
+
+  public var firstOperator: Org_Roylance_Yadel_WorkerOperationsComparison {
+    get {return _storage._firstOperator}
+    set {_uniqueStorage()._firstOperator = newValue}
+  }
+
+  public var secondOperator: Org_Roylance_Yadel_WorkerOperationsComparison {
+    get {return _storage._secondOperator}
+    set {_uniqueStorage()._secondOperator = newValue}
+  }
+
+  public init() {}
+
+  public mutating func _protoc_generated_decodeField<T: SwiftProtobuf.FieldDecoder>(setter: inout T, protoFieldNumber: Int) throws {
+    try _uniqueStorage().decodeField(setter: &setter, protoFieldNumber: protoFieldNumber)
+  }
+
+  public func _protoc_generated_traverse(visitor: SwiftProtobuf.Visitor) throws {
+    try _storage.traverse(visitor: visitor)
+  }
+
+  public func _protoc_generated_isEqualTo(other: Org_Roylance_Yadel_WorkerFilter) -> Bool {
+    return _storage === other._storage || _storage.isEqualTo(other: other._storage)
+  }
+
+  private mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _storage.copy()
+    }
+    return _storage
+  }
+}
+
 public struct Org_Roylance_Yadel_WorkerConfiguration: SwiftProtobuf.Message, SwiftProtobuf.Proto3Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf.ProtoNameProviding {
   public var swiftClassName: String {return "Org_Roylance_Yadel_WorkerConfiguration"}
   public var protoMessageName: String {return "WorkerConfiguration"}
@@ -313,6 +982,12 @@ public struct Org_Roylance_Yadel_WorkerConfiguration: SwiftProtobuf.Message, Swi
     8: .same(proto: "dag", swift: "dag"),
     9: .unique(proto: "minutes_before_task_reset", json: "minutesBeforeTaskReset", swift: "minutesBeforeTaskReset"),
     10: .unique(proto: "task_start_time", json: "taskStartTime", swift: "taskStartTime"),
+    11: .unique(proto: "os_bit_version", json: "osBitVersion", swift: "osBitVersion"),
+    12: .unique(proto: "os_type_version", json: "osTypeVersion", swift: "osTypeVersion"),
+    13: .unique(proto: "os_major_version", json: "osMajorVersion", swift: "osMajorVersion"),
+    14: .unique(proto: "os_minor_version", json: "osMinorVersion", swift: "osMinorVersion"),
+    15: .unique(proto: "os_build_version", json: "osBuildVersion", swift: "osBuildVersion"),
+    16: .same(proto: "properties", swift: "properties"),
   ]
 
   private class _StorageClass {
@@ -327,6 +1002,12 @@ public struct Org_Roylance_Yadel_WorkerConfiguration: SwiftProtobuf.Message, Swi
     var _dag: Org_Roylance_Yadel_Dag? = nil
     var _minutesBeforeTaskReset: UInt64 = 0
     var _taskStartTime: String = ""
+    var _osBitVersion: Org_Roylance_Yadel_OSBitVersion = Org_Roylance_Yadel_OSBitVersion.v64BitVersion
+    var _osTypeVersion: Org_Roylance_Yadel_OSTypeVersion = Org_Roylance_Yadel_OSTypeVersion.macOsTypeVersion
+    var _osMajorVersion: String = ""
+    var _osMinorVersion: String = ""
+    var _osBuildVersion: String = ""
+    var _properties: [Org_Roylance_Yadel_WorkerProperty] = []
 
     init() {}
 
@@ -342,6 +1023,12 @@ public struct Org_Roylance_Yadel_WorkerConfiguration: SwiftProtobuf.Message, Swi
       case 8: try setter.decodeSingularMessageField(fieldType: Org_Roylance_Yadel_Dag.self, value: &_dag)
       case 9: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufUInt64.self, value: &_minutesBeforeTaskReset)
       case 10: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &_taskStartTime)
+      case 11: try setter.decodeSingularField(fieldType: Org_Roylance_Yadel_OSBitVersion.self, value: &_osBitVersion)
+      case 12: try setter.decodeSingularField(fieldType: Org_Roylance_Yadel_OSTypeVersion.self, value: &_osTypeVersion)
+      case 13: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &_osMajorVersion)
+      case 14: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &_osMinorVersion)
+      case 15: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &_osBuildVersion)
+      case 16: try setter.decodeRepeatedMessageField(fieldType: Org_Roylance_Yadel_WorkerProperty.self, value: &_properties)
       default: break
       }
     }
@@ -377,6 +1064,24 @@ public struct Org_Roylance_Yadel_WorkerConfiguration: SwiftProtobuf.Message, Swi
       if _taskStartTime != "" {
         try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: _taskStartTime, fieldNumber: 10)
       }
+      if _osBitVersion != Org_Roylance_Yadel_OSBitVersion.v64BitVersion {
+        try visitor.visitSingularField(fieldType: Org_Roylance_Yadel_OSBitVersion.self, value: _osBitVersion, fieldNumber: 11)
+      }
+      if _osTypeVersion != Org_Roylance_Yadel_OSTypeVersion.macOsTypeVersion {
+        try visitor.visitSingularField(fieldType: Org_Roylance_Yadel_OSTypeVersion.self, value: _osTypeVersion, fieldNumber: 12)
+      }
+      if _osMajorVersion != "" {
+        try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: _osMajorVersion, fieldNumber: 13)
+      }
+      if _osMinorVersion != "" {
+        try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: _osMinorVersion, fieldNumber: 14)
+      }
+      if _osBuildVersion != "" {
+        try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: _osBuildVersion, fieldNumber: 15)
+      }
+      if !_properties.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _properties, fieldNumber: 16)
+      }
     }
 
     func isEqualTo(other: _StorageClass) -> Bool {
@@ -390,6 +1095,12 @@ public struct Org_Roylance_Yadel_WorkerConfiguration: SwiftProtobuf.Message, Swi
       if _dag != other._dag {return false}
       if _minutesBeforeTaskReset != other._minutesBeforeTaskReset {return false}
       if _taskStartTime != other._taskStartTime {return false}
+      if _osBitVersion != other._osBitVersion {return false}
+      if _osTypeVersion != other._osTypeVersion {return false}
+      if _osMajorVersion != other._osMajorVersion {return false}
+      if _osMinorVersion != other._osMinorVersion {return false}
+      if _osBuildVersion != other._osBuildVersion {return false}
+      if _properties != other._properties {return false}
       return true
     }
 
@@ -405,6 +1116,12 @@ public struct Org_Roylance_Yadel_WorkerConfiguration: SwiftProtobuf.Message, Swi
       clone._dag = _dag
       clone._minutesBeforeTaskReset = _minutesBeforeTaskReset
       clone._taskStartTime = _taskStartTime
+      clone._osBitVersion = _osBitVersion
+      clone._osTypeVersion = _osTypeVersion
+      clone._osMajorVersion = _osMajorVersion
+      clone._osMinorVersion = _osMinorVersion
+      clone._osBuildVersion = _osBuildVersion
+      clone._properties = _properties
       return clone
     }
   }
@@ -472,6 +1189,36 @@ public struct Org_Roylance_Yadel_WorkerConfiguration: SwiftProtobuf.Message, Swi
   public var taskStartTime: String {
     get {return _storage._taskStartTime}
     set {_uniqueStorage()._taskStartTime = newValue}
+  }
+
+  public var osBitVersion: Org_Roylance_Yadel_OSBitVersion {
+    get {return _storage._osBitVersion}
+    set {_uniqueStorage()._osBitVersion = newValue}
+  }
+
+  public var osTypeVersion: Org_Roylance_Yadel_OSTypeVersion {
+    get {return _storage._osTypeVersion}
+    set {_uniqueStorage()._osTypeVersion = newValue}
+  }
+
+  public var osMajorVersion: String {
+    get {return _storage._osMajorVersion}
+    set {_uniqueStorage()._osMajorVersion = newValue}
+  }
+
+  public var osMinorVersion: String {
+    get {return _storage._osMinorVersion}
+    set {_uniqueStorage()._osMinorVersion = newValue}
+  }
+
+  public var osBuildVersion: String {
+    get {return _storage._osBuildVersion}
+    set {_uniqueStorage()._osBuildVersion = newValue}
+  }
+
+  public var properties: [Org_Roylance_Yadel_WorkerProperty] {
+    get {return _storage._properties}
+    set {_uniqueStorage()._properties = newValue}
   }
 
   public init() {}
@@ -772,6 +1519,7 @@ public struct Org_Roylance_Yadel_Task: SwiftProtobuf.Message, SwiftProtobuf.Prot
     11: .unique(proto: "second_context_base_64", json: "secondContextBase64", swift: "secondContextBase64"),
     12: .unique(proto: "third_context_base_64", json: "thirdContextBase64", swift: "thirdContextBase64"),
     13: .unique(proto: "is_waiting_for_another_dag_task", json: "isWaitingForAnotherDagTask", swift: "isWaitingForAnotherDagTask"),
+    14: .same(proto: "filters", swift: "filters"),
   ]
 
 
@@ -801,6 +1549,8 @@ public struct Org_Roylance_Yadel_Task: SwiftProtobuf.Message, SwiftProtobuf.Prot
 
   public var isWaitingForAnotherDagTask: Bool = false
 
+  public var filters: [Org_Roylance_Yadel_WorkerFilter] = []
+
   public init() {}
 
   public mutating func _protoc_generated_decodeField<T: SwiftProtobuf.FieldDecoder>(setter: inout T, protoFieldNumber: Int) throws {
@@ -818,6 +1568,7 @@ public struct Org_Roylance_Yadel_Task: SwiftProtobuf.Message, SwiftProtobuf.Prot
     case 11: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &secondContextBase64)
     case 12: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &thirdContextBase64)
     case 13: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufBool.self, value: &isWaitingForAnotherDagTask)
+    case 14: try setter.decodeRepeatedMessageField(fieldType: Org_Roylance_Yadel_WorkerFilter.self, value: &filters)
     default: break
     }
   }
@@ -862,6 +1613,9 @@ public struct Org_Roylance_Yadel_Task: SwiftProtobuf.Message, SwiftProtobuf.Prot
     if isWaitingForAnotherDagTask != false {
       try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufBool.self, value: isWaitingForAnotherDagTask, fieldNumber: 13)
     }
+    if !filters.isEmpty {
+      try visitor.visitRepeatedMessageField(value: filters, fieldNumber: 14)
+    }
   }
 
   public func _protoc_generated_isEqualTo(other: Org_Roylance_Yadel_Task) -> Bool {
@@ -878,6 +1632,7 @@ public struct Org_Roylance_Yadel_Task: SwiftProtobuf.Message, SwiftProtobuf.Prot
     if secondContextBase64 != other.secondContextBase64 {return false}
     if thirdContextBase64 != other.thirdContextBase64 {return false}
     if isWaitingForAnotherDagTask != other.isWaitingForAnotherDagTask {return false}
+    if filters != other.filters {return false}
     return true
   }
 }
@@ -1240,6 +1995,86 @@ public struct Org_Roylance_Yadel_AllDags: SwiftProtobuf.Message, SwiftProtobuf.P
     if workers != other.workers {return false}
     if includeUnprocessed != other.includeUnprocessed {return false}
     if includeFileSaved != other.includeFileSaved {return false}
+    return true
+  }
+}
+
+public struct Org_Roylance_Yadel_WorkerProperties: SwiftProtobuf.Message, SwiftProtobuf.Proto3Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf.ProtoNameProviding {
+  public var swiftClassName: String {return "Org_Roylance_Yadel_WorkerProperties"}
+  public var protoMessageName: String {return "WorkerProperties"}
+  public var protoPackageName: String {return "org.roylance.yadel"}
+  public static let _protobuf_fieldNames: FieldNameMap = [
+    1: .same(proto: "id", swift: "id"),
+    2: .unique(proto: "os_bit_version", json: "osBitVersion", swift: "osBitVersion"),
+    3: .unique(proto: "os_type_version", json: "osTypeVersion", swift: "osTypeVersion"),
+    4: .unique(proto: "os_major_version", json: "osMajorVersion", swift: "osMajorVersion"),
+    5: .unique(proto: "os_minor_version", json: "osMinorVersion", swift: "osMinorVersion"),
+    6: .unique(proto: "os_build_version", json: "osBuildVersion", swift: "osBuildVersion"),
+    7: .same(proto: "properties", swift: "properties"),
+  ]
+
+
+  public var id: String = ""
+
+  public var osBitVersion: Org_Roylance_Yadel_OSBitVersion = Org_Roylance_Yadel_OSBitVersion.v64BitVersion
+
+  public var osTypeVersion: Org_Roylance_Yadel_OSTypeVersion = Org_Roylance_Yadel_OSTypeVersion.macOsTypeVersion
+
+  public var osMajorVersion: String = ""
+
+  public var osMinorVersion: String = ""
+
+  public var osBuildVersion: String = ""
+
+  public var properties: [Org_Roylance_Yadel_WorkerProperty] = []
+
+  public init() {}
+
+  public mutating func _protoc_generated_decodeField<T: SwiftProtobuf.FieldDecoder>(setter: inout T, protoFieldNumber: Int) throws {
+    switch protoFieldNumber {
+    case 1: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &id)
+    case 2: try setter.decodeSingularField(fieldType: Org_Roylance_Yadel_OSBitVersion.self, value: &osBitVersion)
+    case 3: try setter.decodeSingularField(fieldType: Org_Roylance_Yadel_OSTypeVersion.self, value: &osTypeVersion)
+    case 4: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &osMajorVersion)
+    case 5: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &osMinorVersion)
+    case 6: try setter.decodeSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: &osBuildVersion)
+    case 7: try setter.decodeRepeatedMessageField(fieldType: Org_Roylance_Yadel_WorkerProperty.self, value: &properties)
+    default: break
+    }
+  }
+
+  public func _protoc_generated_traverse(visitor: SwiftProtobuf.Visitor) throws {
+    if id != "" {
+      try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: id, fieldNumber: 1)
+    }
+    if osBitVersion != Org_Roylance_Yadel_OSBitVersion.v64BitVersion {
+      try visitor.visitSingularField(fieldType: Org_Roylance_Yadel_OSBitVersion.self, value: osBitVersion, fieldNumber: 2)
+    }
+    if osTypeVersion != Org_Roylance_Yadel_OSTypeVersion.macOsTypeVersion {
+      try visitor.visitSingularField(fieldType: Org_Roylance_Yadel_OSTypeVersion.self, value: osTypeVersion, fieldNumber: 3)
+    }
+    if osMajorVersion != "" {
+      try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: osMajorVersion, fieldNumber: 4)
+    }
+    if osMinorVersion != "" {
+      try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: osMinorVersion, fieldNumber: 5)
+    }
+    if osBuildVersion != "" {
+      try visitor.visitSingularField(fieldType: SwiftProtobuf.ProtobufString.self, value: osBuildVersion, fieldNumber: 6)
+    }
+    if !properties.isEmpty {
+      try visitor.visitRepeatedMessageField(value: properties, fieldNumber: 7)
+    }
+  }
+
+  public func _protoc_generated_isEqualTo(other: Org_Roylance_Yadel_WorkerProperties) -> Bool {
+    if id != other.id {return false}
+    if osBitVersion != other.osBitVersion {return false}
+    if osTypeVersion != other.osTypeVersion {return false}
+    if osMajorVersion != other.osMajorVersion {return false}
+    if osMinorVersion != other.osMinorVersion {return false}
+    if osBuildVersion != other.osBuildVersion {return false}
+    if properties != other.properties {return false}
     return true
   }
 }
