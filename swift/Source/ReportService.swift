@@ -11,7 +11,7 @@ public class ReportService: IReportService {
 	public func delete_dag(request: Org_Roylance_Yadel_UIYadelRequest, onSuccess: @escaping (_ response: Org_Roylance_Yadel_UIYadelResponse) -> Void, onError: @escaping (_ response: String) -> Void) {
 
             do {
-                let serializedRequest = try request.serializeProtobuf()
+                let serializedRequest = try request.serializedData()
                 var urlRequest = URLRequest(url: URL(string: self.baseUrl + "/rest/report/delete-dag")!)
                 urlRequest.httpMethod = HTTPMethod.post.rawValue
                 urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -22,7 +22,7 @@ public class ReportService: IReportService {
                         let base64String = String(data: alamoResponse.data!, encoding: String.Encoding.utf8)
                         let decodedData = Data(base64Encoded: base64String!)!
                         do {
-                            let actualResponse = try Org_Roylance_Yadel_UIYadelResponse(protobuf: decodedData)
+                            let actualResponse = try Org_Roylance_Yadel_UIYadelResponse(serializedData: decodedData)
                             onSuccess(actualResponse)
                         }
                         catch {
@@ -37,7 +37,7 @@ public class ReportService: IReportService {
 	public func current(request: Org_Roylance_Yadel_UIYadelRequest, onSuccess: @escaping (_ response: Org_Roylance_Yadel_UIYadelResponse) -> Void, onError: @escaping (_ response: String) -> Void) {
 
             do {
-                let serializedRequest = try request.serializeProtobuf()
+                let serializedRequest = try request.serializedData()
                 var urlRequest = URLRequest(url: URL(string: self.baseUrl + "/rest/report/current")!)
                 urlRequest.httpMethod = HTTPMethod.post.rawValue
                 urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -48,7 +48,7 @@ public class ReportService: IReportService {
                         let base64String = String(data: alamoResponse.data!, encoding: String.Encoding.utf8)
                         let decodedData = Data(base64Encoded: base64String!)!
                         do {
-                            let actualResponse = try Org_Roylance_Yadel_UIYadelResponse(protobuf: decodedData)
+                            let actualResponse = try Org_Roylance_Yadel_UIYadelResponse(serializedData: decodedData)
                             onSuccess(actualResponse)
                         }
                         catch {
@@ -63,7 +63,7 @@ public class ReportService: IReportService {
 	public func get_dag_status(request: Org_Roylance_Yadel_UIYadelRequest, onSuccess: @escaping (_ response: Org_Roylance_Yadel_UIYadelResponse) -> Void, onError: @escaping (_ response: String) -> Void) {
 
             do {
-                let serializedRequest = try request.serializeProtobuf()
+                let serializedRequest = try request.serializedData()
                 var urlRequest = URLRequest(url: URL(string: self.baseUrl + "/rest/report/get-dag-status")!)
                 urlRequest.httpMethod = HTTPMethod.post.rawValue
                 urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -74,7 +74,7 @@ public class ReportService: IReportService {
                         let base64String = String(data: alamoResponse.data!, encoding: String.Encoding.utf8)
                         let decodedData = Data(base64Encoded: base64String!)!
                         do {
-                            let actualResponse = try Org_Roylance_Yadel_UIYadelResponse(protobuf: decodedData)
+                            let actualResponse = try Org_Roylance_Yadel_UIYadelResponse(serializedData: decodedData)
                             onSuccess(actualResponse)
                         }
                         catch {
