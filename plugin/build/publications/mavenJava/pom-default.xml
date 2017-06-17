@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.roylance.yadel</groupId>
   <artifactId>plugin</artifactId>
-  <version>0.202</version>
+  <version>0.203</version>
   <dependencies>
     <dependency>
       <groupId>org.roylance.yaclib</groupId>
       <artifactId>core</artifactId>
-      <version>0.223</version>
-      <scope>runtime</scope>
+      <version>0.225</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 </project>
