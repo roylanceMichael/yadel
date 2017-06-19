@@ -31,7 +31,7 @@ class ActorSingleton {
     private static String getManagerIP() {
         final String akkaHost = System.getenv("AkkaHost");
         if (akkaHost == null || akkaHost.isEmpty()) {
-            return "127.0.0.1";
+            return "192.168.43.35";
         }
         return akkaHost;
     }
