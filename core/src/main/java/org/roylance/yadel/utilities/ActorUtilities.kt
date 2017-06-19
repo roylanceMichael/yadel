@@ -265,11 +265,6 @@ object ActorUtilities {
         return YadelModel.OSTypeVersion.LINUX_OS_TYPE_VERSION
     }
 
-    fun comparison(task: YadelModel.Task, worker: YadelModel.WorkerConfiguration) {
-        task.filtersList.forEach {  }
-
-    }
-
     fun filterComparison(filter: YadelModel.WorkerFilter, worker: YadelModel.WorkerConfiguration): Boolean {
         var firstTrue = true
         var secondTrue = true

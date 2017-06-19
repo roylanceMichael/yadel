@@ -1,5 +1,5 @@
 // THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
-import {ReportService} from "../node_modules/org.roylance.yadel.api/ReportService";
+import {ReportService} from "org.roylance.yadel.api/ReportService";
 
 import {HttpExecute} from "./HttpExecute"
 import {furtherAngularSetup} from "./FurtherAngularSetup"

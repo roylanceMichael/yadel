@@ -1,9 +1,10 @@
 import {IDagService, ILocalUrlService} from "./services/all";
 import {LocalUrlService} from "./services/local.url";
 import {MainController} from "./controllers/main";
-import {ReportService} from "../node_modules/org.roylance.yadel.api/ReportService";
+import {ReportService} from "org.roylance.yadel.api/ReportService";
 import {HttpExecute} from "./HttpExecute"
 import {DagService} from "./services/dag";
+import {org} from "org.roylance.yadel.api/YadelModel";
 
 // this file won't be overwritten, add more dependencies for angular as needed
 export function furtherAngularSetup(app:any) {
@@ -25,8 +26,8 @@ export function furtherAngularSetup(app:any) {
         return new DagService();
     });
 
-    app.controller(mainControllerName, ['$scope', '$http', '$log', 'httpExecute', 'dagService', 'reportService', 'yadelModel',
-    function($scope, $http, $log, httpExecute:HttpExecute, dagService:IDagService, reportService: ReportService, yadelModel: org.roylance.yadel.ProtoBufBuilder) {
-        $scope.i = new MainController(reportService, dagService, yadelModel);
+    app.controller(mainControllerName, ['$scope', '$http', '$log', 'httpExecute', 'dagService', 'reportService',
+    function($scope, $http, $log, httpExecute:HttpExecute, dagService:IDagService, reportService: ReportService) {
+        $scope.i = new MainController(reportService, dagService);
     }]);
 }

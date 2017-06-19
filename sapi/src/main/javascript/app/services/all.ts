@@ -1,6 +1,7 @@
-/// <reference path="../../node_modules/org.roylance.yadel.api/YadelModel" />
+import {org} from "org.roylance.yadel.api/YadelModel"
+
 export interface IDagService {
-    buildTreeVisualization(dag:org.roylance.yadel.UIDag);
+    buildTreeVisualization(dag:org.roylance.yadel.IUIDag);
 }
 
 export interface ILocalUrlService {

@@ -1,23 +1,21 @@
 import {IDagService} from "../services/all";
-import {IReportService} from "../../node_modules/org.roylance.yadel.api/IReportService";
-import ProtoBufBuilder = org.roylance.yadel.ProtoBufBuilder;
+import {IReportService} from "org.roylance.yadel.api/IReportService";
+import {org} from "org.roylance.yadel.api/YadelModel";
 declare var dcodeIO:any;
 declare var console:any;
 
 export class MainController {
     dagReportNameSpace = "org.roylance.yadel.api.models.UIDagReport";
 
-    protobufBuilder:ProtoBufBuilder;
     reportService: IReportService;
     dagService:IDagService;
 
-    currentDagReport:org.roylance.yadel.UIDagReport;
-    selectedDag:org.roylance.yadel.UIDag;
+    currentDagReport:org.roylance.yadel.IUIDagReport;
+    selectedDag:org.roylance.yadel.IUIDag;
 
-    constructor(reportService: IReportService, dagService:IDagService, protobufBuilder:ProtoBufBuilder) {
+    constructor(reportService: IReportService, dagService:IDagService) {
         this.reportService = reportService;
         this.dagService = dagService;
-        this.protobufBuilder = protobufBuilder;
         this.refresh();
     }
 
@@ -26,7 +24,7 @@ export class MainController {
         this.selectedDag = null;
         this.currentDagReport = null;
 
-        const request = new this.protobufBuilder.UIYadelRequest();
+        const request = new org.roylance.yadel.UIYadelRequest();
         this.reportService.current(request, function(response: org.roylance.yadel.UIYadelResponse) {
             self.currentDagReport = response.report;
             if (self.currentDagReport.dags.length > 0) {
@@ -49,9 +47,9 @@ export class MainController {
         if (this.selectedDag) {
             // delete the dag
             const self = this;
-            const request = new this.protobufBuilder.UIYadelRequest();
-            request.setRequestType(org.roylance.yadel.UIYadelRequestType.DELETE_DAG);
-            request.dag_id = this.selectedDag.id;
+            const request = new org.roylance.yadel.UIYadelRequest();
+            request.requestType = org.roylance.yadel.UIYadelRequestType.DELETE_DAG;
+            request.dagId = this.selectedDag.id;
             this.reportService.delete_dag(request,
                 function(response: org.roylance.yadel.UIYadelResponse) {
                     self.refresh();

@@ -1,4 +1,4 @@
-import {IHttpExecute} from "../node_modules/org.roylance.yadel.api/IHttpExecute"
+import {IHttpExecute} from "org.roylance.yadel.api/IHttpExecute"
 
 export class HttpExecute implements IHttpExecute {
     httpPost:string = "POST";
