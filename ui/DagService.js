@@ -1,4 +1,5 @@
 "use strict";
+exports.__esModule = true;
 var DagService = (function () {
     function DagService() {
         this.successColor = "green";
