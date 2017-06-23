@@ -1,6 +1,6 @@
 {
   "name": "org.roylance.yadel.api",
-  "version": "0.206.0",
+  "version": "0.207.0",
   "description": "base template for org.roylance.yadel.api",
   "author": "roylance.michael@gmail.com",
   "license": "MIT",
@@ -29,7 +29,7 @@
 , "jquery": "^2.2.4"
 , "protobufjs": "6.8.0"
 , "webpack-stream": "^3.2.0"
-,"org.roylance.yadel.api": "0.206.0"
+,"org.roylance.yadel.api": "0.207.0"
 
   }
 }

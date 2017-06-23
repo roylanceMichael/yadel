@@ -6,7 +6,6 @@ import org.roylance.common.service.IProtoSerializerService;
 import org.roylance.yadel.utilities.ServiceLocator;
 import org.roylance.yadel.services.IReportService;
 
-import com.google.protobuf.util.JsonFormat;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,12 +25,10 @@ public class ReportController {
     private HttpServletResponse response;
 
     private final IReportService reportService;
-    private final JsonFormat.Parser parser;
-    private final JsonFormat.Printer printer;
+    private final IProtoSerializerService serializerService;
 
     public ReportController() {
-        this.parser = JsonFormat.parser();
-        this.printer = JsonFormat.printer();
+        this.serializerService = ServiceLocator.INSTANCE.getProtobufSerializerService();
         this.reportService = ServiceLocator.INSTANCE.getReportService();
     }
 
@@ -40,19 +37,12 @@ public class ReportController {
     public void delete_dag(@Suspended AsyncResponse asyncResponse, String request) throws Exception {
         new Thread(() -> {
             
-            try {
-                final org.roylance.yadel.YadelReport.UIYadelRequest.Builder requestTemp = org.roylance.yadel.YadelReport.UIYadelRequest.newBuilder();
-                this.parser.merge(request, requestTemp);
-                final org.roylance.yadel.YadelReport.UIYadelRequest requestActual = requestTemp.build();
+            final org.roylance.yadel.YadelReport.UIYadelRequest requestActual =
+                    this.serializerService.deserializeFromBase64(request, org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance());
 
-                final org.roylance.yadel.YadelReport.UIYadelResponse response = this.reportService.delete_dag(requestActual);
-                final String serializedResponse = this.printer.print(response);
-                asyncResponse.resume(serializedResponse);
-            }
-            catch(Exception e) {
-                e.printStackTrace();
-                asyncResponse.resume("");
-            }
+            final org.roylance.yadel.YadelReport.UIYadelResponse response = this.reportService.delete_dag(requestActual);
+            final String deserializeResponse = this.serializerService.serializeToBase64(response);
+            asyncResponse.resume(deserializeResponse);
 
         }).start();
     }
@@ -62,19 +52,12 @@ public class ReportController {
     public void current(@Suspended AsyncResponse asyncResponse, String request) throws Exception {
         new Thread(() -> {
             
-            try {
-                final org.roylance.yadel.YadelReport.UIYadelRequest.Builder requestTemp = org.roylance.yadel.YadelReport.UIYadelRequest.newBuilder();
-                this.parser.merge(request, requestTemp);
-                final org.roylance.yadel.YadelReport.UIYadelRequest requestActual = requestTemp.build();
+            final org.roylance.yadel.YadelReport.UIYadelRequest requestActual =
+                    this.serializerService.deserializeFromBase64(request, org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance());
 
-                final org.roylance.yadel.YadelReport.UIYadelResponse response = this.reportService.current(requestActual);
-                final String serializedResponse = this.printer.print(response);
-                asyncResponse.resume(serializedResponse);
-            }
-            catch(Exception e) {
-                e.printStackTrace();
-                asyncResponse.resume("");
-            }
+            final org.roylance.yadel.YadelReport.UIYadelResponse response = this.reportService.current(requestActual);
+            final String deserializeResponse = this.serializerService.serializeToBase64(response);
+            asyncResponse.resume(deserializeResponse);
 
         }).start();
     }
@@ -84,19 +67,12 @@ public class ReportController {
     public void get_dag_status(@Suspended AsyncResponse asyncResponse, String request) throws Exception {
         new Thread(() -> {
             
-            try {
-                final org.roylance.yadel.YadelReport.UIYadelRequest.Builder requestTemp = org.roylance.yadel.YadelReport.UIYadelRequest.newBuilder();
-                this.parser.merge(request, requestTemp);
-                final org.roylance.yadel.YadelReport.UIYadelRequest requestActual = requestTemp.build();
+            final org.roylance.yadel.YadelReport.UIYadelRequest requestActual =
+                    this.serializerService.deserializeFromBase64(request, org.roylance.yadel.YadelReport.UIYadelRequest.getDefaultInstance());
 
-                final org.roylance.yadel.YadelReport.UIYadelResponse response = this.reportService.get_dag_status(requestActual);
-                final String serializedResponse = this.printer.print(response);
-                asyncResponse.resume(serializedResponse);
-            }
-            catch(Exception e) {
-                e.printStackTrace();
-                asyncResponse.resume("");
-            }
+            final org.roylance.yadel.YadelReport.UIYadelResponse response = this.reportService.get_dag_status(requestActual);
+            final String deserializeResponse = this.serializerService.serializeToBase64(response);
+            asyncResponse.resume(deserializeResponse);
 
         }).start();
     }
