@@ -1,0 +1,148 @@
+import org.roylance.yaclib.YaclibPlugin
+import org.roylance.yaclib.YaclibModel
+
+group 'org.roylance'
+version = "${actualMajor}.${actualMinor}"
+
+apply plugin: 'java'
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url repoUrl_ }
+    }
+    dependencies {
+        classpath "org.roylance:yaclib.core:${yaclibMajor}.${yaclibMinor}"
+        classpath "org.roylance:yadel:${actualMajor}.${actualMinor}"
+    }
+}
+
+task execute(type: YaclibPlugin) {
+    def parentDir = new File(System.getProperty("user.dir")).parentFile.toString()
+
+    processSwift = true
+    location = parentDir
+    mainModel = "org.roylance.yadel.YadelReport"
+    mainController = "org.roylance.yadel.YadelController"
+
+    dependencyDescriptors = new ArrayList<>()
+    thirdPartyServerDependencies = new ArrayList<>()
+
+    def coreDependency = YaclibModel.Dependency.newBuilder()
+            .setType(YaclibModel.DependencyType.JAVA)
+            .setGroup("org.roylance")
+            .setName("yadel.core")
+            .setMavenRepository(YaclibModel.Repository.newBuilder()
+                .setName(repoName_)
+                .setUrl(repoUrl_)
+                .setRepositoryType(YaclibModel.RepositoryType.BINTRAY).build())
+            .build()
+
+    thirdPartyServerDependencies.add(coreDependency)
+
+    nugetKey = System.getenv('NUGET_KEY')
+
+    mainDependency = YaclibModel.Dependency.newBuilder()
+            .setGroup("org.roylance")
+            .setName("yadel")
+            .setAuthorName(author_)
+            .setLicense(license_)
+            .setGithubRepo(githubRepo_)
+            .setMajorVersion(actualMajor.toInteger())
+            .setMinorVersion(actualMinor.toInteger())
+            .setTypescriptModelFile("YadelModel")
+            .setServerPort(8080)
+            .setServerType(YaclibModel.ServerType.GRADLE_JETTY_EMBEDDED)
+            .setYaclibVersion("$yaclibMajor.$yaclibMinor")
+            .setMavenRepository(YaclibModel.Repository.newBuilder()
+            .setName(repoName_)
+            .setUrl(repoUrl_)
+            .setRepositoryType(YaclibModel.RepositoryType.BINTRAY).build())
+            .build()
+
+    def tempAuxiliaryProjects = YaclibModel.AuxiliaryProjects.newBuilder()
+
+    def core = YaclibModel.AuxiliaryProject.newBuilder()
+            .setProjectType(YaclibModel.ProjectType.GRADLE_PROJECT_TYPE)
+            .setHandleBefore(YaclibModel.ExecutionPhase.BUILD_PUBLISH_TYPESCRIPT)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_INCREMENT_VERSION)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_UPDATE_DEPENDENCIES)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_CLEAN)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_BUILD)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_PUBLISH)
+            .setTargetDependency(coreDependency)
+            .addFromDependencies(mainDependency)
+            .build()
+
+    def cli = YaclibModel.AuxiliaryProject.newBuilder()
+            .setProjectType(YaclibModel.ProjectType.GRADLE_PROJECT_TYPE)
+            .setHandleBefore(YaclibModel.ExecutionPhase.BUILD_PACKAGE_JAVA_SERVER)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_SET_VERSION)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_UPDATE_DEPENDENCIES)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_CLEAN)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_BUILD)
+            .setTargetDependency(YaclibModel.Dependency.newBuilder()
+            .setMinorVersion(mainDependency.minorVersion)
+            .setMajorVersion(mainDependency.majorVersion)
+            .setGroup("org.roylance")
+            .setName("yadel.cli").build())
+            .addFromDependencies(mainDependency)
+            .addFromDependencies(coreDependency)
+            .build()
+
+    def plugin = YaclibModel.AuxiliaryProject.newBuilder()
+            .setProjectType(YaclibModel.ProjectType.GRADLE_PROJECT_TYPE)
+            .setHandleBefore(YaclibModel.ExecutionPhase.BUILD_PUBLISH_TYPESCRIPT)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_SET_VERSION)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_UPDATE_DEPENDENCIES)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_CLEAN)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_BUILD)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_PUBLISH)
+            .setTargetDependency(YaclibModel.Dependency.newBuilder()
+            .setMinorVersion(mainDependency.minorVersion)
+            .setMajorVersion(mainDependency.majorVersion)
+            .setGroup("org.roylance")
+            .setName("yadel.plugin").build())
+            .addFromDependencies(YaclibModel.Dependency.newBuilder().setGroup("org.roylance").setName("yaclib.core").setThirdPartyDependencyVersion("$yaclibMajor.$yaclibMinor").setMajorVersion(yaclibMajor.toInteger()).setMinorVersion(yaclibMinor.toInteger()).build())
+            .build()
+
+    def yaorm = YaclibModel.AuxiliaryProject.newBuilder()
+            .setProjectType(YaclibModel.ProjectType.GRADLE_PROJECT_TYPE)
+            .setHandleBefore(YaclibModel.ExecutionPhase.BUILD_PACKAGE_JAVA_SERVER)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_SET_VERSION)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_UPDATE_DEPENDENCIES)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_CLEAN)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_BUILD)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_PUBLISH)
+            .setTargetDependency(YaclibModel.Dependency.newBuilder()
+            .setMinorVersion(mainDependency.minorVersion)
+            .setMajorVersion(mainDependency.majorVersion)
+            .setGroup("org.roylance")
+            .setName("yadel.yaorm").build())
+            .addFromDependencies(coreDependency)
+            .addFromDependencies(YaclibModel.Dependency.newBuilder().setGroup("org.roylance").setName("yaorm").setThirdPartyDependencyVersion("$yaormMajor.$yaormMinor").setMajorVersion(yaormMajor.toInteger()).setMinorVersion(yaormMinor.toInteger()).build())
+            .build()
+
+    def javaScriptUI = YaclibModel.AuxiliaryProject.newBuilder()
+            .setProjectType(YaclibModel.ProjectType.NPM_PROJECT_TYPE)
+            .setHandleBefore(YaclibModel.ExecutionPhase.BUILD_TYPESCRIPT_SERVER)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_SET_VERSION)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_UPDATE_DEPENDENCIES)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_CLEAN)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_BUILD)
+            .addExecutions(YaclibModel.CustomExecutionType.CUSTOM_PUBLISH)
+            .setTargetDependency(YaclibModel.Dependency.newBuilder()
+            .setMinorVersion(mainDependency.minorVersion)
+            .setMajorVersion(mainDependency.majorVersion)
+            .setGroup("org.roylance")
+            .setName("yadel.ui").build())
+            .addFromDependencies(mainDependency)
+            .build()
+
+    tempAuxiliaryProjects.addProjects(core).addProjects(cli).addProjects(plugin).addProjects(javaScriptUI).addProjects(yaorm)
+    auxiliaryProjects = tempAuxiliaryProjects.build()
+
+    println(nugetKey)
+    println(parentDir)
+}

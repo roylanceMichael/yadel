@@ -1,0 +1,3 @@
+org.roylance.yadel
+================
+This library and readme was auto-generated and auto-published by [Yaclib](https://github.com/roylanceMichael/yaclib). This TypeScript library contains the interfaces and implementations to communicate with the corresponding rest server in Java. More documentation to come...

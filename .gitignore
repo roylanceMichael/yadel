@@ -81,31 +81,34 @@ javascript/node_modules
 csharp/Org.Roylance.Yadel.Api/bin
 csharp/Org.Roylance.Yadel.Api/obj
 
-plugin/.gradle
-plugin/build
-capi/
-javascript/
-csharp/
-ui/node_modules
-capi/.gradle
-core/.gradle
-yaorm/.gradle
-sapi/build
+.gradle
+yadel.plugin/.gradle
+yadel.plugin/build
+yadelclient/
+yadeljs/
+yadelcs/
+yadel.ui/node_modules
+yadelclient/.gradle
+yadel.core/.gradle
+yadel.yaorm/.gradle
+yadelserver/build
 *.~
-core/build
-core/.idea
-core/gradle
+yadel.core/build
+yadel.core/.idea
+yadel.core/gradle
 
-yaorm/build
-yaorm/.gradle
+yadelserver/src/main/javascript/node_modules
 
-csharp
-python
-javascript
-capi
+yadel.yaorm/build
+yadel.yaorm/.gradle
 
-sapi/.gradle
-core/.gradle
+yadel.cs
+yadel.py
+yadel.js
+yadelclient
+
+yadelserver/.gradle
+yadel.core/.gradle
 build
 Carthage
 Cartfile.resolved
