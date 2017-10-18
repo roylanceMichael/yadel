@@ -17,7 +17,7 @@ app.factory("httpExecute", function ($window, $http) {
 });
 
 app.factory("yadelModel", function () {
-    return YadelModel.org.roylance;
+    return YadelModel.org.roylance.yadel;
 });
 
 app.factory("reportService", function(httpExecute:HttpExecute, yadelModel:org.roylance.yadel.ProtoBufBuilder) {
